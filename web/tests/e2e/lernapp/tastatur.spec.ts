@@ -18,7 +18,8 @@ import { fokus, pruefeSchritte, tabUndEnter, tabZu, waehleMitTasten, zumInhalt, 
  * Leserichtung folgen (`tastatur.ts`), auch von rechts nach links in der arabischen Oberfläche.
  * - L1: Lernpfad → Lektion 1 des Testkurses (auswahl, paare, wortbank)
  * - L2-01: Lektion l03 (bild_wort, frei, Hörübung ohne Ton, hoeren_waehlen, hoeren_schreiben, minimalpaare, luecke, satzbau,
- *   formen mit Sonderzeichenleiste)
+ *   formen mit Sonderzeichenleiste) in de und in ar (RTL: frei mit der arabischen Bildschirmtastatur, luecke als Freitext,
+ *   harakat)
  * - L2-02: Lektion l04 in de (dialog, geschichte, lesen_fragen, grammatik_tipp, schrift_tr, sprechen, schreiben) und in ar
  *   (schrift_ar erkennen und nachspuren mit „auf Papier geschrieben“ per Tastatur)
  * - Vorkurs: schrift_latein einer echten Lektion (de-aus-ar, Oberfläche ar)
@@ -36,6 +37,17 @@ type Texte = typeof de;
 const AR = {
   w001: '\u0645\u064E\u0627\u0621',
   w004: '\u0643\u0650\u062A\u064E\u0627\u0628',
+  /** Lektion l03 (wie typen-a.spec.ts) */
+  bayt: '\u0628\u064E\u064A\u0652\u062A',
+  kitabOhne: '\u0643\u062A\u0627\u0628',
+  hal: '\u062D\u064E\u0627\u0644',
+  albaytu: '\u0627\u0644\u0652\u0628\u064E\u064A\u0652\u062A\u064F',
+  kabirun: '\u0643\u064E\u0628\u0650\u064A\u0631\u064C',
+  ashrab: '\u0627\u0634\u0631\u0628',
+  tashrab: '\u062A\u0634\u0631\u0628',
+  yashrab: '\u064A\u0634\u0631\u0628',
+  /** Tasten für \u062E\u0628\u0632 (Brot) */
+  khubz: ['\u062E', '\u0628', '\u0632'],
   s0001:
     '\u0623\u064E\u0646\u064E\u0627 \u0623\u064E\u0634\u0652\u0631\u064E\u0628\u064F \u0627\u0644\u0652\u0645\u064E\u0627\u0621\u064E.',
   s0007: '\u0628\u0650\u062E\u064E\u064A\u0652\u0631\u064D\u060C \u0634\u064F\u0643\u0652\u0631\u064B\u0627.',
@@ -228,6 +240,89 @@ test.describe('Tastaturwege je Typgruppe (nur Tab, Pfeile, Enter, Leertaste)', (
 
     await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
     await expect(page.getByText(formatiere(t.spieler.fertigText, { richtig: 8, gesamt: 8 }, 'de'), { exact: true })).toBeVisible();
+    expect(w.m).toEqual([]);
+  });
+
+  test('L2-01 ar (RTL): Lektion l03 mit arabischer Bildschirmtastatur, luecke als Freitext und harakat', async ({ page }) => {
+    test.setTimeout(180_000);
+    const t = ar as unknown as Texte;
+    const w = weg(page, t, 'l03 ar');
+    await page.goto('/lern-app/ar/ar-aus-de/ueben?l=ar-aus-de.a1.test.l03');
+    await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+    await expect(page.getByRole('heading', { name: t.aufgaben.bild_wort.waehleWort })).toBeVisible({ timeout: 15_000 });
+    await zumInhalt(page, t.rahmen.zumInhalt, w.m);
+    await w.waehle(AR.bayt, 'bild_wort');
+    await w.richtigWeiter();
+
+    // Freitext mit der Bildschirmtastatur: Schalter per Tab und Enter, dann Tab in die Leiste und mit den Pfeilen zur Taste
+    // (wandernder Tabindex; in RTL ist Pfeil links die nächste Taste), Enter fügt das Zeichen ein
+    await expect(page.getByRole('heading', { name: t.aufgaben.frei.uebersetze })).toBeVisible();
+    const feld = page.getByRole('textbox', { name: t.aufgaben.frei.eingabe });
+    const schalter = w.knopf(t.tastatur.arabisch);
+    await tabUndEnter(page, schalter, w.o('Tastatur einblenden'));
+    await expect(schalter).toHaveAttribute('aria-expanded', 'true');
+    const leiste = page.getByRole('toolbar', { name: t.tastatur.arabisch });
+    await expect(leiste).toHaveAttribute('dir', 'rtl');
+    const zeichenName = (c: string) =>
+      ar.aufgaben.harakat.zeichen[
+        `u${(c.codePointAt(0) ?? 0).toString(16).toUpperCase().padStart(4, '0')}` as keyof typeof ar.aufgaben.harakat.zeichen
+      ];
+    for (const [i, c] of AR.khubz.entries()) {
+      const taste = leiste.getByRole('button', { name: zeichenName(c), exact: true });
+      if (i === 0) await tabZu(page, taste, { ...w.o('Bildschirmtastatur'), gruppe: leiste, pfeil: 'ArrowLeft' });
+      else {
+        // schon in der Leiste: nur Pfeile, in Leserichtung (rtl: links = weiter, rechts = zurück)
+        const vor = await taste.evaluate((el) =>
+          Boolean(document.activeElement && document.activeElement.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING),
+        );
+        for (let p = 0; p < 60 && !(await taste.evaluate((el) => el === document.activeElement)); p++)
+          await page.keyboard.press(vor ? 'ArrowLeft' : 'ArrowRight');
+        await expect(taste).toBeFocused();
+      }
+      await page.keyboard.press('Enter');
+    }
+    await expect(feld).toHaveValue(AR.khubz.join(''));
+    await w.druecke(t.spieler.pruefen, 'frei prüfen');
+    await w.richtigWeiter();
+
+    await expect(page.getByText(t.aufgaben.hoeren.audioFolgt, { exact: true })).toBeVisible();
+    await w.druecke(t.aufgaben.hoeren.ueberspringen, 'ohne Ton');
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_waehlen.waehleBedeutung })).toBeVisible();
+    await w.anhoeren('hoeren_waehlen');
+    await w.waehle('Wasser', 'hoeren_waehlen');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_schreiben.schreibeGehoertes })).toBeVisible();
+    await w.anhoeren('hoeren_schreiben');
+    await w.schreibe(page.getByRole('textbox', { name: t.aufgaben.hoeren_schreiben.eingabe }), AR.kitabOhne, 'hoeren_schreiben');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.minimalpaare.waehleGehoertes })).toBeVisible();
+    await w.anhoeren('minimalpaare');
+    await w.waehle(AR.hal, 'minimalpaare');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.luecke.ergaenze })).toBeVisible();
+    await w.schreibe(page.getByRole('textbox', { name: t.aufgaben.luecke.luecke, exact: true }), AR.ashrab, 'luecke');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.satzbau.ordne })).toBeVisible();
+    await w.wortbank([AR.albaytu, AR.kabirun], 'ar', 'satzbau');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.formen.ergaenze })).toBeVisible();
+    const felder = page.locator('main form[data-aufgabe="formen"]').getByRole('textbox');
+    await expect(felder).toHaveCount(2);
+    await w.schreibe(felder.nth(0), AR.tashrab, 'formen 1', { enter: false });
+    await w.schreibe(felder.nth(1), AR.yashrab, 'formen 2');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.aufgaben.harakat.waehleVokalisierung })).toBeVisible();
+    await w.waehle(AR.w004, 'harakat');
+    await w.richtigWeiter();
+
+    await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
     expect(w.m).toEqual([]);
   });
 
