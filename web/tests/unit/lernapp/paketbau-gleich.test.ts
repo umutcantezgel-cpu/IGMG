@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
 import type { LateinFormel } from '@/lib/lernapp/formelkandidat';
+import { AufgabeVorlageSchema } from '@/lib/lernapp/inhalt/schema';
 import { SPRACH_STUFEN } from '@/lib/lernapp/kurse';
 import {
   type BauAudio,
@@ -22,6 +23,8 @@ import { kanonisch, sha256Hex, textHash } from '@/lib/lernapp/paket/hash';
  * Vorlagen der Sprachkurse mit Verweisen, verborgene Einträge, Formel-Kandidat, Audio) ist der Hash des Kursverzeichnisses
  * vor und nach der Änderung derselbe, und jeder Einheiten-Hash ist der SHA-256 des Pakettexts. Die festen Werte stammen aus
  * dem Stand vor N6 (9a8ca1f8); ändert sich der Paketbau absichtlich, werden sie mit Begründung neu gesetzt.
+ *
+ * Das Laden aus der Datenbank (`pakete.ts`) sichert `tests/integration/lernapp-pakete.test.ts` mit festen Hashes für den Testkurs.
  *
  * Nur erfundene Silbenwörter (keine echten Inhalte, kein Religionsbezug); die Formel ist eine Testformel aus Silben.
  */
@@ -250,6 +253,26 @@ describe('Paketbau N6: gleiche Bytes und Hashes für eine feste Eingabe', () => 
       expect(ist).toEqual(VORHER[name]);
     });
   }
+
+  it('geprüfte Vorlage aus dem Laden (`vorlage`, pakete.ts) ergibt dieselben Pakete wie die Prüfung im Bau', () => {
+    const mitVorlage = (e: BauEingabe): BauEingabe => ({
+      ...e,
+      lektionen: e.lektionen.map((l) => ({
+        ...l,
+        aufgaben: l.aufgaben.map((a) => ({
+          ...a,
+          vorlage: AufgabeVorlageSchema.parse({ ...(a.daten as object), schluessel: a.schluessel, typ: a.typ }),
+        })),
+      })),
+    });
+    for (const ungeprueftZeigen of [true, false]) {
+      const optionen = { ungeprueftZeigen, formellisteFrei: false, formeln: FORMELN };
+      const ohne = festeEingabe().eingaben.map((e) => baueEinheit(e, optionen)?.json);
+      const mit = festeEingabe().eingaben.map((e) => baueEinheit(mitVorlage(e), optionen)?.json);
+      expect(ohne.every(Boolean)).toBe(true);
+      expect(mit).toEqual(ohne);
+    }
+  });
 });
 
 /** Vorherige Fassungen (vor N6) als Bezug für die Eigenschaftstests. */
