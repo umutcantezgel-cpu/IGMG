@@ -50,7 +50,6 @@ export type Sitzung = {
   /** ohne Bewertung übersprungen (zählt nicht zur Lektion, außer sie hatte schon einen Versuch) */
   uebersprungen: boolean[];
   letzte: Auswertung | null;
-  lexikon?: Lexikon;
 };
 
 export type Schritt = { sitzung: Sitzung; ereignisse: EreignisEntwurf[] };
@@ -70,8 +69,23 @@ export function starte(lektion: Lektion, { ohne = [] }: { ohne?: readonly Aufgab
     abgeschlossen: Array<boolean>(n).fill(false),
     uebersprungen: Array<boolean>(n).fill(false),
     letzte: null,
-    ...(lektion.lexikon?.length ? { lexikon: bereiteLexikon(lektion.lexikon, lektion.zielsprache) } : {}),
   };
+}
+
+const lexika = new WeakMap<Lektion, Lexikon | null>();
+
+/**
+ * Lexikon der Lektion für den Tippfehler-Abgleich (Lexikonschutz), erst bei Bedarf bereitet und je Lektion gemerkt (Stufe C
+ * N8: in B1 ≈ 900 Wörter, beim Start der Lektion ≈ 80 ms Hauptfaden bei CPU ×4). Nur die Textbewertung (frei, Lücke,
+ * Hören-Schreiben, Formen) liest es.
+ */
+export function lexikonVon(lektion: Lektion): Lexikon | undefined {
+  let l = lexika.get(lektion);
+  if (l === undefined) {
+    l = lektion.lexikon?.length ? bereiteLexikon(lektion.lexikon, lektion.zielsprache) : null;
+    lexika.set(lektion, l);
+  }
+  return l ?? undefined;
 }
 
 /** Aktuelle Aufgabe mit Index; `wiederholung`, wenn sie schon einmal dran war. */
@@ -88,7 +102,12 @@ export function aktuell(s: Sitzung): { index: number; aufgabe: Aufgabe; wiederho
 export function pruefe(s: Sitzung, antwort: Antwort, bewerte: Bewerter): Schritt {
   const a = aktuell(s);
   if (!a || s.phase !== 'frage') return { sitzung: s, ereignisse: [] };
-  const auswertung = bewerte(a.aufgabe, antwort, { lexikon: s.lexikon });
+  // Lexikon erst, wenn die Bewertung es liest (nur Textantworten)
+  const auswertung = bewerte(a.aufgabe, antwort, {
+    get lexikon() {
+      return lexikonVon(s.lektion);
+    },
+  });
   const versuche = [...s.versuche];
   versuche[a.index] = (versuche[a.index] ?? 0) + 1;
   const erster = versuche[a.index] === 1;

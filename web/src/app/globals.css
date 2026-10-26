@@ -242,6 +242,12 @@
     transform-origin: right center;
   }
 }
+/* Karte einer Station im Lernpfad (Stufe C N8): außerhalb des Bildschirms ohne Stil, Layout und Zeichnen (bleibt im
+   Zugänglichkeitsbaum und in der Suche); bis zum ersten Zeichnen eine geschätzte Höhe, danach die zuletzt gezeichnete */
+@utility zeichnen-bei-sicht {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto --spacing(72);
+}
 
 /* Werkzeugleiste des Editors (@container): ab 336 px Breite passt „Kursiv“ noch in die Zeile –
    Absatzart 64 px + 5 × 48 px + 5 × 4 px Abstand + 8 px Rand = 332 px */

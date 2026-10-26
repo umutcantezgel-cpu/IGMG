@@ -20,8 +20,11 @@ import { type EinheitVerweis, ladePaketGeprueft, type PaketOptionen, paketImVorr
  * - Ohne Cache Storage (Tests, alte Browser) laufen alle Funktionen ohne Vorrat weiter.
  *
  * Der Kern ohne Zod liegt in `vorrat.ts` (Lernpfad, Offline-Speichern); hier kommt die volle Prüfung des Pakets gegen
- * `PaketSchema` dazu, die Spieler, Wiederholung und Tipps vor dem Lesen der Aufgaben brauchen.
+ * `PaketSchema` dazu, die Wiederholung, Einstufung und Tipps vor dem Lesen der Aufgaben brauchen. Der Spieler prüft nur die
+ * gespielte Lektion voll (`ladeLektion` aus `lektion.ts`, eigener kleinerer Chunk; Stufe C N8).
  */
+
+export { ladeLektion, type LektionImPaket, nurLektion } from './lektion';
 
 export {
   type Abruf,

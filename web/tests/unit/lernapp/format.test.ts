@@ -90,13 +90,40 @@ describe('Zahlen und Ziffern', () => {
   });
 });
 
+/**
+ * Stufe C N8: kleine Zahlen (0 bis unter 1000) und die Pluralkategorie ganzer Zahlen ohne Intl – das erste
+ * `Intl.NumberFormat`/`Intl.PluralRules` einer Seite kostete im Profil ≈ 80 ms Hauptfaden (CPU ×4). Gleich wie Intl für alle
+ * ganzen Zahlen bis 1200 sowie große und gebrochene Zahlen (dort weiter Intl). Megabyte: `leistung-n8.test.ts`.
+ */
+describe('Zahlen und Plural ohne Intl gleich wie Intl', () => {
+  const LOC: [string, Ziffern, string][] = [
+    ['de', 'oestlich', 'de'],
+    ['tr', 'oestlich', 'tr'],
+    ['ar', 'oestlich', 'ar-u-nu-arab'],
+    ['ar', 'westlich', 'ar-u-nu-latn'],
+  ];
+  it.each(LOC)('%s (%s): ganze Zahlen 0–1200, Plural 0–1200', (sprache, ziffern, loc) => {
+    const nf = new Intl.NumberFormat(loc);
+    const pr = new Intl.PluralRules(loc);
+    const KAT = '{n, plural, zero {zero} one {one} two {two} few {few} many {many} other {other}}';
+    for (let n = 0; n <= 1200; n++) {
+      expect(zahl(n, sprache, ziffern)).toBe(nf.format(n));
+      // Kategorien, die es in der Sprache nicht gibt, fallen wie bei createTranslator auf other
+      expect(formatiere(KAT, { n }, sprache, ziffern)).toBe(pr.select(n));
+    }
+  });
+  it.each(LOC)('%s (%s): große und gebrochene Zahlen weiter über Intl', (sprache, ziffern, loc) => {
+    for (const x of [1000, 1234, 1_234_567, 2.25, 3.125, -4]) expect(zahl(x, sprache, ziffern)).toBe(new Intl.NumberFormat(loc).format(x));
+  });
+});
+
 describe('Größe', () => {
-  it('unter 1 KB gz (übersetzt, ohne Kommentare, nicht minifiziert)', () => {
+  it('höchstens 1,1 KB gz (übersetzt, ohne Kommentare, nicht minifiziert; < 1 KB bis Stufe C N8, dazu ganze Zahlen ohne Intl)', () => {
     const quelle = readFileSync(join(import.meta.dirname, '..', '..', '..', 'src', 'lib', 'lernapp', 'format.ts'), 'utf8');
     const js = ts.transpileModule(quelle, {
       compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.ESNext, removeComments: true },
     }).outputText;
-    expect(gzipSync(js, { level: 9 }).length).toBeLessThan(1024);
+    expect(gzipSync(js, { level: 9 }).length).toBeLessThanOrEqual(1126);
   });
 });
 

@@ -12,6 +12,7 @@ import {
   WEITERE_VERSUCHE,
   weiter,
   zusammenfassung,
+  lexikonVon,
 } from '@/lib/lernapp/engine/sitzung';
 import { xpFuer } from '@/lib/lernapp/engine/xp';
 import { EreignisEntwurfSchema, type EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
@@ -74,7 +75,7 @@ describe('Sitzung', () => {
     expect(starte(LEKTION, { ohne: ['frei', 'paare'] }).aufgaben.map((a) => a.typ)).toEqual(['auswahl', 'wortbank']);
     expect(s.phase).toBe('frage');
     expect(fortschritt(s)).toBe(0);
-    expect(s.lexikon?.woerter.has('ekmek')).toBe(true);
+    expect(lexikonVon(s.lektion)?.woerter.has('ekmek')).toBe(true);
   });
 
   it('alles richtig: vier Aufgaben, Bewertungen je Karte, am Ende Lektion und 10 XP', () => {

@@ -95,12 +95,26 @@ export type Station = {
 
 export type Abschnitt = { stufe: Stufe; stationen: Station[] };
 
+/**
+ * Geschaffte Lektionen je Einheit in einem Durchlauf über `erledigt` (Stufe C N8; vorher je Einheit ein Durchlauf über alle
+ * geschafften Lektionen). Jede Lektion zählt für ihre Einheit (`einheitDerLektion`: `tr-aus-de.a1.e01.l03` → `tr.a1.e01`), also
+ * für die Einheit, deren Präfix (`lektionsPraefix`) vor dem letzten Teil des Schlüssels steht.
+ */
+export function geschafftJeEinheit(v: Pick<Verzeichnis, 'kurs' | 'kursId'>, erledigt: Iterable<string>): Map<string, number> {
+  const zahl = new Map<string, number>();
+  for (const lektion of erledigt) {
+    const einheit = einheitDerLektion(v, lektion);
+    if (einheit) zahl.set(einheit, (zahl.get(einheit) ?? 0) + 1);
+  }
+  return zahl;
+}
+
 /** Stationen nach Stufen; `erledigt` sind die geschafften Lektionen (Speicher `lektionen`), `pakete` die geladenen Pakete. */
 export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete: ReadonlyMap<string, PaketInhalt>): Abschnitt[] {
   let aktuellGesetzt = false;
   const liste: Abschnitt[] = [];
+  const ohnePaket = geschafftJeEinheit(v, erledigt);
   v.einheiten.forEach((einheit, i) => {
-    const praefix = lektionsPraefix(v, einheit.schluessel);
     const paket = pakete.get(einheit.schluessel);
     const lektionen = paket
       ? paket.lektionen.map((l) => {
@@ -114,7 +128,7 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
           };
         })
       : null;
-    const geschafft = lektionen ? lektionen.filter((l) => l.erledigt).length : [...erledigt].filter((l) => l.startsWith(praefix)).length;
+    const geschafft = lektionen ? lektionen.filter((l) => l.erledigt).length : (ohnePaket.get(einheit.schluessel) ?? 0);
     const aktuell = !aktuellGesetzt && geschafft < einheit.lektionen;
     if (aktuell) aktuellGesetzt = true;
     const station: Station = { einheit, nummer: i + 1, erledigt: geschafft, lektionen, aktuell, tipps: Boolean(paket?.tipps.length) };
@@ -125,9 +139,18 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
   return liste;
 }
 
+/**
+ * Die Stufe, die der Lernpfad aufgeklappt zeigt (Stufe C N8): die der aktuellen Einheit („Hier geht es weiter“), ist alles
+ * geschafft, die letzte. Die übrigen Stufen rendern ihre Stationen erst beim Aufklappen.
+ */
+export function aufgeklappteStufe(liste: readonly Abschnitt[]): Stufe | null {
+  return (liste.find((a) => a.stationen.some((s) => s.aktuell)) ?? liste.at(-1))?.stufe ?? null;
+}
+
 /** Die aktuelle und die nächste Einheit (werden automatisch gespeichert, ADR 0039 Nr. 12). */
 export function aktuelleUndNaechste(v: Verzeichnis, erledigt: ReadonlySet<string>): VerzeichnisEinheit[] {
-  const i = v.einheiten.findIndex((e) => [...erledigt].filter((l) => l.startsWith(lektionsPraefix(v, e.schluessel))).length < e.lektionen);
+  const geschafft = geschafftJeEinheit(v, erledigt);
+  const i = v.einheiten.findIndex((e) => (geschafft.get(e.schluessel) ?? 0) < e.lektionen);
   const start = i < 0 ? Math.max(0, v.einheiten.length - 1) : i;
   return v.einheiten.slice(start, start + 2);
 }

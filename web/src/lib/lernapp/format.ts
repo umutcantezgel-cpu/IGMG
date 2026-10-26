@@ -1,10 +1,11 @@
 /**
- * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3; < 1 KB gz): `{name}`,
- * `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und `{x, select, … other {…}}`, verschachtelt. Wie
- * intl-messageformat schreibt `{n}` die Zahl unverändert; Ziffern der Oberfläche nur über `{n, number}` und `#`. Plural
- * über `Intl.PluralRules` (Arabisch: zero, one, two, few, many, other). Apostroph-Regel wie ICU („'{'“, „''“).
- * Ziffern der arabischen Oberfläche östlich-arabisch, umschaltbar auf westliche (O-5). Im Client der Lern-App gibt es
- * kein next-intl; der Unit-Test vergleicht mit `createTranslator`.
+ * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3; < 1 KB gz, seit Stufe C N8 mit eigenen
+ * ganzen Zahlen ≤ 1,1 KB): `{name}`, `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und
+ * `{x, select, … other {…}}`, verschachtelt. Wie intl-messageformat schreibt `{n}` die Zahl unverändert; Ziffern der
+ * Oberfläche nur über `{n, number}` und `#`. Plural für ganze Zahlen nach CLDR, sonst über `Intl.PluralRules` (Arabisch: zero,
+ * one, two, few, many, other). Apostroph-Regel wie ICU („'{'“, „''“). Ziffern der arabischen Oberfläche östlich-arabisch,
+ * umschaltbar auf westliche (O-5). Im Client der Lern-App gibt es kein next-intl; der Unit-Test vergleicht mit
+ * `createTranslator` und mit Intl.
  */
 
 export type Ziffern = 'oestlich' | 'westlich';
@@ -14,7 +15,25 @@ export type Werte = Readonly<Record<string, string | number>>;
 export const intlSprache = (sprache: string, ziffern: Ziffern = 'oestlich'): string =>
   sprache === 'ar' ? `ar-u-nu-${ziffern === 'westlich' ? 'latn' : 'arab'}` : sprache;
 
-const zahlIn = (n: number, loc: string) => new Intl.NumberFormat(loc).format(n);
+/**
+ * Ganze Zahlen ohne Intl (Stufe C N8): Das erste `Intl.NumberFormat` bzw. `Intl.PluralRules` einer Seite kostet ≈ 20 ms
+ * (ICU). Ganze Zahlen von 0 bis 999 in de, tr und ar schreibt `zahlIn` selbst (östlich-arabische Ziffern wie Intl), die
+ * Pluralkategorie ganzer Zahlen ≥ 0 kommt nach CLDR aus `kategorie`; alles andere über Intl.
+ */
+const eigen = (n: number, loc: string) => Number.isInteger(n) && n >= 0 && /^(de|tr|ar-u-nu-)/.test(loc);
+
+/** Ziffern 0–9 als östlich-arabische Ziffern, wenn die Sprachkennung sie verlangt (`…-nu-arab`). */
+export const ziffernVon = (s: string, loc: string): string =>
+  loc.endsWith('arab') ? s.replace(/\d/g, (d) => String.fromCharCode(1632 + +d)) : s;
+
+const zahlIn = (n: number, loc: string) => (eigen(n, loc) && n < 1e3 ? ziffernVon(String(n), loc) : new Intl.NumberFormat(loc).format(n));
+
+function kategorie(n: number, loc: string): string {
+  const h = n % 100;
+  if (!eigen(n, loc)) return new Intl.PluralRules(loc).select(n);
+  if (loc[0] !== 'a') return n === 1 ? 'one' : 'other';
+  return n < 3 ? ['zero', 'one', 'two'][n]! : h > 10 ? 'many' : h > 2 ? 'few' : 'other';
+}
 
 /** Zahl in der Schreibweise der Oberfläche. */
 export const zahl = (n: number, sprache: string, ziffern?: Ziffern): string => zahlIn(n, intlSprache(sprache, ziffern));
@@ -61,7 +80,7 @@ function teile(t: string, w: Werte, loc: string, nr?: number): string {
       if (art === 'plural') {
         const n = Number(wert);
         const z = zweige(rest);
-        aus += teile(z.get(`=${n}`) ?? z.get(new Intl.PluralRules(loc).select(n)) ?? z.get('other') ?? '', w, loc, n);
+        aus += teile(z.get(`=${n}`) ?? z.get(kategorie(n, loc)) ?? z.get('other') ?? '', w, loc, n);
       } else if (art === 'select') {
         const z = zweige(rest);
         aus += teile(z.get(String(wert)) ?? z.get('other') ?? '', w, loc, nr);

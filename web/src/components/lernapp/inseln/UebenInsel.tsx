@@ -7,7 +7,7 @@ import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import { istRichtung, type KursSlug, type Oberflaeche } from '@/lib/lernapp/kurse';
 import type { Profil, Speicher } from '@/lib/lernapp/lokal/db';
-import { ladeVerzeichnis, paketKopfImVorrat } from '@/lib/lernapp/lokal/vorrat';
+import { ladePaketKopf, ladeVerzeichnis, nachgeben, paketKopfImVorrat } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
@@ -20,11 +20,13 @@ import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorla
 const ladeSpieler = () => import('../Spieler');
 const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
 /**
- * Was erst die Lektion braucht – volle Prüfung des Pakets (Zod) – als eigener Chunk, beim Öffnen parallel zu Gerät,
- * Einstellungen und Kursverzeichnis geladen: Die Seite selbst bleibt klein (LCP, TBT). Der Ausgang der Ereignisse kommt
- * erst mit der ersten Handlung (`./ausgang.ts`).
+ * Was erst die Lektion braucht – volle Prüfung der gespielten Lektion (Zod, `ladeLektion`) – als eigener Chunk, beim Öffnen
+ * parallel zu Gerät, Einstellungen und Kursverzeichnis geladen: Die Seite selbst bleibt klein (LCP, TBT). Der Ausgang der
+ * Ereignisse kommt erst mit der ersten Handlung (`./ausgang.ts`). `lektion.ts` statt `pakete.ts` (Stufe C N8): ohne
+ * `PaketSchema`, Bündel-Leser und Koran-Verzeichnis; der Koran-Pfad lädt `pakete.ts` (`ladeKoranLektion`).
  */
-const ladeLektionsteile = () => import('@/lib/lernapp/lokal/pakete');
+const ladeLektionsteile = () => import('@/lib/lernapp/lokal/lektion');
+const ladeKoranTeile = () => import('@/lib/lernapp/lokal/pakete');
 
 export type UebenTexte = { laedt: string; ohneLektion: string; nichtVerfuegbar: string };
 
@@ -65,6 +67,8 @@ type Bereit = {
   ziffern: Ziffern;
   /** Einstellungen „Hörübungen aus“ und „Sprechübungen aus“ (KERN 4.0 §8) */
   optionen: Omit<SpielerOptionen, 'spracherkennung'>;
+  /** nächste Einheit auf das Gerät holen – erst wenn der Hauptfaden frei ist, nicht im Block der ersten Aufgabe */
+  vorladen?: () => Promise<unknown>;
 };
 type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
 
@@ -117,7 +121,7 @@ export function UebenInsel({
         const [{ sp, profil }, e, { ladeKoranLektion }] = await Promise.all([
           geraet(ui),
           einstellungsSpeicher(ui).laden(),
-          ladeLektionsteile(),
+          ladeKoranTeile(),
         ]);
         const k = await ladeKoranLektion(ui, l);
         if (!k) return { art: 'fehlt' };
@@ -132,20 +136,19 @@ export function UebenInsel({
           optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
         };
       }
-      const [{ sp, profil }, e, v, { ladePaket }] = await Promise.all([
+      const [{ sp, profil }, e, v, { ladeLektion }] = await Promise.all([
         geraet(ui),
         einstellungsSpeicher(ui).laden(),
         ladeVerzeichnis(kurs),
         ladeLektionsteile(),
       ]);
       const einheit = v && v.kurs === kurs ? v.einheiten.find((x) => x.schluessel === einheitDerLektion(v, l)) : undefined;
-      const paket = v && einheit ? await ladePaket(sp, kurs, einheit) : null;
-      const lektion = paket?.lektionen.find((x) => x.schluessel === l);
-      if (!v || !einheit || !paket || !lektion) return { art: 'fehlt' };
+      // voll geprüft wird nur die gespielte Lektion (Stufe C N8: das ganze Paket kostete den Hauptfaden zu viel, TBT)
+      const gefunden = v && einheit ? await ladeLektion(sp, kurs, einheit, l) : null;
+      if (!v || !einheit || !gefunden) return { art: 'fehlt' };
+      const { paket, lektion } = gefunden;
       await merkeWeiter(sp, profil.id, { kurs, lektion: lektion.schluessel, ...(lektion.titel ? { titel: lektion.titel } : {}) });
-      // die nächste Einheit automatisch speichern (nicht abwarten)
       const naechste = naechsteEinheit(v, einheit.schluessel);
-      if (naechste) void ladePaket(sp, kurs, naechste).catch(() => null);
       return {
         art: 'bereit',
         sp,
@@ -158,6 +161,8 @@ export function UebenInsel({
         },
         ziffern: e.ziffern,
         optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
+        // die nächste Einheit automatisch speichern (ADR 0039 Nr. 12): nur im Kopf geprüft, voll erst beim Spielen
+        ...(naechste ? { vorladen: () => ladePaketKopf(sp, kurs, naechste) } : {}),
       };
     }
     void laden()
@@ -170,6 +175,15 @@ export function UebenInsel({
     };
   }, [l, kurs, ui]);
   useAusgangVorladen(z.art === 'bereit');
+  const vorladen = z.art === 'bereit' ? z.vorladen : undefined;
+  useEffect(() => {
+    if (!vorladen) return;
+    let aktiv = true;
+    void nachgeben().then(() => aktiv && vorladen().catch(() => null));
+    return () => {
+      aktiv = false;
+    };
+  }, [vorladen]);
 
   const zurueck = (
     <a href={lernpfad.adresse} className="inline-flex min-h-11 items-center font-bold underline-offset-4 hover:underline">
