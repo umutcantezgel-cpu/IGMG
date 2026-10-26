@@ -9,6 +9,7 @@ import {
   MODELLE_BASIS,
   modellAdresse,
   ORT,
+  ORT_HINWEISE,
   ortAdresse,
   TRANSFORMERS_UMGEBUNG,
 } from '@/lib/lernapp/sprechen/modell';
@@ -94,10 +95,15 @@ async function mitTransformers<T>(vorrat: Vorrat, abruf: Abruf, pruefung: (t: Tr
 }
 
 describe('Sprechübung: Download in den Vorrat (fuelleVorrat)', () => {
-  it('umfasst die 7 Modelldateien und die ORT-.wasm; mit Worker und ORT-.mjs sind es die 10 Download-Dateien', () => {
-    expect(VORRAT_DATEIEN.map((d) => d.pfad)).toEqual([...MODELL_DATEIEN.map((d) => modellAdresse(d.pfad)), ortAdresse(ORT.wasm)]);
-    expect(DOWNLOAD_PFADE).toHaveLength(10);
-    expect(new Set(DOWNLOAD_PFADE).size).toBe(10);
+  it('umfasst die 7 Modelldateien, die ORT-.wasm und ihre Drittlizenzen; mit Worker und ORT-.mjs sind es die 11 Download-Dateien', () => {
+    expect(VORRAT_DATEIEN.map((d) => d.pfad)).toEqual([
+      ...MODELL_DATEIEN.map((d) => modellAdresse(d.pfad)),
+      ortAdresse(ORT.wasm),
+      ORT_HINWEISE.pfad,
+    ]);
+    expect(VORRAT_DATEIEN.filter((d) => d.lizenz).map((d) => d.pfad)).toEqual([ORT_HINWEISE.pfad]);
+    expect(DOWNLOAD_PFADE).toHaveLength(11);
+    expect(new Set(DOWNLOAD_PFADE).size).toBe(11);
     expect(DOWNLOAD_PFADE).toEqual(expect.arrayContaining([...VORRAT_DATEIEN.map((d) => d.pfad), ortAdresse(ORT.mjs)]));
   });
 
@@ -126,6 +132,20 @@ describe('Sprechübung: Download in den Vorrat (fuelleVorrat)', () => {
       adresse.endsWith('tokenizer.json') ? new Response('', { status: 404 }) : new Response('{}', { status: 200 });
     await expect(fuelleVorrat(vorrat, abruf, URSPRUNG)).rejects.toThrow('tokenizer.json: Error: Status 404');
     expect(vorrat.eintraege.has(new URL(modellAdresse('tokenizer.json'), URSPRUNG).href)).toBe(false);
+  });
+
+  it('Drittlizenzen von ORT (Z-L17): ohne sie kein Abbruch, der nächste Start holt sie nach; danach liegen sie offline im Vorrat', async () => {
+    const vorrat = new VorratAttrappe();
+    const { abrufe, abruf } = ursprung();
+    const ohneLizenz: Abruf = async (adresse, init) =>
+      new URL(adresse, URSPRUNG).pathname === ORT_HINWEISE.pfad ? Promise.reject(new TypeError('Failed to fetch')) : abruf(adresse, init);
+    await fuelleVorrat(vorrat, ohneLizenz, URSPRUNG);
+    const imVorrat = (pfad: string) => vorrat.eintraege.has(new URL(pfad, URSPRUNG).href);
+    expect(VORRAT_DATEIEN.filter((d) => !imVorrat(d.pfad)).map((d) => d.pfad)).toEqual([ORT_HINWEISE.pfad]);
+    abrufe.length = 0;
+    await fuelleVorrat(vorrat, abruf, URSPRUNG);
+    expect(abrufe).toEqual([ORT_HINWEISE.pfad]);
+    expect(imVorrat(ORT_HINWEISE.pfad)).toBe(true);
   });
 
   it('bricht bei einem Abbruch mitten in der Datei ab (mit Stand) und legt sie nicht in den Vorrat', async () => {

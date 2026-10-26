@@ -226,6 +226,20 @@ describe('Service Worker der Lern-App', () => {
     expect(w.inhalt('igmg-lernapp-modelle')).toEqual(['/lern-app/modelle/whisper-base-64da572/config.json']);
   });
 
+  it('Drittlizenzen von ORT (Z-L17): aus dem Vorrat der Modelle, den die Sprachprüfung füllt, auch ohne Netz; sonst Netz, ohne Vorhalten', async () => {
+    const pfad = '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt';
+    const ohne = ladeWorker({ bau: 'b6' });
+    expect((await ohne.anfrage(pfad)!).status).toBe(200);
+    await new Promise((r) => setTimeout(r, 0));
+    expect(ohne.abgerufen).toEqual([`${URSPRUNG}${pfad}`]);
+    expect(ohne.inhalt('igmg-lernapp-modelle')).toEqual([]);
+
+    const mit = ladeWorker({ bau: 'b6', vorraete: { 'igmg-lernapp-modelle': [`${URSPRUNG}${pfad}`] }, netz: false });
+    const antwort = await mit.anfrage(pfad)!;
+    expect(await antwort.text()).toBe(`alt ${URSPRUNG}${pfad}`);
+    expect(mit.abgerufen).toEqual([]);
+  });
+
   it('Hülle einer Oberflächensprache auf Bitte der Seite: Start, Fortschritt, Wortschatz, Einstellungen, Quellen und ihre Programmteile', async () => {
     const w = ladeWorker({ bau: 'b3' });
     await w.warte('message', { art: 'schale', ui: 'ar' });

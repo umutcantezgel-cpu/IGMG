@@ -1,9 +1,10 @@
-import { MODELL_DATEIEN, modellAdresse, ORT, ortAdresse } from './modell';
+import { MODELL_DATEIEN, modellAdresse, ORT, ORT_HINWEISE, ortAdresse } from './modell';
 
 /**
  * Download der Sprechübung in den Vorrat `igmg-lernapp-modelle` (L8-02, Gegenprüfung zu `a0795f7b`): Der Worker legt die
- * 7 Modell- und Konfigurationsdateien und die ORT-`.wasm` selbst in den Vorrat, bevor er die Pipeline baut – je Datei
- * genau ein Abruf, Fortschritt nach gelesenen Bytes. transformers.js findet danach jede Datei im Vorrat: keine
+ * 7 Modell- und Konfigurationsdateien, die ORT-`.wasm` und deren Drittlizenzen (ThirdPartyNotices, Z-L17) selbst in den
+ * Vorrat, bevor er die Pipeline baut – je Datei genau ein Abruf, Fortschritt nach gelesenen Bytes. Der Lern-App-SW liefert
+ * die Drittlizenzen danach auch ohne Netz aus dem Vorrat (Link auf der Seite „Quellen“). transformers.js findet danach jede Datei im Vorrat: keine
  * Vorabfrage der Größe (`get_file_metadata`), kein zweiter Abruf, und Tokenizer und Prozessor gelten als vorhanden.
  *
  * Vorher (bis `a0795f7b`) übergab der Worker transformers.js eine Fortschrittsmeldung; dafür fragte es vorab jede Datei per
@@ -24,13 +25,18 @@ export type Abruf = (adresse: string, init?: RequestInit) => Promise<Response>;
 /** Fortschritt je Datei: gelesene Bytes und erwartete Größe. */
 export type Meldung = (datei: string, geladen: number, gesamt: number) => void;
 
-/** Eine Datei des Downloads: Name für die Fortschrittsanzeige, Pfad unter `/lern-app/modelle/`, Größe. */
-export type VorratDatei = { datei: string; pfad: string; bytes: number };
+/**
+ * Eine Datei des Downloads: Name für die Fortschrittsanzeige, Pfad (`/lern-app/modelle/…`, Drittlizenzen
+ * `/lern-app/lizenzen/…`), Größe. `lizenz`: Lizenztext – ein Fehler bricht den Download nicht ab (der nächste Start holt
+ * ihn nach); so bleibt ein Gerät, das das Modell schon offline hat, auch ohne Netz bei der Sprachprüfung.
+ */
+export type VorratDatei = { datei: string; pfad: string; bytes: number; lizenz?: true };
 
-/** Alles, was transformers.js und ORT aus dem Vorrat lesen (Worker und ORT-`.mjs` lädt der Browser selbst). */
+/** Alles, was transformers.js und ORT aus dem Vorrat lesen, und die Drittlizenzen von ORT (Worker und ORT-`.mjs` lädt der Browser selbst). */
 export const VORRAT_DATEIEN: readonly VorratDatei[] = [
   ...MODELL_DATEIEN.map((d) => ({ datei: d.pfad, pfad: modellAdresse(d.pfad), bytes: d.bytes })),
   { datei: ORT.wasm, pfad: ortAdresse(ORT.wasm), bytes: ORT.wasmBytes },
+  { datei: 'onnxruntime-ThirdPartyNotices.txt', pfad: ORT_HINWEISE.pfad, bytes: ORT_HINWEISE.bytes, lizenz: true },
 ];
 
 /** Fortschritt höchstens je Megabyte melden (sonst eine Nachricht je Netzstück, ≈ 1500 für den ganzen Download). */
@@ -84,12 +90,14 @@ async function eineDatei(vorrat: Vorrat, abruf: Abruf, ursprung: string, d: Vorr
 
 /**
  * Legt jede fehlende Datei aus `VORRAT_DATEIEN` mit genau einem Abruf in den Vorrat; vorhandene bleiben unberührt (kein
- * Netz). Wirft bei einer fehlgeschlagenen Datei (Status ≠ 200, Abbruch) – die Übung fällt dann auf die eigene Aufnahme zurück.
+ * Netz). Wirft bei einer fehlgeschlagenen Datei (Status ≠ 200, Abbruch) – die Übung fällt dann auf die eigene Aufnahme zurück;
+ * ausgenommen Lizenztexte (`lizenz`), die beim nächsten Start erneut versucht werden.
  */
 export async function fuelleVorrat(vorrat: Vorrat, abruf: Abruf, ursprung: string, melde: Meldung = () => undefined): Promise<void> {
   await Promise.all(
     VORRAT_DATEIEN.map((d) =>
       eineDatei(vorrat, abruf, ursprung, d, melde).catch((e: unknown) => {
+        if (d.lizenz) return;
         throw new Error(`${d.datei}: ${e instanceof Error ? `${e.name}: ${e.message}` : String(e)}`);
       }),
     ),

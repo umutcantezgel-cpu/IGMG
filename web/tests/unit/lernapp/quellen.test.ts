@@ -16,6 +16,7 @@ import {
   SPRACHERKENNUNG,
 } from '@/lib/lernapp/quellen';
 import { LIZENZ_DATEIEN, MODELL, ORT } from '@/lib/lernapp/sprechen/modell';
+import { VORRAT_DATEIEN } from '@/lib/lernapp/sprechen/vorrat';
 
 /**
  * Quellen und Lizenzen der Lern-App (ADR 0044 Nr. 7): Fassungen wie in node_modules, Lizenzen wie in den Paketen,
@@ -223,6 +224,16 @@ describe('Quellen der Lern-App', () => {
     expect(text).toMatch(/\nEigen\n+MPL v2\.0\n/);
     // nicht unter /lern-app/modelle/ (dort genau 12 Dateien, scripts/lernapp-modelle.mjs)
     expect(ORT_DRITTLIZENZEN.pfad.startsWith('/lern-app/modelle/')).toBe(false);
+    // offline (Z-L17): Der Download der Sprachprüfung legt sie neben die ORT-.wasm in den Vorrat, der Lern-App-SW liefert sie
+    // von dort; die Seite sagt das in allen drei Sprachen
+    expect(VORRAT_DATEIEN.filter((d) => d.pfad === ORT_DRITTLIZENZEN.pfad)).toEqual([expect.objectContaining({ lizenz: true })]);
+    expect(readFileSync(join(WEB, 'public', 'lern-app', 'sw.js'), 'utf8')).toContain("pfad.startsWith('/lern-app/lizenzen/')");
+    for (const ui of ['de', 'tr', 'ar']) {
+      const t = JSON.parse(readFileSync(join(WEB, 'messages', 'lernapp', `${ui}.json`), 'utf8')) as {
+        lizenzverzeichnis: { drittlizenzenText: string };
+      };
+      expect(t.lizenzverzeichnis.drittlizenzenText, ui).toMatch({ de: /ohne Verbindung/, tr: /bağlantı olmadan/, ar: /دون اتصال/ }[ui]!);
+    }
   });
 
   it('Website /quellen nennt alles, was die Lern-App ausliefert (Daten, Bildkarten, Spracherkennung, Stimmen, Schriften, Bibliotheken)', () => {

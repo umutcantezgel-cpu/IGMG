@@ -29,6 +29,7 @@ import {
   MODELL_DATEIEN,
   modellAdresse,
   ORT,
+  ORT_HINWEISE,
   ortAdresse,
   probeClip,
   VORRAT_MODELLE,
@@ -262,8 +263,10 @@ describe('Dateien vom eigenen Ursprung', () => {
     }
     expect(oeffentlich('LIZENZ-whisper-MIT.txt').toString()).toContain('Copyright (c) 2022 OpenAI');
     expect(oeffentlich('LIZENZ-Apache-2.0.txt').toString()).toContain('Apache License');
-    // nicht Teil der Sprachprüfung: weder in der angezeigten Größe noch in den Dateien des Downloads
-    expect(GESAMT_BYTES).toBe(MODELL_DATEIEN.reduce((s, d) => s + d.bytes, 0) + ORT.wasmBytes + ARBEITER_BYTES);
+    // nicht Teil der Sprachprüfung: weder in der angezeigten Größe noch in den Dateien des Downloads (wohl aber die
+    // Drittlizenzen von ORT, die mit dem Download in den Vorrat kommen – Z-L17)
+    expect(GESAMT_BYTES).toBe(MODELL_DATEIEN.reduce((s, d) => s + d.bytes, 0) + ORT.wasmBytes + ARBEITER_BYTES + ORT_HINWEISE.bytes);
+    expect(readFileSync(join(web, 'public', ORT_HINWEISE.pfad)).length).toBe(ORT_HINWEISE.bytes);
     expect(MODELL_DATEIEN.some((d) => d.pfad.startsWith('LIZENZ-'))).toBe(false);
     // der Bauschritt prüft sie und versieht den Worker mit einem Lizenzkopf
     const bauschritt = readFileSync(join(web, 'scripts/lernapp-modelle.mjs'), 'utf8');

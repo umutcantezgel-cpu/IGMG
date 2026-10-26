@@ -1,4 +1,5 @@
 import type { LizenzName } from './lizenztexte';
+import { ORT_HINWEISE } from './sprechen/modell';
 
 /**
  * Quellen und Namensnennung der Lern-App (ADR 0044 Nr. 7, KERN 4.0 §1 „Quellenangaben auch offline“): Bibliotheken, die
@@ -325,11 +326,12 @@ export const BILDKARTEN = {
 
 /**
  * Drittlizenzen von ONNX Runtime (ADR 0042 Nr. 10, Z-L17): Volltext als statische Datei (Herkunft und SHA-256 in
- * `web/daten/lernapp-lizenzen/QUELLE.md`). Offline nennt die Seite die wichtigste Bedingung selbst: Eigen steht unter MPL-2.0,
- * der Quellcode ist frei erhältlich (MPL-2.0 §3.2).
+ * `web/daten/lernapp-lizenzen/QUELLE.md`). Sie kommt mit der Sprachprüfung in den Vorrat (`ORT_HINWEISE`, `fuelleVorrat`) und
+ * liegt dann offline neben der ORT-`.wasm`. Ohne Sprachprüfung nennt die Seite die wichtigste Bedingung selbst: Eigen steht
+ * unter MPL-2.0, der Quellcode ist frei erhältlich (MPL-2.0 §3.2).
  */
 export const ORT_DRITTLIZENZEN = {
-  pfad: '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt',
+  pfad: ORT_HINWEISE.pfad,
   stand: '8d85527a010e294a26b274749f74294b2a32cec5',
   sha256: '143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3',
   eigen: { name: 'Eigen', lizenz: 'MPL-2.0', adresse: 'https://gitlab.com/libeigen/eigen' },

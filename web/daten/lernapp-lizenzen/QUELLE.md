@@ -23,7 +23,9 @@ zum ausgelieferten `onnxruntime-web` (`web/daten/lernapp-modelle/QUELLE.md`, Tab
   einmal). Verlinkt von `/lern-app/[ui]/quellen` (Abschnitt „Spracherkennung“) und `/quellen` (Abschnitt „Spracherkennung der
   Lern-App“).
 - Der Unit-Test `tests/unit/lernapp/quellen.test.ts` prüft beide Dateien gegen die SHA-256 dieser Tabelle.
-- Die Datei liegt bewusst nicht unter `/lern-app/modelle/` (dort genau 12 Dateien, `scripts/lernapp-modelle.mjs`) und nicht im
-  Vorrat des Lern-App-SW. Offline nennt die Seite „Quellen“ der Lern-App ONNX Runtime Web mit MIT-Text und Eigen (MPL-2.0) mit
-  Bezugsquelle des Quellcodes; der Volltext dieser Datei braucht Netz.
+- Die Datei liegt nicht unter `/lern-app/modelle/` (dort genau 12 Dateien, `scripts/lernapp-modelle.mjs`). Offline
+  (Stufe C, Z-L17): Der Download der Sprachprüfung legt sie neben die ORT-`.wasm` in den Vorrat `igmg-lernapp-modelle`
+  (`ORT_HINWEISE` in `src/lib/lernapp/sprechen/modell.ts`, `fuelleVorrat`), der Lern-App-SW liefert sie von dort – wer ORT
+  offline hat, hat auch diese Hinweise offline. Ohne Sprachprüfung nennt die Seite „Quellen“ der Lern-App ONNX Runtime Web mit
+  MIT-Text und Eigen (MPL-2.0) mit Bezugsquelle des Quellcodes.
 - Erneuern: mit jeder neuen Fassung von onnxruntime-web (Commit aus der Fassungskennung) neu abrufen und die Tabelle anpassen.

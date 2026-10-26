@@ -15,7 +15,11 @@ import type { SprechErgebnis } from './auswertung';
  *   hängt als `?v=` an (neuer Bau → neuer Worker, der Service Worker räumt alte Fassungen weg). Er trägt einen Lizenzkopf.
  *
  * Daneben 2 Lizenztexte neben den Gewichten (ADR 0042 Nr. 3, Fortschreibung Nr. 11): `LIZENZ_DATEIEN`, zusammen 12 Dateien
- * unter `/lern-app/modelle/`. Sie gehören nicht zum Download, nicht zum Vorrat und nicht zu `GESAMT_BYTES`.
+ * unter `/lern-app/modelle/`. Sie gehören nicht zum Download, nicht zum Vorrat und nicht zu `GESAMT_BYTES` (ihr Volltext steht
+ * auf der Seite „Quellen“, die der Lern-App-SW vorhält).
+ *
+ * Dazu die Drittlizenzen von ONNX Runtime (`ORT_HINWEISE`, ThirdPartyNotices unter `/lern-app/lizenzen/`): Sie kommen mit dem
+ * Download in den Vorrat, damit sie offline neben der ORT-`.wasm` liegen (Z-L17, „onnxruntime-web mit ThirdPartyNotices“).
  */
 
 export const MODELLE_BASIS = '/lern-app/modelle/';
@@ -45,6 +49,12 @@ export const LIZENZ_DATEIEN: readonly { pfad: string; bytes: number }[] = [
   { pfad: 'LIZENZ-whisper-MIT.txt', bytes: 1_063 },
   { pfad: 'LIZENZ-Apache-2.0.txt', bytes: 11_358 },
 ];
+
+/**
+ * Drittlizenzen von ONNX Runtime (ThirdPartyNotices; Herkunft und SHA-256 in `web/daten/lernapp-lizenzen/QUELLE.md`, Link auf
+ * den Seiten „Quellen“ über `ORT_DRITTLIZENZEN`). Teil des Downloads und des Vorrats, aber nicht Pflicht für den Start.
+ */
+export const ORT_HINWEISE = { pfad: '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt', bytes: 338_088 } as const;
 
 export const ORT = {
   version: '1.31.0-dev.20260914-8d85527a0',
@@ -85,15 +95,16 @@ export const arbeiterAdresse = (bau: string): string =>
   `${ARBEITER_PFAD}?v=${encodeURIComponent(bau.replace(/[^a-z0-9]/g, '').slice(0, 12) || 'lokal')}`;
 
 /**
- * Die 10 Download-Dateien der Sprechübung (KERN 4.0 §9, ≈ 95 MB): 7 Modell- und Konfigurationsdateien, ORT `.mjs` und
- * `.wasm`, der Worker. Das Netzprotokoll (`_lernapp/werkzeuge/leistung/whisper-netz.mjs`) erwartet nach dem Klick jede genau
- * einmal über das Netz.
+ * Die 11 Download-Dateien der Sprechübung (KERN 4.0 §9, ≈ 95 MB): 7 Modell- und Konfigurationsdateien, ORT `.mjs` und
+ * `.wasm`, der Worker und die Drittlizenzen von ORT. Das Netzprotokoll (`_lernapp/werkzeuge/leistung/whisper-netz.mjs`)
+ * erwartet nach dem Klick jede genau einmal über das Netz.
  */
 export const DOWNLOAD_PFADE: readonly string[] = [
   ...MODELL_DATEIEN.map((d) => modellAdresse(d.pfad)),
   ortAdresse(ORT.mjs),
   ortAdresse(ORT.wasm),
   ARBEITER_PFAD,
+  ORT_HINWEISE.pfad,
 ];
 
 /**
@@ -109,8 +120,8 @@ export const VORRAT_PFLICHT: readonly string[] = [
 /** Ungefähre Größe des Workers (transformers.js gebündelt, ≈ 690 KB) und der ORT-`.mjs` für die Anzeige. */
 export const ARBEITER_BYTES = 700_000;
 
-/** Gesamtgröße des Sprechmoduls (≈ 95 MB, KERN 4.0 §9). */
-export const GESAMT_BYTES = MODELL_DATEIEN.reduce((s, d) => s + d.bytes, 0) + ORT.wasmBytes + ARBEITER_BYTES;
+/** Gesamtgröße des Sprechmoduls (≈ 95 MB, KERN 4.0 §9), samt Drittlizenzen von ORT (≈ 0,34 MB). */
+export const GESAMT_BYTES = MODELL_DATEIEN.reduce((s, d) => s + d.bytes, 0) + ORT.wasmBytes + ARBEITER_BYTES + ORT_HINWEISE.bytes;
 /** Größe in MB, gerundet (Knopf „Sprachprüfung laden (≈ 95 MB)“). */
 export const GESAMT_MB = Math.round(GESAMT_BYTES / 1_000_000);
 
