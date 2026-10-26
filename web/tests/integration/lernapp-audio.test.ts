@@ -68,7 +68,12 @@ function lokalesBuendel(ohne: number) {
   const bytes = testBytes();
   const neu = leseBuendelKopf(bytes, bytes.length)
     .clips.slice(ohne)
-    .map((c) => ({ textHash: c.textHash, stimme: THORSTEN.id, einheit: 'de.a1.e01', daten: bytes.slice(c.versatz, c.versatz + c.laenge) }));
+    .map((c) => ({
+      textHash: c.textHash,
+      stimme: THORSTEN.id,
+      einheit: 'de.a1.test',
+      daten: bytes.slice(c.versatz, c.versatz + c.laenge),
+    }));
   const r = ergaenzeManifest({ alt: leeresManifest('de'), neu, stimmen: [manifestStimme(THORSTEN)], alteClips: () => new Map() });
   for (const b of r.buendel) {
     mkdirSync(join(lokal, 'de'), { recursive: true });
@@ -85,7 +90,7 @@ describe('Manifest → lernapp_audio → Paket → Route', () => {
     expect(await importiereAudioManifest(appDb, manifest, { abgleichen: false })).toMatchObject({ neu: 0, gleich: manifest.clips.length });
 
     const datei = buendel[0]!.datei;
-    const { verzeichnis, paket: p } = await paket('de-aus-tr', 'de.a1.e01');
+    const { verzeichnis, paket: p } = await paket('de-aus-tr', 'de.a1.test');
     expect(verzeichnis.audio).toContainEqual({ adresse: `/lern-app/audio/de/${datei}`, bytes: buendel[0]!.bytes.length });
     expect(p.audio).toEqual(verzeichnis.audio);
     const stimmen = Object.values(p.eintraege).filter((x) => x.sprache === 'de' && x.stimme);

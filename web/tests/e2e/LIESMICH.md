@@ -69,6 +69,11 @@ docs/deploy/VERCEL.md 2.1, docs/BETRIEB.md 6a, docs/GO-LIVE.md G1.
    `zwei-geraete.spec.ts` selbst (Testdaten, G-04). JS-Budgets am laufenden Server: `node scripts/lernapp-budget.mjs
    http://localhost:<port> --aus <datei.json>` (KERN 4.0 §9; Lighthouse dazu: `MESSEN_ZIEL=<ordner> pnpm messen …`).
 
+   Seit Stufe C liegt die Testeinheit unter `<kurs>.a1.test` (früher `<kurs>.a1.e01`). Eine Entwicklungsdatenbank mit dem
+   alten Testkurs bereinigt `pnpm lernapp:import --testkurs` selbst und importiert die echten Inhalte dann einmal erzwungen
+   neu (ADR 0039, Fortschreibung Stufe C Nr. 5); im Zweifel die Datenbank neu anlegen. Die Testbündel liefert
+   `/lern-app/audio` nur aus, wenn der Testkurs importiert ist.
+
 2. Entwicklungsdatenbank füllen und bauen: `pnpm db:migrate && pnpm db:seed && pnpm inhalte:import && pnpm build`
    (standalone; die Schalter gelten auch beim Bau, weil Seiten vorgerendert werden).
 3. `pnpm test:e2e` legt `igmg_e2e` frisch an (migriert, Seeds, Inhalte) und startet den Standalone-Server auf Port 3100.
@@ -84,7 +89,7 @@ Hinweise:
   überspringen das Senden des Kindes bzw. die Regeln-Bestätigung mit Begründung – den vollen Lauf daher zwischen 08 und
   19 Uhr starten.
 - Verwaltung der Lern-App (L3-06): `lernapp/verwaltung-sprachpruefung.spec.ts` (Rolle „Sprachprüfung“ mit Prüfsprache
-  Deutsch, Stichprobe der Zieltexte von `de.a1.e01` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
+  Deutsch, Stichprobe der Zieltexte der Testeinheit `de.a1.test` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
   von Chromium, Ablage unter `MEDIEN_VERZEICHNIS`) brauchen `FUNKTION_LERNAPP=an`; beide nur im Projekt `desktop`.
 - Religiöse Prüfung der Lern-App (L6-03): `lernapp/verwaltung-religioes.spec.ts` legt Platzhalter-Bausteine des
   Wissenskurses (`islam.grund.e90…`, keine religiösen Texte) per SQL an und gibt eine Aussage mit zwei neuen Konten der Rolle

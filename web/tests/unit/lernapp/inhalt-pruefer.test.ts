@@ -58,6 +58,12 @@ function geaendert(sprache: 'de' | 'tr' | 'ar', aendere: (d: Json) => void): Imp
     return { pfad: q.pfad, text: JSON.stringify(d) };
   });
 }
+/** Testkurs-Quellen mit der Testeinheit an der Stelle einer Einheit des Rahmenplans (`<kurs>.a1.test` → `<kurs>.a1.e01`). */
+const alsRahmenEinheit = (quellen: readonly ImportQuelle[]): ImportQuelle[] =>
+  quellen.map((q) => ({
+    pfad: q.pfad.replace(/\.a1\.test\.json$/, '.a1.e01.json'),
+    text: q.text.replace(/\b(de|tr|ar)\.a1\.test\b/g, '$1.a1.e01'),
+  }));
 const von = (b: ReturnType<typeof pruefe>, pruefer: string, schwere = 'blockierend') =>
   b.befunde.filter((x) => x.pruefer === pruefer && x.schwere === schwere);
 const ARABISCH = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFE]/;
@@ -84,13 +90,13 @@ describe('Satzlänge, Wortschatz, Lemma-Budget, Abdeckung', () => {
   it('A1: mehr als 8 Wörter in einem Satz sind blockierend', () => {
     const b = pruefe(geaendert('de', (d) => (d.saetze[0]!.text = 'Ich trinke heute am Morgen ein großes Glas kaltes Wasser.')));
     expect(von(b, 'satzlaenge').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.s0001: 10 Wörter in einem Satz \(A1 höchstens 8\)/),
+      expect.stringMatching(/de\.a1\.test\.s0001: 10 Wörter in einem Satz \(A1 höchstens 8\)/),
     ]);
   });
 
   it('Wörter weit über A1 (selten, kein Lemma) über der Toleranz sind blockierend', () => {
     const b = pruefe(geaendert('de', (d) => (d.saetze[0]!.text = 'Photosynthese und Kernspintomografie.')));
-    expect(von(b, 'wortschatz').map(befundZeile)).toEqual([expect.stringMatching(/de\.a1\.e01: .* über A1 \(2 von \d+; erlaubt ≤ 5 %\)/)]);
+    expect(von(b, 'wortschatz').map(befundZeile)).toEqual([expect.stringMatching(/de\.a1\.test: .* über A1 \(2 von \d+; erlaubt ≤ 5 %\)/)]);
   });
 
   it('ein Lemma einer späteren Einheit derselben Stufe ist ein Vorgriff (Warnung), kein Wort über der Stufe', () => {
@@ -98,7 +104,7 @@ describe('Satzlänge, Wortschatz, Lemma-Budget, Abdeckung', () => {
     const zweite = quellen
       .filter((q) => q.pfad.includes('sprache/de/'))
       .map((q) => {
-        const d = JSON.parse(q.text.replaceAll('de.a1.e01', 'de.a1.e02')) as Json;
+        const d = JSON.parse(q.text.replaceAll('de.a1.test', 'de.a1.e02')) as Json;
         d.einheit.reihenfolge = 2;
         d.lemmata[0]!.lemma = 'Kernspintomografie';
         return { pfad: 'testkurs/sprache/de/a1/de.a1.e02.json', text: JSON.stringify(d) };
@@ -106,40 +112,52 @@ describe('Satzlänge, Wortschatz, Lemma-Budget, Abdeckung', () => {
     const b = pruefe([...quellen, ...zweite]);
     expect(von(b, 'wortschatz').map(befundZeile)).toEqual([]);
     expect(von(b, 'wortschatz', 'warnung').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01: Vorgriff auf Lemmata späterer Einheiten in de\.a1\.e01\.s0001/),
+      expect.stringMatching(/de\.a1\.test: Vorgriff auf Lemmata späterer Einheiten in de\.a1\.test\.s0001/),
     ]);
   });
 
   it('Lemma-Budget der Einheit aus dem Rahmenplan', () => {
+    // Testeinheit an der Stelle von de.a1.e01 (Budget 40 im Rahmenplan; die Testeinheit selbst steht nicht darin)
     const b = pruefe(
-      geaendert('de', (d) => {
-        // Testkurs: 7 Lemmata (w001–w005, m001, m002); dazu w006–w043 → 45
-        for (let i = 6; i <= 43; i++)
-          d.lemmata.push({
-            schluessel: `de.a1.e01.w${String(i).padStart(3, '0')}`,
-            lemma: `Testwort${i}`,
-            quelle: 'test:x',
-            lizenz: 'CC-BY-SA-4.0',
-          });
-      }),
+      alsRahmenEinheit(
+        geaendert('de', (d) => {
+          // Testkurs: 7 Lemmata (w001–w005, m001, m002); dazu w006–w043 → 45
+          for (let i = 6; i <= 43; i++)
+            d.lemmata.push({
+              schluessel: `de.a1.test.w${String(i).padStart(3, '0')}`,
+              lemma: `Testwort${i}`,
+              quelle: 'test:x',
+              lizenz: 'CC-BY-SA-4.0',
+            });
+        }),
+      ),
     );
     expect(von(b, 'lemmabudget').map(befundZeile)).toEqual([expect.stringMatching(/de\.a1\.e01: 45 Lemmata, Budget der Einheit 40/)]);
   });
 
   it('eine Einheit, die nicht im Rahmenplan steht, ist blockierend; die Abdeckung je Stufe steht im Bericht', () => {
+    // außerhalb des Testkurses (ohne Vorsilbe testkurs/): de.a2.e15 steht nicht im Rahmenplan; die Testeinheiten
+    // `<kurs>.a1.test` gehören nicht zum Rahmenplan und ergeben keinen Befund
     const neu = testkursQuellen()
       .filter((q) => q.pfad.includes('sprache/de/'))
       .map((q) => ({
-        pfad: 'testkurs/sprache/de/a2/de.a2.e15.json',
-        text: q.text.replaceAll('de.a1.e01', 'de.a2.e15').replace('"stufe":"a1"', '"stufe":"a2"'),
+        pfad: 'sprache/de/a2/de.a2.e15.json',
+        text: q.text.replaceAll('de.a1.test', 'de.a2.e15').replace('"stufe":"a1"', '"stufe":"a2"'),
       }));
     const b = pruefe([...testkursQuellen(), ...neu]);
     expect(von(b, 'abdeckung').map(befundZeile)).toEqual([expect.stringMatching(/de\.a2\.e15: Einheit steht nicht im Rahmenplan/)]);
     expect(b.abdeckung).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ kurs: 'de', stufe: 'a1', einheiten: 1, einheitenRahmen: 12, budget: 600, vollstaendig: false }),
+        expect.objectContaining({ kurs: 'de', stufe: 'a1', einheiten: 0, einheitenRahmen: 12, budget: 600, vollstaendig: false }),
       ]),
     );
+    // Quelle test: gehört nur in den Testkurs (Stufe C, L15-1)
+    expect(von(b, 'lizenz').map((x) => x.datei)).toEqual(expect.arrayContaining(['sprache/de/a2/de.a2.e15.json']));
+    expect(von(b, 'lizenz').every((x) => x.datei === 'sprache/de/a2/de.a2.e15.json')).toBe(true);
+    expect(von(b, 'lizenz')[0]!.text).toMatch(/Quelle test: gehört nur in den Testkurs/);
+    // in den Dateien des Testkurses (Vorsilbe testkurs/) ist die Quelle test: zulässig, auch an der Stelle von e01
+    const imTestkurs = pruefe(alsRahmenEinheit(testkursQuellen()));
+    expect(von(imTestkurs, 'lizenz')).toEqual([]);
   });
 });
 
@@ -147,11 +165,11 @@ describe('Dubletten', () => {
   it('exakt gleicher Satz ist blockierend, umgestellte Wörter sind nahe Dubletten', () => {
     const exakt = pruefe(geaendert('de', (d) => (d.saetze[2]!.text = 'Das Haus ist groß!')));
     expect(von(exakt, 'dubletten').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.s0003: Satz doppelt \(gleich de\.a1\.e01\.s0002\)/),
+      expect.stringMatching(/de\.a1\.test\.s0003: Satz doppelt \(gleich de\.a1\.test\.s0002\)/),
     ]);
     const nahe = pruefe(geaendert('de', (d) => (d.saetze[2]!.text = 'Groß ist das Haus.')));
     expect(von(nahe, 'dubletten', 'warnung').map(befundZeile)).toEqual([
-      expect.stringMatching(/s0003: fast gleich wie de\.a1\.e01\.s0002 \(Jaccard 1\.00\)/),
+      expect.stringMatching(/s0003: fast gleich wie de\.a1\.test\.s0002 \(Jaccard 1\.00\)/),
     ]);
     expect(von(nahe, 'dubletten').map(befundZeile)).toEqual([expect.stringMatching(/2 von 9 Sätzen fast gleich/)]);
   });
@@ -198,10 +216,10 @@ describe('Abgleich-Selbsttest', () => {
     const zeilen = von(pruefe(quellen), 'abgleich').map(befundZeile);
     expect(zeilen).toEqual(
       expect.arrayContaining([
-        expect.stringMatching(/de\.a1\.e01\.s0002@de-aus-tr: Alternative 1 gleich dem Haupttext/),
-        expect.stringMatching(/de\.a1\.e01\.l01\.a01: Ablenker mit gleicher Übersetzung wie das Ziel \(de-aus-tr\)/),
-        expect.stringMatching(/de\.a1\.e01\.l01\.a02: Paare: gleiche Übersetzung zu de\.a1\.e01\.w001 \(de-aus-tr\)/),
-        expect.stringMatching(/de\.a1\.e01\.l01\.a03: Wortbank: Ablenker ist ein Wort der Lösung/),
+        expect.stringMatching(/de\.a1\.test\.s0002@de-aus-tr: Alternative 1 gleich dem Haupttext/),
+        expect.stringMatching(/de\.a1\.test\.l01\.a01: Ablenker mit gleicher Übersetzung wie das Ziel \(de-aus-tr\)/),
+        expect.stringMatching(/de\.a1\.test\.l01\.a02: Paare: gleiche Übersetzung zu de\.a1\.test\.w001 \(de-aus-tr\)/),
+        expect.stringMatching(/de\.a1\.test\.l01\.a03: Wortbank: Ablenker ist ein Wort der Lösung/),
       ]),
     );
   });
@@ -225,10 +243,10 @@ describe('Abgleich-Selbsttest: Vorlagen aus L2-01 (Lektion l03)', () => {
     const zeilen = von(pruefe([...de.filter((q) => !q.pfad.includes('sprache/ar/')), ...ar]), 'abgleich').map(befundZeile);
     expect(zeilen).toEqual(
       expect.arrayContaining([
-        expect.stringMatching(/de\.a1\.e01\.l03\.a02: Alternative gleich dem Zieltext/),
-        expect.stringMatching(/de\.a1\.e01\.l03\.a07: Lücke: Ablenker gleich dem fehlenden Wort/),
-        expect.stringMatching(/de\.a1\.e01\.l03\.a08: Alternative gleich dem Zieltext/),
-        expect.stringMatching(/ar\.a1\.e01\.l03\.a10: Harakat: Variante gleich dem Ziel/),
+        expect.stringMatching(/de\.a1\.test\.l03\.a02: Alternative gleich dem Zieltext/),
+        expect.stringMatching(/de\.a1\.test\.l03\.a07: Lücke: Ablenker gleich dem fehlenden Wort/),
+        expect.stringMatching(/de\.a1\.test\.l03\.a08: Alternative gleich dem Zieltext/),
+        expect.stringMatching(/ar\.a1\.test\.l03\.a10: Harakat: Variante gleich dem Ziel/),
       ]),
     );
     expect(zeilen).toHaveLength(4);
@@ -241,13 +259,13 @@ describe('Abgleich-Selbsttest: Vorlagen aus L2-01 (Lektion l03)', () => {
         (d.lektionen[2]!.aufgaben as Aufgaben)[6]!.alternativen = ['\u0627\u0634\u0631\u0628'];
       }),
     );
-    expect(von(ar, 'vokalisierung').map(befundZeile)).toEqual([expect.stringMatching(/ar\.a1\.e01\.l03\.a07: nicht voll vokalisiert/)]);
+    expect(von(ar, 'vokalisierung').map(befundZeile)).toEqual([expect.stringMatching(/ar\.a1\.test\.l03\.a07: nicht voll vokalisiert/)]);
     const register = { pfad: 'testkurs/symbole/symbole.json', text: readFileSync(join(INHALT_WURZEL, 'symbole/symbole.json'), 'utf8') };
     const frei = pruefe([...testkursQuellen(), register]);
     expect(von(frei, 'symbole')).toEqual([]);
     const echt = pruefe([...geaendert('de', (d) => (d.lemmata[0]!.quelle = 'redaktion')), register]);
     expect(von(echt, 'symbole').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.w001: Motiv wasserglas ohne Freigabe der Redaktion \(LM-34\)/),
+      expect.stringMatching(/de\.a1\.test\.w001: Motiv wasserglas ohne Freigabe der Redaktion \(LM-34\)/),
     ]);
   });
 });
@@ -276,7 +294,7 @@ describe('Arabisch: Vokalisierung vollständig', () => {
     const b = pruefe(geaendert('ar', (d) => (d.saetze[1]!.text = '\u0627\u0644\u0628\u064A\u062A \u0643\u0628\u064A\u0631.')));
     const zeilen = von(b, 'vokalisierung').map(befundZeile);
     expect(zeilen).toEqual([
-      expect.stringMatching(/ar\.a1\.e01\.s0002: nicht voll vokalisiert: Wort 1, Zeichen 3 \(U\+0628\): ohne Vokalzeichen/),
+      expect.stringMatching(/ar\.a1\.test\.s0002: nicht voll vokalisiert: Wort 1, Zeichen 3 \(U\+0628\): ohne Vokalzeichen/),
     ]);
     expect(zeilen.join('\n')).not.toMatch(ARABISCH);
   });
@@ -291,8 +309,8 @@ describe('kindgeeignet (A1–B1 Pflicht)', () => {
       }),
     );
     expect(von(b, 'kinder').map(befundZeile)).toEqual([
-      expect.stringMatching(/tr\.a1\.e01: A1: einheit\.kinderGeeignet: true ist Pflicht/),
-      expect.stringMatching(/tr\.a1\.e01\.l01: A1: Lektion darf nicht ausgenommen sein/),
+      expect.stringMatching(/tr\.a1\.test: A1: einheit\.kinderGeeignet: true ist Pflicht/),
+      expect.stringMatching(/tr\.a1\.test\.l01: A1: Lektion darf nicht ausgenommen sein/),
     ]);
   });
 
@@ -357,11 +375,11 @@ describe('Lizenz und Herkunft', () => {
       }),
     );
     expect(von(b, 'lizenz').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.w001: Namensnennung für Wiktionary-Daten fehlt/),
-      expect.stringMatching(/de\.a1\.e01\.s0001: eigene Inhalte stehen unter CC BY-SA 4\.0 \(nicht CC-BY-4\.0/),
+      expect.stringMatching(/de\.a1\.test\.w001: Namensnennung für Wiktionary-Daten fehlt/),
+      expect.stringMatching(/de\.a1\.test\.s0001: eigene Inhalte stehen unter CC BY-SA 4\.0 \(nicht CC-BY-4\.0/),
     ]);
     expect(von(b, 'ausschluss').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.w002: ausgeschlossene Quelle: al-Maktaba al-Shamila/),
+      expect.stringMatching(/de\.a1\.test\.w002: ausgeschlossene Quelle: al-Maktaba al-Shamila/),
     ]);
   });
 });
@@ -374,7 +392,7 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
     const b = pruefe(geaendert('de', (d) => (d.saetze[0]!.text = `Das ist ${wort[0]!.toUpperCase()}${wort.slice(1)}.`)));
     const zeilen = von(b, 'tabu', 'mensch').map(befundZeile);
     expect(zeilen).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.s0001: Inhaltsleitfaden: Treffer \(Regel nur_sachlich\) – menschlich_klaeren \[gluecksspiel\]$/),
+      expect.stringMatching(/de\.a1\.test\.s0001: Inhaltsleitfaden: Treffer \(Regel nur_sachlich\) – menschlich_klaeren \[gluecksspiel\]$/),
     ]);
     expect(zeilen.join('\n').toLowerCase()).not.toContain(wort.toLowerCase());
     expect(blockierende(b)).toEqual(blockierende(b).filter((x) => x.pruefer !== 'tabu'));
@@ -664,7 +682,7 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
       });
     const tippBefunde = (quellen: ImportQuelle[]) =>
       pruefe(quellen)
-        .befunde.filter((x) => x.pruefer === 'tabu' && x.ort === 'tr.a1.e01.de.t01')
+        .befunde.filter((x) => x.pruefer === 'tabu' && x.ort === 'tr.a1.test.de.t01')
         .map((x) => `${x.schwere} ${x.kategorie}`);
 
     it('ein deutsches Wort im Fließtext trifft keine gleich geschriebene türkische Form', () => {
@@ -690,7 +708,7 @@ describe('Religionsbezug', () => {
     const ohne = pruefe(geaendert('tr', (d) => (d.saetze[0]!.text = `Bu ${r09.tr}.`)));
     expect(von(ohne, 'religionsbezug', 'mensch').map(befundZeile)).toEqual([
       expect.stringMatching(
-        /tr\.a1\.e01\.s0001: Religionsbezug-Kandidat ohne Kennzeichen religionsbezug: true – menschlich_klaeren \[R-09\]/,
+        /tr\.a1\.test\.s0001: Religionsbezug-Kandidat ohne Kennzeichen religionsbezug: true – menschlich_klaeren \[R-09\]/,
       ),
     ]);
     const mit = pruefe(geaendert('tr', (d) => Object.assign(d.saetze[0]!, { text: `Bu ${r09.tr}.`, religionsbezug: true })));
@@ -702,13 +720,13 @@ describe('Religionsbezug', () => {
   // Arabisch: bekannte Wörter nicht zerlegen, Hamza vergleichen (Codepunkte; Begriffe aus dem Leitfaden über kaikki)
   const religionsbezugAr = (...saetze: string[]) => {
     const texte: TextEintrag[] = saetze.map((text, i) => ({
-      datei: 'sprache/ar/a1/ar.a1.e01.json',
+      datei: 'sprache/ar/a1/ar.a1.test.json',
       ort: `s${i}`,
       sprache: 'ar',
       text,
       kurs: 'ar',
       stufe: 'a1',
-      einheit: 'ar.a1.e01',
+      einheit: 'ar.a1.test',
       art: 'satz',
       religionsbezug: false,
       kinder: true,
@@ -749,9 +767,11 @@ describe('Religionsbezug', () => {
     const quellen = geaendert('de', (d) => {
       d.saetze[1]!.religionsbezug = true;
       d.lektionen.push({
-        schluessel: 'de.a1.e01.l09',
+        schluessel: 'de.a1.test.l09',
         art: 'pruefstein',
-        aufgaben: [{ schluessel: 'de.a1.e01.l09.a01', typ: 'wortbank', anweisung: 'uebersetze', satz: 'de.a1.e01.s0002', nach: 'ausgang' }],
+        aufgaben: [
+          { schluessel: 'de.a1.test.l09.a01', typ: 'wortbank', anweisung: 'uebersetze', satz: 'de.a1.test.s0002', nach: 'ausgang' },
+        ],
       });
     });
     const satz = (JSON.parse(quellen.find((q) => q.pfad.includes('sprache/de/'))!.text) as Json).saetze[1]!.text as string;
@@ -764,7 +784,7 @@ describe('Religionsbezug', () => {
       clips: [
         {
           textHash: h,
-          buendel: 'lernapp/audio/de/de.a1.e01-0123456789abcdef.lpa',
+          buendel: 'lernapp/audio/de/de.a1.test-0123456789abcdef.lpa',
           versatz: 0,
           laenge: 1,
           dauerMs: 1,
@@ -776,9 +796,9 @@ describe('Religionsbezug', () => {
     };
     const b = pruefe([...quellen, { pfad: 'testkurs/audio-manifest/de.json', text: JSON.stringify(manifest) }]);
     expect(von(b, 'religionsbezug').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.l09\.a01: Prüfstein verweist auf einen Eintrag mit Religionsbezug/),
+      expect.stringMatching(/de\.a1\.test\.l09\.a01: Prüfstein verweist auf einen Eintrag mit Religionsbezug/),
       expect.stringMatching(
-        /audio-manifest\/de\.json: clips\.0: Clip für de\.a1\.e01\.s0002 \(Religionsbezug bzw\. Wissenskurs: nie Sprachausgabe/,
+        /audio-manifest\/de\.json: clips\.0: Clip für de\.a1\.test\.s0002 \(Religionsbezug bzw\. Wissenskurs: nie Sprachausgabe/,
       ),
     ]);
   });
@@ -871,7 +891,7 @@ describe('Bildkarten', () => {
       { pfad: 'testkurs/symbole/symbole.json', text: JSON.stringify(symbole) },
     ]);
     expect(von(b, 'symbole').map(befundZeile)).toEqual([
-      expect.stringMatching(/de\.a1\.e01\.w001: Symbol kanne fehlt in symbole\/symbole\.json/),
+      expect.stringMatching(/de\.a1\.test\.w001: Symbol kanne fehlt in symbole\/symbole\.json/),
     ]);
   });
 });

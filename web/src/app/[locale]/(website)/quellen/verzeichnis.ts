@@ -46,7 +46,7 @@ const CC_BY_2_FR = { name: 'CC BY 2.0 FR', url: 'https://creativecommons.org/lic
 const CC_BY_SA_4 = { name: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' };
 const ISC = { name: 'ISC', url: 'https://opensource.org/license/isc-license-txt' };
 
-export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'uebersetzungsbedingungen' }[] = [
+export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'uebersetzungsbedingungen' | 'stimmen' }[] = [
   {
     id: 'koran',
     eintraege: [
@@ -227,8 +227,10 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
     ],
   },
   {
-    // Lern-App: synthetische Stimmen (ADR 0039 Nr. 9, ADR 0045 Nr. 11); Angaben wie src/lib/lernapp/audio/stimmen.ts
+    // Lern-App: synthetische Stimmen (ADR 0039 Nr. 9, ADR 0045 Nr. 11); Angaben wie src/lib/lernapp/audio/stimmen.ts.
+    // Zusatz „stimmen“: Sprachen ohne freigegebene Stimme (Hörabnahme LM-06 offen oder keine Stimme), wie /lern-app/*/quellen
     id: 'sprachausgabe',
+    zusatz: 'stimmen',
     eintraege: [
       {
         id: 'thorsten-vits',

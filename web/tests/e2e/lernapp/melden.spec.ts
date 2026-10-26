@@ -14,7 +14,7 @@ import { ernsteBefunde, KURS, LEKTION_1, liveRegion } from './hilfen';
  */
 const m = de.melden;
 const v = verwaltung.lernapp.meldungen;
-const AUFGABE = 'tr.a1.e01.l01.a01';
+const AUFGABE = 'tr.a1.test.l01.a01';
 
 test.describe.configure({ mode: 'serial' });
 
@@ -31,7 +31,8 @@ test('Lern-App: melden aus dem Rückmeldeblatt, ALTCHA erst nach dem Klick, nur 
     if (u.pathname.startsWith('/api/')) api.push({ methode: r.method(), pfad: u.pathname, koerper: r.postData() });
   });
   await page.goto(`/lern-app/de/${KURS}/ueben?l=${LEKTION_1}`);
-  await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible();
+  // erstes Laden der Lektion: Kursverzeichnis und Paket der Einheit
+  await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible({ timeout: 15_000 });
   // erste Aufgabe (Auswahl): beantworten, dann steht das Rückmeldeblatt mit „Weiter“ und „Fehler melden“
   const radio = page.getByRole('radio', { name: 'Wasser', exact: true });
   await radio.focus();

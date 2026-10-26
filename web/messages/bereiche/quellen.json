@@ -39,9 +39,17 @@
         "gebetszeiten": "Die Gebetszeiten werden mit einer quelloffenen Bibliothek berechnet, solange keine bestätigte Jahrestabelle vorliegt.",
         "schriften": "Alle Schriften liegen auf unserem eigenen Server. Es werden keine Schriften von fremden Diensten geladen.",
         "bibliotheken": "Die Website ist mit freier Software gebaut. Die wichtigsten Bibliotheken mit ihrer Lizenz:",
-        "sprachausgabe": "Die Hörübungen der Lern-App nutzen eine synthetische Stimme (Sprachausgabe). Die Aufnahmen werden vorab auf unseren Rechnern erzeugt und geprüft; im Browser läuft keine Sprachausgabe. Für Türkisch und Arabisch gibt es noch keine freigegebene Stimme.",
+        "sprachausgabe": "Für die Hörübungen der Lern-App ist eine synthetische Stimme (Sprachausgabe) vorgesehen. Ihre Aufnahmen werden vorab auf unseren Rechnern erzeugt und erst nach bestandener Hörabnahme in die Übungen übernommen; im Browser läuft keine Sprachausgabe. Solange es für eine Sprache keine freigegebene Stimme gibt, steht bei der Übung „Audio folgt“.",
         "lernapp-daten": "Die Sprachkurse der Lern-App nutzen Sätze und Wörterbuchangaben aus offenen Sammlungen. Die Namensnennung je Satz und Eintrag steht im Kurspaket und auf der Seite „Quellen und Lizenzen“ der Lern-App bei jeder Einheit, die auf dem Gerät liegt – auch offline. Häufigkeitslisten dienen nur der Auswahl der Wörter. Die Lerninhalte selbst stehen unter CC BY-SA 4.0.",
         "lernapp-spracherkennung": "Die Sprechübung der Lern-App erkennt Gesprochenes nur auf dem eigenen Gerät. Modell und Laufzeit kommen von unserem Server; die Aufnahme verlässt das Gerät nicht."
+      },
+      "stimmen": {
+        "ohneFreigabe": "Noch ohne freigegebene Stimme: {sprachen}.",
+        "sprachen": {
+          "de": "Deutsch",
+          "tr": "Türkisch",
+          "ar": "Arabisch"
+        }
       },
       "uebersetzungsbedingungen": {
         "titel": "Bedingungen von Tanzil.net",
@@ -115,7 +123,7 @@
         },
         "thorsten-vits": {
           "fassung": "ONNX-Export der Fassung vom Modell-Release v0.7.0 (Thorsten-Voice/VITS, Stand 54f782a), erzeugt mit coqui-tts 0.27.5.",
-          "verwendung": "Deutsche Aussprache von Wörtern und Sätzen in den Hörübungen der Lern-App.",
+          "verwendung": "Vorgesehen für die deutsche Aussprache von Wörtern und Sätzen in den Hörübungen der Lern-App; eingesetzt erst nach bestandener Hörabnahme.",
           "aenderungen": "Ins ONNX-Format übertragen; jede Aufnahme auf eine einheitliche Lautstärke gebracht, Stille am Rand gekürzt und als Opus gespeichert. Für einzelne Wörter, Abkürzungen und Buchstabennamen ist die Aussprache vorgegeben.",
           "hinweis": "Synthetische Stimme: Die Aufnahmen sind mit diesem Modell erzeugt und nicht von einem Menschen gesprochen. Trainingsdaten: Thorsten Müller (Thorsten-Voice), CC0 1.0."
         },
@@ -242,9 +250,17 @@
         "gebetszeiten": "Onaylanmış bir yıllık takvim bulunmadığı sürece namaz vakitleri açık kaynaklı bir kütüphaneyle hesaplanır.",
         "schriften": "Tüm yazı tipleri kendi sunucumuzda bulunur. Yabancı hizmetlerden yazı tipi yüklenmez.",
         "bibliotheken": "Web sitesi özgür yazılımla geliştirilmiştir. En önemli kütüphaneler ve lisansları:",
-        "sprachausgabe": "Öğrenme uygulamasının dinleme alıştırmaları yapay bir ses (ses sentezi) kullanır. Ses kayıtları önceden kendi bilgisayarlarımızda üretilir ve denetlenir; tarayıcıda ses sentezi çalışmaz. Türkçe ve Arapça için henüz onaylanmış bir ses yoktur.",
+        "sprachausgabe": "Öğrenme uygulamasının dinleme alıştırmaları için yapay bir ses (ses sentezi) öngörülmüştür. Ses kayıtları önceden kendi bilgisayarlarımızda üretilir ve ancak dinleme denetiminden geçtikten sonra alıştırmalara eklenir; tarayıcıda ses sentezi çalışmaz. Bir dil için onaylanmış bir ses olmadığı sürece alıştırmada „Ses kaydı gelecek“ yazar.",
         "lernapp-daten": "Öğrenme uygulamasının dil kursları açık koleksiyonlardaki cümleleri ve sözlük bilgilerini kullanır. Cümle ve kayıt bazında atıf, kurs paketinde ve öğrenme uygulamasının „Kaynaklar ve lisanslar“ sayfasında cihazdaki her ünite için yer alır; çevrimdışı da görünür. Sıklık listeleri yalnızca kelime seçimine yarar. Öğrenme içeriklerinin kendisi CC BY-SA 4.0 lisansı altındadır.",
         "lernapp-spracherkennung": "Öğrenme uygulamasının konuşma alıştırması, söyleneni yalnızca kendi cihazınızda tanır. Model ve çalışma ortamı kendi sunucumuzdan gelir; ses kaydı cihazdan çıkmaz."
+      },
+      "stimmen": {
+        "ohneFreigabe": "Henüz onaylanmış sesi olmayan diller: {sprachen}.",
+        "sprachen": {
+          "de": "Almanca",
+          "tr": "Türkçe",
+          "ar": "Arapça"
+        }
       },
       "uebersetzungsbedingungen": {
         "titel": "Tanzil.net koşulları",
@@ -318,7 +334,7 @@
         },
         "thorsten-vits": {
           "fassung": "Model sürümü v0.7.0’ın ONNX dönüşümü (Thorsten-Voice/VITS, sürüm 54f782a), coqui-tts 0.27.5 ile üretildi.",
-          "verwendung": "Öğrenme uygulamasının dinleme alıştırmalarında Almanca kelime ve cümlelerin seslendirilmesi.",
+          "verwendung": "Öğrenme uygulamasının dinleme alıştırmalarında Almanca kelime ve cümlelerin seslendirilmesi için öngörülmüştür; ancak dinleme denetiminden geçtikten sonra kullanılır.",
           "aenderungen": "ONNX biçimine aktarıldı; her kayıt aynı ses düzeyine getirildi, kenarlardaki sessizlik kısaltıldı ve Opus olarak kaydedildi. Bazı kelimeler, kısaltmalar ve harf adları için telaffuz önceden belirlendi.",
           "hinweis": "Yapay ses: Kayıtlar bu modelle üretilmiştir, bir insan tarafından seslendirilmemiştir. Eğitim verileri: Thorsten Müller (Thorsten-Voice), CC0 1.0."
         },
@@ -445,9 +461,17 @@
         "gebetszeiten": "As long as no confirmed annual timetable is available, the prayer times are calculated with an open-source library.",
         "schriften": "All fonts are hosted on our own server. No fonts are loaded from third-party services.",
         "bibliotheken": "This website is built with free software. The most important libraries and their licences:",
-        "sprachausgabe": "The listening exercises of the learning app use a synthetic voice (speech synthesis). The recordings are generated and checked in advance on our own computers; no speech synthesis runs in the browser. There is no approved voice for Turkish and Arabic yet.",
+        "sprachausgabe": "A synthetic voice (speech synthesis) is planned for the listening exercises of the learning app. Its recordings are generated in advance on our own computers and only added to the exercises after passing a listening review; no speech synthesis runs in the browser. As long as a language has no approved voice, the exercise notes that audio will follow.",
         "lernapp-daten": "The language courses of the learning app use sentences and dictionary data from open collections. The attribution for each sentence and entry is part of the course package and appears on the learning app’s page of sources and licences for every unit stored on the device – also offline. Frequency lists only help to choose the words. The learning content itself is licensed under CC BY-SA 4.0.",
         "lernapp-spracherkennung": "The speaking exercise of the learning app recognises speech only on your own device. Model and runtime come from our own server; the recording never leaves the device."
+      },
+      "stimmen": {
+        "ohneFreigabe": "No approved voice yet: {sprachen}.",
+        "sprachen": {
+          "de": "German",
+          "tr": "Turkish",
+          "ar": "Arabic"
+        }
       },
       "uebersetzungsbedingungen": {
         "titel": "Terms of Tanzil.net",
@@ -521,7 +545,7 @@
         },
         "thorsten-vits": {
           "fassung": "ONNX export of model release v0.7.0 (Thorsten-Voice/VITS, revision 54f782a), produced with coqui-tts 0.27.5.",
-          "verwendung": "German pronunciation of words and sentences in the listening exercises of the learning app.",
+          "verwendung": "Intended for the German pronunciation of words and sentences in the listening exercises of the learning app; used only after passing a listening review.",
           "aenderungen": "Converted to ONNX; every recording normalised to the same loudness, silence at the edges trimmed and stored as Opus. The pronunciation of some words, abbreviations and letter names is specified.",
           "hinweis": "Synthetic voice: the recordings were generated with this model and not spoken by a person. Training data: Thorsten Müller (Thorsten-Voice), CC0 1.0."
         },

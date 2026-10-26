@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { TESTAUDIO_VERZEICHNIS, testkursClipTexte } from '../../../drizzle/seeds/lernapp-test';
+import { TESTAUDIO_VERZEICHNIS, testEinheit, testkursClipTexte } from '../../../drizzle/seeds/lernapp-test';
 import {
   BUENDEL_MAX_BYTES,
   BuendelFehler,
@@ -128,6 +128,9 @@ describe('Testbündel des Testkurses (synthetische Töne)', () => {
       expect(bytes.length).toBeLessThanOrEqual(BUENDEL_MAX_BYTES);
       const kopf = leseBuendelKopf(bytes, bytes.length);
       expect(kopf.sprache).toBe(sprache);
+      // eigener Ort des Testkurses (Stufe C, L15-1): Bündel der Testeinheit, nie unter dem Namen einer echten Einheit
+      expect(kopf.einheit).toBe(testEinheit(sprache));
+      expect(pfad?.einheit).toBe(testEinheit(sprache));
       expect(new Set(kopf.clips.map((c) => c.textHash))).toEqual(new Set(testkursClipTexte(sprache).map(textHash)));
     });
 });

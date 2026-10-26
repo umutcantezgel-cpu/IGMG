@@ -16,7 +16,7 @@ import { ergebnisText, ernsteBefunde, KURS, LEKTION_1, LEKTION_2, spieleLektion1
 
 type Ui = 'de' | 'tr' | 'ar';
 const TEXTE = { de, tr, ar } as const;
-/** Je Oberfläche ein Kurs, dessen Ausgangssprache sie ist (Testkurs: Einheit a1.e01 je Zielsprache). */
+/** Je Oberfläche ein Kurs, dessen Ausgangssprache sie ist (Testkurs: Einheit a1.test je Zielsprache). */
 const KURS_VON: Record<Ui, string> = { de: 'tr-aus-de', tr: 'de-aus-tr', ar: 'de-aus-ar' };
 
 async function ueberlauf(page: Page) {
@@ -29,7 +29,8 @@ test.describe('Lektion des Testkurses (de)', () => {
     test.setTimeout(90_000);
     await page.goto(`/lern-app/de/${KURS}`);
     const lektion = page.locator(`main a[href="/lern-app/de/${KURS}/ueben?l=${LEKTION_1}"]`);
-    await expect(lektion).toBeVisible();
+    // erstes Laden des Lernpfads: Kursverzeichnis, Vorrat und die zwei automatisch gespeicherten Einheiten
+    await expect(lektion).toBeVisible({ timeout: 15_000 });
     await lektion.focus();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL((u) => u.pathname === `/lern-app/de/${KURS}/ueben` && u.searchParams.get('l') === LEKTION_1);
@@ -67,7 +68,9 @@ test.describe('Lektion des Testkurses (de)', () => {
 
     // Lernpfad: Lektion geschafft; Start: heute 1 Lektion, „Weiter lernen“ mit der nächsten Lektion
     await page.getByRole('link', { name: de.spieler.zurueck }).click();
-    await expect(page.locator(`main a[href="/lern-app/de/${KURS}/ueben?l=${LEKTION_1}"]`)).toContainText(`(${de.lernpfad.geschafft})`);
+    await expect(page.locator(`main a[href="/lern-app/de/${KURS}/ueben?l=${LEKTION_1}"]`)).toContainText(`(${de.lernpfad.geschafft})`, {
+      timeout: 15_000,
+    });
     await page.goto('/lern-app/de');
     await expect(page.locator(`main a[href="/lern-app/de/${KURS}/ueben?l=${LEKTION_2}"]`)).toContainText(de.heute.weiter);
     await expect(page.getByText(de.heute.nochNichts)).toHaveCount(0);
@@ -100,9 +103,11 @@ for (const ui of ['de', 'tr', 'ar'] as const) {
     };
 
     await page.goto(`/lern-app/${ui}/${kurs}`);
-    const erste = page.locator(`main a[href^="/lern-app/${ui}/${kurs}/ueben?l="]`).first();
-    await expect(erste).toBeVisible();
-    await expect(page.getByRole('button', { name: t.lernpfad.offline })).toBeVisible();
+    // Lektion 1 der Testeinheit (vor ihr steht der Vorkurs der Richtung, daneben die echten Einheiten)
+    const erste = page.locator(`main a[href="/lern-app/${ui}/${kurs}/ueben?l=${kurs}.a1.test.l01"]`);
+    await expect(erste).toBeVisible({ timeout: 15_000 });
+    // je Station ein Knopf (Testeinheit und echte Einheiten)
+    await expect(page.getByRole('button', { name: t.lernpfad.offline }).first()).toBeVisible();
     expect(await ueberlauf(page), 'Lernpfad: Überlauf').toBe(0);
     befunde.push(...(await ernsteBefunde(page, `${ui} Lernpfad`)));
     await foto('lernpfad');
