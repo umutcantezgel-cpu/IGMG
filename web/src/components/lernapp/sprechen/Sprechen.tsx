@@ -33,7 +33,11 @@ type Phase = 'start' | 'aufnahme' | 'verarbeitung' | 'ergebnis';
 const KNOPF = 'min-h-12 druck rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50';
 const HAUPT = 'min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800';
 const LEISE = 'min-h-11 font-bold text-gruen-800 underline underline-offset-4';
-/** Höchstlänge einer Aufnahme in Sekunden (angekündigt, Stufe C N9b: WCAG 2.2.1 – keine unangekündigte Zeitgrenze). */
+/**
+ * Höchstlänge einer Aufnahme in Sekunden (ADR 0042, Fortschreibung S2: Schutz vor Halluzination). Stufe C N9b: vorher
+ * angekündigt; als wesentliche Grenze von WCAG 2.2.1 ausgenommen (ENTSCHEIDUNGEN L3-E17: Erkennungsfenster, unbegrenzt
+ * wiederholbar, „Ich kann gerade nicht sprechen“), keine Grenze für die Bedenkzeit.
+ */
 const SEKUNDEN = MAX_AUFNAHME_MS / 1000;
 
 /**
@@ -47,7 +51,8 @@ const ladeAufnahme = () => import('./aufnahme');
  * - Zielsatz in seiner Sprache, optional Vorlage anhören und Übersetzung; „Aufnehmen“ per Taste (Enter/Leertaste), Pegel
  *   (B-35), höchstens 15 s, Ansagen in der Live-Region des Spielers. Die Höchstlänge steht sichtbar unter dem Knopf
  *   (`aria-describedby`), die Ansage beim Start nennt sie, und endet die Aufnahme von selbst, sagt die Übung das an
- *   (Stufe C N9b, KERN 4.0 §8: keine unangekündigte Zeitgrenze; Wiederholen bleibt jederzeit möglich).
+ *   (Stufe C N9b, KERN 4.0 §8: keine unangekündigte Zeitgrenze; Wiederholen bleibt jederzeit möglich; Einordnung zu
+ *   WCAG 2.2.1 in ENTSCHEIDUNGEN L3-E17).
  * - Die Aufnahme bleibt im Arbeitsspeicher (eigene Aufnahme anhören über eine Objekt-Adresse); nach der Übung wird alles
  *   verworfen. Mikrofon nur auf `…/ueben` und `…/wiederholen`.
  * - Spracherkennung nur mit Schalter `lernapp_sprechen`, nur für de/tr, nach Gerätecheck und auf Wunsch geladen (Knopf mit

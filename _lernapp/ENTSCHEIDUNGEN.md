@@ -336,3 +336,20 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   - B2 und C1 werden vorerst nicht weiter erstellt. Die vorhandenen B2-Entwürfe de e01–e12 und der Wortschatzplan B2 de bleiben als Entwurf (unsichtbar) für eine spätere Fortsetzung erhalten.
   - Z-L01 (Umfang A1–C1) gilt für die Abnahme als „Umfang A1–B1 nach Nutzerentscheidung“. B2/C1 stehen als offener Ausbau im BERICHT.
   - Nach B1 tr/ar folgen L8-05 (Stufe C), BERICHT und ABSCHLUSS.
+
+## L3-E17 · 2026-10-26 · Paket N9b (Vorschlag, vom Orchestrator zu bestätigen) · Höchstlänge der Sprechaufnahme und WCAG 2.2.1
+- **Anlass:** Die Sprechübung beendet eine Aufnahme nach 15 s selbst (`MAX_AUFNAHME_MS`, ADR 0042, Fortschreibung S2:
+  Schutz vor Halluzination). Z-L06 verlangt „keine Zeitgrenzen“; WCAG 2.2.1 verlangt bei einer Zeitgrenze Abschalten,
+  Anpassen oder Verlängern, sofern keine Ausnahme greift. Das Ankündigen allein (N9b, `Sprechen.tsx`) erfüllt den Auftrag,
+  nicht den Wortlaut von 2.2.1 (Gegenprüfung N9b).
+- **Einordnung:** Ausnahme „wesentlich“ (essential) nach 2.2.1.
+  - Die 15 s sind das Erkennungsfenster einer einzelnen Äußerung, keine Frist für die Antwort. Die Aufnahme beginnt erst auf
+    Knopfdruck; die Bedenkzeit davor ist unbegrenzt. Eine längere Aufnahme würde das lokale Modell zu erfundenen Abschriften
+    treiben (S2), die Übung also verfälschen.
+  - Nichts geht verloren: Die Aufnahme bis zur Grenze bleibt, wird angehört bzw. erkannt, und „Noch einmal“ ist unbegrenzt
+    möglich, ohne Wertung des Zeitbedarfs.
+  - „Ich kann gerade nicht sprechen“ überspringt ohne Wertung; ohne Sprachprüfung gibt es die Selbstbewertung.
+  - Die Grenze steht vorher sichtbar unter dem Knopf (`aria-describedby`), die Ansage beim Start nennt sie, das selbsttätige
+    Ende wird angesagt (Test `typen-b.spec.ts` „Höchstlänge 15 s“).
+- **Folge:** Z-L06 „keine Zeitgrenzen“ gilt mit dieser Ausnahme als erfüllt, sofern der Orchestrator sie bestätigt; sonst
+  wäre eine einstellbare Länge nötig (bis zum 30-s-Fenster von Whisper), mit erneuter Prüfung gegen S2.
