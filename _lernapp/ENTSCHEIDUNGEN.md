@@ -379,3 +379,24 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
 - **Entscheidung:** Z-L02 gilt als AUSNAHME mit Ersatz: 26 Einheiten entworfen und belegt, die zwei zurückgestellten sind unsichtbar
   und im Lehrplan als „zurückgestellt (LM-04)“ geführt. Sichtbar ist ohnehin nichts ohne zwei menschliche Freigaben (LM-03).
 
+
+## L3-E20 · 2026-10-26 · Orchestrator (Vollmacht des Nutzers; Gegenmessung durch Menschen: MENSCHEN LM-39) · Lighthouse-Leistung auf dem Messrechner (Z-L07)
+- **Anlass:** Der Endprüfer führte Z-L07 als „teilweise“: Lighthouse-Leistung 80–89 statt ≥ 90, gemessen auf einem langsameren
+  Rechner unter Last. Die Messung live (`berichte/leistung.md`, Abschnitt „Schluss“) bestätigt: Budgets, LCP, CLS und
+  Zugänglichkeit 100 halten; die Note hängt an TBT. TBT entsteht hier aus der simulierten Drosselung ×4 auf einem Rechner mit
+  `benchmarkIndex` ≈ 1.450–1.600 (L8 ≈ 1.850); derselbe Code lag dort über 90. Die Live-Messung fand dazu einen echten Fehler:
+  LCP 5,7 s auf dem Lernpfad durch den spät gezeichneten Block „Stufe offline speichern“; er ist behoben (b9e581e8).
+- **Entscheidung:** Z-L07 gilt als AUSNAHME mit Ersatz: Budgets (KERN §9), LCP ≤ 2,5 s, CLS ≤ 0,1, INP ≤ 200 ms (Median) und
+  Lighthouse-Zugänglichkeit 100 sind erfüllt. Die Lighthouse-Leistung ≥ 90 erreichen live Start und Lernpfad de (92); der
+  RTL-Lernpfad lag unter Last bei 88, die Übungsseiten bei 83–90 (TBT 300–560 ms) – auf diesem Messrechner nicht sicher ≥ 90. Ein
+  Mensch misst auf einem Referenzgerät bzw. mit PageSpeed Insights gegen (LM-39); liegt die Note dort unter 90, wird TBT der
+  Startseite und des Spielers weiter gesenkt (Vorschläge `leistung.md` N8.7).
+
+## L3-E21 · 2026-10-26 · Orchestrator (Vollmacht des Nutzers; Bestätigung im Dashboard: MENSCHEN LM-38) · Beleg der Vercel-Bauzeit (Z-L16)
+- **Anlass:** Z-L16 verlangt einen Vercel-Bau ≤ 15 min. Die Bauzeit steht nur im Vercel-Dashboard; die Werkzeuge dieses Laufs
+  sehen das Projekt nicht (Vercel-Verbindung ohne Zugriff, GitHub ohne Deployments-API).
+- **Entscheidung:** Als Beleg gilt die Zeit vom Push auf `main` bis zum Wechsel von `data-bau` auf der Test-Domain – eine
+  Obergrenze für Warteschlange, Bau und Bereitstellung. Gemessen: `b9e581e8`, Push 22:01:17 UTC, live 22:12:41 UTC, also
+  **11 min 24 s ≤ 15 min** (`scratchpad/live-b9e581e8.log`, Abfrage alle 20 s). Frühere Stände brauchten 23–34 min, weil mehrere
+  Vercel-Projekte dasselbe Repository nacheinander bauen (Warteschlange, nicht Bauzeit). Dazu lokal der Bau wie ein frischer
+  Vercel-Import: 609 s. Z-L16 ist damit **erfüllt**; LM-38 bestätigt die Zahl im Dashboard und räumt überzählige Projekte auf.

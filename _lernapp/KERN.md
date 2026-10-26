@@ -268,4 +268,8 @@ Nur CSS, jede Bewegung mit reduzierter Variante. Eigene `@keyframes` nur über d
 | B-35 | Aufnahme läuft: Pegelbalken (funktional) | `sprechen/Pegel.tsx` | statischer Punkt + Text „Aufnahme läuft“ |
 | (B-17, B-24, B-27) | Schreibweg, Lernpfad, Offline-Ring | wiederverwendet | wie bisher |
 
+Wiederverwendung ohne eigene Kennung (Stufe C, Pflegehinweis des Endprüfers): Die Glossar-Einblendung im Lesetext
+(`uebungen/LesenFragen.tsx`) nutzt B-14 der Website – Deckkraft + Skalierung .96 → 1 in `--dauer-rueckmeldung`, reduziert nur
+Deckkraft (`motion-reduce:scale-100`).
+
 Keine Mondsichel, keine hochzählenden Zahlen.

@@ -1,6 +1,6 @@
 # GO-LIVE – Lern-App: Schalter je Funktion
 
-**Stand:** 21.10.2026 (Pakete L8-03 und L8-04), Nachtrag 26.10.2026 (Nacharbeit N5 nach Stufe C: L3-E12b, AUSNAHME N-4). Die
+**Stand:** 21.10.2026 (Pakete L8-03 und L8-04), Nachtrag 26.10.2026 (Nacharbeit N5 nach Stufe C: L3-E12b, AUSNAHME N-4; Abnahme L8-05: L3-E17…L3-E21). Die
 Lern-App ist in der Produktion **an** – ohne Personendaten, der Fortschritt bleibt auf dem Gerät (Entscheidung des Nutzers vom
 21.10.2026, `ENTSCHEIDUNGEN.md` L3-E12b, Fortschreibung von L3-E12a; Code `IN_PRODUKTION_AN`). Alle
 Schalter mit Personendaten sind in der Produktion **aus**, bis Menschen sie freigeben (KERN 4.0 §6). Die Auflagen der
@@ -107,6 +107,19 @@ Hinweise ohne Frist (bei Gelegenheit): H-1 Meldungen (Strom mit Grenze, Löschfr
 L8-02), H-3 Obergrenze der Vorräte auf dem Gerät, H-4 Sprecherin samt Aufnahmen entfernen, H-5 Gruppenziel nur bis gestern,
 H-6 Version des Zustimmungstexts, H-7 „Profil von diesem Gerät löschen“ in den Einstellungen, H-8 Prüfsprachen der
 Administration im Handbuch Sprachprüfung (erledigt in L8-04) und im Audit-Bericht des Cockpits.
+
+## Entscheidungen der Abnahme (L8-05, 26.10.2026)
+
+Der frische Endprüfer (`berichte/stufe-c.md`) hat die Lern-App „abgenommen mit Auflagen“. Die Auflagen sind behoben oder als
+AUSNAHME entschieden (`ENTSCHEIDUNGEN.md`); vor dem Freischalten weiterer Schalter sind sie zu kennen:
+
+| Entscheidung | Inhalt | Bestätigung |
+|---|---|---|
+| L3-E17 | Aufnahme beim Sprechen höchstens 15 s, vorher angekündigt (WCAG 2.2.1 „wesentlich“) | bestätigt (Orchestrator) |
+| L3-E18 | libvips (LGPL-3.0) nur serverseitig in den Lern-App-Seiten der Website-Hülle (Verwaltung, Mein Bereich) nach M-060; öffentliche Lern-App frei | LM-37 |
+| L3-E19 | Wissenskurs mit 26 von 28 Einheiten; zwei bis zur Benennung der Werke zurückgestellt | LM-04 |
+| L3-E20 | Lighthouse-Leistung ≥ 90 auf dem Messrechner nicht erreicht; Budgets, LCP, CLS, INP erfüllt | LM-39 |
+| L3-E21 | Vercel-Bauzeit belegt über Push bis live (11 min 24 s ≤ 15 min); lokaler Bau wie Vercel 609 s | LM-38 (Dashboard) |
 
 ## Reihenfolge beim Freischalten (Vorschlag)
 

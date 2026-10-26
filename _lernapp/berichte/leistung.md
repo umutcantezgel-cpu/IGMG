@@ -1,4 +1,4 @@
-# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N8, N9a und N9b, 26.10.2026)
+# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N8, N9a, N9b und Schluss, 26.10.2026)
 
 | | |
 |---|---|
@@ -14,6 +14,39 @@ nach KERN §9 eingehalten; Whisper lädt nur nach Klick und nach der Behebung B-
 einmal bis „bereit“ samt Probelauf; Abgleich mit 200 gleichzeitigen Konten ohne Fehler und idempotent. Offen bleiben
 Hinweise (TBT, Antwortzeit des Abgleichs unter Spitzenlast, Probelauf auf einem echten Mittelklasse-Telefon) und der
 veraltete Wortlaut von Z-L07 (Abschnitt 10).
+
+## Stufe C, 26.10.2026, Schluss: Messung live und LCP des Lernpfads
+
+| | |
+|---|---|
+| Stand | live auf https://igmg-wetzlarer.vercel.app: vorher `data-bau` `6b6fd41e` (= Endstand des Endprüfers `e0292127` + Unterlagen), nachher `b9e581e8` |
+| Werkzeug | `_lernapp/werkzeuge/leistung/lighthouse.mjs` mit `MESS_BASIS` (mobil, devtools-Drosselung, Median aus 3 Läufen, Nachmessung bei Last); Rohdaten `<scratchpad>/lh-live/` und `…/lh-live2/` |
+| Rechner | derselbe Messrechner wie N6/N8 (`benchmarkIndex` ≈ 1.450–1.600); „nachher“ lief parallel zum Schluss-Tor (Last 4,6–9,7) |
+
+**Befund:** Live lag die LCP des Lernpfads bei **5,3–6,7 s** (de 5.632 ms, ar 5.830 ms im Median), obwohl die Messbauten
+1,9–2,1 s zeigten. Das LCP-Element war der Text von „Stufe offline speichern“ (N9a) direkt unter der Überschrift der Stufe: Er
+entsteht erst in der Insel nach dem Kursverzeichnis (Renderverzögerung 5,3 s bei TTFB 0,4 s) und war im ersten Bildschirm das
+größte Element. Die Messbauten vor N9a kannten den Block nicht; nach N9a wurde der Lernpfad nicht mehr mit Lighthouse gemessen.
+
+**Behebung (b9e581e8):** „Stufe offline speichern“ steht am Ende jeder Stufe, nach ihren Stationen (ADR 0039 N9a Nr. 4
+fortgeschrieben, Handbuch Lernende). Die E2E bedienen den Knopf erst, wenn alle Stationen gezeichnet sind (97f5213f).
+
+| Route | vorher: Leistung · LCP · TBT | nachher: Leistung · LCP · TBT (Last) |
+|---|---|---|
+| `/lern-app/de` | 92 · 1.756 ms · 291 ms | 92 · 1.906 ms · 190 ms (4,6–7,2) |
+| `/lern-app/de/tr-aus-de` | 71 · 5.632 ms · 291 ms | **92 · 1.877 ms** · 306 ms (8,4–9,5) |
+| `/lern-app/ar/de-aus-ar` | 69 · 5.830 ms · 356 ms | 88 · **1.932 ms** · 421 ms (9,7–10,7) |
+| Übung `tr-aus-de.a1.e01.l01` | 90 · 1.709 ms · 364 ms | unverändert (nicht berührt) |
+| Übung `tr-aus-de.b1.e01.l06` | 87 · 1.697 ms · 451 ms | unverändert |
+| Übung `de-aus-ar.a1.e01.l01` | 83 · 1.767 ms · 561 ms | unverändert |
+
+Zugänglichkeit überall 100, CLS ≤ 0,007; SEO der Übungsseiten 66 wegen `noindex` (gewollt). JS beim ersten Laden: Start
+149,8 KB, Lernpfad 160,7 KB, Übung 191,6–193,3 KB (gz, Grenzen 180 / 210).
+
+**Einordnung Z-L07 (L3-E20):** Budgets, LCP ≤ 2,5 s, CLS ≤ 0,1, INP ≤ 200 ms im Median (N9a/N9b) und Zugänglichkeit 100 sind
+erfüllt. Die Lighthouse-Leistung ≥ 90 erreichen Start und Lernpfad (de) live; der RTL-Lernpfad lag unter Last 9,7–10,7 bei 88, die
+Übungsseiten liegen auf diesem Messrechner bei 83–90 – allein wegen TBT (300–560 ms) aus der simulierten Drosselung ×4. Daher AUSNAHME mit Ersatz und Gegenmessung durch
+Menschen auf einem Referenzgerät bzw. mit PageSpeed Insights (LM-39).
 
 ## Stufe C, 26.10.2026, INP des Lernpfads nach N9a (Gegenprüfung N8 Nr. 5a/5b)
 

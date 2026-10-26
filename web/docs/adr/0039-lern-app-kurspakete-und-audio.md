@@ -168,9 +168,10 @@ vorigen Baus und mit ihr die Kursseiten, die „Einheit offline speichern“ vor
    Bauten nicht mehr ausliefern; gespeicherte Einheiten starten dann erst nach der Wiederherstellung mit Netz wieder offline.
 3. **Ehrlicher Stand:** Der Lernpfad zeigt „Offline gespeichert“ erst, wenn auch die Kursseiten im Vorrat dieses Baus
    vollständig sind; sonst „wird aktualisiert“ (er holt sie selbst) bzw. – ohne Verbindung – „Erneut speichern“.
-4. **„Stufe offline speichern“** je Stufe im Lernpfad: Speicherbedarf vorher (Pakete und jedes Bündel einmal; ist schon ein
-   Teil gespeichert, ohne die Töne der gespeicherten Einheiten), Ring nach echten Bytes (B-27), `navigator.storage.persist()`
-   erst hier, abbrechbar (Gespeichertes bleibt), Häppchen wie „Einheit offline speichern“ (Stufe C N8, INP), Ergebnis in einer
+4. **„Stufe offline speichern“** je Stufe im Lernpfad (am Ende der Stufe; unter ihrer Überschrift war der spät gezeichnete Block
+   das größte Element im ersten Bildschirm, LCP live 5,7 s – Stufe C Schluss, b9e581e8): Speicherbedarf vorher (Pakete und
+   jedes Bündel einmal; ist schon ein Teil gespeichert, ohne die Töne der gespeicherten Einheiten), Ring nach echten Bytes
+   (B-27), `navigator.storage.persist()` erst hier, abbrechbar (Gespeichertes bleibt), Häppchen wie „Einheit offline speichern“ (Stufe C N8, INP), Ergebnis in einer
    Live-Region, Abbruch und Fehler auch sichtbar; danach die Kursseiten nach Nr. 1. Als offline gespeichert gilt eine Einheit
    – bei beiden Knöpfen – erst mit ihren Tönen (Gegenprüfung N9a): je Einheit erst ihre Bündel, dann das Paket mit dem
    Vermerk `offline`. Ein Abbruch oder Fehler in den Tönen lässt keine Einheit ohne Töne als gespeichert; der Knopf bleibt,
