@@ -162,7 +162,10 @@ vorigen Baus und mit ihr die Kursseiten, die „Einheit offline speichern“ vor
    vollständig sind; sonst „wird aktualisiert“ (er holt sie selbst) bzw. – ohne Verbindung – „Erneut speichern“.
 4. **„Stufe offline speichern“** je Stufe im Lernpfad: Speicherbedarf vorher (Pakete und jedes Bündel einmal), Ring nach
    echten Bytes (B-27), `navigator.storage.persist()` erst hier, abbrechbar (Gespeichertes bleibt), Häppchen wie „Einheit
-   offline speichern“ (Stufe C N8, INP), Ergebnis in einer Live-Region; danach die Kursseiten nach Nr. 1.
+   offline speichern“ (Stufe C N8, INP), Ergebnis in einer Live-Region; danach die Kursseiten nach Nr. 1. Bei beiden Knöpfen
+   zeichnet der Klick zuerst nur den gedrückten Knopf; Ring und Speichern folgen nach dem nächsten Bild (INP ≤ 200 ms,
+   `_lernapp/berichte/leistung.md` Abschnitt N9a). Die übrigen Stationen einer Stufe folgen in Häppchen nach Klick, Taste
+   oder Ruhezeit, nicht nach Bildlauf.
 5. **Root-Worker unverändert:** Er behält alle Vorräte mit dem Präfix `igmg-lernapp-`, also auch den Kursvorrat; der
    Abmelde-Worker (GO-LIVE „Abschalten“) räumt ihn wie die übrigen Vorräte außer den Modellen.
 6. **Tests:** Unit `lernapp-sw` (Kursvorrat, Merkzeichen, Bauwechsel mit und ohne Netz, Übergang, keine Verdrängung),

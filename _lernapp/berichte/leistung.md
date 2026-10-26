@@ -1,4 +1,4 @@
-# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N8, 26.10.2026)
+# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N8 und N9a, 26.10.2026)
 
 | | |
 |---|---|
@@ -14,6 +14,59 @@ nach KERN §9 eingehalten; Whisper lädt nur nach Klick und nach der Behebung B-
 einmal bis „bereit“ samt Probelauf; Abgleich mit 200 gleichzeitigen Konten ohne Fehler und idempotent. Offen bleiben
 Hinweise (TBT, Antwortzeit des Abgleichs unter Spitzenlast, Probelauf auf einem echten Mittelklasse-Telefon) und der
 veraltete Wortlaut von Z-L07 (Abschnitt 10).
+
+## Stufe C, 26.10.2026, INP des Lernpfads nach N9a (Gegenprüfung N8 Nr. 5a/5b)
+
+| | |
+|---|---|
+| Stand | Zweig `lernapp-n9a`; Messbau A = `2d6c1adc` (N8 gemergt, „vorher“), B = `6aafb2e9` (N9a ohne die Behebung unten), C = `6b818c32` (Endstand: `4f1da4a5` + Merge PRÜFPUNKT) |
+| Werkzeug | `_lernapp/werkzeuge/leistung/inp-spieler.mjs --echt` (CPU ×6, Telefon 390 px mit Berührung, 3 Läufe, Median; neu das Szenario „Stufe aufklappen“), Spur per CDP (Zeitleiste und CPU-Profil) für die Ursachen |
+| Bau und Server | je Messbau ein Produktionsbau unter dem gemeinsamen Schloss, Server auf Port 3312, Datenbank `igmg_lernapp_n9a_e2e`; Rohdaten außerhalb des Repos (`<scratchpad>/tmp-n9a/sitzung/mess-{vorher,nachher}`, `…/s2/mess-{zwei,zwei-b}`) |
+
+### N9a.1 INP (CPU ×6, 3 Läufe, Median, ms; Last = 1-min-Mittel max.)
+
+| Szenario | A (vorher) | B | **C (nachher, Lauf 1)** | **C (Lauf 2)** | je Schritt C (Median) | Ergebnis C |
+|---|---|---|---|---|---|---|
+| Lernpfad öffnen (Start → `tr-aus-de`) und Einheit offline speichern | 320 (offline speichern 216 · öffnen 320), Last 1,41 | 232 (offline speichern 232 · öffnen 156), Last 1,70 | **208**, Last 1,19 | **160** (nachgemessen; erst 216 bei Last 1,91), Last 1,45 | offline speichern **152 / 160** · Lernpfad öffnen 208 / 80 | offline speichern erfüllt; Szenario einmal erfüllt, einmal 8 ms darüber (Startseite, s. u.) |
+| Lernpfad öffnen und Stufe A2 aufklappen (neu, Nr. 5b) | 224, Last 1,35 | 216, Last 1,22 | **168**, Last 1,22 | **176**, Last 1,75 | Stufe aufklappen 168 / 176 | erfüllt |
+| zum Vergleich ohne Codeänderung: Spieler A1 / B1 / ar | 176 / 192 / 232 | 192 / 200 / 176 | 192 / 216 / 192 | 200 / 168 / 208 | – | Rauschen ± 30 ms zwischen Durchgängen |
+
+Je Lauf C (Dauer, davon Eingabeverzögerung): „offline speichern“ 216/112/152 und 120/160/176 ms bei **6–14 ms Verarbeitung**
+(A und B: 32–132 ms); „Stufe aufklappen“ 112/216/168 und 152/176/176. „Lernpfad öffnen“ ist das Antippen der Kurskarte auf
+der Startseite, noch während sie hochfährt (N8.4, N8.7 Nr. 1): fast nur Eingabeverzögerung (C 203 ms bei 5 ms Verarbeitung,
+in fünf von sechs gezählten Läufen unter 100 ms bzw. nicht gemeldet); am Lernpfad liegt es nicht.
+
+### N9a.2 Ursachen (Spur, CDP-Zeitleiste und CPU-Profil, Messbau B′ = B mit der Schätzhöhe aus `4f1da4a5`)
+
+1. **Der Klick auf „Einheit offline speichern“ selbst:** React übernahm den Wechsel vom Knopf zum Ring noch im Klick
+   (Mikroaufgabe nach dem Ereignis: 76–85 ms bei CPU ×6, fast ganz `commitMutationEffects`, dazu `focusout` und erzwungener
+   Stil, weil der fokussierte Knopf das Dokument verlässt). Auch auf einer ruhigen Seite (3 s nach dem Öffnen, alle Häppchen
+   fertig) blieb der Klick bei 168–208 ms – das automatische Speichern läuft dagegen in `laden()` vor „bereit“ und hat keinen
+   Anteil.
+2. **Häppchen durch Bildlauf:** Playwright (wie ein Mensch) blättert zum Knopf und tippt Augenblicke später. Seit N9a löste
+   der Bildlauf die übrigen Stationen aus; Rendern in Zeitscheiben, dann eine Übernahme mit Stil und Layout (≈ 120 ms bei
+   CPU ×6), die in das Tippen fiel (Eingabeverzögerung bis 203 ms beim Aufklappen einer Stufe).
+3. **Fester Anteil je Tippen** (nicht behoben, ≈ 100–150 ms bei CPU ×6 auf ruhiger Seite): Berührungs- und Mausersatz-
+   Ereignisse laufen durch die Ereignisverteilung von React (`pointerover`, `pointerdown`, `mouseover`, … je 2–15 ms),
+   Trefferprüfung (`HitTest` 4–7 ms je Ereignis) und das Bild danach (Paint, Layerize). Ein Teil ist Werkzeug-Aufwand
+   (Playwright prüft das Ziel mit `elementsFromPoint` und eigenen Hörern).
+
+### N9a.3 Behebungen (Endstand C)
+
+| Commit | Änderung | Wirkung |
+|---|---|---|
+| `4f1da4a5` | „Einheit/Stufe offline speichern“: Der Klick zeichnet zuerst nur den gedrückten Knopf (`druck`); Ring, Meldung und Speichern folgen nach dem nächsten Bild (`nachDemBild`), zweites Tippen vorher startet nichts | Verarbeitung des Klicks 6–14 statt 32–132 ms; offline speichern 152/160 statt 216/232 ms |
+| `4f1da4a5` | Lernpfad-Häppchen nur noch nach Klick, Taste oder Ruhezeit (1,5 s), nicht mehr nach Bildlauf oder Rad; der Browser hält beim späteren Einfügen die Ansicht an ihrem Platz (Scroll Anchoring) | Stufe aufklappen 168/176 statt 216/224 ms |
+| `acc972ee` (B) | weitere Häppchen erst nach der ersten Eingabe bzw. Ruhezeit und dem nächsten Bild; Aufklappen als Übergang | Lernpfad öffnen 156 statt 320 ms (B); allein nicht genug (B: 232/216 ms) |
+
+Budgets (KERN §9, `lernapp-budget.mjs`, Messbau C): Lernpfad 160,3 KB gesamt (≤ 180), eigener Anteil 25,0 KB (≤ 30; N8 C:
+158,5 / 23,2 – „Stufe offline speichern“ und Kursstand); Spieler +54,5 KB, ungünstigste echte erste Aufgabe +58,4 KB (≤ 60);
+Start 149,5 KB, Hülle 9,7 KB. Alle Budgets eingehalten, unverändert gegenüber B.
+
+**Z-L07 (INP-Teil) nach N9a:** Lernpfad-Szenarien im Schritt erfüllt (offline speichern 152/160, Stufe aufklappen 168/176 ms);
+das Szenario „Lernpfad öffnen + offline speichern“ insgesamt einmal 208 ms (Antippen der noch hochfahrenden Startseite,
+N8.7 Nr. 1) und einmal 160 ms. Die Spieler-Szenarien (ohne Codeänderung) streuen zwischen den Durchgängen um ± 30 ms um die
+Grenze; Z-L07 bleibt wegen Lighthouse-Leistung (N8.3) und dieser Streuung **teilweise**.
 
 ## Stufe C, 26.10.2026, Leistung mit echten Inhalten (N8)
 
@@ -159,11 +212,10 @@ Offen (Vorschläge, nicht umgesetzt):
    CSP der Lern-App erlaubt ihn (`worker-src 'self'`); der Whisper-Worker liegt aber als statische Datei unter
    `/lern-app/modelle/sprechen/`, ein von Turbopack gebündelter Worker (`new Worker(new URL(…, import.meta.url))`) samt
    Zwischenspeicher im Service Worker (offline) ist im Projekt noch nicht erprobt. Alternative: Schemas erst bei Bedarf bauen.
-3. **„offline speichern“ 216 ms:** Das Werkzeug tippt, sobald die erste Station steht; die Eingabeverzögerung (54–135 ms)
-   stammt aus der Arbeit direkt nach dem ersten Zeichnen (weitere Häppchen, automatisches Speichern der aktuellen und nächsten
-   Einheit, Paketköpfe). Kleinere Häppchen halfen nicht (D). Vorschlag: automatisches Speichern und weitere Häppchen erst nach
-   Leerlauf (`requestIdleCallback` bzw. nach der ersten Eingabe); N9a fasst „offline speichern“ (Stufe speichern, Häppchen)
-   ohnehin an.
+3. **„offline speichern“ 216 ms** – *berichtigt in N9a (Abschnitt oben, N9a.2):* Das automatische Speichern der aktuellen
+   und nächsten Einheit hat keinen Anteil – es läuft in `laden()` vor „bereit“, also bevor das Werkzeug tippen kann. Die
+   Eingabeverzögerung (54–135 ms) stammte aus Häppchen, Übernahme und Layout nach dem ersten Zeichnen, die Verarbeitung aus dem
+   Wechsel zum Ring, den React noch im Klick übernahm. Behoben in N9a (`acc972ee`, `4f1da4a5`): offline speichern 152/160 ms.
 4. **Spieler ar (RTL):** INP 200 ms in C (Läufe 168/256/200), 168 ms in D bei gleichem Code – an der Grenze; Prüfen und Antwort
    wählen sind die längsten Schritte (Verarbeitung bis 132 ms).
 5. **`format.ts` ≈ 1,07 KB gz** statt „< 1 KB“ (PLAN §3.3, ADR 0037 Nr. 5): Grenze im Unit-Test auf 1,1 KB angehoben, weil die
