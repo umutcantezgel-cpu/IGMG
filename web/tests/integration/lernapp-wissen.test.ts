@@ -376,13 +376,23 @@ describe('Wissenskurs: Verzeichnis und Einheitenpaket nur mit zwei Freigaben', (
     expect(aufrufe.updateTag).toContain(tag);
     expect(await einheitenImVerzeichnis()).toEqual([]);
     expect((await einheitAbrufen(E, alt)).status).toBe(404);
-    // Rolle wieder vergeben → p2 zählt wieder, gleiche Adresse
+    // Rolle wieder vergeben: religioese_pruefung ist Schutzrolle (N2) → nur beantragt, p2 zählt noch nicht
     aufrufe.updateTag.length = 0;
-    expect(await benutzer.rollenSpeichern({}, formular({ id: p2, rollen: 'religioese_pruefung' }))).toEqual({ ok: true });
+    expect(await benutzer.rollenSpeichern({}, formular({ id: p2, rollen: 'religioese_pruefung' }))).toEqual({
+      ok: true,
+      beantragt: ['religioese_pruefung'],
+    });
+    expect(await einheitenImVerzeichnis()).toEqual([]);
+    // die Leitung bestätigt → p2 zählt wieder, Kurs-Tag erneuert, gleiche Adresse
+    const [antrag] = await db.select().from(schema.rollenAntrag).where(eq(schema.rollenAntrag.benutzerId, p2));
+    await angemeldetAls([{ rolle: 'leitung' }]);
+    await expect(benutzer.rollenAntragEntscheiden(formular({ id: antrag!.id, entscheidung: 'bestaetigen' }))).rejects.toThrow(
+      'NEXT_REDIRECT',
+    );
     expect(aufrufe.updateTag).toContain(tag);
     expect((await paket()).hash).toBe(alt);
     // andere Rollen ändern ohne religiöse Prüfung: kein neuer Bau
-    aufrufe.updateTag.length = 0;
+    await angemeldetAls([{ rolle: 'administration' }]);
     expect(await benutzer.rollenSpeichern({}, formular({ id: admin, rollen: ['administration', 'redaktion'] }))).toEqual({ ok: true });
     expect(aufrufe.updateTag).not.toContain(tag);
   });
