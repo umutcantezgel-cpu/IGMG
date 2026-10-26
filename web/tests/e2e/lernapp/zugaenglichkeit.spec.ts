@@ -228,8 +228,9 @@ test('ar Vorkurs de-aus-ar: schrift_latein mit Vorgabe (vor, falsch, richtig), n
     expect(a.typ).toBe('schrift_latein');
     await expect(form).toHaveAttribute('data-aufgabe', 'schrift_latein');
     const optionen = a.optionen!;
-    const radio = form.getByRole('radio', { name: optionen[falsch ? (a.richtig! + 1) % optionen.length : a.richtig!]!, exact: true });
-    await expect(radio).toBeAttached({ timeout: 20_000 });
+    // `has` sucht relativ zum Label: der innere Locator beginnt deshalb an der Seite, nicht am Formular
+    const radio = page.getByRole('radio', { name: optionen[falsch ? (a.richtig! + 1) % optionen.length : a.richtig!]!, exact: true });
+    await expect(form.locator(radio)).toBeAttached({ timeout: 20_000 });
     if (name) await pruefe(`${name} vor der Antwort`);
     await form.locator('label').filter({ has: radio }).click();
     await page.getByRole('button', { name: t.spieler.pruefen, exact: true }).click();
