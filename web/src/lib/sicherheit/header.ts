@@ -115,7 +115,8 @@ export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly B
  *   Proxy). Pfade mit Punkt erreichen den Proxy nicht und behalten deshalb die CSP der Lern-App (S-L1 N-2).
  * - Modelle (statisch unter `public/lern-app/modelle/`): ein Jahr unveränderlich, `nosniff`.
  * - Service Worker `/lern-app/sw.js`: immer neu prüfen (`no-cache`); `Service-Worker-Allowed` ist nicht nötig, weil der
- *   Scope `/lern-app/` dem Ordner der Datei entspricht.
+ *   Scope `/lern-app/` dem Ordner der Datei entspricht. Ebenso der Abmelde-Worker `/lern-app/sw-abmelden.js`, den der Proxy
+ *   bei „aus“ unter der Adresse `/lern-app/sw.js` ausliefert (S-L3 N-4).
  */
 export function lernAppHeaderRegeln(): { source: string; headers: { key: string; value: string }[] }[] {
   return [
@@ -138,6 +139,7 @@ export function lernAppHeaderRegeln(): { source: string; headers: { key: string;
       ],
     },
     { source: '/lern-app/sw.js', headers: [{ key: 'Cache-Control', value: 'no-cache' }] },
+    { source: '/lern-app/sw-abmelden.js', headers: [{ key: 'Cache-Control', value: 'no-cache' }] },
   ];
 }
 

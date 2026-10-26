@@ -484,19 +484,33 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
     }
     return null;
   };
+  // Einmal gruppiert statt je Einheit über alle Zeilen (Stufe C N5: mit A1–B1 ≈ 85.000 Übersetzungen; vorher lief
+  // `baueKandidaten` je Einheit und Richtung über alle, gemessen 7,3 s für drei Prüfsprachen, danach 2,3–3,0 s). Die
+  // Reihenfolge je Zieltext bleibt erhalten (bei doppelten gilt wie bisher die letzte).
   const zielJeEinheit = new Map<string, Zieltext[]>();
   for (const z of alle) {
     const e = zuEinheit(z.schluessel);
-    if (e) zielJeEinheit.set(e, [...(zielJeEinheit.get(e) ?? []), z]);
+    if (!e) continue;
+    const vorhanden = zielJeEinheit.get(e);
+    if (vorhanden) vorhanden.push(z);
+    else zielJeEinheit.set(e, [z]);
+  }
+  const uebersetzungJeZiel = new Map<string, UebersetzungZeile[]>();
+  for (const x of uebersetzungen) {
+    const id = x.lemmaId ?? x.satzId ?? '';
+    const vorhanden = uebersetzungJeZiel.get(id);
+    if (vorhanden) vorhanden.push(x);
+    else uebersetzungJeZiel.set(id, [x]);
   }
   const liste: WarteEintrag[] = [];
   for (const e of einheiten) {
     const ziel = zielJeEinheit.get(e.schluessel) ?? [];
     if (!ziel.length) continue;
+    const eigeneUebersetzungen = ziel.flatMap((z) => uebersetzungJeZiel.get(z.id) ?? []);
     for (const z of zieleVon(e.kurs as Sprache)) {
       const k = baueKandidaten(ziel, z.art, {
         ausgang: z.richtung ? zerlegeRichtung(z.richtung).ausgang : null,
-        uebersetzungen,
+        uebersetzungen: eigeneUebersetzungen,
         ...audio,
       });
       if (!k.length) continue;

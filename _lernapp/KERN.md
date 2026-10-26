@@ -178,7 +178,7 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
 
 | Schalter | Personendaten | Vorschau | Produktion | Sperre im Cockpit |
 |---|---|---|---|---|
-| `lernapp` | nein | an | an nach Abnahme (`IN_PRODUKTION_AN`) | – |
+| `lernapp` | nein | an | an nach Abnahme (`IN_PRODUKTION_AN`); fortgeschrieben: an seit 21.10.2026 (L3-E12b) | – |
 | `lernapp_ungeprueft` (Einheiten ohne bestandene Muttersprachler-Stichprobe, mit Hinweis) | nein | an | an (Plan §6 ML-02, O-1) | – |
 | `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07) | – |
 | `lernapp_meldungen` (anonym, Kategorien) | nein | an | an | – |
@@ -187,6 +187,12 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
 | `lernapp_rangliste` | ja | an | aus | `lernapp_gruppen` an, LM-10 |
 | `lernapp_statistik` (anonyme Telemetrie, Opt-in) | grenzwertig (IP) | an | aus | Entscheidung der DSB |
 | `push_lernapp` | ja | an | aus | wie `push` |
+
+*Fortschreibung 26.10.2026 (L3-E12b, nachgetragen nach Stufe C):* In der Produktion sind `lernapp`, `lernapp_ungeprueft`
+(mit Hinweis) und `lernapp_meldungen` seit dem 21.10.2026 an (Nutzerentscheidung, `a023cf1`); alle Schalter mit
+Personendaten bleiben aus. „Ausgeschaltet heißt 404“ gilt für Seiten und Routen; für statische Dateien unter `/lern-app/`
+gilt bis auf Weiteres die AUSNAHME S-L3 N-4 (`GO-LIVE.md`): Beim Abschalten über die Umgebung liefert der Proxy unter
+`/lern-app/sw.js` den Abmelde-Worker, Modelle und Symbole bleiben abrufbar.
 
 ## 7. Oberfläche, Rechts-nach-links, Schriften
 - **Layout:** `web/src/app/lern-app/[ui]/layout.tsx` setzt `<html lang dir>`; `ar` → `dir="rtl"`. Texte in

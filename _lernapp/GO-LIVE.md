@@ -1,7 +1,8 @@
 # GO-LIVE – Lern-App: Schalter je Funktion
 
-**Stand:** 21.10.2026 (Pakete L8-03 und L8-04). Die Lern-App ist in der Produktion **an** – ohne Personendaten, der Fortschritt
-bleibt auf dem Gerät (Entscheidung des Nutzers vom 21.10.2026, `ENTSCHEIDUNGEN.md` L3-E12a; Code `IN_PRODUKTION_AN`). Alle
+**Stand:** 21.10.2026 (Pakete L8-03 und L8-04), Nachtrag 26.10.2026 (Nacharbeit N5 nach Stufe C: L3-E12b, AUSNAHME N-4). Die
+Lern-App ist in der Produktion **an** – ohne Personendaten, der Fortschritt bleibt auf dem Gerät (Entscheidung des Nutzers vom
+21.10.2026, `ENTSCHEIDUNGEN.md` L3-E12b, Fortschreibung von L3-E12a; Code `IN_PRODUKTION_AN`). Alle
 Schalter mit Personendaten sind in der Produktion **aus**, bis Menschen sie freigeben (KERN 4.0 §6). Die Auflagen der
 Sicherheitsprüfung S-L3 (`berichte/s-l3.md`, 21.10.2026: 0 kritisch, 0 hoch, 1 × mittel latent, 4 × niedrig) stehen je Schalter
 in der Spalte „Voraussetzung“ und gesammelt im Abschnitt „Auflagen der Sicherheitsprüfung S-L3“.
@@ -26,8 +27,9 @@ Quellen dieser Liste (bei Widerspruch gilt der Code):
    `/verwaltung/startklar`, Recht `einstellung.bearbeiten`).
 3. **Standard:** sonst Entwicklung und Vorschau **an**, Produktion **aus** – außer den Schaltern in `IN_PRODUKTION_AN`.
 
-- **Ausgeschaltet heißt:** Seiten und Routen antworten mit 404, Links und Knöpfe verschwinden (ADR 0035). Ausnahme bis zur
-  Behebung von S-L3 N-4: statische Dateien unter `/lern-app/` (Modelle, `sw.js`, Symbole) bleiben abrufbar.
+- **Ausgeschaltet heißt:** Seiten und Routen antworten mit 404, Links und Knöpfe verschwinden (ADR 0035). AUSNAHME S-L3 N-4
+  (Abschnitt „Ausnahme N-4“): statische Dateien unter `/lern-app/` (Modelle, Symbole) bleiben abrufbar; unter `/lern-app/sw.js`
+  liefert der Proxy bei `FUNKTION_LERNAPP=aus` den Abmelde-Worker.
 - **Sperre:** Ein Schalter wirkt nur, wenn alle seine Voraussetzungen wirken. Das Cockpit meldet Schalter, die an sind, aber
   gesperrt bleiben.
 - **Auflagen S-L3:** Eine Auflage mit der Frist „vor dem Einschalten“ ist im Code noch **nicht** als Sperre hinterlegt. Wer
@@ -39,7 +41,7 @@ Quellen dieser Liste (bei Widerspruch gilt der Code):
 
 | Schalter | Personendaten | Stand Produktion | Wirkt nur mit | Voraussetzung vor dem Einschalten | Wer gibt frei |
 |---|---|---|---|---|---|
-| `lernapp` | nein (Fortschritt nur auf dem Gerät) | **an** (L3-E12a) | – | erledigt: Nutzerentscheidung 21.10.2026; zum Abschalten `FUNKTION_LERNAPP=aus`. **S-L3 N-4** bis zur Abnahme (L8-05) oder AUSNAHME mit Grund: Modelle, `sw.js` und Symbole unter `/lern-app/` bleiben bei „aus“ abrufbar und sind ungebremst | Nutzer bzw. Vorstand |
+| `lernapp` | nein (Fortschritt nur auf dem Gerät) | **an** (L3-E12b) | – | erledigt: Nutzerentscheidung 21.10.2026; zum Abschalten `FUNKTION_LERNAPP=aus` (dann Abmelde-Worker unter `/lern-app/sw.js`). **S-L3 N-4** als AUSNAHME mit Grund und Ersatz (26.10.2026, Abschnitt „Ausnahme N-4“): Modelle und Symbole unter `/lern-app/` bleiben bei „aus“ abrufbar und sind ungebremst | Nutzer bzw. Vorstand |
 | `lernapp_ungeprueft` | nein | **an** (O-1, ADR 0041 Nr. 8) | `lernapp` | Einheiten nach automatischer Prüfung und KI-Gegenprüfung zeigen den Hinweis „noch nicht von Muttersprachlern geprüft“; abgelehnte Einträge und Einträge mit `religionsbezug` ohne zwei Freigaben bleiben unsichtbar. S-L3: keine Auflage | Vorstand (LM-11; Standard ja) |
 | `lernapp_meldungen` | nein (anonym, nur Aufgabenschlüssel und Kategorie, ALTCHA) | **an**, wirkt aber erst nach G1 | `lernapp`; Datenbank und `ALTCHA_GEHEIMNIS` (`web/docs/GO-LIVE.md` G1) | **offen: G1.** Ohne Datenbank antwortet die Melde-Route mit 404, ohne `ALTCHA_GEHEIMNIS` mit 503 (`api/lernapp/meldung/route.ts`); die Produktion läuft noch ohne Datenbank (Beispielmodus). Danach Bearbeitung der Meldungen unter Verwaltung › Lern-App › Meldungen (braucht G2). S-L3: keine Auflage (Hinweis H-1: Körper als Strom mit Grenze lesen, Löschfrist offener Meldungen) | Technik (G1), dann Redaktion |
 | `lernapp_sprechen` | nein (Aufnahme bleibt im Arbeitsspeicher des Geräts) | aus | `lernapp` | Gerätetest Sprechen und Audioformat auf iPhone, Android-Mittelklasse und Laptop (LM-07, MN-19); Whisper-Modell und Ort bestätigt (LM-27). **S-L3 N-4** mitdenken: Mit dem Schalter laden mehr Geräte die Modelle (≈ 95 MB); Ratenregel oder Modell-Route vorher, Kosten beobachten (LM-15) | Technik nach Gerätetest |
@@ -76,7 +78,30 @@ hoch/kritisch“ ist erfüllt; die Auflagen binden die Schalter wie folgt. Stand
 | N-1 | niedrig | Audio-Studio (Sprecher-Vereinbarung), ebenso Rezitations-Werkstatt der Website | bis zur Abnahme (L8-05) oder AUSNAHME mit Grund; praktisch vor der ersten echten Vereinbarung | Vereinbarungen privat unter `lernapp/vereinbarungen/…` ohne Zeile in `medium`, Abruf nur mit `lernapp.audio.bearbeiten`, `private, no-store`, `Content-Disposition: attachment`; vorhandene Vereinbarungs-Medien umziehen |
 | N-2 | niedrig (latent) | `lernapp_sync` (und damit `lernapp_gruppen`, `lernapp_rangliste`) | vor dem Einschalten von `lernapp_sync` (setzt LM-08 voraus) | Erteilen und Widerrufen der Einwilligung `lernapp` mit Textversion in „Mein Bereich“ und in den Einstellungen der Lern-App; Widerruf löscht in einer Transaktion Profil, Zustimmung und Familie (Audit); Export um die Lern-App-Tabellen; Integrationstest „Widerruf → 0 Zeilen, nächster Abgleich 403“ |
 | N-3 | niedrig | `lernapp_gruppen` (Gruppenziel), `lernapp_rangliste` | bis zur Abnahme (L8-05) oder AUSNAHME; für `lernapp_rangliste` vor dem Einschalten | XP je Lerntag für Gruppe und Bestenliste kappen (z. B. ≤ 500 XP, ≤ 30 Lektionen), XP nur mit passendem Lektionsereignis zählen; Unit-Test der Kappung |
-| N-4 | niedrig | `lernapp` (an), `lernapp_sprechen` | bis zur Abnahme (L8-05) oder AUSNAHME mit Grund | Modelle über eine Route mit Schalterprüfung **oder** Ratenregel der Vercel-Firewall für `/lern-app/modelle/*` (Ausnahme in ADR 0035/0042 festhalten); beim Abschalten einen Abmelde-Worker als `sw.js` ausliefern |
+| N-4 | niedrig | `lernapp` (an), `lernapp_sprechen` | bis zur Abnahme (L8-05) oder AUSNAHME mit Grund – **AUSNAHME seit 26.10.2026** (Abschnitt „Ausnahme N-4“); für `lernapp_sprechen` Ratenregel vor dem Einschalten | Modelle über eine Route mit Schalterprüfung **oder** Ratenregel der Vercel-Firewall für `/lern-app/modelle/*` (Ausnahme in ADR 0035/0042 festhalten – **festgehalten** in ADR 0035, „Fortschreibung Lern-App 2“ Nr. 2); beim Abschalten einen Abmelde-Worker als `sw.js` ausliefern – **Abmelde-Worker umgesetzt** (N5) |
+
+### Ausnahme N-4 (26.10.2026)
+
+- **Befund:** Statische Dateien unter `/lern-app/` liefert Next vor jeder Route aus (`public/lern-app/`: Modelle ≈ 95 MB,
+  Symbole, `sw.js`). Bei `lernapp` aus bleiben sie mit 200 abrufbar; „ausgeschaltet heißt 404“ gilt dort nicht.
+- **Grund der Ausnahme:** `lernapp` ist nach der Nutzerentscheidung vom 21.10.2026 in der Produktion **an** (L3-E12b); die
+  Dateien sind ohnehin öffentlich gedacht und enthalten keine Personendaten und keine Inhalte außer Modellgewichten (Lizenz
+  ADR 0042), Programmcode und App-Symbolen. Die Modelle lädt nur die Sprechübung, und `lernapp_sprechen` ist in der Produktion
+  aus (LM-07).
+- **Ersatz:**
+  1. *Abmelde-Worker (umgesetzt, N5):* Bei `FUNKTION_LERNAPP=aus` in der Umgebung liefert der Proxy unter `/lern-app/sw.js`
+     die Datei `public/lern-app/sw-abmelden.js` (`web/src/proxy.ts`, Matcher mit Ausnahme für genau diese Datei). Geräte holen
+     sie bei der nächsten Update-Prüfung: Sie löscht die Vorräte `igmg-lernapp-*` außer den Modellen, meldet sich ab und lädt
+     offene Seiten der Lern-App neu; der Lernstand in IndexedDB bleibt. Tests: `tests/unit/lernapp/lernapp-sw-abmelden.test.ts`,
+     `tests/unit/lernapp/proxy.test.ts`. Am lokalen Produktionsbau geprüft (26.10.2026, `FUNKTION_LERNAPP=aus`):
+     `/lern-app/sw.js` liefert 200 mit dem Abmelde-Worker (`no-cache`, `application/javascript`), `/lern-app/de` 404,
+     `/lern-app/symbole/symbol-192.png` weiter 200. Abschalten nur über die Einstellung im Cockpit (ohne Umgebung) ersetzt den Worker
+     **nicht** – zum vollständigen Abschalten immer die Umgebung setzen (das Cockpit sagt es im Hinweis zum Schalter).
+  2. *Kosten beobachten (LM-15):* Datentransfer des Vercel-Projekts für `/lern-app/modelle/*` nach der Tarifentscheidung
+     (LM-15) monatlich ansehen (Vercel › Usage › Data Transfer bzw. Observability); bei auffälligen Abrufen eine Ratenregel der
+     Vercel-Firewall für `/lern-app/modelle/*` (z. B. 20 Anfragen je 10 min und IP) setzen.
+- **Bleibt offen:** Ratenregel oder Modell-Route mit Schalterprüfung **vor** dem Einschalten von `lernapp_sprechen` (dann
+  laden viele Geräte die Modelle); Symbole und Modelle antworten bei „aus“ weiter mit 200.
 
 Hinweise ohne Frist (bei Gelegenheit): H-1 Meldungen (Strom mit Grenze, Löschfrist), H-2 Last der Gruppenroute (Lasttest
 L8-02), H-3 Obergrenze der Vorräte auf dem Gerät, H-4 Sprecherin samt Aufnahmen entfernen, H-5 Gruppenziel nur bis gestern,
@@ -85,7 +110,7 @@ Administration im Handbuch Sprachprüfung (erledigt in L8-04) und im Audit-Beric
 
 ## Reihenfolge beim Freischalten (Vorschlag)
 
-1. `lernapp`, `lernapp_ungeprueft`, `lernapp_meldungen` – an (seit 21.10.2026). N-4 bis zur Abnahme. Ohne Datenbank
+1. `lernapp`, `lernapp_ungeprueft`, `lernapp_meldungen` – an (seit 21.10.2026, L3-E12b). N-4 als AUSNAHME (26.10.2026). Ohne Datenbank
    (Beispielmodus) zeigt die Lern-App nur die Inhalte, die beim Bau eingespielt wurden; „Fehler melden“ wirkt erst nach G1.
 2. G1 der Website (`web/docs/GO-LIVE.md`: Datenbank, Geheimnisse samt `ALTCHA_GEHEIMNIS`) und G2 (Verwaltungskonten) –
    danach kommen Meldungen an, und Sprachprüfung, religiöse Prüfung und Audio-Studio sind bedienbar.

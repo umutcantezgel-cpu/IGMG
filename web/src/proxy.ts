@@ -9,6 +9,10 @@ import { cspLernApp, cspOeffentlich, cspVerwaltung, istKontoPfad, istLernappVerw
 
 const sprachRouting = createMiddleware(routing);
 
+/** Service Worker der Lern-App und sein Ersatz bei „aus“ (beide in `public/lern-app/`). */
+const LERNAPP_SW = '/lern-app/sw.js';
+const LERNAPP_SW_ABMELDEN = '/lern-app/sw-abmelden.js';
+
 /**
  * Lern-App (ADR 0037 Nr. 1 und 3, Fortschreibung S1): eigener Bereich `/lern-app/[ui]` außerhalb von next-intl.
  * - `/lern-app` → 308 `/lern-app/de`; Links aus der Website `/(de|tr|en)/lern-app…` → 308 `/lern-app/(de|tr)…` in einem
@@ -54,6 +58,14 @@ function dynamischeKopfzeilen(antwort: NextResponse, csp: string): NextResponse 
  */
 export default function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+
+  // Service Worker der Lern-App (S-L3 N-4): Ist sie über die Umgebung aus, bekommen Geräte unter derselben Adresse den
+  // Abmelde-Worker (räumt die Vorräte, meldet sich ab); sonst die Datei aus public/. Nur diese Datei mit Punkt im Pfad
+  // erreicht den Proxy (Matcher unten).
+  if (pathname === LERNAPP_SW) {
+    if (umgebungsSchalter('lernapp', process.env) === false) return NextResponse.rewrite(new URL(LERNAPP_SW_ABMELDEN, request.url));
+    return NextResponse.next();
+  }
 
   // Lern-App vor allen übrigen Regeln: weder Sprachrouting noch Konto-Regeln (ADR 0037 Nr. 3)
   const lernApp = lernAppWeg(pathname);
@@ -113,5 +125,6 @@ export default function proxy(request: NextRequest) {
 export const config = {
   // Keine API-Routen, keine Next-Interna, keine Medien, keine Dateien mit Endung; keine Pakete, Audio-Bündel und Modelle
   // der Lern-App (unveränderliche Auslieferung ohne Proxy, sonst doppelter Fast Origin Transfer – ADR 0039 S5 Nr. 7).
-  matcher: ['/((?!api|_next|_vercel|medien|lern-app/(?:pakete|audio|modelle)(?:/|$)|.*\\..*).*)'],
+  // Ausnahme: der Service Worker der Lern-App (Abmelde-Worker bei „aus“, S-L3 N-4).
+  matcher: ['/((?!api|_next|_vercel|medien|lern-app/(?:pakete|audio|modelle)(?:/|$)|.*\\..*).*)', '/lern-app/sw.js'],
 };

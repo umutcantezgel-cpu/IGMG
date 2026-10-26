@@ -5,6 +5,7 @@ import pg from 'pg';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
 import pfad from '../../../inhalte/lernapp/koran/pfad.json';
+import { TAG } from '../../../src/lib/cache/tags';
 import { formatiere } from '../../../src/lib/lernapp/format';
 import { koranBedeutungHash } from '../../../src/lib/lernapp/paket/koran';
 import { erneuereCaches } from '../hilfen/rezitation';
@@ -17,12 +18,19 @@ import { ernsteBefunde } from './hilfen';
  *    „Bedeutung folgt“, keine Übungen, keine Wiedergabe und keinen Weg zur Wiederholung; axe ohne ernste Befunde.
  * 2. Mit zwei Freigaben (Restliste L6): Für die Wortformen der ersten Lektion legt der Test Bedeutungen in der türkischen
  *    Oberfläche an – nur Platzhalter in eckigen Klammern, keine Koran-Wortbedeutungen (KI-Regel 2) – und je zwei Prüfungen
- *    „ok“ zweier Personen mit der Rolle „religiöse Prüfung“ zum aktuellen Hash, direkt in der Datenbank; danach verfallen die
- *    Caches. Die Lektion ist spielbar (ohne Audio), alle Antworten richtig, Abschluss. Danach räumt der Test alles weg.
+ *    „ok“ zweier Personen mit der Rolle „religiöse Prüfung“ zum aktuellen Hash, direkt in der Datenbank; danach verfällt nur
+ *    der Cache des Koran-Kurses (`KORAN_CACHE`). Die Lektion ist spielbar (ohne Audio), alle Antworten richtig, Abschluss. Danach räumt der Test alles weg.
  *    Nur auf dem Desktop (Datenbank-Änderungen einmal je Lauf); die deutsche Oberfläche aus Test 1 bleibt unberührt.
  */
 
 test.use({ serviceWorkers: 'block' });
+
+/**
+ * Nur der Tag des Koran-Kurses, nicht alle Inhalts-Tags: Der Test läuft parallel zu anderen Lern-App-Tests. Verfiele auch
+ * `lernapp`, bauten die Kursverzeichnisse aller Richtungen kalt neu (je ≈ 10 s Rechenzeit), und Tests im anderen Worker
+ * überschritten ihre Wartezeiten (N5, Stufe C: gruppe.spec und lektion.spec direkt nach diesem Test rot).
+ */
+const KORAN_CACHE = [TAG.lernappKurs('koran')];
 test.describe.configure({ mode: 'serial' });
 
 test('Koran-Kurs ohne Freigaben zeigt „Bedeutung folgt“ und keine Übungen', async ({ page }) => {
@@ -122,7 +130,7 @@ test('Koran-Lektion mit zwei Freigaben je Bedeutung ist spielbar (Platzhalter, o
   const stellen = [...new Set(lektion.aufgaben.flatMap((a) => [a.wortform, ...a.ablenker]))];
   const angelegt = await zweiFreigabenAnlegen(stellen, 'tr');
   try {
-    await erneuereCaches(baseURL!);
+    await erneuereCaches(baseURL!, KORAN_CACHE);
     const t = tr.koranpfad;
     await page.goto('/lern-app/tr/koran');
     const e = page.locator(`details[data-einheit="${einheit.schluessel}"]`);
@@ -157,6 +165,6 @@ test('Koran-Lektion mit zwei Freigaben je Bedeutung ist spielbar (Platzhalter, o
     await expect(page.getByText(t.bedeutungFolgt)).toHaveCount(0);
   } finally {
     await wegraeumen(angelegt);
-    await erneuereCaches(baseURL!);
+    await erneuereCaches(baseURL!, KORAN_CACHE);
   }
 });

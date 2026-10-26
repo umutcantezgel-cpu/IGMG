@@ -118,6 +118,10 @@ test('Religiöse Prüfung: „unsicher“ zuerst, Fundstelle neben der Aussage, 
   page,
   browser,
 }) => {
+  // Zwei Konten mit Zwei-Faktor-Einrichtung, zwei axe-Prüfungen und rund zehn Seitenwechsel: allein (ohne parallele Last,
+  // --workers=1) dauert der Test schon 18–23 s (N5, drei Läufe); die 30 s Standardzeit rissen unter Last in zwei vollen Läufen
+  // (Stufe C e2e3, N5), ohne dass ein Schritt länger als 2,5 s brauchte (Spur). Deshalb wie die anderen Abläufe mit Konten 90 s.
+  test.setTimeout(90_000);
   const ids = await bausteineAnlegen();
   const adresse = `/verwaltung/lernapp/religioes/aussage-${ids.sicher}`;
 
