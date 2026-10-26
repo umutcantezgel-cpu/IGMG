@@ -4,7 +4,7 @@ import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest
 import { db as appDb, schema } from '@/lib/db';
 import { sha256Hex } from '@/lib/lernapp/paket/hash';
 import { PaketSchema, VerzeichnisSchema, type Paket, type Verzeichnis } from '@/lib/lernapp/paket/typen';
-import { verwaltungsUmgebung } from './hilfen/verwaltung';
+import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
 
 /**
  * Auslieferung des Wissenskurses gegen PGlite (Endabnahme Z-L02, ADR 0040 Nr. 5, KERN 4.0 §2.3, PLAN §6.7 Nr. 7):
@@ -21,6 +21,7 @@ const einheitRoute = await import('@/app/lern-app/pakete/[kurs]/[einheit]/[hash]
 const pakete = await import('@/server/queries/lernapp/pakete');
 const { lektionReligioesSichtbar } = await import('@/server/queries/lernapp/religioes');
 const { lernappTestWissen, TEST_WISSEN_EINHEIT, TEST_PRUEFKONTEN } = await import('../../drizzle/seeds/lernapp-test-wissen');
+const benutzer = await import('@/server/actions/benutzer');
 afterAll(() => client.close());
 afterEach(() => {
   delete process.env.FUNKTION_LERNAPP;
@@ -269,6 +270,123 @@ describe('Wissenskurs: Verzeichnis und Einheitenpaket nur mit zwei Freigaben', (
     expect((await paket()).hash).toBe(alt);
   });
 
+  it('Quizfrage mit einer Aussage aus einer anderen Einheit → diese Einheit weder im Verzeichnis noch als Paket', async () => {
+    // e02: Lektion, eigene Aussage und Quizfrage mit zwei Freigaben – die Quizfrage verweist aber auf s01 aus e01. Würde der
+    // Verweis aufgelöst, nennte das Verzeichnis (alle Einheiten) einen Hash, den die Einheitenroute (nur e02) nie liefert.
+    const E2 = 'islam.grund.e02';
+    const [abschnitt] = await db.select({ id: schema.lernappAbschnitt.id }).from(schema.lernappAbschnitt);
+    const [einheit] = await db
+      .insert(schema.lernappEinheit)
+      .values({
+        abschnittId: abschnitt!.id,
+        schluessel: E2,
+        reihenfolge: 2,
+        thema: { de: '[Thema 2 – Platzhalter]' },
+        inhaltHash: h('b'),
+        verfasstVon: 'ki:test',
+        status: 'automatisch_geprueft',
+      })
+      .returning({ id: schema.lernappEinheit.id });
+    const [lektion] = await db
+      .insert(schema.lernappLektion)
+      .values({
+        einheitId: einheit!.id,
+        schluessel: `${E2}.l01`,
+        reihenfolge: 1,
+        ziel: { de: '[Lektion 2 – Platzhalter]' },
+        inhaltHash: h('c'),
+        verfasstVon: 'ki:test',
+        status: 'automatisch_geprueft',
+      })
+      .returning({ id: schema.lernappLektion.id });
+    const [quelle] = await db.select({ id: schema.lernappQuelle.id }).from(schema.lernappQuelle);
+    const [aussage] = await db
+      .insert(schema.lernappAussage)
+      .values({
+        lektionId: lektion!.id,
+        schluessel: `${E2}.l01.s01`,
+        text: '[Aussage – Platzhalter]',
+        reihenfolge: 1,
+        inhaltHash: h('d'),
+        verfasstVon: 'ki:test',
+      })
+      .returning({ id: schema.lernappAussage.id });
+    const stelle = { kitab: '[Kitab]', seite: '20' };
+    const [beleg] = await db
+      .insert(schema.lernappBeleg)
+      .values({
+        aussageId: aussage!.id,
+        quelleId: quelle!.id,
+        passage: 'quduri.ms0043',
+        stelle,
+        inhaltHash: h('e'),
+        verfasstVon: 'ki:test',
+      })
+      .returning({ id: schema.lernappBeleg.id });
+    const [aufgabe] = await db
+      .insert(schema.lernappAufgabe)
+      .values({
+        lektionId: lektion!.id,
+        schluessel: `${E2}.l01.q01`,
+        typ: 'wahr_falsch',
+        daten: { behauptung: '[Behauptung – Platzhalter]', richtig: true, begruendung: '[Begründung – Platzhalter]' },
+        reihenfolge: 1,
+        aussageId: ids.s01,
+        inhaltHash: h('f'),
+        verfasstVon: 'ki:test',
+      })
+      .returning({ id: schema.lernappAufgabe.id });
+    for (const wer of [p1, p2])
+      await db.insert(schema.lernappPruefung).values(
+        [
+          { inhaltTyp: 'lektion' as const, inhaltId: lektion!.id, inhaltHash: h('c'), belegeGeprueft: [] },
+          {
+            inhaltTyp: 'aussage' as const,
+            inhaltId: aussage!.id,
+            inhaltHash: h('d'),
+            belegeGeprueft: [{ belegId: beleg!.id, inhaltHash: h('e') }],
+          },
+          { inhaltTyp: 'aufgabe' as const, inhaltId: aufgabe!.id, inhaltHash: h('f'), belegeGeprueft: [] },
+        ].map((x) => ({ ...x, art: 'religioes' as const, pruefendeId: wer, urteil: 'ok' as const, am: new Date('2026-10-22T12:00:00Z') })),
+      );
+    expect(await einheitenImVerzeichnis()).toEqual([E]);
+    expect((await pakete.baueKurs('islam', true)).map((r) => r.paket.einheit.schluessel)).toEqual([E]);
+    expect((await pakete.baueKurs('islam', true, E2)).length).toBe(0);
+    // mit einer eigenen Aussage derselben Einheit wird sie sichtbar – Verzeichnis und Route liefern denselben Hash
+    await db.update(schema.lernappAufgabe).set({ aussageId: aussage!.id }).where(eq(schema.lernappAufgabe.id, aufgabe!.id));
+    expect(await einheitenImVerzeichnis()).toEqual([E, E2]);
+    await paket(E2);
+    await db.delete(schema.lernappEinheit).where(eq(schema.lernappEinheit.id, einheit!.id));
+    expect(await einheitenImVerzeichnis()).toEqual([E]);
+  });
+
+  it('Rolle religioese_pruefung entzogen oder Konto gelöscht → Lektion sofort unsichtbar (Kurs-Tag erneuert)', async () => {
+    const tag = 'lernapp-kurs-islam';
+    const { hash: alt } = await paket();
+    // dritte Prüferin gibt alles frei; dann wird p2 die Rolle entzogen (vor dem Start der Schutzrollen: sofort)
+    const p3 = await person('religioese_pruefung');
+    await freigeben(p3, new Date('2026-10-22T12:00:00Z'));
+    await angemeldetAls([{ rolle: 'administration' }]);
+    expect(await benutzer.rollenSpeichern({}, formular({ id: p2, rollen: 'redaktion' }))).toEqual({ ok: true });
+    expect(aufrufe.updateTag).toContain(tag);
+    expect(await einheitenImVerzeichnis()).toEqual([E]);
+    // Konto p3 gelöscht → nur noch p1 zählt
+    aufrufe.updateTag.length = 0;
+    await expect(benutzer.kontoLoeschen(formular({ id: p3 }))).rejects.toThrow('NEXT_REDIRECT:/verwaltung/benutzer?meldung=geloescht');
+    expect(aufrufe.updateTag).toContain(tag);
+    expect(await einheitenImVerzeichnis()).toEqual([]);
+    expect((await einheitAbrufen(E, alt)).status).toBe(404);
+    // Rolle wieder vergeben → p2 zählt wieder, gleiche Adresse
+    aufrufe.updateTag.length = 0;
+    expect(await benutzer.rollenSpeichern({}, formular({ id: p2, rollen: 'religioese_pruefung' }))).toEqual({ ok: true });
+    expect(aufrufe.updateTag).toContain(tag);
+    expect((await paket()).hash).toBe(alt);
+    // andere Rollen ändern ohne religiöse Prüfung: kein neuer Bau
+    aufrufe.updateTag.length = 0;
+    expect(await benutzer.rollenSpeichern({}, formular({ id: admin, rollen: ['administration', 'redaktion'] }))).toEqual({ ok: true });
+    expect(aufrufe.updateTag).not.toContain(tag);
+  });
+
   it('Zurückziehen (Status gesperrt) und Schalter lernapp aus → nicht ausgeliefert', async () => {
     const { hash: alt } = await paket();
     await db.update(schema.lernappAufgabe).set({ status: 'gesperrt' }).where(eq(schema.lernappAufgabe.id, ids.q02));
@@ -297,7 +415,12 @@ describe('Testeinheit aus dem Seed (Vorführpfad Station 6)', () => {
     expect(erster.paket.lektionen.map((l) => l.schluessel)).toEqual([`${TEST_WISSEN_EINHEIT}.l01`]);
     expect(erster.paket.lektionen[0]!.aufgaben.map((a) => a.typ)).toEqual(['wahr_falsch', 'zuordnen', 'reihenfolge', 'fallfrage']);
     expect(erster.paket.wissen?.[`${TEST_WISSEN_EINHEIT}.l01`]).toMatchObject({ geprueftAm: '2026-10-23', kinderGeeignet: true });
-    expect(erster.paket.wissen?.[`${TEST_WISSEN_EINHEIT}.l01`]?.aussagen).toHaveLength(3);
+    expect(erster.paket.wissen?.[`${TEST_WISSEN_EINHEIT}.l01`]?.aussagen.map((a) => a.strittig ?? false)).toEqual([false, true, false]);
+    // Zuordnen und Reihenfolge mit ihrer inhaltlichen Frage; die Quizfragen der strittigen Aussage s02 tragen die Kennzeichnung
+    const [, zuordnen, reihenfolge, fallfrage] = erster.paket.lektionen[0]!.aufgaben;
+    expect(zuordnen).toMatchObject({ frage: '[Ordne zu – Platzhalter]', strittig: true });
+    expect(reihenfolge).toMatchObject({ frage: '[Ordne – Platzhalter]', strittig: true });
+    expect(fallfrage).not.toHaveProperty('strittig');
     for (const k of TEST_PRUEFKONTEN) expect(erster.text).not.toContain(k);
     // zweiter Lauf: dieselbe Auslieferung
     await lernappTestWissen(appDb, am);

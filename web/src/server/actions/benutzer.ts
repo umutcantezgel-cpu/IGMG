@@ -15,6 +15,7 @@ import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { mitAdministrationsSchutz } from '@/lib/rechte/administration';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { hatGruppenzugang } from '@/lib/konto/einladung';
+import { religioesePruefendeGeaendert } from '@/lib/lernapp/veroeffentlichen';
 import { entscheideBezugEnde, entscheideEinladung } from '@/lib/konto/eltern-freigabe';
 import {
   ENTZUG_GESCHUETZT,
@@ -253,6 +254,10 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
     );
   });
   if (!gespeichert) return { fehler: 'letzteAdministration', werte: roh };
+  // Religiöse Prüfung neu wirksam oder sofort entzogen: religiös geprüfte Lern-App-Inhalte neu bauen (ein beantragter Entzug
+  // wirkt erst mit der Bestätigung, `rollenAntragEntscheiden`)
+  if ((!hat(konto.rollen, 'religioese_pruefung') && hat(neu, 'religioese_pruefung')) || entzogen.entzogen.includes('religioese_pruefung'))
+    await religioesePruefendeGeaendert();
   after(() => versendeOffeneMails().catch(() => undefined));
   refresh();
   return {
@@ -297,8 +302,14 @@ export async function rollenAntragEntscheiden(fd: FormData): Promise<void> {
     fehler = await entscheideBezugEnde(a, p.data.id, p.data.konto, bestaetigen);
     erfolg = bestaetigen ? 'bezugBeendet' : 'bezugAbgelehnt';
   } else {
+    const [antrag] = await db
+      .select({ rolle: schema.rollenAntrag.rolle })
+      .from(schema.rollenAntrag)
+      .where(eq(schema.rollenAntrag.id, p.data.id));
     fehler = await entscheideAntrag(a, p.data.id, bestaetigen);
     erfolg = bestaetigen ? 'bestaetigt' : 'abgelehnt';
+    // bestätigter Entzug der religiösen Prüfung: religiös geprüfte Lern-App-Inhalte neu bauen
+    if (!fehler && bestaetigen && antrag?.rolle === 'religioese_pruefung') await religioesePruefendeGeaendert();
   }
   if (fehler === 'keinRecht') throw new KeinRecht();
   after(() => versendeOffeneMails().catch(() => undefined));
@@ -385,6 +396,8 @@ export async function kontoLoeschen(fd: FormData): Promise<void> {
     throw e;
   }
   if (!geloescht) redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
+  // Konto mit religiöser Prüfung gelöscht (vor dem Start der Schutzrollen möglich): seine Freigaben zählen nicht mehr
+  if (hat(konto.rollen, 'religioese_pruefung')) await religioesePruefendeGeaendert();
   redirect('/verwaltung/benutzer?meldung=geloescht');
 }
 

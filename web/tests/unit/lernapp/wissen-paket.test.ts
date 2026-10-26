@@ -80,9 +80,11 @@ describe('wissensAufgabe: Quizfrage der Datenbank → Aufgabe des Spielers mit Q
       richtig: 1,
       quelle: QUELLE,
     });
+    // die inhaltliche `anweisung` der Inhaltsdatei kommt als `frage` an (Überschrift bleibt „Ordne“/„Ordne zu“)
     expect(k('reihenfolge', { anweisung: '[x]', schritte: ['[1]', '[2]', '[3]'] })).toMatchObject({
       typ: 'reihenfolge',
       anweisung: 'ordne',
+      frage: '[x]',
       schritte: ['[1]', '[2]', '[3]'],
     });
     expect(
@@ -97,6 +99,7 @@ describe('wissensAufgabe: Quizfrage der Datenbank → Aufgabe des Spielers mit Q
     ).toMatchObject({
       typ: 'zuordnen',
       anweisung: 'ordneZu',
+      frage: '[x]',
       kategorien: ['[K1]', '[K2]'],
       eintraege: [
         { text: '[a]', kategorie: 0 },
@@ -120,6 +123,17 @@ describe('wissensAufgabe: Quizfrage der Datenbank → Aufgabe des Spielers mit Q
         paare: [
           { links: '[a]', rechts: '[K]' },
           { links: '[b]', rechts: '[K]' },
+        ],
+      }),
+    ).toBeNull();
+    // ohne inhaltliche Frage ist eine Zuordnung bzw. Reihenfolge nicht lösbar
+    expect(k('reihenfolge', { schritte: ['[1]', '[2]'] })).toBeNull();
+    expect(k('reihenfolge', { anweisung: '  ', schritte: ['[1]', '[2]'] })).toBeNull();
+    expect(
+      k('zuordnen', {
+        paare: [
+          { links: '[a]', rechts: '[K1]' },
+          { links: '[b]', rechts: '[K2]' },
         ],
       }),
     ).toBeNull();
@@ -170,6 +184,19 @@ describe('baueWissensEinheit: Paket nur mit vollständig freigegebenen Lektionen
     const zwei = baueWissensEinheit(einheit([lektion(), lektion({ schluessel: 'islam.grund.e01.l02', freigabe: mit(ZWEI.slice(0, 1)) })]));
     expect(zwei?.paket.lektionen.map((x) => x.schluessel)).toEqual(['islam.grund.e01.l01']);
   });
+
+  it('Prüfvermerk außerhalb des Paketformats (Quellenzeile > 1.200, Text > 800 Zeichen) → Lektion fehlt, kein kaputtes Paket', () => {
+    const l = lektion();
+    // Aussage ohne Quizfrage: nur der Vermerk trägt ihre Quellenzeile
+    const lang = { ...l.aussagen[0]!, schluessel: 'islam.grund.e01.l01.s02', quelle: 'x'.repeat(1201) };
+    expect(baueWissensEinheit(einheit([{ ...l, aussagen: [...l.aussagen, lang] }]))).toBeNull();
+    const langerText = { ...l.aussagen[0]!, schluessel: 'islam.grund.e01.l01.s02', text: 'x'.repeat(801) };
+    expect(baueWissensEinheit(einheit([{ ...l, aussagen: [...l.aussagen, langerText] }]))).toBeNull();
+    // daneben bleibt eine gültige Lektion
+    const r = baueWissensEinheit(einheit([{ ...l, aussagen: [...l.aussagen, lang] }, lektion({ schluessel: 'islam.grund.e01.l02' })]));
+    expect(r?.paket.lektionen.map((x) => x.schluessel)).toEqual(['islam.grund.e01.l02']);
+    expect(PaketSchema.safeParse(JSON.parse(r!.json)).success).toBe(true);
+  });
 });
 
 describe('PaketSchema: Wissenskurs nur auf Deutsch, mit Prüfvermerk je Lektion, ohne Einträge und Audio', () => {
@@ -217,9 +244,18 @@ describe('Lernpfad: Prüfvermerk je Lektion aus dem Paket', () => {
       ],
     };
     const lektionen = (p: typeof r.paket) => abschnitte(v, new Set(), new Map([['islam.grund.e01', p]]))[0]!.stationen[0]!.lektionen;
-    expect(lektionen(r.paket)?.[0]?.vermerk).toEqual({ geprueftAm: '2026-10-21', kinderGeeignet: false });
-    const kaputt = { ...r.paket, wissen: { 'islam.grund.e01.l01': { ...r.paket.wissen!['islam.grund.e01.l01']!, geprueftAm: 'gestern' } } };
+    // Prüfvermerk mit allen Aussagen und ihrer Quellenzeile (KERN 4.0 §2.3)
+    const imPfad = { schluessel: 'islam.grund.e01.l01.s01', text: '[Aussage]', quelle: QUELLE };
+    expect(lektionen(r.paket)?.[0]?.vermerk).toEqual({ geprueftAm: '2026-10-21', kinderGeeignet: false, aussagen: [imPfad] });
+    const vermerk = r.paket.wissen!['islam.grund.e01.l01']!;
+    const kaputt = { ...r.paket, wissen: { 'islam.grund.e01.l01': { ...vermerk, geprueftAm: 'gestern' } } };
     expect(lektionen(kaputt)?.[0]?.vermerk).toBeUndefined();
+    // Kopf aus dem Vorrat (nicht voll geprüft): Aussagen ohne Text oder Quelle fallen weg, der Vermerk bleibt
+    const luecken = {
+      ...r.paket,
+      wissen: { 'islam.grund.e01.l01': { ...vermerk, aussagen: [imPfad, { schluessel: 'x', text: '' }, null] } },
+    };
+    expect(lektionen(luecken as never)?.[0]?.vermerk?.aussagen).toEqual([imPfad]);
 
     // strittige Aussage: Paket trägt `strittig` an Aussage und Quizfrage, der Lernpfad weist die Lektion aus
     const l = lektion();
@@ -229,6 +265,11 @@ describe('Lernpfad: Prüfvermerk je Lektion aus dem Paket', () => {
     expect(s.hash).not.toBe(r.hash);
     expect(s.paket.wissen!['islam.grund.e01.l01']!.aussagen[0]).toMatchObject({ strittig: true });
     expect(s.paket.lektionen[0]!.aufgaben[0]).toMatchObject({ strittig: true });
-    expect(lektionen(s.paket)?.[0]?.vermerk).toEqual({ geprueftAm: '2026-10-21', kinderGeeignet: false, strittig: true });
+    expect(lektionen(s.paket)?.[0]?.vermerk).toEqual({
+      geprueftAm: '2026-10-21',
+      kinderGeeignet: false,
+      strittig: true,
+      aussagen: [{ schluessel: 'islam.grund.e01.l01.s01', text: '[Aussage]', quelle: QUELLE, strittig: true }],
+    });
   });
 });

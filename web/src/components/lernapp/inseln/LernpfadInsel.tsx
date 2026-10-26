@@ -35,6 +35,12 @@ export type LernpfadTexte = OfflineTexte & {
   fuerKinder: string;
   /** Wissenskurs: Lektion mit einer Aussage zu einem strittigen Thema (ADR 0040 Nr. 4) */
   strittig: string;
+  /** Wissenskurs: aufklappbarer Inhalt der Lektion „Inhalt der Lektion ({anzahl} Aussagen)“ */
+  inhalt: string;
+  /** Wissenskurs: Beschriftung der Quellenzeile je Aussage */
+  quelle: string;
+  /** Wissenskurs: Kennzeichnung einer Aussage zu einem strittigen Thema */
+  strittigesThema: string;
 };
 
 /** Texte zu abgeschlossenen Stufen und Lektionsarten (Namensraum `ansichten.stufen`, L4-03). */
@@ -236,6 +242,31 @@ export function LernpfadInsel({
                                   {l.vermerk.kinderGeeignet ? <> · {texte.fuerKinder}</> : null}
                                   {l.vermerk.strittig ? <> · {texte.strittig}</> : null}
                                 </p>
+                              ) : null}
+                              {l.vermerk?.aussagen.length ? (
+                                // Wissenskurs: alle Aussagen der Lektion mit Quellenzeile, auch die ohne Quizfrage (KERN 4.0 §2.3)
+                                <details data-lektionsinhalt={l.schluessel} className="ps-7 text-16">
+                                  <summary className="inline-flex min-h-11 cursor-pointer items-center gap-2 font-bold">
+                                    <ChevronDown aria-hidden className="size-5 shrink-0" />
+                                    {formatiere(texte.inhalt, { anzahl: l.vermerk.aussagen.length }, ui, ziffern)}
+                                  </summary>
+                                  <ul className="flex flex-col gap-3 pb-2">
+                                    {l.vermerk.aussagen.map((x) => (
+                                      <li key={x.schluessel} className="flex flex-col gap-1">
+                                        <p lang="de" dir="ltr" className="text-18">
+                                          {x.text}
+                                        </p>
+                                        <p className="text-tinte-2">
+                                          {texte.quelle}:{' '}
+                                          <bdi lang="de" dir="ltr">
+                                            {x.quelle}
+                                          </bdi>
+                                        </p>
+                                        {x.strittig ? <p className="font-bold">{texte.strittigesThema}</p> : null}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </details>
                               ) : null}
                             </li>
                           ))}

@@ -35,16 +35,47 @@ export function themaVon(
   return null;
 }
 
-/** Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“, enthält ein strittiges Thema). */
-export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'> & { strittig?: true };
+/** Aussage einer Lektion des Wissenskurses im Lernpfad: Text und Quellenzeile (Inhalt Deutsch), Kennzeichnung „strittig“. */
+export type VermerkAussage = { schluessel: string; text: string; quelle: string; strittig?: true };
 
-/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`). */
+/**
+ * Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“, enthält ein strittiges Thema) und
+ * ihre Aussagen mit Quellenzeile – auch die ohne Quizfrage (KERN 4.0 §2.3 „Quellenzeile je Aussage“).
+ */
+export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'> & {
+  strittig?: true;
+  aussagen: readonly VermerkAussage[];
+};
+
+/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`, dort nicht voll geprüft). */
 export type PaketInhalt = {
   lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[];
   tipps: readonly unknown[];
-  /** nur Wissenskurs: Prüfvermerk je Lektion (mit den Aussagen, soweit „strittig“ gebraucht wird) */
-  wissen?: Readonly<Record<string, LektionsVermerk & { aussagen?: readonly { strittig?: boolean }[] }>>;
+  /** nur Wissenskurs: Prüfvermerk je Lektion mit den Aussagen */
+  wissen?: Readonly<Record<string, { geprueftAm?: unknown; kinderGeeignet?: unknown; aussagen?: unknown }>>;
 };
+
+const istText = (x: unknown): x is string => typeof x === 'string' && x.length > 0;
+
+/** Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft); Aussagen ohne Text oder Quelle fallen weg. */
+function vermerkVon(roh: NonNullable<PaketInhalt['wissen']>[string] | undefined): LektionsVermerk | null {
+  if (!roh || typeof roh.geprueftAm !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(roh.geprueftAm)) return null;
+  if (typeof roh.kinderGeeignet !== 'boolean') return null;
+  const aussagen: VermerkAussage[] = (Array.isArray(roh.aussagen) ? (roh.aussagen as unknown[]) : []).flatMap((a) => {
+    if (typeof a !== 'object' || a === null) return [];
+    const { schluessel, text, quelle, strittig } = a as Record<string, unknown>;
+    return istText(schluessel) && istText(text) && istText(quelle)
+      ? [{ schluessel, text, quelle, ...(strittig === true ? { strittig: true as const } : {}) }]
+      : [];
+  });
+  // „strittig“, wenn eine Aussage der Lektion zu einem strittigen Thema gehört (ADR 0040 Nr. 4)
+  return {
+    geprueftAm: roh.geprueftAm,
+    kinderGeeignet: roh.kinderGeeignet,
+    ...(aussagen.some((a) => a.strittig) ? { strittig: true as const } : {}),
+    aussagen,
+  };
+}
 
 export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean; vermerk?: LektionsVermerk };
 
@@ -73,25 +104,13 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
     const paket = pakete.get(einheit.schluessel);
     const lektionen = paket
       ? paket.lektionen.map((l) => {
-          // Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft); „strittig“, wenn eine Aussage
-          // der Lektion zu einem strittigen Thema gehört (ADR 0040 Nr. 4)
-          const roh = paket.wissen?.[l.schluessel];
-          const gueltig = roh && /^\d{4}-\d{2}-\d{2}$/.test(String(roh.geprueftAm)) && typeof roh.kinderGeeignet === 'boolean';
-          const strittig = gueltig && Array.isArray(roh.aussagen) && roh.aussagen.some((a) => a?.strittig === true);
+          const vermerk = vermerkVon(paket.wissen?.[l.schluessel]);
           return {
             schluessel: l.schluessel,
             art: l.art,
             ...(l.titel ? { titel: l.titel } : {}),
             erledigt: erledigt.has(l.schluessel),
-            ...(gueltig
-              ? {
-                  vermerk: {
-                    geprueftAm: roh.geprueftAm,
-                    kinderGeeignet: roh.kinderGeeignet,
-                    ...(strittig ? { strittig: true as const } : {}),
-                  },
-                }
-              : {}),
+            ...(vermerk ? { vermerk } : {}),
           };
         })
       : null;

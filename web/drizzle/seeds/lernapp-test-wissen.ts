@@ -12,6 +12,9 @@
 //   jeder Beleg „am Original geprüft“ bestätigt. Verfasst ist alles vom Testkurs (`test:…`), nie von einem Prüfkonto.
 // - Gegenprobe (Station 6): Die Aussage `islam.grund.test.l02.s01` hat nur EINE Freigabe – ihre Lektion `l02` erscheint
 //   nirgends.
+// - Kennzeichnung (KERN 4.0 §2.3, ADR 0040 Nr. 4): Die Aussage `l01.s02` ist als strittig markiert (Platzhalter, kein
+//   strittiges Thema) – Lernpfad „Enthält strittige Themen“, nach ihren Quizfragen „Strittiges Thema“. Zuordnen und
+//   Reihenfolge tragen eine inhaltliche Frage (Feld `anweisung` wie in den Inhaltsdateien), die im Spieler ankommt.
 // Idempotent: Die Testeinheit (samt Lektionen, Aussagen, Belegen, Quizfragen) und die Prüfungen der Prüfkonten werden bei
 // jedem Lauf neu angelegt.
 import { eq, inArray } from 'drizzle-orm';
@@ -26,7 +29,7 @@ const VERFASST = 'test:lernapp-testkurs';
 const QUELLE_KURZ = 'test_quelle';
 const e = TEST_WISSEN_EINHEIT;
 
-type Aussage = { schluessel: string; text: string; freigaben: 0 | 1 | 2 };
+type Aussage = { schluessel: string; text: string; freigaben: 0 | 1 | 2; strittig?: true };
 type Aufgabe = { schluessel: string; typ: string; aussage: string; daten: Record<string, unknown> };
 type Lektion = { schluessel: string; titel: string; kinderGeeignet: boolean; aussagen: Aussage[]; aufgaben: Aufgabe[] };
 
@@ -40,7 +43,8 @@ export const TEST_WISSEN: { thema: string; lektionen: Lektion[] } = {
       kinderGeeignet: true,
       aussagen: [
         { schluessel: `${e}.l01.s01`, text: '[Testaussage eins – Platzhalter, kein Lehrinhalt]', freigaben: 2 },
-        { schluessel: `${e}.l01.s02`, text: '[Testaussage zwei – Platzhalter, kein Lehrinhalt]', freigaben: 2 },
+        // als strittig markiert: Platzhalter für die Kennzeichnung, kein strittiges Thema
+        { schluessel: `${e}.l01.s02`, text: '[Testaussage zwei – Platzhalter, kein Lehrinhalt]', freigaben: 2, strittig: true },
         // ohne Quizfrage: zählt trotzdem zur Lektion (alle Bausteine, KERN 4.0 §2.3)
         { schluessel: `${e}.l01.s03`, text: '[Testaussage drei – Platzhalter, kein Lehrinhalt]', freigaben: 2 },
       ],
@@ -189,13 +193,15 @@ export async function lernappTestWissen(db: Datenbank, jetzt = new Date()): Prom
       freigeben('lektion', lektion!.id, lHash, 2);
       const aussageId = new Map<string, string>();
       for (const [ai, a] of l.aussagen.entries()) {
-        const aHash = inhaltHash({ schluessel: a.schluessel, text: a.text });
+        // Hash über alle angezeigten Felder, auch die Kennzeichnung „strittig“
+        const aHash = inhaltHash({ schluessel: a.schluessel, text: a.text, ...(a.strittig ? { strittig: true } : {}) });
         const [zeile] = await tx
           .insert(schema.lernappAussage)
           .values({
             lektionId: lektion!.id,
             schluessel: a.schluessel,
             text: a.text,
+            strittig: a.strittig ?? false,
             reihenfolge: ai + 1,
             inhaltHash: aHash,
             verfasstVon: VERFASST,
