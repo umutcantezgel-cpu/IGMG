@@ -1,0 +1,17 @@
+# Laufzeit-Abhaengigkeiten von camel-tools fuer die Wurzel-Vorschlaege (camel_vorschlag.py, L6-06) - nur lokal, nie im Bau.
+# Genau die Pakete, die der Morphologie-Analysator mit der Datenbank calima-msa-r13 braucht (camel-tools selbst ohne seine
+# Abhaengigkeiten aus requirements-camel.txt); emoji laedt camel_tools.utils.charsets.
+# Kompiliert mit: uv pip compile requirements.in --generate-hashes --python-version 3.13 \
+#   --exclude-newer 2026-10-07T00:00:00Z -o requirements.txt   (Mindestreife 14 Tage, L0-E10; Aufnahme 21.10.2026)
+cachetools
+dill
+docopt
+emoji
+future
+muddler
+pyrsistent
+regex
+requests
+six
+tabulate
+tqdm

@@ -25,7 +25,8 @@ zur Laufzeit aus `web/daten/tanzil/quran-uthmani.xml` und stehen nur im Ausgabeo
 - **Tanzil** (Uthmani 1.1, CC BY 3.0 mit Hinweispflicht): gepinnt in `web/daten/tanzil/`, unverändert gelesen.
 - **CAMeL Tools** 1.6.0 (MIT), nur mit der Datenbank `calima-msa-r13` aus dem Paket `morphology-db-msa-r13` (GPL v2, nur als
   lokales Werkzeug); **nie** `morphology-db-msa-s31` (LDC). Einrichtung ohne die schweren Abhängigkeiten (`--no-deps`, dann
-  nur die für die Morphologie nötigen Pakete), Daten unter `CAMELTOOLS_DATA` im Scratchpad.
+  nur die für die Morphologie nötigen Pakete), alle mit Fassung und SHA-256 (`requirements-camel.txt`, `requirements.txt`,
+  `pip install --require-hashes`, Mindestreife 14 Tage), Daten unter `CAMELTOOLS_DATA` im Scratchpad.
 - **Wiktionary** über kaikki.org (en-Ausgabe, CC BY-SA 4.0): Wurzel aus `etymology_templates` (`ar-root`); keine Beispiele,
   keine Glossen übernommen.
 
