@@ -35,7 +35,7 @@ test('Stufe aufklappen per Tastatur: alle Stationen, Knöpfe erreichbar, axe', a
     ).toBeVisible();
 
   // Summary per Tastatur: Name mit Stufe und Handlung; vom Anfang des Inhalts (`main`, nach einem Klick auf die Überschrift der
-  // Stufe) per Tab durch die Stationen von A1 und „A2: ganze Stufe offline speichern“
+  // Stufe) per Tab durch die Stationen von A1 und „A1: ganze Stufe offline speichern“ (am Ende jeder Stufe)
   const stufe = page.locator('main details[data-stufe-zu="a2"]');
   const summary = stufe.locator('summary');
   await expect(summary).toHaveText(formatiere(de.lernpfad.stufeZeigen, { stufe: 'A2', anzahl: zahl('a2') }, 'de'));

@@ -324,19 +324,6 @@ export function LernpfadStufen({
               </p>
             ) : null}
           </div>
-          <OfflineStufe
-            ui={ui}
-            ziffern={ziffern}
-            kurs={k.kurs}
-            stufe={texte.stufe[a.stufe]}
-            einheiten={a.stationen.map((s) => s.einheit)}
-            offline={k.offline}
-            seiten={k.seiten}
-            seitenVorhalten={k.seitenVorhalten}
-            seitenPruefen={k.seitenPruefen}
-            onGespeichert={() => k.stufeGespeichert(a.stufe)}
-            texte={texte}
-          />
           {a.stufe === aktuelleStufe ? (
             <Stationen abschnitt={a} k={k} />
           ) : (
@@ -361,6 +348,21 @@ export function LernpfadStufen({
               ) : null}
             </details>
           )}
+          {/* „Stufe offline speichern“ am Ende der Stufe, nicht unter ihrer Überschrift: Der Block zeichnet sich erst nach dem
+              Verzeichnis und war im ersten Bildschirm das größte Element (LCP live 5,7 s, Stufe C Schluss) */}
+          <OfflineStufe
+            ui={ui}
+            ziffern={ziffern}
+            kurs={k.kurs}
+            stufe={texte.stufe[a.stufe]}
+            einheiten={a.stationen.map((s) => s.einheit)}
+            offline={k.offline}
+            seiten={k.seiten}
+            seitenVorhalten={k.seitenVorhalten}
+            seitenPruefen={k.seitenPruefen}
+            onGespeichert={() => k.stufeGespeichert(a.stufe)}
+            texte={texte}
+          />
         </section>
       ))}
     </div>
