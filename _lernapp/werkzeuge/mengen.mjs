@@ -88,8 +88,13 @@ for (let i = 2; i < process.argv.length; i++) {
   else if (a === '--stufen') stufenArg = process.argv[++i] ?? '';
   else aufruf();
 }
-/** Gewählte Stufen in der Reihenfolge von `STUFEN` */
-const UMFANG = stufenArg === null ? STANDARD_STUFEN : stufenArg === 'alle' ? STUFEN : stufenArg.toLowerCase().split(',').map((x) => x.trim());
+/** Gewählte Stufen in der Reihenfolge von `STUFEN`, jede nur einmal (`--stufen a1,a1` zählt A1 einmal) */
+const UMFANG =
+  stufenArg === null
+    ? [...STANDARD_STUFEN]
+    : stufenArg === 'alle'
+      ? [...STUFEN]
+      : [...new Set(stufenArg.toLowerCase().split(',').map((x) => x.trim()))];
 if (!UMFANG.length || UMFANG.some((st) => !STUFEN.includes(st))) aufruf();
 UMFANG.sort((a, b) => STUFEN.indexOf(a) - STUFEN.indexOf(b));
 const imUmfang = (st) => UMFANG.includes(st);

@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -36,5 +37,16 @@ describe('Mengenbericht', () => {
     expect(bericht.split('### Bewertung Z-L01 je Zielsprache (Σ A1–B1, erfüllt ab Ziel − 5 %)').length - 1).toBe(staende);
     expect(bericht.split('### Freigegeben, in Aufgaben verwiesen und live (Σ A1–B1)').length - 1).toBe(staende);
     expect(bericht).toContain('| Sätze in Aufgaben verwiesen | Sätze live |');
+  });
+
+  it('zählt eine doppelt genannte Stufe nur einmal (Gegenprüfung N7)', { timeout: 30_000 }, () => {
+    const lauf = (stufen: string) =>
+      execFileSync(process.execPath, [join(LERNAPP, 'werkzeuge', 'mengen.mjs'), '--stufen', stufen], { encoding: 'utf8' })
+        .split('\n')
+        .filter((z) => !z.startsWith('Erzeugt mit '))
+        .join('\n');
+    const doppelt = lauf('a1,A1,a1');
+    expect(doppelt).toContain('### Bewertung Z-L01 je Zielsprache (Σ A1, erfüllt ab Ziel − 5 %)');
+    expect(doppelt).toEqual(lauf('a1'));
   });
 });
