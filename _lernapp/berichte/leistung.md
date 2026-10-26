@@ -1,4 +1,4 @@
-# L8-02 – Leistung und Zugänglichkeit der Lern-App
+# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N6, 26.10.2026)
 
 | | |
 |---|---|
@@ -8,12 +8,198 @@
 | Werkzeuge | `_lernapp/werkzeuge/leistung/` (Kopien und Anpassungen von `_gemeinde/werkzeuge/`, dort unverändert), `web/scripts/lernapp-budget.mjs`, `web/scripts/messen.mjs` |
 | Rohdaten | außerhalb des Repos (`<scratchpad>/l8-leistung/lauf1/`, `…/lauf2/` und `…/lauf3/`): `lauf.log` mit `uptime` je Schritt, JSON und Markdown je Werkzeug, Lighthouse-Berichte des ersten Laufs je Route |
 
-**Ergebnis:** Nach der Behebung B-1 erfüllen alle 25 Lighthouse-Routen Leistung ≥ 90, Zugänglichkeit 100, LCP ≤ 2,5 s
+**Ergebnis (24.10.2026, Testkurs; Stand mit echten Inhalten siehe unten):** Nach der Behebung B-1 erfüllen alle 25 Lighthouse-Routen Leistung ≥ 90, Zugänglichkeit 100, LCP ≤ 2,5 s
 und CLS ≤ 0,1; alle INP-Szenarien ≤ 200 ms (CPU ×6, unter Last); axe 0 Befunde auf 136 + 22 Prüfungen; alle JS-Budgets
 nach KERN §9 eingehalten; Whisper lädt nur nach Klick und nach der Behebung B-2 (Gegenprüfung) jede der 10 Dateien genau
 einmal bis „bereit“ samt Probelauf; Abgleich mit 200 gleichzeitigen Konten ohne Fehler und idempotent. Offen bleiben
 Hinweise (TBT, Antwortzeit des Abgleichs unter Spitzenlast, Probelauf auf einem echten Mittelklasse-Telefon) und der
 veraltete Wortlaut von Z-L07 (Abschnitt 10).
+
+## Stufe C, 26.10.2026, echte Inhalte (N6)
+
+| | |
+|---|---|
+| Datum | 26.10.2026 |
+| Paket | Stufe C N6 (Befunde der Endabnahme `protokolle/C-technik.md`, `C-technik-gegen.md` zu Z-L07) |
+| Stand | Zweig `lernapp-n6` ab `9a8ca1f8`. Paketbau `aa0d3e8f`, E2E-Tag `3cecdd3f`; **Messbau 1** aus `3cecdd3f` (kalter Neubau am Server, Budget, Lighthouse, INP); **Messbau 2** mit Lücke und Sprechen verschlankt (Budget, erste Aufgabe je Typ, E2E); **Messbau 3** mit der Lücke als zwei Chunks (Budget, erste Aufgabe je Typ, E2E) = `c9e586ce` |
+| Inhalte | Wegwerf-Datenbank `igmg_lernapp_n6_e2e` mit allen Lern-App-Inhalten (A1–B1 bzw. B2, ≈ 147 000 Einträge) und dem Testkurs über `scripts/e2e-datenbank.mjs`; Bau gegen diese Datenbank (`E2E_ATTRAPPEN=1`), Server `scripts/start-standalone.mjs` auf Port 3282 mit `CACHE_ERNEUERN_BEIM_START=1` |
+| Werkzeuge | `web/scripts/lernapp/paketbau-messen.ts` (neu), `web/scripts/lernapp-budget.mjs` (echte Lektionen je Typ der ersten Aufgabe), `_lernapp/werkzeuge/leistung/` (`routen.mjs lighthouse-echt`, `inp-spieler.mjs --echt`, `messlauf.sh` Teile `lighthouse-echt`/`inp-echt`) |
+| Last (1 min) | Messbau 1: Bau 0,2 → 2,1 · kalter Neubau 2,7 · Budget 2,2 · Lighthouse 1,2–2,9 · INP 1,4–4,9. Messbau 2: Bau 2,3 → 2,7 · Budget 2,7 · E2E 2,4–4,9. Messbau 3: Bau 3,3 → 4,1 · Budget 4,1 · E2E 3,5–7,3. Parallel liefen Inhalts-Agenten (Prüfer, Vitest). |
+| Rohdaten | außerhalb des Repos (`<scratchpad>/tmp-n6/sitzung/`): Bau-, Server- und Auftragsprotokolle, `kalt.txt`, `budget*.{txt,json}`, `erste-typen*.txt`, `leistung/{lighthouse-echt,inp-echt}.{md,json}`, Lighthouse-Berichte je Route |
+
+**Ergebnis:** Der kalte Neubau eines Kursverzeichnisses dauert am Produktionsserver 2,2–3,7 s statt 8,9–10,5 s und
+blockiert ihn höchstens 0,4 s am Stück statt ≈ 6–10 s; die ausgelieferten Bytes sind gleich. Die JS-Budgets halten nach
+der Verschlankung von Lücke und Sprechen auch im ungünstigsten echten Fall (ungünstigste echte Lektion +59,8 KB über der Hülle bei ≤ 60 KB). **Mit echten Inhalten
+verfehlen aber alle sechs gemessenen Routen Lighthouse-Leistung ≥ 90 (72–86, TBT 458–1348 ms) und das Öffnen des
+Lernpfads samt „offline speichern“ INP ≤ 200 ms (416 ms).** LCP (1,87–2,09 s), CLS (≤ 0,007), Zugänglichkeit 100 und der
+INP im Spieler (168–184 ms) erfüllen. Ursachen und Vorschläge in C.5; Z-L07 neu eingeordnet in C.6.
+
+### C.1 Kalter Neubau der Kursverzeichnisse (Befund 1)
+
+Befund (C-technik): Nach jeder Cache-Erneuerung (Start mit `CACHE_ERNEUERN_BEIM_START`, jede Freigabe mit
+`updateTag(lernappKurs(x))`) baute der erste Abruf eines Kursverzeichnisses alle Einheiten einer Richtung neu: 8,9–10,5 s,
+in denen der Node-Server nichts anderes beantwortete (statische Datei 6,4 s statt 9 ms). Im Profil ≈ 7,5 s `node:crypto`
+und ≈ 3,6 s Speicherbereinigung.
+
+**Ursache:** `stabilSortiert` (Wortbank-Ablenker in die Ausgangssprache) rechnete den SHA-256 im Vergleich der Sortierung –
+≈ 2·n·log n Hashes je Aufgabe mit n ≈ Wörter aller Übersetzungen der Einheit. Dazu je Aufgabe die Wortliste aller
+Übersetzungen neu, Abfragen mit 10 000 Einzelparametern (Drizzle baute jede Anweisung ≈ 0,8 s je Richtung), je Einheit ein
+Filter über alle Lektionen und Aufgaben des Kurses und die Formel-Prüfung jedes Texts bei jedem Bau.
+
+**Behebung (`aa0d3e8f`):** Hash je Wert einmal; Sichtbarkeit, Text-Hash und Übersetzungswörter je Einheit gemerkt;
+Formel-Treffer je Formelliste, Sprache und Text gemerkt; geprüfte Vorlage aus dem Laden übernommen; `kanonisch` ohne
+Zwischenlisten; Einmal-Hash `crypto.hash`; `spalte = any($1)` mit einem Array-Parameter (`bloecke.ts` `inListe`);
+Lektionen und Aufgaben gruppiert statt je Einheit gefiltert; Bau Einheit für Einheit mit `setImmediate` dazwischen.
+Regressionstest `tests/unit/lernapp/paketbau-gleich.test.ts`: feste Eingabe (drei Einheiten, alle Vorlagen der
+Sprachkurse, verborgene Einträge, Formel-Kandidat, Audio), Verzeichnis- und Einheiten-Hashes wie vor N6 (`9a8ca1f8`,
+festgeschrieben), Hash = SHA-256 des Pakettexts; Eigenschaftstests `kanonisch`, `sha256Hex`, `stabilSortiert` gegen die
+alten Fassungen.
+
+**Messung A – Skript** (`paketbau-messen.ts`, E2E-Datenbank, 6 Richtungen × 2 Runden, je Runde Laden, `baueRichtung` und
+Verzeichnis; längste Blockade = längste Lücke eines 5-ms-Takts):
+
+| | vorher (`9a8ca1f8`) | nachher (`aa0d3e8f`) |
+|---|---|---|
+| `baueRichtung` je Richtung (43–44 Pakete, 5444–7145 Aufgaben) | 6,8–11,8 s | Last 2,0: 1,9–3,3 s (Runde 2: 1,8–2,3 s) · Last 4,4–7,3: 2,4–3,7 s |
+| längste Blockade der Ereignisschleife | 5,3–10,6 s | 0,08–0,21 s (Last 2,0) · 0,10–0,23 s (Last 4,4–7,3) |
+| davon nur Laden (Datenbank) | 1,3–2,2 s | 0,6–1,2 s |
+| Fingerabdruck (260 Pakete: Schlüssel, Hash, Bytes; Verzeichnis-Hash je Richtung) | Bezug | **gleich** in allen 6 Richtungen |
+| Last | 1,1 → 1,6 | 2,0 bzw. 4,4–7,3 (Inhalts-Agenten parallel) |
+
+**Messung B – am Produktionsserver** (Messbau 1, `kalt.txt`): je Richtung `POST /api/wartung/cache-erneuern?tag=lernapp`,
+dann `GET /lern-app/pakete/<richtung>`; daneben alle 100 ms eine statische Datei. Last 2,7.
+
+| Richtung | Einheiten | kalt ms | warm ms | statische Datei währenddessen (Median / max ms) |
+|---|---|---|---|---|
+| tr-aus-de | 43 | 3466 | 10 | 171 / 400 |
+| ar-aus-de | 44 | 2709 | 10 | 142 / 196 |
+| de-aus-tr | 43 | 3695 | 7 | 148 / 328 |
+| ar-aus-tr | 44 | 2756 | 7 | 156 / 192 |
+| de-aus-ar | 43 | 2195 | 8 | 62 / 136 |
+| tr-aus-ar | 43 | 2229 | 17 | 106 / 187 |
+
+Ohne Neubau: statische Datei Median 6 ms, max 85 ms. Vorher (C-technik): 8,9–10,5 s je Richtung, statische Datei 6,4 s.
+**Einordnung:** ≈ 3–4-mal schneller und ohne lange Blockade; der Richtwert < 2 s ist im Skript bei ruhiger Maschine in
+etwa erreicht (Runde 2 bei Last 2,0: 1,8–2,3 s), am Server unter Last 2,7 nicht ganz (2,2–3,7 s, davon ≈ 0,6–1 s Datenbank).
+
+### C.2 JavaScript beim ersten Laden mit echten Lektionen (Befund 3, KERN §9)
+
+`lernapp-budget.mjs` zählt für „Spieler zusätzlich zur Hülle ≤ 60 KB“ den Typ-Chunk der ersten Aufgabe mit; gemessen war
+bis N5 nur die Testlektion mit Auswahl (2 KB). Gemessen jetzt je Typ der ersten Aufgabe eine echte Lektion
+(`erste-typen*.txt`, gz -9, Service Worker gesperrt, bis die erste Aufgabe steht und das Netz ruht). Kern ohne Typ-Chunk:
+53,8 KB in sieben Dateien (22,5 · 12,3 · 9,5 · 5,2 · 2,5 · 1,4 · 0,4; darunter der Spieler, Zod mit den Paket- und
+Aufgabenschemas, lokale Datenbank und Vorrat, Abgleich).
+
+| erste Aufgabe (echte Lektionen mit diesem Typ zuerst) | Lektion | zusätzlich KB Messbau 1 | Messbau 2 | Messbau 3 | gesamt KB (Messbau 3) |
+|---|---|---|---|---|---|
+| grammatik_tipp (392) | `tr-aus-de.b1.e01.l01` | 54,8 | 54,8 | 54,8 | 191,7 |
+| auswahl (432) | `tr-aus-de.a1.e01.l01` | 55,8 | 55,8 | 55,8 | 192,7 |
+| paare (138) | `tr-aus-de.a1.e01.l02` | 56,7 | 56,7 | 56,7 | 193,5 |
+| schreiben (11) | `tr-aus-de.b1.e12.l08` | 57,1 | 57,1 | 57,1 | 193,9 |
+| dialog (2) | `ar-aus-de.a2.e01.l08` | 57,2 | 57,2 | 57,2 | 194,0 |
+| **geschichte (136)** | `tr-aus-de.b1.e01.l06` | 57,5 | 57,5 | 57,5 | 194,3 |
+| minimalpaare (1) | `ar-aus-de.a2.e03.l07` | 59,2 | 59,2 | 59,2 | 196,0 |
+| lesen_fragen (16) | `tr-aus-de.a1.e02.l07` | 59,3 | 59,3 | 59,3 | 196,1 |
+| sprechen (1) | `tr-aus-de.b1.e15.l08` | **60,3** | 59,8 | **59,8** | 196,6 |
+| luecke (1) | `tr-aus-de.b1.e14.l07` | **61,8** | **60,1** | **59,0** | 195,8 |
+
+- Die Geschichte (136 Lektionen, Typ-Chunk im Spieler-Zusammenhang 3,7 KB; der Wert 9,9 KB aus N5 war die Summe aller
+  Dateien mit ihren Bausteinen) hielt das Budget schon in Messbau 1. **Ungünstiger waren die Lücke unter Optionen (+8,0 KB)
+  und die Sprechübung (+6,5 KB)**, je eine echte Lektion.
+- **Verschlankung:** Sprechen lädt die Aufnahme (`aufnahme.ts`: Mikrofon, Pegel, PCM) erst mit dem Klick auf „Aufnehmen“
+  (−0,5 KB). Die Lücke lädt Feld und Zeichenhilfe nur in der Freitext-Form: Messbau 2 lud nur die Zeichenhilfe nach
+  (−1,7 KB, noch 60,1 KB); Messbau 3 trennt die Freitext-Form ganz ab (`LueckeFeld.tsx`, gemeinsamer Satz `LueckeSatz.tsx`,
+  Schreibmarke ohne Zeichenhilfe in `schreibmarke.ts`). Ergebnis Messbau 3: Lücke 59,0 KB, Sprechen 59,8 KB – alle gemessenen Fälle ≤ 60 KB (Reserve 0,2 KB).
+- `lernapp-budget.mjs` misst jetzt neben der Testlektion vier echte Lektionen (Geschichte, Lücke, Sprechen, Lesen mit
+  Fragen; `ECHTE_SPIELER`) und prüft die ungünstigste gegen ≤ 210 KB gesamt und ≤ 60 KB zusätzlich (`--ohne-echt` ohne
+  Inhalte). Messbau 3: „Alle Budgets eingehalten“; ungünstigste echte Lektion gesamt 196,6 KB (≤ 210), zusätzlich 59,8 KB (≤ 60).
+- Die Schätzung je Übungstyp (größte Datei mit allen Erkennungstexten plus ausgelagerte Bausteine) stieg für frei,
+  hoeren_schreiben und formen um 3,8 KB (5,2 / 9,8 / 6,6 → 9,0 / 13,5 / 10,4 KB), ohne dass sich diese Typen änderten: Als
+  „ausgelagerter Baustein“ zählt jetzt auch der Chunk von `LueckeFeld` (Feld und Zeichenhilfe), den diese Typen nicht laden.
+  Je ≤ 15 KB bleibt eingehalten; keine echte Lektion beginnt mit diesen Typen. Vorschlag: Erkennungstext für `LueckeFeld`
+  ergänzen und nur der Lücke zurechnen.
+- Übrige Budgets unverändert erfüllt (Messbau 3): Hülle eigener Anteil 9,4 KB (≤ 20) · Start 149,4 / eigen 14,0 KB · Lernpfad 155,8 / eigen 20,4 KB · Fortschritt 153,3 / eigen 17,9 KB · Testlektion 192,7 / +55,8 KB · Wiederholen 152,4 und Einstufung 153,3 KB, beide ohne Zod · Übungstypen 1,0–13,5 KB (je ≤ 15) · arabische Bildschirmtastatur 1,5 KB (≤ 10).
+
+### C.3 Lighthouse mit echten Inhalten (mobil, Median aus 3 Läufen, Messbau 1)
+
+Die Verschlankung aus C.2 (Messbau 2/3) ändert keine der gemessenen Routen: Start, Lernpfade und die Spieler mit Auswahl bzw.
+Geschichte zuerst laden in Messbau 3 dieselben Bytes wie in Messbau 1 (Budget: 149,4 / 155,8 / 192,7 / 194,3 KB).
+
+`lighthouse.mjs --routen routen-lighthouse-echt.json` (`routen.mjs lighthouse-echt`), Drosselung wie Abschnitt 1. Jede Route
+verfehlte die Leistung zuerst unter Last (1,5–2,9) und wurde nach dem Sinken der Last (1,2–1,5) nachgemessen; die Tabelle
+zeigt die Nachmessung.
+
+| Route | Art | Leistung | Zugängl. | BP | SEO | LCP ms | CLS | TBT ms | JS KB (Grenze) | Last max | Ergebnis |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `/lern-app/de` | Start | **86** | 100 | 100 | 100 | 2088 | 0 | 458 | 149,4 (180) | 2,02 | **verfehlt: Leistung** |
+| `/lern-app/de/tr-aus-de` (43 Einheiten) | Lernpfad | **73** | 100 | 100 | 100 | 1949 | 0,001 | 1348 | 155,8 (180) | 1,51 | **verfehlt: Leistung** |
+| `/lern-app/ar/de-aus-ar` (RTL, 43 Einheiten) | Lernpfad | **72** | 100 | 100 | 100 | 2004 | 0 | 1315 | 155,8 (180) | 1,84 | **verfehlt: Leistung** |
+| `/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l01` (Auswahl) | Spieler | **79** | 100 | 100 | – | 1869 | 0,006 | 787 | 192,7 (210) | 1,21 | **verfehlt: Leistung** |
+| `/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.b1.e01.l06` (Geschichte) | Spieler | **76** | 100 | 100 | – | 1906 | 0 | 999 | 194,3 (210) | 1,76 | **verfehlt: Leistung** |
+| `/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e01.l01` (RTL) | Spieler | **78** | 100 | 100 | – | 1948 | 0,007 | 789 | 192,7 (210) | 1,86 | **verfehlt: Leistung** |
+
+LCP ≤ 2,1 s, CLS ≤ 0,007, Zugänglichkeit und Best Practices 100, SEO 100 auf den indexierbaren Seiten („–“: `noindex`).
+Die Leistung fällt allein über TBT (Gewicht 30 %): Mit dem Testkurs lag TBT bei 200–337 ms (Abschnitt 4), mit echten
+Inhalten bei 458–1348 ms.
+
+### C.4 INP mit echten Lektionen (CPU ×6, 3 Läufe, Median, Messbau 1)
+
+`inp-spieler.mjs --echt`: Antworten ohne Kenntnis der Lösung (erste Option), Paare je ein Wort links und rechts.
+
+| Szenario | INP ms | je Schritt (Median, ms) | Öffnen ms | Last (max) | Ergebnis |
+|---|---|---|---|---|---|
+| Spieler `tr-aus-de.a1.e01.l01` (Auswahl, Auswahl, Paare) | 168 | Prüfen 168 · Antwort wählen 144 · Weiter 128 · Paare 120 | – | 4,93 | erfüllt |
+| Spieler `tr-aus-de.b1.e01.l06` (Geschichte zuerst: Weiter lesen) | 176 | Weiter lesen 176 | – | 4,76 | erfüllt |
+| Spieler `de-aus-ar.a1.e01.l01`, Oberfläche ar (RTL) | 184 | Weiter 184 · Prüfen 184 · Antwort wählen 144 · Paare 136 | – | 1,62 | erfüllt (nachgemessen; vorher 264 ms bei Last 4,27) |
+| Lernpfad öffnen (Start → `tr-aus-de`, 43 Einheiten) und Einheit offline speichern | **416** | **offline speichern 416** · Lernpfad öffnen 112 | 3180 | 1,98 | **verfehlt** (nachgemessen; vorher 464 ms bei Last 1,6) |
+
+Mit dem Testkurs lagen alle Szenarien bei 104–176 ms (Abschnitt 5); „offline speichern“ dort 104 ms, Öffnen 1461 ms.
+
+### C.5 Ursachen und Vorschläge (offen)
+
+Aus den Lighthouse-Berichten (lange Aufgaben, Hauptthread) – keine Behebung in N6, weil sie über den Auftrag hinausgeht und
+einen weiteren Messbau braucht:
+
+1. **Lernpfad (TBT 1,3 s, INP „offline speichern“ 416 ms):** Die Insel rendert alle 43–44 Einheiten mit Stationen, Sternen,
+   Fortschritt und „offline speichern“ auf einmal; nach jedem `STAND_GEAENDERT` (automatisches Speichern der aktuellen und
+   nächsten Einheit, „offline speichern“) lädt sie neu und rendert die ganze Liste erneut. Lange Aufgaben: React DOM 457 +
+   361 ms, Stil/Layout des Dokuments 498 + 180 ms; Hauptthread Skript 1,46 s, Stil/Layout 0,79 s, Zeichnen 0,59 s.
+   **Vorschlag:** nur die Stufe der aktuellen Einheit aufgeklappt rendern (übrige Stufen als `<details>` mit Zahl), Stationen
+   mit `content-visibility: auto` und `contain-intrinsic-size`, nach „offline speichern“ nur die betroffene Station
+   aktualisieren statt `laden()` für alle.
+2. **Spieler (TBT 0,79–1,0 s):** React DOM 290–440 ms beim ersten Rendern, dazu die Prüfung des ganzen Einheitenpakets
+   (≈ 115 KB, ≈ 120 Aufgaben) mit Zod auf dem Hauptthread: Schemas 183 ms bzw. 113 ms je Lauf (CPU ×4). Mit dem Testkurs
+   (4 kleine Lektionen) fiel das nicht ins Gewicht. **Vorschlag:** Paket beim Speichern einmal prüfen und im Vorrat als
+   geprüft merken (Hash ist ohnehin geprüft), beim Öffnen nur die gespielte Lektion prüfen; oder die Prüfung in einen
+   Worker verlegen.
+3. **Start (TBT 458 ms):** React DOM 445 ms (Kurskarten mit Fortschritt aus den Verzeichnissen). Vorschlag wie 1.
+4. **Kalter Neubau unter Last** (C.1): 2,2–3,7 s je Richtung am Server; Rest ≈ 0,6–1 s Datenbank und ≈ 1,2–1,5 s Bau.
+   Weiter möglich: Ergebnisse je Einheit nach Eingabe-Hash merken (unveränderte Einheiten nach einer Freigabe nicht neu
+   bauen). Kein Abnahmekriterium; die Blockade ist behoben.
+
+### C.6 Z-L07 neu eingeordnet (echte Inhalte)
+
+| Teil von Z-L07 | Stand 26.10.2026 | Nachweis |
+|---|---|---|
+| Budgets KERN §9 | erfüllt (seit `c9e586ce` auch im ungünstigsten echten Fall) | C.2 (Messbau 3), übrige Budgets wie Abschnitt 3 |
+| LCP ≤ 2,5 s | erfüllt | 6 Routen 1869–2088 ms |
+| INP ≤ 200 ms | **teilweise**: Spieler 168–184 ms erfüllt; Lernpfad „offline speichern“ **416 ms verfehlt** | C.4 |
+| CLS ≤ 0,1 | erfüllt | ≤ 0,007 |
+| Lighthouse Leistung ≥ 90, Zugänglichkeit 100 | **Leistung verfehlt** (72–86), Zugänglichkeit 100 | C.3, Ursachen C.5 |
+| Whisper nur nach Klick | unverändert erfüllt | Abschnitt 7; E2E `netzprotokoll` auf Messbau 2 grün |
+
+**Vorschlag für Z-L07: „teilweise“** – Budgets, LCP, CLS, Zugänglichkeit und der Spieler-INP erfüllen; Lighthouse-Leistung
+(alle Routen) und der INP des Lernpfads verfehlen mit echten Inhalten. Die Werte aus Abschnitt 11 („erfüllt“) galten für den
+Testkurs. Behebung nach C.5 (Lernpfad, Paketprüfung im Spieler), danach Nachmessung mit `messlauf.sh lighthouse-echt
+inp-echt budget`.
+
+## Verlauf: L8-02 vom 24.10.2026 (Testkurs)
+
+Die Abschnitte 1–11 sind der Stand vom 24.10.2026 (Messbauten `4d00cadf`/`fc95e675`/`fd11a59d`), gemessen mit dem
+**Testkurs** – damals lagen keine Kursinhalte im Repository. Der Testkurs hieß damals `a1.e01`; seit N4 (Stufe C) heißt er
+`a1.test`, und `a1.e01` ist die echte erste Einheit. Die Routen in den Tabellen sind deshalb auf `a1.test` umbenannt
+(gemessen wurde damals der Testkurs). Den Stand mit echten Inhalten zeigt der Abschnitt „Stufe C, 26.10.2026, echte
+Inhalte“ oben.
 
 ## 1. Methode
 
@@ -76,8 +262,8 @@ erfüllt, ist das belastbar.
 | Start | `/lern-app/de` | 149,3 | 14,0 | ≤ 180, eigen ≤ 30 | erfüllt |
 | Lernpfad | `/lern-app/ar/de-aus-ar` | 154,6 | 19,2 | ≤ 180, eigen ≤ 30 | erfüllt |
 | Fortschritt | `/lern-app/de/fortschritt` | 153,3 | 17,9 | ≤ 180, eigen ≤ 30 | erfüllt |
-| Spieler (l01, erste Aufgabe) | `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01` | 192,2 | +55,4 über der Hülle | ≤ 210, zusätzlich ≤ 60 | erfüllt |
-| Spieler (l02, Wortbank zuerst) | `…/ueben?l=de-aus-tr.a1.e01.l02` | 194,5 | – | ≤ 210 | erfüllt |
+| Spieler (l01, erste Aufgabe) | `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01` | 192,2 | +55,4 über der Hülle | ≤ 210, zusätzlich ≤ 60 | erfüllt |
+| Spieler (l02, Wortbank zuerst) | `…/ueben?l=de-aus-tr.a1.test.l02` | 194,5 | – | ≤ 210 | erfüllt |
 | Wiederholen ohne Karten | `/lern-app/de/tr-aus-de/wiederholen` | 152,2 (ohne Zod) | – | ≤ 210 | erfüllt |
 | Einstufung vor dem Start | `/lern-app/de/tr-aus-de/einstufung` | 152,2 (ohne Zod) | – | ≤ 210 | erfüllt |
 | Spieler-Chunk | – | 37,3 | – | (im Spieler-Anteil) | – |
@@ -110,12 +296,12 @@ Last sank; die Tabelle zeigt dann die Nachmessung.
 | `/lern-app/de/tr-aus-de` | Lernpfad | 93 | 100 | 100 | 100 | 1835 | 0,029 | 279 | 154,6 (180) | 2,61 | erfüllt |
 | `/lern-app/tr/de-aus-tr` | Lernpfad | 94 | 100 | 100 | 100 | 1858 | 0,031 | 233 | 154,6 (180) | 1,77 | erfüllt |
 | `/lern-app/ar/de-aus-ar` (RTL) | Lernpfad | 92 | 100 | 100 | 100 | 1914 | 0,067 | 267 | 154,6 (180) | 1,83 | erfüllt |
-| `/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l01` | Spieler | 92 | 100 | 100 | – | 1793 | 0,006 | 302 | 192,2 (210) | 1,73 | erfüllt |
-| `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01` | Spieler | 93 | 100 | 100 | – | 1815 | 0,011 | 264 | 192,2 (210) | 1,30 | erfüllt |
-| `/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e01.l01` (RTL) | Spieler | 90 | 100 | 100 | – | 1856 | 0,007 | 337 | 192,2 (210) | 1,37 | erfüllt |
+| `/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l01` | Spieler | 92 | 100 | 100 | – | 1793 | 0,006 | 302 | 192,2 (210) | 1,73 | erfüllt |
+| `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01` | Spieler | 93 | 100 | 100 | – | 1815 | 0,011 | 264 | 192,2 (210) | 1,30 | erfüllt |
+| `/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.test.l01` (RTL) | Spieler | 90 | 100 | 100 | – | 1856 | 0,007 | 337 | 192,2 (210) | 1,37 | erfüllt |
 | `/lern-app/de/tr-aus-de/wiederholen` | Spieler | 95 | 100 | 100 | – | 1837 | 0 | 216 | 152,2 (210) | 1,83 | erfüllt |
 | `/lern-app/de/tr-aus-de/einstufung` | Spieler | 95 | 100 | 100 | – | 1834 | 0 | 200 | 152,2 (210) | 1,60 | erfüllt |
-| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.e01` | Hülle | **87** | 100 | 100 | – | 1805 | **0,151** | 272 | 176,5 (180) | 1,80 | **verfehlt: Leistung, CLS** (nachgemessen) |
+| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.test` | Hülle | **87** | 100 | 100 | – | 1805 | **0,151** | 272 | 176,5 (180) | 1,80 | **verfehlt: Leistung, CLS** (nachgemessen) |
 | `/lern-app/de/quellen` | Hülle | 93 | 100 | 100 | 100 | 1908 | 0 | 273 | 143,8 (180) | 2,39 | erfüllt |
 | `/lern-app/de/fortschritt` | Start | 95 | 100 | 100 | – | 1792 | 0 | 233 | 153,3 (180) | 2,55 | erfüllt |
 | `/lern-app/de/wortschatz` | Hülle | 96 | 100 | 100 | – | 1787 | 0 | 178 | 138,0 (180) | 1,99 | erfüllt |
@@ -261,7 +447,7 @@ Last 2,8–3,8:
 | Route | Leistung vorher → nachher | CLS vorher → nachher | LCP ms nachher | TBT ms nachher | Last max nachher |
 |---|---|---|---|---|---|
 | `/lern-app/tr/koran` | 86 → **92** | 0,19 → **0** | 1872 | 292 | 3,05 |
-| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.e01` | 87 → **93** | 0,151 → **0** | 1798 | 276 | 3,36 |
+| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.test` | 87 → **93** | 0,151 → **0** | 1798 | 276 | 3,36 |
 | `/lern-app/de/tr-aus-de` | 93 → 94 | 0,029 → **0** | 1826 | 231 | 3,80 |
 | `/lern-app/tr/de-aus-tr` | 94 → 94 | 0,031 → **0** | 1911 | 220 | 2,78 |
 | `/lern-app/ar/de-aus-ar` (RTL) | 92 → 93 | 0,067 → **0** | 1899 | 250 | 3,55 |
@@ -306,6 +492,8 @@ erfüllt.
    (außerhalb von `web/`), wie bisher.
 
 ## 11. Vorschlag für Z-L07
+
+> Stand 24.10.2026 mit dem Testkurs. Mit echten Inhalten (26.10.2026) neu eingeordnet: Abschnitt C.6 oben („teilweise“).
 
 **Vorschlag: „erfüllt“** mit dem Wortlaut der Budgets nach KERN §9 (Befund 10.1), Nachweis dieser Bericht:
 

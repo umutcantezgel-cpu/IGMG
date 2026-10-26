@@ -5,7 +5,8 @@
 # gleichzeitig existieren und der Lauf wiederholbar ist. Danach endet das Skript und gibt das Schloss frei.
 #
 # Aufruf (im Arbeitsbaum): MESS_ENV=<.env-Vorlage> bash _lernapp/werkzeuge/leistung/messlauf.sh [teile …]
-#   teile: budget messen lighthouse inp axe whisper last (Standard: alle in dieser Reihenfolge)
+#   teile: budget messen lighthouse inp axe whisper last (Standard: alle in dieser Reihenfolge); dazu lighthouse-echt und
+#     inp-echt (Stufe C N6: Start, Lernpfade und Spieler echter Lektionen, routen.mjs `ECHT`; nur auf Anforderung)
 #   MESS_ENV=<datei>: .env-Vorlage mit Datenbank, Mail und Geheimnissen (Pflicht; wird nach web/.env kopiert, danach gelöscht)
 #   MESS_FILTER=<regulärer Ausdruck>: nur Routen, deren Pfad passt (Lighthouse und axe; Nachmessung nach einer Behebung)
 #   MESS_ZIEL=<ordner>: Ausgabe (Standard $TMPDIR/leistung); dort lauf.log mit `uptime` je Schritt
@@ -145,6 +146,10 @@ for teil in $TEILE; do
     messen) MESSEN_ZIEL=$MESS_ZIEL/messen node scripts/messen.mjs "$MESS_BASIS" /lern-app/de /lern-app/ar/de-aus-ar \
       '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01' > "$MESS_ZIEL/messen.txt" 2>&1 ;;
     lighthouse) node "$HIER/lighthouse.mjs" --routen "$MESS_ZIEL/routen-lighthouse.json" --laeufe 3 > "$MESS_ZIEL/lighthouse.txt" 2>&1 ;;
+    lighthouse-echt) node "$HIER/routen.mjs" lighthouse-echt "$KONTEN" "${MESS_FILTER:-}" > "$MESS_ZIEL/routen-lighthouse-echt.json" &&
+      node "$HIER/lighthouse.mjs" --routen "$MESS_ZIEL/routen-lighthouse-echt.json" --laeufe 3 --aus lighthouse-echt \
+        > "$MESS_ZIEL/lighthouse-echt.txt" 2>&1 ;;
+    inp-echt) node "$HIER/inp-spieler.mjs" --laeufe 3 --drossel 6 --echt > "$MESS_ZIEL/inp-echt.txt" 2>&1 ;;
     inp) node "$HIER/inp-spieler.mjs" --laeufe 3 --drossel 6 > "$MESS_ZIEL/inp.txt" 2>&1 ;;
     axe) node "$HIER/a11y.mjs" --routen "$MESS_ZIEL/routen-axe.json" > "$MESS_ZIEL/a11y.txt" 2>&1 ;;
     whisper) node "$HIER/whisper-netz.mjs" > "$MESS_ZIEL/whisper-netz.txt" 2>&1 ;;
