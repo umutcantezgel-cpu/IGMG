@@ -4,8 +4,13 @@ import { expect, type Locator, type Page } from '@playwright/test';
  * Echte Tastaturwege für die E2E der Lern-App (Stufe C N9b, KERN 4.0 §8, WCAG 2.1.1, 2.4.3, 2.4.7): Der Fokus wandert nur mit
  * Tab, Umschalt+Tab und Pfeiltasten – kein `locator.focus()`. Jeder Tab-Schritt wird festgehalten und geprüft:
  * - sichtbar: Das fokussierte Element (bei unsichtbaren Optionsfeldern die sichtbare Karte daneben bzw. das Label) liegt im
- *   Bild und trägt einen Fokusring (Umriss ≥ 2 px oder Schatten). Native Mediensteuerung (`<audio controls>`) zeichnet ihren
- *   Ring im eigenen Schatten-DOM; sie zählt als sichtbar, wenn sie im Bild liegt.
+ *   Bild und trägt einen Fokusring: einen sichtbaren Umriss ≥ 2 px (der Fokusring der Lern-App, `globals.css` `:focus-visible`
+ *   bzw. `peer-focus-visible:outline-2`). Ein Schatten zählt nicht – Karten tragen dauerhafte Schatten (`shadow-s1`), ein
+ *   fehlender Fokusring fiele sonst nicht auf. Native Mediensteuerung (`<audio controls>`) zeichnet ihren Ring im eigenen
+ *   Schatten-DOM; sie zählt als sichtbar, wenn sie im Bild liegt.
+ * - Native Mediensteuerung: Tab wandert durch ihre eingebauten Knöpfe (Abspielen, Zeitleiste, Lautstärke, Menü), dabei bleibt
+ *   `document.activeElement` dasselbe `<audio>`. Aufeinanderfolgende Halte darauf zählen als ein Halt; mehr als
+ *   `MEDIEN_HALTE` hintereinander gelten als Fokusfalle (Tab muss das Element wieder verlassen, WCAG 2.1.2).
  * - logisch: Tab folgt der Dokumentreihenfolge (kein positives `tabindex`), Umschalt+Tab umgekehrt; im Hauptinhalt folgt sie
  *   außerdem der Leserichtung – nach unten, in einer Zeile von links nach rechts bzw. in `rtl` von rechts nach links, nach oben
  *   nur als neue Spalte in Leserichtung (zwei Listen nebeneinander). Feste und
@@ -25,6 +30,8 @@ export type FokusSchritt = {
   h: number;
   sichtbar: boolean;
   ring: boolean;
+  /** native Mediensteuerung (`HTMLMediaElement` mit `controls`): Tab-Halte im eigenen Schatten-DOM */
+  nativ: boolean;
   /** in einem festen oder klebenden Teil */
   fest: boolean;
   imMain: boolean;
@@ -49,12 +56,14 @@ export function fokus(page: Page): Promise<FokusSchritt | null> {
         const r = k.getBoundingClientRect();
         return r.width > 2 && r.height > 2;
       }) ?? el;
-    const nativ = el instanceof HTMLMediaElement;
+    const nativ = el instanceof HTMLMediaElement && el.controls;
+    // sichtbarer Umriss ≥ 2 px; durchsichtig (`outline-hidden`) zählt nicht, ein Schatten ebenso wenig (dauerhafte Kartenschatten)
+    const durchsichtig = (farbe: string) => farbe === 'transparent' || /^rgba\(.*,\s*0(\.0+)?\)$/.test(farbe);
     const ring =
       nativ ||
       kandidaten.some((k) => {
         const s = getComputedStyle(k);
-        return (s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) >= 2) || (s.boxShadow !== '' && s.boxShadow !== 'none');
+        return s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) >= 2 && !durchsichtig(s.outlineColor);
       });
     const r = ziel.getBoundingClientRect();
     const sichtbar =
@@ -84,6 +93,7 @@ export function fokus(page: Page): Promise<FokusSchritt | null> {
       h: r.height,
       sichtbar,
       ring,
+      nativ,
       fest,
       imMain: Boolean(el.closest('main')),
       rtl: getComputedStyle(el).direction === 'rtl',
@@ -91,9 +101,34 @@ export function fokus(page: Page): Promise<FokusSchritt | null> {
   });
 }
 
-/** Prüft eine Folge von Tab-Schritten: sichtbar, Fokusring, Dokumentreihenfolge und Leserichtung im Hauptinhalt. */
-export function pruefeSchritte(schritte: FokusSchritt[], { rueckwaerts = false, kennung = '' } = {}): string[] {
+/** Höchstens so viele Tab-Halte hintereinander in einer nativen Mediensteuerung (Chromium: Abspielen, Zeitleiste, Ton aus,
+ * Lautstärke, Menü – fünf bis sechs), mehr gilt als Fokusfalle. */
+export const MEDIEN_HALTE = 10;
+
+/**
+ * Aufeinanderfolgende Halte auf demselben Element nativer Mediensteuerung (gleicher `dom`-Index) zu einem Halt zusammenfassen
+ * (Tab wandert durch ihre eingebauten Knöpfe im Schatten-DOM); Läufe länger als `MEDIEN_HALTE` melden eine Fokusfalle.
+ */
+export function fasseMedienZusammen(schritte: FokusSchritt[], kennung = ''): { halte: FokusSchritt[]; maengel: string[] } {
+  const halte: FokusSchritt[] = [];
   const maengel: string[] = [];
+  let lauf = 0;
+  for (const s of schritte) {
+    const vorig = halte.at(-1);
+    if (vorig && s.nativ && vorig.nativ && s.dom === vorig.dom) {
+      lauf++;
+      if (lauf === MEDIEN_HALTE) maengel.push(`${kennung} ${s.was}: Tab verlässt die Mediensteuerung nicht (Fokusfalle)`);
+      continue;
+    }
+    lauf = 1;
+    halte.push(s);
+  }
+  return { halte, maengel };
+}
+
+/** Prüft eine Folge von Tab-Schritten: sichtbar, Fokusring, Dokumentreihenfolge und Leserichtung im Hauptinhalt. */
+export function pruefeSchritte(alle: FokusSchritt[], { rueckwaerts = false, kennung = '' } = {}): string[] {
+  const { halte: schritte, maengel } = fasseMedienZusammen(alle, kennung);
   for (const s of schritte) {
     if (!s.sichtbar) maengel.push(`${kennung} ${s.was}: Fokus nicht im Bild`);
     if (!s.ring) maengel.push(`${kennung} ${s.was}: kein sichtbarer Fokusring`);

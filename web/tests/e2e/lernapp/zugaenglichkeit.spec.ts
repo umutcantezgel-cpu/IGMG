@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { expect, type Page, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
@@ -20,6 +22,8 @@ import { leseLernstandEin } from './lernstand';
  * - Wissens- und Koran-Kurs: Lernpfad mit aufgeklapptem Inhalt (Wissen: Testeinheit mit zwei Freigaben aus dem Seed; Koran:
  *   erste Einheit mit Wortformen, nicht in der arabischen Oberfläche – dort gibt es den Pfad nicht, die Adresse ist 404 und
  *   wird als solche geprüft) und die erste Aufgabe der Wissenslektion.
+ * - Vorkurs `schrift_latein` (Gegenprüfung N9b: der einzige Übungstyp ohne axe in typen-*.spec.ts und lektion.spec.ts): echte
+ *   Lektionen de-aus-ar in der Oberfläche ar, siehe Test am Ende.
  */
 
 type Ui = 'de' | 'tr' | 'ar';
@@ -193,3 +197,75 @@ for (const ui of UIS) {
     });
   });
 }
+
+type VorkursAufgabe = { typ: string; anweisung?: string; hoeren?: unknown; vorgabe?: unknown; optionen?: string[]; richtig?: number };
+/** Vorkurs Deutsch für Arabischsprachige (`de.a1.e00-ar`): l01 Buchstaben mit Vorgabe, dann nur mit Hörbeispiel; l02 groß/klein. */
+const VORKURS = (
+  JSON.parse(readFileSync(join(__dirname, '../../../inhalte/lernapp/sprache/de/a1/de.a1.e00-ar.json'), 'utf8')) as {
+    lektionen: { aufgaben: VorkursAufgabe[] }[];
+  }
+).lektionen;
+
+/**
+ * `schrift_latein` auf beiden Breiten in seinen Darstellungen: Buchstabe mit Vorgabe (vor der Antwort, nach einer falschen und
+ * nach einer richtigen Antwort), nur mit Hörbeispiel (Abspieler wie bei den Hörtypen; ohne Bündel mit „Audio folgt“) und
+ * groß/klein. „Welches Wort“ (`waehleWort`, l02 ab Aufgabe 16) hat denselben Aufbau wie groß/klein – Vorgabe und Antwortgruppe,
+ * nur eine andere Anweisung. Gewählt wird nach dem Inhalt (richtige Option bzw. absichtlich die nächste).
+ */
+test('ar Vorkurs de-aus-ar: schrift_latein mit Vorgabe (vor, falsch, richtig), nur mit Hörbeispiel, groß/klein', async ({ page }, info) => {
+  test.setTimeout(150_000);
+  const t = ar as unknown as typeof de;
+  const { befunde, pruefe } = pruefer(page, 'ar', info.project.name === 'telefon' ? 390 : 1440);
+  const form = page.locator('main form[data-aufgabe]');
+  const weiter = page.getByRole('button', { name: t.spieler.weiter, exact: true });
+  /** Tipp lesen bzw. Aufgabe beantworten (richtig oder absichtlich falsch); mit `name` axe vor und nach der Antwort. */
+  const spiele = async (a: VorkursAufgabe, name?: string, { falsch = false } = {}) => {
+    await expect(form).toBeVisible({ timeout: 20_000 });
+    if (a.typ === 'grammatik_tipp') {
+      await page.getByRole('button', { name: t.aufgaben2.grammatikTipp.verstanden, exact: true }).click();
+      return;
+    }
+    expect(a.typ).toBe('schrift_latein');
+    await expect(form).toHaveAttribute('data-aufgabe', 'schrift_latein');
+    const optionen = a.optionen!;
+    const radio = form.getByRole('radio', { name: optionen[falsch ? (a.richtig! + 1) % optionen.length : a.richtig!]!, exact: true });
+    await expect(radio).toBeAttached({ timeout: 20_000 });
+    if (name) await pruefe(`${name} vor der Antwort`);
+    await form.locator('label').filter({ has: radio }).click();
+    await page.getByRole('button', { name: t.spieler.pruefen, exact: true }).click();
+    await expect(weiter).toBeFocused();
+    if (name) await pruefe(`${name} nach ${falsch ? 'falscher' : 'richtiger'} Antwort`);
+    await weiter.click();
+    await expect(weiter).toHaveCount(0);
+  };
+
+  const [l01, l02] = VORKURS as [{ aufgaben: VorkursAufgabe[] }, { aufgaben: VorkursAufgabe[] }];
+  await page.goto('/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e00-ar.l01');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  // l01: Tipp, fünf Buchstaben mit Vorgabe (der erste falsch beantwortet – er kommt erst am Ende wieder), Tipp, dann nur Hören
+  const a = l01.aufgaben;
+  expect(a.slice(1, 6).every((x) => x.typ === 'schrift_latein' && x.vorgabe && x.anweisung === 'waehleBuchstabe')).toBe(true);
+  expect(a[7]).toMatchObject({ typ: 'schrift_latein', anweisung: 'waehleBuchstabe' });
+  expect(a[7]!.hoeren && !a[7]!.vorgabe).toBeTruthy();
+  await spiele(a[0]!);
+  await spiele(a[1]!, 'schrift_latein Buchstabe mit Vorgabe', { falsch: true });
+  await spiele(a[2]!, 'schrift_latein Buchstabe mit Vorgabe');
+  for (const x of a.slice(3, 7)) await spiele(x);
+  await expect(form).toHaveAttribute('data-aufgabe', 'schrift_latein');
+  const hoeren = t.aufgaben.hoeren;
+  await expect(
+    form
+      .getByRole('button', { name: hoeren.anhoeren, exact: true })
+      .or(form.getByRole('button', { name: hoeren.ueberspringen, exact: true }))
+      .first(),
+  ).toBeVisible({ timeout: 20_000 });
+  await pruefe('schrift_latein nur mit Hörbeispiel vor der Antwort');
+
+  // l02: Tipp, dann groß/klein
+  await page.goto('/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e00-ar.l02');
+  expect(l02.aufgaben[1]).toMatchObject({ typ: 'schrift_latein', anweisung: 'grossKlein' });
+  await spiele(l02.aufgaben[0]!);
+  await expect(page.getByRole('heading', { level: 2, name: t.aufgaben2.schriftWahl.grossKlein })).toBeVisible();
+  await spiele(l02.aufgaben[1]!, 'schrift_latein groß/klein');
+  expect(befunde).toEqual([]);
+});

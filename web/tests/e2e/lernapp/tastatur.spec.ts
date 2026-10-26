@@ -32,6 +32,15 @@ test.use(MIKROFON());
 
 type Texte = typeof de;
 
+/** Arabische Testsätze und -wörter des Testkurses (Codepunkt-Escapes wie im Seed und in typen-b.spec.ts). */
+const AR = {
+  w001: '\u0645\u064E\u0627\u0621',
+  w004: '\u0643\u0650\u062A\u064E\u0627\u0628',
+  s0001:
+    '\u0623\u064E\u0646\u064E\u0627 \u0623\u064E\u0634\u0652\u0631\u064E\u0628\u064F \u0627\u0644\u0652\u0645\u064E\u0627\u0621\u064E.',
+  s0007: '\u0628\u0650\u062E\u064E\u064A\u0652\u0631\u064D\u060C \u0634\u064F\u0643\u0652\u0631\u064B\u0627.',
+};
+
 const nurDesktop = (name: string) =>
   test.skip(name !== 'desktop', 'Tastaturwege auf dem Desktop; die Fokusreihenfolge prüft beide Breiten');
 
@@ -227,12 +236,6 @@ test.describe('Tastaturwege je Typgruppe (nur Tab, Pfeile, Enter, Leertaste)', (
     const t = (ui === 'de' ? de : ar) as unknown as Texte;
     const w = weg(page, t, `l04 ${ui}`);
     const kurs = ui === 'de' ? 'tr-aus-de' : 'ar-aus-de';
-    const AR = {
-      w001: 'مَاء',
-      w004: 'كِتَاب',
-      s0001: 'أَنَا أَشْرَبُ الْمَاءَ.',
-      s0007: 'بِخَيْرٍ، شُكْرًا.',
-    };
     await page.goto(`/lern-app/${ui}/${kurs}/ueben?l=${kurs}.a1.test.l04`);
     await expect(page.locator('html')).toHaveAttribute('dir', ui === 'ar' ? 'rtl' : 'ltr');
     await expect(page.getByRole('heading', { level: 2, name: t.aufgaben2.dialog.anweisung })).toBeVisible({ timeout: 15_000 });

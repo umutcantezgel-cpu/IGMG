@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import { renameSync, statSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -6,8 +6,12 @@ import { join } from 'node:path';
  * Synthetische Tonfolge (Grundton mit Obertönen, 0,3 s an / 0,3 s aus, 16 kHz mono, 3 s) als WAV für das Testmikrofon von
  * Chromium (`--use-file-for-fake-audio-capture`) – keine Sprache. Die Pegelprüfung der Sprechübung sieht darin genug Signal.
  */
+const RATE = 16_000;
+/** Größe der WAV-Datei in Byte (Kopf und 3 s 16-Bit-Mono). */
+const GROESSE = 44 + RATE * 3 * 2;
+
 export function schreibeTon(pfad: string) {
-  const rate = 16_000;
+  const rate = RATE;
   const n = rate * 3;
   const b = Buffer.alloc(44 + n * 2);
   b.write('RIFF', 0);
@@ -32,10 +36,24 @@ export function schreibeTon(pfad: string) {
   writeFileSync(pfad, b);
 }
 
-/** Pfad der Tonfolge für diesen Testprozess (einmal geschrieben). */
+/**
+ * Pfad der Tonfolge: eine feste Datei für alle Testprozesse (der Inhalt ist deterministisch), damit nicht je Prozess eine
+ * WAV-Datei im TMPDIR liegen bleibt. Fehlt sie oder hat sie die falsche Größe, schreibt der Prozess sie unter eigenem Namen
+ * und benennt sie dann atomar um – ein paralleler Prozess bzw. sein Chromium liest nie eine halbe Datei.
+ */
 export function testTon(): string {
-  const pfad = join(tmpdir(), `igmg-lernapp-e2e-ton-${process.pid}.wav`);
-  schreibeTon(pfad);
+  const pfad = join(tmpdir(), 'igmg-lernapp-e2e-ton.wav');
+  let vorhanden = false;
+  try {
+    vorhanden = statSync(pfad).size === GROESSE;
+  } catch {
+    /* noch nicht geschrieben */
+  }
+  if (!vorhanden) {
+    const zwischen = `${pfad}.${process.pid}`;
+    schreibeTon(zwischen);
+    renameSync(zwischen, pfad);
+  }
   return pfad;
 }
 
