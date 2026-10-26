@@ -206,6 +206,9 @@ test('Stufe offline speichern ist abbrechbar: Speicherbedarf vorher, Abbrechen m
   // Speicherbedarf vorher: alle Einheiten der Stufe samt MB
   await expect(stufe).toContainText(bisMb(de.lernpfad.stufeOfflineText, { anzahl: a1.length }));
   await expect(stufe).toContainText(/\d+,\d MB\)/);
+  // „Stufe offline speichern“ steht am Ende der Stufe: erst bedienen, wenn alle Stationen gezeichnet sind (Zeitscheiben),
+  // sonst rutscht der Knopf beim Tippen weiter nach unten
+  await expect(page.locator('section[aria-labelledby="stufe-a1"] > ol > li')).toHaveCount(a1.length, { timeout: 15_000 });
   // Pakete und Töne langsam ausliefern (auch die Anfragen des Workers), damit der Abbruch mitten in den Tönen liegt
   let toeneAngefragt = 0;
   await context.route(`**/lern-app/pakete/${KURS}/*/*`, async (route) => {
@@ -277,6 +280,9 @@ test('Stufe offline speichern, Netz weg: Lektion einer anderen Einheit startet, 
 
   const stufe = page.locator('section[aria-labelledby="stufe-a1"] [data-stufe-offline]');
   await expect(stufe).toContainText(bisMb(de.lernpfad.stufeOfflineText, { anzahl: a1.length }));
+  // „Stufe offline speichern“ steht am Ende der Stufe: erst bedienen, wenn alle Stationen gezeichnet sind (Zeitscheiben),
+  // sonst rutscht der Knopf beim Tippen weiter nach unten
+  await expect(page.locator('section[aria-labelledby="stufe-a1"] > ol > li')).toHaveCount(a1.length, { timeout: 15_000 });
   await druecke(
     page,
     stufe.getByRole('button', { name: formatiere(de.lernpfad.stufeOffline, { stufe: 'A1' }, 'de'), exact: true }),
