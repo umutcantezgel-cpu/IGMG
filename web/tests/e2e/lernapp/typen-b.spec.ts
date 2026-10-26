@@ -449,39 +449,53 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     await ueberschrift(page, t.schreiben.anweisung);
   });
 
-  test('Höchstlänge 15 s: vorher sichtbar und angesagt, die Aufnahme endet von selbst mit Ansage (N9b)', async ({ page }, info) => {
-    test.skip(info.project.name !== 'desktop', 'einmal genügt');
-    test.setTimeout(120_000);
-    const t = de;
-    await geraet(page);
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
-    await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
-    await geschichte(page, 'tastatur', t, 'kitap', 'de');
-    await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
-    await tipp(page, 'tastatur', t, 'Su içiyorum.');
-    await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
-    await pruefenUndWeiter(page, 'tastatur', t);
-    await ueberschrift(page, t.sprechen.anweisung);
-    const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
-    if (await ohne.count()) await druecke(page, 'tastatur', ohne);
-    const grenze = formatiere(t.sprechen.grenze, { s: 15 }, 'de');
-    const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
-    // vorher: sichtbar unter dem Knopf und als seine Beschreibung
-    await expect(page.getByText(grenze, { exact: true })).toBeVisible();
-    await expect(aufnehmen).toHaveAccessibleDescription(grenze);
-    await druecke(page, 'tastatur', aufnehmen);
-    await expect(liveRegion(page)).toHaveText(formatiere(t.sprechen.laeuftAnsage, { s: 15 }, 'de'));
-    const stopp = page.getByRole('button', { name: t.sprechen.stopp, exact: true });
-    await expect(stopp).toBeFocused();
-    const beginn = Date.now();
-    // nicht beenden: nach 15 s endet die Aufnahme von selbst und sagt es an
-    const ende = formatiere(t.sprechen.grenzeErreicht, { s: 15 }, 'de');
-    await expect(liveRegion(page)).toHaveText(ende, { timeout: 25_000 });
-    expect(Date.now() - beginn).toBeGreaterThanOrEqual(14_000);
-    await expect(page.getByRole('heading', { level: 3, name: t.sprechen.selbstVergleich, exact: true })).toBeFocused();
-    await expect(page.locator('main form').getByText(ende, { exact: true })).toBeVisible();
-    await expect(page.getByRole('button', { name: t.sprechen.nochmal, exact: true })).toBeEnabled();
-  });
+  for (const mitPruefung of [false, true])
+    test(`Höchstlänge 15 s: vorher sichtbar und angesagt, die Aufnahme endet von selbst mit Ansage (N9b)${
+      mitPruefung ? ', mit Sprachprüfung: die Ansage steht vor dem Ergebnis' : ''
+    }`, async ({ page }, info) => {
+      test.skip(info.project.name !== 'desktop', 'einmal genügt');
+      // die Sprachprüfung läuft im E2E nur mit dem Attrappen-Worker (der echte lädt ≈ 95 MB)
+      test.skip(mitPruefung && !(SCHALTER_SPRECHEN && ATTRAPPE), 'Sprachprüfung nur im Testbau mit Attrappen-Worker');
+      test.setTimeout(120_000);
+      const t = de;
+      await geraet(page);
+      await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
+      await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
+      await geschichte(page, 'tastatur', t, 'kitap', 'de');
+      await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
+      await tipp(page, 'tastatur', t, 'Su içiyorum.');
+      await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
+      await pruefenUndWeiter(page, 'tastatur', t);
+      await ueberschrift(page, t.sprechen.anweisung);
+      if (mitPruefung) {
+        await druecke(page, 'tastatur', page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true }));
+        await expect(liveRegion(page)).toHaveText(t.sprechen.bereit, { timeout: 20_000 });
+      } else {
+        const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
+        if (await ohne.count()) await druecke(page, 'tastatur', ohne);
+      }
+      const grenze = formatiere(t.sprechen.grenze, { s: 15 }, 'de');
+      const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
+      // vorher: sichtbar unter dem Knopf und als seine Beschreibung
+      await expect(page.getByText(grenze, { exact: true })).toBeVisible();
+      await expect(aufnehmen).toHaveAccessibleDescription(grenze);
+      await druecke(page, 'tastatur', aufnehmen);
+      await expect(liveRegion(page)).toHaveText(formatiere(t.sprechen.laeuftAnsage, { s: 15 }, 'de'));
+      const stopp = page.getByRole('button', { name: t.sprechen.stopp, exact: true });
+      await expect(stopp).toBeFocused();
+      const beginn = Date.now();
+      // nicht beenden: nach 15 s endet die Aufnahme von selbst und sagt es an – mit Sprachprüfung in derselben Ansage vor dem
+      // Ergebnis (sonst überschriebe das Ergebnis sie sofort, Gegenprüfung 2 N9b)
+      const ende = formatiere(t.sprechen.grenzeErreicht, { s: 15 }, 'de');
+      const ergebnis = `(${[t.sprechen.gut, t.sprechen.teilweise].map(roh).join('|')})`;
+      if (mitPruefung) await expect(liveRegion(page)).toHaveText(new RegExp(`^${roh(ende)} ${ergebnis}$`), { timeout: 25_000 });
+      else await expect(liveRegion(page)).toHaveText(ende, { timeout: 25_000 });
+      expect(Date.now() - beginn).toBeGreaterThanOrEqual(14_000);
+      const titel = mitPruefung ? new RegExp(`^${ergebnis}$`) : t.sprechen.selbstVergleich;
+      await expect(page.getByRole('heading', { level: 3, name: titel, exact: true })).toBeFocused();
+      await expect(page.locator('main form').getByText(ende, { exact: true })).toBeVisible();
+      await expect(page.getByRole('button', { name: t.sprechen.nochmal, exact: true })).toBeEnabled();
+    });
 
   test('Mikrofon nur auf …/ueben und …/wiederholen; Modelldateien vom eigenen Ursprung mit den Kopfzeilen der Lern-App', async ({
     request,

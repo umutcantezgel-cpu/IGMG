@@ -50,8 +50,8 @@ const ladeAufnahme = () => import('./aufnahme');
  * Sprechübung (PLAN §4.2, ADR 0042 mit Fortschreibung S2/S5, KERN 4.0 §6 und §8):
  * - Zielsatz in seiner Sprache, optional Vorlage anhören und Übersetzung; „Aufnehmen“ per Taste (Enter/Leertaste), Pegel
  *   (B-35), höchstens 15 s, Ansagen in der Live-Region des Spielers. Die Höchstlänge steht sichtbar unter dem Knopf
- *   (`aria-describedby`), die Ansage beim Start nennt sie, und endet die Aufnahme von selbst, sagt die Übung das an
- *   (Stufe C N9b, KERN 4.0 §8: keine unangekündigte Zeitgrenze; Wiederholen bleibt jederzeit möglich; Einordnung zu
+ *   (`aria-describedby`), die Ansage beim Start nennt sie, und endet die Aufnahme von selbst, sagt die Übung das an – vor
+ *   der folgenden Meldung in derselben Ansage, damit das Ergebnis sie nicht überschreibt (Stufe C N9b, KERN 4.0 §8: keine unangekündigte Zeitgrenze; Wiederholen bleibt jederzeit möglich; Einordnung zu
  *   WCAG 2.2.1 in ENTSCHEIDUNGEN L3-E17).
  * - Die Aufnahme bleibt im Arbeitsspeicher (eigene Aufnahme anhören über eine Objekt-Adresse); nach der Übung wird alles
  *   verworfen. Mikrofon nur auf `…/ueben` und `…/wiederholen`.
@@ -237,7 +237,10 @@ export default function Sprechen({
     vonSelbst.current = false;
     setVonSelbstBeendet(vonSelbstJetzt);
     setPhase('verarbeitung');
-    if (vonSelbstJetzt) sage(f(t.grenzeErreicht, { s: SEKUNDEN }));
+    // Endete die Aufnahme von selbst, steht die Ansage vor der nächsten Meldung derselben Live-Region (Ergebnis, „zu leise“,
+    // Fehler) – einzeln würde sie sofort überschrieben und von Screenreadern nicht gehört (Gegenprüfung 2 N9b)
+    const grenze = vonSelbstJetzt ? f(t.grenzeErreicht, { s: SEKUNDEN }) : '';
+    const mitGrenze = (meldungJetzt: string) => (grenze ? `${grenze} ${meldungJetzt}` : meldungJetzt);
     try {
       const a = await laufend.stopp();
       if (eigeneAdresse.current) URL.revokeObjectURL(eigeneAdresse.current);
@@ -245,25 +248,25 @@ export default function Sprechen({
       setEigene(eigeneAdresse.current);
       if (!pruefePegel(a.pcm, ABTASTRATE).ok) {
         setPhase('start');
-        return sage(t.zuLeise);
+        return sage(mitGrenze(t.zuLeise));
       }
       const e = erkennung.current;
       if (modusJetzt.current.art === 'bereit' && e && erkennbar(ziel.sprache)) {
-        sage(t.pruefung);
+        sage(mitGrenze(t.pruefung));
         try {
           const r = await e.erkenne(a.pcm, ziel.sprache, ziel.text);
           setErgebnis(r);
-          sage(t[r.status]);
+          sage(mitGrenze(t[r.status]));
         } catch {
           setModus({ art: 'ohne', grund: 'fehler' });
-          sage(t.fehler);
+          sage(mitGrenze(t.fehler));
         }
-      } else sage(vonSelbstJetzt ? f(t.grenzeErreicht, { s: SEKUNDEN }) : t.beendet);
+      } else sage(grenze || t.beendet);
       setPhase('ergebnis');
     } catch {
       setPhase('start');
       setMikrofon(false);
-      sage(t.keinMikrofon);
+      sage(mitGrenze(t.keinMikrofon));
     }
   }
 
@@ -401,7 +404,7 @@ export default function Sprechen({
           <h3 id={`${id}-ergebnis`} ref={ergebnisTitel} tabIndex={-1} className="text-20 font-bold outline-none">
             {ergebnis && mitErkennung ? t[ergebnis.status] : t.selbstVergleich}
           </h3>
-          {/* mit Spracherkennung überschreibt das Ergebnis die Ansage „von selbst geendet“: hier bleibt sie lesbar */}
+          {/* mit Spracherkennung steht „von selbst geendet“ auch sichtbar beim Ergebnis (die Ansage nennt beides) */}
           {vonSelbstBeendet && ergebnis && mitErkennung ? <p className="text-16">{f(t.grenzeErreicht, { s: SEKUNDEN })}</p> : null}
           {ergebnis && mitErkennung ? (
             <>
