@@ -229,6 +229,11 @@ export function vierGrammStrom(strom, index) {
  * Startliste des Orchestrators (S-L1 M-3), bestätigt und ergänzt von der religiösen Prüfung (LM-09); eine geprüfte Liste
  * liegt danach gepinnt in `web/daten/` (Ordner: Entscheidung der Menschen). Längere Formeln (≥ 4 Wörter, z. B. die Eulogie)
  * fängt bereits der 4-Gramm-Abgleich.
+ *
+ * Musterlogik ohne neuen Wortlaut (Stufe C N2, Z-L10): `artikel` erlaubt vor dem ersten Wort des Eintrags den Artikel
+ * (auch hinter einer Vorsilbe), `umkehrbar` zusätzlich die umgekehrte Reihenfolge der vorhandenen Wörter (Erwiderung).
+ * So trifft der Friedensgruß aus 6:54 auch mit Artikel und als Erwiderung. Weitere Formeln (Fest-, Ramadan-,
+ * Freitagsgruß u. a.) ergänzt nur die religiöse Prüfung (LM-09).
  */
 export const LEXIKON_VERWEISE = Object.freeze([
   { name: 'Basmala', stelle: '1:1', woerter: [1, 4] },
@@ -239,7 +244,7 @@ export const LEXIKON_VERWEISE = Object.freeze([
   { name: 'maschallah', stelle: '18:39', woerter: [6, 8] },
   { name: 'subhanallah', stelle: '23:91', woerter: [23, 24] },
   { name: 'Takbir', stelle: '29:45', woerter: [18, 19] },
-  { name: 'Friedensgruß', stelle: '6:54', woerter: [7, 8] },
+  { name: 'Friedensgruß', stelle: '6:54', woerter: [7, 8], artikel: true, umkehrbar: true },
   { name: 'Sure', stelle: '24:1', woerter: [1, 1] },
 ]);
 
@@ -288,8 +293,9 @@ export function falteLatein(text) {
 }
 
 /**
- * Lexikon aus dem Tanzil-XML auflösen: je arabischem Eintrag die Folge der Wort-Varianten; je lateinischem Eintrag das
- * Muster mit Wortgrenzen.
+ * Lexikon aus dem Tanzil-XML auflösen: je arabischem Eintrag die Folge der Wort-Varianten (`folge`) und je Stelle, ob dort
+ * der Artikel stehen darf (`artikel`); bei `umkehrbar` zusätzlich die umgekehrte Folge als eigener Eintrag gleichen Namens.
+ * Je lateinischem Eintrag das Muster mit Wortgrenzen.
  */
 export function baueLexikon(tanzilXml) {
   const verse = new Map();
@@ -301,8 +307,12 @@ export function baueLexikon(tanzilXml) {
     const folge = roh.map((w) => koranVarianten(w)).filter((v) => v.length);
     if (folge.length !== e.woerter[1] - e.woerter[0] + 1)
       throw new Error(`Formel-Lexikon: Stelle ${e.stelle} Wörter ${e.woerter.join('–')} ungültig`);
-    return { name: e.name, folge };
-  });
+    const artikel = folge.map((_, i) => Boolean(e.artikel) && i === 0);
+    const vorwaerts = { name: e.name, folge, artikel };
+    return e.umkehrbar && folge.length > 1
+      ? [vorwaerts, { name: e.name, folge: [...folge].reverse(), artikel: [...artikel].reverse() }]
+      : [vorwaerts];
+  }).flat();
   const latein = LEXIKON_LATEIN.map((e) => ({
     name: e.name,
     muster: new RegExp(`(?<![\\p{L}\\p{N}])(?:${e.muster})(?![\\p{L}\\p{N}])`, 'u'),
@@ -312,6 +322,20 @@ export function baueLexikon(tanzilXml) {
 
 /** Vorsilben, die vor dem ersten Wort eines Eintrags stehen dürfen (und, so, mit, für, wie, bei Schwur). */
 const VORSILBE = /^[\u0648\u0641\u0628\u0644\u0643\u062A]{0,2}$/;
+/** Artikel (Alif, Lam) – an Stellen mit `artikel`, am ersten Wort auch hinter einer Vorsilbe; mit li- als Lam, Lam. */
+const ARTIKEL = '\u0627\u0644';
+const MIT_ARTIKEL = /^[\u0648\u0641\u0628\u0643]{0,2}\u0627\u0644$|^[\u0648\u0641]?\u0644\u0644$/;
+
+/** Steht das Wort `wort` an einer Stelle des Eintrags (Varianten `v`)? Am ersten Wort mit Vorsilbe, mit `artikel` auch so. */
+function passtStelle(wort, v, erstes, artikel) {
+  if (erstes)
+    return v.some((x) => {
+      if (!wort.endsWith(x)) return false;
+      const vor = wort.slice(0, wort.length - x.length);
+      return VORSILBE.test(vor) || (artikel && MIT_ARTIKEL.test(vor));
+    });
+  return v.includes(wort) || (artikel && v.some((x) => wort === ARTIKEL + x));
+}
 
 /** Erster Lexikon-Treffer in einem Text (arabisch und lateinisch), sonst null. Ausgabe ohne arabische Schrift. */
 export function lexikonTreffer(text, lexikon) {
@@ -321,8 +345,8 @@ export function lexikonTreffer(text, lexikon) {
       for (let i = 0; i < w.length; i++)
         for (const e of lexikon.arabisch) {
           if (i + e.folge.length > w.length) continue;
-          const erstes = e.folge[0].some((v) => w[i].endsWith(v) && VORSILBE.test(w[i].slice(0, w[i].length - v.length)));
-          if (erstes && e.folge.every((v, j) => j === 0 || v.includes(w[i + j]))) return { name: e.name };
+          const artikel = e.artikel ?? [];
+          if (e.folge.every((v, j) => passtStelle(w[i + j], v, j === 0, Boolean(artikel[j])))) return { name: e.name };
         }
   for (const f of falteLatein(t)) for (const e of lexikon.latein) if (e.muster.test(f)) return { name: e.name };
   return null;

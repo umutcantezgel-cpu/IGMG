@@ -9,8 +9,12 @@ import { kiHerkunftVerboten } from '../religioes/freigabe';
  * - Gezählt wird je Person nur ihre jüngste religiöse Prüfung zum aktuellen Hash; „ok“ zählt nur mit der Rolle
  *   `religioese_pruefung` (die Administration ersetzt keine Prüfung), ohne Verfasserschaft und mit jedem aktuellen Beleg
  *   „am Original geprüft“.
- * - Ein „abgelehnt“, „Änderungsvorschlag“ oder „Korrektur“ einer prüfenden Person zum aktuellen Hash sperrt, bis ein neuer
- *   Stand (neuer Hash) vorliegt.
+ * - Ein Konto, das (auch) die Rolle `administration` trägt, zählt nie als Freigabe (Stufe C N2, Z-L02: sonst erzeugte die
+ *   Administration über zwei eigene Konten mit beiden Rollen die Freigaben allein; beide Rollen zusammen vergibt „Benutzer
+ *   und Rollen“ nicht mehr, `rechte/schutzrollen.ts`). Sein Einwand sperrt aber weiter (fail closed, Gegenprüfung N2):
+ *   Neue Urteile solcher Konten nimmt `pruefeUrteil` nicht an, ein gespeichertes „abgelehnt“ aus dem Altbestand bleibt wirksam.
+ * - Ein „abgelehnt“, „Änderungsvorschlag“ oder „Korrektur“ einer Person mit der Rolle `religioese_pruefung` zum aktuellen
+ *   Hash sperrt, bis ein neuer Stand (neuer Hash) vorliegt.
  * - Prüfungen ohne Person (gelöschtes Konto) zählen nicht.
  */
 
@@ -37,6 +41,13 @@ export function istKritisch(kategorie: Fehler | null | undefined): boolean {
 
 /** Rolle, deren Prüfungen religiöse Freigaben sind (ADR 0040 Nr. 5). */
 export const RELIGIOESE_ROLLE = 'religioese_pruefung';
+/** Rolle, mit der eine Prüfung nie religiös zählt – auch nicht zusammen mit {@link RELIGIOESE_ROLLE} (Stufe C N2). */
+export const NIE_RELIGIOES = 'administration';
+
+/** Zählt das Urteil einer Person mit diesen Rollen religiös? Nur mit der Rolle und ohne Administration. */
+export function zaehltReligioes(rollen: readonly string[]): boolean {
+  return rollen.includes(RELIGIOESE_ROLLE) && !rollen.includes(NIE_RELIGIOES);
+}
 /** Anzahl nötiger Freigaben verschiedener Personen (L3-E01). */
 export const NOETIGE_FREIGABEN = 2;
 
@@ -90,7 +101,7 @@ function alleBelegeBestaetigt(b: ReligioeserBaustein, p: Pruefung): boolean {
 export type ReligioeseLage = {
   /** Personen, deren Freigabe zählt. */
   freigaben: string[];
-  /** Jemand mit der Rolle hat zum aktuellen Hash abgelehnt, einen Änderungsvorschlag oder eine Korrektur gemacht. */
+  /** Jemand mit der Rolle (auch mit Administration) hat zum aktuellen Hash abgelehnt, geändert oder korrigiert. */
   gesperrt: boolean;
   /** Pflichtbeleg fehlt (Aussage ohne Beleg). */
   belegFehlt: boolean;
@@ -106,11 +117,12 @@ export function religioeseLage(b: ReligioeserBaustein, pruefungen: readonly Prue
   let gesperrt = false;
   for (const [person, p] of juengsteJePerson(pruefungen, b.inhaltHash, ['religioes'])) {
     if (!p.pruefendeRollen.includes(RELIGIOESE_ROLLE)) continue;
+    // Einwand jeder Person mit der Rolle sperrt – auch mit Administration (strengere Lesart)
     if (p.urteil !== 'ok') {
       gesperrt = true;
       continue;
     }
-    if (verfasser.has(person) || !alleBelegeBestaetigt(b, p)) continue;
+    if (!zaehltReligioes(p.pruefendeRollen) || verfasser.has(person) || !alleBelegeBestaetigt(b, p)) continue;
     freigaben.push(person);
   }
   const belegFehlt = b.belegPflicht && b.belege.length === 0;
@@ -124,7 +136,10 @@ export function religioeseLage(b: ReligioeserBaustein, pruefungen: readonly Prue
   };
 }
 
-/** „geprüft“: zwei Freigaben zum aktuellen Hash von zwei verschiedenen Personen mit Rolle, keine Verfasser, Belege bestätigt. */
+/**
+ * „geprüft“: zwei Freigaben zum aktuellen Hash von zwei verschiedenen Personen mit Rolle (ohne Administration), keine
+ * Verfasser, Belege bestätigt.
+ */
 export function religioesGeprueft(b: ReligioeserBaustein, pruefungen: readonly Pruefung[]): boolean {
   return religioeseLage(b, pruefungen).geprueft;
 }
@@ -152,6 +167,11 @@ export type SprachEintrag = {
 export type SprachOptionen = {
   /** Schalter `lernapp_ungeprueft`: Einträge ohne bestandene Stichprobe mit Hinweis zeigen (ADR 0041 Nr. 8). */
   ungeprueftZeigen: boolean;
+  /**
+   * Formelliste freigegeben (KERN 4.0 §2.3 „Formelliste“, LM-09; `formelliste.ts` `formellisteFrei`): zwei religiöse
+   * Freigaben zum aktuellen Stand der Liste und Status „freigegeben“ im Leitfaden. Fehlt die Angabe, gilt sie als gesperrt.
+   */
+  formellisteFrei?: boolean;
 };
 
 /** Gibt es zum aktuellen Hash eine Sprachprüfung mit „abgelehnt“ oder einem kritischen Fehler? Dann nie sichtbar. */
@@ -167,7 +187,11 @@ export function sprachlichGesperrt(inhaltHash: string, pruefungen: readonly Prue
 /**
  * Sichtbarkeit eines Sprachkurs-Eintrags (ADR 0041 Nr. 2, 8, 11):
  * - `entwurf` und `gesperrt` nie; „abgelehnt“ oder kritischer Fehler zum aktuellen Hash nie.
- * - `religionsbezug` nur mit zwei religiösen Freigaben – unabhängig von Status und Schalter `lernapp_ungeprueft`.
+ * - `religionsbezug` nur mit zwei religiösen Freigaben **und** freigegebener Formelliste – unabhängig von Status und
+ *   Schalter `lernapp_ungeprueft`. Die Formelliste gilt für jeden gekennzeichneten Eintrag (Stufe C N2, Z-L10), nicht nur
+ *   für Formeln: Ob ein gekennzeichneter Eintrag eine Formel (F-Kandidat) oder nur ein Ort bzw. Termin (R-Kandidat) ist,
+ *   weiß diese Regel nicht, also die strengere Lesart. Lateinische Formel-Kandidaten ohne Kennzeichen setzt der Paketbau
+ *   selbst auf `religionsbezug` (`paket/bauen.ts`, `formelkandidat.ts`).
  * - `automatisch_geprueft` nur mit dem Schalter und dann mit Hinweis; `veroeffentlicht` ohne Hinweis.
  */
 export function sprachSichtbarkeit(e: SprachEintrag, pruefungen: readonly Pruefung[], o: SprachOptionen): Sichtbarkeit {
@@ -175,7 +199,8 @@ export function sprachSichtbarkeit(e: SprachEintrag, pruefungen: readonly Pruefu
   if (sprachlichGesperrt(e.inhaltHash, pruefungen)) return 'verborgen';
   if (
     e.religionsbezug &&
-    !religioesGeprueft({ inhaltHash: e.inhaltHash, verfasser: e.verfasser ?? [], belege: [], belegPflicht: false }, pruefungen)
+    (o.formellisteFrei !== true ||
+      !religioesGeprueft({ inhaltHash: e.inhaltHash, verfasser: e.verfasser ?? [], belege: [], belegPflicht: false }, pruefungen))
   )
     return 'verborgen';
   if (e.status === 'automatisch_geprueft') return o.ungeprueftZeigen ? 'mit_hinweis' : 'verborgen';
@@ -238,8 +263,11 @@ export function bestandenBleibt(gesamt: number, geaendert: readonly { einzelnGep
 
 // ——— Zwei-Prüfer-Oberfläche (L6-02/03, ADR 0040 Nr. 5, PLAN §6.7 Nr. 5–6) ———
 
-/** Bausteine mit religiöser Zwei-Prüfer-Freigabe in der Verwaltung (Werte von `lernapp_inhalt_typ`). */
-export const RELIGIOESE_BAUSTEINE = ['aussage', 'aufgabe', 'lektion', 'koran_bedeutung'] as const;
+/**
+ * Bausteine mit religiöser Zwei-Prüfer-Freigabe in der Verwaltung (Werte von `lernapp_inhalt_typ`); `formelliste` ist die
+ * Liste erlaubter Alltagsformeln als Ganzes (KERN 4.0 §2.3, LM-09; `formelliste.ts`).
+ */
+export const RELIGIOESE_BAUSTEINE = ['aussage', 'aufgabe', 'lektion', 'koran_bedeutung', 'formelliste'] as const;
 export type ReligioeserBausteinTyp = (typeof RELIGIOESE_BAUSTEINE)[number];
 
 export function istReligioeserBaustein(wert: unknown): wert is ReligioeserBausteinTyp {
@@ -283,11 +311,20 @@ export function belegHaken(b: { id: string; inhaltHash: string }): string {
 }
 
 export type UrteilsFehler =
-  'keineRolle' | 'veraltet' | 'verfasser' | 'kiHerkunft' | 'belegFehlt' | 'belegeBestaetigen' | 'inhaltBestaetigen' | 'schonFreigegeben';
+  | 'keineRolle'
+  | 'administration'
+  | 'veraltet'
+  | 'verfasser'
+  | 'kiHerkunft'
+  | 'belegFehlt'
+  | 'belegeBestaetigen'
+  | 'inhaltBestaetigen'
+  | 'schonFreigegeben';
 
 /**
  * Darf diese Person dieses Urteil abgeben (ADR 0040 Nr. 5, KERN 4.0 §2.3)? `null` = ja. Regeln:
- * - nur mit der Rolle `religioese_pruefung` (die Administration ersetzt keine Prüfung);
+ * - nur mit der Rolle `religioese_pruefung` (die Administration ersetzt keine Prüfung) und nie von einem Konto, das auch
+ *   die Rolle `administration` trägt (Stufe C N2);
  * - nur zum aktuellen Hash (hat sich der Inhalt seit dem Öffnen geändert, gilt das Urteil nicht);
  * - wer den aktuellen Stand verfasst hat (KI-Lauf oder Redaktion), prüft ihn nicht – Vier-Augen-Prinzip je Freigabe;
  * - „ok“ nur, wenn KI-Regel 2 nicht verletzt ist, ein Pflichtbeleg vorhanden ist, jeder aktuelle Beleg ausdrücklich bestätigt
@@ -296,6 +333,7 @@ export type UrteilsFehler =
  */
 export function pruefeUrteil(a: UrteilsAntrag, pruefungen: readonly Pruefung[]): UrteilsFehler | null {
   if (!a.pruefendeRollen.includes(RELIGIOESE_ROLLE)) return 'keineRolle';
+  if (!zaehltReligioes(a.pruefendeRollen)) return 'administration';
   if (a.gesehenerHash !== a.baustein.inhaltHash) return 'veraltet';
   if (a.baustein.verfasser.some((v) => v === a.pruefendeId)) return 'verfasser';
   if (a.urteil !== 'ok') return null;

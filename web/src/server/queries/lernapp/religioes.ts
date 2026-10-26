@@ -19,14 +19,16 @@ import {
   wissenSichtbar,
   wissensAufgabeSichtbar,
 } from '@/lib/lernapp/freigabe';
+import { FORMELLISTE_ID, FORMELLISTE_SCHLUESSEL, FORMELN, formellisteBaustein, formellisteFrei } from '@/lib/lernapp/formelliste';
 import type { KursId } from '@/lib/lernapp/kurse';
 import { koranBedeutungHash, koranBedeutungStatus } from '@/lib/lernapp/paket/koran';
 import { ladePruefungen } from './pruefungen';
 
 /**
  * Zwei-Prüfer-Freigabe religiöser Bausteine (L6-02/03, ADR 0040 Nr. 5, KERN 4.0 §2.3, PLAN §6.7 Nr. 5–7): Aussagen, Quizfragen
- * und Lektionen des Wissenskurses `islam` und des Koran-Pfads `koran`, Aufgaben mit `religionsbezug` sowie Koran-
- * Wortbedeutungen im Lern-App-Pfad (`quran_wortbedeutung`, von Menschen verfasst; Hash über die gezeigten Felder). Ungecacht;
+ * und Lektionen des Wissenskurses `islam` und des Koran-Pfads `koran`, Aufgaben mit `religionsbezug`, Koran-Wortbedeutungen
+ * im Lern-App-Pfad (`quran_wortbedeutung`, von Menschen verfasst; Hash über die gezeigten Felder) und die Formelliste des
+ * Leitfadens als Ganzes (`formelliste.ts`, LM-09; betrifft alle Sprachkurse, daher ohne eigenen Kurs). Ungecacht;
  * Aufrufer prüfen `lernapp.religioes.pruefen` bzw. `freigabe.lesen`. Ob etwas sichtbar ist, entscheidet nur `freigabe.ts`.
  *
  * Unabhängigkeit der Prüfenden: Die Ansicht zeigt den Stand (0/2, 1/2, 2/2), das eigene Urteil und ob ein Einwand vorliegt –
@@ -69,7 +71,8 @@ type Roh = {
   typ: ReligioeserBausteinTyp;
   id: string;
   schluessel: string;
-  kurs: KursId;
+  /** Kurs des Bausteins; null = alle Sprachkurse (Formelliste) */
+  kurs: KursId | null;
   status: Status;
   baustein: ReligioeserBaustein;
   titel: string;
@@ -276,12 +279,33 @@ async function ladeKoranBedeutungen(o: Auswahl): Promise<Roh[]> {
   }));
 }
 
-/** Lader je Typ; Reihenfolge der ganzen Liste: Lektionen, Aussagen, Quizfragen, Koran-Bedeutungen (je nach Schlüssel). */
+/**
+ * Die Formelliste als ein Baustein (Stand aus dem Leitfaden im Bau). Titel: die Begriffe der Liste. Status nie „gesperrt“
+ * im Sinn von zurückgezogen – der Listenstatus „gesperrt“ heißt nur „noch nicht freigegeben“ und steht in den Angaben.
+ */
+async function ladeFormelliste(o: Auswahl): Promise<Roh[]> {
+  if (o.nach || (o.id !== undefined && o.id !== FORMELLISTE_ID)) return [];
+  return [
+    {
+      typ: 'formelliste',
+      id: FORMELLISTE_ID,
+      schluessel: FORMELLISTE_SCHLUESSEL,
+      kurs: null,
+      status: 'automatisch_geprueft',
+      titel: FORMELN.liste.map((f) => `${f.id} ${f.begriff}`).join('; '),
+      titelLang: 'de',
+      baustein: formellisteBaustein(FORMELN),
+    },
+  ];
+}
+
+/** Lader je Typ; Reihenfolge der ganzen Liste: Lektionen, Aussagen, Quizfragen, Koran-Bedeutungen (je nach Schlüssel), Formelliste. */
 const LADER = {
   lektion: ladeLektionen,
   aussage: ladeAussagen,
   aufgabe: ladeAufgaben,
   koran_bedeutung: ladeKoranBedeutungen,
+  formelliste: ladeFormelliste,
 } as const satisfies Record<ReligioeserBausteinTyp, (o: Auswahl) => Promise<Roh[]>>;
 
 /** Genau ein Baustein (roh) oder keiner. */
@@ -323,7 +347,8 @@ export type ReligioeserEintrag = {
   typ: ReligioeserBausteinTyp;
   id: string;
   schluessel: string;
-  kurs: KursId;
+  /** null = alle Sprachkurse (Formelliste) */
+  kurs: KursId | null;
   titel: string;
   titelLang?: string;
   status: Status;
@@ -490,6 +515,22 @@ export async function ladeReligioesenBaustein(typ: ReligioeserBausteinTyp, id: s
       db.select({ id: schema.lernappAufgabe.id }).from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.lektionId, id)),
     ]);
     angaben.push({ label: 'umfang', wert: `${aussagen.length} / ${aufgaben.length}` });
+  } else if (typ === 'formelliste') {
+    // Begriffe, Art, Anlass und Vorschlag aus dem Leitfaden (Umschrift bzw. Lateinschrift, kein arabischer Wortlaut)
+    angaben.push(
+      { label: 'listenstatus', wert: FORMELN.status },
+      {
+        label: 'formeln',
+        wert: FORMELN.liste
+          .map((f) =>
+            [`${f.id} · ${f.begriff}`, ...['art', 'anlass', 'vorschlag'].flatMap((k) => (typeof f[k] === 'string' ? [f[k]] : []))].join(
+              ' · ',
+            ),
+          )
+          .join('\n'),
+        lang: 'de',
+      },
+    );
   } else {
     const [b] = await db
       .select({
@@ -515,7 +556,7 @@ export async function ladeReligioesenBaustein(typ: ReligioeserBausteinTyp, id: s
 export async function ladeFreigabe(
   typ: ReligioeserBausteinTyp,
   id: string,
-): Promise<(FreigabeBaustein & { kurs: KursId; schluessel: string; aussageId: string | null }) | null> {
+): Promise<(FreigabeBaustein & { kurs: KursId | null; schluessel: string; aussageId: string | null }) | null> {
   if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
   const [r] = await ladeRoh({ typ, id });
   if (!r) return null;
@@ -531,7 +572,8 @@ export async function ladeFreigabe(
 }
 
 /**
- * Sichtbar im Lern-App-Pfad (ADR 0040 Nr. 5)? Aussage, Lektion, Koran-Bedeutung: geprüft und nicht zurückgezogen. Quizfrage:
+ * Sichtbar im Lern-App-Pfad (ADR 0040 Nr. 5)? Aussage, Lektion, Koran-Bedeutung: geprüft und nicht zurückgezogen. Formelliste:
+ * freigegeben (zwei Freigaben und Status im Leitfaden, `formellisteFrei`). Quizfrage:
  * selbst geprüft und ihre Aussage geprüft (ohne Aussage im Wissenskurs nie). Aufgabe im Koran-Pfad: nie, solange der
  * Paketbau (L6-05) die gezeigten Bedeutungen bzw. die Wurzeltabelle nicht auflöst – erst dann gilt `koranWortSichtbar`
  * (fail-closed wie die Auslieferung, die für `koran` noch keine Einheiten liefert). Abfrage am Live-Stand für das Tor L6.
@@ -539,6 +581,7 @@ export async function ladeFreigabe(
 export async function religioesSichtbar(typ: ReligioeserBausteinTyp, id: string): Promise<boolean> {
   const f = await ladeFreigabe(typ, id);
   if (!f) return false;
+  if (typ === 'formelliste') return formellisteFrei(FORMELN, f.pruefungen);
   if (typ !== 'aufgabe') return wissenSichtbar(f.status, f.baustein, f.pruefungen);
   if (f.kurs === 'koran') return false;
   if (!f.aussageId) return f.kurs !== 'islam' && wissenSichtbar(f.status, f.baustein, f.pruefungen);

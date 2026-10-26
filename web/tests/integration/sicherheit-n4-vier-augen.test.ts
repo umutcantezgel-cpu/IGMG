@@ -211,7 +211,8 @@ describe('(A) M-2/S2b-3: Start-Ausnahme nicht über das Entziehen der Leitung zu
     // Wieder gewählt: der offene Entzug verfällt
     expect(await benutzer.rollenSpeichern({}, formular({ id: hoca.id, rollen: ['religioese_pruefung'] }))).toEqual({ ok: true });
     expect(await db.select().from(schema.rollenAntrag).where(eq(schema.rollenAntrag.benutzerId, hoca.id))).toHaveLength(0);
-    // Eigene Rolle religiöse Prüfung (Administration darf sie haben) gibt man selbst sofort ab
+    // Eigene Rolle religiöse Prüfung gibt man selbst sofort ab – hier ein Altbestand vor Stufe C N2 (Administration mit
+    // religiöser Prüfung; neu vergibt „Benutzer und Rollen“ beide zusammen nicht mehr, sicherheit-n2-religioese-pruefung.test.ts)
     await db.insert(schema.rolleZuweisung).values({ benutzerId: admin.id, rolle: 'religioese_pruefung' });
     expect(await benutzer.rollenSpeichern({}, formular({ id: admin.id, rollen: ['administration'] }))).toEqual({ ok: true });
     expect(await rollenVon(admin.id)).toEqual(['administration']);

@@ -44,7 +44,7 @@
       "bildung": "Kurse und Schüler-Voranmeldungen",
       "mitgliederverwaltung": "Mitgliedsanfragen",
       "leitung": "Vorstand: Übersicht „Gemeinde im Blick“ lesen, Schutzrollen bestätigen; wird erst wirksam, wenn eine zweite Person zustimmt",
-      "religioese_pruefung": "Imam/Hoca: religiöse Inhalte verfassen und freigeben",
+      "religioese_pruefung": "Imam/Hoca: religiöse Inhalte verfassen und freigeben; nie zusammen mit Administration; wird erst wirksam, wenn eine zweite Person zustimmt",
       "kinderschutz": "Meldungen aus Gruppenchats, Moderationsprotokoll, Notfall-Pause; wird erst wirksam, wenn eine zweite Person zustimmt",
       "sprachpruefung": "Lern-App: Sprachkurse stichprobenweise prüfen, nur in den eigenen Sprachen"
     },
@@ -75,7 +75,7 @@
       "weitere": "Weitere Person einladen",
       "rollenSpeichern": "Rollen speichern",
       "rollenGespeichert": "Die Rollen wurden gespeichert. Sie gelten ab der nächsten Seite, die die Person aufruft.",
-      "rollenBeantragt": "Gespeichert. Die Rolle Leitung oder Kinderschutz wird erst wirksam, wenn eine zweite Person mit der Rolle Leitung oder Kinderschutz zustimmt (Vier-Augen-Prinzip).",
+      "rollenBeantragt": "Gespeichert. Die Rolle Leitung, Kinderschutz oder religiöse Prüfung wird erst wirksam, wenn eine zweite Person mit der Rolle Leitung oder Kinderschutz zustimmt (Vier-Augen-Prinzip).",
       "entzugBeantragt": "Gespeichert. Der Entzug der Rolle Leitung, Kinderschutz oder religiöse Prüfung wird erst wirksam, wenn eine zweite Person mit der Rolle Leitung oder Kinderschutz zustimmt (Vier-Augen-Prinzip). Bis dahin bleibt die Rolle wirksam; die Person ist informiert."
     },
     "detail": {
@@ -129,7 +129,9 @@
       "kinderschutzAdministration": "Kinderschutz und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben.",
       "leitungSelbst": "Die Rolle Leitung kann sich niemand selbst geben.",
       "leitungAdministration": "Leitung und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben.",
-      "entzugVorAdministration": "Leitung oder Kinderschutz bleibt wirksam, bis eine zweite Person den Entzug bestätigt. Erst danach kann das Konto die Rolle Administration bekommen.",
+      "religioesePruefungSelbst": "Die Rolle religiöse Prüfung kann sich niemand selbst geben.",
+      "religioesePruefungAdministration": "Religiöse Prüfung und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben. Die Administration ersetzt keine religiöse Freigabe.",
+      "entzugVorAdministration": "Leitung, Kinderschutz oder religiöse Prüfung bleibt wirksam, bis eine zweite Person den Entzug bestätigt. Erst danach kann das Konto die Rolle Administration bekommen.",
       "administrationGruppenzugang": "Dieses Konto ist Lehrkraft, Elternteil oder Schüler*in oder leitet eine Gruppe. Administration und Zugang zu Gruppen gehören in getrennte Hände: Beenden Sie zuerst Kontoart und Gruppenleitung unter „Gemeinde-Konten“ und „Gruppen“.",
       "schutzrolle": "Dieses Konto hat die Rolle Leitung, Kinderschutz oder religiöse Prüfung. Entziehen Sie die Rolle zuerst – das bestätigt eine zweite Person; danach lässt sich das Konto löschen."
     },
@@ -163,7 +165,7 @@
     },
     "antraege": {
       "titel": "Bestätigen (Vier-Augen-Prinzip)",
-      "text": "Diese Änderungen werden erst wirksam, wenn eine zweite Person zustimmt: Vergabe der Rollen Leitung und Kinderschutz, Entzug der Rollen Leitung, Kinderschutz und religiöse Prüfung, Eltern-Einladungen an Adressen außerhalb der Voranmeldung und das Beenden eines Eltern-Kind-Bezugs. Bitte nur bestätigen, was mit dem Vorstand abgesprochen ist.",
+      "text": "Diese Änderungen werden erst wirksam, wenn eine zweite Person zustimmt: Vergabe und Entzug der Rollen Leitung, Kinderschutz und religiöse Prüfung, Eltern-Einladungen an Adressen außerhalb der Voranmeldung und das Beenden eines Eltern-Kind-Bezugs. Bitte nur bestätigen, was mit dem Vorstand abgesprochen ist.",
       "rollenTitel": "Rollen",
       "rolle": "Rolle: {rolle}",
       "rolleEntzug": "Entzug der Rolle: {rolle}",

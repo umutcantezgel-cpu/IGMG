@@ -1,4 +1,4 @@
-import { and, count, eq, gte, inArray, isNull, like, sql } from 'drizzle-orm';
+import { and, count, eq, gte, inArray, isNull, like, notInArray, sql } from 'drizzle-orm';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { entscheideWirksam, type Funktion } from '@/lib/funktionen-regeln';
@@ -77,13 +77,21 @@ export async function lernappPruefen(
     aufwand: '15 min',
   });
 
-  // Prüfende: religiöse Prüfung (zwei Freigaben, ADR 0040) und Sprachprüfung je Sprache (ADR 0041)
+  // Prüfende: religiöse Prüfung (zwei Freigaben, ADR 0040) und Sprachprüfung je Sprache (ADR 0041). Konten, die zugleich
+  // Administration haben (Altbestand vor Stufe C N2), zählen nicht: Ihre Urteile gelten nie als religiöse Freigabe
+  // (`lernapp/freigabe.ts` `zaehltReligioes`).
   const aktiv = isNull(schema.user.gesperrtAm);
+  const administration = db
+    .select({ id: schema.rolleZuweisung.benutzerId })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.rolle, 'administration'));
   const [religioes] = await db
     .select({ n: sql<number>`count(distinct ${schema.rolleZuweisung.benutzerId})`.mapWith(Number) })
     .from(schema.rolleZuweisung)
     .innerJoin(schema.user, eq(schema.user.id, schema.rolleZuweisung.benutzerId))
-    .where(and(eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'), aktiv));
+    .where(
+      and(eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'), aktiv, notInArray(schema.rolleZuweisung.benutzerId, administration)),
+    );
   const nReligioes = religioes?.n ?? 0;
   neu({
     id: 'lernapp.pruefende-religioes',
@@ -92,8 +100,8 @@ export async function lernappPruefen(
     status: nReligioes >= 2 ? 'ok' : produktion ? 'warnung' : 'hinweis',
     meldung:
       nReligioes >= 2
-        ? `${zahl(nReligioes, 'Person hat', 'Personen haben')} die Rolle „religiöse Prüfung“.`
-        : `Nur ${zahl(nReligioes, 'Person hat', 'Personen haben')} die Rolle „religiöse Prüfung“. Wissenskurs, Koran-Arabisch und Einträge mit Religionsbezug brauchen zwei Freigaben von zwei Personen und bleiben bis dahin verborgen.`,
+        ? `${zahl(nReligioes, 'Person hat', 'Personen haben')} die Rolle „religiöse Prüfung“ (ohne Administration).`
+        : `Nur ${zahl(nReligioes, 'Person hat', 'Personen haben')} die Rolle „religiöse Prüfung“ (ohne Administration; Konten mit beiden Rollen zählen nie als Freigabe). Wissenskurs, Koran-Arabisch und Einträge mit Religionsbezug brauchen zwei Freigaben von zwei Personen und bleiben bis dahin verborgen.`,
     ort: 'Verwaltung › Benutzer (Vier-Augen-Prinzip), MENSCHEN LM-03',
     aufwand: '30 min',
   });
@@ -128,7 +136,7 @@ export async function lernappPruefen(
     status: nDoppelt > 0 ? 'hinweis' : 'ok',
     meldung:
       nDoppelt > 0
-        ? `${zahl(nDoppelt, 'Person mit der Rolle „religiöse Prüfung“ hat', 'Personen mit der Rolle „religiöse Prüfung“ haben')} zugleich Administration oder die Redaktion der Lern-App (${konfliktRollen.join(', ')}). Prüfende sollen unabhängig von Verwaltung und Redaktion sein; die Rollen nach Möglichkeit trennen (nur Hinweis, keine Sperre).`
+        ? `${zahl(nDoppelt, 'Person mit der Rolle „religiöse Prüfung“ hat', 'Personen mit der Rolle „religiöse Prüfung“ haben')} zugleich Administration oder die Redaktion der Lern-App (${konfliktRollen.join(', ')}). Prüfende sollen unabhängig von Verwaltung und Redaktion sein; die Rollen nach Möglichkeit trennen. Ein Konto mit Administration zählt nie als religiöse Freigabe; beide Rollen zusammen vergibt „Benutzer und Rollen“ nicht mehr.`
         : 'Keine Person mit der Rolle „religiöse Prüfung“ hat zugleich Administration oder die Redaktion der Lern-App.',
     ort: 'Verwaltung › Benutzer (Rollen), ADR 0040 Nr. 5',
     aufwand: '10 min',

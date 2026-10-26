@@ -340,7 +340,7 @@ export function ausgeliefert(basis: string, abruf: typeof fetch = fetch): KoranP
 /**
  * Abfrage am Live-Stand (Tor L6, Z-L03; Tor L6 „Integration + Abfrage“): prüft jede gezeigte Bedeutung der Pakete beider
  * Sprachen gegen die Datenbank, ohne `freigabe.ts` zu fragen – Text gleich der Zeile in `quran_wortbedeutung`, Website-Status
- * nicht „Entwurf“, keine Abweichung an der Stelle, mindestens zwei Personen mit Rolle `religioese_pruefung`, deren jüngste
+ * nicht „Entwurf“, keine Abweichung an der Stelle, mindestens zwei Personen mit Rolle `religioese_pruefung` (ohne Administration), deren jüngste
  * religiöse Prüfung zum aktuellen Hash „ok“ ist und die nicht verfasst haben, und niemand mit der Rolle, der zum aktuellen Hash
  * zuletzt anders urteilt. Dazu: Wortformen nur aus `quran_wort`, kein Audio-Feld, Wortzeiten nur geprüft. Die Pakete kommen
  * frisch aus der Datenbank ({@link frischGebaut}) oder von den ausgelieferten Adressen ({@link ausgeliefert}: findet auch einen
@@ -461,7 +461,8 @@ export async function pruefeKoranSichtbarkeit(quelle: KoranPaketQuelle = frischG
         .where(and(eq(schema.quranWortbedeutung.sprache, sprache), inArray(schema.quranWortbedeutung.formId, block))),
     );
     const bedeutungJe = new Map(bedeutungen.map((b) => [b.formId, b]));
-    // jüngste religiöse Prüfung je Person und Bedeutung, nur Personen mit der Rolle (Administration zählt nie)
+    // jüngste religiöse Prüfung je Person und Bedeutung, nur Personen mit der Rolle; mit Administration zählt ihr „ok“ nie
+    // (auch nicht zusammen mit der Rolle – Stufe C N2), ihr Einwand sperrt aber weiter (`freigabe.ts` `religioeseLage`)
     const pruefungen = await inBloecken(
       bedeutungen.map((b) => b.id),
       (block) =>
@@ -471,6 +472,7 @@ export async function pruefeKoranSichtbarkeit(quelle: KoranPaketQuelle = frischG
             inhaltHash: schema.lernappPruefung.inhaltHash,
             pruefendeId: schema.lernappPruefung.pruefendeId,
             urteil: schema.lernappPruefung.urteil,
+            administration: sql<boolean>`exists (select 1 from ${schema.rolleZuweisung} as admin where admin.benutzer_id = ${schema.lernappPruefung.pruefendeId} and admin.rolle = 'administration')`,
           })
           .from(schema.lernappPruefung)
           .innerJoin(
@@ -505,7 +507,7 @@ export async function pruefeKoranSichtbarkeit(quelle: KoranPaketQuelle = frischG
       if (b.freigabe === 'entwurf') verstoesse.push(`${sprache} ${stelle}: Bedeutung im Entwurf (gesperrt)`);
       const hash = koranBedeutungHash({ formId: b.formId, sprache, bedeutung: b.bedeutung, wurzel: b.wurzel, anmerkung: b.anmerkung });
       const zumHash = pruefungen.filter((p) => p.inhaltId === b.id && p.inhaltHash === hash);
-      const ok = zumHash.filter((p) => p.urteil === 'ok' && p.pruefendeId !== b.verfasstVon).length;
+      const ok = zumHash.filter((p) => p.urteil === 'ok' && !p.administration && p.pruefendeId !== b.verfasstVon).length;
       if (ok < 2) verstoesse.push(`${sprache} ${stelle}: ${ok} Freigabe(n) zum aktuellen Hash`);
       if (zumHash.some((p) => p.urteil !== 'ok')) verstoesse.push(`${sprache} ${stelle}: Einwand zum aktuellen Hash`);
     }

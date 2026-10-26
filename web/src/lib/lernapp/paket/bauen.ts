@@ -1,5 +1,7 @@
 import { zerlege } from '../abgleich/tokens';
 import { AufgabeSchema, type Aufgabe, type Inhalt, type Lektion } from '../aufgaben/schema';
+import { formelTreffer, type LateinFormel, texteIn } from '../formelkandidat';
+import { LATEIN_FORMELN } from '../formelliste';
 import { sprachSichtbarkeit, type Pruefung, type Sichtbarkeit, type Status } from '../freigabe';
 import { AufgabeVorlageSchema, type AufgabeVorlage } from '../inhalt/schema';
 import { type KursId, type KursSlug, type RichtungId, type Sprache, type Stufe, zerlegeRichtung } from '../kurse';
@@ -22,9 +24,16 @@ import {
  *
  * **Nur Ausgeliefertes** (ADR 0041 Nr. 2, ADR 0040 Nr. 5): Jeder Baustein – Einheit, Lektion, Aufgabe, Zieltext,
  * Übersetzung, Tipp – geht durch `sprachSichtbarkeit` aus `freigabe.ts` (Status, Sprachprüfungen zum aktuellen Hash,
- * zwei religiöse Freigaben bei `religionsbezug`, Schalter `lernapp_ungeprueft`). Eine Aufgabe, deren Ziel oder Übersetzung
+ * zwei religiöse Freigaben und freigegebene Formelliste bei `religionsbezug` bzw. Formel-Kandidat, Schalter
+ * `lernapp_ungeprueft`). Eine Aufgabe, deren Ziel oder Übersetzung
  * verborgen ist, fällt aus dem Paket; verborgene Ablenker und Paare fallen einzeln weg, solange die Aufgabe spielbar bleibt.
  * Eine Lektion ohne Aufgabe und eine Einheit ohne Lektion gibt es nicht im Paket.
+ *
+ * **Formel-Kandidaten** (Stufe C N2, Gegenprüfung Z-L10): Enthält ein Text eine lateinische Formel der Formelliste (F-de,
+ * F-tr; `formelkandidat.ts`), gilt sein Baustein als Eintrag mit Religionsbezug, auch ohne Kennzeichen – also verborgen,
+ * solange die Liste nicht freigegeben ist, danach nur mit zwei eigenen religiösen Freigaben und nie mit Stimme. Das deckt
+ * Wege ohne den blockierenden Inhaltsprüfer ab (Import im Vercel-Bau, „Alternative ergänzen“) und gilt unabhängig vom
+ * Schalter `lernapp_ungeprueft`. Arabische Formeln erkennt der Paketbau nicht (nur das Formel-Lexikon des Wächters beim Import).
  *
  * **Aufgaben** entstehen aus den Vorlagen des Inhalts (inhalt/schema.ts) und werden gegen das Schema des Spielers geprüft.
  * Karten heißen `<richtung>:<schlüssel>` (je Richtung eigene Wiederholung). Lektionen heißen `<richtung>.<stufe>.eNN.lNN`.
@@ -99,7 +108,13 @@ export type BauEingabe = {
   symbole?: ReadonlyMap<string, SymbolEintrag>;
 };
 
-export type BauOptionen = { ungeprueftZeigen: boolean };
+export type BauOptionen = {
+  ungeprueftZeigen: boolean;
+  /** Formelliste freigegeben (`formelliste.ts`); ohne Angabe gesperrt – dann bleibt jeder Eintrag mit Religionsbezug verborgen. */
+  formellisteFrei?: boolean;
+  /** Lateinische Formeln der Liste (Standard: Leitfaden, `formelliste.ts` `LATEIN_FORMELN`); nur Tests geben eigene an. */
+  formeln?: readonly LateinFormel[];
+};
 
 export type BauErgebnis = { paket: Paket; json: string; hash: string; bytes: number; warnungen: string[] };
 
@@ -706,10 +721,37 @@ export function tippAbschnitte(doc: { type: 'doc' } & Record<string, unknown>, z
 }
 
 /**
+ * Bausteine mit einem Formel-Kandidaten (siehe oben) als Religionsbezug kennzeichnen: Zieltexte in der Zielsprache,
+ * Übersetzungen samt Alternativen in der Ausgangssprache, Aufgaben (alle Texte ihrer Daten, etwa Alternativen und
+ * Ablenker), Tipps, Lektionsziele und das Thema der Einheit in beiden Sprachen der Richtung.
+ */
+function mitFormelKandidaten(e: BauEingabe, formeln: readonly LateinFormel[]): BauEingabe {
+  if (!formeln.length) return e;
+  const { ziel, ausgang } = zerlegeRichtung(e.richtung);
+  const trifft = (texte: readonly string[], sprachen: readonly Sprache[]) =>
+    texte.some((t) => sprachen.some((s) => formelTreffer(t, s, formeln) !== null));
+  const markiert = <T extends Baustein>(b: T, texte: readonly string[], sprachen: readonly Sprache[]): T =>
+    b.religionsbezug || !trifft(texte, sprachen) ? b : { ...b, religionsbezug: true };
+  const beide = [ziel, ausgang];
+  return {
+    ...e,
+    einheit: markiert(e.einheit, texteIn(e.einheit.thema), beide),
+    lektionen: e.lektionen.map((l) => ({
+      ...markiert(l, texteIn(l.ziel), beide),
+      aufgaben: l.aufgaben.map((a) => markiert(a, texteIn(a.daten), beide)),
+    })),
+    eintraege: new Map([...e.eintraege].map(([k, x]) => [k, markiert(x, [x.text], [ziel])])),
+    uebersetzungen: new Map([...e.uebersetzungen].map(([k, u]) => [k, markiert(u, [u.text, ...u.alternativen], [ausgang])])),
+    tipps: e.tipps.map((t) => markiert(t, texteIn(t.inhalt), beide)),
+  };
+}
+
+/**
  * Einheitenpaket einer Richtung bauen. `null`, wenn die Einheit nicht ausgeliefert wird (verborgen, nur für eine andere
  * Ausgangssprache oder ohne spielbare Lektion).
  */
-export function baueEinheit(e: BauEingabe, o: BauOptionen): BauErgebnis | null {
+export function baueEinheit(eingabe: BauEingabe, o: BauOptionen): BauErgebnis | null {
+  const e = mitFormelKandidaten(eingabe, o.formeln ?? LATEIN_FORMELN);
   const w = new Werkbank(e, o);
   if (e.einheit.nurFuerAusgang && e.einheit.nurFuerAusgang !== w.ausgang) return null;
   if (!w.sichtbar(e.einheit, e.einheit.schluessel)) return null;

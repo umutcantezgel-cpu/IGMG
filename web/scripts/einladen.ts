@@ -45,6 +45,11 @@ if (rollen.length === 0 && gemeindeRollen.length === 0) fehler('Bitte mindestens
 const organisation = values.organisation as OrganisationKuerzel | undefined;
 if (organisation && !ORGANISATION_KUERZEL.includes(organisation)) fehler(`Unbekannte Organisation: ${organisation}`);
 if (rollen.includes('organisationsredaktion') && !organisation) fehler('Organisationsredaktion braucht --organisation (at, kt, gt, kgt).');
+// Schutzrollen nie zusammen mit Administration (wie `schutzrollenRegel` in src/lib/rechte/schutzrollen.ts; das Modul ist
+// nur für den Server und lässt sich hier nicht laden). Die Liste muss dort `SCHUTZROLLEN` entsprechen (Stufe C N2).
+const SCHUTZROLLEN: readonly Rolle[] = ['leitung', 'kinderschutz', 'religioese_pruefung'];
+if (rollen.includes('administration') && rollen.some((r) => SCHUTZROLLEN.includes(r)))
+  fehler('Leitung, Kinderschutz und religiöse Prüfung gehören nicht zusammen mit Administration in ein Konto.');
 
 // Nach den Prüfungen sind E-Mail und Name gesetzt (fehler() beendet den Prozess).
 const emailGeprueft: string = email;

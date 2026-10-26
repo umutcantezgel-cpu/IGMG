@@ -380,6 +380,19 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachAusgang!.id, alternative: vorher!.text }))).toMatchObject({
       feldFehler: { alternative: 'alternative_doppelt' },
     });
+    // lateinische Formel der Formelliste (Wortlaut aus dem Leitfaden, nicht von Hand) an einem Eintrag ohne Religionsbezug: rot
+    // wie im Inhaltsprüfer und im Paketbau (Gegenprüfung N2, Z-L10)
+    const { FORMELN } = await import('@/lib/lernapp/formelliste');
+    const formel = (id: string, teil = 0) =>
+      FORMELN.liste
+        .find((f) => f.id === id)!
+        .begriff.split(',')
+        [teil]!.trim();
+    expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachAusgang!.id, alternative: `${formel('F-de-04')}.` }))).toMatchObject(
+      {
+        feldFehler: { alternative: 'waechter_formel' },
+      },
+    );
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachAusgang!.id, alternative: 'Das Gebäude ist groß.' }))).toMatchObject(
       {
         gespeichert: expect.any(Number),
@@ -398,6 +411,9 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
       .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.test.l02.a02'));
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachZiel!.id, alternative: koranWortfolge() }))).toMatchObject({
       feldFehler: { alternative: 'waechter_wortfolge' },
+    });
+    expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachZiel!.id, alternative: formel('F-tr-03', 1) }))).toMatchObject({
+      feldFehler: { alternative: 'waechter_formel' },
     });
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachZiel!.id, alternative: '[Fassung]' }))).toMatchObject({
       gespeichert: expect.any(Number),
@@ -634,18 +650,37 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
       await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
       return liste.find((p) => p.id === 'lernapp.pruefende-unabhaengig')!;
     };
+    /** Zahl der Prüfenden, die zählen (Karte „Religiöse Prüfung (zwei Personen)“). */
+    const zaehlende = async () => {
+      const liste: { id: string; meldung: string }[] = [];
+      await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
+      return Number(/(\d+) Person/.exec(liste.find((p) => p.id === 'lernapp.pruefende-religioes')!.meldung)?.[1]);
+    };
     await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
     expect((await pruefen()).status).toBe('ok');
+    const vorher = await zaehlende();
     await angemeldetAls([{ rolle: 'religioese_pruefung' }, { rolle: 'administration' }]);
     const einer = await pruefen();
     expect(einer.status).toBe('hinweis');
     expect(einer.meldung).toMatch(/^1 Person mit der Rolle/);
+    expect(einer.meldung).toMatch(/zählt nie als religiöse Freigabe/);
+    // Stufe C N2: ein Konto mit Administration zählt auch in der Karte der Prüfenden nicht mit – ebenso in der Übersicht
+    // der Lern-App („Religiöse Prüfung: n Personen“, Gegenprüfung N2)
+    expect(await zaehlende()).toBe(vorher);
+    expect((await ladeLernappUebersicht()).pruefende.religioes).toBe(vorher);
     await angemeldetAls([{ rolle: 'religioese_pruefung' }, ...BILDUNG]);
     expect((await pruefen()).meldung).toMatch(/^2 Personen mit der Rolle/);
     // gesperrte Konten zählen nicht
     const gesperrt = (await angemeldetAls([{ rolle: 'religioese_pruefung' }, ...ADMIN]))!;
     await db.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, gesperrt));
     expect((await pruefen()).meldung).toMatch(/^2 Personen/);
+    const zaehlendeNachher = await zaehlende();
+    expect((await ladeLernappUebersicht()).pruefende.religioes).toBe(zaehlendeNachher);
+    // ein gesperrtes Konto nur mit der Rolle zählt in beiden nicht
+    const nurGesperrt = (await angemeldetAls([{ rolle: 'religioese_pruefung' }]))!;
+    await db.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, nurGesperrt));
+    expect(await zaehlende()).toBe(zaehlendeNachher);
+    expect((await ladeLernappUebersicht()).pruefende.religioes).toBe(zaehlendeNachher);
   });
 });
 

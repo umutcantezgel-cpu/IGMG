@@ -18,7 +18,7 @@ Dein Konto hat die Rolle **„Kinderschutz“** in der Verwaltung. Dazu gehört 
 
 **Anträge bestätigen (Vier-Augen-Prinzip).** Oben auf der Seite **Kinderschutz** steht der Kasten **„Bestätigen (Vier-Augen-Prinzip)“**. Diese Änderungen werden erst wirksam, wenn eine zweite Person zustimmt:
 
-- **Vergabe** der Rollen Leitung und Kinderschutz (beantragt von der Administration, auch über eine Einladung),
+- **Vergabe** der Rollen Leitung, Kinderschutz und religiöse Prüfung (beantragt von der Administration, auch über eine Einladung),
 - **Entzug** der Rollen Leitung, Kinderschutz und religiöse Prüfung (bis zur Bestätigung bleibt die Rolle wirksam),
 - **Eltern-Einladungen** an eine Adresse, die nicht aus der Voranmeldung stammt (bis dahin bleibt der Kinderzugang gesperrt),
 - das **Beenden eines Eltern-Kind-Bezugs**.

@@ -426,3 +426,49 @@ describe('Koran-Pfad: Website-Status, Verwaltung und Auslieferung (Gegenprüfung
     expect((await koran.pruefeKoranSichtbarkeit()).verstoesse).toEqual([]);
   });
 });
+
+describe('Koran-Pfad: Konto mit Administration und religiöser Prüfung (Stufe C N2, Gegenprüfung)', () => {
+  const L03 = E01.lektionen[2]!;
+  const STELLEN_L03 = stellenVon(L03);
+  /** Altkonto mit beiden Rollen (vor Stufe C N2 vergeben; heute vergibt „Benutzer und Rollen“ das nicht mehr). */
+  const beideRollen = async () => {
+    const id = await person('religioese_pruefung');
+    await db.insert(schema.rolleZuweisung).values({ benutzerId: id, rolle: 'administration' });
+    return id;
+  };
+  const lektionen = async () => (await paket()).paket.lektionen.map((l) => l.schluessel);
+
+  it('seine Freigabe zählt nie, sein Einwand sperrt weiter – im Paketbau und in der Abfrage am Live-Stand', async () => {
+    const ids3 = await bedeutungen(STELLEN_L03, await person('religioese_pruefung'));
+    await pruefe(ids3, await person('religioese_pruefung'));
+    await pruefe(ids3, await beideRollen());
+    expect(gezeigt((await paket()).paket).filter((s) => STELLEN_L03.includes(s))).toEqual([]);
+    expect(await lektionen()).not.toContain(L03.schluessel);
+
+    // zweite gültige Freigabe: sichtbar; diesen Stand festhalten (wie ein Cache, der nicht erneuert wurde)
+    const zweite = await person('religioese_pruefung');
+    await pruefe(ids3, zweite);
+    expect(await lektionen()).toContain(L03.schluessel);
+    const vorher = { de: await koran.frischGebaut('de'), tr: await koran.frischGebaut('tr') };
+    const veraltet = async (sprache: 'de' | 'tr') => vorher[sprache];
+    expect((await koran.pruefeKoranSichtbarkeit(veraltet)).verstoesse).toEqual([]);
+
+    // ohne die zweite gültige Freigabe ersetzt die des Kontos mit beiden Rollen sie nicht – auch nicht in der SQL-Abfrage
+    const [w] = L03.wortformen as [string];
+    await db
+      .delete(schema.lernappPruefung)
+      .where(and(eq(schema.lernappPruefung.pruefendeId, zweite), eq(schema.lernappPruefung.inhaltTyp, 'koran_bedeutung')));
+    expect(await lektionen()).not.toContain(L03.schluessel);
+    expect((await koran.pruefeKoranSichtbarkeit(veraltet)).verstoesse).toContain(`de ${w}: 1 Freigabe(n) zum aktuellen Hash`);
+
+    // wieder zwei gültige Freigaben; ein gespeichertes „abgelehnt“ eines Kontos mit beiden Rollen sperrt (fail closed)
+    await pruefe(ids3, zweite);
+    expect(await lektionen()).toContain(L03.schluessel);
+    expect((await koran.pruefeKoranSichtbarkeit(veraltet)).verstoesse).toEqual([]);
+    await pruefe(ids3, await beideRollen(), 'abgelehnt', [w]);
+    expect(gezeigt((await paket()).paket)).not.toContain(w);
+    expect(await lektionen()).not.toContain(L03.schluessel);
+    expect((await koran.pruefeKoranSichtbarkeit(veraltet)).verstoesse).toContain(`de ${w}: Einwand zum aktuellen Hash`);
+    expect((await koran.pruefeKoranSichtbarkeit()).verstoesse).toEqual([]);
+  });
+});

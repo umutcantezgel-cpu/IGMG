@@ -1,5 +1,5 @@
 import 'server-only';
-import { asc, and, count, eq, inArray, isNotNull, sql } from 'drizzle-orm';
+import { asc, and, count, eq, inArray, isNotNull, isNull, notInArray, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { KRITISCHE_FEHLER, type Status } from '@/lib/lernapp/freigabe';
@@ -15,7 +15,7 @@ import {
   standBaum,
   type StatusZaehlung,
 } from '@/lib/lernapp/verwaltung/quoten';
-import { ladeBauEingaben } from './pakete';
+import { formellisteFreigegeben, ladeBauEingaben } from './pakete';
 import { zaehleOffeneLernappMeldungen } from './meldungen';
 
 /**
@@ -142,10 +142,23 @@ export async function ladeLernappUebersicht(): Promise<Uebersicht> {
     .from(schema.lernappKurs)
     .orderBy(asc(schema.lernappKurs.id));
 
+  // Religiöse Prüfung: nur Personen, deren Freigabe zählt – nicht gesperrt und ohne Administration (Altbestand vor Stufe C
+  // N2, `freigabe.ts` `zaehltReligioes`); gleiche Bedingung wie im Startklar-Cockpit (`startklar/lernapp.ts`)
+  const administration = db
+    .select({ id: schema.rolleZuweisung.benutzerId })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.rolle, 'administration'));
   const [religioes] = await db
     .select({ n: sql<number>`count(distinct ${schema.rolleZuweisung.benutzerId})`.mapWith(Number) })
     .from(schema.rolleZuweisung)
-    .where(eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'));
+    .innerJoin(schema.user, eq(schema.user.id, schema.rolleZuweisung.benutzerId))
+    .where(
+      and(
+        eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'),
+        isNull(schema.user.gesperrtAm),
+        notInArray(schema.rolleZuweisung.benutzerId, administration),
+      ),
+    );
   const sprachPruefende = await db
     .select({ sprache: schema.lernappPrueferSprache.sprache, n: count() })
     .from(schema.lernappPrueferSprache)
@@ -246,7 +259,8 @@ export async function ladeKursBaum(kurs: KursId): Promise<BaumAbschnitt[]> {
 /**
  * Lektion für die Vorschau im echten Spieler (PLAN §7.1): Entwürfe und automatisch geprüfte Einträge sichtbar, ohne Hinweis;
  * gesperrte nie. Sprachprüfungen bleiben außen vor (die Vorschau zeigt den Entwurf), die religiöse Freigabe nicht: Einträge
- * mit Religionsbezug erscheinen auch hier erst mit zwei Freigaben (KERN 4.0 §2.3). Kein Ereignis, keine Speicherung.
+ * mit Religionsbezug erscheinen auch hier erst mit zwei Freigaben und freigegebener Formelliste (KERN 4.0 §2.3). Kein
+ * Ereignis, keine Speicherung.
  */
 export async function ladeVorschau(richtung: RichtungId, lektion: string): Promise<{ lektion: Lektion; warnungen: string[] } | null> {
   const einheit = lektion.split('.').slice(0, 3).join('.');
@@ -266,7 +280,7 @@ export async function ladeVorschau(richtung: RichtungId, lektion: string): Promi
       uebersetzungen: new Map([...eingabe.uebersetzungen].map(([k, v]) => [k, vorschau(v)])),
       tipps: eingabe.tipps.map(vorschau),
     },
-    { ungeprueftZeigen: true },
+    { ungeprueftZeigen: true, formellisteFrei: await formellisteFreigegeben() },
   );
   const kurs = einheit.split('.')[0] as KursId;
   const gesucht = lektionImPaket(richtung, kurs, lektion);

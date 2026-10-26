@@ -25,7 +25,7 @@ type Werkzeug = {
   pruefeDatei: (pfad: string, inhalt: string, holeIndex: () => Index) => string[];
   ladeLexikon: (wurzel?: string) => { arabisch: { name: string }[]; latein: { name: string }[] };
   lexikonTreffer: (t: string, l: ReturnType<Werkzeug['ladeLexikon']>) => { name: string } | null;
-  LEXIKON_VERWEISE: readonly unknown[];
+  LEXIKON_VERWEISE: readonly { name: string; umkehrbar?: boolean }[];
 };
 const w = (await import(pathToFileURL(WERKZEUG).href)) as Werkzeug;
 
@@ -292,7 +292,8 @@ describe('S-L1 M-3: Formel-Lexikon (KERN 4.0 §3 a)', () => {
     );
 
   it('löst alle Verweise in den Tanzil-Text auf; arabische Formeln treffen auch mit Vorsilbe, neutrale Sätze nie', () => {
-    expect(lexikon.arabisch.length).toBe(w.LEXIKON_VERWEISE.length);
+    // umkehrbare Einträge stehen zusätzlich in umgekehrter Reihenfolge im Lexikon (Erwiderung)
+    expect(lexikon.arabisch.length).toBe(w.LEXIKON_VERWEISE.length + w.LEXIKON_VERWEISE.filter((e) => e.umkehrbar).length);
     for (const [ref, von, bis] of [
       ['1:2', 1, 2],
       ['2:70', 14, 16],
@@ -309,6 +310,33 @@ describe('S-L1 M-3: Formel-Lexikon (KERN 4.0 §3 a)', () => {
     function zeichen(n: number) {
       return String.fromCharCode(n);
     }
+  });
+
+  it('Friedensgruß (Stufe C N2, Z-L10): auch mit Artikel und als Erwiderung in umgekehrter Reihenfolge – nur Musterlogik', () => {
+    // Bestandteile nur aus dem Tanzil-Verweis des Lexikons (6:54, Wörter 7 und 8); Artikel und Vorsilbe als Codepunkte
+    const [gruss, euch] = stelle('6:54', 7, 8).split(' ') as [string, string];
+    const zeichen = (...n: number[]) => String.fromCharCode(...n);
+    const ARTIKEL = zeichen(0x627, 0x644);
+    const UND = zeichen(0x648);
+    for (const [art, text] of [
+      ['ohne Artikel', `${gruss} ${euch}`],
+      ['mit Artikel', `${ARTIKEL}${gruss} ${euch}`],
+      ['mit Artikel und Vorsilbe', `${UND}${ARTIKEL}${gruss} ${euch}`],
+      ['Erwiderung', `${UND}${euch} ${ARTIKEL}${gruss}`],
+      ['Erwiderung ohne Artikel', `${euch} ${gruss}`],
+      ['im Satz', `${NEUTRAL[1]} ${ARTIKEL}${gruss} ${euch}`],
+      ['als Codepunkte', alsCodepunkte(`${UND}${euch} ${ARTIKEL}${gruss}`)],
+    ] as const)
+      expect(w.lexikonTreffer(text, lexikon)?.name, art).toBe('Friedensgruß');
+    // Negativproben: ein Bestandteil allein, der Artikel an der falschen Stelle, neutrale Sätze
+    for (const [art, text] of [
+      ['nur das erste Wort mit Artikel', `${ARTIKEL}${gruss}`],
+      ['nur das zweite Wort', `${UND}${euch}`],
+      ['Artikel am zweiten Wort', `${gruss} ${ARTIKEL}${euch}`],
+      ['getrennt durch ein neutrales Wort', `${ARTIKEL}${gruss} ${NEUTRAL[1]!.split(' ')[0]} ${euch}`],
+    ] as const)
+      expect(w.lexikonTreffer(text, lexikon), art).toBeNull();
+    for (const satz of NEUTRAL) expect(w.lexikonTreffer(satz, lexikon)).toBeNull();
   });
 
   it('deutsche und türkische Begriffe treffen, Alltagswörter nicht', () => {

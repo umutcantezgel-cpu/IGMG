@@ -12,6 +12,7 @@ import {
   type Pruefung,
   wissenSichtbar,
 } from '@/lib/lernapp/freigabe';
+import { KURSE, kursArt } from '@/lib/lernapp/kurse';
 import { type LernappZustand, mitLernappRecht, waechterBefund } from '@/lib/lernapp/verwaltung/aktion';
 import { kursGeaendert } from '@/lib/lernapp/veroeffentlichen';
 import { ladeFreigabe } from '@/server/queries/lernapp/religioes';
@@ -19,8 +20,9 @@ import { ladeFreigabe } from '@/server/queries/lernapp/religioes';
 /**
  * Verwaltung › Lern-App › Religiöse Prüfung (L6-02/03, ADR 0040 Nr. 5, KERN 4.0 §2.3): ein Urteil zu genau dem Hash, den die
  * Person gesehen hat. Reihenfolge: Datenbank → Sitzung mit zweitem Faktor und Recht `lernapp.religioes.pruefen` (nie per
- * Administration) → Schalter `lernapp` (`mitLernappRecht`) → Rolle `religioese_pruefung`, aktueller Hash, nicht Verfasser,
- * KI-Regel 2, Belege und Inhalt bestätigt, nicht zweimal dieselbe Person (`pruefeUrteil`). Prüfende bearbeiten nicht selbst:
+ * Administration) → Schalter `lernapp` (`mitLernappRecht`) → Rolle `religioese_pruefung` ohne Administration (Stufe C N2),
+ * aktueller Hash, nicht Verfasser, KI-Regel 2, Belege und Inhalt bestätigt, nicht zweimal dieselbe Person (`pruefeUrteil`).
+ * Prüfende bearbeiten nicht selbst:
  * Ein Änderungsvorschlag geht als Text an die Redaktion. Jeder Schritt steht im Freigabe-Verlauf (`freigabe`) und im Audit
  * – dort ohne Inhalte (Typ, Kennung, Urteil, Stand). Wird der Baustein durch das Urteil sichtbar oder unsichtbar, steigt der
  * Kursstand und der Cache-Tag des Kurses verfällt (Zurückziehen wirkt sofort).
@@ -118,8 +120,10 @@ export async function religioesPruefen(_vorher: LernappZustand, fd: FormData): P
         tx,
       );
     });
-    // Sichtbarkeit geändert (zweite Freigabe oder Einwand nach der Freigabe): neue Pakete, Cache-Tag verfällt
-    if (wissenSichtbar(f.status, f.baustein, [...f.pruefungen, neu]) !== vorher) await kursGeaendert([f.kurs]);
+    // Sichtbarkeit geändert (zweite Freigabe oder Einwand nach der Freigabe): neue Pakete, Cache-Tag verfällt – bei der
+    // Formelliste (ohne eigenen Kurs) in allen Sprachkursen
+    if (wissenSichtbar(f.status, f.baustein, [...f.pruefungen, neu]) !== vorher)
+      await kursGeaendert(f.kurs ? [f.kurs] : KURSE.filter((k) => kursArt(k) === 'sprache'));
     refresh();
     return { gespeichert: Date.now(), hinweis: urteil.data === 'ok' ? `stand_${stand}` : urteil.data };
   });

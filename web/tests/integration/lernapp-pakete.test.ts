@@ -8,6 +8,13 @@ import { kanonisch, sha256Hex } from '@/lib/lernapp/paket/hash';
 import { PaketSchema, VerzeichnisSchema, type Paket, type Verzeichnis } from '@/lib/lernapp/paket/typen';
 import { aufrufe, verwaltungsUmgebung } from './hilfen/verwaltung';
 
+// Formelliste im Leitfaden als „freigegeben“; sichtbar wird sie trotzdem erst mit zwei Freigaben zum aktuellen Stand der
+// Liste (Stufe C N2, Z-L10; gesperrt und freigegeben im Wechsel: lernapp-formelliste.test.ts)
+vi.mock('@/lib/lernapp/formelliste', async (original) => {
+  const o = await original<typeof import('@/lib/lernapp/formelliste')>();
+  return { ...o, FORMELN: { ...o.FORMELN, status: 'freigegeben' } };
+});
+
 /**
  * Kurspakete und Audio-Route der Lern-App (ADR 0039, ADR 0040 Nr. 5, ADR 0041 Nr. 2/8) gegen PGlite mit dem Testkurs:
  * Pakete enthalten nur Ausgeliefertes (Status, Sprachprüfung, zwei religiöse Freigaben, Schalter `lernapp_ungeprueft`),
@@ -361,12 +368,25 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     await frei(await person('administration'));
     expect((await paket('tr-aus-de')).paket.eintraege['tr.a1.test.w002']).toBeUndefined();
     await frei(await person('religioese_pruefung'));
+    // ohne Freigabe der Formelliste bleibt der Eintrag trotz zwei Eintragsfreigaben verborgen (Stufe C N2, Z-L10)
+    expect((await paket('tr-aus-de')).paket.eintraege[l!.schluessel]).toBeUndefined();
+    const { FORMELLISTE_ID, FORMELN, formellisteHash } = await import('@/lib/lernapp/formelliste');
+    for (const id of [await person('religioese_pruefung'), await person('religioese_pruefung')])
+      await db.insert(schema.lernappPruefung).values({
+        inhaltTyp: 'formelliste',
+        inhaltId: FORMELLISTE_ID,
+        inhaltHash: formellisteHash(FORMELN.liste),
+        art: 'religioes',
+        pruefendeId: id,
+        urteil: 'ok',
+      });
     const mit = (await paket('tr-aus-de')).paket;
     expect(mit.eintraege['tr.a1.test.w002']).toMatchObject({ text: 'ekmek' });
     expect(mit.eintraege['tr.a1.test.w002']?.stimme).toBeUndefined();
     const ekmek = mit.lektionen[0]!.aufgaben[1]!;
     expect(ekmek.typ === 'paare' && ekmek.paare.find((x) => x.links.text === 'ekmek')?.links.audio).toBeUndefined();
     await db.update(schema.lernappLemma).set({ religionsbezug: false }).where(eq(schema.lernappLemma.id, l!.id));
+    await db.delete(schema.lernappPruefung).where(eq(schema.lernappPruefung.inhaltTyp, 'formelliste'));
   });
 
   it('Einheit nur für eine Ausgangssprache und gesperrte Übersetzungen wirken je Richtung', async () => {

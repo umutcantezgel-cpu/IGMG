@@ -6,22 +6,26 @@ import { planeBetroffenenHinweis, planeHinweis, SCHUTZROLLEN_EMPFAENGER } from '
 import type { RollenZuweisung } from './matrix';
 
 /**
- * Schutzrollen `leitung` und `kinderschutz` (S-11, ADR 0026; M-2 der Sicherheitsprüfung S1, S2/S3, Nacharbeit N4): Über
- * sie erreicht man Chat-Kontext aus Kindergruppen (kinderschutz) bzw. bestätigt man diese Vergabe (leitung). Damit die
- * Administration sie sich nicht über ein Zweitkonto selbst verschafft, gilt das Vier-Augen-Prinzip:
+ * Schutzrollen `leitung`, `kinderschutz` und `religioese_pruefung` (S-11, ADR 0026; M-2 der Sicherheitsprüfung S1, S2/S3,
+ * Nacharbeit N4; Stufe C N2, Z-L02/Z-L10): Über sie erreicht man Chat-Kontext aus Kindergruppen (kinderschutz), bestätigt
+ * man diese Vergabe (leitung) bzw. gibt man religiöse Inhalte frei (religioese_pruefung, ADR 0040 Nr. 5: zwei Freigaben, die
+ * Administration ersetzt keine Prüfung). Damit die Administration sie sich nicht über ein Zweitkonto selbst verschafft – bei
+ * der religiösen Prüfung erzeugte sie sonst beide Freigaben allein –, gilt das Vier-Augen-Prinzip:
  * - Die Administration beantragt (`rollen_antrag`), eine zweite Person bestätigt – jemand mit wirksamer Rolle `leitung`
  *   oder `kinderschutz`, ohne Administration, weder die beantragende noch die betroffene Person.
- * - Einzige Ausnahme ist der Start: Solange noch NIE eine Leitung wirksam war, wird die erste Leitung sofort wirksam.
+ * - Einzige Ausnahme ist der Start: Solange noch NIE eine Leitung wirksam war, wird die erste Leitung sofort wirksam (nur
+ *   die Leitung; Kinderschutz und religiöse Prüfung sind immer ein Antrag).
  *   Ein dauerhafter Merker (`einstellung` „schutzrollen_start“) hält fest, dass der Start vorbei ist – auch wenn später
  *   keine Leitung mehr da ist (N4: sonst holte sich die Administration die Ausnahme durch Entziehen zurück).
  * - Auch der ENTZUG von `leitung`, `kinderschutz` und `religioese_pruefung` bei anderen Konten braucht die zweite Person
  *   (Antrag `art = 'entzug'`); bis dahin bleibt die Rolle wirksam. Konten mit diesen Rollen löscht „Benutzer und Rollen“
  *   erst nach dem bestätigten Entzug. Vor dem Start (es gibt niemanden, der bestätigen könnte) wirkt der Entzug sofort.
- * - Nie zusammen mit `administration` in einem Konto; nie an sich selbst.
+ * - Nie zusammen mit `administration` in einem Konto; nie an sich selbst. Ein Konto, das (noch aus der Zeit vor N2) beide
+ *   Rollen trägt, zählt nie als religiöse Freigabe (`lernapp/freigabe.ts`); das Cockpit weist darauf hin.
  * Jede Vergabe, jeder Antrag und jeder Entzug geht als Hinweis ohne Namen an alle Konten mit `leitung` oder
  * `kinderschutz`; beim Entzug erfährt es zusätzlich die betroffene Person.
  */
-export const SCHUTZROLLEN = ['leitung', 'kinderschutz'] as const;
+export const SCHUTZROLLEN = ['leitung', 'kinderschutz', 'religioese_pruefung'] as const;
 export type Schutzrolle = (typeof SCHUTZROLLEN)[number];
 
 /** Rollen, deren Entzug bei anderen Konten eine zweite Person bestätigt (N4). */
@@ -46,6 +50,28 @@ export function istEntzugGeschuetzt(rolle: string): rolle is EntzugGeschuetzt {
 
 const hat = (rollen: readonly { rolle: string }[], rolle: string) => rollen.some((r) => r.rolle === rolle);
 
+/** Fehlerschlüssel der Vergaberegel (`verwaltung.benutzer.fehler.*`). */
+export type SchutzrollenFehler =
+  | 'kinderschutzAdministration'
+  | 'leitungAdministration'
+  | 'religioesePruefungAdministration'
+  | 'kinderschutzSelbst'
+  | 'leitungSelbst'
+  | 'religioesePruefungSelbst';
+
+const FEHLER_ADMINISTRATION: Record<Schutzrolle, SchutzrollenFehler> = {
+  kinderschutz: 'kinderschutzAdministration',
+  leitung: 'leitungAdministration',
+  religioese_pruefung: 'religioesePruefungAdministration',
+};
+/** Reihenfolge der Prüfung (bei mehreren Verstößen zählt der erste). */
+const REGEL_FOLGE: readonly Schutzrolle[] = ['kinderschutz', 'leitung', 'religioese_pruefung'];
+const FEHLER_SELBST: Record<Schutzrolle, SchutzrollenFehler> = {
+  kinderschutz: 'kinderschutzSelbst',
+  leitung: 'leitungSelbst',
+  religioese_pruefung: 'religioesePruefungSelbst',
+};
+
 /**
  * Regeln vor jeder Vergabe (rein, ohne Datenbank): Schutzrollen nie zusammen mit `administration` und nie an sich selbst.
  * Rückgabe: Fehlerschlüssel oder null.
@@ -54,11 +80,9 @@ export function schutzrollenRegel(
   vorher: readonly { rolle: string }[],
   neu: readonly { rolle: string }[],
   selbst: boolean,
-): 'kinderschutzAdministration' | 'leitungAdministration' | 'kinderschutzSelbst' | 'leitungSelbst' | null {
-  if (hat(neu, 'kinderschutz') && hat(neu, 'administration')) return 'kinderschutzAdministration';
-  if (hat(neu, 'leitung') && hat(neu, 'administration')) return 'leitungAdministration';
-  if (selbst && hat(neu, 'kinderschutz') && !hat(vorher, 'kinderschutz')) return 'kinderschutzSelbst';
-  if (selbst && hat(neu, 'leitung') && !hat(vorher, 'leitung')) return 'leitungSelbst';
+): SchutzrollenFehler | null {
+  for (const rolle of REGEL_FOLGE) if (hat(neu, rolle) && hat(neu, 'administration')) return FEHLER_ADMINISTRATION[rolle];
+  for (const rolle of REGEL_FOLGE) if (selbst && hat(neu, rolle) && !hat(vorher, rolle)) return FEHLER_SELBST[rolle];
   return null;
 }
 
@@ -109,7 +133,8 @@ async function gestartetMitMerker(tx: Pick<Transaktion, 'select' | 'insert'>, vo
 
 /**
  * Verwaltungsrollen eines Kontos eintragen (in der Transaktion des Aufrufers): alle übrigen Rollen sofort, Schutzrollen
- * als Antrag – außer der allerersten Leitung (Start). Bestehende Zuweisungen bleiben (onConflictDoNothing).
+ * als Antrag – außer der allerersten Leitung (Start). Kinderschutz und religiöse Prüfung sind immer ein Antrag, auch vor
+ * dem Start. Bestehende Zuweisungen bleiben (onConflictDoNothing).
  * Rückgabe: die beantragten (noch nicht wirksamen) Schutzrollen.
  */
 export async function vergibVerwaltungsrollen(
@@ -129,7 +154,7 @@ export async function vergibVerwaltungsrollen(
         .where(and(eq(schema.rolleZuweisung.benutzerId, benutzerId), eq(schema.rolleZuweisung.rolle, z.rolle)))
         .limit(1);
       if (vorhanden.length) continue;
-      if (z.rolle === 'kinderschutz' || (await gestartetMitMerker(tx, vonId))) {
+      if (z.rolle !== 'leitung' || (await gestartetMitMerker(tx, vonId))) {
         await tx
           .insert(schema.rollenAntrag)
           .values({ benutzerId, rolle: z.rolle, art: 'vergabe', beantragtVon: vonId })
