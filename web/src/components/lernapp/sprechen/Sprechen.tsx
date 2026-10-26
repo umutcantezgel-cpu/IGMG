@@ -88,6 +88,11 @@ export default function Sprechen({
   const aufnahme = useRef<LaufendeAufnahme | null>(null);
   const eigeneAdresse = useRef<string | null>(null);
   const ergebnisTitel = useRef<HTMLHeadingElement>(null);
+  // Fokus nicht verlieren, wenn ein Knopf verschwindet (Stufe C N9b, WCAG 2.4.3): „Aufnehmen“ → „Aufnahme beenden“, nach
+  // „Ohne Sprachprüfung üben“ und nach dem Laden der Sprachprüfung zurück auf „Aufnehmen“
+  const aufnehmenKnopf = useRef<HTMLButtonElement>(null);
+  const stoppKnopf = useRef<HTMLButtonElement>(null);
+  const fokusAufAufnehmen = () => requestAnimationFrame(() => aufnehmenKnopf.current?.focus());
   // Ende nach 15 s von selbst (Zeitgeber in `aufnahme.ts`) statt mit „Aufnahme beenden“
   const vonSelbst = useRef(false);
   const [vonSelbstBeendet, setVonSelbstBeendet] = useState(false);
@@ -149,6 +154,7 @@ export default function Sprechen({
 
   useEffect(() => {
     if (phase === 'ergebnis') ergebnisTitel.current?.focus();
+    else if (phase === 'aufnahme') stoppKnopf.current?.focus();
   }, [phase]);
 
   async function ladeModell() {
@@ -184,6 +190,7 @@ export default function Sprechen({
       setModus({ art: 'ohne', grund: 'fehler' });
       sage(t.fehler);
     }
+    fokusAufAufnehmen();
   }
 
   async function aufnehmen() {
@@ -302,7 +309,14 @@ export default function Sprechen({
             <button type="button" onClick={() => void ladeModell()} className={HAUPT}>
               {f(t.laden, { mb: GESAMT_MB })}
             </button>
-            <button type="button" onClick={() => setModus({ art: 'ohne', grund: 'gewaehlt' })} className={KNOPF}>
+            <button
+              type="button"
+              onClick={() => {
+                setModus({ art: 'ohne', grund: 'gewaehlt' });
+                fokusAufAufnehmen();
+              }}
+              className={KNOPF}
+            >
               {t.ohne}
             </button>
           </div>
@@ -339,7 +353,13 @@ export default function Sprechen({
           {phase === 'aufnahme' ? (
             <>
               <Pegel balken={pegelBalken} text={t.laeuft} />
-              <button type="button" onClick={() => void beenden()} aria-describedby={`${id}-grenze`} className={`${HAUPT} self-start`}>
+              <button
+                ref={stoppKnopf}
+                type="button"
+                onClick={() => void beenden()}
+                aria-describedby={`${id}-grenze`}
+                className={`${HAUPT} self-start`}
+              >
                 {t.stopp}
               </button>
             </>
@@ -347,6 +367,7 @@ export default function Sprechen({
             <p className="text-18">{t.pruefung}</p>
           ) : mikrofon ? (
             <button
+              ref={aufnehmenKnopf}
               type="button"
               onClick={() => void aufnehmen()}
               disabled={modus.art === 'laedt' || modus.art === 'probe'}

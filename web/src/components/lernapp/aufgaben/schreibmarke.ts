@@ -41,5 +41,5 @@ export function useSchreibmarke(id: string, wert: string, setze: (wert: string) 
 export function feldKlasse(sprache: Sprache, status: 'angenommen' | 'nicht' | null, breit = true): string {
   const rand = status === 'angenommen' ? 'border-gruen-700' : status === 'nicht' ? 'border-fehler' : 'border-rand';
   const schrift = sprache === 'ar' ? 'font-arabic text-arabisch-3' : 'text-20';
-  return `${breit ? 'w-full' : ''} min-h-12 rounded-md border-2 bg-weiss px-3 py-1 ${rand} ${schrift} outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gruen-950 disabled:bg-sand`;
+  return `${breit ? 'w-full' : ''} min-h-12 rounded-md border-2 bg-weiss px-3 py-1 ${rand} ${schrift} focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gruen-950 disabled:bg-sand`;
 }

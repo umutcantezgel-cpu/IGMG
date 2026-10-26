@@ -1,17 +1,17 @@
-import { existsSync, statSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+import { existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { expect, type Locator, type Page, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import { formatiere } from '../../../src/lib/lernapp/format';
 import { ernsteBefunde, ergebnisText, liveRegion } from './hilfen';
+import { MIKROFON } from './ton';
 
 /**
  * Übungstypen aus L2-02 im Lektionsspieler (PLAN §4, KERN 4.0 §4 und §8): Lektion l04 des Testkurses mit dialog, geschichte,
  * lesen_fragen, grammatik_tipp, schrift_tr bzw. schrift_ar (auch Nachspuren), sprechen und schreiben – auf dem Desktop nur
  * mit der Tastatur, auf dem Telefon per Tippen; Deutsch-Oberfläche mit `tr-aus-de`, arabische Oberfläche (RTL) mit
- * `ar-aus-de`. axe ohne ernste oder kritische Befunde je Übungstyp (Desktop).
+ * `ar-aus-de`. axe ohne ernste oder kritische Befunde je Übungstyp auf beiden Breiten (seit Stufe C N9b auch auf dem Telefon).
  *
  * Sprechen: Mikrofon über das Testgerät von Chromium mit einer synthetischen Tonfolge (keine Sprache); die Spracherkennung
  * läuft im Testbau mit dem Attrappen-Worker (`E2E_ATTRAPPEN=1` beim Bau, `scripts/lernapp-modelle.mjs`) und nur mit dem
@@ -34,41 +34,7 @@ const AR = {
   s0007: '\u0628\u0650\u062E\u064E\u064A\u0652\u0631\u064D\u060C \u0634\u064F\u0643\u0652\u0631\u064B\u0627.',
 };
 
-/** Synthetische Tonfolge (Grundton mit Obertönen, 0,3 s an / 0,3 s aus) als WAV für das Testmikrofon – keine Sprache. */
-function schreibeTon(pfad: string) {
-  const rate = 16_000;
-  const n = rate * 3;
-  const b = Buffer.alloc(44 + n * 2);
-  b.write('RIFF', 0);
-  b.writeUInt32LE(36 + n * 2, 4);
-  b.write('WAVEfmt ', 8);
-  b.writeUInt32LE(16, 16);
-  b.writeUInt16LE(1, 20);
-  b.writeUInt16LE(1, 22);
-  b.writeUInt32LE(rate, 24);
-  b.writeUInt32LE(rate * 2, 28);
-  b.writeUInt16LE(2, 32);
-  b.writeUInt16LE(16, 34);
-  b.write('data', 36);
-  b.writeUInt32LE(n * 2, 40);
-  for (let i = 0; i < n; i++) {
-    const t = i / rate;
-    const an = Math.floor(t / 0.3) % 2 === 0;
-    const f = 180 + 60 * (Math.floor(t / 0.6) % 3);
-    const w = (k: number) => Math.sin(2 * Math.PI * k * f * t);
-    b.writeInt16LE(an ? Math.round((0.25 * w(1) + 0.12 * w(2) + 0.06 * w(3)) * 32_767) : 0, 44 + i * 2);
-  }
-  writeFileSync(pfad, b);
-}
-const TON = join(tmpdir(), `igmg-lernapp-e2e-ton-${process.pid}.wav`);
-schreibeTon(TON);
-
-test.use({
-  permissions: ['microphone'],
-  launchOptions: {
-    args: ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream', `--use-file-for-fake-audio-capture=${TON}`],
-  },
-});
+test.use(MIKROFON());
 
 const an = (w?: string) => ['an', 'true', '1'].includes((w ?? '').trim().toLowerCase());
 /** Spracherkennung im Testbau: Schalter an und der Attrappen-Worker liegt bereit (der echte Worker ist ≈ 690 KB). */
@@ -254,9 +220,14 @@ async function spureNach(page: Page, feld: Locator) {
  */
 async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woerter }: { erkennbar: boolean; woerter: number }) {
   await ueberschrift(page, t.sprechen.anweisung);
+  // alle Anfragen des Kontexts (Seite, Worker, Service Worker) mit Methode und Ursprung (Stufe C N9b)
+  const ursprung = new URL(page.url()).origin;
   const anfragen: string[] = [];
-  const merke = (r: { method: () => string; url: () => string }) => anfragen.push(`${r.method()} ${new URL(r.url()).pathname}`);
-  page.on('request', merke);
+  const merke = (r: { method: () => string; url: () => string }) => {
+    const u = new URL(r.url());
+    anfragen.push(`${r.method()} ${['blob:', 'data:'].includes(u.protocol) ? u.protocol : u.origin}${u.pathname}`);
+  };
+  page.context().on('request', merke);
   const mitErkennung = erkennbar && SCHALTER_SPRECHEN && ATTRAPPE;
   const laden = page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true });
   if (!erkennbar) await expect(page.getByText(t.sprechen.arabisch, { exact: true })).toBeVisible();
@@ -289,10 +260,14 @@ async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woert
   } else await expect(page.getByRole('list', { name: t.sprechen.wortListe })).toHaveCount(0);
   await expect(page.locator('main audio')).toHaveAttribute('src', /^blob:/);
   await druecke(page, art, page.getByRole('button', { name: t.sprechen.selbst.gut, exact: true }));
-  page.off('request', merke);
+  page.context().off('request', merke);
   expect(
     anfragen.filter((a) => !a.startsWith('GET ')),
     'Sprechen: nur GET-Anfragen',
+  ).toEqual([]);
+  expect(
+    anfragen.filter((a) => !a.startsWith(`GET ${ursprung}/`) && !/^GET (blob|data):/.test(a)),
+    'Sprechen: nur der eigene Ursprung',
   ).toEqual([]);
 }
 
@@ -332,7 +307,7 @@ test.describe('Übungstypen L2-02 – Oberfläche de, Kurs tr-aus-de', () => {
     const t = de;
     const befunde: string[] = [];
     const axe = async (name: string) => {
-      if (art === 'tastatur') befunde.push(...(await ernsteBefunde(page, `de ${name}`)));
+      befunde.push(...(await ernsteBefunde(page, `de ${art} ${name}`)));
       expect(await ueberlauf(page), `${name}: Überlauf`).toBe(0);
     };
     await geraet(page);
@@ -385,7 +360,7 @@ test.describe('Übungstypen L2-02 – Oberfläche ar (RTL), Kurs ar-aus-de', () 
     const t = ar as unknown as Texte;
     const befunde: string[] = [];
     const axe = async (name: string) => {
-      if (art === 'tastatur') befunde.push(...(await ernsteBefunde(page, `ar ${name}`)));
+      befunde.push(...(await ernsteBefunde(page, `ar ${art} ${name}`)));
       expect(await ueberlauf(page), `${name}: Überlauf`).toBe(0);
     };
     await geraet(page);
@@ -401,7 +376,11 @@ test.describe('Übungstypen L2-02 – Oberfläche ar (RTL), Kurs ar-aus-de', () 
     await geschichte(page, art, t, AR.w004, 'ar');
 
     // Glossen im arabischen Text: die Wörter stehen mit Artikel, die Glossen gelten der Grundform (Inhalte ab L3)
+    await ueberschrift(page, t.aufgaben2.lesenFragen.anweisung);
+    await axe('lesen_fragen');
     await lesen(page, art, t, null, AR.w004, { ui: 'ar', glossen: 2 });
+    await ueberschrift(page, t.aufgaben2.grammatikTipp.anweisung);
+    await axe('grammatik_tipp');
     await tipp(page, art, t, AR.s0001);
 
     // schrift_ar erkennen: Glyphe mit neutraler Beschriftung, Antworten sind Buchstabennamen
@@ -439,6 +418,8 @@ test.describe('Übungstypen L2-02 – Oberfläche ar (RTL), Kurs ar-aus-de', () 
       await druecke(page, art, page.getByRole('button', { name: t.sprechen.kannNicht, exact: true }));
     }
 
+    await ueberschrift(page, t.schreiben.anweisung);
+    await axe('schreiben');
     await schreiben(page, art, t, { ui: 'ar', text: `${AR.w001} ${AR.s0001}`, woerter: 4, pflicht: AR.w001, muster: AR.s0001 });
     await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
     expect(befunde).toEqual([]);
@@ -466,6 +447,40 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     await expect(page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true })).toBeEnabled();
     await druecke(page, 'tastatur', page.getByRole('button', { name: t.sprechen.kannNicht, exact: true }));
     await ueberschrift(page, t.schreiben.anweisung);
+  });
+
+  test('Höchstlänge 15 s: vorher sichtbar und angesagt, die Aufnahme endet von selbst mit Ansage (N9b)', async ({ page }, info) => {
+    test.skip(info.project.name !== 'desktop', 'einmal genügt');
+    test.setTimeout(120_000);
+    const t = de;
+    await geraet(page);
+    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
+    await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
+    await geschichte(page, 'tastatur', t, 'kitap', 'de');
+    await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
+    await tipp(page, 'tastatur', t, 'Su içiyorum.');
+    await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
+    await pruefenUndWeiter(page, 'tastatur', t);
+    await ueberschrift(page, t.sprechen.anweisung);
+    const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
+    if (await ohne.count()) await druecke(page, 'tastatur', ohne);
+    const grenze = formatiere(t.sprechen.grenze, { s: 15 }, 'de');
+    const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
+    // vorher: sichtbar unter dem Knopf und als seine Beschreibung
+    await expect(page.getByText(grenze, { exact: true })).toBeVisible();
+    await expect(aufnehmen).toHaveAccessibleDescription(grenze);
+    await druecke(page, 'tastatur', aufnehmen);
+    await expect(liveRegion(page)).toHaveText(formatiere(t.sprechen.laeuftAnsage, { s: 15 }, 'de'));
+    const stopp = page.getByRole('button', { name: t.sprechen.stopp, exact: true });
+    await expect(stopp).toBeFocused();
+    const beginn = Date.now();
+    // nicht beenden: nach 15 s endet die Aufnahme von selbst und sagt es an
+    const ende = formatiere(t.sprechen.grenzeErreicht, { s: 15 }, 'de');
+    await expect(liveRegion(page)).toHaveText(ende, { timeout: 25_000 });
+    expect(Date.now() - beginn).toBeGreaterThanOrEqual(14_000);
+    await expect(page.getByRole('heading', { level: 3, name: t.sprechen.selbstVergleich, exact: true })).toBeFocused();
+    await expect(page.locator('main form').getByText(ende, { exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: t.sprechen.nochmal, exact: true })).toBeEnabled();
   });
 
   test('Mikrofon nur auf …/ueben und …/wiederholen; Modelldateien vom eigenen Ursprung mit den Kopfzeilen der Lern-App', async ({
