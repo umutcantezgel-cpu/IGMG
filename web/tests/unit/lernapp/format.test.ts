@@ -7,7 +7,7 @@ import { describe, expect, it } from 'vitest';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
-import { formatiere, intlSprache, zahl, type Werte, type Ziffern } from '@/lib/lernapp/format';
+import { dezimal, formatiere, intlSprache, zahl, type Werte, type Ziffern } from '@/lib/lernapp/format';
 
 /**
  * Teilformatierer der Lern-App (ADR 0037 Nr. 5): gleiche Ausgabe wie `createTranslator` von next-intl (nur im Test) für
@@ -90,13 +90,43 @@ describe('Zahlen und Ziffern', () => {
   });
 });
 
+/**
+ * Stufe C N8: kleine Zahlen (0 bis unter 1000) und die Pluralkategorie ganzer Zahlen ohne Intl – das erste
+ * `Intl.NumberFormat`/`Intl.PluralRules` einer Seite kostete im Profil ≈ 80 ms Hauptfaden (CPU ×4). Gleich wie Intl für alle
+ * ganzen Zahlen bis 1200, Dezimalzahlen mit einer Stelle und große Zahlen (dort weiter Intl).
+ */
+describe('Zahlen und Plural ohne Intl gleich wie Intl', () => {
+  const LOC: [string, Ziffern, string][] = [
+    ['de', 'oestlich', 'de'],
+    ['tr', 'oestlich', 'tr'],
+    ['ar', 'oestlich', 'ar-u-nu-arab'],
+    ['ar', 'westlich', 'ar-u-nu-latn'],
+  ];
+  it.each(LOC)('%s (%s): ganze Zahlen 0–1200, Plural 0–1200', (sprache, ziffern, loc) => {
+    const nf = new Intl.NumberFormat(loc);
+    const pr = new Intl.PluralRules(loc);
+    const KAT = '{n, plural, zero {zero} one {one} two {two} few {few} many {many} other {other}}';
+    for (let n = 0; n <= 1200; n++) {
+      expect(zahl(n, sprache, ziffern)).toBe(nf.format(n));
+      // Kategorien, die es in der Sprache nicht gibt, fallen wie bei createTranslator auf other
+      expect(formatiere(KAT, { n }, sprache, ziffern)).toBe(pr.select(n));
+    }
+  });
+  it.each(LOC)('%s (%s): Dezimalzahlen mit einer Stelle (MB) und große Zahlen', (sprache, ziffern, loc) => {
+    const eine = new Intl.NumberFormat(loc, { maximumFractionDigits: 1 });
+    for (const x of [0.1, 0.2, 0.9, 1, 1.26, 2.5, 9.94, 12.34, 99.96, 115.2, 999.9, 1234.5, 10_000])
+      expect(dezimal(x, 1, sprache, ziffern)).toBe(eine.format(x));
+    for (const x of [1000, 1234, 1_234_567, 2.25, 3.125]) expect(zahl(x, sprache, ziffern)).toBe(new Intl.NumberFormat(loc).format(x));
+  });
+});
+
 describe('Größe', () => {
-  it('unter 1 KB gz (übersetzt, ohne Kommentare, nicht minifiziert)', () => {
+  it('höchstens 1,25 KB gz (übersetzt, ohne Kommentare, nicht minifiziert; < 1 KB bis Stufe C N8, dazu die Zahlen ohne Intl)', () => {
     const quelle = readFileSync(join(import.meta.dirname, '..', '..', '..', 'src', 'lib', 'lernapp', 'format.ts'), 'utf8');
     const js = ts.transpileModule(quelle, {
       compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.ESNext, removeComments: true },
     }).outputText;
-    expect(gzipSync(js, { level: 9 }).length).toBeLessThan(1024);
+    expect(gzipSync(js, { level: 9 }).length).toBeLessThanOrEqual(1280);
   });
 });
 
