@@ -46,7 +46,7 @@ const CC_BY_2_FR = { name: 'CC BY 2.0 FR', url: 'https://creativecommons.org/lic
 const CC_BY_SA_4 = { name: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' };
 const ISC = { name: 'ISC', url: 'https://opensource.org/license/isc-license-txt' };
 
-export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'uebersetzungsbedingungen' | 'stimmen' }[] = [
+export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'uebersetzungsbedingungen' | 'stimmen' | 'ofl' }[] = [
   {
     id: 'koran',
     eintraege: [
@@ -125,7 +125,9 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
     ],
   },
   {
+    // OFL-Volltext unter den Einträgen (OFL 1.1 Nr. 2: Lizenz bei jeder Weitergabe; Stufe C, C-lizenzen-gegen Z-L17)
     id: 'schriften',
+    zusatz: 'ofl',
     eintraege: [
       {
         id: 'atkinson',
@@ -312,6 +314,13 @@ export const BIBLIOTHEKEN: { id: string; name: string; url: string; lizenz: Lize
   },
   { id: 'uqr', name: 'uqr', url: 'https://github.com/unjs/uqr', lizenz: MIT },
   { id: 'sharp', name: 'sharp', url: 'https://sharp.pixelplumbing.com', lizenz: APACHE },
+  // sharp bringt libvips als eigenes, unverändertes Binärpaket mit (@img/sharp-libvips-*), nur auf dem Server (M-060, ADR 0001)
+  {
+    id: 'libvips',
+    name: 'libvips',
+    url: 'https://www.libvips.org',
+    lizenz: { name: 'LGPL-3.0-or-later', url: 'https://www.gnu.org/licenses/lgpl-3.0.html' },
+  },
   {
     id: 'nodemailer',
     name: 'Nodemailer',

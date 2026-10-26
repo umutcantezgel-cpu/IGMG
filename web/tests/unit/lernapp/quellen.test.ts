@@ -236,6 +236,34 @@ describe('Quellen der Lern-App', () => {
     }
   });
 
+  it('Website /quellen: OFL-Volltext bei den Schriften, libvips (LGPL-3.0-or-later) neben sharp (Stufe C, Z-L17/Z-L19)', () => {
+    const schriften = ABSCHNITTE.find((a) => a.id === 'schriften');
+    expect(schriften?.zusatz).toBe('ofl');
+    expect(schriften?.eintraege.every((e) => e.lizenz?.name === 'SIL Open Font License 1.1')).toBe(true);
+    const seite = readFileSync(join(WEB, 'src', 'app', '[locale]', '(website)', 'quellen', 'page.tsx'), 'utf8');
+    expect(seite).toContain("{LIZENZTEXTE['OFL-1.1']}");
+    const ids = WEBSITE_BIBLIOTHEKEN.map((b) => b.id);
+    expect(ids.indexOf('libvips')).toBe(ids.indexOf('sharp') + 1);
+    expect(WEBSITE_BIBLIOTHEKEN.find((b) => b.id === 'libvips')?.lizenz.name).toBe('LGPL-3.0-or-later');
+    // die mitgelieferte Bibliothek steht wirklich unter dieser Lizenz (optionales Plattformpaket von sharp)
+    const libvips = readdirSync(join(WEB, 'node_modules', '.pnpm')).filter((n) => n.startsWith('@img+sharp-libvips-'));
+    expect(libvips.length).toBeGreaterThan(0);
+    for (const n of libvips) {
+      const pj = JSON.parse(
+        readFileSync(
+          join(WEB, 'node_modules', '.pnpm', n, 'node_modules', '@img', n.split('@')[1]!.replace('img+', ''), 'package.json'),
+          'utf8',
+        ),
+      ) as { license: string };
+      expect(pj.license, n).toBe('LGPL-3.0-or-later');
+    }
+    const texte = JSON.parse(readFileSync(join(WEB, 'messages', 'bereiche', 'quellen.json'), 'utf8'));
+    for (const sprache of ['de', 'tr', 'en']) {
+      expect(texte[sprache].quellen.ofl.titel, sprache).toBeTruthy();
+      expect(texte[sprache].quellen.bibliotheken.zwecke.libvips, sprache).toBeTruthy();
+    }
+  });
+
   it('Website /quellen nennt alles, was die Lern-App ausliefert (Daten, Bildkarten, Spracherkennung, Stimmen, Schriften, Bibliotheken)', () => {
     const eintraege = new Map(ABSCHNITTE.flatMap((a) => a.eintraege.map((e) => [e.id, { ...e, abschnitt: a.id }] as const)));
     for (const d of DATEN.filter((x) => x.gruppe === 'sprache')) {

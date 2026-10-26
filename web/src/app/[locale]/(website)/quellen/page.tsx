@@ -7,6 +7,7 @@ import { Abschnitt, Rechtsgliederung } from '@/components/website/rechtliches/Re
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { freigegebeneStimme } from '@/lib/lernapp/audio/stimmen';
 import { SPRACHEN } from '@/lib/lernapp/kurse';
+import { LIZENZTEXTE } from '@/lib/lernapp/lizenztexte';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ABSCHNITTE, BIBLIOTHEKEN, type QuellenEintrag } from './verzeichnis';
 
@@ -111,6 +112,7 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
  * (z. B. /quellen#hadith). Belege in web/daten/<quelle>/QUELLE.md. Statisch. Lern-App (L8-03, ADR 0045 Nr. 15): Sprachdaten
  * mit Namensnennung, Bildkarten, Spracherkennung mit den Drittlizenzen von ONNX Runtime (Volltext vom eigenen Ursprung).
  * Sprachausgabe: vorgesehene Stimmen mit Herkunftskette; Sprachen ohne freigegebene Stimme aus `audio/stimmen.ts` (Stufe C).
+ * Schriften mit dem OFL-Volltext, Bibliotheken samt libvips hinter sharp (Stufe C, Z-L17).
  */
 export default async function QuellenSeite() {
   const t = await getTranslations('quellen');
@@ -157,6 +159,14 @@ export default async function QuellenSeite() {
             {a.eintraege.map((e) => (
               <Eintrag key={e.id} e={e} />
             ))}
+            {a.zusatz === 'ofl' ? (
+              <details className="rounded-md border border-linie bg-weiss">
+                <summary className="flex min-h-12 cursor-pointer items-center px-4 py-3 font-bold">{t('ofl.titel')}</summary>
+                <pre lang="en" dir="ltr" className="overflow-x-auto px-4 pb-4 font-text text-16 whitespace-pre-wrap">
+                  {LIZENZTEXTE['OFL-1.1']}
+                </pre>
+              </details>
+            ) : null}
           </Abschnitt>
         ))}
         <Abschnitt id="bibliotheken" titel={t('abschnitte.bibliotheken')}>
