@@ -2,7 +2,7 @@
 
 import { CircleCheck, Download } from 'lucide-react';
 import { useState } from 'react';
-import { formatiere, intlSprache, type Ziffern } from '@/lib/lernapp/format';
+import { dezimal, formatiere, type Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
 import { speichereOffline } from '@/lib/lernapp/lokal/vorrat';
 import { meldeStand, speicher } from '@/lib/lernapp/oberflaeche/geraet';
@@ -78,8 +78,7 @@ export function OfflineEinheit({
   const [meldung, setMeldung] = useState('');
   const [fertig, setFertig] = useState(gespeichert);
   const moeglich = typeof caches !== 'undefined';
-  const mb = (bytes: number) =>
-    new Intl.NumberFormat(intlSprache(ui, ziffern), { maximumFractionDigits: 1 }).format(Math.max(0.1, bytes / 1e6));
+  const mb = (bytes: number) => dezimal(Math.max(0.1, bytes / 1e6), 1, ui, ziffern);
   const f = (vorlage: string, bytes: number) => formatiere(vorlage, { mb: mb(bytes) }, ui, ziffern);
   const gesamt = einheitBytes(einheit);
 

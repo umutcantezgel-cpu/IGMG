@@ -340,12 +340,21 @@ export async function ladeBuendel(adresse: string, o: PaketOptionen = {}): Promi
 
 // ——— Offline speichern ———
 
+/**
+ * Dem Hauptfaden zwischen zwei Schritten Luft lassen (Eingaben, Zeichnen des Rings): `scheduler.yield()`, wo es das gibt,
+ * sonst ein Zeitgeber (Stufe C N8, INP „offline speichern“).
+ */
+export function nachgeben(): Promise<void> {
+  const planer = (globalThis as { scheduler?: { yield?: () => Promise<void> } }).scheduler;
+  return typeof planer?.yield === 'function' ? planer.yield() : new Promise((weiter) => setTimeout(weiter, 0));
+}
+
 export type OfflineErgebnis = { einheiten: number; bytes: number; fehlgeschlagen: string[]; dauerhaft: boolean | null };
 
 /**
  * „Einheit offline speichern“: Pakete und Audio-Bündel der Einheiten in den Vorrat, als offline markiert. Bittet vorher um
  * dauerhaften Speicher (nicht beim Nachladen einer neuen Fassung, `nachladen`). `fortschritt` meldet die geladenen Bytes
- * für den Ring (B-27).
+ * für den Ring (B-27); zwischen den Schritten gibt die Funktion den Hauptfaden frei (`nachgeben`).
  */
 export async function speichereOffline(
   sp: Speicher,
@@ -363,12 +372,15 @@ export async function speichereOffline(
   const gesamt = einheiten.reduce((s, e) => s + e.bytes, 0) + buendel.reduce((s, [, b]) => s + b, 0);
   let geladen = 0;
   const fehlgeschlagen: string[] = [];
+  // in Häppchen: vor jedem Paket und jedem Bündel nachgeben, damit Eingaben und der Ring nicht warten
   for (const e of einheiten) {
+    await nachgeben();
     if (await ladePaketKopf(sp, kurs, e, { ...o, offline: true })) geladen += e.bytes;
     else fehlgeschlagen.push(e.schluessel);
     o.fortschritt?.(geladen, gesamt);
   }
   for (const [adresse, b] of buendel) {
+    await nachgeben();
     if (await ladeBuendel(adresse, o)) geladen += b;
     else fehlgeschlagen.push(adresse);
     o.fortschritt?.(geladen, gesamt);

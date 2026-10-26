@@ -14,10 +14,40 @@ export type Werte = Readonly<Record<string, string | number>>;
 export const intlSprache = (sprache: string, ziffern: Ziffern = 'oestlich'): string =>
   sprache === 'ar' ? `ar-u-nu-${ziffern === 'westlich' ? 'latn' : 'arab'}` : sprache;
 
-const zahlIn = (n: number, loc: string) => new Intl.NumberFormat(loc).format(n);
+/**
+ * Intl-Objekte je Sprachkennung (und Nachkommastellen) gemerkt: Ein neues `Intl.NumberFormat` bzw. `Intl.PluralRules` kostet
+ * ≈ 30–50 µs, und der Lernpfad formatiert je Einheit mehrere Zahlen (Stufe C N8, TBT).
+ */
+const zahlFormate = new Map<string, Intl.NumberFormat>();
+const pluralRegeln = new Map<string, Intl.PluralRules>();
+
+function zahlFormat(loc: string, stellen?: number): Intl.NumberFormat {
+  const schluessel = stellen === undefined ? loc : `${loc}|${stellen}`;
+  let f = zahlFormate.get(schluessel);
+  if (!f) {
+    f = new Intl.NumberFormat(loc, stellen === undefined ? undefined : { maximumFractionDigits: stellen });
+    zahlFormate.set(schluessel, f);
+  }
+  return f;
+}
+
+function pluralRegel(loc: string): Intl.PluralRules {
+  let r = pluralRegeln.get(loc);
+  if (!r) {
+    r = new Intl.PluralRules(loc);
+    pluralRegeln.set(loc, r);
+  }
+  return r;
+}
+
+const zahlIn = (n: number, loc: string) => zahlFormat(loc).format(n);
 
 /** Zahl in der Schreibweise der Oberfläche. */
 export const zahl = (n: number, sprache: string, ziffern?: Ziffern): string => zahlIn(n, intlSprache(sprache, ziffern));
+
+/** Dezimalzahl mit höchstens `stellen` Nachkommastellen in der Schreibweise der Oberfläche (z. B. MB im Ring „offline speichern“). */
+export const dezimal = (n: number, stellen: number, sprache: string, ziffern?: Ziffern): string =>
+  zahlFormat(intlSprache(sprache, ziffern), stellen).format(n);
 
 /** Position der schließenden Klammer zur `{` an `i`. */
 function ende(t: string, i: number): number {
@@ -61,7 +91,7 @@ function teile(t: string, w: Werte, loc: string, nr?: number): string {
       if (art === 'plural') {
         const n = Number(wert);
         const z = zweige(rest);
-        aus += teile(z.get(`=${n}`) ?? z.get(new Intl.PluralRules(loc).select(n)) ?? z.get('other') ?? '', w, loc, n);
+        aus += teile(z.get(`=${n}`) ?? z.get(pluralRegel(loc).select(n)) ?? z.get('other') ?? '', w, loc, n);
       } else if (art === 'select') {
         const z = zweige(rest);
         aus += teile(z.get(String(wert)) ?? z.get('other') ?? '', w, loc, nr);

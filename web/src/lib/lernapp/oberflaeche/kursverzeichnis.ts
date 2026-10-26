@@ -125,6 +125,14 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
   return liste;
 }
 
+/**
+ * Die Stufe, die der Lernpfad aufgeklappt zeigt (Stufe C N8): die der aktuellen Einheit („Hier geht es weiter“), ist alles
+ * geschafft, die letzte. Die übrigen Stufen rendern ihre Stationen erst beim Aufklappen.
+ */
+export function aufgeklappteStufe(liste: readonly Abschnitt[]): Stufe | null {
+  return (liste.find((a) => a.stationen.some((s) => s.aktuell)) ?? liste.at(-1))?.stufe ?? null;
+}
+
 /** Die aktuelle und die nächste Einheit (werden automatisch gespeichert, ADR 0039 Nr. 12). */
 export function aktuelleUndNaechste(v: Verzeichnis, erledigt: ReadonlySet<string>): VerzeichnisEinheit[] {
   const i = v.einheiten.findIndex((e) => [...erledigt].filter((l) => l.startsWith(lektionsPraefix(v, e.schluessel))).length < e.lektionen);
