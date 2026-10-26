@@ -7,7 +7,7 @@ import { describe, expect, it } from 'vitest';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
-import { dezimal, formatiere, intlSprache, zahl, type Werte, type Ziffern } from '@/lib/lernapp/format';
+import { formatiere, intlSprache, zahl, type Werte, type Ziffern } from '@/lib/lernapp/format';
 
 /**
  * Teilformatierer der Lern-App (ADR 0037 Nr. 5): gleiche Ausgabe wie `createTranslator` von next-intl (nur im Test) für
@@ -93,7 +93,7 @@ describe('Zahlen und Ziffern', () => {
 /**
  * Stufe C N8: kleine Zahlen (0 bis unter 1000) und die Pluralkategorie ganzer Zahlen ohne Intl – das erste
  * `Intl.NumberFormat`/`Intl.PluralRules` einer Seite kostete im Profil ≈ 80 ms Hauptfaden (CPU ×4). Gleich wie Intl für alle
- * ganzen Zahlen bis 1200, Dezimalzahlen mit einer Stelle und große Zahlen (dort weiter Intl).
+ * ganzen Zahlen bis 1200 sowie große und gebrochene Zahlen (dort weiter Intl). Megabyte: `leistung-n8.test.ts`.
  */
 describe('Zahlen und Plural ohne Intl gleich wie Intl', () => {
   const LOC: [string, Ziffern, string][] = [
@@ -112,21 +112,18 @@ describe('Zahlen und Plural ohne Intl gleich wie Intl', () => {
       expect(formatiere(KAT, { n }, sprache, ziffern)).toBe(pr.select(n));
     }
   });
-  it.each(LOC)('%s (%s): Dezimalzahlen mit einer Stelle (MB) und große Zahlen', (sprache, ziffern, loc) => {
-    const eine = new Intl.NumberFormat(loc, { maximumFractionDigits: 1 });
-    for (const x of [0.1, 0.2, 0.9, 1, 1.26, 2.5, 9.94, 12.34, 99.96, 115.2, 999.9, 1234.5, 10_000])
-      expect(dezimal(x, 1, sprache, ziffern)).toBe(eine.format(x));
-    for (const x of [1000, 1234, 1_234_567, 2.25, 3.125]) expect(zahl(x, sprache, ziffern)).toBe(new Intl.NumberFormat(loc).format(x));
+  it.each(LOC)('%s (%s): große und gebrochene Zahlen weiter über Intl', (sprache, ziffern, loc) => {
+    for (const x of [1000, 1234, 1_234_567, 2.25, 3.125, -4]) expect(zahl(x, sprache, ziffern)).toBe(new Intl.NumberFormat(loc).format(x));
   });
 });
 
 describe('Größe', () => {
-  it('höchstens 1,25 KB gz (übersetzt, ohne Kommentare, nicht minifiziert; < 1 KB bis Stufe C N8, dazu die Zahlen ohne Intl)', () => {
+  it('höchstens 1,1 KB gz (übersetzt, ohne Kommentare, nicht minifiziert; < 1 KB bis Stufe C N8, dazu ganze Zahlen ohne Intl)', () => {
     const quelle = readFileSync(join(import.meta.dirname, '..', '..', '..', 'src', 'lib', 'lernapp', 'format.ts'), 'utf8');
     const js = ts.transpileModule(quelle, {
       compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.ESNext, removeComments: true },
     }).outputText;
-    expect(gzipSync(js, { level: 9 }).length).toBeLessThanOrEqual(1280);
+    expect(gzipSync(js, { level: 9 }).length).toBeLessThanOrEqual(1126);
   });
 });
 

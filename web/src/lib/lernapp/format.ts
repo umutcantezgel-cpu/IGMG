@@ -1,6 +1,6 @@
 /**
  * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3; < 1 KB gz, seit Stufe C N8 mit eigenen
- * kleinen Zahlen ≤ 1,25 KB): `{name}`, `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und
+ * ganzen Zahlen ≤ 1,1 KB): `{name}`, `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und
  * `{x, select, … other {…}}`, verschachtelt. Wie intl-messageformat schreibt `{n}` die Zahl unverändert; Ziffern der
  * Oberfläche nur über `{n, number}` und `#`. Plural für ganze Zahlen nach CLDR, sonst über `Intl.PluralRules` (Arabisch: zero,
  * one, two, few, many, other). Apostroph-Regel wie ICU („'{'“, „''“). Ziffern der arabischen Oberfläche östlich-arabisch,
@@ -16,36 +16,27 @@ export const intlSprache = (sprache: string, ziffern: Ziffern = 'oestlich'): str
   sprache === 'ar' ? `ar-u-nu-${ziffern === 'westlich' ? 'latn' : 'arab'}` : sprache;
 
 /**
- * Kleine Zahlen ohne Intl (Stufe C N8): Das erste `Intl.NumberFormat` bzw. `Intl.PluralRules` einer Seite kostet ≈ 20 ms
- * (ICU). Zahlen von 0 bis unter 1000 in de, tr und ar schreibt `klein` selbst (Komma wie Intl, östlich-arabisch mit U+066B),
- * die Pluralkategorie ganzer Zahlen ≥ 0 kommt nach CLDR aus `kategorie`; alles andere über Intl.
+ * Ganze Zahlen ohne Intl (Stufe C N8): Das erste `Intl.NumberFormat` bzw. `Intl.PluralRules` einer Seite kostet ≈ 20 ms
+ * (ICU). Ganze Zahlen von 0 bis 999 in de, tr und ar schreibt `zahlIn` selbst (östlich-arabische Ziffern wie Intl), die
+ * Pluralkategorie ganzer Zahlen ≥ 0 kommt nach CLDR aus `kategorie`; alles andere über Intl.
  */
-const EIGEN = /^(de|tr|ar-u-nu-)/;
-function klein(n: number, loc: string, stellen: number): string | null {
-  if (!(n >= 0 && n < 1e3 && EIGEN.test(loc))) return null;
-  const s = n.toFixed(stellen).replace(/\.?0+$/, (r) => (stellen ? '' : r));
-  const arab = loc.endsWith('arab');
-  const t = s.replace('.', loc[0] !== 'a' ? ',' : arab ? '\u066B' : '.');
-  return arab ? t.replace(/\d/g, (d) => String.fromCharCode(1632 + +d)) : t;
-}
+const eigen = (n: number, loc: string) => Number.isInteger(n) && n >= 0 && /^(de|tr|ar-u-nu-)/.test(loc);
+
+/** Ziffern 0–9 als östlich-arabische Ziffern, wenn die Sprachkennung sie verlangt (`…-nu-arab`). */
+export const ziffernVon = (s: string, loc: string): string =>
+  loc.endsWith('arab') ? s.replace(/\d/g, (d) => String.fromCharCode(1632 + +d)) : s;
+
+const zahlIn = (n: number, loc: string) => (eigen(n, loc) && n < 1e3 ? ziffernVon(String(n), loc) : new Intl.NumberFormat(loc).format(n));
 
 function kategorie(n: number, loc: string): string {
   const h = n % 100;
-  if (!(Number.isInteger(n) && n >= 0 && EIGEN.test(loc))) return new Intl.PluralRules(loc).select(n);
+  if (!eigen(n, loc)) return new Intl.PluralRules(loc).select(n);
   if (loc[0] !== 'a') return n === 1 ? 'one' : 'other';
   return n < 3 ? ['zero', 'one', 'two'][n]! : h > 10 ? 'many' : h > 2 ? 'few' : 'other';
 }
 
-const zahlIn = (n: number, loc: string) => klein(n, loc, 3) ?? new Intl.NumberFormat(loc).format(n);
-
 /** Zahl in der Schreibweise der Oberfläche. */
 export const zahl = (n: number, sprache: string, ziffern?: Ziffern): string => zahlIn(n, intlSprache(sprache, ziffern));
-
-/** Dezimalzahl mit höchstens `stellen` Nachkommastellen in der Schreibweise der Oberfläche (MB im Ring „offline speichern“). */
-export function dezimal(n: number, stellen: number, sprache: string, ziffern?: Ziffern): string {
-  const loc = intlSprache(sprache, ziffern);
-  return klein(n, loc, stellen) ?? new Intl.NumberFormat(loc, { maximumFractionDigits: stellen }).format(n);
-}
 
 /** Position der schließenden Klammer zur `{` an `i`. */
 function ende(t: string, i: number): number {

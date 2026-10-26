@@ -2,7 +2,7 @@
 
 import { CircleCheck, Download } from 'lucide-react';
 import { useState } from 'react';
-import { dezimal, formatiere, type Ziffern } from '@/lib/lernapp/format';
+import { formatiere, intlSprache, ziffernVon, type Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
 import { speichereOffline } from '@/lib/lernapp/lokal/vorrat';
 import { meldeStand, speicher } from '@/lib/lernapp/oberflaeche/geraet';
@@ -49,6 +49,19 @@ function Ring({ anteil, beschriftung }: { anteil: number; beschriftung: string }
   );
 }
 
+/**
+ * Megabyte mit höchstens einer Nachkommastelle (mindestens 0,1) in der Schreibweise der Oberfläche – wie
+ * `Intl.NumberFormat(…, { maximumFractionDigits: 1 })`, unter 1000 MB aber ohne Intl (Stufe C N8: das erste Intl-Objekt
+ * einer Seite kostet ≈ 20 ms, jede Station zeigt ihre Größe). Komma de/tr „,“, ar östlich „٫“ (U+066B), westlich „.“.
+ */
+export function megabyte(bytes: number, ui: Oberflaeche, ziffern: Ziffern): string {
+  const zehntel = Math.round(Math.max(0.1, bytes / 1e6) * 10);
+  const loc = intlSprache(ui, ziffern);
+  if (zehntel >= 1e4) return new Intl.NumberFormat(loc, { maximumFractionDigits: 1 }).format(zehntel / 10);
+  const komma = ui !== 'ar' ? ',' : ziffern === 'westlich' ? '.' : '\u066B';
+  return ziffernVon(zehntel % 10 ? `${Math.floor(zehntel / 10)}${komma}${zehntel % 10}` : String(zehntel / 10), loc);
+}
+
 /** Größe einer Einheit samt Tönen (Ring nach Bytes, ADR 0039 Fortschreibung Nr. 8). */
 export const einheitBytes = (e: Pick<VerzeichnisEinheit, 'bytes' | 'audio'>): number => e.bytes + e.audio.reduce((s, a) => s + a.bytes, 0);
 
@@ -84,7 +97,7 @@ export function OfflineEinheit({
   const [meldung, setMeldung] = useState('');
   const [fertig, setFertig] = useState(gespeichert);
   const moeglich = typeof caches !== 'undefined';
-  const mb = (bytes: number) => dezimal(Math.max(0.1, bytes / 1e6), 1, ui, ziffern);
+  const mb = (bytes: number) => megabyte(bytes, ui, ziffern);
   const f = (vorlage: string, bytes: number) => formatiere(vorlage, { mb: mb(bytes) }, ui, ziffern);
   const gesamt = einheitBytes(einheit);
 

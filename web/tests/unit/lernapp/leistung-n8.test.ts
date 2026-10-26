@@ -1,7 +1,8 @@
 import { createHash } from 'node:crypto';
 import { afterEach, describe, expect, it } from 'vitest';
 import { LektionSchema } from '@/lib/lernapp/aufgaben/schema';
-import { dezimal, formatiere, zahl } from '@/lib/lernapp/format';
+import { megabyte } from '@/components/lernapp/OfflineEinheit';
+import { formatiere, zahl } from '@/lib/lernapp/format';
 import { arbeitsspeicher } from '@/lib/lernapp/lokal/db';
 import { ladeLektion, nurLektion } from '@/lib/lernapp/lokal/pakete';
 import { nachgeben, speichereOffline } from '@/lib/lernapp/lokal/vorrat';
@@ -177,15 +178,12 @@ describe('Lernpfad: nur die Stufe der aktuellen Einheit aufgeklappt', () => {
   });
 });
 
-describe('Formatierer mit gemerkten Intl-Objekten', () => {
-  it('gleiche Ergebnisse wie frische Intl-Objekte, je Sprache und Ziffern getrennt', () => {
+describe('Formatierer: kleine Zahlen selbst, sonst Intl', () => {
+  it('gleiche Ergebnisse wie Intl, je Sprache und Ziffern getrennt, auch wiederholt', () => {
     for (let i = 0; i < 3; i++) {
       expect(zahl(1234, 'de')).toBe('1.234');
       expect(zahl(1234, 'ar')).toBe(new Intl.NumberFormat('ar-u-nu-arab').format(1234));
       expect(zahl(1234, 'ar', 'westlich')).toBe('1,234');
-      expect(dezimal(1.26, 1, 'de')).toBe('1,3');
-      expect(dezimal(1.26, 1, 'ar')).toBe(new Intl.NumberFormat('ar-u-nu-arab', { maximumFractionDigits: 1 }).format(1.26));
-      expect(dezimal(1.26, 1, 'tr')).toBe('1,3');
       expect(formatiere('{n, plural, one {# Einheit} other {# Einheiten}}', { n: 1 }, 'de')).toBe('1 Einheit');
       expect(formatiere('{n, plural, one {# Einheit} other {# Einheiten}}', { n: 14 }, 'de')).toBe('14 Einheiten');
     }
@@ -255,5 +253,18 @@ describe('Spieler: Lexikon der Lektion erst bei Bedarf (lexikonVon)', () => {
     expect(lex?.woerter.has('ekmek')).toBe(true);
     expect(lexikonVon(s.lektion)).toBe(lex);
     expect(lexikonVon(LektionSchema.parse(PAKET.lektionen[0]))).toBeUndefined();
+  });
+});
+
+describe('Ring „offline speichern“: Megabyte ohne Intl gleich wie Intl', () => {
+  it.each([
+    ['de', 'oestlich', 'de'],
+    ['tr', 'oestlich', 'tr'],
+    ['ar', 'oestlich', 'ar-u-nu-arab'],
+    ['ar', 'westlich', 'ar-u-nu-latn'],
+  ] as const)('%s (%s)', (ui, ziffern, loc) => {
+    const eine = new Intl.NumberFormat(loc, { maximumFractionDigits: 1 });
+    for (const mb of [0.01, 0.1, 0.2, 0.9, 1, 1.26, 2.5, 9.94, 12.34, 99.96, 115.2, 999.9, 1234.5, 10_000])
+      expect(megabyte(mb * 1e6, ui, ziffern)).toBe(eine.format(Math.max(0.1, mb)));
   });
 });
