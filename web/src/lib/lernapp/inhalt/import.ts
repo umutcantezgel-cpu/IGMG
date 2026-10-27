@@ -57,21 +57,23 @@ export class ImportFehler extends Error {
   }
 }
 
-type Vorher = { id: string; inhaltHash: string; status: Status; menschlichGeprueft: boolean };
-type Entscheidung = 'neu' | 'gleich' | 'aendern' | 'konflikt';
+export type Vorher = { id: string; inhaltHash: string; status: Status; menschlichGeprueft: boolean };
+export type Entscheidung = 'neu' | 'gleich' | 'aendern' | 'konflikt';
 
-function entscheide(v: Vorher | undefined, hash: string): Entscheidung {
+/** Entscheidung je Baustein (auch der Wissens-Import, `wissen-import.ts`). */
+export function entscheide(v: Vorher | undefined, hash: string): Entscheidung {
   if (!v) return 'neu';
   if (v.inhaltHash === hash) return 'gleich';
   return v.menschlichGeprueft ? 'konflikt' : 'aendern';
 }
 
 /** Status bei gleichem Hash: nur `entwurf` → `automatisch_geprueft`, wenn die Datei es meldet. */
-function statusBeiGleich(alt: Status, datei: Status): Status | null {
+export function statusBeiGleich(alt: Status, datei: Status): Status | null {
   return alt === 'entwurf' && datei === 'automatisch_geprueft' ? datei : null;
 }
 
-const verfasstVon = (quelle: string | undefined) => (quelle && (quelle.startsWith('ki:') || quelle.startsWith('test:')) ? quelle : null);
+export const verfasstVon = (quelle: string | undefined) =>
+  quelle && (quelle.startsWith('ki:') || quelle.startsWith('test:')) ? quelle : null;
 
 class Lauf {
   bericht: ImportBericht = { dateien: 0, uebersprungen: 0, neu: 0, geaendert: 0, unveraendert: 0, gesperrt: 0, konflikte: [], kurse: [] };
@@ -120,7 +122,7 @@ async function sichereKurs(tx: Transaktion, kurs: Sprache, stufe: (typeof SPRACH
 }
 
 type VorherSpalten = 'id' | 'inhaltHash' | 'status' | 'menschlichGeprueft';
-const vorherSpalten = <T extends Record<VorherSpalten, AnyPgColumn>>(t: T): Pick<T, VorherSpalten> => ({
+export const vorherSpalten = <T extends Record<VorherSpalten, AnyPgColumn>>(t: T): Pick<T, VorherSpalten> => ({
   id: t.id,
   inhaltHash: t.inhaltHash,
   status: t.status,

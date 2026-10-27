@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { FreigabeBaustein, Pruefung } from '@/lib/lernapp/freigabe';
 import { IslamEinheitDateiSchema } from '@/lib/lernapp/inhalt/schema';
+import { WISSENS_QUELLEN } from '@/lib/lernapp/inhalt/wissen-quellen';
 import { quellenzeile, type QuellenBeleg } from '@/lib/lernapp/paket/quellenzeile';
 import { PaketSchema } from '@/lib/lernapp/paket/typen';
 import { baueWissensEinheit, type WissensAussageRoh, type WissensEinheitEingabe, wissensAufgabe } from '@/lib/lernapp/paket/wissen';
@@ -9,7 +10,7 @@ import { inhaltsdateien } from '../../../scripts/lernapp/inhaltsdateien';
 
 /**
  * Vertragsprobe Wissenskurs (Gegenprüfung N3): alle echten Inhaltsdateien `inhalte/lernapp/islam/**` in genau der Abbildung,
- * die `server/queries/lernapp/wissen.ts` aus der Datenbank liest – und die der künftige Wissens-Import schreiben muss:
+ * die `server/queries/lernapp/wissen.ts` aus der Datenbank liest – und die der Wissens-Import (`wissen-import.ts`) schreibt:
  *
  * - Lektion: `titel` (Spalte `ziel.de`), `kinderGeeignet`, Reihenfolge wie in der Datei.
  * - Aussage: `text`, `strittig`; Quellenzeile aus den Belegen (`kapitel` → `stelle.kitab`, `band`, `seite`; Werk, Autor und
@@ -51,14 +52,17 @@ const dateien = inhaltsdateien(undefined, ['islam']).map((q) => ({
   d: IslamEinheitDateiSchema.parse(JSON.parse(q.text)),
 }));
 
-/** Inhaltsdatei → Eingabe des Paketbaus, wie sie aus der Datenbank käme. */
-function eingabe(d: (typeof dateien)[number]['d']): WissensEinheitEingabe {
+/**
+ * Inhaltsdatei → Eingabe des Paketbaus, wie sie aus der Datenbank käme. `register`: Werk und Verfasser aus dem Quellenregister
+ * (`wissen-quellen.ts`, wie `lernapp_quelle` nach dem Wissens-Import), sonst das Registerkürzel ohne Verfasser.
+ */
+function eingabe(d: (typeof dateien)[number]['d'], register = false): WissensEinheitEingabe {
   const aussagen = new Map<string, WissensAussageRoh>();
   for (const l of d.lektionen)
     for (const a of l.aussagen) {
       const belege: QuellenBeleg[] = a.belege.map((b) => ({
-        werk: b.werk,
-        autor: null,
+        werk: register ? WISSENS_QUELLEN[b.werk].werk : b.werk,
+        autor: register ? WISSENS_QUELLEN[b.werk].autor : null,
         ausgabe: b.ausgabe,
         stelle: {
           kitab: b.kapitel,
@@ -151,6 +155,21 @@ describe('Vertragsprobe: alle echten Inhaltsdateien des Wissenskurses durch den 
     }
     expect(ohnePaket).toEqual([]);
     expect(imPaket).toBe(146);
+  });
+
+  it('mit Werk und Verfasser aus dem Quellenregister (wie nach dem Import): alle 146 Lektionen, Quellenzeile ≤ 1.200 Zeichen', () => {
+    let imPaket = 0;
+    let laengste = 0;
+    for (const { pfad, d } of dateien) {
+      const e = eingabe(d, true);
+      for (const l of e.lektionen) for (const a of l.aussagen) laengste = Math.max(laengste, a.quelle.length);
+      const r = baueWissensEinheit(e);
+      expect(r, pfad).not.toBeNull();
+      imPaket += r!.paket.lektionen.length;
+      expect(ARABISCH.test(r!.json), pfad).toBe(false);
+    }
+    expect(imPaket).toBe(146);
+    expect(laengste).toBeLessThanOrEqual(1200);
   });
 
   it('eine fehlende Freigabe (eine Aussage ohne Quizfrage mit nur einer Prüfung) nimmt genau ihre Lektion heraus', () => {

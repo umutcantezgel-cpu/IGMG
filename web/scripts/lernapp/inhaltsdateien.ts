@@ -1,5 +1,5 @@
 // Inhaltsdateien der Lern-App lesen, sortiert, Pfad relativ zu web/inhalte/lernapp:
-// - inhaltsdateien(): JSON unter {sprache,uebersetzung}/** (lernapp:import)
+// - inhaltsdateien(): JSON unter {sprache,uebersetzung}/** (lernapp:import); mit `['islam']` der Wissenskurs (Wissens-Import)
 // - alleInhaltsdateien(): alle JSON außer den erzeugten schemas/ (lernapp:pruefen, L3-02)
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';

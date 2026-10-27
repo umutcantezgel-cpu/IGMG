@@ -17,8 +17,9 @@ import { ladePruefungen } from './pruefungen';
  *
  * Quellenzeile je Aussage aus den Belegen (`paket/quellenzeile.ts`), nie der Wortlaut der Quelle.
  *
- * Abbildung Inhaltsdatei → Datenbank, die dieses Modul liest (Vertrag für den künftigen Wissens-Import; die Vertragsprobe
- * `tests/unit/lernapp/wissen-vertrag.test.ts` spielt sie mit allen echten Dateien `inhalte/lernapp/islam/**` durch):
+ * Abbildung Inhaltsdatei → Datenbank, die dieses Modul liest (Vertrag des Wissens-Imports `lib/lernapp/inhalt/wissen-import.ts`;
+ * die Vertragsprobe `tests/unit/lernapp/wissen-vertrag.test.ts` spielt sie mit allen echten Dateien `inhalte/lernapp/islam/**`
+ * durch, `tests/integration/lernapp-wissen-import.test.ts` mit dem Import selbst):
  * - `lernapp_lektion`: `ziel.de` = `titel` der Lektion, `kinderGeeignet`, Reihenfolge wie in der Datei.
  * - `lernapp_aussage`: `text`, `strittig`, Reihenfolge wie in der Datei; Belege in `lernapp_beleg` (`stelle.kitab` = `kapitel`,
  *   `band`, `seite`, `passage`) mit Werk, Autor und Ausgabe aus `lernapp_quelle`.

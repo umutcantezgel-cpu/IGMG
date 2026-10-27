@@ -1,5 +1,7 @@
 // Import der Lern-App-Inhalte (PLAN §6.6, ADR 0041 Nr. 6): web/inhalte/lernapp/{sprache,uebersetzung}/**/*.json in die
-// Datenbank, idempotent über SHA-256 je Datei und inhaltHash je Eintrag (src/lib/lernapp/inhalt/import.ts).
+// Datenbank, idempotent über SHA-256 je Datei und inhaltHash je Eintrag (src/lib/lernapp/inhalt/import.ts); danach der
+// Wissenskurs web/inhalte/lernapp/islam/**/*.json (src/lib/lernapp/inhalt/wissen-import.ts, Status der Dateien: Entwurf,
+// ohne Prüfungen – sichtbar nur nach zwei Freigaben bzw. als gekennzeichnete Vorschau mit `lernapp_wissen_vorschau`).
 // Läuft im Bau nach scripts/inhalte-import.ts (vercel-bau.mjs mit Datenbank; bau-datenbank.mjs ohne Datenbank, den Testkurs
 // nur mit LERNAPP_TESTKURS=1), in der E2E-Datenbank (mit `--testkurs`) und von Hand.
 // Danach die Audio-Manifeste web/inhalte/lernapp/audio-manifest/<sprache>.json nach lernapp_audio (abgeglichen: Clips, die
@@ -19,6 +21,7 @@ import { holeDb } from '../../src/lib/db';
 import { AudioImportFehler, importiereAudioManifest, religionsHashes } from '../../src/lib/lernapp/audio/import';
 import { leseManifest } from '../../src/lib/lernapp/audio/manifest';
 import { ImportFehler, importiereLernapp } from '../../src/lib/lernapp/inhalt/import';
+import { importiereWissen } from '../../src/lib/lernapp/inhalt/wissen-import';
 import { INHALT_WURZEL, inhaltsdateien } from './inhaltsdateien';
 
 const { values } = parseArgs({
@@ -37,6 +40,14 @@ async function main() {
       `${b.unveraendert} gleich, ${b.gesperrt} gesperrt, ${b.konflikte.length} Konflikte; Kurse mit neuem Stand: ${b.kurse.join(', ') || '–'}.`,
   );
   for (const k of b.konflikte)
+    console.log(`  Konflikt (menschlich geprüft, nicht überschrieben): ${k.tabelle} ${k.schluessel} aus ${k.datei}`);
+  // Wissenskurs (Fiqh und Glaube nach hanefitischer Lehre, ADR 0040): eigener Stand `lernapp_wissen_import`
+  const w = await importiereWissen(db, inhaltsdateien(undefined, ['islam']), { erzwingen: values.erzwingen });
+  console.log(
+    `Lern-App-Wissenskurs: ${w.dateien} Dateien (${w.uebersprungen} unverändert übersprungen), ${w.neu} neu, ${w.geaendert} geändert, ` +
+      `${w.unveraendert} gleich, ${w.gesperrt} gesperrt, ${w.belegeEntfernt} Belege entfallen, ${w.konflikte.length} Konflikte.`,
+  );
+  for (const k of w.konflikte)
     console.log(`  Konflikt (menschlich geprüft, nicht überschrieben): ${k.tabelle} ${k.schluessel} aus ${k.datei}`);
   if (values.testkurs) {
     const t = await lernappTestkurs(db);
