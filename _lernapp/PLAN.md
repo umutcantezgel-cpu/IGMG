@@ -754,7 +754,7 @@ Lern-App (L0-E17, LM-35); Bildkarten ohne Menschen- und Tierdarstellungen bis LM
 |---|---|---|---|---|
 | `lernapp` | nein | an | an nach Abnahme (`IN_PRODUKTION_AN`) | – |
 | `lernapp_ungeprueft` (Einheiten ohne bestandene Stichprobe, mit Hinweis) | nein | an | **an** (O-1, LM-11) | – |
-| `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07) | – |
+| `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07); fortgeschrieben: an seit 27.10.2026 (L3-E23, wie KERN §6), Ratenregel für `/lern-app/modelle/` durch den Betreiber (LM-40) | – |
 | `lernapp_meldungen` (anonym, Kategorien) | nein | an | an | – |
 | `lernapp_sync` | ja | an | aus | `konten` an, LM-08 |
 | `lernapp_gruppen` | ja | an | aus | `lernplattform` an, LM-08 |

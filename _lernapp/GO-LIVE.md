@@ -117,6 +117,11 @@ hoch/kritisch“ ist erfüllt; die Auflagen binden die Schalter wie folgt. Stand
        dem Vorrat `igmg-lernapp-modelle`. 200 Anfragen je 10 min lassen ≈ 20 Geräte hinter einer IP laden (Unterricht im
        Gemeinde-WLAN); Missbrauch höchstens ≈ 1,6 GB je IP und 10 min. Hobby erlaubt **eine** Ratenregel je Projekt (von drei
        eigenen Regeln) und 1.000.000 erlaubte Anfragen; die Zähler gelten je Region.
+     - Jenseits des Limits (ab etwa dem 21. Gerät hinter einer IP in 10 min, z. B. eine große Klasse im Gemeinde-WLAN)
+       antwortet Vercel mit 429. Die Sprechübung meldet „Die Sprachprüfung hat gerade nicht geklappt“, übt mit der eigenen
+       Aufnahme weiter und bietet „Sprachprüfung laden“ bei der nächsten Sprechübung wieder an; schon geladene Dateien bleiben
+       im Vorrat, der Rest folgt beim nächsten Versuch. Dauerhaft gemerkt wird ein Rückfall nur nach dem Probelauf, nicht nach
+       einem Ladefehler oder Abbruch (Mängelrunde 1 zu L3-E23, `standNachLaden` in `web/src/lib/lernapp/sprechen/geraet.ts`).
      - Bei auffälligem Datentransfer (LM-15) das Limit senken oder `FUNKTION_LERNAPP_SPRECHEN=aus` setzen und neu bereitstellen.
 - **Bleibt offen:** die Ratenregel selbst (LM-40) – bis sie steht, sind die Modelle ungebremst; Symbole und Modelle antworten bei
   „aus“ weiter mit 200. Eine Modell-Route mit Schalterprüfung bleibt die Alternative ohne Firewall.

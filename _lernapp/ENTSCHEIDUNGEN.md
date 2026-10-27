@@ -452,6 +452,10 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
     ungebremst wie seit der Ausnahme N-4 (26.10.2026).
   - Offen bleiben der Gerätetest (LM-07) und die Bestätigung von Modell und Ort (LM-27). Fällt der Gerätetest schlecht aus,
     wird der Schalter wieder ausgeschaltet.
+  - **Mängelrunde 1 (Gegenprüfung):** Ein abgebrochener oder gescheiterter Download (Übung verlassen, 429 der Ratenregel,
+    Netzabbruch) merkte bisher auf dem Gerät dauerhaft „Rückfall“ – eine Sackgasse, mit dem Schalter an erstmals erreichbar.
+    Behoben: Dauerhaft gemerkt wird der Rückfall nur nach dem Probelauf (ADR 0042 Nr. 7); ein Abbruch hinterlässt nichts, ein
+    Ladefehler gilt nur für die Übung, die nächste bietet das Laden wieder an (`standNachLaden`, Unit- und E2E-Test).
 - **B1 de/tr Einheit 16 frei** (e95f4213): de.b1.e16 „Gemeinde und Grundrechte“ und tr.b1.e16 „Wir kochen für Gäste“ auf
   `automatisch_geprueft` – nur die Zeile `status` in der Spracheinheit und den Übersetzungen de-aus-ar, de-aus-tr, tr-aus-ar,
   tr-aus-de (Muster 4350ee98/0745164d), ohne Textänderung.
