@@ -475,6 +475,18 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
     expect(pg(vorschau).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
   });
 
+  it('L3-E22: Vorschau ungeprüfter Wissensinhalte – Warnung in produktion (Standard an), keine mit =aus, Hinweis in vorschau', async () => {
+    const id = 'lernapp.wissen-vorschau';
+    const an = befund(await pruefe(produktionsUmgebung()), id);
+    expect(an.status).toBe('warnung');
+    expect(an.meldung).toContain('FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus');
+    expect(an.meldung).toContain('zwei Gelehrten');
+    expect(befund(await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP_WISSEN_VORSCHAU: 'aus' })), id).status).toBe('ok');
+    expect(befund(await pruefe(vorschauUmgebung()), id).status).toBe('hinweis');
+    // ohne Lern-App keine Karte (die Vorschau wirkt dann nicht)
+    expect((await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP: 'aus' }))).pruefungen.map((p) => p.id)).not.toContain(id);
+  });
+
   it('S-L2 M-1: Gruppen der Lern-App ohne Entscheidung D-L16 – Fehler in produktion, Warnung in vorschau', async () => {
     const aus = await pruefe(produktionsUmgebung());
     expect(pg(aus).map((p) => p.id)).not.toContain('gemeinde.lernapp-kommentar-kinder');

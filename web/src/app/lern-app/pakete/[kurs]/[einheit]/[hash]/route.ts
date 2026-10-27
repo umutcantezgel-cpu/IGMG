@@ -12,8 +12,8 @@ import { ladeEinheitJson, ladePaketParameter } from '@/server/queries/lernapp/pa
  *
  * Kopfzeilen: `immutable` für Browser und Service Worker, `Vercel-CDN-Cache-Control` für das CDN (S5) und
  * `Vercel-Cache-Tag: lernapp,lernapp-kurs-<id>,einstellungen`: Ein Zurückziehen (KERN 4.0 §2.3) wirkt über den Kurs-Tag,
- * ein Wechsel der Schalter `lernapp` bzw. `lernapp_ungeprueft` über `einstellungen` – die Jahreskopie im CDN überdauert
- * beides nicht (S-L1 N-3). Keine Cookies.
+ * ein Wechsel der Schalter `lernapp`, `lernapp_ungeprueft` bzw. `lernapp_wissen_vorschau` über `einstellungen` – die
+ * Jahreskopie im CDN überdauert beides nicht (S-L1 N-3). Keine Cookies.
  * Der Proxy läuft hier nicht (Matcher ohne `lern-app/(pakete|audio|modelle)`); Schalter `lernapp` aus → 404.
  */
 export function generateStaticParams() {

@@ -53,6 +53,7 @@ export const funktionenEinstellung = z.object({
   // Lauf Lern-App (KERN 4.0 §6)
   lernapp: z.boolean().optional(),
   lernapp_ungeprueft: z.boolean().optional(),
+  lernapp_wissen_vorschau: z.boolean().optional(),
   lernapp_sprechen: z.boolean().optional(),
   lernapp_meldungen: z.boolean().optional(),
   lernapp_sync: z.boolean().optional(),

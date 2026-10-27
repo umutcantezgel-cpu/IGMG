@@ -15,6 +15,9 @@ import { INHALT_LIZENZ, PAKET_FORMAT, VERZEICHNIS_FORMAT } from './kennungen';
  * - Wissenskurs (`kurs: 'islam'`, Inhalt nur Deutsch: Ziel- und Ausgangssprache `de`): dazu je Lektion der Prüfvermerk ohne
  *   Namen (Datum, an dem alle Bausteine der Lektion zwei Freigaben hatten), „für Kinder geeignet“ und alle Aussagen der Lektion
  *   mit ihrer Quellenzeile (KERN 4.0 §2.3 „Kennzeichnung“, PLAN §6.7 Nr. 7). Keine Einträge, keine Tipps, kein Audio.
+ * - Vorschau des Wissenskurses (Schalter `lernapp_wissen_vorschau`, L3-E22): Eine Lektion ohne zwei Freigaben trägt statt des
+ *   Prüfvermerks `entwurf: true` (nie beides); ein Paket mit mindestens einer solchen Lektion trägt `vorschau: true`, ebenso
+ *   seine Einheit im Verzeichnis. Ohne Vorschau fehlen beide Felder – das Paket ist byte-gleich wie zuvor.
  */
 
 export { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse, VERZEICHNIS_FORMAT, verzeichnisAdresse } from './kennungen';
@@ -56,13 +59,27 @@ export const WissensAussageSchema = z.strictObject({
   strittig: z.optional(z.literal(true)),
 });
 
-/** Prüfvermerk und Kennzeichnung einer Lektion des Wissenskurses (ohne Namen der Prüfenden, LM-20). */
-export const WissensLektionSchema = z.strictObject({
-  /** Tag (UTC), an dem der letzte Baustein der Lektion seine zweite Freigabe zum aktuellen Hash bekam */
-  geprueftAm: z.string().check(z.regex(/^\d{4}-\d{2}-\d{2}$/)),
+const WissensLektionKennzeichnung = {
   kinderGeeignet: z.boolean(),
   aussagen: z.array(WissensAussageSchema).check(z.minLength(1), z.maxLength(40)),
-});
+};
+
+/**
+ * Prüfvermerk und Kennzeichnung einer Lektion des Wissenskurses (ohne Namen der Prüfenden, LM-20): entweder geprüft
+ * (`geprueftAm`) oder – nur mit der Vorschau (L3-E22) – ein ungeprüfter Entwurf (`entwurf: true`), nie beides.
+ */
+export const WissensLektionSchema = z.union([
+  z.strictObject({
+    /** Tag (UTC), an dem der letzte Baustein der Lektion seine zweite Freigabe zum aktuellen Hash bekam */
+    geprueftAm: z.string().check(z.regex(/^\d{4}-\d{2}-\d{2}$/)),
+    ...WissensLektionKennzeichnung,
+  }),
+  z.strictObject({
+    /** Entwurf zur Prüfung: noch nicht von zwei Gelehrten geprüft (Vorschau, L3-E22) */
+    entwurf: z.literal(true),
+    ...WissensLektionKennzeichnung,
+  }),
+]);
 export type WissensLektionVermerk = z.infer<typeof WissensLektionSchema>;
 
 const PaketGrundSchema = z.strictObject({
@@ -88,12 +105,15 @@ const PaketGrundSchema = z.strictObject({
   lizenz: z.literal(INHALT_LIZENZ),
   /** nur Wissenskurs: Prüfvermerk, Kennzeichnung und Aussagen je Lektion (Schlüssel wie `lektionen[].schluessel`) */
   wissen: z.optional(z.record(z.string(), WissensLektionSchema)),
+  /** nur Wissenskurs mit Vorschau: mindestens eine Lektion ist ein ungeprüfter Entwurf (L3-E22) */
+  vorschau: z.optional(z.literal(true)),
 });
 
 export const PaketSchema = PaketGrundSchema.check(
   z.superRefine((p, ctx) => {
     if (p.kurs !== 'islam') {
       if (p.wissen) ctx.addIssue({ code: 'custom', message: 'wissen nur im Wissenskurs', path: ['wissen'] });
+      if (p.vorschau) ctx.addIssue({ code: 'custom', message: 'vorschau nur im Wissenskurs', path: ['vorschau'] });
       return;
     }
     // Wissenskurs: Inhalt Deutsch, je Lektion ein Prüfvermerk, nichts aus den Sprachkursen
@@ -104,6 +124,9 @@ export const PaketSchema = PaketGrundSchema.check(
     const vermerke = p.wissen ?? {};
     if (p.lektionen.some((l) => !vermerke[l.schluessel]) || Object.keys(vermerke).length !== p.lektionen.length)
       ctx.addIssue({ code: 'custom', message: 'Prüfvermerk je Lektion fehlt', path: ['wissen'] });
+    // `vorschau` genau dann, wenn eine Lektion ein Entwurf ist
+    if (Object.values(vermerke).some((v) => 'entwurf' in v) !== (p.vorschau === true))
+      ctx.addIssue({ code: 'custom', message: 'vorschau genau mit einer Lektion im Entwurf', path: ['vorschau'] });
   }),
 );
 export type Paket = z.infer<typeof PaketSchema>;
@@ -119,6 +142,8 @@ export const VerzeichnisEinheitSchema = z.strictObject({
   lektionen: Anzahl(1),
   hinweis: z.boolean(),
   audio: z.array(BuendelVerweisSchema).check(z.maxLength(40)),
+  /** nur Wissenskurs mit Vorschau: das Paket enthält ungeprüfte Entwürfe (L3-E22) */
+  vorschau: z.optional(z.literal(true)),
 });
 export type VerzeichnisEinheit = z.infer<typeof VerzeichnisEinheitSchema>;
 

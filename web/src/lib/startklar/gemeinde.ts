@@ -39,6 +39,7 @@ const NAMEN: Record<Funktion, string> = {
   ramadan_vorschau: 'Ramadan-Vorschau',
   lernapp: 'Lern-App',
   lernapp_ungeprueft: 'Lern-App: Einheiten vor der Muttersprachler-Stichprobe (mit Hinweis)',
+  lernapp_wissen_vorschau: 'Lern-App: Wissenskurs als ungeprüfter Entwurf (Vorschau)',
   lernapp_sprechen: 'Lern-App: Sprechübungen im Browser',
   lernapp_meldungen: 'Lern-App: anonyme Fehlermeldungen',
   lernapp_sync: 'Lern-App: Abgleich mit dem Konto',

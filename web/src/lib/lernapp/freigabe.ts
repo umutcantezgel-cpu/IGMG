@@ -221,6 +221,24 @@ export type FreigabeBaustein = { status: Status; baustein: ReligioeserBaustein; 
 const sichtbar = (b: FreigabeBaustein) => wissenSichtbar(b.status, b.baustein, b.pruefungen);
 
 /**
+ * Vorschau eines Wissensbausteins als ungeprüfter Entwurf (Schalter `lernapp_wissen_vorschau`, L3-E22, Nutzer 27.10.2026):
+ * ohne die zwei Freigaben, aber nie, wenn er zurückgezogen ist (`gesperrt`), eine Person mit der Rolle zum aktuellen Hash
+ * Einwand erhoben hat (abgelehnt, Änderungsvorschlag), ein Pflichtbeleg fehlt oder KI-Regel 2 ihn sperrt. Der Paketbau nutzt
+ * sie nur, wenn die strenge Regel ({@link wissenSichtbar}) nicht greift, und kennzeichnet die Lektion dann als Entwurf.
+ */
+export function wissenVorschauSichtbar(status: Status, b: ReligioeserBaustein, pruefungen: readonly Pruefung[]): boolean {
+  if (status === 'gesperrt') return false;
+  const lage = religioeseLage(b, pruefungen);
+  return !lage.gesperrt && !lage.belegFehlt && !lage.kiHerkunft;
+}
+
+/** Quizfrage in der Vorschau: sie selbst und jede Aussage, aus der sie entsteht (mindestens eine), nach {@link wissenVorschauSichtbar}. */
+export function wissensAufgabeVorschauSichtbar(aufgabe: FreigabeBaustein, aussagen: readonly FreigabeBaustein[]): boolean {
+  const vorschau = (x: FreigabeBaustein) => wissenVorschauSichtbar(x.status, x.baustein, x.pruefungen);
+  return aussagen.length > 0 && vorschau(aufgabe) && aussagen.every(vorschau);
+}
+
+/**
  * Aufgabe des Wissenskurses (L2-03: `wahr_falsch`, `zuordnen`, `reihenfolge`, `fallfrage`; ebenso `auswahl` und `luecke` im
  * Wissenskurs): sichtbar nur, wenn sie selbst geprüft ist **und** jede Aussage, aus der sie entsteht – mindestens eine
  * (ADR 0040 Nr. 2.2: Quizfragen nur aus Aussagen; Nr. 5: zwei Freigaben je Baustein, auch für die Quizfrage).

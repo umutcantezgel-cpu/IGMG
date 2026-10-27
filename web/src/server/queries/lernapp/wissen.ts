@@ -161,10 +161,13 @@ export async function ladeWissensEingaben(einheit?: string): Promise<WissensEinh
   }));
 }
 
-/** Alle ausgelieferten Einheiten des Wissenskurses (bzw. eine), gebaut. */
-export async function baueWissenskurs(einheit?: string): Promise<BauErgebnis[]> {
+/**
+ * Alle ausgelieferten Einheiten des Wissenskurses (bzw. eine), gebaut. `vorschau` (Schalter `lernapp_wissen_vorschau`,
+ * L3-E22): zusätzlich ungeprüfte Lektionen als gekennzeichneter Entwurf (`paket/wissen.ts`).
+ */
+export async function baueWissenskurs(einheit?: string, { vorschau = false }: { vorschau?: boolean } = {}): Promise<BauErgebnis[]> {
   return (await ladeWissensEingaben(einheit)).flatMap((e) => {
-    const r = baueWissensEinheit(e);
+    const r = baueWissensEinheit(e, { vorschau });
     return r ? [r] : [];
   });
 }

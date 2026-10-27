@@ -46,7 +46,10 @@ export { ladePruefungen };
  * `cacheLife('max')` und den Tags `TAG.lernapp` und `TAG.lernappKurs(<kurs der Datenbank>)` – jede Freigabe, Veröffentlichung
  * und jedes Zurückziehen ruft `updateTag(TAG.lernappKurs(id))` (KERN 4.0 §2.3), der Import wirkt über den Bau bzw. den Start
  * (`TAG.lernapp` in `START_TAGS`). Schalter `lernapp` aus → null (Route 404); `lernapp_ungeprueft` steuert, ob Einträge
- * ohne bestandene Stichprobe mit Hinweis ausgeliefert werden (ADR 0041 Nr. 8) – für den Wissenskurs gilt er nie.
+ * ohne bestandene Stichprobe mit Hinweis ausgeliefert werden (ADR 0041 Nr. 8) – für den Wissenskurs gilt er nie. Für den
+ * Wissenskurs gilt allein `lernapp_wissen_vorschau` (L3-E22): an → ungeprüfte Lektionen als gekennzeichneter Entwurf; aus →
+ * nur Lektionen mit zwei Freigaben. Gelesen innerhalb der gecachten Funktionen (Tag `einstellungen`: ein Wechsel lässt die
+ * Einträge verfallen).
  */
 
 const STIMMEN_VORRANG = ['mensch:', 'tts:', 'test:'];
@@ -427,16 +430,24 @@ export async function baueRichtung(richtung: RichtungId, ungeprueftZeigen: boole
   return gebaut;
 }
 
-/** Ausgelieferte Einheiten eines Kurses mit Paketen (Richtung oder Wissenskurs; bzw. eine Einheit). */
-export async function baueKurs(kurs: PaketKurs, ungeprueftZeigen: boolean, einheit?: string): Promise<BauErgebnis[]> {
-  return kurs === 'islam' ? baueWissenskurs(einheit) : baueRichtung(kurs, ungeprueftZeigen, einheit);
+/**
+ * Ausgelieferte Einheiten eines Kurses mit Paketen (Richtung oder Wissenskurs; bzw. eine Einheit). `wissenVorschau`
+ * (Schalter `lernapp_wissen_vorschau`) wirkt nur im Wissenskurs.
+ */
+export async function baueKurs(
+  kurs: PaketKurs,
+  ungeprueftZeigen: boolean,
+  einheit?: string,
+  wissenVorschau = false,
+): Promise<BauErgebnis[]> {
+  return kurs === 'islam' ? baueWissenskurs(einheit, { vorschau: wissenVorschau }) : baueRichtung(kurs, ungeprueftZeigen, einheit);
 }
 
 /**
  * Kursverzeichnis ungecacht (Tests). Wissenskurs: nur Einheiten mit mindestens einer vollständig freigegebenen Lektion.
  * Koran-Arabisch hat unter dieser Adresse keine Einheiten – sein Verzeichnis steht je Sprache unter `/lern-app/pakete/koran/<sprache>`.
  */
-export async function verzeichnisVon(kurs: KursSlug, ungeprueftZeigen: boolean): Promise<Verzeichnis> {
+export async function verzeichnisVon(kurs: KursSlug, ungeprueftZeigen: boolean, wissenVorschau = false): Promise<Verzeichnis> {
   const kursId = kursVonSlug(kurs);
   const [zeile] = await db
     .select({ version: schema.lernappKurs.version })
@@ -450,21 +461,23 @@ export async function verzeichnisVon(kurs: KursSlug, ungeprueftZeigen: boolean):
     zielsprache,
     ausgangssprache: richtung?.ausgang ?? null,
     stand: zeile?.version ?? 0,
-    einheiten: kurs === 'koran' ? [] : await baueKurs(kurs, ungeprueftZeigen),
+    einheiten: kurs === 'koran' ? [] : await baueKurs(kurs, ungeprueftZeigen, undefined, wissenVorschau),
     stufenFolge: richtung ? SPRACH_STUFEN : EIGENE_STUFEN,
   });
 }
 
 /**
  * Kursverzeichnis als JSON (gecacht); null, wenn die Lern-App aus ist. Der Tag `einstellungen` lässt den Eintrag verfallen,
- * sobald ein Schalter (`lernapp`, `lernapp_ungeprueft`) in der Datenbank wechselt (S-L1 N-3).
+ * sobald ein Schalter (`lernapp`, `lernapp_ungeprueft`, `lernapp_wissen_vorschau`) in der Datenbank wechselt (S-L1 N-3).
  */
 export async function ladeVerzeichnisJson(kurs: KursSlug): Promise<string | null> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)), TAG.einstellungen);
   if (!(await funktionAn('lernapp')) || !datenbankVerfuegbar()) return null;
-  return JSON.stringify(await verzeichnisVon(kurs, await funktionAn('lernapp_ungeprueft')));
+  return JSON.stringify(
+    await verzeichnisVon(kurs, await funktionAn('lernapp_ungeprueft'), kurs === 'islam' && (await funktionAn('lernapp_wissen_vorschau'))),
+  );
 }
 
 /** Einheitenpaket als kanonisches JSON mit Hash (gecacht); null, wenn aus, unbekannt oder nicht ausgeliefert. */
@@ -473,7 +486,8 @@ export async function ladeEinheitJson(kurs: PaketKurs, einheit: string): Promise
   cacheLife('max');
   cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)), TAG.einstellungen);
   if (!(await funktionAn('lernapp')) || !datenbankVerfuegbar()) return null;
-  const [r] = await baueKurs(kurs, await funktionAn('lernapp_ungeprueft'), einheit);
+  const vorschau = kurs === 'islam' && (await funktionAn('lernapp_wissen_vorschau'));
+  const [r] = await baueKurs(kurs, await funktionAn('lernapp_ungeprueft'), einheit, vorschau);
   return r ? { hash: r.hash, json: r.json } : null;
 }
 
@@ -492,8 +506,9 @@ export async function ladePaketParameter(): Promise<PaketParameter[]> {
   const liste: PaketParameter[] = [];
   if (datenbankVerfuegbar() && (await funktionAn('lernapp'))) {
     const ungeprueft = await funktionAn('lernapp_ungeprueft');
+    const vorschau = await funktionAn('lernapp_wissen_vorschau');
     for (const k of PAKET_KURSE) {
-      const gebaut = await baueKurs(k, ungeprueft);
+      const gebaut = await baueKurs(k, ungeprueft, undefined, vorschau);
       const auswahl = alle ? gebaut : gebaut.slice(0, 1);
       liste.push(...auswahl.map((x) => ({ kurs: k, einheit: x.paket.einheit.schluessel, hash: x.hash })));
     }

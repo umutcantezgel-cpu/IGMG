@@ -10,7 +10,8 @@ import type { Pruefung } from './pruefungen';
 /**
  * Cockpit-Karte „Lern-App“ (PLAN §7.1, ADR 0041 Folgen, L3-06): Schalter, Blob-Speicher für Audio, Prüfende (mindestens
  * zwei mit religiöser Prüfung, Hinweis bei Rollen-Kombination mit Administration oder Lern-App-Redaktion, mindestens eine
- * Person je Prüfsprache), Einheiten je Status, offene Meldungen und abgelehnte
+ * Person je Prüfsprache), Vorschau ungeprüfter Wissensinhalte (L3-E22: in der Produktion eine Warnung, solange sie an ist),
+ * Einheiten je Status, offene Meldungen und abgelehnte
  * Abgleiche wegen der Grenzen je Konto (S-L1 M-2, nur Zahlen). Prüfungen dürfen erweitert, nie abgeschwächt werden.
  */
 type Umgebung = Readonly<Record<string, string | undefined>>;
@@ -19,6 +20,7 @@ const SPRACHNAMEN: Record<string, string> = { de: 'Deutsch', tr: 'Türkisch', ar
 const SCHALTER: { f: Funktion; name: string }[] = [
   { f: 'lernapp', name: 'Lern-App' },
   { f: 'lernapp_ungeprueft', name: 'Einheiten vor der Stichprobe (mit Hinweis)' },
+  { f: 'lernapp_wissen_vorschau', name: 'Wissenskurs als ungeprüfter Entwurf (Vorschau)' },
   { f: 'lernapp_meldungen', name: 'Fehlermeldungen' },
   { f: 'lernapp_sprechen', name: 'Sprechübungen' },
   { f: 'lernapp_sync', name: 'Abgleich' },
@@ -64,6 +66,23 @@ export async function lernappPruefen(
     aufwand: '5 min',
   });
   if (!lernapp) return;
+
+  // Vorschau des Wissenskurses (L3-E22, Nutzer 27.10.2026): ungeprüfte Entwürfe mit Kennzeichnung statt der Sperre bis zu
+  // zwei Freigaben. Für die Test-Domain gewollt, vor dem öffentlichen Start aus – deshalb in der Produktion eine Warnung
+  const vorschau = an('lernapp_wissen_vorschau');
+  neu({
+    id: 'lernapp.wissen-vorschau',
+    bereich: 'lernapp',
+    titel: 'Vorschau ungeprüfter Wissensinhalte',
+    status: vorschau ? (produktion ? 'warnung' : 'hinweis') : 'ok',
+    meldung: vorschau
+      ? 'Vorschau ungeprüfter Wissensinhalte ist an: Der Wissenskurs zeigt Lektionen ohne zwei Freigaben als „Entwurf zur ' +
+        'Prüfung“ (gekennzeichnet, nicht als Lehrmeinung). Vor dem öffentlichen Start ausschalten ' +
+        '(FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus) oder alles von zwei Gelehrten prüfen lassen (L3-E22, MENSCHEN LM-03).'
+      : 'Vorschau ungeprüfter Wissensinhalte ist aus: Der Wissenskurs zeigt nur Lektionen, deren Bausteine alle zwei Freigaben haben.',
+    ort: 'Umgebung FUNKTION_LERNAPP_WISSEN_VORSCHAU=an|aus bzw. Einstellung „funktionen“ (_lernapp/GO-LIVE.md)',
+    aufwand: '5 min',
+  });
 
   // Audio: ohne Blob-Speicher nur Testbündel; Hörübungen zeigen „Audio folgt“ (KERN 4.0 §4)
   const blob = Boolean(env.LERNAPP_BLOB_BASIS?.trim());

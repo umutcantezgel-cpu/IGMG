@@ -19,6 +19,7 @@ export const FUNKTIONEN = [
   // Lauf Lern-App (ADR 0035, KERN 4.0 §6): ausgeschaltet heißt 404 und die Links verschwinden
   'lernapp',
   'lernapp_ungeprueft',
+  'lernapp_wissen_vorschau',
   'lernapp_sprechen',
   'lernapp_meldungen',
   'lernapp_sync',
@@ -37,8 +38,18 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  * nur auf dem Gerät) ist an: Entscheidung des Nutzers vom 21.10.2026 („Die App ist ein Teil der Seite!“, „ich erlaube dir
  * alles“, `_lernapp/ENTSCHEIDUNGEN.md` L3-E12b, ADR 0035 „Fortschreibung Lern-App 2“); Abgleich, Gruppen, Bestenliste und
  * Statistik bleiben aus (`MIT_PERSONENDATEN`).
+ * `lernapp_wissen_vorschau` (Wissenskurs als deutlich gekennzeichneter, ungeprüfter Entwurf auf der Test-Domain, ohne
+ * Personendaten): Entscheidung des Nutzers vom 27.10.2026 (`_lernapp/ENTSCHEIDUNGEN.md` L3-E22). Vor dem öffentlichen Start
+ * ausschalten (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`) – dann gilt wieder allein die Sperre bis zu zwei Freigaben; das
+ * Startklar-Cockpit warnt, solange sie in der Produktion an ist.
  */
-export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt', 'lernapp', 'lernapp_ungeprueft', 'lernapp_meldungen'];
+export const IN_PRODUKTION_AN: readonly Funktion[] = [
+  'hadith_gesamt',
+  'lernapp',
+  'lernapp_ungeprueft',
+  'lernapp_wissen_vorschau',
+  'lernapp_meldungen',
+];
 
 /** Standard: in Entwicklung und Vorschau an (Vorführung), in der Produktion aus – außer `IN_PRODUKTION_AN`. */
 export function standardFuer(env: UmgebungsWerte, f?: Funktion): boolean {
@@ -91,6 +102,7 @@ export const MIT_PERSONENDATEN = [
  */
 export const VORAUSSETZUNGEN: Partial<Record<Funktion, readonly Funktion[]>> = {
   lernapp_ungeprueft: ['lernapp'],
+  lernapp_wissen_vorschau: ['lernapp'],
   lernapp_sprechen: ['lernapp'],
   lernapp_meldungen: ['lernapp'],
   lernapp_sync: ['lernapp', 'konten'],

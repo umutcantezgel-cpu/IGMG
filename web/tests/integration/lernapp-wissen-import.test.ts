@@ -1,8 +1,10 @@
 import { randomUUID } from 'node:crypto';
 import { and, eq, like, notLike, sql } from 'drizzle-orm';
-import { afterAll, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
 import { religioeseLage } from '@/lib/lernapp/freigabe';
+import { sha256Hex } from '@/lib/lernapp/paket/hash';
+import { PaketSchema, VerzeichnisSchema } from '@/lib/lernapp/paket/typen';
 import type { IslamEinheitDatei } from '@/lib/lernapp/inhalt/schema';
 import { WISSENS_QUELLEN } from '@/lib/lernapp/inhalt/wissen-quellen';
 import { verwaltungsUmgebung } from './hilfen/verwaltung';
@@ -23,6 +25,9 @@ const religioes = await import('@/server/queries/lernapp/religioes');
 const pakete = await import('@/server/queries/lernapp/pakete');
 const { lernappTestWissen, TEST_WISSEN_EINHEIT } = await import('../../drizzle/seeds/lernapp-test-wissen');
 afterAll(() => client.close());
+afterEach(() => vi.unstubAllEnvs());
+const verzeichnisRoute = await import('@/app/lern-app/pakete/[kurs]/route');
+const einheitRoute = await import('@/app/lern-app/pakete/[kurs]/[einheit]/[hash]/route');
 
 const ECHT = inhaltsdateien(undefined, ['islam']);
 const STAND = { standSchluessel: 'lernapp_wissen_test' };
@@ -159,6 +164,58 @@ describe('Wissens-Import mit allen echten Inhaltsdateien', () => {
 
   it('ohne zwei Freigaben liefert der Paketbau nichts davon aus (nur die Testeinheit mit Testfreigaben)', async () => {
     expect((await pakete.baueKurs('islam', true)).map((r) => r.paket.einheit.schluessel)).toEqual([TEST_WISSEN_EINHEIT]);
+  });
+
+  it('Vorschau an (L3-E22): Verzeichnis mit allen 26 Einheiten als Entwurf, Paket über die Route mit passendem Hash; aus: nur die Testeinheit', async () => {
+    const kontext = <T extends Record<string, unknown>>(p: T) => ({ params: Promise.resolve(p) }) as never;
+    const anfrage = (pfad: string) => new Request(`https://example.test${pfad}`);
+    const verzeichnis = async () => {
+      const r = await verzeichnisRoute.GET(anfrage('/lern-app/pakete/islam'), kontext({ kurs: 'islam' }));
+      expect(r.status).toBe(200);
+      return VerzeichnisSchema.parse(await r.json());
+    };
+    // Standard der Tests: aus (tests/integration/hilfen/umgebung.ts)
+    expect((await verzeichnis()).einheiten.map((e) => e.schluessel)).toEqual([TEST_WISSEN_EINHEIT]);
+    vi.stubEnv('FUNKTION_LERNAPP_WISSEN_VORSCHAU', 'an');
+    const v = await verzeichnis();
+    const echteEinheiten = v.einheiten.filter((e) => e.schluessel !== TEST_WISSEN_EINHEIT);
+    expect(echteEinheiten).toHaveLength(BESTAND.einheiten);
+    expect(echteEinheiten.every((e) => e.vorschau === true)).toBe(true);
+    expect(echteEinheiten.reduce((n, e) => n + e.lektionen, 0)).toBe(BESTAND.lektionen);
+    // Testeinheit: l01 mit Testfreigaben geprüft, die Gegenprobe l02 (nur eine Freigabe) kommt als Entwurf
+    expect(v.einheiten.find((e) => e.schluessel === TEST_WISSEN_EINHEIT)).toMatchObject({ vorschau: true, lektionen: 2 });
+    // Reihenfolge: Stufen grund → aufbau → vertiefung
+    const stufen = v.einheiten.map((e) => e.stufe);
+    expect(stufen).toEqual(
+      [...stufen].sort((a, b) => ['grund', 'aufbau', 'vertiefung'].indexOf(a) - ['grund', 'aufbau', 'vertiefung'].indexOf(b)),
+    );
+    const e01 = v.einheiten.find((e) => e.schluessel === 'islam.grund.e01')!;
+    const antwort = await einheitRoute.GET(
+      anfrage(`/lern-app/pakete/islam/islam.grund.e01/${e01.hash}`),
+      kontext({ kurs: 'islam', einheit: 'islam.grund.e01', hash: e01.hash }),
+    );
+    expect(antwort.status).toBe(200);
+    const text = await antwort.text();
+    expect(sha256Hex(text)).toBe(e01.hash);
+    const paket = PaketSchema.parse(JSON.parse(text));
+    expect(paket.vorschau).toBe(true);
+    expect(Object.values(paket.wissen ?? {}).every((x) => 'entwurf' in x && x.entwurf === true)).toBe(true);
+    expect(paket.lektionen.map((l) => l.schluessel)).toEqual(datei(E01).lektionen.map((l) => l.schluessel));
+    // Quellenzeile mit Werk und Verfasser aus dem Register
+    expect(paket.wissen?.[paket.lektionen[0]!.schluessel]?.aussagen[0]?.quelle).toContain(`${WISSENS_QUELLEN.nur_al_idah.werk} (`);
+    // Vorrendern im Beispielmodus: alle Einheiten mit den Hashes des Verzeichnisses
+    vi.stubEnv('VERCEL', '1');
+    vi.stubEnv('BAU_PGLITE', '1');
+    expect((await pakete.ladePaketParameter()).filter((p) => p.kurs === 'islam')).toEqual(
+      v.einheiten.map((e) => ({ kurs: 'islam', einheit: e.schluessel, hash: e.hash })),
+    );
+    // wieder aus: der alte Entwurfs-Hash antwortet 404
+    vi.stubEnv('FUNKTION_LERNAPP_WISSEN_VORSCHAU', 'aus');
+    const aus = await einheitRoute.GET(
+      anfrage(`/lern-app/pakete/islam/islam.grund.e01/${e01.hash}`),
+      kontext({ kurs: 'islam', einheit: 'islam.grund.e01', hash: e01.hash }),
+    );
+    expect(aus.status).toBe(404);
   });
 
   it('die Prüfwarteschlange zeigt die importierten Aussagen mit Stand 0/2', async () => {

@@ -940,6 +940,7 @@ export function baueVerzeichnis(v: {
       lektionen: x.paket.lektionen.length,
       hinweis: x.paket.hinweis,
       audio: x.paket.audio,
+      ...(x.paket.vorschau ? { vorschau: true as const } : {}),
     }));
   return {
     format: VERZEICHNIS_FORMAT,

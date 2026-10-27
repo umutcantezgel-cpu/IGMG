@@ -42,7 +42,7 @@ export type VermerkAussage = { schluessel: string; text: string; quelle: string;
  * Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“, enthält ein strittiges Thema) und
  * ihre Aussagen mit Quellenzeile – auch die ohne Quizfrage (KERN 4.0 §2.3 „Quellenzeile je Aussage“).
  */
-export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'> & {
+export type LektionsVermerk = { geprueftAm: string; kinderGeeignet: WissensLektionVermerk['kinderGeeignet'] } & {
   strittig?: true;
   aussagen: readonly VermerkAussage[];
 };

@@ -9,6 +9,8 @@ import {
   type Status,
   wissenSichtbar,
   wissensAufgabeSichtbar,
+  wissensAufgabeVorschauSichtbar,
+  wissenVorschauSichtbar,
 } from '../freigabe';
 import type { LektionsArt } from '../engine/xp';
 import type { Sprache, Stufe } from '../kurse';
@@ -31,6 +33,11 @@ import { type Paket, PaketSchema, WissensLektionSchema, type WissensLektionVerme
  * - Keine Audio-Verweise: Wissenskurs und Koran-Pfad haben keine Sprachausgabe (KERN 4.0 §4).
  *
  * - Wissenskurs: **alle** Aussagen der Lektion zählen mit, auch solche ohne Quizfrage (KERN 4.0 §2.3 „alle ihre Bausteine“).
+ *
+ * - Vorschau (Schalter `lernapp_wissen_vorschau`, L3-E22, nur Wissenskurs): Eine Lektion, die die strenge Regel nicht
+ *   erfüllt, kommt als gekennzeichneter Entwurf (`entwurf: true` statt Prüfvermerk), wenn kein Baustein zurückgezogen ist,
+ *   niemand mit der Rolle Einwand erhoben hat, jede Aussage ihren Beleg hat und jede Quizfrage spielbar ist
+ *   (`wissenVorschauSichtbar`). Ohne Vorschau ist das Paket byte-gleich wie zuvor. Der Koran-Pfad kennt keine Vorschau.
  *
  * Den Paketbau des Wissenskurses (`baueWissensEinheit`, Format `PaketSchema` mit `kurs: 'islam'`) speist
  * `server/queries/lernapp/wissen.ts` aus den Tabellen `lernapp_lektion`, `lernapp_aussage`, `lernapp_beleg` und
@@ -59,6 +66,7 @@ export type WissensLektionEingabe = {
 );
 
 const sichtbar = (b: FreigabeBaustein) => wissenSichtbar(b.status, b.baustein, b.pruefungen);
+const vorschauSichtbar = (b: FreigabeBaustein) => wissenVorschauSichtbar(b.status, b.baustein, b.pruefungen);
 
 /** Steht irgendwo in der Aufgabe ein Audio-Verweis? */
 function hatAudio(x: unknown): boolean {
@@ -67,16 +75,23 @@ function hatAudio(x: unknown): boolean {
   return Object.entries(x).some(([k, v]) => (k === 'audio' && v !== undefined) || hatAudio(v));
 }
 
-/** Lektion mit allen Aufgaben, wenn jeder Baustein geprüft ist; sonst `null`. */
-export function sichtbareWissensLektion(e: WissensLektionEingabe): Lektion | null {
+/**
+ * Lektion mit allen Aufgaben, wenn jeder Baustein geprüft ist; sonst `null`. Mit `vorschau` (nur Wissenskurs) gilt statt
+ * „geprüft“ die Regel der Vorschau (`wissenVorschauSichtbar`) – der Aufrufer kennzeichnet die Lektion dann als Entwurf.
+ */
+export function sichtbareWissensLektion(e: WissensLektionEingabe, { vorschau = false }: { vorschau?: boolean } = {}): Lektion | null {
   if (!e.aufgaben.length || e.aufgaben.some((x) => hatAudio(x.aufgabe))) return null;
   const typen: readonly string[] = e.kurs === 'islam' ? WISSENSKURS_TYPEN : KORAN_TYPEN;
   if (e.aufgaben.some((x) => !typen.includes(x.aufgabe.typ))) return null;
   if (e.kurs === 'islam' && !e.aussagen.length) return null;
+  const entwurf = vorschau && e.kurs === 'islam';
   const geprueft = [
-    wissenSichtbar(e.freigabe.status, e.freigabe.baustein, e.freigabe.pruefungen),
+    (entwurf ? vorschauSichtbar : sichtbar)(e.freigabe),
     ...(e.kurs === 'islam'
-      ? [...e.aussagen.map(sichtbar), ...e.aufgaben.map((x) => wissensAufgabeSichtbar(x.freigabe, x.aussagen))]
+      ? [
+          ...e.aussagen.map(entwurf ? vorschauSichtbar : sichtbar),
+          ...e.aufgaben.map((x) => (entwurf ? wissensAufgabeVorschauSichtbar : wissensAufgabeSichtbar)(x.freigabe, x.aussagen)),
+        ]
       : e.aufgaben.map((x) => koranWortSichtbar(x.freigabe))),
   ];
   if (!lektionSichtbar(geprueft)) return null;
@@ -183,29 +198,55 @@ export function freigegebenAm(b: FreigabeBaustein): Date | null {
   return t === undefined ? null : new Date(t);
 }
 
-/** Lektion des Wissenskurses samt Prüfvermerk, wenn alle Bausteine geprüft und alle Quizfragen spielbar sind; sonst `null`. */
-export function wissensLektionImPaket(l: WissensLektionRoh): { lektion: Lektion; vermerk: WissensLektionVermerk } | null {
+/**
+ * Lektion des Wissenskurses samt Prüfvermerk, wenn alle Bausteine geprüft und alle Quizfragen spielbar sind; sonst `null`.
+ * Mit `vorschau` (L3-E22): Erfüllt sie die strenge Regel nicht, kommt sie als Entwurf (`entwurf: true` statt `geprueftAm`),
+ * sofern sie die Regel der Vorschau erfüllt.
+ */
+export function wissensLektionImPaket(
+  l: WissensLektionRoh,
+  { vorschau = false }: { vorschau?: boolean } = {},
+): { lektion: Lektion; vermerk: WissensLektionVermerk } | null {
+  const streng = geprueftImPaket(l);
+  return streng || !vorschau ? streng : entwurfImPaket(l);
+}
+
+/** Lektion und Aufgaben für den Paketbau (gemeinsam für die strenge Regel und die Vorschau); `null`, wenn nicht spielbar. */
+function lektionMitAufgaben(l: WissensLektionRoh, vorschau: boolean): Lektion | null {
   const aufgaben: WissensAufgabeEingabe[] = [];
   for (const a of l.aufgaben) {
     const aufgabe = a.aussage ? wissensAufgabe(a, a.aussage.quelle, a.aussage.strittig === true) : null;
     if (!a.aussage || !aufgabe) return null;
     aufgaben.push({ aufgabe, freigabe: a.freigabe, aussagen: [a.aussage.freigabe] });
   }
-  const lektion = sichtbareWissensLektion({
-    kurs: 'islam',
-    lektion: {
-      schluessel: l.schluessel,
+  const lektion = sichtbareWissensLektion(
+    {
       kurs: 'islam',
-      art: l.art,
-      zielsprache: 'de',
-      ausgangssprache: 'de',
-      ...(l.titel ? { titel: l.titel } : {}),
+      lektion: {
+        schluessel: l.schluessel,
+        kurs: 'islam',
+        art: l.art,
+        zielsprache: 'de',
+        ausgangssprache: 'de',
+        ...(l.titel ? { titel: l.titel } : {}),
+      },
+      freigabe: l.freigabe,
+      aussagen: l.aussagen.map((a) => a.freigabe),
+      aufgaben,
     },
-    freigabe: l.freigabe,
-    aussagen: l.aussagen.map((a) => a.freigabe),
-    aufgaben,
-  });
-  if (!lektion || !LektionSchema.safeParse(lektion).success) return null;
+    { vorschau },
+  );
+  return lektion && LektionSchema.safeParse(lektion).success ? lektion : null;
+}
+
+/** Aussagen der Lektion im Format des Vermerks (Text, Quellenzeile, „strittig“). */
+const vermerkAussagen = (l: WissensLektionRoh) =>
+  l.aussagen.map((a) => ({ schluessel: a.schluessel, text: a.text, quelle: a.quelle, ...(a.strittig ? { strittig: true } : {}) }));
+
+/** Strenge Regel: alle Bausteine mit zwei Freigaben, Prüfvermerk mit dem Tag der letzten zweiten Freigabe. */
+function geprueftImPaket(l: WissensLektionRoh): { lektion: Lektion; vermerk: WissensLektionVermerk } | null {
+  const lektion = lektionMitAufgaben(l, false);
+  if (!lektion) return null;
   const zeiten = [
     l.freigabe,
     ...l.aussagen.map((a) => a.freigabe),
@@ -218,13 +259,16 @@ export function wissensLektionImPaket(l: WissensLektionRoh): { lektion: Lektion;
   const vermerk = WissensLektionSchema.safeParse({
     geprueftAm: am.toISOString().slice(0, 10),
     kinderGeeignet: l.kinderGeeignet,
-    aussagen: l.aussagen.map((a) => ({
-      schluessel: a.schluessel,
-      text: a.text,
-      quelle: a.quelle,
-      ...(a.strittig ? { strittig: true } : {}),
-    })),
+    aussagen: vermerkAussagen(l),
   });
+  return vermerk.success ? { lektion, vermerk: vermerk.data } : null;
+}
+
+/** Vorschau (L3-E22): ungeprüfter Entwurf mit Kennzeichnung, Aussagen und Quellenzeilen – ohne Prüfvermerk. */
+function entwurfImPaket(l: WissensLektionRoh): { lektion: Lektion; vermerk: WissensLektionVermerk } | null {
+  const lektion = lektionMitAufgaben(l, true);
+  if (!lektion) return null;
+  const vermerk = WissensLektionSchema.safeParse({ entwurf: true, kinderGeeignet: l.kinderGeeignet, aussagen: vermerkAussagen(l) });
   return vermerk.success ? { lektion, vermerk: vermerk.data } : null;
 }
 
@@ -232,14 +276,15 @@ export function wissensLektionImPaket(l: WissensLektionRoh): { lektion: Lektion;
  * Einheitenpaket des Wissenskurses (Format `PaketSchema`, `kurs: 'islam'`, Inhalt Deutsch): nur Lektionen, deren Bausteine
  * alle zwei Freigaben zum aktuellen Hash haben; je Lektion der Prüfvermerk und die Aussagen mit Quellenzeile. Keine Einträge,
  * Tipps oder Audio (keine Sprachausgabe, KERN 4.0 §4). `null`, wenn die Einheit zurückgezogen ist, keine Lektion bleibt oder das
- * Paket nicht dem `PaketSchema` entspricht.
+ * Paket nicht dem `PaketSchema` entspricht. Mit `vorschau` (L3-E22) zusätzlich die übrigen Lektionen als Entwurf; dann trägt
+ * das Paket `vorschau: true`.
  */
-export function baueWissensEinheit(e: WissensEinheitEingabe): BauErgebnis | null {
+export function baueWissensEinheit(e: WissensEinheitEingabe, { vorschau = false }: { vorschau?: boolean } = {}): BauErgebnis | null {
   if (e.einheit.status === 'gesperrt') return null;
   const lektionen: Lektion[] = [];
   const wissen: Record<string, WissensLektionVermerk> = {};
   for (const l of e.lektionen) {
-    const x = wissensLektionImPaket(l);
+    const x = wissensLektionImPaket(l, { vorschau });
     if (!x) continue;
     lektionen.push(x.lektion);
     wissen[x.lektion.schluessel] = x.vermerk;
@@ -265,6 +310,7 @@ export function baueWissensEinheit(e: WissensEinheitEingabe): BauErgebnis | null
     audio: [],
     lizenz: INHALT_LIZENZ,
     wissen,
+    ...(Object.values(wissen).some((v) => 'entwurf' in v) ? { vorschau: true as const } : {}),
   };
   // Gegenprobe am fertigen Paket (wie der Client, `lokal/pakete.ts`): Was er verwerfen würde, nennt auch das Verzeichnis nie
   if (!PaketSchema.safeParse(paket).success) return null;

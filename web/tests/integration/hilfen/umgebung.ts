@@ -9,3 +9,6 @@ process.env.ALTCHA_GEHEIMNIS = zufall();
 process.env.BETTER_AUTH_SECRET = zufall();
 process.env.MAIL_TRANSPORT = 'datei';
 delete process.env.DATABASE_URL;
+// Vorschau ungeprüfter Wissensinhalte (L3-E22): in Tests standardmäßig aus – außerhalb der Produktion wäre sie sonst an und
+// jede Sperre bis zu zwei Freigaben aufgehoben. Tests der Vorschau schalten sie ausdrücklich ein.
+process.env.FUNKTION_LERNAPP_WISSEN_VORSCHAU = 'aus';
