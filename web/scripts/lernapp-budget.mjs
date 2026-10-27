@@ -9,11 +9,11 @@
 // - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB. Der
 //   Typ-Chunk der ersten Aufgabe zählt mit. Gemessen werden die Testlektion (Auswahl zuerst) und echte Lektionen: je Typ der
 //   ersten Aufgabe (Lücke ohne Ablenker als eigene Form `luecke_frei`) eine Lektion aus `inhalte/lernapp`, deren Einheit der
-//   Server ausliefert (Kursverzeichnis der Richtung). Formen ohne ausgelieferte Lektion (Entwurf, z. B. `formen` in
-//   tr.b1.e16, oder der Wissenskurs) werden geschätzt: Spielerkern (Testlektion ohne Typ-Chunks) + Typ-Chunk der ersten
-//   Aufgabe (+ bei `luecke_frei` das Feld). Es zählt jeweils die ungünstigste; das Budget gilt für Messung und Schätzung
-//   (Stufe C N6). Gemessen wird nur mit den Inhalten der E2E-Datenbank bzw. des Import-Baus; `--ohne-echt` lässt Messung und
-//   Schätzung aus.
+//   Server ausliefert (Kursverzeichnis der Richtung; `formen` in tr.b1.e16 seit der Freigabe L3-E23). Formen ohne
+//   ausgelieferte Lektion (Entwurf, oder der Wissenskurs, dessen Lektionen das Werkzeug nicht aufruft) werden geschätzt:
+//   Spielerkern (Testlektion ohne Typ-Chunks) + Typ-Chunk der ersten Aufgabe (+ bei `luecke_frei` das Feld). Es zählt
+//   jeweils die ungünstigste; das Budget gilt für Messung und Schätzung (Stufe C N6). Gemessen wird nur mit den Inhalten der
+//   E2E-Datenbank bzw. des Import-Baus; `--ohne-echt` lässt Messung und Schätzung aus.
 // - je Übungstyp ≤ 15 KB: der Chunk des Typs (`TYP_ERKENNUNG`: Datei aus `.next/static/chunks`, in der alle
 //   Erkennungstexte des Typs stehen – Turbopack legt die gemeinsamen Bausteine wie Optionsgruppe oder Texteingabe in jeden
 //   Typ-Chunk; mehrere passende Dateien sind Chunks verschiedener Typen gleicher Bauart, gezählt wird die größte) plus
