@@ -1,16 +1,16 @@
 # Mengenbericht Lern-App
 
-Erzeugt mit `node _lernapp/werkzeuge/mengen.mjs --rev ee75cbc109a8bccc115bc4205a5110754fd1a1c1 --aus _lernapp/berichte/mengen.md` (L8-03, Stufenauswahl N7).
+Erzeugt mit `node _lernapp/werkzeuge/mengen.mjs --rev e95f4213f771c43093bab45914cad00cda1bbfc4 --aus _lernapp/berichte/mengen.md` (L8-03, Stufenauswahl N7).
 Liest nur `web/inhalte/lernapp/**` des jeweiligen Stands (ohne Datenbank, ohne Netz); gleicher Stand → gleicher Bericht.
 Ziele: `_lernapp/PLAN.md` §5.1–§5.3; Abnahme `_lernapp/ABNAHME.md` Z-L01 (erfüllt ab Ziel − 5 %), Z-L02, Z-L03.
 
-## Stand: ee75cbc109a8bccc115bc4205a5110754fd1a1c1 (Commit `ee75cbc109a8`, 2026-10-26T06:26:32+00:00)
+## Stand: e95f4213f771c43093bab45914cad00cda1bbfc4 (Commit `e95f4213f771`, 2026-10-27T18:41:48+00:00)
 
 Gelesen: 444 JSON-Dateien unter `web/inhalte/lernapp/`.
 
 Umfang: A1–B1 (Standard nach L3-E16 „Bis B1 reicht erstmal“; B2/C1 offener Ausbau, nicht bewertet). Ziele: Summe dieser Stufen aus PLAN §5.1; Aufgaben, Einstufungsbank und Tipp-Karten anteilig nach Einheiten (42 von 72).
 
-Status der Spracheinheiten im Umfang: automatisch_geprueft 130, entwurf 2; außerhalb: entwurf 12.
+Status der Spracheinheiten im Umfang: automatisch_geprueft 132; außerhalb: entwurf 12.
 
 ### Sprachkurse je Zielsprache und Stufe (Ist / Ziel PLAN §5.1)
 
@@ -49,8 +49,8 @@ Schrift-Vorkurse und die Einstufungsbank; die Tipp-Karten je Ausgangssprache ste
 
 | Ziel | Einheiten frei | Stationen frei | Lemmata frei | Sätze frei | Sätze in Aufgaben verwiesen | Sätze live | Lemmata in Aufgaben verwiesen | Lemmata live |
 |---|---|---|---|---|---:|---:|---:|---:|
-| de | 41 (97,6 %) – erfüllt | 328 (97,6 %) – erfüllt | 2.715 (97 %) – erfüllt | 11.006 (98,3 %) – erfüllt | 9.587 / 11.333 (84,6 %) | 9.333 (83,3 % des Ziels) | 2.752 / 2.800 (98,3 %) | 2.666 (95,2 % des Ziels) |
-| tr | 41 (97,6 %) – erfüllt | 328 (97,6 %) – erfüllt | 2.674 (95,5 %) – erfüllt | 11.144 (99,5 %) – erfüllt | 7.720 / 11.488 (67,2 %) | 7.572 (67,6 % des Ziels) | 2.654 / 2.758 (96,2 %) | 2.570 (91,8 % des Ziels) |
+| de | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.800 (100 %) – erfüllt | 11.333 (101,2 %) – erfüllt | 9.587 / 11.333 (84,6 %) | 9.587 (85,6 % des Ziels) | 2.752 / 2.800 (98,3 %) | 2.751 (98,3 % des Ziels) |
+| tr | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.758 (98,5 %) – erfüllt | 11.488 (102,6 %) – erfüllt | 7.720 / 11.488 (67,2 %) | 7.720 (68,9 % des Ziels) | 2.654 / 2.758 (96,2 %) | 2.654 (94,8 % des Ziels) |
 | ar | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.800 (100 %) – erfüllt | 11.363 (101,5 %) – erfüllt | 7.591 / 11.363 (66,8 %) | 7.591 (67,8 % des Ziels) | 2.647 / 2.800 (94,5 %) | 2.647 (94,5 % des Ziels) |
 
 Freigegeben = Einheiten mit Status ≠ `entwurf` (L3-E15: `automatisch_geprueft`, live mit Hinweis), Prozent vom Ziel.
