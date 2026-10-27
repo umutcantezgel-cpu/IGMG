@@ -150,6 +150,25 @@ describe('alte Paketfassungen', () => {
     expect(await raeumeAuf(arbeitsspeicher(), v2, { vorrat: null })).toEqual([]);
   });
 
+  it('leeres Verzeichnis (z. B. Vorschau des Wissenskurses ausgeschaltet, L3-E22): alle Pakete des Kurses verlassen Vorrat und Speicher, andere Kurse bleiben', async () => {
+    const e02 = 'de.a1.e02';
+    const zweite = paketJson(e02, 'zweite');
+    const sp = arbeitsspeicher();
+    const v = vorrat();
+    for (const e of verzeichnis({ [e01]: alt, [e02]: zweite }).einheiten)
+      await ladePaketKopf(sp, KURS, e, { abruf: netz([alt, zweite]), vorrat: v, offline: true });
+    // Paket eines anderen Kurses mit Eintrag im Speicher
+    const fremd = paketJson(e01, 'fremd').replaceAll(KURS, 'tr-aus-de').replace('"zielsprache":"de"', '"zielsprache":"tr"');
+    const fremdeEinheit = { schluessel: e01, hash: sha(fremd), bytes: fremd.length };
+    const fremdNetz = async () => new Response(fremd);
+    expect(await ladePaketKopf(sp, 'tr-aus-de', fremdeEinheit, { abruf: fremdNetz, vorrat: v, offline: true })).not.toBeNull();
+    expect(await raeumeAuf(sp, verzeichnis({}), { vorrat: v })).toEqual([]);
+    expect(await sp.lies('pakete', [KURS, e01])).toBeUndefined();
+    expect(await sp.lies('pakete', [KURS, e02])).toBeUndefined();
+    expect(adressen(v)).toEqual([paketAdresse('tr-aus-de', e01, sha(fremd))]);
+    expect(await sp.lies('pakete', ['tr-aus-de', e01])).toMatchObject({ hash: sha(fremd), offline: true });
+  });
+
   it('Netz bricht beim Nachladen ab: die Markierung „offline“ bleibt, das nächste Aufräumen nennt die Einheit erneut', async () => {
     const e02 = 'de.a1.e02';
     const weg = paketJson(e02, 'zurückgezogen');

@@ -1,10 +1,12 @@
 import { ClipboardCheck, RotateCcw } from 'lucide-react';
 import type { Metadata } from 'next';
+import { EntwurfHinweis } from '@/components/lernapp/EntwurfHinweis';
 import { KoranPfadInsel } from '@/components/lernapp/inseln/KoranPfadInsel';
 import { LernpfadInsel } from '@/components/lernapp/inseln/LernpfadInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { LernStern } from '@/components/lernapp/Zeichen';
+import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { istRichtung, richtung, zerlegeRichtung } from '@/lib/lernapp/kurse';
 import { kursTitel, kursUntertitel } from '@/lib/lernapp/kurstitel';
@@ -23,7 +25,8 @@ export async function generateMetadata({ params }: PageProps<'/lern-app/[ui]/[ku
  * Lernpfad eines Kurses (PLAN §3.1, AUFTRAG §6 Stationen 2, 4, 6, 7): statische Hülle mit Titel, Hinweisen (Wissen auf
  * Deutsch und nur mit zwei Prüfungen, Koran-Arabisch nur geprüfte Bedeutungen und keine Computerstimme), Wegen zu
  * Einstufung und Wiederholung und der Insel für die Stationen (`LernpfadInsel`: Kursverzeichnis, Pakete und lokaler Stand;
- * Einheit offline speichern).
+ * Einheit offline speichern). Wissenskurs mit Vorschau (Schalter `lernapp_wissen_vorschau`, L3-E22): statt „erst nach zwei
+ * Prüfungen“ der Hinweis „Entwurf zur Prüfung“ (ungeprüft, keine geprüfte Lehrmeinung, Quelle je Aussage).
  */
 export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[kurs]'>) {
   await verlangeLernApp();
@@ -32,9 +35,10 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
   const t = lernTexte(ui);
   const sprachkurs = istRichtung(kurs);
   const ziel = sprachkurs ? zerlegeRichtung(kurs).ziel : null;
+  const vorschau = kurs === 'islam' && (await funktionAn('lernapp_wissen_vorschau'));
   const hinweise = [
     ...(kurs === 'islam' && ui !== 'de' ? [{ text: t('lernpfad.aufDeutsch') }] : []),
-    ...(kurs === 'islam' ? [{ text: t('lernpfad.pruefHinweis') }] : []),
+    ...(kurs === 'islam' && !vorschau ? [{ text: t('lernpfad.pruefHinweis') }] : []),
     ...(kurs === 'koran' ? [{ text: t('lernpfad.koranHinweis') }] : []),
   ];
   const wege = [
@@ -75,6 +79,7 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
         }
       />
       <div className="flex flex-col gap-abschnitt-klein">
+        {vorschau ? <EntwurfHinweis titel={t('lernpfad.vorschauTitel')} text={t('lernpfad.vorschauText')} kennung="kurs" /> : null}
         {hinweise.length ? (
           <ul className="flex max-w-einleitung flex-col gap-2 rounded-lg bg-sand p-5">
             {hinweise.map((h) => (

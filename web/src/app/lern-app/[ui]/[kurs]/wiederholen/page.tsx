@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { EntwurfHinweis } from '@/components/lernapp/EntwurfHinweis';
 import { WiederholenInsel } from '@/components/lernapp/inseln/WiederholenInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
@@ -23,7 +24,8 @@ export async function generateMetadata({ params }: PageProps<'/lern-app/[ui]/[ku
 
 /**
  * Wiederholen (PLAN §3.1, FSRS-Sitzung): statische Hülle; die Insel wählt die Karten aus dem lokalen Stand (fällige
- * zuerst) und spielt sie mit dem Spieler. Mikrofon ist hier erlaubt (PFAD_BERECHTIGUNGEN).
+ * zuerst) und spielt sie mit dem Spieler. Mikrofon ist hier erlaubt (PFAD_BERECHTIGUNGEN). Wissenskurs mit Vorschau (L3-E22):
+ * Hinweis „Entwurf zur Prüfung“ über der Sitzung (Karten können aus ungeprüften Entwürfen stammen).
  */
 export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/[kurs]/wiederholen'>) {
   await verlangeLernApp();
@@ -37,6 +39,9 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
         titel={t('wiederholen.titel')}
         einleitung={t('wiederholen.text')}
       />
+      {kurs === 'islam' && (await funktionAn('lernapp_wissen_vorschau')) ? (
+        <EntwurfHinweis titel={t('lernpfad.vorschauTitel')} text={t('lernpfad.vorschauText')} kennung="wiederholen" />
+      ) : null}
       {/* Platz für den Spieler (eine Bildschirmhöhe), damit der Fuß beim Laden nicht springt (CLS) */}
       <section id="wiederholen-sitzung" aria-label={t('wiederholen.titel')} className="min-h-svh">
         <WiederholenInsel

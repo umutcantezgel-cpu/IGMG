@@ -13,6 +13,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { AbschlussAnzeige } from '../AbschlussInhalt';
+import { EntwurfHinweis } from '../EntwurfHinweis';
 import type { MeldenTexte, SchreibabgabeTexte, SpielerOptionen, SpielerTexte } from '../typen';
 import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 
@@ -28,7 +29,14 @@ const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
 const ladeLektionsteile = () => import('@/lib/lernapp/lokal/lektion');
 const ladeKoranTeile = () => import('@/lib/lernapp/lokal/pakete');
 
-export type UebenTexte = { laedt: string; ohneLektion: string; nichtVerfuegbar: string };
+export type UebenTexte = {
+  laedt: string;
+  ohneLektion: string;
+  nichtVerfuegbar: string;
+  /** Wissenskurs in der Vorschau (L3-E22): Hinweis über dem Spieler, wenn die Lektion ein ungeprüfter Entwurf ist */
+  entwurfTitel: string;
+  entwurfText: string;
+};
 
 /**
  * Nach einer Lektion bzw. Wiederholung: Ableitung neu (FSRS erst jetzt, eigener Chunk, KERN 4.0 §9) und – parallel
@@ -69,6 +77,8 @@ type Bereit = {
   optionen: Omit<SpielerOptionen, 'spracherkennung'>;
   /** nächste Einheit auf das Gerät holen – erst wenn der Hauptfaden frei ist, nicht im Block der ersten Aufgabe */
   vorladen?: () => Promise<unknown>;
+  /** Wissenskurs: Die Lektion ist ein ungeprüfter Entwurf (Vorschau, L3-E22) – Hinweis über dem Spieler */
+  entwurf?: boolean;
 };
 type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
 
@@ -147,6 +157,7 @@ export function UebenInsel({
       const gefunden = v && einheit ? await ladeLektion(sp, kurs, einheit, l) : null;
       if (!v || !einheit || !gefunden) return { art: 'fehlt' };
       const { paket, lektion } = gefunden;
+      const vermerk = paket.wissen?.[lektion.schluessel];
       await merkeWeiter(sp, profil.id, { kurs, lektion: lektion.schluessel, ...(lektion.titel ? { titel: lektion.titel } : {}) });
       const naechste = naechsteEinheit(v, einheit.schluessel);
       return {
@@ -161,6 +172,7 @@ export function UebenInsel({
         },
         ziffern: e.ziffern,
         optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
+        entwurf: Boolean(vermerk && 'entwurf' in vermerk && vermerk.entwurf),
         // die nächste Einheit automatisch speichern (ADR 0039 Nr. 12): nur im Kopf geprüft, voll erst beim Spielen
         ...(naechste ? { vorladen: () => ladePaketKopf(sp, kurs, naechste) } : {}),
       };
@@ -217,7 +229,7 @@ export function UebenInsel({
     void nachHandlung().catch(() => undefined);
   };
 
-  return (
+  const spieler = (
     <SpielerGrenze
       ersatz={
         <div className="flex flex-col items-start gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
@@ -243,5 +255,13 @@ export function UebenInsel({
         />
       </Suspense>
     </SpielerGrenze>
+  );
+  if (!z.entwurf) return spieler;
+  // Vorschau des Wissenskurses (L3-E22): deutlich als ungeprüfter Entwurf gekennzeichnet, vor der ersten Aufgabe
+  return (
+    <div className="flex flex-col gap-4">
+      <EntwurfHinweis titel={texte.entwurfTitel} text={texte.entwurfText} kennung="lektion" />
+      {spieler}
+    </div>
   );
 }

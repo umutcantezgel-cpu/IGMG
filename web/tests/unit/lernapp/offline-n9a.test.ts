@@ -173,6 +173,13 @@ describe('Wissenskurs: Lektion nur mit Prüfvermerk spielbar (KI-Regel 2, Nr. 5e
       expect(nurLektion(l)(wissensPaket(kaputt)), JSON.stringify(kaputt)).toBeNull();
   });
 
+  it('Vorschau (L3-E22): als Entwurf gekennzeichnet spielbar; Entwurf und Datum zugleich oder entwurf ≠ true nicht', () => {
+    const { geprueftAm: _g, ...ohneDatum } = GUELTIG;
+    expect(nurLektion(l)(wissensPaket({ ...ohneDatum, entwurf: true }))?.lektion.schluessel).toBe(l);
+    for (const kaputt of [{ ...GUELTIG, entwurf: true }, { ...ohneDatum, entwurf: 'ja' }, { ...ohneDatum, entwurf: false }, ohneDatum])
+      expect(nurLektion(l)(wissensPaket(kaputt)), JSON.stringify(kaputt)).toBeNull();
+  });
+
   it('Sprachkurse brauchen keinen Prüfvermerk', () => {
     expect(nurLektion('tr-aus-de.a1.e01.l01')(sprachPaket)?.lektion.schluessel).toBe('tr-aus-de.a1.e01.l01');
   });

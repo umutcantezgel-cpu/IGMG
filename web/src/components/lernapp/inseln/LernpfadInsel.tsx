@@ -51,6 +51,10 @@ export type LernpfadTexte = StufeOfflineTexte & {
   quelle: string;
   /** Wissenskurs: Kennzeichnung einer Aussage zu einem strittigen Thema */
   strittigesThema: string;
+  /** Vorschau des Wissenskurses (L3-E22): Vermerk einer Lektion, die noch nicht geprüft ist (statt des Prüfvermerks) */
+  entwurfVermerk: string;
+  /** Vorschau des Wissenskurses: Marke einer Einheit mit ungeprüften Entwürfen */
+  einheitEntwurf: string;
 };
 
 /** Texte zu abgeschlossenen Stufen und Lektionsarten (Namensraum `ansichten.stufen`, L4-03). */
@@ -88,6 +92,23 @@ async function koepfeAusDemVorrat(
         if (p) pakete.set(e.schluessel, p);
       }),
   );
+}
+
+/**
+ * Kursverzeichnis für den Lernpfad: fehlend oder fremd → `null` (Platzhalter „wird vorbereitet“). Ein leeres Verzeichnis
+ * (z. B. Vorschau des Wissenskurses ausgeschaltet oder alles zurückgezogen, L3-E22) räumt zuerst auf – offline gespeicherte
+ * Pakete des Kurses verlassen Vorrat und Speicher wie bei jedem anderen Verzeichnis (ADR 0039 Nr. 12) – und ergibt dann
+ * ebenfalls `null`. Ein Fehler beim Aufräumen hält den Platzhalter nicht auf.
+ */
+export async function verzeichnisFuerLernpfad(
+  kurs: KursSlug,
+  v: Verzeichnis | null,
+  aufraeumen: (v: Verzeichnis) => Promise<unknown>,
+): Promise<Verzeichnis | null> {
+  if (!v || v.kurs !== kurs) return null;
+  if (v.einheiten.length) return v;
+  await aufraeumen(v).catch(() => undefined);
+  return null;
 }
 
 /**
@@ -146,8 +167,8 @@ export function LernpfadInsel({
   useEffect(() => {
     let aktiv = true;
     async function laden() {
-      const v = await ladeVerzeichnis(kurs);
-      if (!v || v.kurs !== kurs || !v.einheiten.length) {
+      const v = await verzeichnisFuerLernpfad(kurs, await ladeVerzeichnis(kurs), async (x) => raeumeAuf(await speicher(), x));
+      if (!v) {
         if (aktiv) setZ({ art: 'leer' });
         return;
       }
@@ -512,6 +533,15 @@ function StationEintrag({ s, i, letzte, k }: { s: Station; i: number; letzte: bo
           </h4>
           <p className="text-16 text-tinte-2">{f(texte.fortschritt, { erledigt: s.erledigt, gesamt: s.einheit.lektionen })}</p>
           {s.einheit.hinweis ? <p className="text-16 text-tinte-2">{texte.ungeprueft}</p> : null}
+          {s.einheit.vorschau ? (
+            // Vorschau des Wissenskurses (L3-E22): Einheit mit ungeprüften Entwürfen als Text-Marke, nicht nur farbig
+            <p
+              data-einheit-entwurf={s.einheit.schluessel}
+              className="self-start rounded-pill border border-warnung bg-warnung-toenung px-3 py-0.5 text-16 font-bold text-tinte"
+            >
+              {texte.einheitEntwurf}
+            </p>
+          ) : null}
           {s.lektionen ? (
             <ul className="flex flex-col gap-1">
               {s.lektionen.map((l, n) => (
@@ -535,7 +565,14 @@ function StationEintrag({ s, i, letzte, k }: { s: Station; i: number; letzte: bo
                     <LektionsArtMarke art={l.art} texte={stufenTexte.art} />
                     {l.erledigt ? <span className="sr-only">({texte.geschafft})</span> : null}
                   </a>
-                  {l.vermerk ? (
+                  {l.vermerk?.entwurf ? (
+                    // Vorschau (L3-E22): ungeprüfter Entwurf statt Prüfvermerk, mit derselben Kennzeichnung je Lektion
+                    <p data-entwurf={l.schluessel} className="ps-7 text-16 text-tinte-2">
+                      <strong className="font-bold text-warnung">{texte.entwurfVermerk}</strong>
+                      {l.vermerk.kinderGeeignet ? <> · {texte.fuerKinder}</> : null}
+                      {l.vermerk.strittig ? <> · {texte.strittig}</> : null}
+                    </p>
+                  ) : l.vermerk?.geprueftAm ? (
                     // Wissenskurs: Prüfvermerk ohne Namen und Kennzeichnung je Lektion (KERN 4.0 §2.3, PLAN §6.7 Nr. 7)
                     <p data-pruefvermerk={l.schluessel} className="ps-7 text-16 text-tinte-2">
                       {formatiere(texte.pruefvermerk, { datum: datum(l.vermerk.geprueftAm) }, ui, ziffern)}

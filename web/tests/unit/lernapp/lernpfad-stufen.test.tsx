@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { prerenderToNodeStream } from 'react-dom/static';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { LernpfadStufen, naechsterTakt, type StationsKontext } from '@/components/lernapp/inseln/LernpfadInsel';
+import { LernpfadStufen, naechsterTakt, type StationsKontext, verzeichnisFuerLernpfad } from '@/components/lernapp/inseln/LernpfadInsel';
 import { formatiere } from '@/lib/lernapp/format';
 import type { Stufe } from '@/lib/lernapp/kurse';
 import { abschnitte, type PaketInhalt } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
@@ -137,6 +137,82 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
     const html = await stufen([], [], 'ar');
     expect(html).toContain(`${formatiere(ar.lernpfad.stufeZeigen, { stufe: ar.lernpfad.stufe.a2, anzahl: 3 }, 'ar')}</summary>`);
     expect(formatiere(ar.lernpfad.stufeZeigen, { stufe: ar.lernpfad.stufe.a2, anzahl: 3 }, 'ar')).toContain('٣');
+  });
+});
+
+describe('Wissenskurs in der Vorschau (L3-E22): Entwurf statt Prüfvermerk, Marke an der Einheit', () => {
+  const E = 'islam.grund.e01';
+  const aussagen = [{ schluessel: `${E}.l01.a01`, text: '[Aussage]', quelle: '[Quelle]' }];
+  const W: Verzeichnis = {
+    ...V,
+    kurs: 'islam',
+    kursId: 'islam',
+    zielsprache: 'de',
+    ausgangssprache: null,
+    einheiten: [{ ...einheit('grund', 1), schluessel: E, vorschau: true }],
+  };
+  const paket: PaketInhalt = {
+    lektionen: [
+      { schluessel: `${E}.l01`, titel: '[Geprüft]', art: 'lektion' },
+      { schluessel: `${E}.l02`, titel: '[Entwurf]', art: 'lektion' },
+    ],
+    tipps: [],
+    wissen: {
+      [`${E}.l01`]: { geprueftAm: '2026-10-21', kinderGeeignet: true, aussagen },
+      [`${E}.l02`]: { entwurf: true, kinderGeeignet: false, aussagen: [{ ...aussagen[0]!, strittig: true }] },
+      // ungültig: beides zugleich → kein Vermerk
+    },
+  };
+  const k = { ...kontext(), kurs: 'islam' as const, adresse: '/lern-app/de/islam', ausgang: null };
+  const zeichne = (p: PaketInhalt) =>
+    vorrendern(
+      <LernpfadStufen
+        abschnitte={abschnitte(W, new Set(), new Map([[E, p]]))}
+        fertig={new Set()}
+        offen={new Set()}
+        onAufklappen={() => undefined}
+        k={k}
+      />,
+    );
+
+  it('geprüfte Lektion mit Prüfvermerk, ungeprüfte mit „Entwurf“; die Einheit trägt die Text-Marke', async () => {
+    const html = await zeichne(paket);
+    expect(html).toContain(`data-einheit-entwurf="${E}"`);
+    expect(html).toContain(de.lernpfad.einheitEntwurf);
+    expect(html).toContain(`data-pruefvermerk="${E}.l01"`);
+    expect(html).not.toContain(`data-pruefvermerk="${E}.l02"`);
+    expect(html).toContain(`data-entwurf="${E}.l02"`);
+    expect(html).toContain(de.lernpfad.entwurfVermerk);
+    // Kennzeichnung bleibt: strittig, Inhalt mit Quellenzeile
+    expect(html).toContain(de.lernpfad.strittig);
+    expect(html).toContain(`data-lektionsinhalt="${E}.l02"`);
+  });
+
+  it('leeres Verzeichnis (Vorschau aus): erst aufräumen, dann der Platzhalter; fremdes oder fehlendes ohne Aufräumen', async () => {
+    const aufraeumen = vi.fn(async () => []);
+    const leer = { ...W, einheiten: [] };
+    expect(await verzeichnisFuerLernpfad('islam', leer, aufraeumen)).toBeNull();
+    expect(aufraeumen).toHaveBeenCalledWith(leer);
+    // ein Fehler beim Aufräumen hält den Platzhalter nicht auf
+    expect(await verzeichnisFuerLernpfad('islam', leer, async () => Promise.reject(new Error('[kein Speicher]')))).toBeNull();
+    aufraeumen.mockClear();
+    expect(await verzeichnisFuerLernpfad('islam', null, aufraeumen)).toBeNull();
+    expect(await verzeichnisFuerLernpfad('tr-aus-de', leer, aufraeumen)).toBeNull();
+    expect(await verzeichnisFuerLernpfad('islam', W, aufraeumen)).toBe(W);
+    expect(aufraeumen).not.toHaveBeenCalled();
+  });
+
+  it('Vermerk mit Datum und Entwurf zugleich (oder ohne beides) gilt nicht – weder Prüfvermerk noch Entwurf', async () => {
+    const kaputt: PaketInhalt = {
+      ...paket,
+      wissen: {
+        [`${E}.l01`]: { geprueftAm: '2026-10-21', entwurf: true, kinderGeeignet: true, aussagen },
+        [`${E}.l02`]: { kinderGeeignet: true, aussagen },
+      },
+    };
+    const html = await zeichne(kaputt);
+    expect(html).not.toContain('data-pruefvermerk=');
+    expect(html).not.toContain('data-entwurf=');
   });
 });
 

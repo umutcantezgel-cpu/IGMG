@@ -14,16 +14,17 @@ export type LektionImPaket = { paket: PaketKopf; lektion: Lektion };
 
 /**
  * Prüfvermerk einer Lektion des Wissenskurses in gültiger Form (wie `WissensLektionSchema`, ohne Zod): Tag der zweiten
- * Freigabe, „für Kinder geeignet“ und mindestens eine Aussage mit Text und Quelle.
+ * Freigabe – oder in der Vorschau (L3-E22) die Kennzeichnung als Entwurf, nie beides –, „für Kinder geeignet“ und
+ * mindestens eine Aussage mit Text und Quelle.
  */
 function hatPruefvermerk(roh: Record<string, unknown>, schluessel: string): boolean {
   const wissen = roh.wissen as Record<string, unknown> | undefined;
   const v = wissen && typeof wissen === 'object' ? (wissen[schluessel] as Record<string, unknown> | undefined) : undefined;
   if (!v || typeof v !== 'object') return false;
   const aussagen = v.aussagen;
+  const datum = typeof v.geprueftAm === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v.geprueftAm);
   return (
-    typeof v.geprueftAm === 'string' &&
-    /^\d{4}-\d{2}-\d{2}$/.test(v.geprueftAm) &&
+    (v.entwurf === true ? v.geprueftAm === undefined : datum) &&
     typeof v.kinderGeeignet === 'boolean' &&
     Array.isArray(aussagen) &&
     aussagen.length > 0 &&
@@ -44,7 +45,8 @@ function hatPruefvermerk(roh: Record<string, unknown>, schluessel: string): bool
  * SHA-256 gegen die Adresse geprüft.
  *
  * Wissenskurs (KI-Regel 2, ADR 0040; Absicherung in der Tiefe, Stufe C N9a): Eine Lektion ist nur mit ihrem Prüfvermerk
- * spielbar (`wissen[schluessel]`, zwei Freigaben zum aktuellen Hash) – wie es `PaketSchema` für das ganze Paket verlangt.
+ * spielbar (`wissen[schluessel]`, zwei Freigaben zum aktuellen Hash, bzw. in der Vorschau mit der Kennzeichnung als Entwurf,
+ * L3-E22) – wie es `PaketSchema` für das ganze Paket verlangt.
  * Ein Paket ohne Vermerk für diese Lektion kann der Server nicht ausliefern; fehlt er trotzdem, gibt es nichts zu spielen.
  */
 export const nurLektion =

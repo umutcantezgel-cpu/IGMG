@@ -40,9 +40,11 @@ export type VermerkAussage = { schluessel: string; text: string; quelle: string;
 
 /**
  * Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“, enthält ein strittiges Thema) und
- * ihre Aussagen mit Quellenzeile – auch die ohne Quizfrage (KERN 4.0 §2.3 „Quellenzeile je Aussage“).
+ * ihre Aussagen mit Quellenzeile – auch die ohne Quizfrage (KERN 4.0 §2.3 „Quellenzeile je Aussage“). In der Vorschau
+ * (L3-E22) statt des Datums `entwurf`: ungeprüfter Entwurf, nie beides.
  */
-export type LektionsVermerk = { geprueftAm: string; kinderGeeignet: WissensLektionVermerk['kinderGeeignet'] } & {
+export type LektionsVermerk = ({ geprueftAm: string; entwurf?: never } | { entwurf: true; geprueftAm?: never }) & {
+  kinderGeeignet: WissensLektionVermerk['kinderGeeignet'];
   strittig?: true;
   aussagen: readonly VermerkAussage[];
 };
@@ -52,14 +54,20 @@ export type PaketInhalt = {
   lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[];
   tipps: readonly unknown[];
   /** nur Wissenskurs: Prüfvermerk je Lektion mit den Aussagen */
-  wissen?: Readonly<Record<string, { geprueftAm?: unknown; kinderGeeignet?: unknown; aussagen?: unknown }>>;
+  wissen?: Readonly<Record<string, { geprueftAm?: unknown; entwurf?: unknown; kinderGeeignet?: unknown; aussagen?: unknown }>>;
 };
 
 const istText = (x: unknown): x is string => typeof x === 'string' && x.length > 0;
 
-/** Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft); Aussagen ohne Text oder Quelle fallen weg. */
+/**
+ * Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft): Datum oder – in der Vorschau – Entwurf,
+ * nie beides; Aussagen ohne Text oder Quelle fallen weg.
+ */
 function vermerkVon(roh: NonNullable<PaketInhalt['wissen']>[string] | undefined): LektionsVermerk | null {
-  if (!roh || typeof roh.geprueftAm !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(roh.geprueftAm)) return null;
+  if (!roh) return null;
+  const datum = typeof roh.geprueftAm === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(roh.geprueftAm) ? roh.geprueftAm : null;
+  const entwurf = roh.entwurf === true;
+  if (entwurf ? roh.geprueftAm !== undefined : datum === null) return null;
   if (typeof roh.kinderGeeignet !== 'boolean') return null;
   const aussagen: VermerkAussage[] = (Array.isArray(roh.aussagen) ? (roh.aussagen as unknown[]) : []).flatMap((a) => {
     if (typeof a !== 'object' || a === null) return [];
@@ -70,7 +78,7 @@ function vermerkVon(roh: NonNullable<PaketInhalt['wissen']>[string] | undefined)
   });
   // „strittig“, wenn eine Aussage der Lektion zu einem strittigen Thema gehört (ADR 0040 Nr. 4)
   return {
-    geprueftAm: roh.geprueftAm,
+    ...(datum ? { geprueftAm: datum } : { entwurf: true as const }),
     kinderGeeignet: roh.kinderGeeignet,
     ...(aussagen.some((a) => a.strittig) ? { strittig: true as const } : {}),
     aussagen,

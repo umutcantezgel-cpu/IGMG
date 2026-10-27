@@ -5,6 +5,7 @@ import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { AusgangInsel } from '@/components/lernapp/inseln/AusgangInsel';
 import { HeuteInsel } from '@/components/lernapp/inseln/HeuteInsel';
 import { ChevronDown } from 'lucide-react';
+import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import {
   KURS_SLUGS,
@@ -111,7 +112,10 @@ export default async function LernAppStart() {
             <h2 id="weitere" className="text-display-2">
               {t('kurse.wissenTitel')}
             </h2>
-            <p className="text-18 text-pretty text-tinte-2">{t('kurse.wissenText')}</p>
+            {/* Vorschau des Wissenskurses (L3-E22): nicht „erst nach zwei Prüfungen“, sondern ungeprüfter Entwurf */}
+            <p className="text-18 text-pretty text-tinte-2">
+              {t((await funktionAn('lernapp_wissen_vorschau')) ? 'kurse.wissenTextVorschau' : 'kurse.wissenText')}
+            </p>
           </div>
           <ul className="grid raster-karten gap-4">
             <KursKarte
