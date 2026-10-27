@@ -423,6 +423,11 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
 - **Vor dem öffentlichen Start:** `FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus` setzen und neu bereitstellen – oder alle Lektionen von
   zwei Gelehrten prüfen lassen (LM-03). Ohne Datenbank (Beispielmodus) können Imam und Hoca die Entwürfe nur ansehen, nicht
   freigeben (G1, G2).
+- **Gegenprüfung Runde 1 (27.10.2026), behoben:** Website `/lernen` (de, tr, en) und `/quellen` nennen mit der Vorschau den
+  Entwurf statt „erst nach zwei Prüfungen“ (`d4a82961`); Belege im Hash der Aussage, abgeschalteter Kurs bleibt aus, Handbuch
+  Imam/Hoca mit Nachtrag (`ca7fd9a7`). Beleg des ausgeschalteten Zustands: Bau wie ein frischer Vercel-Import ohne Datenbank
+  mit `FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus` – `/lern-app/pakete/islam` ohne Einheiten, `/lern-app/de/islam` und `/tr/islam`
+  mit Prüfhinweis ohne Entwurfskasten, Lernpfad „wird vorbereitet“, `/lernen` und `/quellen` (je de, tr, en) mit den alten Texten.
 - **S-L3 M-1** (Frist „bevor Lektionen des Wissenskurses ausgeliefert werden“) ist erledigt (`a96939db`, Integrationstest
   `web/tests/integration/lernapp-gruppe.test.ts` „S-L3 M-1“).
 - **Nicht umgesetzt (Teil E des Plans):** `lernapp_sprechen` bleibt aus. S-L3 N-4 verlangt vorher eine Ratenregel der
