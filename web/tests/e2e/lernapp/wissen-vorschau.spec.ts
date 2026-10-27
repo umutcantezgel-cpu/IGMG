@@ -1,9 +1,8 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import { expect, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
+import e01 from '../../../inhalte/lernapp/islam/taharah/islam.grund.e01.json';
 import type { IslamEinheitDatei } from '../../../src/lib/lernapp/inhalt/schema';
 import { WISSENS_QUELLEN } from '../../../src/lib/lernapp/inhalt/wissen-quellen';
 import { ernsteBefunde, liveRegion } from './hilfen';
@@ -21,9 +20,8 @@ test.use({ serviceWorkers: 'block' });
 
 const E = 'islam.grund.e01';
 const L = `${E}.l01`;
-const DATEI = JSON.parse(
-  readFileSync(join(import.meta.dirname, '../../../inhalte/lernapp/islam/taharah/islam.grund.e01.json'), 'utf8'),
-) as IslamEinheitDatei;
+/** Inhaltsdatei der Einheit (wie gespeichert, nur gelesen) */
+const DATEI = e01 as unknown as IslamEinheitDatei;
 
 test('Startseite → Kurs: Hinweis „Entwurf zur Prüfung“, Einheiten mit Marke, Lektion mit Vermerk „Entwurf“', async ({ page }) => {
   test.setTimeout(120_000);
