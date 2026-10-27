@@ -1,4 +1,4 @@
-import { MODELL, type ProbeErgebnis } from './modell';
+import { bewerteProbe, MODELL, type ProbeErgebnis } from './modell';
 
 /**
  * Gerätecheck vor dem Download (ADR 0042 Fortschreibung S2 Nr. 7, Beleg S2 §5), rein: Die Werte erhebt die Sprechübung
@@ -53,7 +53,7 @@ export type SprechStand = {
   modell: string;
   /** Modell vollständig im Vorrat */
   geladen: boolean;
-  /** Ergebnis des Probelaufs; `rueckfall` bleibt gemerkt, kein automatischer neuer Versuch */
+  /** Ergebnis des Probelaufs; `rueckfall` bleibt gemerkt, kein automatischer neuer Versuch (nur nach einem Probelauf, `standNachLaden`) */
   probe: { ergebnis: ProbeErgebnis; ms: number | null } | null;
 };
 
@@ -76,4 +76,23 @@ export function liesSprechStand(roh: string | null): SprechStand {
     // leer oder unlesbar
   }
   return LEERER_STAND;
+}
+
+/**
+ * Ausgang eines Ladeversuchs auf Tipp (Mängelrunde 1 zu L3-E23: kein dauerhafter Rückfall ohne Probelauf, ADR 0042 Nr. 7):
+ * - `abgebrochen`: Die Übung wurde verlassen, während die Sprachprüfung lud oder probte („Ich kann gerade nicht sprechen“,
+ *   nächste Aufgabe, andere Seite; das Aufräumen beendet den Worker) – nichts merken, nichts ansagen;
+ * - `ladefehler`: Download oder Aufbau gescheitert (Status ≠ 200 wie 429 der Ratenregel LM-40, Netzabbruch, Zeitgrenze) –
+ *   nur diese Übung ohne Sprachprüfung; die nächste Sprechübung bietet das Laden wieder an, schon geladene Dateien bleiben
+ *   im Vorrat (`fuelleVorrat` holt nur die fehlenden);
+ * - `probe`: Der Probelauf lief (`ms` null = gescheitert, auch Absturz der Erkennung) – erst jetzt gilt das Modell als
+ *   geladen, und das Urteil wird gemerkt, `rueckfall` dauerhaft auf diesem Gerät.
+ */
+export type LadeAusgang = { art: 'abgebrochen' } | { art: 'ladefehler' } | { art: 'probe'; ms: number | null };
+
+/** Gemerkter Stand nach einem Ladeversuch (rein; die Sprechübung schreibt ihn nur bei `ladefehler` und `probe`). */
+export function standNachLaden(stand: SprechStand, ausgang: LadeAusgang): SprechStand {
+  if (ausgang.art === 'abgebrochen') return stand;
+  if (ausgang.art === 'ladefehler') return { ...stand, geladen: false };
+  return { ...stand, geladen: true, probe: { ergebnis: bewerteProbe(ausgang.ms), ms: ausgang.ms } };
 }
