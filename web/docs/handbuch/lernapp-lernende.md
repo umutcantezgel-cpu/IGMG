@@ -53,7 +53,9 @@ Für alle, die mit der Lern-App der Gemeinde lernen. Kurze Sätze, kurze Schritt
 2. Hör dir deine Aufnahme an und vergleiche sie mit dem Satz. Sag selbst, wie es ging: „Noch üben“, „Ging so“ oder „Gut“.
 3. Kannst du gerade nicht sprechen? Tippe auf **„Ich kann gerade nicht sprechen“**.
 
-Deine Aufnahme **verlässt das Gerät nie**. Eine automatische Rückmeldung zur Aussprache („Sprachprüfung“ auf dem Gerät) ist **(noch aus)**; die Gemeinde testet sie zuerst auf mehreren Telefonen.
+Deine Aufnahme **verlässt das Gerät nie**.
+
+**Sprachprüfung (Deutsch und Türkisch, seit 27.10.2026):** Vor der ersten Sprechübung bietet die App **„Sprachprüfung laden (≈ 95 MB)“** an. Sie läuft nur auf deinem Gerät, wird einmal geladen und bleibt gespeichert – am besten im WLAN laden. Danach markiert die App die Wörter des Satzes, die sie sicher erkannt hat. Die Markierung ist **keine Note**. Lieber ohne? Tippe auf **„Ohne Sprachprüfung üben“**. Ist das Gerät zu schwach, übst du mit deiner eigenen Aufnahme. Für Arabisch gibt es noch keine automatische Rückmeldung. Die Gemeinde prüft die Sprachprüfung noch auf mehreren Telefonen.
 
 ### Schreiben (ab B1)
 

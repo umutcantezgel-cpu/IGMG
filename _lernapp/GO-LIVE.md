@@ -1,6 +1,6 @@
 # GO-LIVE – Lern-App: Schalter je Funktion
 
-**Stand:** 21.10.2026 (Pakete L8-03 und L8-04), Nachtrag 26.10.2026 (Nacharbeit N5 nach Stufe C: L3-E12b, AUSNAHME N-4; Abnahme L8-05: L3-E17…L3-E21). Die
+**Stand:** 21.10.2026 (Pakete L8-03 und L8-04), Nachtrag 26.10.2026 (Nacharbeit N5 nach Stufe C: L3-E12b, AUSNAHME N-4; Abnahme L8-05: L3-E17…L3-E21), Nachtrag 27.10.2026 (L3-E22 Wissenskurs als Entwurf; L3-E23 Spracherkennung an, Ratenregel durch den Betreiber). Die
 Lern-App ist in der Produktion **an** – ohne Personendaten, der Fortschritt bleibt auf dem Gerät (Entscheidung des Nutzers vom
 21.10.2026, `ENTSCHEIDUNGEN.md` L3-E12b, Fortschreibung von L3-E12a; Code `IN_PRODUKTION_AN`). Alle
 Schalter mit Personendaten sind in der Produktion **aus**, bis Menschen sie freigeben (KERN 4.0 §6). Die Auflagen der
@@ -12,7 +12,7 @@ Quellen dieser Liste (bei Widerspruch gilt der Code):
 - `web/src/lib/funktionen-regeln.ts`: `IN_PRODUKTION_AN`, `MIT_PERSONENDATEN`, `VORAUSSETZUNGEN` (Sperren)
 - `web/src/lib/startklar/gemeinde.ts` und `web/src/lib/startklar/lernapp.ts`: Vorbehalt je Schalter, Karte „Lern-App“ im
   Startklar-Cockpit
-- `KERN.md` §6, `MENSCHEN.md` (LM-01…LM-36), ADR 0035 (Schalter), ADR 0041 (Stichprobe), ADR 0042 (Sprechen)
+- `KERN.md` §6, `MENSCHEN.md` (LM-01…LM-40), ADR 0035 (Schalter), ADR 0041 (Stichprobe), ADR 0042 (Sprechen)
 - `berichte/s-l3.md` (Auflagen M-1, N-1…N-4, Hinweise H-1…H-8)
 - Gesamtliste der Website: `web/docs/GO-LIVE.md` (Abschnitt G); dort G1 für Datenbank und Geheimnisse (auch
   `ALTCHA_GEHEIMNIS`), G4 für `KONTEN`, `LERNPLATTFORM`, `PUSH`
@@ -45,7 +45,7 @@ Quellen dieser Liste (bei Widerspruch gilt der Code):
 | `lernapp_ungeprueft` | nein | **an** (O-1, ADR 0041 Nr. 8) | `lernapp` | Einheiten nach automatischer Prüfung und KI-Gegenprüfung zeigen den Hinweis „noch nicht von Muttersprachlern geprüft“; abgelehnte Einträge und Einträge mit `religionsbezug` ohne zwei Freigaben bleiben unsichtbar. S-L3: keine Auflage | Vorstand (LM-11; Standard ja) |
 | `lernapp_wissen_vorschau` | nein | **an** (L3-E22, 27.10.2026) | `lernapp` | erledigt: Nutzerauftrag 27.10.2026 – der Wissenskurs erscheint als gekennzeichneter „Entwurf zur Prüfung“ (ungeprüft, keine Lehrmeinung). **Vor dem öffentlichen Start ausschalten** (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`, neu bereitstellen) **oder alle Lektionen von zwei Gelehrten prüfen lassen** (LM-03); dann gilt wieder allein die Sperre bis zu zwei Freigaben, offline gespeicherte Entwürfe verlassen ein Gerät beim nächsten Öffnen des Lernpfads mit Netz. Das Cockpit warnt, solange sie an ist. S-L3 M-1 erledigt (`a96939db`) | Nutzer bzw. Vorstand; religiöse Prüfung (LM-03) |
 | `lernapp_meldungen` | nein (anonym, nur Aufgabenschlüssel und Kategorie, ALTCHA) | **an**, wirkt aber erst nach G1 | `lernapp`; Datenbank und `ALTCHA_GEHEIMNIS` (`web/docs/GO-LIVE.md` G1) | **offen: G1.** Ohne Datenbank antwortet die Melde-Route mit 404, ohne `ALTCHA_GEHEIMNIS` mit 503 (`api/lernapp/meldung/route.ts`); die Produktion läuft noch ohne Datenbank (Beispielmodus). Danach Bearbeitung der Meldungen unter Verwaltung › Lern-App › Meldungen (braucht G2). S-L3: keine Auflage (Hinweis H-1: Körper als Strom mit Grenze lesen, Löschfrist offener Meldungen) | Technik (G1), dann Redaktion |
-| `lernapp_sprechen` | nein (Aufnahme bleibt im Arbeitsspeicher des Geräts) | aus | `lernapp` | Gerätetest Sprechen und Audioformat auf iPhone, Android-Mittelklasse und Laptop (LM-07, MN-19); Whisper-Modell und Ort bestätigt (LM-27). **S-L3 N-4** mitdenken: Mit dem Schalter laden mehr Geräte die Modelle (≈ 95 MB); Ratenregel oder Modell-Route vorher, Kosten beobachten (LM-15) | Technik nach Gerätetest |
+| `lernapp_sprechen` | nein (Aufnahme bleibt im Arbeitsspeicher des Geräts) | **an** (L3-E23, 27.10.2026) | `lernapp` | erledigt: Nutzerentscheidung 27.10.2026 („Ja alles freischalten“, „Jetzt einschalten“). **S-L3 N-4:** Mit dem Schalter laden mehr Geräte die Modelle (≈ 95 MB, übertragen ≈ 82 MB in 10 Dateien, einmal je Gerät); die Ratenregel der Vercel-Firewall setzt der Betreiber (**offen: LM-40**, Klickfolge im Abschnitt „Ausnahme N-4“), Kosten beobachten (LM-15). Offen bleiben der Gerätetest auf iPhone, Android-Mittelklasse und Laptop (LM-07, MN-19) und die Bestätigung von Modell und Ort (LM-27); bei schlechtem Ergebnis `FUNKTION_LERNAPP_SPRECHEN=aus` | Nutzer; Technik (LM-07, LM-40) |
 | `lernapp_sync` | **ja** (Ereignisprotokoll auf dem Server, Art. 9 DSGVO) | aus | `lernapp`, `konten` | DSFA-Nachtrag Lern-App, Einwilligungstext `lernapp`, Datenschutzerklärung und Löschfristen (LM-08; Entwürfe in `web/docs/recht/entwuerfe/`); `konten` nach `web/docs/GO-LIVE.md` G4. **S-L3 N-2 vor dem Einschalten beheben:** Einwilligung `lernapp` erteilen und widerrufen (eigene Person ab 16, Eltern für Kinder); der Widerruf löscht den Lernstand auf dem Server; Export nach Art. 15/20 mit den Lern-App-Daten | DSB / Recht, dann Vorstand |
 | `lernapp_gruppen` | **ja** (Zuweisungen, Stand der Gruppe; Schreibabgaben noch nicht aktiv) | aus | `lernapp`, `lernplattform` | DSFA-Nachtrag (LM-08); `lernplattform` nach G4; Lehrkräfte geschult (LM-14, Handbuch `web/docs/handbuch/lernapp-lehrkraefte.md`). **S-L3 M-1 vor dem Einschalten beheben:** Lerntage und XP je Kurs trennen; Stand der Lehrkraft nur aus den Kursen der eigenen Zuweisungen, Gruppenziel nur aus Sprachkursen. **N-2** wie bei `lernapp_sync` (Stand und „erledigt“ kommen nur über den Abgleich). **N-3** bis zur Abnahme: XP je Lerntag kappen. Hinweise H-2 (Last, L8-02) und H-5 (Gruppenziel nur bis gestern) | DSB / Recht, Vorstand, Bildung |
 | `lernapp_rangliste` | **ja** (Anzeigename und XP aus Sprachkursen, nur ab 16, mit eigener Zustimmung) | aus | `lernapp`, `lernapp_gruppen` | Entscheidung zur Bestenliste (LM-10) und DSFA-Nachtrag zu R-08 (LM-08). Für Konten unter 16 ist die Bestenliste im Code gesperrt, nicht über den Schalter. **S-L3 M-1 und N-3 vor dem Einschalten beheben:** Bestenliste nur aus XP der Sprachkurse, gekappt je Lerntag. Hinweis H-6: Version des Zustimmungstexts nach LM-08/LM-10 heben und Zustimmungen neu einholen | Vorstand, DSB |
@@ -79,7 +79,7 @@ hoch/kritisch“ ist erfüllt; die Auflagen binden die Schalter wie folgt. Stand
 | N-1 | niedrig | Audio-Studio (Sprecher-Vereinbarung), ebenso Rezitations-Werkstatt der Website | bis zur Abnahme (L8-05) oder AUSNAHME mit Grund; praktisch vor der ersten echten Vereinbarung | Vereinbarungen privat unter `lernapp/vereinbarungen/…` ohne Zeile in `medium`, Abruf nur mit `lernapp.audio.bearbeiten`, `private, no-store`, `Content-Disposition: attachment`; vorhandene Vereinbarungs-Medien umziehen |
 | N-2 | niedrig (latent) | `lernapp_sync` (und damit `lernapp_gruppen`, `lernapp_rangliste`) | vor dem Einschalten von `lernapp_sync` (setzt LM-08 voraus) | Erteilen und Widerrufen der Einwilligung `lernapp` mit Textversion in „Mein Bereich“ und in den Einstellungen der Lern-App; Widerruf löscht in einer Transaktion Profil, Zustimmung und Familie (Audit); Export um die Lern-App-Tabellen; Integrationstest „Widerruf → 0 Zeilen, nächster Abgleich 403“ |
 | N-3 | niedrig | `lernapp_gruppen` (Gruppenziel), `lernapp_rangliste` | bis zur Abnahme (L8-05) oder AUSNAHME; für `lernapp_rangliste` vor dem Einschalten | XP je Lerntag für Gruppe und Bestenliste kappen (z. B. ≤ 500 XP, ≤ 30 Lektionen), XP nur mit passendem Lektionsereignis zählen; Unit-Test der Kappung |
-| N-4 | niedrig | `lernapp` (an), `lernapp_sprechen` | bis zur Abnahme (L8-05) oder AUSNAHME mit Grund – **AUSNAHME seit 26.10.2026** (Abschnitt „Ausnahme N-4“); für `lernapp_sprechen` Ratenregel vor dem Einschalten | Modelle über eine Route mit Schalterprüfung **oder** Ratenregel der Vercel-Firewall für `/lern-app/modelle/*` (Ausnahme in ADR 0035/0042 festhalten – **festgehalten** in ADR 0035, „Fortschreibung Lern-App 2“ Nr. 2); beim Abschalten einen Abmelde-Worker als `sw.js` ausliefern – **Abmelde-Worker umgesetzt** (N5) |
+| N-4 | niedrig | `lernapp` (an), `lernapp_sprechen` (an seit 27.10.2026) | bis zur Abnahme (L8-05) oder AUSNAHME mit Grund – **AUSNAHME seit 26.10.2026** (Abschnitt „Ausnahme N-4“); `lernapp_sprechen` auf Entscheidung des Nutzers vor der Ratenregel eingeschaltet (L3-E23), die Regel setzt der Betreiber (LM-40) | Modelle über eine Route mit Schalterprüfung **oder** Ratenregel der Vercel-Firewall für `/lern-app/modelle/*` (Ausnahme in ADR 0035/0042 festhalten – **festgehalten** in ADR 0035, „Fortschreibung Lern-App 2“ Nr. 2); beim Abschalten einen Abmelde-Worker als `sw.js` ausliefern – **Abmelde-Worker umgesetzt** (N5) |
 
 ### Ausnahme N-4 (26.10.2026)
 
@@ -87,8 +87,8 @@ hoch/kritisch“ ist erfüllt; die Auflagen binden die Schalter wie folgt. Stand
   Symbole, `sw.js`). Bei `lernapp` aus bleiben sie mit 200 abrufbar; „ausgeschaltet heißt 404“ gilt dort nicht.
 - **Grund der Ausnahme:** `lernapp` ist nach der Nutzerentscheidung vom 21.10.2026 in der Produktion **an** (L3-E12b); die
   Dateien sind ohnehin öffentlich gedacht und enthalten keine Personendaten und keine Inhalte außer Modellgewichten (Lizenz
-  ADR 0042), Programmcode und App-Symbolen. Die Modelle lädt nur die Sprechübung, und `lernapp_sprechen` ist in der Produktion
-  aus (LM-07).
+  ADR 0042), Programmcode und App-Symbolen. Die Modelle lädt nur die Sprechübung, und nur nach Tipp auf „Sprachprüfung laden“;
+  `lernapp_sprechen` war bis zum 27.10.2026 in der Produktion aus und ist seitdem an (L3-E23).
 - **Ersatz:**
   1. *Abmelde-Worker (umgesetzt, N5):* Bei `FUNKTION_LERNAPP=aus` in der Umgebung liefert der Proxy unter `/lern-app/sw.js`
      die Datei `public/lern-app/sw-abmelden.js` (`web/src/proxy.ts`, Matcher mit Ausnahme für genau diese Datei). Geräte holen
@@ -99,10 +99,27 @@ hoch/kritisch“ ist erfüllt; die Auflagen binden die Schalter wie folgt. Stand
      `/lern-app/symbole/symbol-192.png` weiter 200. Abschalten nur über die Einstellung im Cockpit (ohne Umgebung) ersetzt den Worker
      **nicht** – zum vollständigen Abschalten immer die Umgebung setzen (das Cockpit sagt es im Hinweis zum Schalter).
   2. *Kosten beobachten (LM-15):* Datentransfer des Vercel-Projekts für `/lern-app/modelle/*` nach der Tarifentscheidung
-     (LM-15) monatlich ansehen (Vercel › Usage › Data Transfer bzw. Observability); bei auffälligen Abrufen eine Ratenregel der
-     Vercel-Firewall für `/lern-app/modelle/*` (z. B. 20 Anfragen je 10 min und IP) setzen.
-- **Bleibt offen:** Ratenregel oder Modell-Route mit Schalterprüfung **vor** dem Einschalten von `lernapp_sprechen` (dann
-  laden viele Geräte die Modelle); Symbole und Modelle antworten bei „aus“ weiter mit 200.
+     (LM-15) monatlich ansehen (Vercel › Usage › Data Transfer bzw. Observability).
+  3. *Ratenregel der Vercel-Firewall (L3-E23, setzt der Betreiber: LM-40):* Seit dem 27.10.2026 ist `lernapp_sprechen` an; der
+     Nutzer setzt die Regel selbst im Dashboard, weil die Vercel-Verbindung der Sitzung das Projekt nicht sieht. Klickfolge
+     (Vercel-Dokumentation „WAF Rate Limiting“, Stand 28.08.2026):
+     1. Vercel › Projekt mit der Domain `igmg-wetzlarer.vercel.app` › **Firewall** in der Seitenleiste › oben rechts **Configure** ›
+        **+ New Rule**.
+     2. Name: „Lern-App Modelle“.
+     3. **If** *Request Path* *Starts with* `/lern-app/modelle/`.
+     4. **Then** *Rate Limit* (beim ersten Mal den Dialog „Rate Limiting Pricing“ mit **Continue** bestätigen) › **Fixed
+        Window** › Time Window **600 s** (10 min, Höchstwert in Hobby und Pro; 3600 s nur mit Enterprise) › Request Limit
+        **200** › Schlüssel **IP** › Folge **Default (429)** („Too Many Requests“).
+     5. **Save Rule**, oben rechts **Review Changes** › **Publish**.
+     6. Prüfen: Firewall-Übersicht › die Regel in der Gruppierung wählen und den Verkehr ansehen; ein Gerät lädt die
+        Sprachprüfung weiter vollständig (10 Dateien).
+     - Begründung der Werte: Ein Gerät holt 10 Dateien unter `/lern-app/modelle/` genau einmal (≈ 82 MB übertragen), danach aus
+       dem Vorrat `igmg-lernapp-modelle`. 200 Anfragen je 10 min lassen ≈ 20 Geräte hinter einer IP laden (Unterricht im
+       Gemeinde-WLAN); Missbrauch höchstens ≈ 1,6 GB je IP und 10 min. Hobby erlaubt **eine** Ratenregel je Projekt (von drei
+       eigenen Regeln) und 1.000.000 erlaubte Anfragen; die Zähler gelten je Region.
+     - Bei auffälligem Datentransfer (LM-15) das Limit senken oder `FUNKTION_LERNAPP_SPRECHEN=aus` setzen und neu bereitstellen.
+- **Bleibt offen:** die Ratenregel selbst (LM-40) – bis sie steht, sind die Modelle ungebremst; Symbole und Modelle antworten bei
+  „aus“ weiter mit 200. Eine Modell-Route mit Schalterprüfung bleibt die Alternative ohne Firewall.
 
 Hinweise ohne Frist (bei Gelegenheit): H-1 Meldungen (Strom mit Grenze, Löschfrist), H-2 Last der Gruppenroute (Lasttest
 L8-02), H-3 Obergrenze der Vorräte auf dem Gerät, H-4 Sprecherin samt Aufnahmen entfernen, H-5 Gruppenziel nur bis gestern,
@@ -122,6 +139,7 @@ AUSNAHME entschieden (`ENTSCHEIDUNGEN.md`); vor dem Freischalten weiterer Schalt
 | L3-E20 | Lighthouse-Leistung ≥ 90 auf dem Messrechner nicht erreicht; Budgets, LCP, CLS, INP erfüllt | LM-39 |
 | L3-E21 | Vercel-Bauzeit belegt über Push bis live (11 min 24 s ≤ 15 min); lokaler Bau wie Vercel 609 s | LM-38 (Dashboard) |
 | L3-E22 (27.10.2026) | Wissenskurs auf der Test-Domain als gekennzeichneter Entwurf (`lernapp_wissen_vorschau` an); vor dem öffentlichen Start aus oder alles geprüft | Nutzer; LM-03 |
+| L3-E23 (27.10.2026) | Spracherkennung an (`lernapp_sprechen`), Ratenregel für `/lern-app/modelle/` durch den Betreiber; B1 de/tr Einheit 16 frei (OF-10 „Ja, sachlich“, R-06 „Pilz“ als Fehltreffer; Abweichung von L3-E15 mit 15 bekannten `menschlich_klaeren`) | Nutzer; LM-40, LM-07, LM-09 |
 
 ## Reihenfolge beim Freischalten (Vorschlag)
 
@@ -131,7 +149,8 @@ AUSNAHME entschieden (`ENTSCHEIDUNGEN.md`); vor dem Freischalten weiterer Schalt
    Start ausschalten oder alles von zwei Gelehrten prüfen lassen** (LM-03).
 2. G1 der Website (`web/docs/GO-LIVE.md`: Datenbank, Geheimnisse samt `ALTCHA_GEHEIMNIS`) und G2 (Verwaltungskonten) –
    danach kommen Meldungen an, und Sprachprüfung, religiöse Prüfung und Audio-Studio sind bedienbar.
-3. `lernapp_sprechen` – nach dem Gerätetest (LM-07) und N-4.
+3. `lernapp_sprechen` – an seit 27.10.2026 (L3-E23); die Ratenregel (LM-40) gleich danach setzen, der Gerätetest (LM-07) bleibt
+   offen.
 4. `KONTEN` und `LERNPLATTFORM` der Website (G4), dann `lernapp_sync` nach LM-08 und N-2, danach `lernapp_gruppen` nach
    M-1 (und N-3).
 5. `lernapp_rangliste` – nur nach LM-10, M-1 und N-3.

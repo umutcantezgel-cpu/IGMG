@@ -38,7 +38,8 @@ Seit `f2dc1a1` (Abschluss des Vorlaufs): ≈ 1.240 Commits, 353 neue Dateien in 
 - Wissenskurs nach hanefitischer Lehre (26 Einheiten, 2.124 Aussagen mit 4.603 Belegen): nichts sichtbar ohne zwei Freigaben.
 - Koran-Arabisch (40 Einheiten, 936 Wortformen): Bedeutungen nur von Menschen, mit zwei Freigaben.
 - Konto mit Abgleich, Gruppen und Lehrkräfte, Lernwoche für Eltern, Schreibabgaben, Bestenliste (ab 16), Spracherkennung im
-  Browser (Whisper, nichts verlässt das Gerät), Verwaltung mit Sprach- und religiöser Prüfung, Audio-Studio.
+  Browser (Whisper, nichts verlässt das Gerät; an seit 27.10.2026, Nachtrag L3-E23), Verwaltung mit Sprach- und religiöser
+  Prüfung, Audio-Studio.
 
 **Prüfungen:** Inhaltsprüfer und religiöse Sperre (0 blockierend, 0 Befunde), Lektorat und Rückübersetzung je Einheit, axe-Matrix
 über alle Routen, Tastaturwege für alle Typen, Netzprotokoll, Lasttest des Abgleichs, Sicherheitsprüfungen S-L1…S-L3, Stufe C mit
@@ -46,7 +47,7 @@ fünf Gruppen, Nacharbeit N1–N9, frischer Endprüfer und Vollständigkeitskrit
 
 ## Übergabe – was nur Menschen tun können
 
-Die vollständige Liste steht in `MENSCHEN.md` (LM-01…LM-39) und `GO-LIVE.md` (Schalter, Reihenfolge, Entscheidungen der Abnahme).
+Die vollständige Liste steht in `MENSCHEN.md` (LM-01…LM-40) und `GO-LIVE.md` (Schalter, Reihenfolge, Entscheidungen der Abnahme).
 Die Rangfolge steht in `BERICHT.md`, „Was nur Menschen tun können“. Das Wichtigste:
 
 1. **Religiöse Prüfung (LM-03, MN-24):** zwei Konten „religiöse Prüfung“ ohne Administrationsrolle; Wissenskurs (zuerst Taharah
@@ -69,6 +70,19 @@ sind mit dem neuen Schalter `lernapp_wissen_vorschau` (in der Produktion an) als
 erreichbar. Vor dem öffentlichen Start: Schalter aus (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`) oder alles von zwei Gelehrten
 geprüft (LM-03); das Cockpit warnt bis dahin. `lernapp_sprechen` bleibt aus (S-L3 N-4: erst Ratenregel). Einzelheiten:
 `ENTSCHEIDUNGEN.md` L3-E22, `GO-LIVE.md`.
+
+## Nachtrag 27.10.2026 – Spracherkennung an, B1 de/tr Einheit 16 frei (L3-E23)
+
+Auf Auftrag des Nutzers („Ja alles freischalten“, „Jetzt einschalten“), Branch `lernapp-freischalten`:
+- **Spracherkennung** (`lernapp_sprechen`) ist in der Produktion an (a67d3a7c). Deutsch und Türkisch bieten „Sprachprüfung laden
+  (≈ 95 MB)“ an; die Aufnahme bleibt auf dem Gerät. Die Ratenregel der Vercel-Firewall für `/lern-app/modelle/` setzt der
+  Betreiber (LM-40; 200 Anfragen je 600 s und IP, Klickfolge in `GO-LIVE.md` „Ausnahme N-4“). Gerätetest LM-07 bleibt offen.
+- **B1 Einheit 16** in Deutsch („Gemeinde und Grundrechte“, OF-10 nach dem Standard „Ja, sachlich“) und Türkisch („Wir kochen
+  für Gäste“, R-06 „Pilz“ als Fehltreffer) ist `automatisch_geprueft` (e95f4213, nur die Zeile `status`). Damit hat jede
+  Richtung 43 Einheiten (B1 vollständig, `berichte/mengen.md`). Abweichung von L3-E15: 15 bekannte `menschlich_klaeren`
+  bleiben im Prüferlauf sichtbar.
+- Zurücknehmen können Vorstand bzw. Hoca jederzeit (`FUNKTION_LERNAPP_SPRECHEN=aus`; `status` zurück auf `entwurf` und neu
+  bauen). Einzelheiten: `ENTSCHEIDUNGEN.md` L3-E23.
 
 ## Zurückrollen
 

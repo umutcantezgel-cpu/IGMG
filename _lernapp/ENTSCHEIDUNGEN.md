@@ -432,5 +432,37 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   `web/tests/integration/lernapp-gruppe.test.ts` „S-L3 M-1“).
 - **Nicht umgesetzt (Teil E des Plans):** `lernapp_sprechen` bleibt aus. S-L3 N-4 verlangt vorher eine Ratenregel der
   Vercel-Firewall für `/lern-app/modelle/*` (z. B. 20 Anfragen je 10 min und IP) oder eine Modell-Route mit Schalterprüfung;
-  die Firewall-Regel ist eine Änderung an der Produktion und wartet auf die Bestätigung des Nutzers.
+  die Firewall-Regel ist eine Änderung an der Produktion und wartet auf die Bestätigung des Nutzers. *Fortgeschrieben durch
+  L3-E23 (27.10.2026): Sprechen an, die Ratenregel setzt der Betreiber.*
 
+## L3-E23 · 2026-10-27 · Nutzer · Spracherkennung an, B1 de/tr e16 frei (Fortschreibung von L3-E15 und L3-E22)
+- **Entscheidung (Nutzer, 27.10.2026, wörtlich):** „Ja alles freischalten“. Auf die Rückfrage zur Ratenregel: „Jetzt
+  einschalten“ – der Nutzer setzt die Ratenregel der Vercel-Firewall selbst, weil die Vercel-Verbindung der Sitzung das Projekt
+  der Test-Domain nicht sieht.
+- **Spracherkennung (`lernapp_sprechen`) in der Produktion an** (`IN_PRODUKTION_AN`, a67d3a7c). Ohne Personendaten: Die
+  Aufnahme bleibt im Arbeitsspeicher des Geräts; das Modell (≈ 95 MB, übertragen ≈ 82 MB in 10 Dateien) lädt erst nach Tipp
+  auf „Sprachprüfung laden“ und danach aus dem Vorrat des Geräts; nur Deutsch und Türkisch, Arabisch ohne Erkennung. Die
+  Übungsseiten lesen den Schalter beim Bau.
+  - **S-L3 N-4:** Den Schutz der Modelldateien vor Massenabrufen setzt der Betreiber als Ratenregel der Vercel-Firewall
+    (MENSCHEN LM-40, Klickfolge in `GO-LIVE.md`, Abschnitt „Ausnahme N-4“): Pfad beginnt mit `/lern-app/modelle/`, Fixed
+    Window, Schlüssel IP, Folge 429. Der Plan nannte 200 Anfragen je 3600 s (≈ 20 Geräte je Stunde hinter einer IP, Unterricht
+    im Gemeinde-WLAN; Missbrauch ≤ ≈ 1,6 GB je IP und Stunde). Hobby und Pro erlauben laut Vercel-Dokumentation höchstens
+    10 min Zeitfenster (3600 s nur Enterprise) – daher **200 Anfragen je 600 s**: eine Klasse von ≈ 20 Geräten lädt in 10 min,
+    Missbrauch ≤ ≈ 1,6 GB je IP und 10 min. Dazu den Datentransfer beobachten (LM-15). Bis die Regel steht, sind die Modelle
+    ungebremst wie seit der Ausnahme N-4 (26.10.2026).
+  - Offen bleiben der Gerätetest (LM-07) und die Bestätigung von Modell und Ort (LM-27). Fällt der Gerätetest schlecht aus,
+    wird der Schalter wieder ausgeschaltet.
+- **B1 de/tr Einheit 16 frei** (e95f4213): de.b1.e16 „Gemeinde und Grundrechte“ und tr.b1.e16 „Wir kochen für Gäste“ auf
+  `automatisch_geprueft` – nur die Zeile `status` in der Spracheinheit und den Übersetzungen de-aus-ar, de-aus-tr, tr-aus-ar,
+  tr-aus-de (Muster 4350ee98/0745164d), ohne Textänderung.
+  - **OF-10 (Politik und Staatskunde)** nach dem Standard „Ja, sachlich“ übernommen: Die Einheit erklärt Aufgaben der Gemeinde,
+    Parlament und Grundrechte sachlich, ohne Parteien, Personen oder Streitfragen. Die 12 Befunde `[tabu][politik]` (de-aus-ar 9,
+    de-aus-tr 3; Wörter wie „Parlament“, „politisch“) bleiben im Prüferlauf sichtbar.
+  - **R-06:** Das arabische Wort für „Pilz“ (*fuṭr*, türkisch *mantar*) wird unvokalisiert wie *fiṭr* geschrieben; der
+    Religionswächter meldet es als Kandidaten. Entschieden als Fehltreffer; die 3 Befunde in tr-aus-ar bleiben sichtbar.
+  - **Abweichung von L3-E15** („0 menschlich_klaeren“): freigegeben mit genau diesen 15 bekannten `menschlich_klaeren`;
+    `pnpm lernapp:pruefen` 0 blockierend (`paketbau` und `uebersetzung` 0/0/0), Religion rc=0.
+- **Rücknahme:** Vorstand bzw. Hoca können jederzeit zurücknehmen. Spracherkennung: `FUNKTION_LERNAPP_SPRECHEN=aus` und neu
+  bereitstellen. Einheit 16: `status` zurück auf `entwurf` und neu bauen – die Produktion baut ihre Datenbank (PGlite) bei jedem
+  Bau frisch, die Einheit verschwindet dann aus Verzeichnis und Paketen. Lautet OF-10 „nein“, nimmt die Redaktion de.b1.e16
+  sowie ar.b1.e10/e11 zurück (LM-09).

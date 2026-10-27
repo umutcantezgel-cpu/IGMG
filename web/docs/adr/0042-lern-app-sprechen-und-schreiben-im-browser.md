@@ -176,6 +176,21 @@ Gilt vor Nr. 4, Fortschreibung Nr. 6 und 11, wo es abweicht.
     - Belegt durch Units (`sprechen-einmal-laden`, `lernapp-sw`, `quellen`); ein E2E ohne Netz nach geladener Sprachprüfung
       steht aus.
 
+## Fortschreibung L3-E23 (27.10.2026, `_lernapp/ENTSCHEIDUNGEN.md` L3-E23)
+
+Gilt vor Nr. 12 und Fortschreibung Nr. 9, wo es abweicht.
+
+26. **Schalter in der Produktion an:** `lernapp_sprechen` steht in `IN_PRODUKTION_AN` (Nutzerentscheidung 27.10.2026), vor dem
+    Gerätetest LM-07, der offen bleibt. Unverändert: Erkennung nur für Deutsch und Türkisch (Arabisch ohne automatische
+    Rückmeldung, bis whisper-small auf Geräten bestätigt ist), Download erst nach Tipp auf „Sprachprüfung laden (≈ 95 MB)“,
+    11 Download-Dateien, davon 10 unter `/lern-app/modelle/` (≈ 82 MB übertragen, einmal je Gerät, danach aus dem Vorrat
+    `igmg-lernapp-modelle`); die Aufnahme verlässt das Gerät nie.
+    - **S-L3 N-4:** Die Modelldateien bremst eine Ratenregel der Vercel-Firewall (Pfad beginnt mit `/lern-app/modelle/`, 200
+      Anfragen je 600 s und IP, Folge 429), die der Betreiber im Dashboard setzt (`_lernapp/MENSCHEN.md` LM-40, Klickfolge in
+      `_lernapp/GO-LIVE.md` „Ausnahme N-4“). Hobby und Pro erlauben höchstens 10 min Zeitfenster.
+    - Die E2E lesen den Schalter wie der Bau (`entscheide`, Umgebung vor Standard) und prüfen die Erkennung weiter nur mit dem
+      Attrappen-Worker (`E2E_ATTRAPPEN=1`); mit dem echten Worker wählen sie „Ohne Sprachprüfung üben“.
+
 ## Alternativen
 
 - Web Speech API des Browsers: verworfen. Je nach Browser geht das Audio an Server des Herstellers; das widerspricht „nichts verlässt das Gerät“ und funktioniert nicht offline.

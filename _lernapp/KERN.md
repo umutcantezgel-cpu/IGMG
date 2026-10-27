@@ -181,7 +181,7 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
 | `lernapp` | nein | an | an nach Abnahme (`IN_PRODUKTION_AN`); fortgeschrieben: an seit 21.10.2026 (L3-E12b) | – |
 | `lernapp_ungeprueft` (Einheiten ohne bestandene Muttersprachler-Stichprobe, mit Hinweis) | nein | an | an (Plan §6 ML-02, O-1) | – |
 | `lernapp_wissen_vorschau` (Wissenskurs als gekennzeichneter, ungeprüfter Entwurf) | nein | an | an seit 27.10.2026 (L3-E22); vor dem öffentlichen Start aus oder alles geprüft | Warnung im Cockpit, solange an |
-| `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07) | – |
+| `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07); fortgeschrieben: an seit 27.10.2026 (L3-E23), Ratenregel für `/lern-app/modelle/` durch den Betreiber (LM-40) | – |
 | `lernapp_meldungen` (anonym, Kategorien) | nein | an | an | – |
 | `lernapp_sync` | ja | an | aus | `konten` an, DSFA-Nachtrag (LM-08) |
 | `lernapp_gruppen` (Zuweisungen, Gruppenziel, Schreibkorrektur) | ja | an | aus | `lernplattform` an, LM-08 |
@@ -199,6 +199,11 @@ gilt bis auf Weiteres die AUSNAHME S-L3 N-4 (`GO-LIVE.md`): Beim Abschalten übe
 Wissenskurses ohne zwei Freigaben erscheinen dann als „Entwurf zur Prüfung“ (statt des Prüfvermerks; nie bei Rückzug, Einwand
 oder fehlendem Beleg). §2.3 („sichtbar erst nach zwei Freigaben“) gilt wieder uneingeschränkt, sobald der Schalter aus ist –
 spätestens vor dem öffentlichen Start, sofern nicht alles geprüft ist.
+
+*Fortschreibung 27.10.2026 (L3-E23, Nutzerentscheidung „Ja alles freischalten“):* `lernapp_sprechen` ist in der Produktion an
+(`IN_PRODUKTION_AN`), vor dem Gerätetest LM-07. Die Spracherkennung bleibt lokal (Aufnahme im Arbeitsspeicher, Modell erst auf
+Wunsch geladen, nur de/tr). Den Schutz der Modelldateien (S-L3 N-4) setzt der Betreiber als Ratenregel der Vercel-Firewall
+(LM-40, `GO-LIVE.md` „Ausnahme N-4“); abschalten mit `FUNKTION_LERNAPP_SPRECHEN=aus` und neuer Bereitstellung.
 
 ## 7. Oberfläche, Rechts-nach-links, Schriften
 - **Layout:** `web/src/app/lern-app/[ui]/layout.tsx` setzt `<html lang dir>`; `ar` → `dir="rtl"`. Texte in
