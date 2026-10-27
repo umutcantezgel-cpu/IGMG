@@ -92,8 +92,10 @@ test('echte Lektion spielen: Hinweis über dem Spieler, Quellenzeile nach „Que
   await page.getByText(de.aufgaben.wissen.quelleZeigen, { exact: true }).click();
   const aussage = DATEI.lektionen[0]!.aussagen.find((a) => a.schluessel === q.aussage)!;
   const werk = WISSENS_QUELLEN[aussage.belege[0]!.werk];
-  await expect(form.locator('details bdi[lang="de"]')).toContainText(`${werk.werk} (${werk.autor})`);
-  await expect(form.locator('details bdi[lang="de"]')).toContainText(aussage.belege[0]!.kapitel);
+  // Quellenzeile der Aussage (Erklärung nach der Antwort, aufgeklappt)
+  const quelle = page.locator('main details[open] bdi[lang="de"]');
+  await expect(quelle).toContainText(`${werk.werk} (${werk.autor})`);
+  await expect(quelle).toContainText(aussage.belege[0]!.kapitel);
   expect(await ernsteBefunde(page, 'wissen-vorschau Spieler nach der Antwort')).toEqual([]);
 });
 
