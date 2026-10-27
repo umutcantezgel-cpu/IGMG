@@ -231,8 +231,7 @@ async function ohneSprachpruefung(page: Page, art: Bedienung, t: Texte) {
 /**
  * Sprechen: Sprachprüfung laden (Attrappe), Probelauf, aufnehmen (Testmikrofon), Ergebnis nur als Markierung der Zielwörter;
  * mit dem echten Worker „Ohne Sprachprüfung üben“; ohne Erkennung (Arabisch, Schalter aus) eigene Aufnahme anhören und
- * selbst bewerten. Die Aufnahme bleibt im Speicher der
- * Seite: keine Anfrage außer GET, Wiedergabe über eine `blob:`-Adresse.
+ * selbst bewerten. Die Aufnahme bleibt im Speicher der Seite: keine Anfrage außer GET, Wiedergabe über eine `blob:`-Adresse.
  */
 async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woerter }: { erkennbar: boolean; woerter: number }) {
   await ueberschrift(page, t.sprechen.anweisung);
