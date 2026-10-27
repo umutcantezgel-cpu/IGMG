@@ -22,13 +22,15 @@ const symbol = 'size-6 stroke-weiss';
  * Lern-Hub /lernen (Erzählansicht, B-24): der große Lernweg Elifbe → Tajwid → Koran → Hifz → Kurse. Kurze Erklärtexte
  * ohne religiöse Aussagen; Hifz ohne eigene Seite (Plakette „Folgt bald“ bis zum Angebot der Gemeinde). Darunter die
  * Stationen der Lern-App „Sprachen lernen“ und „Wissen üben“ als einfache Links (ADR 0037 Nr. 9) in der passenden
- * Oberflächensprache (tr → tr, de und en → de); nur mit Schalter `lernapp` (aus: die Stationen verschwinden).
- * Vollständig statisch.
+ * Oberflächensprache (tr → tr, de und en → de); nur mit Schalter `lernapp` (aus: die Stationen verschwinden). Mit
+ * `lernapp_wissen_vorschau` (L3-E22) sagt die Station „Wissen üben“, dass der Kurs als ungeprüfter Entwurf zur Prüfung
+ * sichtbar ist – nicht „erst nach zwei Prüfungen“. Vollständig statisch.
  */
 export default async function LernenSeite() {
   const t = await getTranslations('lernen');
   const sprache = (await getLocale()) as Locale;
   const lernApp = (await funktionAn('lernapp')) ? `/lern-app/${sprache === 'tr' ? 'tr' : 'de'}` : null;
+  const wissenVorschau = await funktionAn('lernapp_wissen_vorschau');
   const tk = await getTranslations('kopf');
   const station = (nr: number) => t('station', { nr });
   const stationen: WegStation[] = [
@@ -108,7 +110,7 @@ export default async function LernenSeite() {
                 {
                   kennung: t('lernApp.kennung'),
                   titel: t('lernApp.wissenTitel'),
-                  text: t('lernApp.wissenText'),
+                  text: t(wissenVorschau ? 'lernApp.wissenTextVorschau' : 'lernApp.wissenText'),
                   adresse: `${lernApp}/islam`,
                   linkText: t('lernApp.wissenLink'),
                   zeichen: <BookOpenCheck aria-hidden className={symbol} />,

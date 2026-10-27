@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Abschnitt, Rechtsgliederung } from '@/components/website/rechtliches/Rechtstext';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { funktionAn } from '@/lib/funktionen';
 import { freigegebeneStimme } from '@/lib/lernapp/audio/stimmen';
 import { SPRACHEN } from '@/lib/lernapp/kurse';
 import { LIZENZTEXTE } from '@/lib/lernapp/lizenztexte';
@@ -112,10 +113,12 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
  * (z. B. /quellen#hadith). Belege in web/daten/<quelle>/QUELLE.md. Statisch. Lern-App (L8-03, ADR 0045 Nr. 15): Sprachdaten
  * mit Namensnennung, Bildkarten, Spracherkennung mit den Drittlizenzen von ONNX Runtime (Volltext vom eigenen Ursprung).
  * Sprachausgabe: vorgesehene Stimmen mit Herkunftskette; Sprachen ohne freigegebene Stimme aus `audio/stimmen.ts` (Stufe C).
- * Schriften mit dem OFL-Volltext, Bibliotheken samt libvips hinter sharp (Stufe C, Z-L17).
+ * Schriften mit dem OFL-Volltext, Bibliotheken samt libvips hinter sharp (Stufe C, Z-L17). Mit `lernapp_wissen_vorschau`
+ * (L3-E22) nennt der Stand-Kasten die Ausnahme: der Wissenskurs ist als ungeprüfter Entwurf zur Prüfung sichtbar.
  */
 export default async function QuellenSeite() {
   const t = await getTranslations('quellen');
+  const wissenVorschau = await funktionAn('lernapp_wissen_vorschau');
   // Sprachen der Lern-App ohne freigegebene Stimme (keine Stimme oder Hörabnahme LM-06 offen): dort „Audio folgt“ (Z-L21)
   const ohneStimme = SPRACHEN.filter((x) => !freigegebeneStimme(x));
   const aufzaehlung = new Intl.ListFormat(await getLocale(), { type: 'conjunction' });
@@ -131,7 +134,10 @@ export default async function QuellenSeite() {
             <Info aria-hidden className="mt-0.5 size-6 shrink-0 text-gruen-700" />
             <div className="flex flex-col gap-1">
               <p className="font-bold">{t('standTitel')}</p>
-              <p className="text-pretty text-tinte-2">{t('standText')}</p>
+              <p className="text-pretty text-tinte-2">
+                {t('standText')}
+                {wissenVorschau ? <span data-wissen-vorschau="quellen"> {t('standVorschau')}</span> : null}
+              </p>
             </div>
           </div>
         }

@@ -2,6 +2,8 @@ import { expect, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
+import lernen from '../../../messages/bereiche/lernen.json';
+import quellen from '../../../messages/bereiche/quellen.json';
 import e01 from '../../../inhalte/lernapp/islam/taharah/islam.grund.e01.json';
 import type { IslamEinheitDatei } from '../../../src/lib/lernapp/inhalt/schema';
 import { WISSENS_QUELLEN } from '../../../src/lib/lernapp/inhalt/wissen-quellen';
@@ -13,7 +15,8 @@ import { ernsteBefunde, liveRegion } from './hilfen';
  * ungeprüfter Entwurf gekennzeichnet – Startseite, Hinweis „Entwurf zur Prüfung“ auf der Kursseite (de, tr, ar), Marke an
  * der Einheit, Vermerk „Entwurf“ statt Prüfvermerk je Lektion, Hinweis über dem Spieler, Quellenzeile je Aufgabe. Gespielt wird
  * die echte Lektion `islam.grund.e01.l01` (Inhalte unverändert aus `inhalte/lernapp/islam`, KI-Regel 2); geantwortet wird ohne
- * Kenntnis der Lösung. axe ohne ernste Befunde.
+ * Kenntnis der Lösung. axe ohne ernste Befunde. Die Website außerhalb der Lern-App (/lernen in de, tr, en; /quellen) sagt mit
+ * Vorschau nicht mehr „erst nach zwei Prüfungen“, sondern nennt den Entwurf (Gegenprüfung Runde 1, Befund 1).
  */
 
 test.use({ serviceWorkers: 'block' });
@@ -112,3 +115,20 @@ for (const [ui, t] of [
     expect(await ernsteBefunde(page, `wissen-vorschau ${ui}`)).toEqual([]);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
   });
+
+test('Website /lernen (de, tr, en) und /quellen: Station „Wissen üben“ und Stand-Kasten nennen den Entwurf', async ({ page }) => {
+  for (const [pfad, sprache] of [
+    ['/lernen', 'de'],
+    ['/tr/ogren', 'tr'],
+    ['/en/learn', 'en'],
+  ] as const) {
+    await page.goto(pfad);
+    const texte = lernen[sprache].lernen.lernApp;
+    await expect(page.getByText(texte.wissenTextVorschau, { exact: true })).toBeVisible();
+    await expect(page.getByText(texte.wissenText, { exact: true })).toHaveCount(0);
+    await expect(page.locator(`main a[href="/lern-app/${sprache === 'tr' ? 'tr' : 'de'}/islam"]`)).toBeVisible();
+  }
+  await page.goto('/quellen');
+  await expect(page.locator('[data-wissen-vorschau="quellen"]')).toContainText(quellen.de.quellen.standVorschau);
+  expect(await ernsteBefunde(page, 'wissen-vorschau /quellen')).toEqual([]);
+});
