@@ -25,19 +25,22 @@ import { WISSENS_QUELLEN } from './wissen-quellen';
  * Import des Wissenskurses (`web/inhalte/lernapp/islam/<bereich>/<einheit>.json`, ADR 0040 Nr. 2/4/5, PLAN §6.7) in die
  * Tabellen, die der Paketbau liest (`server/queries/lernapp/wissen.ts`, Vertrag dort und in `wissen-vertrag.test.ts`):
  *
- * - Kurs `islam` (Art `wissen`, Inhalt Deutsch, aktiv), Abschnitt je Stufe (Reihenfolge wie `EIGENE_STUFEN`), Einheit (Thema,
- *   „Ich kann …“, Symbol), Lektion (`ziel.de` = Titel, „für Kinder geeignet“), Aussage (Text, Meinung, „strittig“, „für Kinder
- *   geeignet“, Herkunft), Beleg (`stelle.kitab` = Kapitel, Band, Seite, Passage, Zitatbereich, Art; Werk über
- *   `lernapp_quelle`), Quizfrage (`daten` = die Quizfrage der Datei ohne `schluessel`, `typ`, `aussage`, `quelle`, `lizenz`;
- *   `aussageId` = die Aussage mit dem Schlüssel `aussage` in derselben Einheit).
+ * - Kurs `islam` (Art `wissen`, Inhalt Deutsch, aktiv; nur neu angelegt – ein in der Datenbank abgeschalteter Kurs bleibt
+ *   aus wie im Sprach-Import, kein stilles Wiedereinschalten), Abschnitt je Stufe (Reihenfolge wie `EIGENE_STUFEN`),
+ *   Einheit (Thema, „Ich kann …“, Symbol), Lektion (`ziel.de` = Titel, „für Kinder geeignet“), Aussage (Text, Meinung,
+ *   „strittig“, „für Kinder geeignet“, Herkunft), Beleg (`stelle.kitab` = Kapitel, Band, Seite, Passage, Zitatbereich,
+ *   Art; Werk über `lernapp_quelle`), Quizfrage (`daten` = die Quizfrage der Datei ohne `schluessel`, `typ`, `aussage`,
+ *   `quelle`, `lizenz`; `aussageId` = die Aussage mit dem Schlüssel `aussage` in derselben Einheit).
  * - Quellen: eine Zeile je Werk (`kurz` = Registerschlüssel) mit Werk, Verfasser, Todesjahr und Version-URI aus
  *   `wissen-quellen.ts` (aus `daten/hanafi-quellen/QUELLE.md`) und der Ausgabe der Belege (je Werk einheitlich, sonst Abbruch).
  * - Idempotent wie der Sprach-Import (`import.ts`): SHA-256 je Datei (Stand in der Einstellung `lernapp_wissen_import`),
  *   `inhaltHash` je Baustein. Neu → angelegt mit dem Status der Datei (`entwurf`), ohne Prüfungen. Gleich → Status bleibt.
  *   Geändert → Felder, Hash und Status der Datei; Freigaben gelten nur ihrem Hash und zählen damit nicht mehr (KERN 4.0 §2.3).
  *   Menschlich geprüft → nie überschrieben, sondern als Konflikt vermerkt (Bericht und Stand).
- * - Belege haben keinen Schlüssel: je Aussage nach Hash abgeglichen – gleiche bleiben (ihre Bestätigung „am Original geprüft“
- *   gilt weiter), neue kommen dazu, fehlende entfallen.
+ * - Belege haben keinen Schlüssel: je Aussage nach Hash abgeglichen – gleiche bleiben (dieselbe Zeile), neue kommen dazu,
+ *   fehlende entfallen. Die Hashes der Belege gehen in den Hash ihrer Aussage ein: Ein neuer, geänderter oder entfallener
+ *   Beleg ändert die ausgelieferte Quellenzeile und ist damit eine Änderung der Aussage – ihre Freigaben zählen danach nicht
+ *   mehr (ADR 0040, Fortschreibung L3-E22 Nr. 2; Gegenprüfung Runde 1).
  * - Entfernt: Lektionen, Aussagen und Quizfragen, die in der Datei ihrer Einheit fehlen, und alles einer Einheit, deren Datei
  *   fehlt → `gesperrt` (nie sichtbar; zurück nur mit neuem Hash). Nur Einheiten aus Dateien bzw. aus dem Stand – andere
  *   Einheiten des Kurses (z. B. die Testeinheit `islam.grund.test`) bleiben unberührt.
@@ -300,7 +303,9 @@ async function importiereEinheit(l: Lauf, g: Gelesen, abschnitte: ReadonlyMap<st
   for (const lk of d.lektionen)
     for (const [j, a] of lk.aussagen.entries()) {
       const inhalt = { text: a.text, meinung: a.meinung ?? null, strittig: a.strittig, kinderGeeignet: a.kinderGeeignet };
-      const hash = inhaltHash({ schluessel: a.schluessel, ...inhalt });
+      // Belege als Menge (Reihenfolge der Datei ohne Bedeutung): jede Änderung an ihnen ist eine Änderung der Aussage
+      const belege = a.belege.map((b) => belegWerte(b).hash).sort();
+      const hash = inhaltHash({ schluessel: a.schluessel, ...inhalt, belege });
       const werte = { lektionId: lektionId.get(lk.schluessel)!, reihenfolge: j + 1, ...inhalt, quelle: a.quelle };
       const v = aussageVorher.get(a.schluessel);
       const e = entscheide(v, hash);
@@ -427,7 +432,8 @@ async function sichereKurs(tx: Transaktion, dateien: readonly Gelesen[]) {
   await tx
     .insert(schema.lernappKurs)
     .values({ id: 'islam', art: 'wissen', zielsprache: 'de', aktiv: true })
-    .onConflictDoUpdate({ target: schema.lernappKurs.id, set: { aktiv: true } });
+    // nur anlegen: ein abgeschalteter Kurs bleibt aus (wie `import.ts`), kein stilles Wiedereinschalten beim nächsten Bau
+    .onConflictDoNothing();
   const abschnitte = new Map<string, string>();
   for (const stufe of new Set(dateien.map((g) => g.d.stufe))) {
     await tx

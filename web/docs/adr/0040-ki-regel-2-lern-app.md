@@ -107,7 +107,9 @@
    unverändert, sobald der Schalter aus ist; vor dem öffentlichen Start ist er aus oder alles geprüft.
 2. **Import:** Die Inhaltsdateien `web/inhalte/lernapp/islam/**` kommen unverändert in die Datenbank
    (`inhalt/wissen-import.ts`), Status „Entwurf“, ohne Prüfungen; jede Änderung setzt die Freigaben des Bausteins zurück
-   (neuer Hash). Werk- und Verfassernamen stammen aus `web/daten/hanafi-quellen/QUELLE.md`.
+   (neuer Hash). Das gilt auch für die Belege: Ihre Hashes gehen in den Hash der Aussage ein, ein neuer, geänderter oder
+   entfallener Beleg ist eine Änderung der Aussage. Ein in der Datenbank abgeschalteter Kurs `islam` bleibt beim Import aus.
+   Werk- und Verfassernamen stammen aus `web/daten/hanafi-quellen/QUELLE.md`.
 
 ## Alternativen
 

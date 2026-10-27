@@ -410,12 +410,15 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   - Wissens-Import (`web/src/lib/lernapp/inhalt/wissen-import.ts`): alle 26 Dateien (146 Lektionen, 2.124 Aussagen, 4.603
     Belege, 1.041 Quizfragen) im Status „Entwurf“, ohne Prüfungen; läuft in jedem Bau nach dem Sprach-Import. Werk, Verfasser
     und Version-URI aus `web/daten/hanafi-quellen/QUELLE.md`. Koran- und Hadith-Verweise der Aussagen werden noch nicht
-    übernommen (keine Spalte).
+    übernommen (keine Spalte). Jede Änderung eines Bausteins setzt seine Freigaben zurück – auch ein neuer, geänderter oder
+    entfallener Beleg (die Belege gehen in den Hash der Aussage ein; Gegenprüfung Runde 1). Der Import legt den Kurs `islam`
+    nur an: Ist er in der Datenbank abgeschaltet, bleibt er aus.
   - Neuer Schalter `lernapp_wissen_vorschau` (ohne Personendaten, braucht `lernapp`), in der Produktion **an**
     (`IN_PRODUKTION_AN`). An: Lektionen ohne zwei Freigaben erscheinen als „Entwurf zur Prüfung“ (Hinweis auf Kurs-, Übungs-
     und Wiederholungsseite, Vermerk „Entwurf“ statt Prüfvermerk, Marke an der Einheit, Startseite); nie, wenn ein Baustein
     zurückgezogen ist, eine Person mit der Rolle Einwand erhoben hat oder ein Beleg fehlt. Geprüfte Lektionen tragen weiter den
-    Prüfvermerk. Aus: wieder allein die Sperre bis zu zwei Freigaben; offline gespeicherte Entwürfe verlassen die Geräte.
+    Prüfvermerk. Aus: wieder allein die Sperre bis zu zwei Freigaben; offline gespeicherte Entwürfe verlassen ein Gerät beim nächsten
+    Öffnen des Lernpfads „Islamisches Wissen“ mit Netz (leeres Verzeichnis → Aufräumen).
   - Das Startklar-Cockpit warnt in der Produktion, solange die Vorschau an ist.
 - **Vor dem öffentlichen Start:** `FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus` setzen und neu bereitstellen – oder alle Lektionen von
   zwei Gelehrten prüfen lassen (LM-03). Ohne Datenbank (Beispielmodus) können Imam und Hoca die Entwürfe nur ansehen, nicht

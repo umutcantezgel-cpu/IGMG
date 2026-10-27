@@ -12,10 +12,11 @@ import { verwaltungsUmgebung } from './hilfen/verwaltung';
 /**
  * Wissens-Import (`lib/lernapp/inhalt/wissen-import.ts`, ADR 0040 Nr. 2/4/5) mit allen echten Inhaltsdateien
  * `inhalte/lernapp/islam/**` gegen PGlite: Bestand und Abbildung wie im Vertrag (`queries/lernapp/wissen.ts`), Status
- * „Entwurf“ ohne Prüfungen, idempotent, eine Änderung setzt die Freigaben ihres Bausteins zurück (die Bestätigung eines
- * unveränderten Belegs bleibt), menschlich Geprüftes wird nie überschrieben, Entferntes gesperrt, Fremdeinheiten (Testeinheit
- * aus dem Seed) bleiben unberührt. Ohne zwei Freigaben liefert der Paketbau nichts davon aus. Änderungen an den Dateien nur an
- * Kennzeichen (strittig) und durch Weglassen – kein neuer religiöser Text (KI-Regel 2).
+ * „Entwurf“ ohne Prüfungen, idempotent, eine Änderung setzt die Freigaben ihres Bausteins zurück – auch ein entfallener
+ * oder neuer Beleg (unveränderte Belege bleiben dieselben Zeilen) –, menschlich Geprüftes wird nie überschrieben, Entferntes
+ * gesperrt, ein abgeschalteter Kurs bleibt aus, Fremdeinheiten (Testeinheit aus dem Seed) bleiben unberührt. Ohne zwei
+ * Freigaben liefert der Paketbau nichts davon aus. Änderungen an den Dateien nur an Kennzeichen (strittig), durch Weglassen
+ * und durch Umstellen von Belegen – kein neuer religiöser Text (KI-Regel 2).
  */
 const { client, db } = await verwaltungsUmgebung();
 const { importiereWissen } = await import('@/lib/lernapp/inhalt/wissen-import');
@@ -33,6 +34,7 @@ const ECHT = inhaltsdateien(undefined, ['islam']);
 const STAND = { standSchluessel: 'lernapp_wissen_test' };
 const E01 = 'islam/taharah/islam.grund.e01.json';
 /** Datei wie gespeichert (ohne die Standardwerte des Schemas, z. B. `strittig` fehlt statt `false`). */
+type Aussage = IslamEinheitDatei['lektionen'][number]['aussagen'][number];
 const datei = (pfad: string) => JSON.parse(ECHT.find((q) => q.pfad === pfad)!.text) as IslamEinheitDatei;
 /** Echte Quellen, eine Datei geändert (bzw. ohne die genannten Dateien). */
 const mit = (pfad: string, d: IslamEinheitDatei) => ECHT.map((q) => (q.pfad === pfad ? { ...q, text: JSON.stringify(d) } : q));
@@ -243,21 +245,38 @@ describe('Wissens-Import mit allen echten Inhaltsdateien', () => {
     expect(await version()).toBe(v);
   });
 
-  it('Änderung: neuer Hash, die zwei Freigaben zählen nicht mehr; unveränderte Belege und Aussagen behalten ihre Freigaben', async () => {
+  it('ein abgeschalteter Kurs bleibt aus: der Import legt ihn nur an und schaltet ihn nie still wieder ein', async () => {
+    const aktiv = async () =>
+      (await db.select({ a: schema.lernappKurs.aktiv }).from(schema.lernappKurs).where(eq(schema.lernappKurs.id, 'islam')))[0]?.a;
+    await db.update(schema.lernappKurs).set({ aktiv: false }).where(eq(schema.lernappKurs.id, 'islam'));
+    try {
+      expect(await importiereWissen(appDb, ECHT, { ...STAND, erzwingen: true })).toMatchObject({ uebersprungen: 0, geaendert: 0 });
+      expect(await aktiv()).toBe(false);
+    } finally {
+      await db.update(schema.lernappKurs).set({ aktiv: true }).where(eq(schema.lernappKurs.id, 'islam'));
+    }
+    expect(await aktiv()).toBe(true);
+  });
+
+  it('Änderung: neuer Hash, die zwei Freigaben zählen nicht mehr – auch bei einem entfallenen Beleg; Unverändertes behält sie', async () => {
     const d = datei(E01);
-    const [a, b, c] = [d.lektionen[0]!.aussagen[0]!, d.lektionen[0]!.aussagen[1]!, d.lektionen[0]!.aussagen[2]!];
+    const [a, b, c, u] = [0, 1, 2, 3].map((i) => d.lektionen[0]!.aussagen[i]!) as [Aussage, Aussage, Aussage, Aussage];
     const [p1, p2] = [await person(), await person()];
-    for (const wer of [p1, p2]) for (const s of [a, b, c]) await freigeben(wer, s.schluessel);
+    for (const wer of [p1, p2]) for (const s of [a, b, c, u]) await freigeben(wer, s.schluessel);
     const vorher = { a: await aussage(a.schluessel), belegeA: await belegeVon((await aussage(a.schluessel)).id) };
-    const belegeC = await belegeVon((await aussage(c.schluessel)).id);
-    for (const s of [a, b, c]) expect(await freigaben((await aussage(s.schluessel)).id), s.schluessel).toBe(2);
+    const cVorher = await aussage(c.schluessel);
+    const belegeC = await belegeVon(cVorher.id);
+    const uVorher = { aussage: await aussage(u.schluessel), belege: await belegeVon((await aussage(u.schluessel)).id) };
+    for (const s of [a, b, c, u]) expect(await freigaben((await aussage(s.schluessel)).id), s.schluessel).toBe(2);
     const v = await version();
-    // a: Kennzeichnung „strittig“ geändert; c: ein Beleg weniger
+    // a: Kennzeichnung „strittig“ geändert; c: ein Beleg weniger; u: Belege nur umgestellt (gleiche Menge, keine Änderung)
     const neu = structuredClone(d);
     neu.lektionen[0]!.aussagen[0]!.strittig = !a.strittig;
     const weg = neu.lektionen[0]!.aussagen[2]!.belege.pop()!;
+    expect(u.belege.length).toBeGreaterThan(1);
+    neu.lektionen[0]!.aussagen[3]!.belege.reverse();
     const r = await importiereWissen(appDb, mit(E01, neu), STAND);
-    expect(r).toMatchObject({ uebersprungen: 25, geaendert: 1, belegeEntfernt: 1, gesperrt: 0, konflikte: [], kurse: ['islam'] });
+    expect(r).toMatchObject({ uebersprungen: 25, geaendert: 2, belegeEntfernt: 1, gesperrt: 0, konflikte: [], kurse: ['islam'] });
     expect(await version()).toBe(v! + 1);
     const nachher = await aussage(a.schluessel);
     expect(nachher.inhaltHash).not.toBe(vorher.a.inhaltHash);
@@ -265,13 +284,22 @@ describe('Wissens-Import mit allen echten Inhaltsdateien', () => {
     expect(await freigaben(nachher.id)).toBe(0);
     // die Belege von a sind dieselben Zeilen (gleiche Kennung und gleicher Hash)
     expect(await belegeVon(nachher.id)).toEqual(vorher.belegeA);
-    // b unverändert: zählt weiter; c: der verbliebene Beleg ist bestätigt → zählt weiter, der entfallene ist weg
+    // b unverändert: zählt weiter
     expect(await freigaben((await aussage(b.schluessel)).id)).toBe(2);
-    const cNachher = await belegeVon((await aussage(c.schluessel)).id);
-    expect(cNachher).toHaveLength(belegeC.length - 1);
-    for (const x of cNachher) expect(belegeC).toContainEqual(x);
-    expect(await freigaben((await aussage(c.schluessel)).id)).toBe(2);
+    // c: ein Beleg weniger ändert die Quellenzeile → neuer Hash, die Freigaben zählen nicht mehr (ADR 0040, L3-E22 Nr. 2);
+    // die verbliebenen Belege sind dieselben Zeilen, der entfallene ist weg
+    const cNachher = await aussage(c.schluessel);
+    expect(cNachher).toMatchObject({ id: cVorher.id, status: 'entwurf', text: cVorher.text });
+    expect(cNachher.inhaltHash).not.toBe(cVorher.inhaltHash);
+    expect(await freigaben(cNachher.id)).toBe(0);
+    const cBelege = await belegeVon(cNachher.id);
+    expect(cBelege).toHaveLength(belegeC.length - 1);
+    for (const x of cBelege) expect(belegeC).toContainEqual(x);
     expect(weg.passage).toMatch(/\.ms\d+$/);
+    // u: andere Reihenfolge derselben Belege → gleicher Hash, dieselben Zeilen, die Freigaben zählen weiter
+    expect(await aussage(u.schluessel)).toMatchObject({ id: uVorher.aussage.id, inhaltHash: uVorher.aussage.inhaltHash });
+    expect(await belegeVon(uVorher.aussage.id)).toEqual(uVorher.belege);
+    expect(await freigaben(uVorher.aussage.id)).toBe(2);
   });
 
   it('menschlich geprüft: nie überschrieben, sondern als Konflikt vermerkt', async () => {
@@ -300,8 +328,10 @@ describe('Wissens-Import mit allen echten Inhaltsdateien', () => {
     const neu = { ...d, lektionen: d.lektionen.slice(0, -1) };
     const r = await importiereWissen(appDb, mit(E01, neu), STAND);
     expect(r.gesperrt).toBe(1 + letzte.aussagen.length + letzte.aufgaben.length);
-    // die übrigen Aussagen von e01 l01 tragen wieder den Stand der Datei (a geändert zurück, b gleich)
-    expect(r.geaendert).toBe(1);
+    // die übrigen Aussagen von e01 l01 tragen wieder den Stand der Datei (a und c – Beleg wieder da – geändert zurück, b gleich)
+    expect(r.geaendert).toBe(2);
+    const c = d.lektionen[0]!.aussagen[2]!;
+    expect(await belegeVon((await aussage(c.schluessel)).id)).toHaveLength(c.belege.length);
     const unter = (t: typeof schema.lernappAussage | typeof schema.lernappAufgabe | typeof schema.lernappLektion) =>
       and(like(t.schluessel, `${letzte.schluessel}%`), eq(t.status, 'gesperrt'));
     expect((await db.select().from(schema.lernappLektion).where(unter(schema.lernappLektion))).length).toBe(1);
