@@ -40,11 +40,13 @@ async function mitDatenbank<T>(arbeit: (c: pg.Client) => Promise<T>): Promise<T>
 }
 
 const H = (z: string) => z.repeat(64);
+// Schlüssel vor allen importierten Einheiten des Wissenskurses (islam.aufbau.e01 …): Die Warteschlange ordnet bei gleichem
+// Stand nach Schlüssel und zeigt 100 Zeilen je Seite – die Platzhalter-Lektion steht so auf Seite 1 (Wissens-Import, L3-E22)
 const S = {
-  einheit: 'islam.grund.e90',
-  lektion: 'islam.grund.e90.l01',
-  sicher: 'islam.grund.e90.l01.s01',
-  unsicher: 'islam.grund.e90.l01.s02',
+  einheit: 'islam.aufbau.e00',
+  lektion: 'islam.aufbau.e00.l01',
+  sicher: 'islam.aufbau.e00.l01.s01',
+  unsicher: 'islam.aufbau.e00.l01.s02',
 };
 const TEXT = { sicher: '[Aussage eins – Platzhalter]', unsicher: '[Aussage zwei – Platzhalter]' };
 
@@ -59,7 +61,7 @@ async function bausteineAnlegen(): Promise<{ sicher: string; unsicher: string }>
       `insert into lernapp_kurs (id, art, zielsprache, aktiv) values ('islam', 'wissen', 'de', true) on conflict (id) do nothing`,
     );
     const abschnitt = await id(
-      `insert into lernapp_abschnitt (kurs_id, stufe, reihenfolge) values ('islam', 'grund', 1)
+      `insert into lernapp_abschnitt (kurs_id, stufe, reihenfolge) values ('islam', 'aufbau', 2)
        on conflict on constraint lernapp_abschnitt_eindeutig do update set reihenfolge = excluded.reihenfolge returning id`,
       [],
     );

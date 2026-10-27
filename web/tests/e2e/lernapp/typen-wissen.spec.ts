@@ -14,8 +14,9 @@ import { bietePaketeAn, lektion } from './synthetisch';
  * selbst ausliefert. Dazu der Wissenskurs mit echten Paketen (Endabnahme Z-L02, Vorführpfad Station 6): die Testeinheit
  * `islam.grund.test` aus dem Seed (Testfreigaben zweier Prüfkonten, `drizzle/seeds/lernapp-test-wissen.ts`) im Lernpfad mit
  * Prüfvermerk ohne Namen und aufklappbarem Inhalt (alle Aussagen mit Quellenzeile), die Gegenprobe mit nur einer Freigabe
- * fehlt, die Lektion ist spielbar mit Quellenzeile, der inhaltlichen Frage von Zuordnen/Reihenfolge und der Kennzeichnung
- * „Strittiges Thema“.
+ * trägt nie einen Prüfvermerk (ohne Vorschau fehlt sie, mit der Vorschau `lernapp_wissen_vorschau` steht sie nur als
+ * „Entwurf“ da, L3-E22), die Lektion ist spielbar mit Quellenzeile, der inhaltlichen Frage von Zuordnen/Reihenfolge und der
+ * Kennzeichnung „Strittiges Thema“.
  */
 
 test.use({ serviceWorkers: 'block' });
@@ -339,8 +340,13 @@ test.describe('Wissenskurs mit echten Paketen (Testeinheit aus dem Seed, Vorfüh
     const link = page.locator(`main a[href="/lern-app/de/islam/ueben?l=${E}.l01"]`);
     await expect(link).toBeVisible();
     await expect(link).toContainText('[Testlektion Wissen – Platzhalter]');
-    // Gegenprobe: eine Aussage mit nur einer Freigabe → ihre Lektion ist nirgends
-    await expect(page.locator(`main a[href*="${E}.l02"]`)).toHaveCount(0);
+    // Gegenprobe: eine Aussage mit nur einer Freigabe → ihre Lektion trägt nie einen Prüfvermerk; ohne Vorschau ist sie
+    // nirgends, mit Vorschau (L3-E22, am Hinweis der Kursseite erkennbar) nur als Entwurf
+    await expect(page.locator(`[data-pruefvermerk="${E}.l02"]`)).toHaveCount(0);
+    if ((await page.locator('[data-wissen-entwurf="kurs"]').count()) > 0) {
+      await expect(page.locator(`[data-entwurf="${E}.l02"]`)).toContainText(t.lernpfad.entwurfVermerk);
+      await expect(page.locator(`[data-entwurf="${E}.l01"]`)).toHaveCount(0);
+    } else await expect(page.locator(`main a[href*="${E}.l02"]`)).toHaveCount(0);
     const vermerk = page.locator(`[data-pruefvermerk="${E}.l01"]`);
     await expect(vermerk).toContainText(t.lernpfad.pruefvermerk.split('{datum}')[0]!);
     await expect(vermerk).toContainText(t.lernpfad.fuerKinder);
