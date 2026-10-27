@@ -70,7 +70,20 @@ const istBuendelVerweis = (x: unknown) =>
   istGanz(x.bytes, 1);
 const istAudioListe = (x: unknown) => Array.isArray(x) && x.length <= 40 && x.every(istBuendelVerweis);
 
-const EINHEIT_FELDER = ['schluessel', 'stufe', 'reihenfolge', 'thema', 'symbol', 'hash', 'bytes', 'lektionen', 'hinweis', 'audio'];
+/** Felder einer Einheit im Verzeichnis wie `VerzeichnisEinheitSchema` (`vorschau`: Wissenskurs mit Vorschau, L3-E22). */
+const EINHEIT_FELDER = [
+  'schluessel',
+  'stufe',
+  'reihenfolge',
+  'thema',
+  'symbol',
+  'hash',
+  'bytes',
+  'lektionen',
+  'hinweis',
+  'audio',
+  'vorschau',
+];
 
 function istVerzeichnisEinheit(x: unknown): x is VerzeichnisEinheit {
   return (
@@ -86,7 +99,8 @@ function istVerzeichnisEinheit(x: unknown): x is VerzeichnisEinheit {
     istGanz(x.bytes, 1) &&
     istGanz(x.lektionen, 1) &&
     typeof x.hinweis === 'boolean' &&
-    istAudioListe(x.audio)
+    istAudioListe(x.audio) &&
+    (x.vorschau === undefined || x.vorschau === true)
   );
 }
 

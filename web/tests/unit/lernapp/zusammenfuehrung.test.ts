@@ -324,6 +324,10 @@ describe('Vorrat ohne Zod (Lernpfad im Budget): gleiche Entscheidung wie die Sch
     { ...VERZEICHNIS, einheiten: [{ ...e, audio: [{ adresse: '/fremd/a.lpa', bytes: 10 }] }] },
     { ...VERZEICHNIS, einheiten: [{ ...e, audio: [{ adresse: '/lern-app/audio/tr/a.lpa', bytes: 0 }] }] },
     { ...VERZEICHNIS, einheiten: [{ ...e, hinweis: 'ja' }] },
+    // Vorschau des Wissenskurses (L3-E22): nur `true` oder fehlend
+    { ...VERZEICHNIS, einheiten: [{ ...e, vorschau: true }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, vorschau: false }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, vorschau: 'ja' }] },
     null,
     [],
     'verzeichnis',

@@ -7,6 +7,7 @@ import {
   wissenSichtbar,
   wissenVorschauSichtbar,
 } from '@/lib/lernapp/freigabe';
+import { istPaketKopf, istVerzeichnis } from '@/lib/lernapp/lokal/vorrat';
 import { baueVerzeichnis } from '@/lib/lernapp/paket/bauen';
 import { sha256Hex } from '@/lib/lernapp/paket/hash';
 import { PaketSchema, VerzeichnisSchema } from '@/lib/lernapp/paket/typen';
@@ -126,6 +127,9 @@ describe('Paketbau mit und ohne Vorschau', () => {
       stufenFolge: ['grund', 'aufbau', 'vertiefung'],
     });
     expect(VerzeichnisSchema.parse(v).einheiten[0]).toMatchObject({ vorschau: true, hash: r.hash, lektionen: 1 });
+    // der Client (Lernpfad ohne Zod, `lokal/vorrat.ts`) nimmt Verzeichnis und Paketkopf mit Vorschau an
+    expect(istVerzeichnis(JSON.parse(JSON.stringify(v)))).toBe(true);
+    expect(istPaketKopf(JSON.parse(r.json))).toBe(true);
   });
 
   it('zwei Freigaben → Prüfvermerk ohne Entwurf, auch mit Vorschau; Paket dann ohne vorschau und byte-gleich', () => {
