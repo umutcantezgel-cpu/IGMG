@@ -62,6 +62,14 @@ Die Rangfolge steht in `BERICHT.md`, „Was nur Menschen tun können“. Das Wic
 9. **Aufräumen:** überzählige Vercel-Projekte (sie bauen dasselbe Repository nacheinander und verlängern jede Bereitstellung) und
    die gemergten Arbeitsbäume unter `.claude/worktrees/` entfernen lassen.
 
+## Nachtrag 27.10.2026 – Wissenskurs als Entwurf auf der Test-Domain (L3-E22)
+
+Auf Auftrag des Nutzers: Die 26 Einheiten des Wissenskurses werden im Bau importiert (Status „Entwurf“, ohne Prüfungen) und
+sind mit dem neuen Schalter `lernapp_wissen_vorschau` (in der Produktion an) als „Entwurf zur Prüfung“ gekennzeichnet
+erreichbar. Vor dem öffentlichen Start: Schalter aus (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`) oder alles von zwei Gelehrten
+geprüft (LM-03); das Cockpit warnt bis dahin. `lernapp_sprechen` bleibt aus (S-L3 N-4: erst Ratenregel). Einzelheiten:
+`ENTSCHEIDUNGEN.md` L3-E22, `GO-LIVE.md`.
+
 ## Zurückrollen
 
 `main` wird nur per Fast-Forward fortgeschrieben. Die Lern-App lässt sich ohne Codeänderung abschalten: `FUNKTION_LERNAPP=aus` in

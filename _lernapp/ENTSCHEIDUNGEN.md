@@ -401,3 +401,28 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   22:23:42 → 22:43:36), weil mehrere Vercel-Projekte und die Vorschau des Branches dasselbe Repository nacheinander bauen
   (Warteschlange, nicht Bauzeit); jede Messung ist eine Obergrenze, die kleinste zählt. Dazu lokal der Bau wie ein frischer
   Vercel-Import: 609 s. Z-L16 ist damit **erfüllt**; LM-38 bestätigt die Zahl im Dashboard und räumt überzählige Projekte auf.
+
+## L3-E22 · 2026-10-27 · Nutzer · Wissenskurs auf der Test-Domain als gekennzeichneter Entwurf (Fortschreibung von L3-E09)
+- **Auftrag (Nutzer, 27.10.2026, Plan freigegeben):** Den Wissenskurs auf `igmg-wetzlarer.vercel.app` erreichbar machen – deutlich
+  als ungeprüfter Entwurf gekennzeichnet; für den späteren öffentlichen Start bleibt die Sperre bis zu zwei Freigaben per
+  Schalter umkehrbar.
+- **Umsetzung (Branch `lernapp-wissen-vorschau`):**
+  - Wissens-Import (`web/src/lib/lernapp/inhalt/wissen-import.ts`): alle 26 Dateien (146 Lektionen, 2.124 Aussagen, 4.603
+    Belege, 1.041 Quizfragen) im Status „Entwurf“, ohne Prüfungen; läuft in jedem Bau nach dem Sprach-Import. Werk, Verfasser
+    und Version-URI aus `web/daten/hanafi-quellen/QUELLE.md`. Koran- und Hadith-Verweise der Aussagen werden noch nicht
+    übernommen (keine Spalte).
+  - Neuer Schalter `lernapp_wissen_vorschau` (ohne Personendaten, braucht `lernapp`), in der Produktion **an**
+    (`IN_PRODUKTION_AN`). An: Lektionen ohne zwei Freigaben erscheinen als „Entwurf zur Prüfung“ (Hinweis auf Kurs-, Übungs-
+    und Wiederholungsseite, Vermerk „Entwurf“ statt Prüfvermerk, Marke an der Einheit, Startseite); nie, wenn ein Baustein
+    zurückgezogen ist, eine Person mit der Rolle Einwand erhoben hat oder ein Beleg fehlt. Geprüfte Lektionen tragen weiter den
+    Prüfvermerk. Aus: wieder allein die Sperre bis zu zwei Freigaben; offline gespeicherte Entwürfe verlassen die Geräte.
+  - Das Startklar-Cockpit warnt in der Produktion, solange die Vorschau an ist.
+- **Vor dem öffentlichen Start:** `FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus` setzen und neu bereitstellen – oder alle Lektionen von
+  zwei Gelehrten prüfen lassen (LM-03). Ohne Datenbank (Beispielmodus) können Imam und Hoca die Entwürfe nur ansehen, nicht
+  freigeben (G1, G2).
+- **S-L3 M-1** (Frist „bevor Lektionen des Wissenskurses ausgeliefert werden“) ist erledigt (`a96939db`, Integrationstest
+  `web/tests/integration/lernapp-gruppe.test.ts` „S-L3 M-1“).
+- **Nicht umgesetzt (Teil E des Plans):** `lernapp_sprechen` bleibt aus. S-L3 N-4 verlangt vorher eine Ratenregel der
+  Vercel-Firewall für `/lern-app/modelle/*` (z. B. 20 Anfragen je 10 min und IP) oder eine Modell-Route mit Schalterprüfung;
+  die Firewall-Regel ist eine Änderung an der Produktion und wartet auf die Bestätigung des Nutzers.
+

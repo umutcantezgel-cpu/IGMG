@@ -253,6 +253,7 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
 
 - [ ] **G8 · Lern-App (`/lern-app`) Schalter für Schalter**
   - **Stand:** Seit 21.10.2026 an, ohne Personendaten (der Fortschritt bleibt auf dem Gerät); Abgleich, Gruppen, Bestenliste, Statistik und Erinnerungen sind aus. „Fehler melden“ (`lernapp_meldungen`) wirkt erst nach G1 (Datenbank, `ALTCHA_GEHEIMNIS`); bis dahin zeigt die Lern-App die Inhalte aus dem Bau.
+  - **Wissenskurs (seit 27.10.2026, L3-E22):** als gekennzeichneter „Entwurf zur Prüfung“ sichtbar (`lernapp_wissen_vorschau`). **Vor dem öffentlichen Start** `FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus` setzen und neu bereitstellen – oder alle Lektionen von zwei Gelehrten prüfen lassen (`_lernapp/MENSCHEN.md` LM-03). Das Startklar-Cockpit warnt, solange die Vorschau an ist.
   - **Liste:** `_lernapp/GO-LIVE.md` – je Schalter Stand, Voraussetzung, Auflagen der Sicherheitsprüfung S-L3 und wer freigibt; Handbücher `web/docs/handbuch/lernapp-*.md`.
   - **Abschalten:** `FUNKTION_LERNAPP=aus`, danach neu bereitstellen.
 

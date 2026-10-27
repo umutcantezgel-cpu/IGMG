@@ -180,6 +180,7 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
 |---|---|---|---|---|
 | `lernapp` | nein | an | an nach Abnahme (`IN_PRODUKTION_AN`); fortgeschrieben: an seit 21.10.2026 (L3-E12b) | – |
 | `lernapp_ungeprueft` (Einheiten ohne bestandene Muttersprachler-Stichprobe, mit Hinweis) | nein | an | an (Plan §6 ML-02, O-1) | – |
+| `lernapp_wissen_vorschau` (Wissenskurs als gekennzeichneter, ungeprüfter Entwurf) | nein | an | an seit 27.10.2026 (L3-E22); vor dem öffentlichen Start aus oder alles geprüft | Warnung im Cockpit, solange an |
 | `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07) | – |
 | `lernapp_meldungen` (anonym, Kategorien) | nein | an | an | – |
 | `lernapp_sync` | ja | an | aus | `konten` an, DSFA-Nachtrag (LM-08) |
@@ -193,6 +194,11 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
 Personendaten bleiben aus. „Ausgeschaltet heißt 404“ gilt für Seiten und Routen; für statische Dateien unter `/lern-app/`
 gilt bis auf Weiteres die AUSNAHME S-L3 N-4 (`GO-LIVE.md`): Beim Abschalten über die Umgebung liefert der Proxy unter
 `/lern-app/sw.js` den Abmelde-Worker, Modelle und Symbole bleiben abrufbar.
+
+*Fortschreibung 27.10.2026 (L3-E22, Nutzerauftrag):* `lernapp_wissen_vorschau` ist in der Produktion an. Lektionen des
+Wissenskurses ohne zwei Freigaben erscheinen dann als „Entwurf zur Prüfung“ (statt des Prüfvermerks; nie bei Rückzug, Einwand
+oder fehlendem Beleg). §2.3 („sichtbar erst nach zwei Freigaben“) gilt wieder uneingeschränkt, sobald der Schalter aus ist –
+spätestens vor dem öffentlichen Start, sofern nicht alles geprüft ist.
 
 ## 7. Oberfläche, Rechts-nach-links, Schriften
 - **Layout:** `web/src/app/lern-app/[ui]/layout.tsx` setzt `<html lang dir>`; `ar` → `dir="rtl"`. Texte in

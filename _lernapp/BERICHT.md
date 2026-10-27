@@ -47,7 +47,7 @@ Die Zahlen der Kurstabellen sind am 26.10.2026 um ≈ 09:05 UTC live nachgezähl
 | Wiederholen, Einstufung, Tipps | `…/<kurs>/wiederholen`, `…/einstufung`, `…/tipps` | fällige Karten nach Vergessenskurve (FSRS); Einstufungstest aus den Aufgaben der Einheiten (ohne Vorkurs); 242–263 Tipp-Karten je Richtung, die die beiden Sprachen vergleichen |
 | Fortschritt, Wortschatz, Einstellungen | `/lern-app/de/fortschritt`, `/wortschatz`, `/einstellungen` | Tagesziel (auch „kein Tagesziel“), Serie mit 0–3 Pausetagen je Woche und Ruhezeit bis 30 Tage im Jahr, Abzeichen; Hör- und Sprechübungen abschaltbar; Lernstand als Datei sichern und einlesen |
 | Quellen | `/lern-app/de/quellen`, `/quellen` | Namensnennung je Eintrag (Tatoeba, Wiktionary u. a.); Lerninhalte unter CC BY-SA 4.0 |
-| Wissen | `/lern-app/de/islam` | nur der Platzhalter „Jede Lektion erscheint erst, wenn zwei Gelehrte der Gemeinde sie geprüft haben“; das Kursverzeichnis ist leer |
+| Wissen | `/lern-app/de/islam` | *Nachtrag 27.10.2026 (L3-E22):* 26 Einheiten mit 146 Lektionen als „Entwurf zur Prüfung“ – Hinweis auf der Kursseite, Vermerk „Entwurf“ statt Prüfvermerk, Quellenzeile je Aussage; noch nicht von zwei Gelehrten geprüft. Vorher (26.10.): nur der Platzhalter „Jede Lektion erscheint erst, wenn zwei Gelehrte der Gemeinde sie geprüft haben“ |
 | Koran-Arabisch | `/lern-app/de/koran` | 40 Einheiten in Grund-, Aufbau- und Vertiefungsstufe. Die Wortformen kommen aus den gepinnten Tanzil-Daten. „Bedeutungen geprüft: 0 von …“, keine Übungen, keine Computerstimme |
 | Installieren | Manifest je Oberfläche, Service Worker `/lern-app/sw.js` | als App auf dem Telefon installierbar (PWA) |
 

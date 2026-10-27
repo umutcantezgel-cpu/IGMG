@@ -97,6 +97,18 @@
    - Bestätigen und ergänzen: religiöse Prüfung bzw. Redaktion (LM-09). Danach liegt die geprüfte Liste gepinnt in
      `web/daten/` (Ordnername: Entscheidung der Menschen).
 
+## Fortschreibung Vorschau des Wissenskurses (27.10.2026, `_lernapp/ENTSCHEIDUNGEN.md` L3-E22)
+
+1. **Nr. 5, Ausnahme auf Zeit per Schalter:** Mit `lernapp_wissen_vorschau` (ADR 0035, Fortschreibung Lern-App 3) liefert der
+   Paketbau Lektionen ohne zwei Freigaben als **Entwurf** aus (`paket/wissen.ts`, `freigabe.ts` `wissenVorschauSichtbar`):
+   Vermerk `entwurf: true` statt des Prüfvermerks, Paket und Verzeichnis `vorschau: true`, in der Oberfläche „Entwurf zur
+   Prüfung“ (keine geprüfte Lehrmeinung). Nie sichtbar bleiben zurückgezogene Bausteine, Bausteine mit Einwand einer Person
+   mit der Rolle zum aktuellen Hash, Aussagen ohne Beleg und Inhalte, die KI-Regel 2 sperrt. Die strenge Regel (Nr. 5) gilt
+   unverändert, sobald der Schalter aus ist; vor dem öffentlichen Start ist er aus oder alles geprüft.
+2. **Import:** Die Inhaltsdateien `web/inhalte/lernapp/islam/**` kommen unverändert in die Datenbank
+   (`inhalt/wissen-import.ts`), Status „Entwurf“, ohne Prüfungen; jede Änderung setzt die Freigaben des Bausteins zurück
+   (neuer Hash). Werk- und Verfassernamen stammen aus `web/daten/hanafi-quellen/QUELLE.md`.
+
 ## Alternativen
 
 - ADR 0030 unverändert, also kein KI-Entwurf im Wissenskurs: verworfen durch die Nutzerentscheidung. ≈ 1.400 Aussagen von Hand wären im Lauf nicht zu schaffen.
