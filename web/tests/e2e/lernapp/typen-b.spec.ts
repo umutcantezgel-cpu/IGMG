@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { expect, type Locator, type Page, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
+import { entscheide } from '../../../src/lib/funktionen-regeln';
 import { formatiere } from '../../../src/lib/lernapp/format';
 import { ernsteBefunde, ergebnisText, liveRegion } from './hilfen';
 import { MIKROFON } from './ton';
@@ -14,8 +15,10 @@ import { MIKROFON } from './ton';
  * `ar-aus-de`. axe ohne ernste oder kritische Befunde je Übungstyp auf beiden Breiten (seit Stufe C N9b auch auf dem Telefon).
  *
  * Sprechen: Mikrofon über das Testgerät von Chromium mit einer synthetischen Tonfolge (keine Sprache); die Spracherkennung
- * läuft im Testbau mit dem Attrappen-Worker (`E2E_ATTRAPPEN=1` beim Bau, `scripts/lernapp-modelle.mjs`) und nur mit dem
- * Schalter `FUNKTION_LERNAPP_SPRECHEN=an`; sonst prüft der Test den Weg ohne Sprachprüfung (eigene Aufnahme, Selbstvergleich).
+ * läuft im Testbau mit dem Attrappen-Worker (`E2E_ATTRAPPEN=1` beim Bau, `scripts/lernapp-modelle.mjs`). Der Schalter
+ * `lernapp_sprechen` ist seit L3-E23 (27.10.2026) auch in der Produktion standardmäßig an; der Test liest ihn wie der Bau
+ * (Umgebung, sonst Standard) und prüft nur bei `FUNKTION_LERNAPP_SPRECHEN=aus` den Weg ohne Angebot. Mit dem echten Worker
+ * (ohne Attrappe) wählt er „Ohne Sprachprüfung üben“ (kein Download von ≈ 95 MB im E2E).
  * Der Gerätecheck sieht ein ausreichendes Gerät (Arbeitsspeicher und freier Platz sind im Test festgelegt), damit der Ablauf
  * nicht vom Testrechner abhängt; der Rückfall bei zu wenig Speicher hat einen eigenen Test.
  *
@@ -36,9 +39,11 @@ const AR = {
 
 test.use(MIKROFON());
 
-const an = (w?: string) => ['an', 'true', '1'].includes((w ?? '').trim().toLowerCase());
-/** Spracherkennung im Testbau: Schalter an und der Attrappen-Worker liegt bereit (der echte Worker ist ≈ 690 KB). */
-const SCHALTER_SPRECHEN = an(process.env.FUNKTION_LERNAPP_SPRECHEN);
+/**
+ * Spracherkennung im Testbau: Schalter wie beim Bau entschieden (Umgebung, sonst Standard – in der Produktion an seit L3-E23;
+ * die Einstellung „funktionen“ setzt der E2E-Seed nicht) und der Attrappen-Worker liegt bereit (der echte ist ≈ 690 KB).
+ */
+const SCHALTER_SPRECHEN = entscheide('lernapp_sprechen', process.env, null);
 const ARBEITER = join(__dirname, '../../../public/lern-app/modelle/sprechen/whisper.worker.mjs');
 const ATTRAPPE = existsSync(ARBEITER) && statSync(ARBEITER).size < 100_000;
 
@@ -214,8 +219,19 @@ async function spureNach(page: Page, feld: Locator) {
 }
 
 /**
+ * Ohne Sprachprüfung weiter, wo der Test nicht der Erkennung gilt (de/tr, ausreichendes Gerät): Mit dem Schalter an
+ * (Standard seit L3-E23) erscheint das Angebot erst nach dem Gerätecheck – abwarten und „Ohne Sprachprüfung üben“ wählen
+ * statt nur zu klicken, wenn es zufällig schon da ist. Danach kein Download-Angebot mehr.
+ */
+async function ohneSprachpruefung(page: Page, art: Bedienung, t: Texte) {
+  if (SCHALTER_SPRECHEN) await druecke(page, art, page.getByRole('button', { name: t.sprechen.ohne, exact: true }));
+  await expect(page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true })).toHaveCount(0);
+}
+
+/**
  * Sprechen: Sprachprüfung laden (Attrappe), Probelauf, aufnehmen (Testmikrofon), Ergebnis nur als Markierung der Zielwörter;
- * ohne Erkennung (Arabisch, Schalter aus) eigene Aufnahme anhören und selbst bewerten. Die Aufnahme bleibt im Speicher der
+ * mit dem echten Worker „Ohne Sprachprüfung üben“; ohne Erkennung (Arabisch, Schalter aus) eigene Aufnahme anhören und
+ * selbst bewerten. Die Aufnahme bleibt im Speicher der
  * Seite: keine Anfrage außer GET, Wiedergabe über eine `blob:`-Adresse.
  */
 async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woerter }: { erkennbar: boolean; woerter: number }) {
@@ -235,9 +251,9 @@ async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woert
     await expect(page.getByText(t.sprechen.ladenText, { exact: true })).toBeVisible();
     await druecke(page, art, laden);
     await expect(liveRegion(page)).toHaveText(t.sprechen.bereit, { timeout: 20_000 });
-  } else if (erkennbar && SCHALTER_SPRECHEN) {
+  } else if (erkennbar) {
     // echter Worker im Bau: ohne Sprachprüfung weiter (kein Download von ≈ 95 MB im E2E)
-    await druecke(page, art, page.getByRole('button', { name: t.sprechen.ohne, exact: true }));
+    await ohneSprachpruefung(page, art, t);
   }
   await expect(laden).toHaveCount(0);
 
@@ -478,8 +494,7 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
     await pruefenUndWeiter(page, 'tastatur', t);
     await ueberschrift(page, t.sprechen.anweisung);
-    const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
-    if (await ohne.count()) await druecke(page, 'tastatur', ohne);
+    await ohneSprachpruefung(page, 'tastatur', t);
     const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
     await druecke(page, 'tastatur', aufnehmen);
     const stopp = page.getByRole('button', { name: t.sprechen.stopp, exact: true });
@@ -518,10 +533,7 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
       if (mitPruefung) {
         await druecke(page, 'tastatur', page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true }));
         await expect(liveRegion(page)).toHaveText(t.sprechen.bereit, { timeout: 20_000 });
-      } else {
-        const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
-        if (await ohne.count()) await druecke(page, 'tastatur', ohne);
-      }
+      } else await ohneSprachpruefung(page, 'tastatur', t);
       const grenze = formatiere(t.sprechen.grenze, { s: 15 }, 'de');
       const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
       // vorher: sichtbar unter dem Knopf und als seine Beschreibung

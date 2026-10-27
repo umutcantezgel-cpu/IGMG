@@ -4,6 +4,7 @@ import { expect, type Locator, type Page, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import { startFolge, verschiebe } from '../../../src/lib/lernapp/aufgaben/auswertung/reihenfolge';
+import { entscheide } from '../../../src/lib/funktionen-regeln';
 import type { AufgabeVon } from '../../../src/lib/lernapp/aufgaben/schema';
 import { formatiere } from '../../../src/lib/lernapp/format';
 import { ernsteBefunde, KURS, LEKTION_1, liveRegion, PAARE, testStation } from './hilfen';
@@ -392,10 +393,14 @@ test.describe('Tastaturwege je Typgruppe (nur Tab, Pfeile, Enter, Leertaste)', (
     await expect(page.getByRole('heading', { level: 2, name: t.sprechen.anweisung })).toBeVisible();
     const grenze = formatiere(t.sprechen.grenze, { s: 15 }, ui);
     await expect(page.getByText(grenze, { exact: true })).toBeVisible();
-    if (ui === 'de') {
+    // Spracherkennung an (Standard seit L3-E23, Schalter wie beim Bau): das Angebot erscheint erst nach dem Gerätecheck –
+    // abwarten und „Ohne Sprachprüfung üben“ per Tastatur wählen (kein Download im E2E)
+    if (ui === 'de' && entscheide('lernapp_sprechen', process.env, null)) {
       const ohne = w.knopf(t.sprechen.ohne);
-      if (await ohne.count()) await tabUndEnter(page, ohne, w.o('sprechen ohne Prüfung'));
+      await expect(ohne).toBeVisible();
+      await tabUndEnter(page, ohne, w.o('sprechen ohne Prüfung'));
     }
+    await expect(w.knopf(formatiere(t.sprechen.laden, { mb: 95 }, ui))).toHaveCount(0);
     const aufnehmen = w.knopf(t.sprechen.aufnehmen);
     await tabUndEnter(page, aufnehmen, w.o('aufnehmen'));
     // der Fokus springt auf „Aufnahme beenden“; die Ansage nennt die Höchstlänge

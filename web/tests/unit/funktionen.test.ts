@@ -12,7 +12,14 @@ const prod = { SITE_MODE: 'produktion', NODE_ENV: 'production' };
 describe('Funktionsschalter (ADR 0035)', () => {
   it('Produktion: ohne Angaben ist alles aus – außer den freigegebenen Funktionen ohne Personendaten', () => {
     for (const f of FUNKTIONEN) expect(entscheide(f, prod, null)).toBe(IN_PRODUKTION_AN.includes(f));
-    expect(IN_PRODUKTION_AN).toEqual(['hadith_gesamt', 'lernapp', 'lernapp_ungeprueft', 'lernapp_wissen_vorschau', 'lernapp_meldungen']);
+    expect(IN_PRODUKTION_AN).toEqual([
+      'hadith_gesamt',
+      'lernapp',
+      'lernapp_ungeprueft',
+      'lernapp_wissen_vorschau',
+      'lernapp_sprechen',
+      'lernapp_meldungen',
+    ]);
   });
 
   it('Funktionen mit Personendaten sind in der Produktion nie standardmäßig an', () => {
@@ -68,15 +75,14 @@ describe('Schalter der Lern-App (KERN 4.0 §6)', () => {
     expect(entscheideWirksam('lernapp_wissen_vorschau', { ...prod, FUNKTION_LERNAPP: 'aus' }, null)).toBe(false);
     expect(entscheideWirksam('lernapp_wissen_vorschau', { ...prod, FUNKTION_LERNAPP_WISSEN_VORSCHAU: 'aus' }, null)).toBe(false);
     expect(entscheideWirksam('lernapp_wissen_vorschau', prod, { lernapp_wissen_vorschau: false })).toBe(false);
-    // Sprechen bleibt aus (S-L3 N-4: erst eine Ratenregel für die Modelle)
-    for (const f of [
-      'lernapp_sprechen',
-      'lernapp_sync',
-      'lernapp_gruppen',
-      'lernapp_rangliste',
-      'lernapp_statistik',
-      'push_lernapp',
-    ] as const)
+    // Spracherkennung (Nutzer 27.10.2026, L3-E23): an, wirkt nur mit lernapp, per Umgebung oder Einstellung abschaltbar;
+    // den Schutz der Modelldateien (S-L3 N-4) setzt der Betreiber als Ratenregel der Firewall (LM-40)
+    expect(entscheideWirksam('lernapp_sprechen', prod, null)).toBe(true);
+    expect(entscheideWirksam('lernapp_sprechen', { ...prod, FUNKTION_LERNAPP: 'aus' }, null)).toBe(false);
+    expect(entscheideWirksam('lernapp_sprechen', { ...prod, FUNKTION_LERNAPP_SPRECHEN: 'aus' }, null)).toBe(false);
+    expect(entscheideWirksam('lernapp_sprechen', prod, { lernapp_sprechen: false })).toBe(false);
+    // Funktionen mit Personendaten bleiben aus
+    for (const f of ['lernapp_sync', 'lernapp_gruppen', 'lernapp_rangliste', 'lernapp_statistik', 'push_lernapp'] as const)
       expect(entscheideWirksam(f, { ...prod, FUNKTION_LERNAPP: 'an' }, null)).toBe(false);
   });
 

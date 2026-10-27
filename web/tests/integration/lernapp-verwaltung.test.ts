@@ -740,12 +740,13 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     expect(aus[0]!.meldung).toContain('Abmelde-Worker');
     const standard: { id: string; status: string; meldung: string }[] = [];
     await lernappPruefen(db as unknown as Datenbank, { SITE_MODE: 'produktion' }, true, new Date(), (p) => standard.push(p));
-    // Produktion ohne Angaben: die vier Schalter ohne Personendaten an (IN_PRODUKTION_AN), alle übrigen aus
+    // Produktion ohne Angaben: die fünf Schalter ohne Personendaten an (IN_PRODUKTION_AN, Sprechen seit L3-E23), alle
+    // übrigen aus
     expect(standard.find((p) => p.id === 'lernapp.schalter')).toMatchObject({
       status: 'ok',
       meldung:
         'Eingeschaltet: Lern-App, Einheiten vor der Stichprobe (mit Hinweis), Wissenskurs als ungeprüfter Entwurf (Vorschau), ' +
-        'Fehlermeldungen. Ausgeschaltet: Sprechübungen, Abgleich, Gruppen.',
+        'Fehlermeldungen, Sprechübungen. Ausgeschaltet: Abgleich, Gruppen.',
     });
   });
 

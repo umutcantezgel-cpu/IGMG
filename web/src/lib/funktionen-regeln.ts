@@ -42,12 +42,18 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  * Personendaten): Entscheidung des Nutzers vom 27.10.2026 (`_lernapp/ENTSCHEIDUNGEN.md` L3-E22). Vor dem öffentlichen Start
  * ausschalten (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`) – dann gilt wieder allein die Sperre bis zu zwei Freigaben; das
  * Startklar-Cockpit warnt, solange sie in der Produktion an ist.
+ * `lernapp_sprechen` (Spracherkennung im Browser für de/tr, ohne Personendaten: die Aufnahme bleibt im Arbeitsspeicher des
+ * Geräts, das Modell lädt erst auf Wunsch): Entscheidung des Nutzers vom 27.10.2026 (`_lernapp/ENTSCHEIDUNGEN.md` L3-E23).
+ * Den Schutz der Modelldateien vor Massenabrufen (S-L3 N-4) setzt der Betreiber als Ratenregel der Vercel-Firewall
+ * (`_lernapp/MENSCHEN.md` LM-40, `_lernapp/GO-LIVE.md` „Ausnahme N-4“); der Gerätetest LM-07 bleibt offen. Abschalten:
+ * `FUNKTION_LERNAPP_SPRECHEN=aus` und neu bauen (die Übungsseiten lesen den Schalter beim Bau).
  */
 export const IN_PRODUKTION_AN: readonly Funktion[] = [
   'hadith_gesamt',
   'lernapp',
   'lernapp_ungeprueft',
   'lernapp_wissen_vorschau',
+  'lernapp_sprechen',
   'lernapp_meldungen',
 ];
 
