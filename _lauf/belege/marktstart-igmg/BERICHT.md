@@ -42,8 +42,9 @@ Die Website der IGMG-Gemeinde Wetzlar (`web/`, Next.js 16.4, de/tr/en) geht an d
 | P4 Hadsch & Umra | `716f0ca` | Neue Seite mit Fristen, Programmen, Abflügen ab Frankfurt, Anmeldung, Unterlagen, Videos nach Klick, Fragen, Editor |
 | P7 Querverlinkung | `ff906ad` | Fußblock „IGMG-Netzwerk“, Hasene-Kasten, Fördermitgliedschaft, Ramadan-Begleiter, Kalender, Quellen, Wissensvideos als Link |
 | Nach dem Merge | `6bb4640` | `/igmg`: Zusatz der Kennzahl als eigenes `dd` (axe „definition-list“) |
-| Welle 3 Doku | `a034618`, `fa3edfc`, `db69e71` und der Commit mit diesem Bericht | TR-Begriff „Din İstişare Kurulu“, `neu-uebersetzt.json`, Datenschutz-Entwurf YouTube/Karte, Verarbeitungsverzeichnis, GO-LIVE, BETRIEB, ABWEICHUNGEN, Redaktionshandbuch § 12, ADR-Nachträge, MENSCHEN, STATUS |
-| Welle 3 Code | parallel (eigener Auftrag) | Stand-Migration `inhalte:marktstart` im Bau, `links:pruefen`, Startklar-Platzhalterprüfungen, längere Meta-Beschreibungen |
+| Welle 3 Doku | `93c1d66`, `aaf6f39`, `5f8b39a`, `9d9ee24`, Abgleich mit dem Code `8947452` | TR-Begriff „Din İstişare Kurulu“, `neu-uebersetzt.json`, Datenschutz-Entwurf YouTube/Karte, Verarbeitungsverzeichnis, GO-LIVE, BETRIEB, ABWEICHUNGEN, Redaktionshandbuch § 12, ADR-Nachträge, MENSCHEN, STATUS |
+| Welle 3 Code | `2ca8c11`, `c73485d`, `f1e056e`, `ecfa3f8`, `9988717` | Stand-Migration `inhalte:marktstart` im Bau (nach `inhalte-2026`), `links:pruefen`, Startklar-Platzhalterprüfungen und `auslieferung.meta-beschreibung`, längere Meta-Beschreibungen, Wissensinseln schlanker (Themenseiten 187,5 → 184,3 kB) |
+| Gegenprüfung | `b90a012`, `e3c124f`, `7f90a85` und Folgecommits | Befunde der unabhängigen Gegenprüfung behoben (Abschnitt 9), E-046 |
 
 ## 4 Was neu ist, Seite für Seite
 
@@ -77,7 +78,18 @@ Die Website der IGMG-Gemeinde Wetzlar (`web/`, Next.js 16.4, de/tr/en) geht an d
 | Zusammengeführt (`6bb4640`) | Unit 224 Dateien, 4.092 Tests; `sprachen:pruefen` grün; Integration vor P4/P7: 97 Dateien, 4.001 Tests |
 | Welle 3 Doku | Unit `inhalte-waechter`, `igmg-seed`, `wissen-entwuerfe` 37/37; `seiteninhalte-grenzen`, `inhalte-waechter`, `startklar-meilensteine` 45/45; Integration `startklar`, `inhalte-2026`, `verwaltung-seiteninhalte` 77/77; `sprachen:pruefen` 3.561 Schlüssel |
 
-**JavaScript beim ersten Laden** (gzip, Messung der Pakete, Grenze 180 kB): `/` 165,1 kB, `/gebetszeiten` 171,9 kB, `/hadsch-umra` 158,9 kB, `/igmg` 162,8 kB, `/islamisches-wissen` 179,1 kB, `/islamisches-wissen/fivestoesarz` **187,5 kB** (über der Grenze, schon vor P7 etwa 187,0 kB).
+**JavaScript beim ersten Laden** (gzip, Grenze 180 kB; Messung Welle 3 gegen den Ausgangsstand `9cb7e75`):
+
+| Seite | `9cb7e75` | vor Welle 3 | nach Welle 3 |
+| --- | --- | --- | --- |
+| `/` | 165,1 | 165,2 | 165,2 |
+| `/gebetszeiten` | 171,9 | 171,9 | 171,9 |
+| `/igmg` | 162,5 | 162,8 | 162,8 |
+| `/hadsch-umra` | – (neu) | 162,5 | 162,5 |
+| `/islamisches-wissen` | 178,5 | 179,1 | 177,4 |
+| Themenseiten `/islamisches-wissen/<thema>` | **186,8** | **187,5** | **184,3** |
+
+Die Themenseiten lagen schon vor dem Lauf über der Grenze (Bestand); Welle 3 hat den Zuwachs zurückgenommen und 2,5 kB darunter gespart (Marke, YouTube-Link und Leer-Grafik rendert der Server). Nächster Schritt wäre, die Dialoginhalte erst beim Öffnen zu laden.
 
 **Nicht gelaufen:** das volle `pnpm test:e2e` (braucht Docker mit Postgres 17 und Mailpit), Lighthouse (`pnpm messen`, kein passender Headless-Browser), die Videowiedergabe in einem echten Browser (nur per curl: alle fünf Videos `playableInEmbed`).
 
@@ -105,7 +117,7 @@ Alle in `_lauf/MENSCHEN.md` § 8; vor dem Livegang `web/docs/GO-LIVE.md` C6–C1
 ## 8 Risiken
 
 - **Gebetszeiten:** Ohne offiziellen Zugang (M-100) läuft kein Abgleich. Bis dahin gelten eingefügte Tabellen oder die Näherung. Sie ist nur an einem Monat kalibriert (Aachen, Oktober); Sommer und hohe Breiten sind nicht belegt. Gespeicherte Einstellungen ohne `rueckfall` rechnen jetzt mit der Näherung statt Turkey (bis 5 Minuten anders bei Yatsı).
-- **JS-Budget:** `/islamisches-wissen` hat noch 0,9 kB Luft, die Themenseiten liegen bei 187,5 kB über der Grenze.
+- **JS-Budget:** `/islamisches-wissen` hat 2,6 kB Luft; die Themenseiten liegen mit 184,3 kB über der Grenze (Bestand: 186,8 kB vor dem Lauf).
 - **Indexierung:** Die Schranke wirkt nur mit `VERCEL=1`; bei eigenem Hosting mit Docker wäre die Seite trotz Konzept-Hinweis indexierbar (ADR 0049).
 - **Beispielmodus:** Ohne Datenbank friert „Aus dem Dachverband“ auf dem Stand des Baus ein (datierte Überschrift). Gespeicherte Inhalte der Redaktion übernimmt die Stand-Migration nicht (`[Gründungsjahr]`, 1975 von Hand nachziehen).
 - **Externe Abhängigkeiten:** Ändert die IGMG das Feed-Format oder sperrt den Abruf, endet der Abgleich mit `fehler` (sichtbar über Startklar nach 14 Tagen). Hadsch-Termine und Broschüren-Pfade ändern sich jährlich; camiahaber.com antwortet Bots mit 403.
@@ -113,5 +125,4 @@ Alle in `_lauf/MENSCHEN.md` § 8; vor dem Livegang `web/docs/GO-LIVE.md` C6–C1
 - **Videos:** Wiedergabe über youtube-nocookie nur per curl belegt, nicht in einem echten Browser.
 - **Wissens-Vorschau:** Der Schalter zeigt jedes Thema „zur Prüfung“, auch Texte der Redaktion (gekennzeichnet, ohne „KI“). Die Verwaltungsliste zeigt solche Themen als „nicht öffentlich“.
 - **Begriffe:** Türkisch „Gelehrtenrat“ ist vereinheitlicht; Englisch („Religious Advisory Council“ / „council of scholars“) und „Ramadan-Begleiter“ sind noch uneinheitlich (M-102).
-- **Welle 3 Code parallel:** Doku beschreibt `pnpm inhalte:marktstart`, `pnpm links:pruefen` (Bericht unter `_lauf/belege/links/`) und den Aufruf im Vercel-Bau so, wie der Plan sie vorsieht; nach dem Zusammenführen gegen den Code abgleichen.
 - **Parallele Bauten:** Gleichzeitige `vercel-build`-Läufe ohne Datenbank teilen `/tmp/igmg-pglite-bau` und stören sich (BETRIEB § 8).
