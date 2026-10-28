@@ -1,6 +1,6 @@
 'use server';
 
-import { and, eq, lt } from 'drizzle-orm';
+import { and, eq, gt, isNull, lt } from 'drizzle-orm';
 import { APIError } from 'better-auth/api';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -232,6 +232,9 @@ const einladungSchema = z
   })
   .refine((d) => d.passwort === d.wiederholung, { path: ['wiederholung'], message: 'einladung.fehlerPasswortGleich' });
 
+/** Die Einladung wurde zwischen Laden und Annahme widerrufen, angenommen oder ist abgelaufen. */
+class EinladungNichtMehrGueltig extends Error {}
+
 export async function einladungAnnehmen(_vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
   const eingabe = einladungSchema.safeParse({
     token: daten.get('token'),
@@ -251,10 +254,28 @@ export async function einladungAnnehmen(_vorher: FormularZustand, daten: FormDat
   if (await begrenzt('einladung')) return { fehler: 'anmelden.zuViele' };
   const einladung = await ladeGueltigeEinladung(eingabe.data.token);
   if (!einladung) return { fehler: 'einladung.ungueltig' };
+  let neuesKonto: string | undefined;
   try {
     // Serverseitiger Aufruf ohne Request: der Registrierungs-Riegel (Hook) greift nur bei HTTP-Aufrufen.
     const r = await auth.api.signUpEmail({ body: { email: einladung.email, password: eingabe.data.passwort, name: einladung.name } });
+    neuesKonto = r.user.id;
     await db.transaction(async (tx) => {
+      // Erst die Einladung beanspruchen, solange sie gilt (nicht angenommen, nicht widerrufen, nicht abgelaufen), dann die
+      // Rollen vergeben: Ein Widerruf zwischen Laden und Annahme (Verwaltung oder Bau, E-047) gewinnt so immer – die
+      // Zeilensperre ordnet beide Schreibvorgänge nacheinander, und ohne beanspruchte Einladung gibt es keine Rolle.
+      const [beansprucht] = await tx
+        .update(schema.einladung)
+        .set({ angenommenAm: new Date() })
+        .where(
+          and(
+            eq(schema.einladung.id, einladung.id),
+            isNull(schema.einladung.angenommenAm),
+            isNull(schema.einladung.widerrufenAm),
+            gt(schema.einladung.laeuftAb, new Date()),
+          ),
+        )
+        .returning({ id: schema.einladung.id });
+      if (!beansprucht) throw new EinladungNichtMehrGueltig();
       await tx.update(schema.user).set({ emailVerified: true }).where(eq(schema.user.id, r.user.id));
       // Schutzrollen (leitung, kinderschutz) werden beantragt und erst nach Bestätigung durch eine zweite Person wirksam
       await vergibVerwaltungsrollen(tx, r.user.id, einladung.rollen, einladung.erstelltVon);
@@ -265,11 +286,17 @@ export async function einladungAnnehmen(_vorher: FormularZustand, daten: FormDat
           .values({ benutzerId: r.user.id, rolle, erstelltVon: einladung.erstelltVon })
           .onConflictDoNothing();
       }
-      await tx.update(schema.einladung).set({ angenommenAm: new Date() }).where(eq(schema.einladung.id, einladung.id));
       await protokolliere({ benutzerId: r.user.id, aktion: 'einladung.angenommen', zielTyp: 'einladung', zielId: einladung.id }, tx);
     });
-  } catch {
-    return { fehler: 'einladung.fehlerAllgemein' };
+  } catch (e) {
+    // Das eben angelegte Konto ohne Rollen nicht stehen lassen: Mit seiner Adresse ließe sich sonst keine neue Einladung
+    // mehr annehmen (die Registrierung scheitert an der vorhandenen Adresse).
+    if (neuesKonto)
+      await db
+        .delete(schema.user)
+        .where(eq(schema.user.id, neuesKonto))
+        .catch(() => undefined);
+    return { fehler: e instanceof EinladungNichtMehrGueltig ? 'einladung.ungueltig' : 'einladung.fehlerAllgemein' };
   }
   redirect('/verwaltung/anmelden?eingeladen=1');
 }
