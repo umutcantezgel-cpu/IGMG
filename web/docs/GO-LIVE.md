@@ -159,9 +159,9 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E; danach G (Gemeinde-Platt
   - **Ort:** Vercel-Bau (automatisch) oder Kommandozeile (Docker).
   - **Aufwand:** 5 Minuten.
   - **Wer:** Technik.
-  - **Was passiert:** `pnpm inhalte:marktstart` bringt die Beispielstände von IGMG, Über uns, Vorstand, den vier Organisationen, „Aus dem Dachverband“, „Hadsch & Umra“, die vier Wissens-Entwürfe und die Videos von IGMG Reisen in die Datenbank. Ersetzt werden nur Zeilen mit `istBeispiel = true`; fehlende Bereiche werden angelegt; ein zweiter Lauf ändert nichts (ADR 0019, Nachtrag 2026-10-28).
+  - **Was passiert:** `pnpm inhalte:marktstart` bringt die Beispielstände von IGMG, Über uns, Vorstand, den vier Organisationen, „Aus dem Dachverband“, „Hadsch & Umra“, den Entwurf der Datenschutzerklärung (C12), die vier Wissens-Entwürfe und die Videos von IGMG Reisen in die Datenbank. Ersetzt werden nur Zeilen mit `istBeispiel = true`; fehlende Bereiche werden angelegt; ein zweiter Lauf ändert nichts (ADR 0019, Nachtrag 2026-10-28).
   - **Auf Vercel:** läuft im Bau mit `DATABASE_URL` automatisch. **Docker:** nach dem Update einmal von Hand mit der `DATABASE_URL` der Produktion, danach `POST /api/wartung/cache-erneuern`.
-  - **Von Hand nachziehen:** Was die Redaktion schon gespeichert hat, bleibt unverändert, etwa `[Gründungsjahr]` oder „1975“ in einer gespeicherten Fassung von Über uns oder Vorstand.
+  - **Von Hand nachziehen:** Was die Redaktion schon gespeichert hat, bleibt unverändert, etwa `[Gründungsjahr]` oder „1975“ in einer gespeicherten Fassung von Über uns oder Vorstand. Die Wissens-Entwürfe legt die Migration nur an, wenn ihr Slug fehlt; ein vorhandener Entwurf behält seinen Text, etwa den alten Satz zur Fitra in „Zakat, Fitra, Fidya und Kurban“ vor E-046 (Verwaltung › Islamisches Wissen).
   - **Das siehst du, wenn es geklappt hat:** Das Bauprotokoll bzw. die Konsole nennt die Bereiche; `/igmg` zeigt „Stand Juni 2026“, `/ueber-uns` das Gründungsjahr 1978, `/hadsch-umra` die Abflüge.
 
 - [ ] **C10 · Probelauf des Dachverband-Abgleichs**
@@ -182,7 +182,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E; danach G (Gemeinde-Platt
   - **Ort:** Verwaltung › Seiteninhalte › Datenschutz; Entwurf im Seed `web/drizzle/seeds/bereiche/rechtliches.ts` (Abschnitt „Empfänger“: „Videos (Entwurf)“ und Prüfhinweis M-111); `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md` 2.6 und 2.7.
   - **Aufwand:** 30 Minuten, plus Rechtsberatung.
   - **Wer:** Vorstand mit Rechtsberatung (M-111, G-08).
-  - **Hinweis:** Bestehende Datenbanken bekommen den Entwurfsabsatz nicht über die Stand-Migration; die Technik überträgt ihn mit der geprüften Fassung in die Verwaltung. Die Karte erscheint erst mit bestätigten Koordinaten (M-010).
+  - **Hinweis:** Bestehende Datenbanken bekommen den Entwurf über die Stand-Migration (C9), solange „Datenschutz“ dort noch Beispielinhalt ist; eine in der Verwaltung gespeicherte Fassung bleibt unberührt, dort die Absätze zu Dritten, Videos und Cookies von Hand nachziehen. Der Entwurf und der Hinweis am Knopf „Video laden“ nennen auch, dass YouTube nach dem Klick Daten im Browser speichern kann (Cookies, lokaler Speicher). Die Karte erscheint erst mit bestätigten Koordinaten (M-010).
   - **Das siehst du, wenn es geklappt hat:** `/datenschutz` beschreibt Videos und Karte ohne Prüfhinweis in eckigen Klammern; erst danach kommen weitere Videos auf die Website. Einmal im echten Browser „Video laden“ auf `/hadsch-umra` testen.
 
 - [ ] **C13 · Links zum Netzwerk und Hadsch-Termine prüfen**

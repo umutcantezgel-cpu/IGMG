@@ -81,6 +81,7 @@ export const NETZWERK = {
   ehz: deutsch('https://eurohalal.eu'),
   kinderclub: tuerkisch('https://www.igmgcocuk.org'),
   perspektif: tuerkisch('https://perspektif.eu'),
+  // Online-Portal der Zeitung Camia (seit 2012, alle zwei Wochen; IGMG-Broschüre Juni 2026, S. 100)
   camiaHaber: tuerkisch('https://camiahaber.com'),
   sabahUlkesi: tuerkisch('https://www.sabahulkesi.com'),
 } as const satisfies Record<string, NetzwerkZiel>;
@@ -99,4 +100,31 @@ export function netzwerkZiel(schluessel: NetzwerkSchluessel, sprache: Locale): {
   const ziel: NetzwerkZiel = NETZWERK[schluessel];
   const zielSprache = ziel.zielSprache[sprache];
   return { href: ziel.url[sprache] ?? ziel.url.de, zielSprache, rueckfall: zielSprache !== sprache };
+}
+
+const vergleichbar = (adresse: string): string | null => {
+  try {
+    return new URL(adresse).href;
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * Sprache, in der eine gepflegte Adresse auf einer Seite der Sprache `sprache` gelesen wird, wenn sie im Verzeichnis
+ * steht – etwa Sabah Ülkesi (nur Türkisch), das auf der Strukturseite nur unter „de“ gespeichert ist. Zuerst wie
+ * `netzwerkZiel` für diese Sprache, sonst nach der Sprachfassung, unter der die Adresse steht. Vergleich nach URL-Norm
+ * (abschließendes „/“ der Startseite egal). null: nicht im Verzeichnis, der Aufrufer entscheidet wie bisher.
+ */
+export function netzwerkZielSprache(href: string, sprache: Locale): Locale | null {
+  const gesucht = vergleichbar(href);
+  if (!gesucht) return null;
+  for (const k of NETZWERK_SCHLUESSEL) {
+    const ziel = netzwerkZiel(k, sprache);
+    if (vergleichbar(ziel.href) === gesucht) return ziel.zielSprache;
+  }
+  for (const z of Object.values(NETZWERK) as NetzwerkZiel[])
+    for (const [fassung, adresse] of Object.entries(z.url) as [Locale, string][])
+      if (vergleichbar(adresse) === gesucht) return z.zielSprache[fassung];
+  return null;
 }

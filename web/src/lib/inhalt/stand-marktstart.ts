@@ -3,6 +3,7 @@ import { DACHVERBAND_BEISPIEL, DACHVERBAND_QUELLE } from '../../../drizzle/seeds
 import { HADSCH_UMRA_BEISPIEL, HADSCH_UMRA_QUELLE } from '../../../drizzle/seeds/bereiche/hadsch-umra';
 import { IGMG_BEISPIEL, IGMG_QUELLE } from '../../../drizzle/seeds/bereiche/igmg';
 import { ORGANISATIONEN_BEISPIEL } from '../../../drizzle/seeds/bereiche/organisationen';
+import { DATENSCHUTZ_BEISPIEL, DATENSCHUTZ_QUELLE } from '../../../drizzle/seeds/bereiche/rechtliches';
 import { UEBER_UNS_BEISPIEL, UEBER_UNS_QUELLE } from '../../../drizzle/seeds/bereiche/ueber-uns';
 import { VORSTAND_BEISPIEL, VORSTAND_QUELLE } from '../../../drizzle/seeds/bereiche/vorstand';
 import { VIDEOS_IGMG_REISEN } from '../../../drizzle/seeds/bereiche/wissen';
@@ -12,6 +13,7 @@ import { protokolliere } from '@/lib/audit';
 import type { Datenbank, Transaktion } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { schema as dachverbandSchema } from '@/lib/validierung/seiteninhalte/dachverband';
+import { schema as datenschutzSchema } from '@/lib/validierung/seiteninhalte/datenschutz';
 import { schema as hadschUmraSchema } from '@/lib/validierung/seiteninhalte/hadsch-umra';
 import { schema as igmgSchema } from '@/lib/validierung/seiteninhalte/igmg';
 import { schema as organisationSchema } from '@/lib/validierung/seiteninhalte/organisation';
@@ -24,7 +26,8 @@ import { stabil } from './stand-2026';
 /**
  * Inhaltsstand „Marktstart IGMG“ (Welle 3, E-044, Nachtrag ADR 0019): Die Pakete P1–P8 haben die Seeds von „igmg“,
  * „ueber-uns“, „vorstand“, den vier Organisationen sowie die neuen Bereiche „dachverband“ und „hadsch-umra“ auf belegte
- * Fakten gebracht (Gründungsjahr 1978, Broschüre Juni 2026; ohne die unbelegten Werte 518 und 350.000). Seeds laufen
+ * Fakten gebracht (Gründungsjahr 1978, Broschüre Juni 2026; ohne die unbelegten Werte 518 und 350.000); der Entwurf
+ * „datenschutz“ beschreibt Videos und Karte nach Klick (M-111, weiter mit Prüfhinweis). Seeds laufen
  * idempotent mit `onConflictDoNothing` – bestehende Datenbanken behielten den alten Beispielstand. Diese Migration bringt
  * **nur Beispielinhalte** (`ist_beispiel = true`) auf den Seed-Stand und legt fehlende Bereiche an (`seed-stand.ts`).
  * Redaktionell Gespeichertes bleibt unberührt; das gilt auch für „dachverband“, sobald der Hutba-Abgleich geschrieben hat
@@ -52,6 +55,8 @@ export function marktstartStaende(): SeedStand[] {
     })),
     { bereich: 'dachverband', inhalt: dachverbandSchema.parse(DACHVERBAND_BEISPIEL), quelle: DACHVERBAND_QUELLE },
     { bereich: 'hadsch-umra', inhalt: hadschUmraSchema.parse(HADSCH_UMRA_BEISPIEL), quelle: HADSCH_UMRA_QUELLE },
+    // Entwurf mit Videos und Karte nach Klick (M-111); eine gespeicherte, geprüfte Fassung bleibt unberührt
+    { bereich: 'datenschutz', inhalt: datenschutzSchema.parse(DATENSCHUTZ_BEISPIEL), quelle: DATENSCHUTZ_QUELLE },
   ];
 }
 

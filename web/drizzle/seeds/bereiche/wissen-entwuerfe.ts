@@ -301,7 +301,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
     },
     inhalt: {
       de: dokument('de', [
-        'Kurz gesagt: Zakat, Fitra, Fidya und Kurban sind Formen des Gebens, mit denen Muslime Bedürftige unterstützen. Die Zakat beträgt 2,5 Prozent auf Vermögen, das man seit einem Jahr besitzt. Die Fitra wird vor dem Ramadanfest gegeben, die Fidya ersetzt Fastentage, die jemand wegen Krankheit nicht nachholen kann, und das Kurban-Opfer gehört zum Kurbanfest. Spenden dafür nimmt Hasene International entgegen, die Hilfsorganisation, mit der die Islamische Gemeinschaft Millî Görüş (IGMG) weltweit hilft.',
+        'Kurz gesagt: Zakat, Fitra, Fidya und Kurban sind Formen des Gebens, mit denen Muslime Bedürftige unterstützen. Die Zakat beträgt 2,5 Prozent auf Vermögen, das man seit einem Jahr besitzt. Die Fitra wird vor dem Ramadanfest gegeben, die Fidya ersetzt Fastentage, die jemand wegen Krankheit nicht nachholen kann, und das Kurban-Opfer gehört zum Kurbanfest. Spenden dafür nimmt Hasene International entgegen, die Hilfsorganisation, mit der die Islamische Gemeinschaft Millî Görüş (IGMG) weltweit hilft. Die Fitra nimmt auch die Fatih-Moschee Wetzlar entgegen.',
         '### Was ist die Zakat?',
         'Die Zakat ist ein Gottesdienst mit dem eigenen Vermögen. Zu ihr verpflichtet ist, wer erwachsen und bei klarem Verstand ist und nach den religiösen Maßstäben als wohlhabend gilt. Ihr Satz beträgt 2,5 Prozent; er gilt für Vermögen, das man seit mindestens einem Jahr besitzt, samt dem Zuwachs in dieser Zeit.',
         'Wer die Zakat erhalten darf, ist genau geregelt: Die Empfängergruppen nennt der Koran in Sure Tawba (9), Vers 60, und die verlinkte Freitagspredigt der IGMG erläutert sie. Die IGMG rät, Zakat und Fitra über eine Organisation zu geben, damit die Verteilung nach den religiösen Vorgaben gesichert ist. Wie hoch die eigene Zakat ist, lässt sich mit dem {Zakat-Rechner von Hasene|zakatRechner} ermitteln.',
@@ -314,7 +314,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         '### Was ist Kurban?',
         'Kurban ist das Opfer zum Kurbanfest. Wer wohlhabend ist und nicht selbst auf dem Hadsch ist, schlachtet ein Opfertier und verteilt das Fleisch an Bedürftige, Freunde und Bekannte. Das Tier muss bestimmte Anforderungen an Alter und Gesundheit erfüllen; geopfert wird an festgelegten Tagen, die nach dem Festgebet am 10. Zulhidscha beginnen. Viele Muslime in Europa geben ihr Kurban als Spende, die Bedürftigen weltweit zugutekommt.',
         '### Wie spende ich Zakat, Fitra und Kurban?',
-        'Diese Spenden nimmt {Hasene International|hasene} entgegen. Wichtig: Sie gehen nicht an die Fatih-Moschee Wetzlar. Wer die Gemeinde in Wetzlar unterstützen möchte, findet die Möglichkeiten auf unserer {Spendenseite|/spenden}.',
+        'Zakat, Fitra und Kurban können Sie direkt bei {Hasene International|hasene} geben; was Sie dort spenden, geht an Hasene International. Die Fitra nimmt auch die Fatih-Moschee Wetzlar entgegen. Hinweise dazu stehen auf unserer {Ramadan-Seite|/ramadan}. Wie Sie der Gemeinde überweisen und sie auch sonst unterstützen können, steht auf unserer {Spendenseite|/spenden}.',
         '### Quellen',
         '- {Freitagspredigt: Wer zahlt die Zakat und die Fitra-Abgabe? (2014)|hutbaZakatFitra}',
         '- {Freitagspredigt: Kurban und das Kurbanfest (2013)|hutbaKurban}',
@@ -324,7 +324,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         'Stand der Quellen: 13. Oktober 2026 (Hasene: 27. Oktober 2026).',
       ]),
       tr: dokument('tr', [
-        'Kısaca: Zekât, fitre, fidye ve kurban, Müslümanların ihtiyaç sahiplerine destek olduğu verme biçimleridir. Zekât, bir yıldır sahip olunan malın yüzde 2,5’idir. Fitre Ramazan Bayramı’ndan önce verilir; fidye, hastalık nedeniyle kaza edilemeyen oruçların yerine geçer; kurban ise Kurban Bayramı’na aittir. Bu bağışları, İslam Toplumu Millî Görüş’ün (IGMG) dünya çapında yardım ettiği insani yardım kuruluşu Hasene International kabul eder.',
+        'Kısaca: Zekât, fitre, fidye ve kurban, Müslümanların ihtiyaç sahiplerine destek olduğu verme biçimleridir. Zekât, bir yıldır sahip olunan malın yüzde 2,5’idir. Fitre Ramazan Bayramı’ndan önce verilir; fidye, hastalık nedeniyle kaza edilemeyen oruçların yerine geçer; kurban ise Kurban Bayramı’na aittir. Bu bağışları, İslam Toplumu Millî Görüş’ün (IGMG) dünya çapında yardım ettiği insani yardım kuruluşu Hasene International kabul eder. Fitreyi Wetzlar Fatih Camii de kabul eder.',
         '### Zekât nedir?',
         'Zekât, mal ile yapılan bir ibadettir. Ergin ve akıllı olup dinî ölçülere göre zengin sayılan kişiye farzdır. Oranı yüzde 2,5’tir; en az bir yıldır sahip olunan mal ile bu süre içindeki artışı için verilir.',
         'Zekâtın kimlere verilebileceği açıkça belirlenmiştir: Zekât alabilecek grupları Kur’an, Tevbe suresinin (9) 60. ayetinde sayar; IGMG’nin bağlantısı verilen cuma hutbesi bu grupları açıklar. IGMG, dağıtımın dinî esaslara uygun yapılması için zekât ve fitrenin bir kuruluş aracılığıyla verilmesini tavsiye eder. Kendi zekâtınızı {Hasene’nin zekât hesaplayıcısıyla (Almanca)|zakatRechner} hesaplayabilirsiniz.',
@@ -337,7 +337,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         '### Kurban nedir?',
         'Kurban, Kurban Bayramı’nda kesilen hayvandır. Varlıklı olup o yıl hacda bulunmayan Müslüman bir kurban keser ve etini ihtiyaç sahipleri, dostları ve tanıdıklarıyla paylaşır. Hayvanın yaş ve sağlık bakımından belirli şartları taşıması gerekir; kurban, 10 Zilhicce’deki bayram namazından sonra başlayan belirli günlerde kesilir. Avrupa’daki pek çok Müslüman kurbanını bağış olarak verir ve böylece dünyanın dört bir yanındaki ihtiyaç sahiplerine ulaştırır.',
         '### Zekât, fitre ve kurban bağışını nasıl yapabilirim?',
-        'Bu bağışları {Hasene International (Almanca)|hasene} kabul eder. Önemli: Bu bağışlar Wetzlar Fatih Camii’ne gitmez. Wetzlar’daki cemaatimizi desteklemek isteyenler yollarını {bağış sayfamızda|/tr/bagis} bulabilir.',
+        'Zekât, fitre ve kurbanınızı doğrudan {Hasene International’a (Almanca)|hasene} verebilirsiniz; orada yaptığınız bağışlar Hasene International’a gider. Fitreyi Wetzlar Fatih Camii de kabul eder. Bununla ilgili bilgiler {Ramazan sayfamızda|/tr/ramazan} yer alır. Cemaatimize nasıl havale yapabileceğinizi ve onu başka hangi yollarla destekleyebileceğinizi {bağış sayfamızda|/tr/bagis} bulabilirsiniz.',
         '### Kaynaklar',
         '- {Cuma hutbesi: Zekâtı ve fitreyi kim verir? (Almanca, 2014)|hutbaZakatFitra}',
         '- {Cuma hutbesi: Kurban ve Kurban Bayramı (Almanca, 2013)|hutbaKurban}',
@@ -347,7 +347,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         'Kaynakların durumu: 13 Ekim 2026 (Hasene: 27 Ekim 2026).',
       ]),
       en: dokument('en', [
-        'In short: Zakat, Fitra, Fidya and Qurban are forms of giving through which Muslims support people in need. Zakat amounts to 2.5 percent of wealth that has been owned for a year. Fitra is given before Eid al-Fitr, Fidya replaces fasting days that someone cannot make up because of illness, and the Qurban sacrifice belongs to Eid al-Adha. Donations for all of these are accepted by Hasene International, the aid organisation through which the Islamic Community Millî Görüş (IGMG) helps worldwide.',
+        'In short: Zakat, Fitra, Fidya and Qurban are forms of giving through which Muslims support people in need. Zakat amounts to 2.5 percent of wealth that has been owned for a year. Fitra is given before Eid al-Fitr, Fidya replaces fasting days that someone cannot make up because of illness, and the Qurban sacrifice belongs to Eid al-Adha. Donations for all of these are accepted by Hasene International, the aid organisation through which the Islamic Community Millî Görüş (IGMG) helps worldwide. Fitra is also accepted by Fatih Mosque Wetzlar.',
         '### What is Zakat?',
         'Zakat is an act of worship performed with one’s wealth. It is obligatory for anyone who is adult, of sound mind and wealthy by religious standards. The rate is 2.5 percent and applies to wealth owned for at least one year, including what it has grown by in that time.',
         'Who may receive Zakat is clearly defined: the Quran names the groups of recipients in Surah at-Tawbah (9), verse 60, and the linked IGMG Friday sermon explains them. IGMG advises giving Zakat and Fitra through an organisation so that distribution follows the religious rules. You can work out your own Zakat with the {Hasene Zakat calculator (in German)|zakatRechner}.',
@@ -360,7 +360,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         '### What is Qurban?',
         'Qurban is the sacrifice at Eid al-Adha. Muslims who are well off and are not on Hajj themselves sacrifice an animal and share the meat with people in need, friends and acquaintances. The animal must meet certain requirements of age and health, and the sacrifice takes place on set days that begin after the Eid prayer on 10 Dhul Hijjah. Many Muslims in Europe give their Qurban as a donation that reaches people in need worldwide.',
         '### How do I donate Zakat, Fitra and Qurban?',
-        'These donations are accepted by {Hasene International (in German)|hasene}. Please note: they do not go to Fatih Mosque Wetzlar. If you would like to support the community in Wetzlar, you will find the ways to do so on our {donations page|/en/donate}.',
+        'You can give Zakat, Fitra and Qurban directly to {Hasene International (in German)|hasene}; what you donate there goes to Hasene International. Fitra is also accepted by Fatih Mosque Wetzlar. You will find details on our {Ramadan page|/en/ramadan}. How to make a transfer to the community and other ways to support it are explained on our {donations page|/en/donate}.',
         '### Sources',
         '- {Friday sermon: Who pays Zakat and Fitra? (in German, 2014)|hutbaZakatFitra}',
         '- {Friday sermon: Qurban and Eid al-Adha (in German, 2013)|hutbaKurban}',

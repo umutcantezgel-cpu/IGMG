@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * (Prüfziffer) ein ehrlicher Platzhalter und kein QR-Code. Statisch; Änderungen in der Verwaltung erneuern den Tag
  * „einstellungen“. Unter beiden Zweigen (auch ohne IBAN) der Kasten „Weltweit helfen mit Hasene“ mit der Erklärung zu Zakat,
  * Fitra und Kurban (Plan Marktstart P7): Spenden an den Dachverband, ausdrücklich nicht an die Gemeinde – ohne GiroCode und
- * ohne Feld in der Einstellung.
+ * ohne Feld in der Einstellung; die Fitra nimmt zusätzlich auch die Gemeinde entgegen (E-046 Nr. 1).
  */
 export default async function SpendenSeite() {
   const sprache = (await getLocale()) as Locale;

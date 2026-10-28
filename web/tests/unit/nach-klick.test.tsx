@@ -3,6 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { NachKlick } from '@/components/website/einbettung/NachKlick';
 import { KarteNachKlick } from '@/components/website/kontakt/KarteNachKlick';
 import { youtubeEinbettung, youtubeLink } from '@/lib/einbettung/youtube';
+import { DATENSCHUTZ_BEISPIEL } from '../../drizzle/seeds/bereiche/rechtliches';
+import einbettung from '../../messages/bereiche/einbettung.json';
 
 /**
  * Einbettung nach Klick (K-14, Plan Marktstart): Vor dem Klick steht nur der Platzhalter vom Server mit Ladeknopf und
@@ -67,5 +69,58 @@ describe('KarteNachKlick als Hülle', () => {
 
   it('behält die Fläche der Anfahrt (Mindesthöhe, füllt die Spalte)', () => {
     expect(html).toMatch(/class="[^"]*min-h-85[^"]*flex-1/);
+  });
+});
+
+describe('Texte zur Datenübertragung: was erst nach dem Klick geschieht (YouTube, M-111)', () => {
+  it('Klick-Hinweis je Sprache: IP-Adresse und Herkunft, danach Speicherung im Browser und Nutzungsdaten, vorher nichts', () => {
+    const MUSTER = {
+      de: [
+        /IP-Adresse/,
+        /Adresse dieser Website/,
+        /Cookies/,
+        /lokalen Speicher/,
+        /wie Sie das Video nutzen/,
+        /Vor dem Klick fließen keine Daten/,
+      ],
+      tr: [
+        /IP adresiniz/,
+        /bu web sitesinin adresi/,
+        /çerez/,
+        /yerel depolama/,
+        /videoyu nasıl kullandığınız/,
+        /Tıklamadan önce hiçbir veri/,
+      ],
+      en: [
+        /IP address/,
+        /address of this website/,
+        /cookies/,
+        /local storage/,
+        /how you use the video/,
+        /No data is sent before you click/,
+      ],
+    } as const;
+    for (const s of ['de', 'tr', 'en'] as const)
+      for (const m of MUSTER[s]) expect(einbettung[s].einbettung.video.hinweis, `${s} ${m}`).toMatch(m);
+  });
+
+  it('Datenschutz-Entwurf: „keine Inhalte von Dritten“ und „keine Cookies“ gelten nur ohne Klick; Videos mit Speicherung im Browser', () => {
+    const absaetze = (abschnitt: 'empfaenger' | 'browser') =>
+      (DATENSCHUTZ_BEISPIEL[abschnitt] ?? []).flatMap((b) => (b.art === 'absatz' ? [b.text.de] : []));
+    const empfaenger = absaetze('empfaenger');
+    const browser = absaetze('browser');
+    const dritte = empfaenger.find((t) => t.includes('keine Inhalte von Dritten'));
+    expect(dritte).toMatch(/^Ohne Ihren Klick laden die öffentlichen Seiten keine Inhalte von Dritten\./);
+    expect(dritte).toMatch(/„Karte“ und „Videos“/);
+    const video = empfaenger.find((t) => t.startsWith('Videos (Entwurf):'));
+    expect(video).toMatch(/Nach dem Klick kann YouTube \(Google\) Daten in Ihrem Browser speichern/);
+    expect(video).toMatch(/Cookies/);
+    expect(video).toMatch(/lokalen Speicher/);
+    expect(video).toMatch(/\[[^\]]*Rechtsberatung\]/);
+    const cookies = browser.find((t) => t.includes('keine Cookies'));
+    expect(cookies).toMatch(/^Auf den öffentlichen Seiten setzt die Website selbst keine Cookies\./);
+    expect(cookies).toMatch(/Video/);
+    // weiter als Entwurf gekennzeichnet, mit Prüfhinweis (M-111, G-08)
+    expect(empfaenger.some((t) => t.startsWith('[Hinweis für die Prüfung (ENTWURF, M-111)'))).toBe(true);
   });
 });

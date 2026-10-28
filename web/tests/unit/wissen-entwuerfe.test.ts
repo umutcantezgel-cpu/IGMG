@@ -246,6 +246,33 @@ describe('Seed-Wächter: die vier KI-Entwürfe', () => {
       }
   });
 
+  it('Fitra (E-046 Nr. 1): direkt bei Hasene oder bei der Gemeinde – kein pauschales „nicht an die Moschee“, nichts zur Weitergabe', () => {
+    const e = WISSEN_ENTWUERFE.find((x) => x.slug === 'zakat-fitra-qurban')!;
+    const PAUSCHAL: Record<Sprache, RegExp> = { de: /nicht an die Fatih-Moschee/i, tr: /Camii’ne gitmez/i, en: /not go to Fatih Mosque/i };
+    const GEMEINDE: Record<Sprache, RegExp> = {
+      de: /Die Fitra nimmt auch die Fatih-Moschee Wetzlar entgegen\./,
+      tr: /Fitreyi Wetzlar Fatih Camii de kabul eder\./,
+      en: /Fitra is also accepted by Fatih Mosque Wetzlar\./,
+    };
+    // Ob und wie die Gemeinde weiterleitet, ist ein Menschen-Punkt (G-05) und steht nicht im Text
+    const WEITERGABE: Record<Sprache, RegExp> = {
+      de: /weiterleit|leitet\b.*\bweiter/i,
+      tr: /iletir|aktarır|aktarıl/i,
+      en: /forward|pass(es|ed)? on/i,
+    };
+    for (const s of SPRACHEN) {
+      const t = klartext(e.inhalt[s]!);
+      expect(t, s).not.toMatch(PAUSCHAL[s]);
+      expect(t, s).toMatch(GEMEINDE[s]);
+      expect(t, s).not.toMatch(WEITERGABE[s]);
+      // Kurzantwort und Abschnitt „Wie spende ich …?“ nennen beide Wege
+      expect(text(bloecke(e.inhalt[s]!)[0]!), s).toMatch(GEMEINDE[s]);
+      const hrefs = links(e.inhalt[s]!).map((l) => l.href);
+      for (const pfad of ['/ramadan', '/spenden'] as const) expect(hrefs, `${s} ${pfad}`).toContain(pfadFuer(pfad, s));
+      expect(hrefs, s).toContain(netzwerkZiel('hasene', s).href);
+    }
+  });
+
   it('keine Beträge (Fitra, Fidya, Zakat gibt die IGMG bekannt) und keine Mobilnummern (G-04)', () => {
     for (const s of SPRACHEN)
       for (const t of alleTexte(s)) {

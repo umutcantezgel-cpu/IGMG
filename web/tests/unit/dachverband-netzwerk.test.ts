@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { ERLAUBTE_HOSTS, NETZWERK, NETZWERK_SCHLUESSEL, NETZWERK_STAND, netzwerkZiel, type NetzwerkZiel } from '@/lib/dachverband/netzwerk';
+import {
+  ERLAUBTE_HOSTS,
+  NETZWERK,
+  NETZWERK_SCHLUESSEL,
+  NETZWERK_STAND,
+  netzwerkZiel,
+  netzwerkZielSprache,
+  type NetzwerkZiel,
+} from '@/lib/dachverband/netzwerk';
 import texte from '../../messages/bereiche/dachverband.json';
 
 /**
@@ -73,6 +81,24 @@ describe('IGMG-Netzwerk', () => {
     for (const s of SPRACHEN) expect(netzwerkZiel('ramazanYoldasim', s).rueckfall).toBe(false);
   });
 
+  it('netzwerkZielSprache: Sprache einer gepflegten Adresse aus dem Verzeichnis, sonst null', () => {
+    // Sabah Ülkesi nur auf Türkisch – auch ohne bzw. mit abschließendem „/“
+    for (const s of SPRACHEN) {
+      expect(netzwerkZielSprache('https://www.sabahulkesi.com', s), s).toBe('tr');
+      expect(netzwerkZielSprache('https://www.sabahulkesi.com/', s), s).toBe('tr');
+    }
+    // eigene Fassungen und Rückfall wie netzwerkZiel
+    expect(netzwerkZielSprache('https://www.igmgreisen.com/', 'tr')).toBe('tr');
+    expect(netzwerkZielSprache('https://www.igmgreisen.com/de/', 'en')).toBe('de');
+    expect(netzwerkZielSprache('https://www.hasene.org/de/', 'tr')).toBe('de');
+    expect(netzwerkZielSprache('https://www.igmg.org/ramazan-yoldasim/', 'en')).toBe('en');
+    // türkische Fassung auf einer deutschen Seite: Sprache der Fassung
+    expect(netzwerkZielSprache('https://www.igmgreisen.com/', 'de')).toBe('tr');
+    // nicht im Verzeichnis oder keine Adresse
+    expect(netzwerkZielSprache('https://verein.example/', 'de')).toBeNull();
+    expect(netzwerkZielSprache('keine adresse', 'de')).toBeNull();
+  });
+
   it('jedes Ziel hat Titel und Kurzbeschreibung in de, tr und en (messages/bereiche/dachverband.json)', () => {
     for (const s of SPRACHEN) {
       const ziele = texte[s].dachverband.ziele as Record<string, { titel: string; beschreibung: string }>;
@@ -83,6 +109,20 @@ describe('IGMG-Netzwerk', () => {
         expect(titel.length, `${s}.${schluessel}.titel`).toBeLessThanOrEqual(60);
         expect(beschreibung.length, `${s}.${schluessel}.beschreibung`).toBeLessThanOrEqual(200);
       }
+    }
+  });
+
+  it('Camia Haber: Nachrichtenportal der Zeitung Camia (seit 2012, alle zwei Wochen; IGMG-Broschüre Juni 2026), nicht „frühere Zeitschrift“', () => {
+    const BELEGT = {
+      de: [/Nachrichtenportal/, /Zeitung Camia/, /seit 2012/, /alle zwei Wochen/],
+      tr: [/haber portalı/, /Camia gazetesi/, /2012’den bu yana/, /iki haftada bir/],
+      en: [/news portal/, /newspaper Camia/, /since 2012/, /every two weeks/],
+    } as const;
+    const VERALTET = { de: /frühere|Zeitschrift/i, tr: /eski|dergi/i, en: /former|magazine|successor/i } as const;
+    for (const s of SPRACHEN) {
+      const b = texte[s].dachverband.ziele.camiaHaber.beschreibung;
+      for (const m of BELEGT[s]) expect(b, `${s} ${m}`).toMatch(m);
+      expect(b, s).not.toMatch(VERALTET[s]);
     }
   });
 });

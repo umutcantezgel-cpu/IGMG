@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
+import { DATENSCHUTZ_BEISPIEL, DATENSCHUTZ_QUELLE } from '../../drizzle/seeds/bereiche/rechtliches';
 import { VIDEOS_IGMG_REISEN } from '../../drizzle/seeds/bereiche/wissen';
 import { WISSEN_ENTWUERFE } from '../../drizzle/seeds/bereiche/wissen-entwuerfe';
 import { wissenInhalt } from '@/components/website/wissen/inhalt';
 import { marktstartStaende, MIGRATION, wissenVideosNeu } from '@/lib/inhalt/stand-marktstart';
 import { stabil, ueberUnsNeu } from '@/lib/inhalt/stand-2026';
+import { schema as datenschutzSchema } from '@/lib/validierung/seiteninhalte/datenschutz';
 import { schema as igmgSchema } from '@/lib/validierung/seiteninhalte/igmg';
 import { schema as ueberUnsSchema } from '@/lib/validierung/seiteninhalte/ueber-uns';
 import { schema as vorstandSchema } from '@/lib/validierung/seiteninhalte/vorstand';
@@ -45,8 +47,20 @@ describe('Zielstände Marktstart', () => {
       'organisation-kadin-genclik-teskilati',
       'dachverband',
       'hadsch-umra',
+      'datenschutz',
     ]);
     for (const s of staende) expect(s.quelle.trim().length, s.bereich).toBeGreaterThan(20);
+  });
+
+  it('datenschutz: Entwurf aus dem Seed mit seiner Quelle – Videos nach Klick samt Speicherung im Browser, weiter mit Prüfhinweis', () => {
+    const d = ziel('datenschutz');
+    expect(d.quelle).toBe(DATENSCHUTZ_QUELLE);
+    expect(stabil(d.inhalt)).toBe(stabil(datenschutzSchema.parse(DATENSCHUTZ_BEISPIEL)));
+    expect(stabil(datenschutzSchema.parse(d.inhalt))).toBe(stabil(d.inhalt));
+    const text = stabil(d.inhalt);
+    expect(text).toContain('Ohne Ihren Klick laden die öffentlichen Seiten keine Inhalte von Dritten');
+    expect(text).toContain('youtube-nocookie.com');
+    expect(text).toContain('Hinweis für die Prüfung (ENTWURF, M-111)');
   });
 
   it('Seeds parsen und sind Fixpunkte ihres Schemas (sonst wäre jeder Lauf eine Änderung)', () => {

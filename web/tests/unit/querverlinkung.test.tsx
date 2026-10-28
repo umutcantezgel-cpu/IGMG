@@ -149,6 +149,21 @@ describe('/spenden: Kasten „Weltweit helfen mit Hasene“', () => {
       expect(html).toContain(dachverband[s].dachverband.aufDeutsch);
     }
   });
+
+  it('Fitra (E-046 Nr. 1): direkt am Empfänger-Hinweis der Zusatz, dass auch die Gemeinde sie entgegennimmt – ohne Weitergabe', async () => {
+    const GEMEINDE = { de: /Fatih-Moschee Wetzlar/, tr: /Wetzlar Fatih Camii/, en: /Fatih Mosque Wetzlar/ } as const;
+    const FITRA = { de: /\bFitra\b/, tr: /\b[Ff]itre/, en: /\bFitra\b/ } as const;
+    for (const s of ['de', 'tr', 'en'] as const) {
+      sprache = s;
+      const H = spenden[s].spenden.hasene as typeof spenden.de.spenden.hasene;
+      expect(H.fitra, s).toMatch(FITRA[s]);
+      expect(H.fitra, s).toMatch(GEMEINDE[s]);
+      expect(H.fitra, s).not.toMatch(/weiterleit|iletir|aktarır|forward/i);
+      const html = await alsHtml(<HaseneKasten />);
+      // im selben Hinweiskasten, gleich nach „…, nicht an die Gemeinde.“
+      expect(html, s).toMatch(new RegExp(`${H.empfaenger.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</p><p[^>]*>${H.fitra}</p>`));
+    }
+  });
 });
 
 describe('/mitglied-werden: Kasten „Fördermitglied der IGMG“', () => {

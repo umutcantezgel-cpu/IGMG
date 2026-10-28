@@ -130,6 +130,33 @@ describe('Struktur: Gremien, Fachvereine, Organisationskarten', () => {
     expect(html).toContain(`Hasene International ${dachverband.tr.dachverband.aufDeutsch}: ${dachverband.tr.dachverband.externeSeite}`);
   });
 
+  it('Sabah Ülkesi (Seite nur auf Türkisch): Zielsprache aus dem Netzwerk-Verzeichnis, auch mit der gespeicherten Adresse nur unter „de“', async () => {
+    const verein = inhalt.struktur.fachvereine.find((v) => v.name === 'Sabah Ülkesi');
+    expect(verein?.url).toEqual({ de: 'https://www.sabahulkesi.com' });
+    for (const s of ['de', 'tr', 'en'] as const) {
+      sprache = s;
+      const D = dachverband[s].dachverband;
+      const html = renderToStaticMarkup(await Struktur({ inhalt, sprache: s }));
+      const link = html.match(/<a [^>]*href="https:\/\/www\.sabahulkesi\.com"[^>]*>.*?<\/a>/)?.[0] ?? '';
+      expect(link, s).toContain('hrefLang="tr"');
+      if (s === 'tr') {
+        expect(link, s).toContain(`aria-label="Sabah Ülkesi: ${D.externeSeite}"`);
+        expect(link, s).not.toContain(D.aufDeutsch);
+      } else {
+        expect(link, s).toContain(`aria-label="Sabah Ülkesi ${D.aufTuerkisch}: ${D.externeSeite}"`);
+        expect(link, s).toContain(`>${D.aufTuerkisch}</span>`);
+      }
+    }
+    // Adressen außerhalb des Verzeichnisses wie bisher: ohne eigene Fassung gilt die deutsche Seite
+    sprache = 'en';
+    const fremd = schema.parse({
+      struktur: { fachvereine: [{ name: 'Testverein', bereich: { de: 'Test' }, url: { de: 'https://verein.example/' } }] },
+    });
+    const html = renderToStaticMarkup(await Struktur({ inhalt: fremd, sprache: 'en' }));
+    expect(html).toContain('href="https://verein.example/" hrefLang="de"');
+    expect(html).toContain(`Testverein ${dachverband.en.dachverband.aufDeutsch}`);
+  });
+
   it('ohne Gremien und Fachvereine entfallen beide Abschnitte', async () => {
     sprache = 'de';
     const html = renderToStaticMarkup(await Struktur({ inhalt: schema.parse({}), sprache: 'de' }));

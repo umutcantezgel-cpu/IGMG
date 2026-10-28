@@ -52,6 +52,8 @@ const ALT = {
   },
   vorstand: { fuehrungSeit: '1975' },
   'organisation-ana-teskilati': { beschreibung: { de: 'Ana Teşkilatı – Anatolien [Test]' } },
+  // Entwurf vor den Videos nach Klick (M-111): pauschal „keine Inhalte von Dritten“
+  datenschutz: { empfaenger: [{ art: 'absatz', text: { de: 'Die öffentlichen Seiten laden keine Inhalte von Dritten. [Test]' } }] },
 };
 
 async function lege(bereich: string, inhalt: unknown, istBeispiel: boolean) {
@@ -102,6 +104,7 @@ describe('Inhaltsmigration Marktstart', () => {
       'organisation-kadin-genclik-teskilati': 'eingefuegt',
       dachverband: 'eingefuegt',
       'hadsch-umra': 'eingefuegt',
+      datenschutz: 'aktualisiert',
     });
     expect(e.wissenVideos).toBe('aktualisiert');
     expect(e.wissenEntwuerfe.sort()).toEqual(WISSEN_ENTWUERFE.map((x) => x.slug).sort());
@@ -115,6 +118,9 @@ describe('Inhaltsmigration Marktstart', () => {
     }
     expect(stabil((await zeile('igmg')).inhalt)).not.toMatch(/\b518\b|350\.000/);
     expect((await zeile('vorstand')).inhalt).toMatchObject({ fuehrungSeit: '1978' });
+    expect(stabil((await zeile('datenschutz')).inhalt)).toContain(
+      'Ohne Ihren Klick laden die öffentlichen Seiten keine Inhalte von Dritten',
+    );
     const wissen = wissenInhalt.parse((await zeile('wissen')).inhalt);
     expect(wissen.videos.map((v) => v.schluessel)).toEqual(['video-1', ...VIDEOS_IGMG_REISEN.map((v) => v.schluessel)]);
 

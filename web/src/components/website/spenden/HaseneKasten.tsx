@@ -9,9 +9,10 @@ export const HASENE_BEREICHE = ['kurban', 'zakat', 'fitra', 'nothilfe'] as const
 /**
  * Kasten „Weltweit helfen mit Hasene“ auf /spenden (Plan Marktstart P7): Kurban, Zakat, Fitra und Nothilfe laufen über die
  * Hilfsorganisation des Dachverbands, HASENE International e. V. – der Kasten sagt deutlich, dass diese Spenden nicht an die
- * Gemeinde gehen. Bewusst ohne GiroCode, ohne Bankverbindung und ohne Feld in der Einstellung „spenden“: Ein Konto des
- * Dachverbands darf nie wie das Gemeindekonto aussehen. Links nur über das Netzwerk-Verzeichnis (Hasene, Zakat-Rechner),
- * keine Anfrage beim Aufruf (K-14). Server-Komponente ohne Client-Code (K-12).
+ * Gemeinde gehen; die Fitra nimmt zusätzlich auch die Gemeinde entgegen (E-046 Nr. 1). Bewusst ohne GiroCode, ohne
+ * Bankverbindung und ohne Feld in der Einstellung „spenden“: Ein Konto des Dachverbands darf nie wie das Gemeindekonto
+ * aussehen. Links nur über das Netzwerk-Verzeichnis (Hasene, Zakat-Rechner), keine Anfrage beim Aufruf (K-14).
+ * Server-Komponente ohne Client-Code (K-12).
  */
 export async function HaseneKasten({ className }: { className?: string }) {
   const t = await getTranslations('spenden.hasene');
@@ -26,10 +27,14 @@ export async function HaseneKasten({ className }: { className?: string }) {
         {t('titel')}
       </h2>
       <p className="max-w-text text-pretty">{t('text')}</p>
-      <p className="flex max-w-text items-start gap-2 rounded-md border border-gruen-700 bg-weiss p-3 font-bold">
+      <div className="flex max-w-text items-start gap-2 rounded-md border border-gruen-700 bg-weiss p-3">
         <Info aria-hidden className="mt-0.5 size-5 shrink-0 text-gruen-700" />
-        {t('empfaenger')}
-      </p>
+        {/* Fitra: zweiter Weg über die Gemeinde gleich am Empfänger-Hinweis (E-046 Nr. 1); zur Weitergabe nichts (G-05) */}
+        <div className="flex flex-col gap-1">
+          <p className="font-bold">{t('empfaenger')}</p>
+          <p>{t('fitra')}</p>
+        </div>
+      </div>
       <div className="flex flex-col gap-2">
         <h3 id="spenden-hasene-bereiche" className="font-text text-18 font-bold tracking-normal">
           {t('bereicheTitel')}

@@ -2,6 +2,7 @@ import { Building2, ExternalLink, Target, Users } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { OrgCard } from '@/components/website/OrgCard';
 import { Text } from '@/components/website/Text';
+import { netzwerkZielSprache } from '@/lib/dachverband/netzwerk';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import type { IgmgInhalt } from '@/lib/validierung/seiteninhalte/igmg';
 
@@ -19,7 +20,7 @@ export async function Struktur({ inhalt, sprache }: { inhalt: IgmgInhalt; sprach
     { Icon: Users, titel: t('stufe2Titel'), text: t('stufe2Text') },
     { Icon: Target, titel: t('stufe3Titel'), text: t('stufe3Text') },
   ];
-  const sprachHinweis: Partial<Record<Sprache, string>> = { de: td('aufDeutsch'), tr: td('aufTuerkisch') };
+  const sprachHinweis: Partial<Record<Sprache, string>> = { de: td('aufDeutsch'), tr: td('aufTuerkisch'), en: td('aufEnglisch') };
   const { gremien, fachvereine } = inhalt.struktur;
   return (
     <div className="flex flex-col gap-6">
@@ -73,8 +74,9 @@ export async function Struktur({ inhalt, sprache }: { inhalt: IgmgInhalt; sprach
             {fachvereine.map((verein) => {
               const eigene = verein.url?.[sprache];
               const href = verein.url ? (eigene ?? verein.url.de) : null;
-              // Ohne Adresse in der Seitensprache gilt die deutsche Seite (sichtbarer Hinweis, K-02)
-              const zielSprache: Sprache = eigene ? sprache : 'de';
+              // Sprache des Ziels aus dem Netzwerk-Verzeichnis, wenn die Adresse dort steht (Sabah Ülkesi: Türkisch, auch
+              // in gespeicherten Fassungen nur unter „de“); sonst gilt ohne eigene Adresse die deutsche Seite (Hinweis, K-02)
+              const zielSprache: Sprache = (href ? netzwerkZielSprache(href, sprache) : null) ?? (eigene ? sprache : 'de');
               const hinweis = zielSprache !== sprache ? sprachHinweis[zielSprache] : undefined;
               const sichtbar = hinweis ? `${verein.name} ${hinweis}` : verein.name;
               return (
