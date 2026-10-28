@@ -25,23 +25,15 @@ const AUSNAHMEN: { muster: RegExp; regel: Regel; grund: string; mussGreifen?: bo
     grund: 'Vollbild für den Bildschirm der Moschee, absichtlich noindex; steht nicht in der Sitemap (ADR 0049)',
     mussGreifen: false,
   },
-  // Feste Texte unter 50 Zeichen (messages anderer Bereiche): verlängern und die Ausnahme löschen (Welle 3)
-  {
-    muster: /^\/en\/arabic-alphabet\/letters\/[a-z]+$/,
-    regel: 'beschreibung',
-    grund: 'elifbe.buchstabe.untertitel (en) „Watch how {name} is written …“ hat 47–49 Zeichen',
-  },
-  {
-    muster: /^\/tr\/elifba\/ders\/8$/,
-    regel: 'beschreibung',
-    grund: 'elifbe.lektion.untertitel (tr) mit der kurzen Lektion 8: 49 Zeichen',
-  },
-  { muster: /^\/tr\/bildirim$/, regel: 'beschreibung', grund: 'meldung.untertitel (tr) hat 44 Zeichen' },
-  // Gepflegte Inhalte des Seeds (Beispielinhalte, G-05): Die Redaktion ersetzt Kurztexte und Platzhalter
+  // Feste Texte (messages) haben keine Ausnahme mehr: Welle 3 hat elifbe.buchstabe.untertitel (en),
+  // elifbe.lektion.untertitel (tr) und meldung.untertitel (tr) auf mindestens 50 Zeichen verlängert.
+  // Gepflegte Inhalte des Seeds (Beispielinhalte, ist_beispiel, G-05): Die Gemeinde ersetzt sie vor dem Start (Startklar
+  // „inhalte.beispiele“ und „inhalte.platzhalter-*“); bis dahin bleiben die Ausnahmen, Texte des Seeds ändert Welle 3 nicht.
   {
     muster: /^(\/(tr|en))?\/(organisationen|organizasyonlar|organizations)\/[a-z-]+$/,
     regel: 'beschreibung',
-    grund: 'Untertitel der Organisationsseiten (Seiteninhalt organisation-*, Leitsatz) unter 50 Zeichen',
+    grund:
+      'Untertitel der Organisationsseiten (Seiteninhalt organisation-*, Leitsatz) unter 50 Zeichen – Beispielinhalt mit Platzhaltern (Adresse, Telefon), den die Gemeinde pflegt',
     mussGreifen: false,
   },
   {
