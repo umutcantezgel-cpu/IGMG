@@ -17,6 +17,7 @@ function index(teil: Partial<SuchIndex> = {}): SuchIndex {
       { art: 'nachricht', slug: 'ramadan-programm', titel: { de: 'Ramadan: Programm' } },
       { art: 'veranstaltung', slug: 'kermes', titel: { de: 'Kermes im Hof', en: 'Fair in the courtyard' } },
       { art: 'wissen', slug: 'gebet', titel: { de: 'Das Gebet' } },
+      { art: 'wissen', slug: 'freitag-test', titel: { de: 'Testthema Freitag' }, entwurf: true },
       { art: 'seite', slugs: { de: 'jugendraum', tr: 'genclik-odasi', en: null }, titel: { de: 'Jugendraum', tr: 'Gençlik odası' } },
       { art: 'sure', nr: 1, umschrift: 'Al-Faatiha', nameAr: FATIHA_AR, name: null },
       { art: 'sure', nr: 36, umschrift: 'Yaseen', nameAr: '[Name]', name: { de: '[Yasin de]' } },
@@ -41,7 +42,10 @@ function index(teil: Partial<SuchIndex> = {}): SuchIndex {
 describe('pruefeSuchIndex', () => {
   it('nimmt gültige Indizes, lehnt andere Versionen und kaputte Dateien ab', () => {
     expect(pruefeSuchIndex(index())).not.toBeNull();
-    expect(pruefeSuchIndex({ ...index(), version: 2 })).toBeNull();
+    expect(pruefeSuchIndex({ ...index(), version: SUCHINDEX_VERSION + 1 })).toBeNull();
+    // Version 1 kannte die Entwurfskennzeichnung der Wissensthemen nicht (ADR 0047): ein alter Index gilt als veraltet
+    expect(SUCHINDEX_VERSION).toBeGreaterThan(1);
+    expect(pruefeSuchIndex({ ...index(), version: 1 })).toBeNull();
     expect(pruefeSuchIndex({ ...index(), eintraege: [{ art: 'unbekannt' }] })).toBeNull();
     expect(pruefeSuchIndex(null)).toBeNull();
     expect(pruefeSuchIndex('{}')).toBeNull();
@@ -56,6 +60,13 @@ describe('sucheTitel', () => {
       ['wissen', 'Das Gebet'],
     ]);
     expect(sucheTitel(index(), 'KERMES', 'de').map((x) => x.slug)).toEqual(['kermes']);
+  });
+
+  it('Wissensthemen „zur Prüfung“ behalten die Kennzeichnung `entwurf` (Marke in der Trefferliste, ADR 0047)', () => {
+    expect(sucheTitel(index(), 'testthema', 'de')).toEqual([
+      { art: 'wissen', titel: 'Testthema Freitag', slug: 'freitag-test', entwurf: true },
+    ]);
+    expect(sucheTitel(index(), 'gebet', 'de').find((x) => x.slug === 'gebet')).not.toHaveProperty('entwurf');
   });
 
   it('Suren wie die Surensuche: Umschrift vereinfacht, arabischer Name, Name in der Sprache', () => {

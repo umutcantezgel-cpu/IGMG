@@ -1,6 +1,9 @@
-import { schema } from '../../../src/lib/db';
+import { and, eq, inArray, isNotNull, sql } from 'drizzle-orm';
+import { z } from 'zod';
+import { schema, type Transaktion } from '../../../src/lib/db';
 import { NETZWERK_STAND, netzwerkZiel, type NetzwerkSchluessel } from '../../../src/lib/dachverband/netzwerk';
 import type { Mehrsprachig, MehrsprachigRich } from '../../../src/lib/db/schema/typen';
+import { sperreInhaltsstaende } from '../../../src/lib/inhalt/sperre';
 import { wissenKlartext } from '../../../src/lib/validierung/wissen';
 import { entwurfDokument, KI_ENTWURF_VERFASSER, KI_ENTWURF_VERMERK, linkZiele } from '../../../src/lib/wissen/entwurf';
 import type { BereichsSeed } from './typ';
@@ -16,7 +19,9 @@ import type { BereichsSeed } from './typ';
  * 13.10.2026, Netzwerk-Ziele live geprüft am 27.10.2026). Keine Verse, Hadithe, Bittgebete, keine Übersetzung religiöser
  * Texte, keine arabische Schrift (G-06, ADR 0030 Nr. 4); Surenangabe nur dort, wo die verlinkte Predigt sie nennt; keine
  * Beträge (Fitra, Fidya und Zakat gibt die IGMG bekannt). Auszeichnung der Zeilen: `entwurfDokument` (`### Frage`,
- * `- Punkt`, `{Linktext|ziel}`). Idempotent (onConflictDoNothing über `slug`). Tests: `tests/unit/wissen-entwuerfe.test.ts`.
+ * `- Punkt`, `{Linktext|ziel}`). Einmal je Datenbank (Merker `ENTWURF_MERKER`): Was die Redaktion endgültig gelöscht hat,
+ * legen weder `db:seed` noch die Stand-Migration im Bau neu an. Tests: `tests/unit/wissen-entwuerfe.test.ts`,
+ * `tests/integration/wissen-entwuerfe.test.ts`, `tests/integration/inhalte-marktstart.test.ts`.
  */
 
 type Sprache = 'de' | 'tr' | 'en';
@@ -454,17 +459,33 @@ export function entwurfZeile(e: WissenEntwurf): typeof schema.wissenThema.$infer
 }
 
 /**
- * Seed „wissen-entwuerfe“ (idempotent): legt fehlende Entwürfe an, dazu je Thema den Antrag „zur Prüfung“ im Freigabe-Verlauf
- * (Warteschlange und Cockpit) und die erste Fassung als Revision (der KI-Stand bleibt nach Änderungen abrufbar). Vorhandene
- * Themen mit gleichem Slug bleiben unverändert. Rückgabe: Anzahl neuer Themen.
+ * Schlüssel des Merkers in `einstellung` (Nachtrag ADR 0019 vom 28.10.2026), Wert `{ slugs: [...] }`: Slugs der KI-Entwürfe,
+ * die diese Datenbank je bekommen hat.
  */
-export const seed: BereichsSeed = async (db) => {
+export const ENTWURF_MERKER = 'wissen_entwuerfe_angelegt';
+
+const merker = z.object({ slugs: z.array(z.string()) });
+
+/** Datenbank oder offene Transaktion (Seed, Stand-Migration). */
+type Schreiber = Pick<Transaktion, 'select' | 'insert'>;
+
+/** Ein wirklich eingefügtes Thema (`returning`). */
+export type NeuerEntwurf = { id: string; slug: string };
+
+/**
+ * Legt die Entwürfe mit diesen Slugs an – Themen mit gleichem Slug bleiben unverändert (onConflictDoNothing) –, dazu je
+ * neuem Thema den Antrag „zur Prüfung“ im Freigabe-Verlauf (Warteschlange und Cockpit) und die erste Fassung als Revision
+ * (der KI-Stand bleibt nach Änderungen abrufbar). Rückgabe: die wirklich eingefügten Themen.
+ */
+export async function legeEntwuerfeAn(db: Schreiber, slugs: readonly string[]): Promise<NeuerEntwurf[]> {
+  const auswahl = WISSEN_ENTWUERFE.filter((e) => slugs.includes(e.slug));
+  if (!auswahl.length) return [];
   const neu = await db
     .insert(schema.wissenThema)
-    .values(WISSEN_ENTWUERFE.map(entwurfZeile))
+    .values(auswahl.map(entwurfZeile))
     .onConflictDoNothing({ target: schema.wissenThema.slug })
     .returning({ id: schema.wissenThema.id, slug: schema.wissenThema.slug });
-  if (!neu.length) return 0;
+  if (!neu.length) return [];
   await db.insert(schema.freigabe).values(
     neu.map((t) => ({
       inhaltTyp: 'wissen_thema',
@@ -493,5 +514,65 @@ export const seed: BereichsSeed = async (db) => {
       };
     }),
   );
-  return neu.length;
-};
+  return neu;
+}
+
+/**
+ * Slugs, die die Stand-Migration vor dem Merker schon angelegt hat: Audit `inhalt.angelegt` mit `details.migration` und
+ * `details.slug` (nur sie schreibt diese Angaben). So bleibt auch ein Entwurf gelöscht, den die Redaktion vor dem Merker
+ * endgültig gelöscht hat.
+ */
+async function vonDerMigrationAngelegt(db: Pick<Transaktion, 'select'>, slugs: readonly string[]): Promise<string[]> {
+  const a = schema.auditEintrag;
+  const slug = sql<string>`${a.details}->>'slug'`;
+  const zeilen = await db
+    .select({ slug })
+    .from(a)
+    .where(
+      and(eq(a.aktion, 'inhalt.angelegt'), eq(a.zielTyp, 'wissen_thema'), isNotNull(sql`${a.details}->>'migration'`), inArray(slug, slugs)),
+    );
+  return zeilen.map((z) => z.slug);
+}
+
+/**
+ * Fehlende Entwürfe einmal je Datenbank anlegen (Seed `db:seed` und Stand-Migration `inhalte-marktstart`): angelegt wird
+ * nur ein Slug, der fehlt UND nicht im Merker `ENTWURF_MERKER` steht. Ein Thema, das die Redaktion endgültig gelöscht hat
+ * (Verwaltung oder Leerung des Papierkorbs), kommt so mit dem nächsten Bau nicht zurück (ADR 0047 Nr. 4). Danach gilt:
+ * Merker = bisheriger Merker ∪ vorhandene ∪ neu angelegte Slugs. Bestand ohne Merker (vor dem 28.10.2026 angelegt): Als
+ * schon angelegt gelten die vorhandenen Slugs und die, die die Stand-Migration laut Audit angelegt hat. Aufrufer laufen in
+ * einer Transaktion unter der Sperre der Inhaltsstände (`sperreInhaltsstaende`). Rückgabe: die wirklich eingefügten Themen.
+ */
+export async function legeFehlendeEntwuerfeAn(db: Schreiber): Promise<NeuerEntwurf[]> {
+  const alle = WISSEN_ENTWUERFE.map((e) => e.slug);
+  const [gespeichert] = await db
+    .select({ wert: schema.einstellung.wert })
+    .from(schema.einstellung)
+    .where(eq(schema.einstellung.schluessel, ENTWURF_MERKER))
+    .limit(1);
+  const vorhanden = (
+    await db.select({ slug: schema.wissenThema.slug }).from(schema.wissenThema).where(inArray(schema.wissenThema.slug, alle))
+  ).map((z) => z.slug);
+  const gelesen = merker.safeParse(gespeichert?.wert);
+  const bisher = gelesen.success ? gelesen.data.slugs : [...vorhanden, ...(await vonDerMigrationAngelegt(db, alle))];
+  const neu = await legeEntwuerfeAn(
+    db,
+    alle.filter((s) => !bisher.includes(s) && !vorhanden.includes(s)),
+  );
+  const slugs = [...new Set([...bisher, ...vorhanden, ...neu.map((t) => t.slug)])];
+  if (!gelesen.success || slugs.length !== gelesen.data.slugs.length)
+    await db
+      .insert(schema.einstellung)
+      .values({ schluessel: ENTWURF_MERKER, wert: { slugs } })
+      .onConflictDoUpdate({ target: schema.einstellung.schluessel, set: { wert: { slugs }, geaendertAm: new Date() } });
+  return neu;
+}
+
+/**
+ * Seed „wissen-entwuerfe“ (idempotent, einmal je Datenbank): legt die fehlenden Entwürfe an, die diese Datenbank nie bekommen
+ * hat (`legeFehlendeEntwuerfeAn`), in einer Transaktion unter der Sperre der Inhaltsstände. Rückgabe: Anzahl neuer Themen.
+ */
+export const seed: BereichsSeed = (db) =>
+  db.transaction(async (tx) => {
+    await sperreInhaltsstaende(tx);
+    return (await legeFehlendeEntwuerfeAn(tx)).length;
+  });

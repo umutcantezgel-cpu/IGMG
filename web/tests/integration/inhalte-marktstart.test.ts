@@ -1,7 +1,7 @@
-import { eq, inArray, sql } from 'drizzle-orm';
+import { and, eq, inArray, sql } from 'drizzle-orm';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 import { VIDEOS_IGMG_REISEN } from '../../drizzle/seeds/bereiche/wissen';
-import { entwurfZeile, WISSEN_ENTWUERFE } from '../../drizzle/seeds/bereiche/wissen-entwuerfe';
+import { ENTWURF_MERKER, entwurfZeile, seed as seedEntwuerfe, WISSEN_ENTWUERFE } from '../../drizzle/seeds/bereiche/wissen-entwuerfe';
 import { wissenInhalt } from '@/components/website/wissen/inhalt';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
@@ -14,7 +14,8 @@ import { testDatenbank } from './hilfen/db';
 /**
  * Inhaltsmigration „Marktstart IGMG“ (scripts/inhalte-marktstart.ts, Welle 3): Beispielinhalte werden auf den Seed-Stand
  * gebracht und fehlende Bereiche angelegt, je mit Audit; redaktionelle Inhalte bleiben; ein zweiter Lauf ändert nichts.
- * Dazu die Wissensvideos von IGMG Reisen und die KI-Entwürfe (nur fehlende Slugs). Daten fiktiv bzw. aus den Seeds.
+ * Dazu die Wissensvideos von IGMG Reisen und die KI-Entwürfe: nur Slugs, die fehlen und die diese Datenbank nie bekommen
+ * hat (Merker in `einstellung`) – endgültig Gelöschtes legt kein Bau neu an. Daten fiktiv bzw. aus den Seeds.
  */
 const { client, db: pgDb } = await testDatenbank();
 const db = pgDb as unknown as Datenbank;
@@ -63,6 +64,22 @@ async function zeile(bereich: string) {
 const audits = () => db.select().from(schema.auditEintrag);
 const migrationsAudits = async (migration: string) =>
   (await audits()).filter((a) => (a.details as { migration?: string } | null)?.migration === migration);
+
+const SLUGS = WISSEN_ENTWUERFE.map((x) => x.slug);
+const slugsDa = async () => (await db.select({ slug: schema.wissenThema.slug }).from(schema.wissenThema)).map((z) => z.slug).sort();
+async function merker() {
+  const [z] = await db.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, ENTWURF_MERKER));
+  return z;
+}
+const angelegtAudits = async () => (await audits()).filter((a) => a.aktion === 'inhalt.angelegt' && a.zielTyp === 'wissen_thema');
+
+/** Endgültig löschen wie `wissensThemaEndgueltigLoeschen` bzw. die Leerung des Papierkorbs: Thema, Revisionen, Freigabe-Verlauf. */
+async function loescheEndgueltig(slug: string) {
+  const [z] = await db.select({ id: schema.wissenThema.id }).from(schema.wissenThema).where(eq(schema.wissenThema.slug, slug));
+  await db.delete(schema.wissenThema).where(eq(schema.wissenThema.id, z.id));
+  await db.delete(schema.revision).where(and(eq(schema.revision.inhaltTyp, 'wissen_thema'), eq(schema.revision.inhaltId, z.id)));
+  await db.delete(schema.freigabe).where(and(eq(schema.freigabe.inhaltTyp, 'wissen_thema'), eq(schema.freigabe.inhaltId, z.id)));
+}
 
 /** Seiteninhalt „wissen“ im alten Beispielstand: ein Video, ohne die Videos von IGMG Reisen. */
 const WISSEN_ALT = wissenInhalt.parse({
@@ -201,5 +218,71 @@ describe('Inhaltsmigration Marktstart', () => {
     expect(await wendeSeedStaendeAn(db, 'test', [stand])).toEqual({ 'test-bereich': 'aktualisiert' });
     expect((await audits()).map((a) => a.details)).toEqual([{ migration: 'test', ausgang: 'aktualisiert' }]);
     expect(await zeile('test-bereich')).toMatchObject({ quelle: '[Test-Quelle]', istBeispiel: true });
+  });
+});
+
+describe('KI-Entwürfe einmal je Datenbank (Merker, ADR 0047 Nr. 4)', () => {
+  it('frische Datenbank: Migration legt die vier an und setzt den Merker; ein zweiter Lauf ändert nichts', async () => {
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe.sort()).toEqual([...SLUGS].sort());
+    const gesetzt = await merker();
+    expect([...(gesetzt.wert as { slugs: string[] }).slugs].sort()).toEqual([...SLUGS].sort());
+    expect(await angelegtAudits()).toHaveLength(4);
+    const anzahl = (await audits()).length;
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([]);
+    expect(await audits()).toHaveLength(anzahl);
+    expect(await merker()).toEqual(gesetzt);
+  });
+
+  it('endgültig gelöscht bleibt gelöscht: weder der nächste Bau (Migration) noch db:seed legt den Entwurf neu an', async () => {
+    await wendeStandMarktstartAn(db);
+    await loescheEndgueltig('friday-prayer');
+    const vorher = (await angelegtAudits()).length;
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([]);
+    expect(await seedEntwuerfe(db as never)).toBe(0);
+    expect(await slugsDa()).toEqual(SLUGS.filter((s) => s !== 'friday-prayer').sort());
+    expect(await angelegtAudits()).toHaveLength(vorher);
+    // Der Merker behält den gelöschten Slug
+    expect((await merker()).wert).toMatchObject({ slugs: expect.arrayContaining(['friday-prayer']) });
+  });
+
+  it('über db:seed angelegt: der Seed setzt den Merker ebenso; Löschen wirkt auch für die Migration', async () => {
+    expect(await seedEntwuerfe(db as never)).toBe(4);
+    expect(((await merker()).wert as { slugs: string[] }).slugs.sort()).toEqual([...SLUGS].sort());
+    await loescheEndgueltig('hajj-umrah');
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([]);
+    expect(await slugsDa()).not.toContain('hajj-umrah');
+    expect(await angelegtAudits()).toEqual([]);
+  });
+
+  it('Bestand ohne Merker (vor dem Merker angelegt): Merker aus den vorhandenen Slugs, nichts neu angelegt', async () => {
+    await db.insert(schema.wissenThema).values(WISSEN_ENTWUERFE.map(entwurfZeile));
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([]);
+    expect(((await merker()).wert as { slugs: string[] }).slugs.sort()).toEqual([...SLUGS].sort());
+    await loescheEndgueltig('islamic-calendar');
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([]);
+    expect(await slugsDa()).not.toContain('islamic-calendar');
+  });
+
+  it('Bestand ohne Merker, vorher schon gelöscht: was die Migration laut Audit angelegt hat, gilt als angelegt', async () => {
+    const [geloescht, ...rest] = WISSEN_ENTWUERFE;
+    await db.insert(schema.wissenThema).values(rest.map(entwurfZeile));
+    // Spur des früheren Laufs (Audit der Migration, vor dem Merker), das Thema selbst ist endgültig gelöscht
+    await db.insert(schema.auditEintrag).values({
+      aktion: 'inhalt.angelegt',
+      zielTyp: 'wissen_thema',
+      zielId: '00000000-0000-4000-8000-000000000000',
+      details: { migration: MIGRATION, slug: geloescht.slug },
+    });
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([]);
+    expect(await slugsDa()).not.toContain(geloescht.slug);
+    expect(((await merker()).wert as { slugs: string[] }).slugs.sort()).toEqual([...SLUGS].sort());
+  });
+
+  it('Merker vorhanden, ein neuer Slug fehlt darin: nur dieser wird angelegt (künftige Entwürfe kommen an)', async () => {
+    await db.insert(schema.einstellung).values({ schluessel: ENTWURF_MERKER, wert: { slugs: SLUGS.slice(0, 3) } });
+    expect((await wendeStandMarktstartAn(db)).wissenEntwuerfe).toEqual([SLUGS[3]]);
+    expect(await slugsDa()).toEqual([SLUGS[3]]);
+    expect((await angelegtAudits()).map((a) => (a.details as { slug: string }).slug)).toEqual([SLUGS[3]]);
+    expect(((await merker()).wert as { slugs: string[] }).slugs.sort()).toEqual([...SLUGS].sort());
   });
 });

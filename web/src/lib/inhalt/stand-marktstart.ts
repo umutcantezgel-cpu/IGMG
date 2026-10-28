@@ -1,13 +1,12 @@
-import { and, eq, inArray } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import { DACHVERBAND_BEISPIEL, DACHVERBAND_QUELLE } from '../../../drizzle/seeds/bereiche/dachverband';
 import { HADSCH_UMRA_BEISPIEL, HADSCH_UMRA_QUELLE } from '../../../drizzle/seeds/bereiche/hadsch-umra';
 import { IGMG_BEISPIEL, IGMG_QUELLE } from '../../../drizzle/seeds/bereiche/igmg';
 import { ORGANISATIONEN_BEISPIEL } from '../../../drizzle/seeds/bereiche/organisationen';
-import type { SeedDb } from '../../../drizzle/seeds/bereiche/typ';
 import { UEBER_UNS_BEISPIEL, UEBER_UNS_QUELLE } from '../../../drizzle/seeds/bereiche/ueber-uns';
 import { VORSTAND_BEISPIEL, VORSTAND_QUELLE } from '../../../drizzle/seeds/bereiche/vorstand';
 import { VIDEOS_IGMG_REISEN } from '../../../drizzle/seeds/bereiche/wissen';
-import { seed as wissenEntwuerfeSeed, WISSEN_ENTWUERFE } from '../../../drizzle/seeds/bereiche/wissen-entwuerfe';
+import { legeFehlendeEntwuerfeAn } from '../../../drizzle/seeds/bereiche/wissen-entwuerfe';
 import { wissenInhalt, type WissenInhalt } from '@/components/website/wissen/inhalt';
 import { protokolliere } from '@/lib/audit';
 import type { Datenbank, Transaktion } from '@/lib/db';
@@ -19,6 +18,7 @@ import { schema as organisationSchema } from '@/lib/validierung/seiteninhalte/or
 import { schema as ueberUnsSchema } from '@/lib/validierung/seiteninhalte/ueber-uns';
 import { schema as vorstandSchema } from '@/lib/validierung/seiteninhalte/vorstand';
 import { bringeAufSeedStand, protokolliereMigration, type SeedStand, type StandAusgang } from './seed-stand';
+import { sperreInhaltsstaende } from './sperre';
 import { stabil } from './stand-2026';
 
 /**
@@ -30,7 +30,10 @@ import { stabil } from './stand-2026';
  * Redaktionell Gespeichertes bleibt unberührt; das gilt auch für „dachverband“, sobald der Hutba-Abgleich geschrieben hat
  * (er setzt `ist_beispiel = false`). Dazu:
  * - Seiteninhalt „wissen“: nur die zwei Videos von IGMG Reisen ergänzen (`VIDEOS_IGMG_REISEN`), solange Beispielinhalt;
- * - KI-Entwürfe der Wissensthemen (ADR 0047): nur fehlende Slugs anlegen (Seed `wissen-entwuerfe`, mit Freigabe-Antrag).
+ * - KI-Entwürfe der Wissensthemen (ADR 0047): nur Slugs anlegen, die fehlen und die diese Datenbank nie bekommen hat
+ *   (Merker in `einstellung`, `legeFehlendeEntwuerfeAn` im Seed `wissen-entwuerfe`, mit Freigabe-Antrag) – endgültig
+ *   Gelöschtes legt kein Bau neu an.
+ * Eine Transaktion unter der Sperre der Inhaltsstände (`sperre.ts`): Zwei Bauläufe gegen dieselbe Datenbank laufen nacheinander.
  * Reihenfolge mit `inhalte-2026`: egal – der Seed „ueber-uns“ endet mit der Station „Eröffnung“, `ueberUnsNeu()` hat
  * danach nichts zu tun (Tests: tests/unit und tests/integration „inhalte-marktstart“). Aufruf: `pnpm inhalte:marktstart`.
  */
@@ -72,7 +75,7 @@ export type MarktstartErgebnis = {
   bereiche: Record<string, StandAusgang>;
   /** Videos im Seiteninhalt „wissen“ („fehlt“: kein Seiteninhalt „wissen“ vorhanden – der Seed legt ihn an). */
   wissenVideos: StandAusgang | 'fehlt';
-  /** Neu angelegte KI-Entwürfe (Slugs). */
+  /** Neu angelegte KI-Entwürfe (Slugs; nie einer, den diese Datenbank schon einmal hatte). */
   wissenEntwuerfe: string[];
 };
 
@@ -97,20 +100,8 @@ async function wissenVideos(tx: Transaktion): Promise<StandAusgang | 'fehlt'> {
 }
 
 async function wissenEntwuerfe(tx: Transaktion): Promise<string[]> {
-  const slugs = WISSEN_ENTWUERFE.map((e) => e.slug);
-  const vorhanden = await tx
-    .select({ slug: schema.wissenThema.slug })
-    .from(schema.wissenThema)
-    .where(inArray(schema.wissenThema.slug, slugs));
-  const fehlend = slugs.filter((s) => !vorhanden.some((v) => v.slug === s));
-  if (!fehlend.length) return [];
-  // Der Seed legt nur fehlende Slugs an (onConflictDoNothing), samt Freigabe-Antrag und Revision; er nutzt nur `insert`
-  // und läuft so in derselben Transaktion.
-  await wissenEntwuerfeSeed(tx as unknown as SeedDb);
-  const neu = await tx
-    .select({ id: schema.wissenThema.id, slug: schema.wissenThema.slug })
-    .from(schema.wissenThema)
-    .where(inArray(schema.wissenThema.slug, fehlend));
+  // Nur Slugs, die fehlen und nicht im Merker stehen; Audit nur für wirklich eingefügte Zeilen (`returning`)
+  const neu = await legeFehlendeEntwuerfeAn(tx);
   for (const t of neu)
     await protokolliere(
       {
@@ -129,6 +120,7 @@ async function wissenEntwuerfe(tx: Transaktion): Promise<string[]> {
 export async function wendeStandMarktstartAn(db: Datenbank): Promise<MarktstartErgebnis> {
   const staende = marktstartStaende();
   return db.transaction(async (tx) => {
+    await sperreInhaltsstaende(tx);
     const bereiche: Record<string, StandAusgang> = {};
     for (const s of staende) bereiche[s.bereich] = await bringeAufSeedStand(tx, MIGRATION, s);
     return { bereiche, wissenVideos: await wissenVideos(tx), wissenEntwuerfe: await wissenEntwuerfe(tx) };

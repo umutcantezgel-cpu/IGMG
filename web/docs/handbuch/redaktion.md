@@ -282,3 +282,4 @@ Vier Themen unter „Islamisches Wissen“ – Hadsch und Umra, Islamischer Kale
 2. **Freigabe:** Verwaltung → **„Freigaben“**. Die religiöse Prüfung gibt einen Text frei; dann verschwindet die Kennzeichnung. **„Zurückweisen“** nimmt den Text sofort von der Website.
 3. **Alle Entwürfe auf einmal verbergen** kann die Technik mit dem Schalter `website_wissen_vorschau` (Verwaltung › Einstellungen › Funktionen oder `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus`). Ob die Vorschau beim öffentlichen Start an bleibt, entscheidet der Vorstand.
 4. Beträge (Fitra, Fidya) nennen die Texte bewusst nicht; die gibt die IGMG jedes Jahr bekannt.
+5. **Endgültig löschen ist endgültig:** Löschst du einen dieser Entwürfe aus dem Papierkorb (oder leert sich der Papierkorb nach 30 Tagen), kommt er auch mit einer neuen Version der Website nicht zurück. Willst du ihn wiederhaben, lege das Thema neu an.

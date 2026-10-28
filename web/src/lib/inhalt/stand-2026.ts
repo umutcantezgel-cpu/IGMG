@@ -6,6 +6,7 @@ import type { Datenbank, Transaktion } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { schema as projekteSchema, type ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
 import { schema as ueberUnsSchema, type UeberUnsInhalt } from '@/lib/validierung/seiteninhalte/ueber-uns';
+import { sperreInhaltsstaende } from './sperre';
 
 /**
  * Inhaltsstand 2026 (AUFTRAG 3.9, Bericht E0-K05): Die neue Fatih-Moschee ist fertiggestellt. Bestehende Datenbanken
@@ -90,6 +91,8 @@ async function schreibe(tx: Transaktion, bereich: string, inhalt: unknown, quell
 /** Führt die Migration in einer Transaktion aus und meldet je Bereich, was geschehen ist. */
 export async function wendeStand2026An(db: Datenbank): Promise<Ergebnis> {
   return db.transaction(async (tx) => {
+    // Zwei Bauläufe gegen dieselbe Datenbank nacheinander (Nachtrag ADR 0019 vom 28.10.2026)
+    await sperreInhaltsstaende(tx);
     const ergebnis: Ergebnis = { projekte: 'fehlt', ueberUns: 'fehlt' };
     const projekte = await zeile(tx, 'projekte');
     if (projekte) {

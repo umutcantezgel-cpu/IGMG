@@ -36,7 +36,11 @@
    alles als geprüften Bestand markiert): `status = veroeffentlicht`, `freigabe = zur_pruefung`,
    `verfasstVon = 'KI-Entwurf (ADR 0047)'`, `istBeispiel = true`, `quelle` mit allen verlinkten Adressen und Stand, ein
    Antrag „zur Prüfung“ im Freigabe-Verlauf und die erste Fassung als Revision. Slugs: `hajj-umrah`, `islamic-calendar`,
-   `zakat-fitra-qurban`, `friday-prayer`.
+   `zakat-fitra-qurban`, `friday-prayer`. Bestehende Datenbanken bekommen sie über die Stand-Migration `inhalte-marktstart`
+   im Bau (ADR 0019, Nachtrag 2026-10-28). **Löschen ist endgültig:** Jede Datenbank bekommt einen Entwurf höchstens
+   einmal (Merker `wissen_entwuerfe_angelegt` in `einstellung`, gesetzt von Seed und Migration). Was die Redaktion endgültig
+   löscht (Verwaltung › Islamisches Wissen oder Leerung des Papierkorbs), legt weder ein neuer Bau noch `pnpm db:seed` neu
+   an. Wer einen gelöschten Entwurf zurückhaben will, legt das Thema in der Verwaltung neu an.
 5. **Schalter `website_wissen_vorschau`** (ADR 0035 Nr. 2): ohne Personendaten, ohne Voraussetzung, Standard an in allen
    Betriebsarten (`IN_PRODUKTION_AN`, Nutzerentscheidung). An: Themen „zur Prüfung“ sind öffentlich. Aus: allein ADR 0030
    Nr. 2 – öffentlich ist nur „geprüft“. Er gilt für jedes eingereichte Thema, auch für Texte der Redaktion; diese tragen
@@ -49,7 +53,8 @@
    - Themenseite: Marke „Entwurf“ im Kopf vor dem Kurztext, oben im Inhalt der Hinweis „Entwurf zur Prüfung – noch nicht vom
      Imam geprüft“ mit Erklärung; solange der Stand unverändert aus dem KI-Entwurf stammt, sagt der Hinweis offen, dass eine
      KI ihn aus den verlinkten Quellen der IGMG entworfen hat (Transparenz gegenüber Lesenden).
-   - Übersicht und Themenleiste: Marke „Entwurf“ am Thema. Suchtreffer der Volltextsuche: Marke „Entwurf“.
+   - Übersicht und Themenleiste: Marke „Entwurf“ am Thema. Suchtreffer der Volltextsuche und der Titel-Suche ohne
+     Datenbank: Marke „Entwurf“ (der Titel-Index trägt dafür `entwurf`, Version 2 – Gegenprüfung 28.10.2026).
    - Eingebettete Erklärung (`WissenErklaerung`): kompakter Hinweis vor dem Kurztext.
    - Texte in `messages/bereiche/wissen.json` (`wissen.entwurf.*`), dreisprachig.
 8. **Suchmaschinen und Antwortmaschinen:** Entwurfs-Themenseiten tragen `noindex, follow` (`robots` in `generateMetadata`,
@@ -63,7 +68,8 @@
     tragen zusätzlich den Tag `einstellungen` (wie die Lern-App, ADR 0035 Fortschreibung Lern-App 3): Ein Wechsel in der
     Einstellung wirkt, sobald dieser Tag verfällt (beim Start, ADR 0017, oder mit `POST /api/wartung/cache-erneuern`), ein
     Wechsel der Umgebung mit der nächsten Bereitstellung. Die Verwaltung erneuert den Tag
-    `wissen` auch bei Änderungen an Themen „zur Prüfung“ (`wissenCacheBetroffen`, `src/lib/wissen/entwurf.ts`).
+    `wissen` auch bei Änderungen an Themen „zur Prüfung“ (`wissenCacheBetroffen`, `src/lib/wissen/entwurf.ts`) und beim
+    Anlegen eines sichtbaren Themas, das gleich eingereicht wird (es ist mit dem Schalter sofort öffentlich).
 11. **Cockpit:** Startklar-Prüfung `gemeinde.wissen-vorschau` (Hinweis mit der Zahl sichtbarer Entwürfe); der Schalter hat
     dort seinen Namen.
 12. **Abschaltweg:** für alle Texte `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus` in der Umgebung (danach neu bereitstellen) oder
@@ -88,7 +94,9 @@
   beruht auf der Nutzerentscheidung E-044 Nr. 5.
 - Tests: Unit `funktionen`, `wissen-entwuerfe` (Regeln, Auszeichnung, Seed-Wächter), `wissen-erklaerung`; Integration
   `wissen-entwuerfe` (Schalter aus 12 / an 16 Themen, davon 4 gekennzeichnet; Einstellung und Umgebung; Freigabe entfernt
-  die Kennzeichnung; Zurückweisen nimmt den Text herunter; Warteschlange; Cache; Cockpit; Titel-Index); E2E
+  die Kennzeichnung; Zurückweisen nimmt den Text herunter; Warteschlange; Cache, auch beim Anlegen; Cockpit; Titel-Index
+  mit genau vier gekennzeichneten Einträgen), `inhalte-marktstart` (Merker: Gelöschtes bleibt gelöscht, Bestand ohne
+  Merker), `inhalte-sperre-postgres` (Sperre, nur mit `TEST_PG_URL`); Unit `suche-titelindex`, `suche-titel-trefferliste`; E2E
   `wissen-entwuerfe.spec.ts` (Kennzeichnung, `noindex`, Sitemap, Fremdanfragen, axe). `verwaltung-wissen.test.ts` bleibt
   unverändert grün, weil die Integrationstests mit ausgeschaltetem Schalter laufen.
 - Menschen: Der Imam prüft die vier Entwürfe (MENSCHEN M-101); die türkischen und englischen Texte prüfen Muttersprachler

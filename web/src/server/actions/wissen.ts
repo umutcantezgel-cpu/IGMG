@@ -14,7 +14,7 @@ import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { gleicherInhalt, statusNachSpeichern, type FreigabeStatus } from '@/lib/religioes/freigabe';
 import { richtextSchema } from '@/lib/validierung/richtext';
 import { WISSEN_FELDER, wissenDatensatz, wissenKlartext, wissenSchema, type WissenInhaltDaten } from '@/lib/validierung/wissen';
-import { wissenCacheBetroffen } from '@/lib/wissen/entwurf';
+import { oeffentlicheFreigaben, wissenCacheBetroffen } from '@/lib/wissen/entwurf';
 
 /**
  * Verwaltung „Islamisches Wissen“ (F-40, Plan §3.7 und §5, ADR 0030; MUSTER 5). Recht `wissen.bearbeiten` (Redaktion,
@@ -82,11 +82,11 @@ export async function speichereWissensThema(_vorher: WissenZustand, fd: FormData
   const status = e.sichtbar ? ('veroeffentlicht' as const) : ('entwurf' as const);
 
   if (!e.id) {
+    const freigabe: FreigabeStatus = e.einreichen ? 'zur_pruefung' : 'entwurf';
     const ergebnis = await db.transaction(async (tx) => {
       const [vorhanden] = await tx.select({ id: t.id }).from(t).where(eq(t.slug, e.slug)).limit(1);
       if (vorhanden) return null;
       const [{ hoechste }] = await tx.select({ hoechste: max(t.sortierung) }).from(t);
-      const freigabe: FreigabeStatus = e.einreichen ? 'zur_pruefung' : 'entwurf';
       const [neu] = await tx
         .insert(t)
         .values({
@@ -108,7 +108,10 @@ export async function speichereWissensThema(_vorher: WissenZustand, fd: FormData
       return neu.id;
     });
     if (!ergebnis) return { fehler: 'pruefen', feldFehler: { slug: 'slugVergeben' }, werte };
-    // Neue Themen sind nie öffentlich (erst nach der Freigabe) – kein Cache betroffen
+    // Ein neues Thema ist nie „geprüft“, aber sichtbar und eingereicht („zur Prüfung“) mit dem Schalter
+    // `website_wissen_vorschau` sofort als gekennzeichneter Entwurf öffentlich (ADR 0047): dann verfällt der Cache
+    // (Übersicht, Themenleiste, Suche). Ausgeblendet oder nicht eingereicht bleibt es verborgen – kein Cache betroffen.
+    if (status === 'veroeffentlicht' && oeffentlicheFreigaben(true).includes(freigabe)) inhaltGeaendert(TAG.wissen);
     redirect(`/verwaltung/wissen/${ergebnis}?angelegt=1`);
   }
 

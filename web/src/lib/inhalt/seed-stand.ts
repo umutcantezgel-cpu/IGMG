@@ -2,6 +2,7 @@ import { and, eq } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import type { Datenbank, Transaktion } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
+import { sperreInhaltsstaende } from './sperre';
 import { stabil } from './stand-2026';
 
 /**
@@ -64,13 +65,17 @@ export async function bringeAufSeedStand(tx: Transaktion, migration: string, sta
   return 'aktualisiert';
 }
 
-/** Wendet mehrere Zielstände in **einer** Transaktion an (in der gegebenen Reihenfolge). Ergebnis je Bereich. */
+/**
+ * Wendet mehrere Zielstände in **einer** Transaktion an (in der gegebenen Reihenfolge, unter der Sperre der Inhaltsstände).
+ * Ergebnis je Bereich.
+ */
 export async function wendeSeedStaendeAn(
   db: Datenbank,
   migration: string,
   staende: readonly SeedStand[],
 ): Promise<Record<string, StandAusgang>> {
   return db.transaction(async (tx) => {
+    await sperreInhaltsstaende(tx);
     const ergebnis: Record<string, StandAusgang> = {};
     for (const s of staende) ergebnis[s.bereich] = await bringeAufSeedStand(tx, migration, s);
     return ergebnis;

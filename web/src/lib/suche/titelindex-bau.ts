@@ -2,15 +2,16 @@ import { and, asc, eq, inArray, isNull, lte, or } from 'drizzle-orm';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { BUKHARI } from '@/lib/hadith/anzeige';
-import { oeffentlicheFreigaben } from '@/lib/wissen/entwurf';
+import { istEntwurf, oeffentlicheFreigaben } from '@/lib/wissen/entwurf';
 import { SUCHINDEX_VERSION, type IndexEintrag, type SuchIndex } from './titelindex';
 
 /**
  * Baut den Titel-Index der Suche aus der Bau-Datenbank (`scripts/suchindex.ts`, Vercel-Bau ohne DATABASE_URL). Gleiche
  * Sichtbarkeit wie die öffentlichen Seiten bzw. die Volltextsuche (`suche.ts`): nur Veröffentlichtes, nicht im
  * Papierkorb, Wissensthemen nur religiös geprüft (mit `wissenEntwuerfe` – Schalter `website_wissen_vorschau`, ADR 0047 –
- * auch „zur Prüfung“), Neuigkeiten und freie Seiten nicht vor ihrem Datum. Hadith-Bücher und -Nummern nur mit eingeschalteter
- * Gesamtsammlung (sonst antworten die Buchseiten mit 404). Keine Texte – nur Titel, Nummern und Adressteile.
+ * auch „zur Prüfung“, gekennzeichnet mit `entwurf` für die Marke „Entwurf“ der Trefferliste), Neuigkeiten und freie Seiten
+ * nicht vor ihrem Datum. Hadith-Bücher und -Nummern nur mit eingeschalteter Gesamtsammlung (sonst antworten die Buchseiten
+ * mit 404). Keine Texte – nur Titel, Nummern und Adressteile.
  */
 export async function baueSuchIndex(
   db: Datenbank,
@@ -31,7 +32,7 @@ export async function baueSuchIndex(
       .from(schema.veranstaltung)
       .where(sichtbar(schema.veranstaltung)),
     db
-      .select({ slug: schema.wissenThema.slug, titel: schema.wissenThema.titel })
+      .select({ slug: schema.wissenThema.slug, titel: schema.wissenThema.titel, freigabe: schema.wissenThema.freigabe })
       .from(schema.wissenThema)
       // Religiöse Freigabe (F-40, Migration 0015): öffentlich nur „geprüft“ – wie wissen.ts und die Volltextsuche; mit dem
       // Schalter `website_wissen_vorschau` auch die gekennzeichneten Entwürfe „zur Prüfung“ (ADR 0047)
@@ -56,7 +57,7 @@ export async function baueSuchIndex(
   const eintraege: IndexEintrag[] = [
     ...nachrichten.map((z) => ({ art: 'nachricht' as const, slug: z.slug, titel: z.titel })),
     ...veranstaltungen.map((z) => ({ art: 'veranstaltung' as const, slug: z.slug, titel: z.titel })),
-    ...wissen.map((z) => ({ art: 'wissen' as const, slug: z.slug, titel: z.titel })),
+    ...wissen.map((z) => ({ art: 'wissen' as const, slug: z.slug, titel: z.titel, entwurf: istEntwurf(z.freigabe) })),
     ...seiten.map((z) => ({ art: 'seite' as const, slugs: { de: z.de, tr: z.tr, en: z.en }, titel: z.titel })),
     ...suren.map((z) => ({ art: 'sure' as const, nr: z.nr, umschrift: z.umschrift ?? '', nameAr: z.nameAr, name: z.name ?? null })),
   ];

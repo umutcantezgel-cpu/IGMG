@@ -39,6 +39,16 @@ const entscheide = (id: string, entscheidung: 'freigeben' | 'zurueckweisen', kom
   entscheideFreigabe({}, formular({ inhaltTyp: 'wissen_thema', inhaltId: id, entscheidung, kommentar })).catch((e: { ziel?: string }) => ({
     ziel: e.ziel,
   }));
+/** Neues Thema über die Action: Weiterleitung als `{ ziel }`, sonst die Antwort als `{ wert }`. */
+async function anlegen(werte: Record<string, string>): Promise<{ ziel?: string; wert?: unknown }> {
+  try {
+    return { wert: await aktionen.speichereWissensThema({}, formular(werte)) };
+  } catch (e) {
+    const ziel = (e as { ziel?: string }).ziel;
+    if (ziel) return { ziel };
+    throw e;
+  }
+}
 const absatz = (text: string) => JSON.stringify({ type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text }] }] });
 
 async function cockpit(env: Record<string, string | undefined>): Promise<Pruefung | undefined> {
@@ -91,6 +101,7 @@ describe('Schalter website_wissen_vorschau', () => {
     expect((await suche('Zakat', 'de')).filter((t) => t.art === 'wissen')).toEqual([]);
     const index = await baueSuchIndex(db as unknown as Datenbank, { hadith: false });
     expect(index.eintraege.filter((e) => e.art === 'wissen')).toHaveLength(12);
+    expect(index.eintraege.filter((e) => e.art === 'wissen' && e.entwurf)).toEqual([]);
     expect(await cockpit({ FUNKTION_WEBSITE_WISSEN_VORSCHAU: 'aus' })).toMatchObject({ status: 'ok' });
   });
 
@@ -109,6 +120,8 @@ describe('Schalter website_wissen_vorschau', () => {
     expect((await suche('Arafat', 'tr')).find((t) => t.slug === 'hajj-umrah')).toMatchObject({ entwurf: true, titel: 'Hac ve Umre' });
     const index = await baueSuchIndex(db as unknown as Datenbank, { hadith: false, wissenEntwuerfe: true });
     expect(index.eintraege.filter((e) => e.art === 'wissen')).toHaveLength(16);
+    // Genau die vier Entwürfe tragen die Kennzeichnung (Marke „Entwurf“ in der Titel-Trefferliste)
+    expect(index.eintraege.flatMap((e) => (e.art === 'wissen' && e.entwurf ? [e.slug] : [])).sort()).toEqual([...ENTWUERFE].sort());
     expect(await cockpit({ FUNKTION_WEBSITE_WISSEN_VORSCHAU: 'an' })).toMatchObject({
       status: 'hinweis',
       meldung: expect.stringContaining('4 Wissensthemen sind als „Entwurf zur Prüfung'),
@@ -235,5 +248,28 @@ describe('Bearbeiten durch die Redaktion (Cache, Kennzeichnung)', () => {
     expect(aufrufe.updateTag).toContain('wissen');
     vorschauAn();
     expect(await sichtbar()).not.toContain('islamic-calendar');
+  });
+
+  it('neues Thema, sichtbar und eingereicht: mit Vorschau sofort als Entwurf öffentlich – der Cache verfällt', async () => {
+    await angemeldetAls(REDAKTION);
+    expect(await anlegen({ slug: 'testthema-neu', titelDe: 'Testthema neu', sichtbar: 'ja', einreichen: 'ja' })).toMatchObject({
+      ziel: expect.stringMatching(/^\/verwaltung\/wissen\/[0-9a-f-]{36}\?angelegt=1$/),
+    });
+    expect(aufrufe.updateTag).toContain('wissen');
+    vorschauAn();
+    expect(await oeffentlich.ladeWissensThema('testthema-neu')).toMatchObject({ entwurf: true, kiEntwurf: false });
+  });
+
+  it('neues Thema ausgeblendet oder nicht eingereicht: verborgen, kein Cache betroffen', async () => {
+    for (const [slug, werte] of [
+      ['testthema-ausgeblendet', { einreichen: 'ja' }],
+      ['testthema-nicht-eingereicht', { sichtbar: 'ja' }],
+    ] as const) {
+      await angemeldetAls(REDAKTION);
+      expect((await anlegen({ slug, titelDe: 'Testthema', ...werte })).ziel, slug).toMatch(/\?angelegt=1$/);
+      expect(aufrufe.updateTag, slug).toEqual([]);
+      vorschauAn();
+      expect(await oeffentlich.ladeWissensThema(slug), slug).toBeNull();
+    }
   });
 });
