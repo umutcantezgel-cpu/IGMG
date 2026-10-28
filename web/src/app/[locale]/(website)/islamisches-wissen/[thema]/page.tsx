@@ -5,12 +5,14 @@ import { Suspense } from 'react';
 import { RichText } from '@/components/website/RichText';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { textMitSprache } from '@/components/website/Text';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum';
 import { ThemaInsel } from '@/components/website/wissen/ThemaInsel';
 import { ThemaKopf } from '@/components/website/wissen/ThemaKopf';
 import { ThemaNavigation } from '@/components/website/wissen/ThemaNavigation';
 import { ThemaWeiter } from '@/components/website/wissen/ThemaWeiter';
 import { EntwurfHinweis } from '@/components/website/wissen/EntwurfHinweis';
+import { VideoLink } from '@/components/website/wissen/VideoLink';
 import type { WissenTexte } from '@/components/website/wissen/typen';
 import type { Locale } from '@/i18n/routing';
 import { youtubeLink } from '@/lib/einbettung/youtube';
@@ -106,7 +108,7 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
         beschreibung: textMitSprache(v.beschreibung, sprache),
         vorschau: t('videos.vorschau', { titel: videoTitel.text }),
         // Nur ein Link zu YouTube, keine Einbettung (Marktstart P7, K-12/K-14)
-        ...(v.youtubeId ? { link: youtubeLink(v.youtubeId) } : {}),
+        ...(v.youtubeId ? { link: <VideoLink href={youtubeLink(v.youtubeId)} text={t('videos.youtube')} titel={videoTitel.text} /> } : {}),
       };
     });
   const experten = inhalt.experten.map((e) => ({
@@ -140,7 +142,6 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
     videoAnsehen: t('videos.ansehen'),
     videoHinweis: t('videos.hinweis'),
     videoPlatzhalter: t('videos.platzhalter'),
-    videoLink: t('videos.youtube'),
     expertenTitel: t('experten.titel'),
     expertenBadge: t('experten.badge'),
     mehrErfahren: t('experten.mehr'),
@@ -178,6 +179,7 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
           artikel={artikel}
           videos={videos}
           experten={experten}
+          leerGrafik={<Zustandsgrafik art="leer" />}
           themen={
             <ThemaNavigation
               titel={texte.themenTitel}

@@ -5,7 +5,10 @@ import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { AktuelleHutba } from '@/components/website/dachverband/HutbaKarte';
 import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
 import { textMitSprache } from '@/components/website/Text';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum';
+import { EntwurfMarke } from '@/components/website/wissen/EntwurfMarke';
+import { VideoLink } from '@/components/website/wissen/VideoLink';
 import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
 import { WissenInsel } from '@/components/website/wissen/WissenInsel';
 import type { WissenTexte } from '@/components/website/wissen/typen';
@@ -56,7 +59,6 @@ export default async function IslamischesWissenSeite() {
     videoAnsehen: t('videos.ansehen'),
     videoHinweis: t('videos.hinweis'),
     videoPlatzhalter: t('videos.platzhalter'),
-    videoLink: t('videos.youtube'),
     expertenTitel: t('experten.titel'),
     expertenBadge: t('experten.badge'),
     mehrErfahren: t('experten.mehr'),
@@ -88,6 +90,8 @@ export default async function IslamischesWissenSeite() {
             // Noch nicht religiös geprüft (Schalter `website_wissen_vorschau`, ADR 0047): Marke „Entwurf“
             marke: th.entwurf ? t('entwurf.marke') : undefined,
           }))}
+          entwurfMarke={<EntwurfMarke text={t('entwurf.marke')} />}
+          leerGrafik={<Zustandsgrafik art="leer" />}
           artikel={inhalt.artikel.map((a) => ({
             schluessel: a.schluessel,
             thema: a.thema,
@@ -107,7 +111,7 @@ export default async function IslamischesWissenSeite() {
               beschreibung: textMitSprache(v.beschreibung, sprache),
               vorschau: t('videos.vorschau', { titel: titel.text }),
               // Nur ein Link zu YouTube, keine Einbettung (K-12: die Seite liegt an der JS-Grenze; K-14: kein Abruf beim Laden)
-              ...(v.youtubeId ? { link: youtubeLink(v.youtubeId) } : {}),
+              ...(v.youtubeId ? { link: <VideoLink href={youtubeLink(v.youtubeId)} text={t('videos.youtube')} titel={titel.text} /> } : {}),
             };
           })}
           experten={inhalt.experten.map((e) => ({

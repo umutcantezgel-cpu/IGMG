@@ -1,4 +1,4 @@
-import { Clock, ExternalLink, Play } from 'lucide-react';
+import { Clock, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { STREIFEN, THEMA_TAG, VOLL } from './stil';
 import type { Anzeige, ArtikelAnzeige, ExpertenAnzeige, VideoAnzeige, WissenTexte } from './typen';
@@ -6,7 +6,7 @@ import type { Anzeige, ArtikelAnzeige, ExpertenAnzeige, VideoAnzeige, WissenText
 /**
  * Inhalte des nativen Dialogs (design/IslamicKnowledge.dc.html, Z95–129). Der Rahmen mit Schaltfläche „Schließen“
  * steht in der Insel; hier nur die drei Fassungen. Videos bleiben ohne Einbettung (K-14); mit YouTube-ID steht statt des
- * Platzhalters ein reiner Link „Auf YouTube ansehen“ (keine Anfrage beim Aufruf).
+ * Platzhalters ein reiner Link „Auf YouTube ansehen“ (keine Anfrage beim Aufruf), fertig vom Server (`VideoLink`).
  */
 
 export function ArtikelInhalt({
@@ -89,19 +89,7 @@ export function VideoInhalt({ video: v, titelId, texte }: { video: VideoAnzeige;
       >
         <Play aria-hidden className="size-8 text-gruen-700" />
         <span className="font-bold">{v.titel.text}</span>
-        {v.link ? (
-          <a
-            href={v.link}
-            rel="noopener noreferrer"
-            aria-label={`${texte.videoLink}: ${v.titel.text}`}
-            className="inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4"
-          >
-            {texte.videoLink}
-            <ExternalLink aria-hidden className="size-4" />
-          </a>
-        ) : (
-          <span className="text-16 text-tinte-2">{texte.videoPlatzhalter}</span>
-        )}
+        {v.link ?? <span className="text-16 text-tinte-2">{texte.videoPlatzhalter}</span>}
       </div>
       <h3 className="font-text text-18 font-bold">{texte.dialogBeschreibung}</h3>
       <p lang={v.beschreibung.lang} className="max-w-text text-pretty">

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 /** Text aus den Daten. `lang="de"` markiert den sichtbaren Rückfall, wenn die gewählte Sprache fehlt (K-02). */
 export type Anzeige = { text: string; lang?: string };
 
@@ -20,8 +21,6 @@ export type WissenTexte = {
   videoAnsehen: string;
   videoHinweis: string;
   videoPlatzhalter: string;
-  /** „Auf YouTube ansehen“: reiner Link für Videos mit YouTube-ID (Marktstart P7, keine Einbettung). */
-  videoLink: string;
   expertenTitel: string;
   expertenBadge: string;
   mehrErfahren: string;
@@ -61,10 +60,11 @@ export type VideoAnzeige = {
   /** Fertiger Text für das Vorschaubild („Vorschaubild: Titel“). */
   vorschau: string;
   /**
-   * Adresse „Auf YouTube ansehen“ (`youtubeLink`, vom Server berechnet), nur bei gepflegter YouTube-ID. Bewusst nur ein Link
-   * und keine Einbettung nach Klick: /islamisches-wissen liegt beim JavaScript schon an der Grenze (K-12, Marktstart P7).
+   * Link „Auf YouTube ansehen“ (Server-Komponente `VideoLink`, fertig gerendert), nur bei gepflegter YouTube-ID. Bewusst nur
+   * ein Link und keine Einbettung nach Klick; vom Server, damit Markup und Zeichen nicht ins Client-Bundle gehen – die
+   * Wissensseiten liegen beim JavaScript an der Grenze (K-12, Marktstart P7, Welle 3).
    */
-  link?: string;
+  link?: ReactNode;
 };
 
 export type ExpertenAnzeige = {
