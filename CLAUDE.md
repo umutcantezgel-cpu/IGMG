@@ -1,4 +1,7 @@
 ## Kein laufender Lauf
+- Lauf „Marktstart IGMG“ (IGMG-Daten für die Website) abgeschlossen am 28.10.2026: gemergt nach `main` (umutcantezgel-cpu/IGMG#5),
+  Bericht `_lauf/belege/marktstart-igmg/BERICHT.md`, offene Menschen-Punkte `_lauf/MENSCHEN.md` § 8 (M-099…M-120),
+  Livegang `web/docs/GO-LIVE.md` C6–C14.
 - Lauf „Lern-App“ abgeschlossen am 26.10.2026 (`_lernapp/ABSCHLUSS.md`, `_lernapp/BERICHT.md`); Lauf „Gemeinde-Plattform“ am
   16.10.2026 (`_gemeinde/ABSCHLUSS.md`). Nichts automatisch fortsetzen; neue Arbeit nur auf neuen Auftrag des Nutzers.
 - `_gemeinde/`, `_lernapp/` und `_archiv/` sind Unterlagen abgeschlossener Läufe: dort nur auf ausdrücklichen Auftrag ändern.
