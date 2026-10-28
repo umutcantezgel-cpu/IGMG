@@ -1,6 +1,6 @@
 # GO-LIVE: Was vor dem Livegang erledigt sein muss
 
-Stand: 12.10.2026 (Abschluss des Gestaltungs- und Vercel-Laufs). Diese Liste sagt dir, was vor der ersten öffentlichen Veröffentlichung auf Vercel fertig sein muss. Der Weg dorthin steht in **VERCEL.md** (Runbook, etwa 30 Minuten). Was nur ein Mensch entscheiden oder erledigen kann, steht in **MENSCHEN.md**.
+Stand: 12.10.2026 (Abschluss des Gestaltungs- und Vercel-Laufs), Nachtrag 28.10.2026 (Marktstart IGMG: B6, C6–C14, G1). Diese Liste sagt dir, was vor der ersten öffentlichen Veröffentlichung auf Vercel fertig sein muss. Der Weg dorthin steht in **VERCEL.md** (Runbook, etwa 30 Minuten). Was nur ein Mensch entscheiden oder erledigen kann, steht in **MENSCHEN.md**.
 
 ## So liest du die Liste
 
@@ -83,7 +83,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E; danach G (Gemeinde-Platt
   - **Ort:** `vercel.json` (Abschnitt `crons`) und Vercel › Projekt › Cron Jobs **[prüfen]**.
   - **Aufwand:** 15 Minuten.
   - **Wer:** Technik.
-  - **Code:** vorhanden (`vercel.json` › `crons`: Löschfristen 01:00 UTC, Mail-Ausgang 02:00 UTC). Nötig ist nur `CRON_SECRET` in Production.
+  - **Code:** vorhanden (`vercel.json` › `crons`: Löschfristen 01:00 UTC, Mail-Ausgang 02:00 UTC; seit dem Marktstart dazu Gebetszeiten-Abgleich 20:00 UTC und Dachverband-Abgleich 04:00 UTC, siehe C8). Nötig ist nur `CRON_SECRET` in Production.
   - **Das siehst du, wenn es geklappt hat:** Die Löschfristen und der Mail-Ausgang laufen täglich. Die Antwort der Löschroute nennt die Anzahl gelöschter Einträge (`web/docs/BETRIEB.md` § 4).
 
 - [ ] **B7 · Bau nach ADR 0019 eingeschaltet**
@@ -129,6 +129,80 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E; danach G (Gemeinde-Platt
   - **Wer:** Vorstand.
   - **Stand:** Die Empfehlung steht in MENSCHEN.md als ML-09. Die Entscheidung fehlt noch.
   - **Das siehst du, wenn es geklappt hat:** Der Tarif ist entschieden und begründet dokumentiert.
+
+- [ ] **C6 · Inhalte vom Dachverband prüfen (Marktstart IGMG)**
+  - **Ort:** `_lauf/MENSCHEN.md`, Punkte M-099 bis M-102; Seiten `/igmg`, `/ueber-uns`, `/hadsch-umra`, `/islamisches-wissen`, `/spenden`, `/mitglied-werden`, Fußzeile.
+  - **Aufwand:** 2–3 Stunden, verteilt auf Vorstand, Imam und zwei Muttersprachler.
+  - **Wer:** Vorstand legt die schriftliche Zustimmung der IGMG ab (M-099). Imam prüft die vier Erklärtexte, „Bedeutung“ und Leitbild (M-101). Muttersprachler prüfen Türkisch und Englisch (M-102, Liste in `web/messages/neu-uebersetzt.json`).
+  - **Das siehst du, wenn es geklappt hat:** M-099 bis M-102 tragen eine Antwort; die Zustimmung liegt als Datei beim Vorstand.
+
+- [ ] **C7 · IGMG-Gebetszeiten als offizielle Quelle**
+  - **Ort:** IGMG (Anfrage, M-100), Vercel › Environment Variables (Production), Verwaltung › Gebetszeiten.
+  - **Aufwand:** 30 Minuten, plus Wartezeit auf die IGMG.
+  - **Wer:** Vorstand fragt an, Technik richtet ein.
+  - **Schritte:**
+    1. Offiziellen Zugang bei der IGMG anfragen (Feed mit Schlüssel oder Jahresdatei für Wetzlar, Stadt-ID 20238; dazu Rechenmethode und Sommerregel; M-100).
+    2. `GEBETSZEITEN_IGMG_URL` (https, Platzhalter `{stadt}`, `{jahr}`, `{monat}`) und gegebenenfalls `GEBETSZEITEN_IGMG_SCHLUESSEL` in Production setzen (`docs/deploy/VERCEL-ENV.md`), neu bereitstellen. Eine gelieferte Jahresdatei liegt stattdessen unter `web/daten/igmg-gebetskalender/<stadtId>-<jahr>.csv` mit `QUELLE.md` (SHA-256, Abrufdatum).
+    3. Verwaltung › Gebetszeiten › „IGMG-Abgleich“: einschalten und die Freigabe-Art wählen („sofort übernehmen“ oder „erst nach Freigabe“).
+    4. Bis der Zugang da ist: Monate über „Tabelle aus dem IGMG-Gebetskalender einfügen“ übernehmen (`docs/handbuch/redaktion.md` 12.5).
+  - **Das siehst du, wenn es geklappt hat:** Für die nächsten 30 Tage liegen IGMG-Zeiten vor (unter 7 Tagen ist es in der Produktion ein Fehler). Im Startklar-Cockpit sind `inhalte.gebetszeiten-abdeckung`, `inhalte.gebetszeiten-abgleich`, `inhalte.gebetszeiten-konflikte`, `inhalte.gebetszeiten-datei` und `inhalte.gebetszeiten-igmg-zugang` grün oder begründet. `/gebetszeiten` zeigt „Quelle: IGMG-Gebetskalender, Stand …“ statt „berechnet (vorläufig)“.
+
+- [ ] **C8 · `CRON_SECRET` und die vier Crons**
+  - **Ort:** Vercel › Projekt › Settings › Environment Variables und Cron Jobs **[prüfen: Menüname]**; `vercel.json` und `web/vercel.json`.
+  - **Aufwand:** 15 Minuten.
+  - **Wer:** Technik.
+  - **Was läuft (UTC):** `loeschfristen` 01:00, `mail-ausgang` 02:00, `dachverband-abgleich` 04:00, `gebetszeiten-abgleich` 20:00 (nur wenn in der Verwaltung eingeschaltet). Tabelle mit lokalem Takt: `web/docs/BETRIEB.md` § 9a.
+  - **Tarif:** Die Zahl der Crons kann je Vercel-Tarif begrenzt sein; vier Crons gegen den gewählten Tarif prüfen (C5).
+  - **Das siehst du, wenn es geklappt hat:** Vercel führt alle vier Crons, und ihre Läufe enden mit Status 200. Der Dachverband-Abgleich steht im Audit-Log (`dachverband.abgleich`).
+
+- [ ] **C9 · Stand-Migration „marktstart“ für bestehende Datenbanken**
+  - **Ort:** Vercel-Bau (automatisch) oder Kommandozeile (Docker).
+  - **Aufwand:** 5 Minuten.
+  - **Wer:** Technik.
+  - **Was passiert:** `pnpm inhalte:marktstart` bringt die Beispielstände von IGMG, Über uns, Vorstand, den vier Organisationen, „Aus dem Dachverband“, „Hadsch & Umra“, die vier Wissens-Entwürfe und die Videos von IGMG Reisen in die Datenbank. Ersetzt werden nur Zeilen mit `istBeispiel = true`; fehlende Bereiche werden angelegt; ein zweiter Lauf ändert nichts (ADR 0019, Nachtrag 2026-10-28).
+  - **Auf Vercel:** läuft im Bau mit `DATABASE_URL` automatisch. **Docker:** nach dem Update einmal von Hand mit der `DATABASE_URL` der Produktion, danach `POST /api/wartung/cache-erneuern`.
+  - **Von Hand nachziehen:** Was die Redaktion schon gespeichert hat, bleibt unverändert, etwa `[Gründungsjahr]` oder „1975“ in einer gespeicherten Fassung von Über uns oder Vorstand.
+  - **Das siehst du, wenn es geklappt hat:** Das Bauprotokoll bzw. die Konsole nennt die Bereiche; `/igmg` zeigt „Stand Juni 2026“, `/ueber-uns` das Gründungsjahr 1978, `/hadsch-umra` die Abflüge.
+
+- [ ] **C10 · Probelauf des Dachverband-Abgleichs**
+  - **Ort:** Kommandozeile: `curl -fsS -X POST -H "Authorization: Bearer <WARTUNG_TOKEN>" "https://<domain>/api/wartung/dachverband-abgleich?trocken=1"`.
+  - **Aufwand:** 5 Minuten.
+  - **Wer:** Technik.
+  - **Das siehst du, wenn es geklappt hat:** Die Antwort nennt geprüfte, neue und vorhandene Predigten und schreibt nichts (`trocken`). Danach ohne `?trocken=1` oder in der Verwaltung „Jetzt aus dem Feed holen“; Startklar `inhalte.dachverband-aktuell` ist grün.
+
+- [ ] **C11 · Vorschau der Wissens-Entwürfe entscheiden**
+  - **Ort:** Vorstand; technisch Vercel › Environment Variables oder Verwaltung › Einstellungen › Funktionen.
+  - **Aufwand:** 10 Minuten.
+  - **Wer:** Vorstand entscheidet, Technik schaltet.
+  - **Stand:** Die vier Erklärtexte (Hadsch und Umra, Islamischer Kalender, Zakat/Fitra/Kurban, Freitagsgebet) sind öffentlich als „Entwurf zur Prüfung“ gekennzeichnet (ADR 0047, Schalter `website_wissen_vorschau`, Standard an).
+  - **Abschalten:** `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus` und neu bereitstellen, oder die Einstellung `funktionen` setzen und danach `POST /api/wartung/cache-erneuern`. Alternativ gibt der Imam die Texte frei (M-101).
+  - **Das siehst du, wenn es geklappt hat:** Die Entscheidung steht in MENSCHEN; Startklar `gemeinde.wissen-vorschau` zeigt den gewählten Stand.
+
+- [ ] **C12 · Datenschutzerklärung: YouTube und Karte (vor dem Einbinden weiterer Videos)**
+  - **Ort:** Verwaltung › Seiteninhalte › Datenschutz; Entwurf im Seed `web/drizzle/seeds/bereiche/rechtliches.ts` (Abschnitt „Empfänger“: „Videos (Entwurf)“ und Prüfhinweis M-111); `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md` 2.6 und 2.7.
+  - **Aufwand:** 30 Minuten, plus Rechtsberatung.
+  - **Wer:** Vorstand mit Rechtsberatung (M-111, G-08).
+  - **Hinweis:** Bestehende Datenbanken bekommen den Entwurfsabsatz nicht über die Stand-Migration; die Technik überträgt ihn mit der geprüften Fassung in die Verwaltung. Die Karte erscheint erst mit bestätigten Koordinaten (M-010).
+  - **Das siehst du, wenn es geklappt hat:** `/datenschutz` beschreibt Videos und Karte ohne Prüfhinweis in eckigen Klammern; erst danach kommen weitere Videos auf die Website. Einmal im echten Browser „Video laden“ auf `/hadsch-umra` testen.
+
+- [ ] **C13 · Links zum Netzwerk und Hadsch-Termine prüfen**
+  - **Ort:** Kommandozeile in `web/`: `pnpm links:pruefen [basis]` (Bericht unter `_lauf/belege/links/`); Seite `/hadsch-umra` gegen igmgreisen.com.
+  - **Aufwand:** 20 Minuten.
+  - **Wer:** Technik prüft die Links, Redaktion die Termine.
+  - **Was:** Alle Ziele aus `NETZWERK` (Stand 2026-10-27) antworten; die Abflüge, Fristen und Programme auf `/hadsch-umra` stimmen mit IGMG Reisen überein (Seed-Stand 13.10.2026). Der Hinweis „Frist 01.11.2026“ verschwindet am 02.11.2026 von selbst.
+  - **Das siehst du, wenn es geklappt hat:** Der Bericht zeigt keine toten Links (Antworten wie 403 hinter einer Abfrage von Hand im Browser nachsehen); die Seite nennt den aktuellen Stand.
+
+- [ ] **C14 · Nach dem Abschalten des Konzept-Hinweises: Sichtbarkeit in der Suche**
+  - **Ort:** nach C1, gegen die Produktionsadresse.
+  - **Aufwand:** 30 Minuten.
+  - **Wer:** Technik.
+  - **Schritte:**
+    1. `curl -s https://<domain>/ | grep -i robots` zeigt kein `noindex` mehr (die Schranke gilt nur mit `VERCEL=1`, solange der Hinweis an ist; ADR 0049).
+    2. `https://<domain>/llms.txt` antwortet mit 200.
+    3. `E2E_BASIS=https://<domain> pnpm exec playwright test tests/e2e/seo.spec.ts --project desktop` ist grün.
+    4. `https://<domain>/sitemap.xml` in der Google Search Console und in Bing Webmaster Tools einreichen (Konten: M-109).
+    5. Stichproben im Rich Results Test und im Schema Markup Validator für `/`, `/igmg`, `/hadsch-umra`, `/gebetszeiten`.
+  - **Das siehst du, wenn es geklappt hat:** Alle fünf Schritte erledigt; die Konsolen zeigen die Sitemap als gelesen.
 
 ## D. Domain und Mail
 
@@ -203,6 +277,7 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
   - **Aufwand:** 30 Minuten.
   - **Wer:** Technik.
   - **Schritte:** Neon-Datenbank mit **PostgreSQL 17** anlegen (VERCEL.md 2.1: ab 17 wegen der Migrationen 0013/0014, nicht neuer als das Sicherungs-Image `postgres:17.6-alpine`). `DATABASE_URL` für Production setzen. Geheimnisse mit `pnpm geheimnisse:erzeugen` erzeugen und eintragen (mindestens `BETTER_AUTH_SECRET`, `EINGANG_SCHLUESSEL`, `EINGANG_SCHLUESSEL_ID`, `RATE_GEHEIMNIS`, `ALTCHA_GEHEIMNIS`, `CRON_SECRET`, `WARTUNG_TOKEN`; Liste in VERCEL-ENV.md). Neu bauen lassen: Der Vercel-Bau spielt alle Migrationen aus `drizzle/meta/_journal.json` (bei der Übergabe 0000 bis mindestens 0014) unter Sperre ein und importiert Koran, Tajwid, Übersetzungen und Bukhari. Die Beispielinhalte einmal mit `pnpm db:seed` gegen die neue Datenbank anlegen (VERCEL.md, Abschnitt 2).
+  - **Ergänzung Marktstart IGMG (28.10.2026):** Der Bau spielt jetzt bis mindestens Migration 0024 (`igmg_abgleich`) ein und führt danach die Stand-Migration `inhalte:marktstart` aus (C9). Bei einer neuen Datenbank legt `pnpm db:seed` die neuen Bereiche direkt an. Mit der Datenbank laufen Gebetszeiten-Abgleich, Hutba-Feed und die Pflege von „Aus dem Dachverband“ und „Hadsch & Umra“ in der Verwaltung live; ohne Datenbank friert der Beispielmodus die Freitagspredigt auf dem Stand des Baus ein (datierte Überschrift). Danach C7, C8 und C10.
   - **Das siehst du, wenn es geklappt hat:** `/verwaltung/anmelden` zeigt das Anmeldeformular, und das Startklar-Cockpit (`/verwaltung/startklar`) führt die Prüfungen zur Datenbankverbindung und zu den Migrationen als erfüllt.
 
 - [ ] **G2 · Erste Verwaltungskonten mit Zwei-Faktor**
@@ -263,4 +338,5 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
 - **VERCEL-ENV.md** (`web/docs/deploy/VERCEL-ENV.md`): alle Umgebungsvariablen mit Pflicht je Betriebsart.
 - **MENSCHEN.md** (`_gemeinde/MENSCHEN.md` für die Gemeinde-Plattform, `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md` für den Vorlauf): alle offenen Entscheidungen und Aufgaben für Menschen.
 - **BETRIEB.md** (`web/docs/BETRIEB.md`): Betrieb mit Docker und Betrieb auf Vercel (§ 9).
-- **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0024.
+- **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0024; für den Marktstart IGMG ADR 0046 bis 0049.
+- **Marktstart IGMG:** offene Menschen-Punkte M-099 bis M-119 in `_lauf/MENSCHEN.md`, Bericht `_lauf/belege/marktstart-igmg/BERICHT.md`.

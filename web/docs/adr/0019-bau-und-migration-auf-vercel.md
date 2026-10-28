@@ -57,3 +57,11 @@ Falsch, wenn ein Bau mit Migration fehlschlägt, nachdem die Migration angewende
   - ~~POST-Anfragen ohne `Next-Action` enden mit 500~~ – im Lauf vom 14.10.2026 nicht mehr nachstellbar.
   - Alle Schreibwege (Formulare, Verwaltung) brauchen die Datenbank. `/api/altcha` antwortet ohne `ALTCHA_GEHEIMNIS` mit 503 statt 500.
   - Kalender-Abos (`/api/ical/…`): Feiertage nur berechnet („vorläufig“), Veranstaltungen leer; der Einzeltermin als .ics wird auf vorgerenderten Seiten nicht angeboten (`ohneLaufzeitDatenbank` in `lib/db/verfuegbar.ts`). `/medien/…` antwortet mit 404.
+
+## Nachtrag 2026-10-28 (Marktstart IGMG: Stand-Migration „marktstart“ im Bau)
+
+- **Befund:** Neue Beispielstände der Seiteninhalte (IGMG, Über uns, Vorstand, vier Organisationen, Aus dem Dachverband, Hadsch & Umra) und neue Wissensthemen (vier Entwürfe nach ADR 0047, Videos von IGMG Reisen) erreichen eine bestehende Datenbank nicht über `pnpm db:seed`, weil die Seeds mit `onConflictDoNothing` arbeiten.
+- **Festlegung:** Eine idempotente Stand-Migration `pnpm inhalte:marktstart` (`scripts/inhalte-marktstart.ts`, Helfer `src/lib/inhalt/seed-stand.ts` und `src/lib/inhalt/stand-marktstart.ts`) ersetzt nur Zeilen mit `istBeispiel = true`, legt fehlende Bereiche an und schreibt einen Audit-Eintrag. Was die Redaktion gespeichert hat (`istBeispiel = false`), bleibt unberührt und muss von Hand nachgezogen werden (etwa `[Gründungsjahr]` oder „1975“ in gespeicherten Fassungen).
+- **Im Vercel-Bau:** `scripts/vercel-bau.mjs` ruft sie im Zweig mit `DATABASE_URL` nach Migration und Inhaltsimporten und vor `next build` auf; ein zweiter Lauf ändert nichts. Ohne Datenbank (Beispielmodus) entfällt der Schritt, die PGlite-Bau-Datenbank bekommt die neuen Seeds direkt.
+- **Docker und Handbetrieb:** Kein automatischer Aufruf beim Start; nach dem Update einmal `pnpm inhalte:marktstart` mit der `DATABASE_URL` der Produktion, danach `POST /api/wartung/cache-erneuern` (BETRIEB § 4, GO-LIVE C).
+- Migrationen bleiben additiv (Migration 0024 `igmg_abgleich`: neuer Enum-Wert, zwei Spalten, eine Tabelle). Gespeicherte Seiteninhalte älterer Form parsen weiter (Schema-Unions und `.catch(null)`, ADR 0046 Nr. 3).

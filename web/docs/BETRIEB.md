@@ -1,6 +1,6 @@
 # BETRIEB – IGMG Wetzlar Web-App
 
-Stand: Durchstich P3 (wird bis P5 vervollständigt). Zielgruppe: die Person, die den Server betreut.
+Stand: Durchstich P3 (wird bis P5 vervollständigt), Nachtrag 28.10.2026 (Marktstart IGMG: § 4, 4c, 4d, 5b, 8, 9, 9a). Zielgruppe: die Person, die den Server betreut.
 Alle Platzhalter in eckigen Klammern sind von der Gemeinde zu füllen (`_lauf/MENSCHEN.md`).
 
 ## 1 Bausteine
@@ -42,6 +42,10 @@ Alle mit `Authorization: Bearer <WARTUNG_TOKEN>`; ohne gültiges Token antworten
 - `POST /api/wartung/loeschfristen` – Löschlauf (C16, G-07): löscht Eingänge, deren Frist abgelaufen ist (samt Einwilligungen, Notizen und Mail-Ausgang; Audit-Eintrag `eingang.frist_geloescht` ohne Personendaten), versendete Mails nach 30 Tagen, verbrauchte ALTCHA-Aufgaben und alte Zähler der Ratenbegrenzung. Antwort: Anzahl gelöschter Einträge. **Täglich per Cron aufrufen**, z. B. `15 3 * * * curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://<domain>/api/wartung/loeschfristen`.
 - Fristen je Eingangsart: Verwaltung › Einstellungen (Vorgabe 180 Tage nach Abschluss, Veranstaltungsanmeldungen 30 Tage nach dem Termin; M-050). Die Frist beginnt, wenn ein Eingang „Erledigt“ oder „Abgelehnt“ wird. Nicht abgeschlossene Eingänge werden spätestens 365 Tage nach Eingang gelöscht; Wiederöffnen setzt diese Höchstfrist neu (365 Tage ab dann). Angaben aus öffentlichen Meldungen (Tickets) werden 180 Tage nach „Gelöst“ bzw. „Geschlossen“ entfernt. Abgelaufene, widerrufene und angenommene Einladungen werden nach 30 Tagen gelöscht, abgelaufene Passwort-Links sofort.
 
+- `POST /api/wartung/gebetszeiten-abgleich` – Abgleich mit dem IGMG-Gebetskalender (ADR 0048): holt die nächsten Tage (Standard 60) über den offiziellen Zugang (`GEBETSZEITEN_IGMG_URL`, optional `GEBETSZEITEN_IGMG_SCHLUESSEL`) bzw. die Jahresdatei, prüft sie und übernimmt nur Änderungen; Tabellen der Gemeinde werden nie überschrieben. `?trocken=1` prüft und meldet, ohne zu schreiben; `?nurAktiv=1` läuft nur, wenn der Abgleich in der Verwaltung eingeschaltet ist (so ruft ihn der lokale Takt). Antwort mit Status (`ok`, `unveraendert`, `auffaellig`, `freigegeben`, `fehler`, `nicht_eingerichtet`, `inaktiv`, `uebersprungen`), `no-store`; danach verfallen die betroffenen Monate im Cache. Der Cron ruft `GET` mit `CRON_SECRET` und läuft nur bei eingeschaltetem Abgleich.
+- `POST /api/wartung/dachverband-abgleich` – Freitagspredigten aus dem RSS-Feed der IGMG (ADR 0046): übernimmt nur Titel, Datum und Link als neue Einträge (`herkunft: feed`) in den Seiteninhalt `dachverband`, Audit `dachverband.abgleich`. `?trocken=1` schreibt nichts. Ein Feed-Fehler schreibt ebenfalls nichts. Cron: `GET` mit `CRON_SECRET`.
+- Öffentlich, ohne Token: `GET /api/gebetszeiten/<JJJJ-MM>` – Monatszeiten als JSON mit Quelle und Stand, für den Vormonat bis 12 Monate voraus (sonst 404), CORS nur `GET`, `Cache-Control: public, max-age=300`.
+
 ## 4a Konten (Kurzfassung)
 
 - Konten entstehen nur per Einladung (Verwaltung › Benutzer und Rollen, oder `pnpm verwaltung:einladen` für das erste Administrationskonto).
@@ -56,6 +60,24 @@ Alle mit `Authorization: Bearer <WARTUNG_TOKEN>`; ohne gültiges Token antworten
   Das Skript bricht ab, wenn der Wert nicht passt, und übernimmt die Texte unverändert.
 - **Danach** den Cache erneuern (`POST /api/wartung/cache-erneuern`) oder die App neu starten.
 - **Übersetzungen** nur mit geklärter Lizenz (M-036b); bis dahin Platzhalter.
+
+## 4c Gebetszeiten aus dem IGMG-Gebetskalender (ADR 0048)
+
+- **Vorrang je Tag:** Import der Gemeinde (auch „Tabelle einfügen“) vor IGMG-Abgleich vor IGMG-Jahresdatei vor Rechnung. Die Rechnung ist standardmäßig die kalibrierte Näherung „IGMG (angenähert)“ (Einstellung `rueckfall: naeherung`), öffentlich als „berechnet (vorläufig)“ gekennzeichnet.
+- **Zugang:** Ohne offiziellen Zugang (M-100) tut der Abgleich nichts. Die interne Schnittstelle von igmg.org wird nicht genutzt und nicht umgangen. Eine gelieferte Jahresdatei liegt unter `web/daten/igmg-gebetskalender/<stadtId>-<jahr>.csv` mit `QUELLE.md` (SHA-256, Abrufdatum, ADR 0025); Startklar `inhalte.gebetszeiten-datei` warnt 60 Tage vor ihrem Ende.
+- **Hinweis-Mails** an die Konten mit dem Recht `gebetszeiten.bearbeiten`: bei Störung nach drei Fehlschlägen in Folge, bei auffälligen Werten (Freigabe nötig), bei weniger als 14 Tagen Abdeckung und bei neuen Konflikten mit dem Import der Gemeinde.
+- **Laufprotokoll:** Tabelle `gebetszeit_abgleich` ohne Personendaten; Läufe älter als 90 Tage werden gelöscht, der letzte erfolgreiche bleibt.
+- **Kalibrieren:** `pnpm gebetszeiten:kalibrieren --datei <igmg-tabelle> [--pglite] [--ausgabe <bericht.md>]` vergleicht die Näherung mit einer IGMG-Tabelle und schlägt Winkel und Temkin je Gebet vor. Das Skript schreibt nie in die Einstellungen; übernommen wird in der Verwaltung (Gebetszeiten › Näherung, ab 14 IGMG-Tagen). Bericht vom 28.10.2026: `docs/berichte/gebetszeiten-kalibrierung-2026-10-28.md` (Aachen, Oktober; Sommer nicht belegt).
+- **Startklar-IDs:** `inhalte.gebetszeiten-abdeckung` (30 Tage aus Tabellen; unter 7 in der Produktion Fehler), `inhalte.gebetszeiten-abgleich` (Alter des letzten Laufs, Fehlschläge), `inhalte.gebetszeiten-konflikte`, `inhalte.gebetszeiten-datei`, `inhalte.gebetszeiten-igmg-zugang`.
+
+## 4d Inhalte vom Dachverband, Linkprüfung und Inhaltsstände (ADR 0046)
+
+- **Hutba-Pflege:** Freitagspredigten kommen täglich aus dem Feed. Einträge in der Verwaltung **ausblenden statt löschen** – gelöschte Feed-Einträge holt der nächste Abgleich zurück. Höchstens 60 Einträge; darüber fallen die ältesten Feed-Einträge weg, die nicht mehr im Feed stehen. In der Verwaltung höchstens ein Abruf je 5 Minuten. Startklar `inhalte.dachverband-aktuell` warnt, wenn die neueste sichtbare Predigt älter als 14 Tage ist; abgelaufene sichtbare Einträge sind ein Hinweis. Ändert die IGMG das Feed-Format oder sperrt sie den Abruf, endet der Abgleich mit `fehler` und schreibt nichts.
+- **Linkprüfung:** `pnpm links:pruefen [basis]` prüft die externen Ziele (`NETZWERK` in `src/lib/dachverband/netzwerk.ts`, Stand 2026-10-27) und die Links der Seiteninhalte; Bericht unter `_lauf/belege/links/`. Läuft nicht im Bau. Jährlich (M-107) und vor dem Livegang (GO-LIVE C13). Antworten wie 403 hinter einer Bot-Abfrage (bisher camiahaber.com) im Browser nachsehen. Wird ein Netzwerk-Schlüssel umbenannt, werden gespeicherte Verweise der Organisationsseiten (`DACHVERBAND_ZIELE`) still zu `null`.
+- **Jährliche Pflege** über Verwaltung › Seiteninhalte: Kennzahlen und Broschüren-Pfade auf `/igmg` nach der neuen Broschüre; Abflüge, Fristen und Programme auf `/hadsch-umra` nach der Ausschreibung von IGMG Reisen (vergangene Abflüge und Hinweise blenden sich über das Tagesdatum aus; die Seite wird stündlich neu erzeugt). YouTube-IDs der Wissensvideos (`/islamisches-wissen`) lassen sich nur über Seed oder Stand-Migration ändern.
+- **Inhaltsstände (Stand-Migration):** `pnpm inhalte:marktstart` bringt neue Beispielstände in eine bestehende Datenbank (IGMG, Über uns, Vorstand, vier Organisationen, Aus dem Dachverband, Hadsch & Umra, Wissens-Entwürfe, Wissensvideos). Ersetzt nur Zeilen mit `istBeispiel = true`, legt fehlende Bereiche an, schreibt ein Audit, ist idempotent (ADR 0019, Nachtrag 2026-10-28). Auf Vercel läuft sie im Bau mit Datenbank automatisch; mit Docker nach dem Update einmal von Hand, danach `POST /api/wartung/cache-erneuern` ohne `tag`, weil Seiteninhalte und Wissen betroffen sind. Vorbild für spätere Stände: `inhalte:2026`.
+- **Wissens-Vorschau:** Startklar `gemeinde.wissen-vorschau` meldet, wie viele Entwürfe öffentlich sichtbar sind (ADR 0047). Abschalten: `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus` und neu bereitstellen, oder Einstellung `funktionen` und danach Cache erneuern.
+- **Sichtbarkeit in der Suche (ADR 0049):** Solange der Konzept-Hinweis an ist, tragen auf Vercel (`VERCEL=1`) alle Seiten `noindex, follow` und `/llms.txt` antwortet mit 404; die Schranke folgt der Einstellung `allgemein` (Tag `einstellungen`). Mit Docker gilt sie nicht. Nach Inhaltsreleases `E2E_BASIS=https://<domain> pnpm exec playwright test tests/e2e/seo.spec.ts --project desktop` gegen die Produktion laufen lassen.
 
 ## 5 Caching – was Betreuende wissen müssen
 
@@ -79,7 +101,7 @@ Die App erwartet einen Reverse-Proxy (z. B. Caddy oder nginx) für HTTPS. Für d
 - **https:** Ohne `APP_URL` startet die App im Betrieb nicht (Links in Mails); mit `http://…` warnt sie beim Start, und HSTS sowie `upgrade-insecure-requests` sind aus.
 - **Größe von Anfragen:** Die App nimmt Action-Anfragen bis 11 MB an (Medien-Upload bis 10 MB, ADR 0007). Am Proxy enger begrenzen und nur die Verwaltung freigeben – nginx: `client_max_body_size 1m;` und in `location /verwaltung/ { client_max_body_size 11m; }`; Caddy: `request_body { max_size 1MB }` mit eigener Regel für `/verwaltung/*`.
 - **Bestätigungsmails:** Höchstens 3 je Empfängeradresse und 24 Stunden über alle Formulare (Schutz Dritter, Tor B/C); weitere Einsendungen gelten, nur die Bestätigung entfällt.
-- **Karte nach Klick (Kontakt):** Erst wenn die Koordinaten bestätigt sind (M-010), in `src/lib/sicherheit/header.ts` für die öffentliche CSP `frame-src https://www.openstreetmap.org` ergänzen und die Gegenprobe in `tests/e2e/datenschutz.spec.ts` (Startseiten-CSP ohne Drittanbieter) für diese eine Ausnahme anpassen.
+- **Karte und Videos nach Klick:** erledigt am 28.10.2026 (ADR 0012, Nachtrag). Jede CSP enthält `frame-src 'self' https://www.openstreetmap.org https://www.youtube-nocookie.com` (`RAHMEN_QUELLEN` in `src/lib/sicherheit/header.ts`); `tests/e2e/datenschutz.spec.ts` kennt genau diese Ausnahme samt Gegenfall. Die Karte erscheint erst mit bestätigten Koordinaten (M-010). Einen weiteren Host nur mit Nachtrag zu ADR 0012 und Datenschutz-Prüfung (M-111) aufnehmen.
 
 ## 6 Datensicherung
 
@@ -136,6 +158,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO igmg_sich
 - `pnpm dev` (Port 3000), `pnpm check`, `pnpm test:integration` (PGlite je Testdatei), `pnpm test:e2e` (eigene Datenbank `igmg_e2e`, wird je Lauf frisch angelegt), `pnpm messen` (Lighthouse mobil gegen einen laufenden Produktionsserver auf Port 3100).
 - Standalone-Server lokal: `pnpm build && PORT=3100 pnpm start:standalone` (setzt `HOSTNAME=0.0.0.0`, E-015).
 - Ohne Docker (PostgreSQL und Mailpit als Programme, auch PostgreSQL 16): `tests/e2e/LIESMICH.md` – E2E-Lauf und Wiederherstellungsprobe (`betrieb/lokal/sicherung/probe.sh`).
+- **Nicht parallel bauen:** Gleichzeitige `pnpm vercel-build`-Läufe ohne Datenbank (etwa in mehreren Git-Worktrees) teilen sich das Verzeichnis `igmg-pglite-bau` im Temp-Ordner (`/tmp/igmg-pglite-bau`). Das Aufräumen am Ende eines Baus (`rmSync` in `scripts/vercel-bau.mjs`) löscht dabei die Arbeitskopien des anderen Baus, der dann scheitert. Baue nacheinander.
 
 ## 9 Betrieb auf Vercel (Services)
 
@@ -148,8 +171,21 @@ Alternative zu Docker: ein Vercel-Projekt mit `vercel.json` im Repository-Wurzel
 - **Datenbank (ADR 0018):** Neon über den Vercel Marketplace in Frankfurt; Vorschauen auf eigenen Branches. Der Pool ist auf Vercel klein (`max: 5`) und mit `attachDatabasePool` an den Lebenszyklus der Instanz gebunden.
 - **Medien (ADR 0020):** `SPEICHER=blob` mit `BLOB_READ_WRITE_TOKEN` (Vercel Blob, Frankfurt). Das Dateisystem ist auf Vercel schreibgeschützt; `SPEICHER=dateisystem` meldet die Startprüfung als Fehler.
 - **Weitere Variablen:** wie in Abschnitt 3, dazu `PROXY_VERTRAUEN=1` (Vercel setzt `X-Forwarded-For` selbst), `CRON_SECRET` (Cron), `SITE_MODE` optional (sonst aus `VERCEL_ENV`). **Nicht** setzen: `MIGRATION_BEIM_START`, `CACHE_ERNEUERN_BEIM_START`, `BAU_PGLITE`.
-- **Cron (ADR 0021):** `vercel.json` ruft täglich `/api/wartung/loeschfristen` (01:00 UTC) und `/api/wartung/mail-ausgang` (02:00 UTC) per `GET` mit `Authorization: Bearer <CRON_SECRET>` auf; je Aufgabe eine Postgres-Sperre, Läufe sind idempotent. `POST` mit `WARTUNG_TOKEN` bleibt für Docker und Handbetrieb.
+- **Cron (ADR 0021):** `vercel.json` ruft täglich vier Routen per `GET` mit `Authorization: Bearer <CRON_SECRET>` auf (Tabelle in § 9a); je Aufgabe eine Postgres-Sperre, Läufe sind idempotent. `POST` mit `WARTUNG_TOKEN` bleibt für Docker und Handbetrieb. Die Zahl der Crons kann je Vercel-Tarif begrenzt sein (GO-LIVE C8).
 - **Vorschauen (ADR 0022):** `robots.txt` sperrt alles, jede Antwort trägt `X-Robots-Tag: noindex`; Zugang über Vercel Authentication bzw. einen teilbaren Link.
 - **Grenzen:** Anfragen an Vercel Functions sind auf 4,5 MB begrenzt. Die Verwaltung nimmt auf Vercel deshalb Anfragen bis 4,2 MB an. Größere Bilder verkleinert der Browser vorher. Mit `SPEICHER=blob` lädt der Browser PDF-Dateien über 4,2 MB (bis 10 MB) direkt in Vercel Blob; die Berechtigung gibt `/verwaltung/medien/direkt`, Übernahme und Prüfung macht die Server Action `hochladen` (ADR 0020, Nachtrag 2026-10-12; `docs/deploy/VERCEL.md` 3.4). Ohne Blob lehnt sie größere PDFs mit Hinweis ab. Inhaltsabfragen liegen mit `'use cache: remote'` im geteilten Cache aller Instanzen, die Tag-Invalidierung wirkt dort überall (ADR 0024); Suche und Tagesdatum bleiben bei `'use cache'` je Instanz.
 - **Bilder:** Im Services-Modus bindet Vercel die Bildoptimierung `/_next/image` nicht an (Antwort 404). Beim Bau auf Vercel (`VERCEL=1`) liefert `next/image` die Dateien unoptimiert aus (`images.unoptimized` in `next.config.ts`); Bildvarianten entstehen beim Hochladen (ADR 0020).
 - Lokal alle Services zusammen starten: `vercel dev` im Repository-Wurzelverzeichnis.
+
+## 9a Wiederkehrende Aufgaben (Crons und lokaler Takt)
+
+Gleiche Liste in `vercel.json` und `web/vercel.json`. Der lokale Takt (`betrieb/lokal/takt/takt.sh`, ADR 0036) ruft dieselben Routen per `POST` mit `WARTUNG_TOKEN`; seine Uhrzeiten richten sich nach der Uhr des Takt-Containers.
+
+| Route                                | Vercel-Cron (UTC)    | Lokaler Takt            | Wirkung                                                                             |
+| ------------------------------------ | -------------------- | ----------------------- | ----------------------------------------------------------------------------------- |
+| `/api/wartung/loeschfristen`         | `0 1 * * *` (01:00)  | 03:17                   | Löschfristen (§ 4)                                                                  |
+| `/api/wartung/mail-ausgang`          | `0 2 * * *` (02:00)  | alle 5 Minuten          | Mail-Ausgang                                                                        |
+| `/api/wartung/dachverband-abgleich`  | `0 4 * * *` (04:00)  | 05:13                   | Freitagspredigten aus dem Hutba-Feed (§ 4d)                                         |
+| `/api/wartung/gebetszeiten-abgleich` | `0 20 * * *` (20:00) | 21:07 mit `?nurAktiv=1` | IGMG-Gebetszeiten, nur wenn der Abgleich in der Verwaltung eingeschaltet ist (§ 4c) |
+
+20:00 UTC ist 21:00 Uhr in Wetzlar im Winter und 22:00 Uhr im Sommer; 04:00 UTC ist 05:00 bzw. 06:00 Uhr.
