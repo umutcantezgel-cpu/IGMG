@@ -5,6 +5,7 @@ import { Stern8 } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Text } from '@/components/website/Text';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
+import { DachverbandAbschnitt } from '@/components/website/dachverband/DachverbandAbschnitt';
 import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -50,7 +51,8 @@ function brauchtRueckfall(sprache: Sprache, felder: (Mehrsprachig | null | undef
  * Mission, Vision, Aktivitäten, Veranstaltungen, Nachrichten, Kontakt und die übrigen Organisationen.
  * Reine Server-Komponente ohne Interaktion; Farben nur über Tokens, alle Texte aus messages/Seiteninhalt.
  * Marktstart (E-044): Unter Mission und Vision die Zeile „Teil der IGMG“ mit der Seite beim Dachverband (Seiteninhalt
- * `dachverband`, nur ein Link, K-14) und dem internen Link auf /igmg.
+ * `dachverband`, nur ein Link, K-14) und dem internen Link auf /igmg; darunter (P3) die Einträge „Aus dem Dachverband“
+ * zur Organisation, falls vorhanden.
  */
 export async function OrganizationPage({ org, inhalt, veranstaltungen, nachrichten }: OrganizationPageProps) {
   const sprache = (await getLocale()) as Locale;
@@ -127,6 +129,8 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               <ArrowRight aria-hidden className="size-5" />
             </Link>
           </div>
+          {/* Marktstart P3: Einträge „Aus dem Dachverband“ der passenden Art (KT Frauen, GT Jugend, KGT junge Frauen; AT keine) */}
+          <DachverbandAbschnitt variante="organisation" sprache={sprache} kuerzel={org} />
         </section>
       </div>
 

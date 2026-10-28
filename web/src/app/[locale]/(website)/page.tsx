@@ -11,6 +11,7 @@ import { DesTages } from '@/components/website/start/DesTages';
 import { Tagesbogen } from '@/components/website/start/Tagesbogen';
 import { UnsereMoschee } from '@/components/website/start/UnsereMoschee';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
+import { DachverbandAbschnitt } from '@/components/website/dachverband/DachverbandAbschnitt';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { gemeindeGraph } from '@/lib/seo/jsonld';
@@ -39,7 +40,8 @@ const sekundaer =
 /**
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter;
  * im Ramadan der Fastenbogen B-20), „Unsere neue Moschee – eröffnet“ (Vorführpfad Station 1, ruhig, ohne Bewegung),
- * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3); darunter Vers und Hadith des Tages, sobald
+ * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3), „Aus dem Dachverband“ (Freitagspredigt vom
+ * {Datum} und bis zu drei Gemeinschaftsthemen der IGMG, Marktstart P3); darunter Vers und Hadith des Tages, sobald
  * die religiöse Prüfung Einträge freigegeben hat. Der Kopf mit Tagesbogen steht fest oben; Reihenfolge und Sichtbarkeit
  * der übrigen Abschnitte pflegt die Redaktion unter Verwaltung › Startseite (F-40). Ohne Datenbank oder ohne gültige
  * Einstellung gilt die Reihenfolge des Bestands (Rückfall in `ladeStartseitenOrdnung`).
@@ -140,6 +142,8 @@ export default async function Startseite() {
         </div>
       </section>
     ),
+    // Marktstart P3: Freitagspredigt und Gemeinschaftsthemen der IGMG (nur Links, Server-Komponente, K-12/K-14)
+    dachverband: <DachverbandAbschnitt variante="startseite" sprache={sprache} />,
     desTages: <DesTages daten={desTages} sprache={sprache} />,
   };
   return (

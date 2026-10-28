@@ -80,6 +80,8 @@ export type AuditAktion =
   // IGMG-Abgleich (ADR 0048): Systemlauf (benutzerId null) oder Freigabe in der Verwaltung; Konflikttage übernommen
   | 'gebetszeiten.abgleich'
   | 'gebetszeiten.konflikt_uebernommen'
+  // Aus dem Dachverband (Plan Marktstart P3): neue Freitagspredigten aus dem IGMG-Feed übernommen (Cron: benutzerId null)
+  | 'dachverband.abgleich'
   | 'einstellung.geaendert'
   | 'ticket.angelegt'
   | 'ticket.geaendert'

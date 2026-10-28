@@ -86,6 +86,7 @@ export const AKTION_SCHLUESSEL = {
   'gebetszeiten.einstellung': 'gebetszeitenEinstellung',
   'gebetszeiten.abgleich': 'gebetszeitenAbgleich',
   'gebetszeiten.konflikt_uebernommen': 'gebetszeitenKonfliktUebernommen',
+  'dachverband.abgleich': 'dachverbandAbgleich',
   'einstellung.geaendert': 'einstellungGeaendert',
   'ticket.angelegt': 'ticketAngelegt',
   'ticket.geaendert': 'ticketGeaendert',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { AktuelleHutba } from '@/components/website/dachverband/HutbaKarte';
 import { textMitSprache } from '@/components/website/Text';
 import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum';
 import { WissenInsel } from '@/components/website/wissen/WissenInsel';
@@ -64,6 +65,8 @@ export default async function IslamischesWissenSeite() {
     <Seitenrahmen bereich="islam" seite="islamisches-wissen" sprachZiel="/islamisches-wissen" pfad={[{ label: t('breadcrumb') }]}>
       <PageHeader kennung={t('eyebrow')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
+        {/* Marktstart P3: Freitagspredigt der IGMG vom {Datum} – nur Titel, Datum und Link, kein Auszug (G-06) */}
+        <AktuelleHutba sprache={sprache} />
         <WissenInsel
           sprache={SPRACH_KENNUNG[sprache]}
           texte={texte}

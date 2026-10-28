@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { NewsCard } from '@/components/website/NewsCard';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { DachverbandAbschnitt } from '@/components/website/dachverband/DachverbandAbschnitt';
 import { Ankuendigungen } from '@/components/website/nachrichten/Ankuendigungen';
 import { NachrichtenFilter } from '@/components/website/nachrichten/NachrichtenFilter';
 import { Link } from '@/i18n/link';
@@ -21,7 +22,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadatenFuer({ pfad: '/nachrichten', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
-/** Nachrichtenliste (design/News.dc.html, Blatt S06): Kategoriefilter, Beitragskarten, Leerzustand. */
+/**
+ * Nachrichtenliste (design/News.dc.html, Blatt S06): Kategoriefilter, Beitragskarten, Leerzustand. Darüber Ankündigungen und
+ * der Kasten „Aus dem Dachverband“ (Marktstart P3).
+ */
 export default async function NachrichtenSeite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('nachrichten');
@@ -83,6 +87,8 @@ export default async function NachrichtenSeite() {
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt-klein md:px-8">
         <Ankuendigungen sprache={sprache} />
+        {/* Marktstart P3: die fünf neuesten Einträge „Aus dem Dachverband“ (nur Links zur IGMG, keine Pressemitteilungen) */}
+        <DachverbandAbschnitt variante="nachrichten" sprache={sprache} />
         <NachrichtenFilter
           kategorien={chips}
           texte={{

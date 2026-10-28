@@ -42,6 +42,7 @@
       "igmg": "IGMG",
       "impressum": "Impressum",
       "datenschutz": "Datenschutzerklärung",
+      "dachverband": "Aus dem Dachverband",
       "kontakt": "Kontaktdaten und Footer",
       "organisation-ana-teskilati": "Ana Teşkilatı (AT)",
       "organisation-kadin-teskilati": "Kadın Teşkilatı (KT)",
@@ -161,6 +162,12 @@
       "fachvereine": "Fachvereine und Einrichtungen",
       "bereich": "Arbeitsfeld",
       "url": "Adresse (https)",
+      "urlTr": "Adresse der türkischen Fassung (https)",
+      "urlEn": "Adresse der englischen Fassung (https)",
+      "kurztext": "Kurztext",
+      "gueltigBis": "Anzeigen bis",
+      "sichtbar": "Sichtbar",
+      "schluessel": "Kennung",
       "verweise": "Verweise",
       "verweisArt": "Art des Verweises",
       "netzwerkZiel": "Ziel im IGMG-Netzwerk",
@@ -220,6 +227,49 @@
         "stand": "Tag der letzten Prüfung gegen die Quellen im Format JJJJ-MM-TT; erscheint in der Quellenzeile unter den Reitern."
       }
     },
+    "dachverband": {
+      "einleitung": "Hier pflegen Sie Freitagspredigten (Hutba) und Gemeinschaftsthemen der IGMG. Sie erscheinen auf der Startseite, unter Nachrichten, bei Islamisches Wissen (nur die neueste Predigt) und auf den Seiten der Frauen-, Jugend- und Frauenjugendorganisation – jeweils nur mit Link zur Seite der IGMG.",
+      "regeln": "Keine politischen Pressemitteilungen. Keine Textauszüge aus Predigten: Bei Freitagspredigten nur Titel, Datum und Link. Keine Versangaben (Sure und Vers) und keine Anführungszeichen in Titeln und Kurztexten (ADR 0046, G-06).",
+      "ausblenden": "Einträge aus dem Feed nicht löschen, sondern mit „Sichtbar“ ausblenden: Gelöschte Einträge holt der nächste Abgleich zurück, ausgeblendete bleiben ausgeblendet.",
+      "abschnitt": "Einträge",
+      "liste": "Einträge aus dem Dachverband",
+      "hutbaEintragen": "Freitagspredigt eintragen",
+      "hutbaEingetragen": "Neue Freitagspredigt für {datum} steht als Eintrag 1 oben in der Liste.",
+      "hutbaKurztext": "Freitagspredigten haben keinen Kurztext – auf der Website erscheinen nur Titel, Datum und Link.",
+      "kennung": "Kennung: {schluessel}",
+      "arten": {
+        "hutba": "Freitagspredigt (Hutba)",
+        "kampagne": "Aktion",
+        "bildung": "Bildung",
+        "jugend": "Jugend (Seite der GT)",
+        "frauen": "Frauen (Seite der KT)",
+        "frauenjugend": "Junge Frauen (Seite der KGT)"
+      },
+      "herkunft": {
+        "feed": "Aus dem IGMG-Feed übernommen",
+        "redaktion": "Von der Redaktion angelegt"
+      },
+      "hinweis": {
+        "datum": "JJJJ-MM-TT, bei Freitagspredigten der Freitag; JJJJ-MM, wenn nur der Monat belegt ist.",
+        "titel": "Titel wie bei der IGMG, ohne Anführungszeichen und ohne Versangaben.",
+        "kurztext": "Eigene Worte, zwei bis drei Sätze, nur belegte Angaben. Keine Zitate.",
+        "url": "Vollständige https-Adresse bei der IGMG oder einem Fachverein (z. B. www.igmg.org). Türkisch und Englisch nur, wenn es eine eigene Fassung gibt.",
+        "gueltigBis": "Optional, JJJJ-MM-TT: Nach diesem Tag blendet die Website den Eintrag aus."
+      },
+      "feed": {
+        "titel": "IGMG-Feed der Freitagspredigten",
+        "text": "Der Abgleich läuft täglich automatisch und übernimmt neue Freitagspredigten mit Titel, Datum und Link. Vorhandene und ausgeblendete Einträge bleiben unverändert.",
+        "holen": "Jetzt aus dem Feed holen",
+        "laeuft": "Wird geholt …",
+        "neu": "Übernommen: {neu} neue Freitagspredigten (schon vorhanden: {vorhanden}, nicht übernommen: {abgewiesen}). Sie sind veröffentlicht und stehen oben in der Liste.",
+        "unveraendert": "Keine neuen Freitagspredigten im Feed (schon vorhanden: {vorhanden}).",
+        "fehler": "Der Feed der IGMG ließ sich nicht abrufen oder lesen ({code}). Bitte später erneut versuchen.",
+        "unlesbar": "Der gespeicherte Inhalt passt nicht zu den Regeln; der Abgleich hat nichts geändert. Bitte die markierten Einträge korrigieren und speichern.",
+        "uebersprungen": "Gerade läuft schon ein Abgleich. Bitte später erneut versuchen.",
+        "zuOft": "Bitte warten Sie fünf Minuten bis zum nächsten Abruf.",
+        "keinRecht": "Dafür fehlt Ihnen das Recht."
+      }
+    },
     "symbol": {
       "haus": "Haus",
       "gebaeude": "Gebäude",
@@ -258,7 +308,10 @@
       "ungueltigeZahl": "Bitte eine ganze Zahl eingeben.",
       "ungueltigeAdresse": "Bitte eine gültige E-Mail-Adresse eingeben.",
       "ungueltigerPfad": "Bitte einen Pfad unter /public angeben, z. B. /bilder/datei.jpg.",
-      "ungueltigeAuswahl": "Bitte eine Auswahl aus der Liste treffen."
+      "ungueltigeAuswahl": "Bitte eine Auswahl aus der Liste treffen.",
+      "hutbaOhneKurztext": "Freitagspredigten haben keinen Kurztext. Bitte leeren.",
+      "ohneZitat": "Bitte ohne Anführungszeichen und ohne Versangaben (Sure und Vers).",
+      "doppelt": "Diese Kennung gibt es schon. Bitte den Eintrag entfernen oder neu anlegen."
     }
   }
 }

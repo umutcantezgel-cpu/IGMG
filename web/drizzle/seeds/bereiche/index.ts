@@ -1,3 +1,4 @@
+import { seed as dachverband } from './dachverband';
 import { seed as igmg } from './igmg';
 import { seed as korankurse } from './korankurse';
 import { seed as nachrichtenMehr } from './nachrichten-mehr';
@@ -17,6 +18,7 @@ export const BEREICHS_SEEDS: { name: string; lauf: BereichsSeed }[] = [
   { name: 'vorstand', lauf: vorstand },
   { name: 'projekte', lauf: projekte },
   { name: 'igmg', lauf: igmg },
+  { name: 'dachverband', lauf: dachverband },
   { name: 'organisationen', lauf: organisationen },
   { name: 'korankurse', lauf: korankurse },
   { name: 'wissen', lauf: wissen },

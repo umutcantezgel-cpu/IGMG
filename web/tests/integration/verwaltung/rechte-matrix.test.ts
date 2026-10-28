@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { and, eq } from 'drizzle-orm';
 import type { PgTable } from 'drizzle-orm/pg-core';
-import { afterAll, describe, expect, it } from 'vitest';
+import { afterAll, describe, expect, it, vi } from 'vitest';
 import { schema } from '@/lib/db';
 import type { EingangArt } from '@/lib/eingaenge/arten';
 import { EINGANG_AKTION, type Aktion, type OrganisationKuerzel } from '@/lib/rechte/matrix';
@@ -681,6 +681,34 @@ function seiteninhaltFaelle(): Fall[] {
           zustand,
           wirkung: async (a) => {
             expect(rueckgabe(a)).toMatchObject({ fehler: 'nichtGefunden' });
+          },
+        };
+      },
+    },
+    {
+      // Marktstart P3: „Jetzt aus dem Feed holen“ (Aus dem Dachverband). Der Feed antwortet hier mit 404 (kein Netz,
+      // keine Wiederholung): Es wird nichts geschrieben; ab dem zweiten erlaubten Aufruf greift die Ratenbegrenzung.
+      aktion: 'holeDachverbandFeed',
+      datei: 'seiteninhalte',
+      ziele: OHNE_ZIEL,
+      pruefungen: () => [{ aktion: 'seiteninhalt.bearbeiten' }],
+      abweisung: () => KEIN_RECHT_RUECKGABE,
+      aufbau: async (p) => {
+        await anmelden(p);
+        return {
+          aufruf: async () => {
+            vi.stubGlobal('fetch', async () => new Response('', { status: 404 }));
+            try {
+              return await (await ladeAktionen()).seiteninhalte.holeDachverbandFeed({}, formular({}));
+            } finally {
+              vi.unstubAllGlobals();
+            }
+          },
+          zustand,
+          wirkung: async (a) => {
+            const r = rueckgabe(a) as { fehler?: string; ergebnis?: { status: string } };
+            if (r.fehler) expect(r.fehler).toBe('zuOft');
+            else expect(r.ergebnis).toMatchObject({ status: 'fehler' });
           },
         };
       },

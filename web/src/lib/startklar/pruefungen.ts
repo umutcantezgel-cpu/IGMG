@@ -5,6 +5,7 @@ import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
 import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projekte';
+import { dachverbandPruefen } from './dachverband';
 import { gebetszeitenPruefen } from './gebetszeiten';
 import { gemeindePruefen } from './gemeinde';
 import { lernappPruefen } from './lernapp';
@@ -236,6 +237,20 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
         titel: 'Lern-App lesbar',
         status: 'fehler',
         meldung: 'Schalter, Prüfende und Einheiten der Lern-App lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
+    // Aus dem Dachverband (Marktstart P3, ADR 0046): neueste sichtbare Freitagspredigt höchstens 14 Tage alt, Ablauf
+    try {
+      await dachverbandPruefen(db, kontext.jetzt ?? new Date(), neu);
+    } catch {
+      neu({
+        id: 'inhalte.dachverband-aktuell',
+        bereich: 'inhalte',
+        titel: 'Aus dem Dachverband aktuell',
+        status: 'fehler',
+        meldung: 'Der Seiteninhalt „Aus dem Dachverband“ lässt sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
         ort: 'Vercel › Deployments › Redeploy',
         aufwand: '5 min',
       });

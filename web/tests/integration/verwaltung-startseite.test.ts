@@ -18,10 +18,12 @@ const { ladeStartseitenOrdnung } = await import('@/server/queries/startseite');
 const { ladeStartseiteVerwaltung } = await import('@/server/queries/verwaltung/startseite');
 afterAll(() => client.close());
 
+// Marktstart P3 (E-045): „Aus dem Dachverband“ gehört zur vollständigen Ordnung
 const NEU: StartseitenOrdnung = [
   { schluessel: 'neuigkeiten', sichtbar: true },
   { schluessel: 'veranstaltungen', sichtbar: true },
   { schluessel: 'moschee', sichtbar: false },
+  { schluessel: 'dachverband', sichtbar: true },
   { schluessel: 'desTages', sichtbar: true },
 ];
 const fd = (ordnung: unknown) => formular({ ordnung: JSON.stringify(ordnung) });
@@ -60,7 +62,7 @@ describe('Speichern', () => {
     expect((await audit()).at(-1)).toMatchObject({
       aktion: 'einstellung.geaendert',
       zielTyp: 'einstellung',
-      details: { reihenfolge: 'neuigkeiten,veranstaltungen,moschee,desTages', ausgeblendet: 1 },
+      details: { reihenfolge: 'neuigkeiten,veranstaltungen,moschee,dachverband,desTages', ausgeblendet: 1 },
     });
     expect(aufrufe.updateTag).toEqual(['startseite']);
     expect(await ladeStartseitenOrdnung()).toEqual(NEU);

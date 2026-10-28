@@ -353,6 +353,71 @@ describe('Gebetszeiten aus dem IGMG-Kalender (ADR 0048)', () => {
   });
 });
 
+describe('Aus dem Dachverband (Marktstart P3)', () => {
+  // Prüftag 11.10.2026: Grenze für die neueste sichtbare Freitagspredigt ist der 27.09.2026 (14 Tage)
+  const hutba = (schluessel: string, datum: string, teil: Record<string, unknown> = {}) => ({
+    schluessel,
+    art: 'hutba',
+    datum,
+    titel: { de: `Predigt ${schluessel}` },
+    url: `https://www.igmg.org/${schluessel}/`,
+    sichtbar: true,
+    herkunft: 'feed',
+    ...teil,
+  });
+  const befundDachverband = async () => befund(await pruefe(produktionsUmgebung()), 'inhalte.dachverband-aktuell');
+
+  it('ohne Seiteninhalt oder ohne sichtbare Freitagspredigt: Warnung mit Ort', async () => {
+    const leer = await befundDachverband();
+    expect(leer).toMatchObject({ status: 'warnung', bereich: 'inhalte' });
+    expect(leer.ort).toContain('Aus dem Dachverband');
+    await setzeSeiteninhalt('dachverband', { eintraege: [hutba('versteckt', '2026-10-09', { sichtbar: false })] });
+    expect((await befundDachverband()).status).toBe('warnung');
+  });
+
+  it('neueste sichtbare Freitagspredigt höchstens 14 Tage alt: ok; älter: Warnung', async () => {
+    await setzeSeiteninhalt('dachverband', { eintraege: [hutba('frisch', '2026-10-09'), hutba('alt', '2026-09-04')] });
+    const ok = await befundDachverband();
+    expect(ok.status).toBe('ok');
+    expect(ok.meldung).toContain('2026-10-09');
+    await db.execute(sql`update seiteninhalt set inhalt = ${JSON.stringify({ eintraege: [hutba('alt', '2026-09-25')] })}::jsonb`);
+    const alt = await befundDachverband();
+    expect(alt.status).toBe('warnung');
+    expect(alt.meldung).toContain('älter als 14 Tage');
+    await db.execute(sql`update seiteninhalt set inhalt = ${JSON.stringify({ eintraege: [hutba('grenze', '2026-09-27')] })}::jsonb`);
+    expect((await befundDachverband()).status).toBe('ok');
+  });
+
+  it('sichtbare, aber abgelaufene Einträge: Hinweis mit Kennung; ausgeblendete zählen nicht', async () => {
+    const thema = (schluessel: string, gueltigBis: string, sichtbar = true) => ({
+      ...hutba(schluessel, '2026-09-11'),
+      art: 'kampagne',
+      herkunft: 'redaktion',
+      gueltigBis,
+      sichtbar,
+    });
+    await setzeSeiteninhalt('dachverband', {
+      eintraege: [
+        hutba('frisch', '2026-10-09'),
+        thema('vorbei', '2026-10-10'),
+        thema('heute-noch', '2026-10-11'),
+        thema('aus', '2026-09-30', false),
+      ],
+    });
+    const e = await befundDachverband();
+    expect(e.status).toBe('hinweis');
+    expect(e.meldung).toContain('vorbei');
+    expect(e.meldung).not.toMatch(/heute-noch|: aus/);
+  });
+
+  it('gespeicherter Inhalt passt nicht zum Schema: Warnung', async () => {
+    await setzeSeiteninhalt('dachverband', { eintraege: [{ ...hutba('pm', '2026-10-09'), art: 'pressemitteilung' }] });
+    const e = await befundDachverband();
+    expect(e.status).toBe('warnung');
+    expect(e.meldung).toContain('passt nicht zum Schema');
+  });
+});
+
 describe('Gesamtergebnis', () => {
   it('saubere Produktionslage ist startklar (keine Fehler)', async () => {
     await setzeEinstellung('allgemein', { konzepthinweis: false });

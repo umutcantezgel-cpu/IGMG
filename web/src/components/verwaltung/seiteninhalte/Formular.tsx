@@ -1,6 +1,7 @@
 'use client';
 
 import type { VerwaltungsStand } from './bereiche';
+import { DachverbandFormular } from './Dachverband';
 import { IgmgFormular } from './Igmg';
 import type { Aktion } from './Rahmen';
 import { DatenschutzFormular, ImpressumFormular } from './Rechtstexte';
@@ -26,5 +27,7 @@ export function SeiteninhaltFormular({ stand, nurLesen, aktion }: { stand: Verwa
       return <ImpressumFormular startwerte={stand.inhalt} nurLesen={nurLesen} aktion={aktion} />;
     case 'datenschutz':
       return <DatenschutzFormular startwerte={stand.inhalt} nurLesen={nurLesen} aktion={aktion} />;
+    case 'dachverband':
+      return <DachverbandFormular startwerte={stand.inhalt} nurLesen={nurLesen} aktion={aktion} />;
   }
 }

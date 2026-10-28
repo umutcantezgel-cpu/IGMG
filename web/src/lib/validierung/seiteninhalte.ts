@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { schema as dachverband } from './seiteninhalte/dachverband';
 import { schema as datenschutz } from './seiteninhalte/datenschutz';
 import { schema as igmg } from './seiteninhalte/igmg';
 import { schema as impressum } from './seiteninhalte/impressum';
@@ -106,5 +107,7 @@ export const SEITENINHALT = {
   'organisation-kadin-genclik-teskilati': organisation,
   impressum,
   datenschutz,
+  // Plan Marktstart P3: Einträge „Aus dem Dachverband“ (Freitagspredigt und Gemeinschaftsthemen, E-044 Nr. 2)
+  dachverband,
 } as const;
 export type SeitenBereich = keyof typeof SEITENINHALT;

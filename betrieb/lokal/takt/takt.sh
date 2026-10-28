@@ -1,6 +1,7 @@
 #!/bin/sh
 # Minutentakt (ADR 0034, MN-18): Gebetserinnerungen jede Minute, Mail-Ausgang alle 5 Minuten, Löschfristen täglich 03:17,
-# IGMG-Abgleich der Gebetszeiten täglich 21:07 (ADR 0048; nur wenn in der Verwaltung eingeschaltet).
+# IGMG-Abgleich der Gebetszeiten täglich 21:07 (ADR 0048; nur wenn in der Verwaltung eingeschaltet),
+# Freitagspredigten aus dem Hutba-Feed der IGMG täglich 05:13 (Aus dem Dachverband, ADR 0046).
 # Fehler bleiben im Protokoll (docker compose logs takt); die Website arbeitet auch ohne diesen Takt weiter.
 set -u
 : "${APP_URL:?APP_URL fehlt}" "${WARTUNG_TOKEN:?WARTUNG_TOKEN fehlt}"
@@ -15,5 +16,6 @@ while true; do
   case "$minute" in *0|*5) rufe /api/wartung/mail-ausgang ;; esac
   [ "$(date +%H:%M)" = "03:17" ] && rufe /api/wartung/loeschfristen
   [ "$(date +%H:%M)" = "21:07" ] && rufe '/api/wartung/gebetszeiten-abgleich?nurAktiv=1'
+  [ "$(date +%H:%M)" = "05:13" ] && rufe /api/wartung/dachverband-abgleich
   sleep $((60 - $(date +%S)))
 done

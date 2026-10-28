@@ -3,6 +3,7 @@ import { join, relative } from 'node:path';
 import ts from 'typescript';
 import { describe, expect, it } from 'vitest';
 import { enthaeltArabisch } from '@/lib/lernapp/waechter/kern.mjs';
+import { DACHVERBAND_BEISPIEL } from '../../drizzle/seeds/bereiche/dachverband';
 import { BEISPIEL_NACHRICHTEN } from '../../drizzle/seeds/daten/nachrichten';
 import { BEISPIEL_VERANSTALTUNG_DETAIL } from '../../drizzle/seeds/daten/veranstaltung-detail';
 import { BEISPIEL_VERANSTALTUNGEN } from '../../drizzle/seeds/daten/veranstaltungen';
@@ -17,7 +18,9 @@ import { ZEITLEISTE_EROEFFNUNG } from '../../drizzle/seeds/bereiche/ueber-uns';
  *     Agent – Korantext kommt nur aus `web/daten`; Lern-App-Inhalte liegen nicht hier),
  * (c) zu jedem deutschen Platzhalter „[…]“ auch in Türkisch und Englisch einen Platzhalter an derselben Stelle (G-05),
  * (d) in Türkisch und Englisch kein ß/ä und keine deutschen Füllwörter (K-02). Platzhalter in eckigen Klammern sind
- *     redaktionelle Marker und zählen hier nicht; Eigennamen stehen begründet in der Ausnahmeliste.
+ *     redaktionelle Marker und zählen hier nicht; Eigennamen stehen begründet in der Ausnahmeliste,
+ * (e) „Aus dem Dachverband“ (Marktstart P3, G-06): Freitagspredigten ohne Kurztext, keine Versangaben und keine
+ *     Anführungszeichen (Zitate) in Titeln und Kurztexten.
  * Mehrsprachige Seed-Objekte `{ de, tr, en }` kommen aus den exportierten Konstanten (Import) und, für alle übrigen, aus
  * dem TypeScript-Syntaxbaum der Seed-Dateien (Zeichenketten, Konstanten derselben Datei, Aufrufe mit Zeichenketten).
  * Jede Ausnahme muss noch greifen – sonst wird sie gemeldet und gehört gelöscht.
@@ -31,6 +34,9 @@ const PLATZHALTER = /\[[^\]\n]+\]/;
 const PLATZHALTER_ALLE = /\[[^\]\n]+\]/g;
 const DEUTSCH = /(?<![\p{L}\p{N}])(und|der|das|nicht|demnach|werden)(?![\p{L}\p{N}])/iu;
 const UMLAUT = /[ßä]/i;
+/** Versangabe wie „49:6“ und Anführungszeichen (Zitat) – unabhängig vom Schema formuliert, damit der Wächter selbst prüft. */
+const VERSANGABE = /\b\d{1,3}\s?:\s?\d{1,3}\b/;
+const ZITAT = /[„“”"«»‚]/;
 
 /** Arabische Schrift ist hier erlaubt (Fundstelle `<datei>:<sprache>.<schlüssel>`). */
 const ARABISCH_ERLAUBT: { ort: RegExp; grund: string }[] = [
@@ -221,6 +227,11 @@ describe('Inhalte-Wächter: Seeds und Texte', () => {
     expect(sprachBefund('[Zahl fehlt: Regionalverbände] bölge', new Set())).toBeNull();
     expect(sprachBefund('bir toplumu demnach tanımlar', new Set())).toBe('demnach');
     expect(sprachBefund('Under the order of the day', new Set())).toBeNull();
+    expect(VERSANGABE.test('Sure Hudschurat, 49:6')).toBe(true);
+    expect(VERSANGABE.test('Infak – barmherzig wirtschaften')).toBe(false);
+    expect(ZITAT.test('„Zitat“')).toBe(true);
+    expect(ZITAT.test('Women’s Organisation')).toBe(false);
+    expect(DACHVERBAND_BEISPIEL.eintraege?.some((e) => e.art === 'hutba')).toBe(true);
   });
 
   it('(a) keine deutschen Mobilnummern (G-04)', () => {
@@ -284,5 +295,22 @@ describe('Inhalte-Wächter: Seeds und Texte', () => {
       ...SPRACHE_ERLAUBT.filter((_, i) => !genutzt.has(i)).map((a) => `Ausnahme ohne Treffer: ${a.ort}`),
       ...EIGENNAMEN.filter((_, i) => !genutztEigen.has(i)).map((e) => `Eigenname ohne Treffer: ${e.muster}`),
     ]).toEqual([]);
+  });
+
+  it('(e) Aus dem Dachverband: Freitagspredigten ohne Kurztext, keine Versangaben und keine Anführungszeichen (G-06)', () => {
+    const funde = (DACHVERBAND_BEISPIEL.eintraege ?? []).flatMap((e) => {
+      const f: string[] = [];
+      if (e.art === 'hutba' && SPRACHEN.some((s) => e.kurztext?.[s]?.trim())) f.push(`${e.schluessel}: Hutba mit Kurztext`);
+      for (const [feld, texte] of [
+        ['titel', e.titel],
+        ['kurztext', e.kurztext],
+      ] as const)
+        for (const s of SPRACHEN) {
+          const text = texte?.[s];
+          if (text && (VERSANGABE.test(text) || ZITAT.test(text))) f.push(`${e.schluessel} ${feld}.${s}: ${text.slice(0, 80)}`);
+        }
+      return f;
+    });
+    expect(funde).toEqual([]);
   });
 });
