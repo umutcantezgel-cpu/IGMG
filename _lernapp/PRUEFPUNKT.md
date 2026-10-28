@@ -1,5 +1,26 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 27.10.2026 19:30 UTC – Nachtrag L3-E23 „Ja alles freischalten“ (Branch `lernapp-freischalten`, Baum `l8`, ab
+  `9cb7e754`), nicht gepusht:**
+  - Commits: a67d3a7c Spracherkennung an (`IN_PRODUKTION_AN`, Tests, E2E-Schalter aus `entscheide`); e95f4213 B1 de/tr e16
+    `automatisch_geprueft` (nur `status`); 8fd61f31 Mengenbericht; 46fdc4d7 Unterlagen; dieser Nachtrag.
+  - Prüfungen: `typen` grün; Unit 9 Dateien 314 grün (funktionen, mengen-bericht, handbuecher, inhalt-pruefer,
+    bundle-regeln, wissen-vorschau, lernapp-sw-abmelden, typen-b, aufgaben-komponenten); Integration lernapp-verwaltung,
+    lernapp-pakete, startklar 85/85; `lernapp:pruefen` 435 Dateien, 137.493 Einträge, 0 blockierend, 15 menschlich_klaeren
+    (tabu/politik 12 in de-aus-ar 9 und de-aus-tr 3, religionsbezug/R-06 3 in tr-aus-ar), `paketbau` und `uebersetzung`
+    0/0/0; Religion rc=0; Sprachen grün; Wortlaut rc=0 (Basis 9cb7e754, Stand 92f3956d; berichtigt in der Mängelrunde 1 – der
+    erste Lauf mit `--stand HEAD` verglich den Haupt-Checkout 9cb7e754 mit sich selbst): Recht 2.353 gleich, 1 geändert
+    (`web/docs/recht/entwuerfe/dsfa-lernapp.md`, Schaltertabelle; durch die Ausnahme L5-03 gedeckt).
+  - Bau unter dem Schloss (`scratchpad/frei/tor.log`, ohne `FUNKTION_LERNAPP_SPRECHEN` in der `.env`, Attrappen-Worker):
+    Produktionsbau grün; Budget alle eingehalten (`formen` tr-aus-de.b1.e16.l07 gemessen 195,2/+58,4 KB, ungünstigste erste
+    Aufgabe 196,5/+59,7 KB ≤ 60); Lern-App-E2E (tests/e2e/lernapp + mein-bereich-lernen, telefon + desktop) **170 grün
+    (darunter alle Sprechtests mit Attrappen-Worker und Schalter aus dem Standard), 0 rot, 46 übersprungen**.
+  - Bau wie ein frischer Vercel-Import ohne Datenbank (684 s, 2.468 Seiten) + `next start`: e16 in de-aus-ar, de-aus-tr,
+    tr-aus-ar, tr-aus-de, Pakete 200 mit gleichem Hash; Sprachpakete 258/258; Übungsseiten de/tr und Wiederholen mit
+    `spracherkennung` true (HTML und RSC); Modelle HEAD 200; `/lern-app/pakete/islam` 26 Einheiten, Koran 40.
+  - Offen für den Orchestrator: Merge in `claude/trusting-lovelace-6nfolz`, FF `main`, Push, Live-Prüfung. Für Menschen:
+    Ratenregel LM-40 (Hobby/Pro höchstens 600 s Zeitfenster, daher 200 Anfragen je 600 s statt je 3600 s), Gerätetest LM-07.
+
 - **Stand 26.10.2026 23:21 UTC – LAUF ABGESCHLOSSEN (`ABSCHLUSS.md`).** Nichts fortzusetzen; der CLAUDE.md-Block ist entfernt,
   der stündliche Trigger beendet.
   - Endprüfer (frisch, Stand `e0292127`): „abgenommen mit Auflagen“ (16/3/3), wörtlich in `BERICHT.md`; Kritik ohne Widerlegung.

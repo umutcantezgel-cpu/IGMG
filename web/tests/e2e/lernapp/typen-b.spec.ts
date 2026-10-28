@@ -3,7 +3,10 @@ import { join } from 'node:path';
 import { expect, type Locator, type Page, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
+import { entscheide } from '../../../src/lib/funktionen-regeln';
 import { formatiere } from '../../../src/lib/lernapp/format';
+import { SPRECH_STAND_SCHLUESSEL } from '../../../src/lib/lernapp/sprechen/geraet';
+import { GESAMT_BYTES } from '../../../src/lib/lernapp/sprechen/modell';
 import { ernsteBefunde, ergebnisText, liveRegion } from './hilfen';
 import { MIKROFON } from './ton';
 
@@ -14,10 +17,15 @@ import { MIKROFON } from './ton';
  * `ar-aus-de`. axe ohne ernste oder kritische Befunde je Übungstyp auf beiden Breiten (seit Stufe C N9b auch auf dem Telefon).
  *
  * Sprechen: Mikrofon über das Testgerät von Chromium mit einer synthetischen Tonfolge (keine Sprache); die Spracherkennung
- * läuft im Testbau mit dem Attrappen-Worker (`E2E_ATTRAPPEN=1` beim Bau, `scripts/lernapp-modelle.mjs`) und nur mit dem
- * Schalter `FUNKTION_LERNAPP_SPRECHEN=an`; sonst prüft der Test den Weg ohne Sprachprüfung (eigene Aufnahme, Selbstvergleich).
+ * läuft im Testbau mit dem Attrappen-Worker (`E2E_ATTRAPPEN=1` beim Bau, `scripts/lernapp-modelle.mjs`). Der Schalter
+ * `lernapp_sprechen` ist seit L3-E23 (27.10.2026) auch in der Produktion standardmäßig an; der Test liest ihn wie der Bau
+ * (Umgebung, sonst Standard) und prüft nur bei `FUNKTION_LERNAPP_SPRECHEN=aus` den Weg ohne Angebot. Mit dem echten Worker
+ * (ohne Attrappe) wählt er „Ohne Sprachprüfung üben“ (kein Download von ≈ 95 MB im E2E).
  * Der Gerätecheck sieht ein ausreichendes Gerät (Arbeitsspeicher und freier Platz sind im Test festgelegt), damit der Ablauf
- * nicht vom Testrechner abhängt; der Rückfall bei zu wenig Speicher hat einen eigenen Test.
+ * nicht vom Testrechner abhängt; der Rückfall bei zu wenig Speicher hat einen eigenen Test. Ab `geraet()` zeichnet der Test
+ * jede Anfrage an `/lern-app/modelle/` auf: Ohne Tipp auf „Sprachprüfung laden“ darf keine vorkommen (KERN 4.0 §9), auch
+ * nicht nach „Ohne Sprachprüfung üben“ (Mängelrunde 1 zu L3-E23). Abbruch und Ladefehler prüft ein eigener Test mit einem
+ * Worker in der Seite (ohne Netz): keine Sackgasse, beim nächsten Mal wieder das Angebot.
  *
  * Testdaten: neutrale Alltagssätze des Testkurses (`drizzle/seeds/lernapp-test.ts`); Arabisch nur als Codepunkt-Escapes.
  */
@@ -36,18 +44,65 @@ const AR = {
 
 test.use(MIKROFON());
 
-const an = (w?: string) => ['an', 'true', '1'].includes((w ?? '').trim().toLowerCase());
-/** Spracherkennung im Testbau: Schalter an und der Attrappen-Worker liegt bereit (der echte Worker ist ≈ 690 KB). */
-const SCHALTER_SPRECHEN = an(process.env.FUNKTION_LERNAPP_SPRECHEN);
+/**
+ * Spracherkennung im Testbau: Schalter wie beim Bau entschieden (Umgebung, sonst Standard – in der Produktion an seit L3-E23;
+ * die Einstellung „funktionen“ setzt der E2E-Seed nicht) und der Attrappen-Worker liegt bereit (der echte ist ≈ 690 KB).
+ */
+const SCHALTER_SPRECHEN = entscheide('lernapp_sprechen', process.env, null);
 const ARBEITER = join(__dirname, '../../../public/lern-app/modelle/sprechen/whisper.worker.mjs');
 const ATTRAPPE = existsSync(ARBEITER) && statSync(ARBEITER).size < 100_000;
 
-/** Gerät für den Gerätecheck: 8 GB Arbeitsspeicher, 10 GB frei (bzw. zu wenig Speicher für den Rückfall-Test). */
+/** Anfragen an die Modelldateien (`/lern-app/modelle/…`) je Seite, aufgezeichnet ab `geraet()`. */
+const MODELL_ANFRAGEN = new WeakMap<Page, string[]>();
+function modellAnfragen(page: Page): string[] {
+  const liste = MODELL_ANFRAGEN.get(page);
+  if (!liste) throw new Error('Anfragen an /lern-app/modelle/ werden erst ab geraet(page) aufgezeichnet');
+  return liste;
+}
+
+/**
+ * Gerät für den Gerätecheck: 8 GB Arbeitsspeicher, 10 GB frei (bzw. zu wenig Speicher für den Rückfall-Test). Zeichnet ab
+ * hier jede Anfrage des Kontexts (Seite, Worker, Service Worker) an `/lern-app/modelle/` auf (`modellAnfragen`).
+ */
 async function geraet(page: Page, speicherGb = 8) {
+  const liste: string[] = [];
+  MODELL_ANFRAGEN.set(page, liste);
+  page.context().on('request', (r) => {
+    const pfad = new URL(r.url()).pathname;
+    if (pfad.startsWith('/lern-app/modelle/')) liste.push(pfad);
+  });
   await page.addInitScript((gb) => {
     Object.defineProperty(navigator, 'deviceMemory', { configurable: true, get: () => gb });
     if (navigator.storage) navigator.storage.estimate = async () => ({ quota: 10_000_000_000, usage: 0 });
   }, speicherGb);
+}
+
+/**
+ * Worker der Sprachprüfung als Attrappe in der Seite, ohne Netz (Mängelrunde 1 zu L3-E23). Die Art steht in `sessionStorage`
+ * (`e2e-whisper`, übersteht das Neuladen): ohne Eintrag meldet sie 10 % und wird nie fertig (Download läuft), mit `fehler`
+ * meldet sie danach `fehler` bei `laden` – so endet im echten Worker ein Download mit Status ≠ 200 (429 der Ratenregel
+ * LM-40) oder ein Netzabbruch (`vorrat.ts`, `whisper.worker.ts`). Andere Worker (auch die Probe im Gerätecheck) bleiben echt.
+ */
+async function workerInDerSeite(page: Page) {
+  await page.addInitScript((gesamt) => {
+    const Echt = window.Worker;
+    const Attrappe = function (adresse: string | URL, optionen?: WorkerOptions) {
+      if (!String(adresse).includes('/lern-app/modelle/sprechen/')) return new Echt(adresse, optionen);
+      const w = {
+        onmessage: null as ((e: { data: unknown }) => void) | null,
+        onerror: null,
+        postMessage(n: { art: string }) {
+          if (n.art !== 'laden') return;
+          const sende = (data: unknown, ms: number) => setTimeout(() => w.onmessage?.({ data }), ms);
+          sende({ art: 'fortschritt', datei: 'onnx/decoder_model_merged_quantized.onnx', geladen: Math.round(gesamt / 10), gesamt }, 100);
+          if (sessionStorage.getItem('e2e-whisper') === 'fehler') sende({ art: 'fehler', bei: 'laden' }, 800);
+        },
+        terminate() {},
+      };
+      return w;
+    };
+    window.Worker = Attrappe as unknown as typeof Worker;
+  }, GESAMT_BYTES);
 }
 
 /** Text als wörtliches Muster für einen regulären Ausdruck. */
@@ -214,9 +269,33 @@ async function spureNach(page: Page, feld: Locator) {
 }
 
 /**
+ * Ohne Sprachprüfung weiter, wo der Test nicht der Erkennung gilt (de/tr, ausreichendes Gerät): Mit dem Schalter an
+ * (Standard seit L3-E23) erscheint das Angebot erst nach dem Gerätecheck – abwarten und „Ohne Sprachprüfung üben“ wählen
+ * statt nur zu klicken, wenn es zufällig schon da ist. Danach kein Download-Angebot mehr.
+ */
+async function ohneSprachpruefung(page: Page, art: Bedienung, t: Texte) {
+  if (SCHALTER_SPRECHEN) await druecke(page, art, page.getByRole('button', { name: t.sprechen.ohne, exact: true }));
+  await expect(page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true })).toHaveCount(0);
+  // kein Download ohne Tipp (KERN 4.0 §9): bis hier keine Anfrage an die Modelldateien (die Aufrufer prüfen am Ende erneut)
+  expect(modellAnfragen(page), 'ohne Sprachprüfung: keine Anfrage an /lern-app/modelle/').toEqual([]);
+}
+
+/** Lektion l04 (Kurs tr-aus-de, Oberfläche de) mit der Tastatur bis zur Sprechübung. */
+async function zurSprechuebung(page: Page, t: Texte) {
+  await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
+  await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
+  await geschichte(page, 'tastatur', t, 'kitap', 'de');
+  await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
+  await tipp(page, 'tastatur', t, 'Su içiyorum.');
+  await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
+  await pruefenUndWeiter(page, 'tastatur', t);
+  await ueberschrift(page, t.sprechen.anweisung);
+}
+
+/**
  * Sprechen: Sprachprüfung laden (Attrappe), Probelauf, aufnehmen (Testmikrofon), Ergebnis nur als Markierung der Zielwörter;
- * ohne Erkennung (Arabisch, Schalter aus) eigene Aufnahme anhören und selbst bewerten. Die Aufnahme bleibt im Speicher der
- * Seite: keine Anfrage außer GET, Wiedergabe über eine `blob:`-Adresse.
+ * mit dem echten Worker „Ohne Sprachprüfung üben“; ohne Erkennung (Arabisch, Schalter aus) eigene Aufnahme anhören und
+ * selbst bewerten. Die Aufnahme bleibt im Speicher der Seite: keine Anfrage außer GET, Wiedergabe über eine `blob:`-Adresse.
  */
 async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woerter }: { erkennbar: boolean; woerter: number }) {
   await ueberschrift(page, t.sprechen.anweisung);
@@ -233,11 +312,14 @@ async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woert
   if (!erkennbar) await expect(page.getByText(t.sprechen.arabisch, { exact: true })).toBeVisible();
   if (mitErkennung) {
     await expect(page.getByText(t.sprechen.ladenText, { exact: true })).toBeVisible();
+    // vor dem Tipp kein Abruf der Modelldateien; danach lädt der Worker vom eigenen Ursprung (Gegenprobe der Aufzeichnung)
+    expect(modellAnfragen(page), 'vor dem Tipp: keine Anfrage an /lern-app/modelle/').toEqual([]);
     await druecke(page, art, laden);
     await expect(liveRegion(page)).toHaveText(t.sprechen.bereit, { timeout: 20_000 });
-  } else if (erkennbar && SCHALTER_SPRECHEN) {
+    await expect.poll(() => modellAnfragen(page)).toContain('/lern-app/modelle/sprechen/whisper.worker.mjs');
+  } else if (erkennbar) {
     // echter Worker im Bau: ohne Sprachprüfung weiter (kein Download von ≈ 95 MB im E2E)
-    await druecke(page, art, page.getByRole('button', { name: t.sprechen.ohne, exact: true }));
+    await ohneSprachpruefung(page, art, t);
   }
   await expect(laden).toHaveCount(0);
 
@@ -261,6 +343,7 @@ async function sprechen(page: Page, art: Bedienung, t: Texte, { erkennbar, woert
   await expect(page.locator('main audio')).toHaveAttribute('src', /^blob:/);
   await druecke(page, art, page.getByRole('button', { name: t.sprechen.selbst.gut, exact: true }));
   page.context().off('request', merke);
+  if (!mitErkennung) expect(modellAnfragen(page), 'ohne Sprachprüfung: keine Anfrage an /lern-app/modelle/').toEqual([]);
   expect(
     anfragen.filter((a) => !a.startsWith('GET ')),
     'Sprechen: nur GET-Anfragen',
@@ -433,20 +516,58 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     test.setTimeout(120_000);
     const t = de;
     await geraet(page, 2);
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
-    await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
-    await geschichte(page, 'tastatur', t, 'kitap', 'de');
-    await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
-    await tipp(page, 'tastatur', t, 'Su içiyorum.');
-    await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
-    await pruefenUndWeiter(page, 'tastatur', t);
-    await ueberschrift(page, t.sprechen.anweisung);
+    await zurSprechuebung(page, t);
     await expect(page.getByText(t.sprechen.nichtVerfuegbar, { exact: true })).toBeVisible();
     await expect(page.getByText(t.sprechen.geraet.speicher, { exact: true })).toBeVisible();
     await expect(page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true })).toBeEnabled();
     await druecke(page, 'tastatur', page.getByRole('button', { name: t.sprechen.kannNicht, exact: true }));
     await ueberschrift(page, t.schreiben.anweisung);
+    expect(modellAnfragen(page), 'Rückfall: keine Anfrage an /lern-app/modelle/').toEqual([]);
+  });
+
+  test('Abbruch und Ladefehler der Sprachprüfung: keine Sackgasse, beim nächsten Mal wieder das Angebot (Mängelrunde 1 L3-E23)', async ({
+    page,
+  }, info) => {
+    test.skip(info.project.name !== 'desktop', 'einmal genügt');
+    test.skip(!SCHALTER_SPRECHEN, 'Schalter lernapp_sprechen ist im Testbau aus');
+    test.setTimeout(180_000);
+    const t = de;
+    await geraet(page);
+    await workerInDerSeite(page);
+    const laden = page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true });
+    const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
+    const stand = () => page.evaluate((schluessel) => localStorage.getItem(schluessel), SPRECH_STAND_SCHLUESSEL);
+
+    // 1. Abbruch während des Downloads über „Ich kann gerade nicht sprechen“: keine Fehleransage, nichts gemerkt
+    await zurSprechuebung(page, t);
+    await druecke(page, 'tastatur', laden);
+    await expect(page.getByText(formatiere(t.sprechen.laedt, { prozent: 10 }, 'de'), { exact: true })).toBeVisible();
+    await expect(aufnehmen).toBeDisabled();
+    await druecke(page, 'tastatur', page.getByRole('button', { name: t.sprechen.kannNicht, exact: true }));
+    await ueberschrift(page, t.schreiben.anweisung);
+    await page.waitForTimeout(1_000);
+    await expect(liveRegion(page)).toHaveText(t.sprechen.uebersprungen);
+    expect(await stand(), 'Abbruch: kein gemerkter Stand').toBeNull();
+
+    // 2. nächste Sprechübung: wieder das Angebot; ein Ladefehler (wie 429 oder Netzabbruch) gilt nur für diese Übung
+    await page.evaluate(() => sessionStorage.setItem('e2e-whisper', 'fehler'));
+    await zurSprechuebung(page, t);
+    await expect(page.getByText(t.sprechen.rueckfall, { exact: true })).toHaveCount(0);
+    await druecke(page, 'tastatur', laden);
+    await expect(liveRegion(page)).toHaveText(t.sprechen.fehler);
+    await expect(page.locator('main').getByText(t.sprechen.fehler, { exact: true }).first()).toBeVisible();
+    await expect(aufnehmen).toBeEnabled();
+    expect(JSON.parse((await stand()) ?? 'null'), 'Ladefehler: nicht geladen, kein Rückfall').toMatchObject({
+      geladen: false,
+      probe: null,
+    });
+
+    // 3. danach wieder das Angebot statt „läuft auf diesem Gerät nicht zuverlässig“
+    await zurSprechuebung(page, t);
+    await expect(laden).toBeVisible();
+    await expect(page.getByText(t.sprechen.rueckfall, { exact: true })).toHaveCount(0);
+    await ohneSprachpruefung(page, 'tastatur', t);
   });
 
   test('Fokus bleibt nach „zu leise“ und „kein Mikrofon“ (Stufe C, WCAG 2.4.3)', async ({ page }, info) => {
@@ -470,16 +591,8 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
         return ziel.stream;
       };
     });
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
-    await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
-    await geschichte(page, 'tastatur', t, 'kitap', 'de');
-    await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
-    await tipp(page, 'tastatur', t, 'Su içiyorum.');
-    await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
-    await pruefenUndWeiter(page, 'tastatur', t);
-    await ueberschrift(page, t.sprechen.anweisung);
-    const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
-    if (await ohne.count()) await druecke(page, 'tastatur', ohne);
+    await zurSprechuebung(page, t);
+    await ohneSprachpruefung(page, 'tastatur', t);
     const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
     await druecke(page, 'tastatur', aufnehmen);
     const stopp = page.getByRole('button', { name: t.sprechen.stopp, exact: true });
@@ -495,6 +608,7 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     await expect(aufnehmen).toHaveCount(0);
     await expect(page.getByRole('heading', { level: 3, name: t.sprechen.selbstVergleich, exact: true })).toBeFocused();
     await druecke(page, 'tastatur', page.getByRole('button', { name: t.sprechen.selbst.gut, exact: true }));
+    expect(modellAnfragen(page), 'ohne Sprachprüfung: keine Anfrage an /lern-app/modelle/').toEqual([]);
   });
 
   for (const mitPruefung of [false, true])
@@ -507,21 +621,11 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
       test.setTimeout(120_000);
       const t = de;
       await geraet(page);
-      await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
-      await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
-      await geschichte(page, 'tastatur', t, 'kitap', 'de');
-      await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
-      await tipp(page, 'tastatur', t, 'Su içiyorum.');
-      await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
-      await pruefenUndWeiter(page, 'tastatur', t);
-      await ueberschrift(page, t.sprechen.anweisung);
+      await zurSprechuebung(page, t);
       if (mitPruefung) {
         await druecke(page, 'tastatur', page.getByRole('button', { name: formatiere(t.sprechen.laden, { mb: 95 }, 'de'), exact: true }));
         await expect(liveRegion(page)).toHaveText(t.sprechen.bereit, { timeout: 20_000 });
-      } else {
-        const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
-        if (await ohne.count()) await druecke(page, 'tastatur', ohne);
-      }
+      } else await ohneSprachpruefung(page, 'tastatur', t);
       const grenze = formatiere(t.sprechen.grenze, { s: 15 }, 'de');
       const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
       // vorher: sichtbar unter dem Knopf und als seine Beschreibung
@@ -543,6 +647,7 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
       await expect(page.getByRole('heading', { level: 3, name: titel, exact: true })).toBeFocused();
       await expect(page.locator('main form').getByText(ende, { exact: true })).toBeVisible();
       await expect(page.getByRole('button', { name: t.sprechen.nochmal, exact: true })).toBeEnabled();
+      if (!mitPruefung) expect(modellAnfragen(page), 'ohne Sprachprüfung: keine Anfrage an /lern-app/modelle/').toEqual([]);
     });
 
   test('Mikrofon nur auf …/ueben und …/wiederholen; Modelldateien vom eigenen Ursprung mit den Kopfzeilen der Lern-App', async ({

@@ -643,7 +643,8 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
   it('Lern-App (KERN 4.0 §6): Produktion ohne Angaben ohne Befund; gesperrte Schalter melden, Abgleich als Vorbehalt', async () => {
     const ohne = await pruefe(produktionsUmgebung());
     expect(befund(ohne, 'gemeinde.schalter').status).toBe('ok');
-    // lernapp, lernapp_ungeprueft und lernapp_meldungen sind in der Produktion an (Nutzer 21.10.2026) – ohne Personendaten, kein Befund
+    // lernapp, lernapp_ungeprueft, lernapp_meldungen (Nutzer 21.10.2026) und lernapp_sprechen (27.10.2026, L3-E23) sind in der
+    // Produktion an – ohne Personendaten, kein Befund
     expect(pg(ohne).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
 
     const gesperrt = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP_SYNC: 'an', FUNKTION_LERNAPP_RANGLISTE: 'an' }));

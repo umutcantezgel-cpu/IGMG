@@ -48,6 +48,11 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  * noch nicht vom Imam geprüft“, `noindex`, ohne Personendaten, ohne Voraussetzung): Entscheidung des Nutzers vom 27./28.10.2026
  * (E-044 Nr. 5, ADR 0047) – in allen Betriebsarten an. Abschalten mit `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus` (Umgebung) oder
  * der Einstellung „funktionen“; dann ist wieder allein „geprüft“ öffentlich (ADR 0030 Nr. 2).
+ * `lernapp_sprechen` (Spracherkennung im Browser für de/tr, ohne Personendaten: die Aufnahme bleibt im Arbeitsspeicher des
+ * Geräts, das Modell lädt erst auf Wunsch): Entscheidung des Nutzers vom 27.10.2026 (`_lernapp/ENTSCHEIDUNGEN.md` L3-E23).
+ * Den Schutz der Modelldateien vor Massenabrufen (S-L3 N-4) setzt der Betreiber als Ratenregel der Vercel-Firewall
+ * (`_lernapp/MENSCHEN.md` LM-40, `_lernapp/GO-LIVE.md` „Ausnahme N-4“); der Gerätetest LM-07 bleibt offen. Abschalten:
+ * `FUNKTION_LERNAPP_SPRECHEN=aus` und neu bauen (die Übungsseiten lesen den Schalter beim Bau).
  */
 export const IN_PRODUKTION_AN: readonly Funktion[] = [
   'hadith_gesamt',
@@ -55,6 +60,7 @@ export const IN_PRODUKTION_AN: readonly Funktion[] = [
   'lernapp',
   'lernapp_ungeprueft',
   'lernapp_wissen_vorschau',
+  'lernapp_sprechen',
   'lernapp_meldungen',
 ];
 

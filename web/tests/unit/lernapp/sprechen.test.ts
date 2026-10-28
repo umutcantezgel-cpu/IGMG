@@ -16,7 +16,15 @@ import {
   wortTrifft,
   zielWoerter,
 } from '@/lib/lernapp/sprechen/auswertung';
-import { type GeraetUmgebung, LEERER_STAND, liesSprechStand, MIN_FREI_BYTES, pruefeGeraet } from '@/lib/lernapp/sprechen/geraet';
+import {
+  type GeraetUmgebung,
+  LEERER_STAND,
+  liesSprechStand,
+  MIN_FREI_BYTES,
+  pruefeGeraet,
+  type SprechStand,
+  standNachLaden,
+} from '@/lib/lernapp/sprechen/geraet';
 import {
   ABTASTRATE,
   ARBEITER_BYTES,
@@ -212,6 +220,29 @@ describe('Gerätecheck, Probelauf und Stand', () => {
       geladen: true,
       probe: { ergebnis: 'rueckfall', ms: null },
     });
+  });
+
+  it('Ladeversuch: Abbruch ändert nichts, Ladefehler (429, Netz) nur für diese Übung, Rückfall nur nach dem Probelauf', () => {
+    const merke = (stand: SprechStand) => liesSprechStand(JSON.stringify(stand));
+    // Abbruch beim Aushängen („Ich kann gerade nicht sprechen“, Weiter, Navigation): Stand unverändert
+    expect(standNachLaden(LEERER_STAND, { art: 'abgebrochen' })).toBe(LEERER_STAND);
+    const langsam: SprechStand = { modell: MODELL.name, geladen: false, probe: { ergebnis: 'langsam', ms: 7000 } };
+    expect(standNachLaden(langsam, { art: 'abgebrochen' })).toBe(langsam);
+    // Ladefehler: nicht geladen, kein Rückfall – die nächste Sprechübung bietet das Laden wieder an
+    const nachFehler = merke(standNachLaden(LEERER_STAND, { art: 'ladefehler' }));
+    expect(nachFehler).toEqual({ modell: MODELL.name, geladen: false, probe: null });
+    expect(merke(standNachLaden(langsam, { art: 'ladefehler' }))).toEqual(langsam);
+    // auch nach mehreren Fehlern hintereinander kein Rückfall
+    expect(standNachLaden(standNachLaden(nachFehler, { art: 'ladefehler' }), { art: 'ladefehler' }).probe).toBeNull();
+    // Probelauf: erst jetzt geladen, Urteil gemerkt; gescheitert oder zu langsam → Rückfall (dauerhaft, ADR 0042 Nr. 7)
+    expect(standNachLaden(LEERER_STAND, { art: 'probe', ms: 900 })).toEqual({
+      modell: MODELL.name,
+      geladen: true,
+      probe: { ergebnis: 'normal', ms: 900 },
+    });
+    expect(standNachLaden(LEERER_STAND, { art: 'probe', ms: 7000 }).probe).toEqual({ ergebnis: 'langsam', ms: 7000 });
+    expect(merke(standNachLaden(LEERER_STAND, { art: 'probe', ms: null })).probe).toEqual({ ergebnis: 'rueckfall', ms: null });
+    expect(standNachLaden(LEERER_STAND, { art: 'probe', ms: 12_001 }).probe?.ergebnis).toBe('rueckfall');
   });
 });
 

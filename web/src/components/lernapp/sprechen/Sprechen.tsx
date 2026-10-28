@@ -4,8 +4,8 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { SPRECH_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Note } from '@/lib/lernapp/bewertung';
 import { MAX_AUFNAHME_MS, pruefePegel, type SprechErgebnis, zielWoerter } from '@/lib/lernapp/sprechen/auswertung';
-import { type GeraetBefund, pruefeGeraet } from '@/lib/lernapp/sprechen/geraet';
-import { ABTASTRATE, bewerteProbe, GESAMT_MB } from '@/lib/lernapp/sprechen/modell';
+import { type GeraetBefund, type LadeAusgang, pruefeGeraet, standNachLaden } from '@/lib/lernapp/sprechen/geraet';
+import { ABTASTRATE, GESAMT_MB } from '@/lib/lernapp/sprechen/modell';
 import { formatiere } from '@/lib/lernapp/format';
 import { Anhoeren } from '../Anhoeren';
 import { Fortschrittsleiste } from '../Fortschrittsleiste';
@@ -60,6 +60,9 @@ const ladeAufnahme = () => import('./aufnahme');
  *   nie die Abschrift, keine Note.
  * - Schon geladen: Der Worker startet ohne Knopf nur, wenn das Modell noch im Vorrat liegt; sonst wieder das Angebot mit
  *   Größe (kein stilles Nachladen, ADR 0042 Fortschreibung Nr. 13).
+ * - Keine Sackgasse (Mängelrunde 1 zu L3-E23): Dauerhaft gemerkt wird der Rückfall nur nach dem Probelauf. Wer die Übung
+ *   während des Ladens verlässt, hinterlässt nichts (keine Ansage, kein Stand); ein Ladefehler (Netz, 429 der Ratenregel,
+ *   Zeitgrenze) gilt nur für diese Übung, die nächste bietet das Laden wieder an (`standNachLaden`).
  * - Immer möglich: eigene Aufnahme anhören, vergleichen, selbst bewerten; „Ich kann gerade nicht sprechen“ überspringt
  *   diese und die übrigen Sprechübungen der Lektion ohne Wertung (wie „Ich kann gerade nicht hören“).
  */
@@ -90,6 +93,9 @@ export default function Sprechen({
   const [meldung, setMeldung] = useState<string | null>(null);
   const [mikrofon, setMikrofon] = useState(true);
   const erkennung = useRef<Erkennung | null>(null);
+  // Übung noch eingehängt? Nach dem Aushängen (Weiter, „Ich kann gerade nicht sprechen“, andere Seite) beendet das Aufräumen
+  // den Worker; ein dadurch abgebrochenes Laden darf weder ansagen noch den gemerkten Stand ändern.
+  const eingehaengt = useRef(false);
   const aufnahme = useRef<LaufendeAufnahme | null>(null);
   const eigeneAdresse = useRef<string | null>(null);
   const ergebnisTitel = useRef<HTMLHeadingElement>(null);
@@ -132,7 +138,8 @@ export default function Sprechen({
       const befund = pruefeGeraet(await erhebeUmgebung());
       if (!aktiv) return;
       if (!befund.ok) return setModus({ art: 'ohne', grund: 'geraet', befund });
-      if (!stand.geladen) return setModus({ art: 'angebot', befund });
+      // ohne Probelauf (abgebrochen) kein Start ohne Knopf: erst das Angebot, dann Laden aus dem Vorrat und Probelauf
+      if (!stand.geladen || !stand.probe) return setModus({ art: 'angebot', befund });
       if (!(await imVorrat())) {
         if (!aktiv) return;
         merkeStand({ ...stand, geladen: false });
@@ -156,14 +163,15 @@ export default function Sprechen({
   }, [ziel.sprache, optionen.spracherkennung]);
 
   // Aufräumen: Worker beenden (Speicher frei), Aufnahme verwerfen
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    eingehaengt.current = true;
+    return () => {
+      eingehaengt.current = false;
       erkennung.current?.beende();
       aufnahme.current?.abbrechen();
       if (eigeneAdresse.current) URL.revokeObjectURL(eigeneAdresse.current);
-    },
-    [],
-  );
+    };
+  }, []);
 
   useEffect(() => {
     if (phase === 'ergebnis') ergebnisTitel.current?.focus();
@@ -174,34 +182,37 @@ export default function Sprechen({
     const e = erkennung.current ?? new Erkennung();
     erkennung.current = e;
     setModus({ art: 'laedt', anteil: 0 });
+    let ausgang: LadeAusgang;
     try {
       await e.laden((anteil) => setModus({ art: 'laedt', anteil }));
-      merkeStand({ ...liesStand(), geladen: true });
-      setModus({ art: 'probe' });
-      sage(t.probe);
+      if (eingehaengt.current) {
+        setModus({ art: 'probe' });
+        sage(t.probe);
+      }
       let ms: number | null = null;
       try {
         ms = await e.probe();
       } catch {
         ms = null;
       }
-      const urteil = bewerteProbe(ms);
-      merkeStand({ ...liesStand(), geladen: true, probe: { ergebnis: urteil, ms } });
-      if (urteil === 'rueckfall') {
-        e.beende();
-        erkennung.current = null;
-        setModus({ art: 'ohne', grund: 'rueckfall' });
-        sage(t.rueckfall);
-      } else {
-        setModus({ art: 'bereit', langsamS: urteil === 'langsam' && ms ? Math.round(ms / 1000) : null });
-        sage(t.bereit);
-      }
+      ausgang = eingehaengt.current ? { art: 'probe', ms } : { art: 'abgebrochen' };
     } catch {
+      ausgang = eingehaengt.current ? { art: 'ladefehler' } : { art: 'abgebrochen' };
+    }
+    // Übung verlassen: nichts merken, nichts ansagen (der Worker ist schon beendet)
+    if (ausgang.art === 'abgebrochen') return;
+    const stand = standNachLaden(liesStand(), ausgang);
+    merkeStand(stand);
+    const urteil = stand.probe?.ergebnis;
+    if (ausgang.art === 'ladefehler' || urteil === 'rueckfall') {
       e.beende();
       erkennung.current = null;
-      merkeStand({ ...liesStand(), probe: { ergebnis: 'rueckfall', ms: null } });
-      setModus({ art: 'ohne', grund: 'fehler' });
-      sage(t.fehler);
+      setModus({ art: 'ohne', grund: ausgang.art === 'ladefehler' ? 'fehler' : 'rueckfall' });
+      sage(ausgang.art === 'ladefehler' ? t.fehler : t.rueckfall);
+    } else {
+      const ms = ausgang.ms;
+      setModus({ art: 'bereit', langsamS: urteil === 'langsam' && ms ? Math.round(ms / 1000) : null });
+      sage(t.bereit);
     }
     fokusAufAufnehmen();
   }

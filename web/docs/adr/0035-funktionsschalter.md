@@ -50,4 +50,9 @@
 ## Fortschreibung Lern-App 3 (27.10.2026; `_lernapp/ENTSCHEIDUNGEN.md` L3-E22)
 
 1. **Nr. 2, neuer Schalter `lernapp_wissen_vorschau`:** ohne Personendaten, Voraussetzung `lernapp`, in der Produktion an (`IN_PRODUKTION_AN`, Nutzerauftrag 27.10.2026). An: Lektionen des Wissenskurses ohne zwei Freigaben erscheinen als gekennzeichneter „Entwurf zur Prüfung“ (ADR 0040, Fortschreibung L3-E22). Vor dem öffentlichen Start aus (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`) oder alles geprüft; das Startklar-Cockpit warnt in der Produktion, solange er an ist (`lernapp.wissen-vorschau`). Verzeichnis und Paket lesen ihn innerhalb der gecachten Funktionen (Tag `einstellungen`, ein Wechsel in der Datenbank wirkt sofort); die Vorrender-Parameter der Einheitenpakete (`ladePaketParameter`, Tag `lernapp`) lesen ihn beim Bau.
-2. `lernapp_sprechen` bleibt in der Produktion aus (S-L3 N-4: erst Ratenregel oder Modell-Route).
+2. `lernapp_sprechen` bleibt in der Produktion aus (S-L3 N-4: erst Ratenregel oder Modell-Route). _(Fortgeschrieben durch L3-E23 – „Fortschreibung Lern-App 4“.)_
+
+## Fortschreibung Lern-App 4 (27.10.2026; `_lernapp/ENTSCHEIDUNGEN.md` L3-E23)
+
+1. **Nr. 3, Produktion:** `lernapp_sprechen` steht in `IN_PRODUKTION_AN` (Nutzer: „Ja alles freischalten“, „Jetzt einschalten“). Ohne Personendaten: Die Aufnahme bleibt im Arbeitsspeicher des Geräts, das Modell lädt erst auf Wunsch (ADR 0042). Die Übungs- und Wiederholungsseiten lesen den Schalter beim Bau; abschalten mit `FUNKTION_LERNAPP_SPRECHEN=aus` und neuer Bereitstellung. Der Satz „`lernapp_sprechen` bis zum Gerätetest (LM-07)“ in „Fortschreibung Lern-App 2“ Nr. 1 gilt nicht mehr; der Gerätetest bleibt offen.
+2. **Ausnahme S-L3 N-4:** Der Schutz der Modelldateien ist eine Ratenregel der Vercel-Firewall für Pfade, die mit `/lern-app/modelle/` beginnen (200 Anfragen je 600 s und IP, Folge 429). Sie liegt außerhalb des Repositorys; der Betreiber setzt sie im Dashboard (`_lernapp/MENSCHEN.md` LM-40, Klickfolge in `_lernapp/GO-LIVE.md` „Ausnahme N-4“). Bis dahin sind die Modelldateien ungebremst wie seit der Ausnahme vom 26.10.2026.

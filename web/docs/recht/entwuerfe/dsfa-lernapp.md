@@ -108,7 +108,7 @@ Nach Widerruf von `lernapp` oder dem Ende des Eltern-Kind-Bezugs (Stand SL2-Rest
 | --- | --- | --- | --- | --- |
 | `lernapp` | nein | an | an nach Abnahme; fortgeschrieben: an seit 21.10.2026 (Nutzerentscheidung, `_lernapp/ENTSCHEIDUNGEN.md` L3-E12b; zu prüfen in LM-08) | – |
 | `lernapp_ungeprueft` | nein | an | an | – |
-| `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07) | – |
+| `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07); fortgeschrieben: an seit 27.10.2026 (Nutzerentscheidung, `_lernapp/ENTSCHEIDUNGEN.md` L3-E23; Aufnahme und Erkennung nur auf dem Gerät, Ratenregel für die Modelldateien LM-40) | – |
 | `lernapp_meldungen` | nein | an | an | – |
 | `lernapp_sync` | ja | an | **aus** | `konten` an, dieser Nachtrag bestätigt (LM-08) |
 | `lernapp_gruppen` | ja | an | **aus** | `lernplattform` an, LM-08 |

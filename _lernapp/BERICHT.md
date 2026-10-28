@@ -8,12 +8,15 @@
 > - Lauf vom 16.10. bis 26.10.2026, Etappen L0–L8, ≈ 1.240 Commits auf `claude/trusting-lovelace-6nfolz`.
 > - Grundlage: `AUFTRAG.md`, Entscheidungen L3-E01…L3-E21 (`ENTSCHEIDUNGEN.md`), Mengen `berichte/mengen.md`, Leistung
 >   `berichte/leistung.md`, Schalter `GO-LIVE.md`.
+> - *Nachträge 27.10.2026:* L3-E22 (Wissenskurs als gekennzeichneter Entwurf) und L3-E23 (Spracherkennung an, B1 de/tr
+>   Einheit 16 frei; Branch `lernapp-freischalten`). Zahlen der Sprachkurse danach am Bau wie ein frischer Vercel-Import gezählt.
 
 ## Ergebnis in drei Sätzen
 
 1. **Die Sprachkurse sind live,** Deutsch, Türkisch und Arabisch in allen sechs Richtungen, Stufen A1 bis B1 (Nutzer, L3-E16:
    „Bis B1 reicht erstmal“).
-   - Je Richtung gibt es 42–43 Einheiten, 329–344 Lektionen und 5.250–5.677 Aufgaben.
+   - Je Richtung gibt es 42–43 Einheiten, 329–344 Lektionen und 5.250–5.677 Aufgaben (seit L3-E23, 27.10.2026: je 43 Einheiten,
+     337–344 Lektionen, 5.383–5.687 Aufgaben).
    - Dazu kommen ein Schrift-Vorkurs, ein Einstufungstest und eine Wiederholung nach der Vergessenskurve. Alles läuft ohne
      Konto und auch offline.
    - Jede Einheit trägt den Hinweis „Noch nicht von Muttersprachlern geprüft“ (L3-E15). Er bleibt, bis Muttersprachler die
@@ -36,7 +39,8 @@
 ## Was du heute live siehst (igmg-wetzlarer.vercel.app)
 
 Die Zahlen der Kurstabellen sind am 26.10.2026 um ≈ 09:05 UTC live nachgezählt (vom Endprüfer am Endstand bestätigt): Kursverzeichnisse, alle 254 Sprachpakete und
-40 Koran-Pakete per curl, alle mit 200. Wortschatz und Sätze stammen aus dem Mengenbericht (`berichte/mengen.md`).
+40 Koran-Pakete per curl, alle mit 200. Nach L3-E23 (27.10.2026) sind es 258 Sprachpakete, am Bau wie ein frischer
+Vercel-Import gezählt (live nach der Bereitstellung). Wortschatz und Sätze stammen aus dem Mengenbericht (`berichte/mengen.md`).
 
 | Bereich | Adresse | Was es kann |
 |---|---|---|
@@ -55,21 +59,23 @@ Die Zahlen der Kurstabellen sind am 26.10.2026 um ≈ 09:05 UTC live nachgezähl
 
 | Kurs | Adresse | A1 | A2 | B1 | Lektionen | Aufgaben | davon Hörübungen („Audio folgt“) |
 |---|---|---:|---:|---:|---:|---:|---:|
-| Türkisch für Deutschsprachige | `/lern-app/de/tr-aus-de` | 12 + Vorkurs (2) | 14 | 15¹ | 330 | 5.250 | 347 |
+| Türkisch für Deutschsprachige | `/lern-app/de/tr-aus-de` | 12 + Vorkurs (2) | 14 | 16¹ | 338 | 5.383 | 351 |
 | Arabisch für Deutschsprachige | `/lern-app/de/ar-aus-de` | 12 + Vorkurs (8) | 14 | 16 | 344 | 5.677 | 652 |
-| Deutsch für Türkischsprachige | `/lern-app/tr/de-aus-tr` | 12 + Vorkurs (1) | 14 | 15¹ | 329 | 5.471 | 1.020 |
+| Deutsch für Türkischsprachige | `/lern-app/tr/de-aus-tr` | 12 + Vorkurs (1) | 14 | 16¹ | 337 | 5.615 | 1.039 |
 | Arabisch für Türkischsprachige | `/lern-app/tr/ar-aus-tr` | 12 + Vorkurs (8) | 14 | 16 | 344 | 5.677 | 652 |
-| Deutsch für Arabischsprachige | `/lern-app/ar/de-aus-ar` | 12 + Vorkurs (6) | 14 | 15¹ | 334 | 5.543 | 1.041 |
-| Türkisch für Arabischsprachige | `/lern-app/ar/tr-aus-ar` | 12 + Vorkurs (2) | 14 | 15¹ | 330 | 5.252 | 347 |
+| Deutsch für Arabischsprachige | `/lern-app/ar/de-aus-ar` | 12 + Vorkurs (6) | 14 | 16¹ | 342 | 5.687 | 1.060 |
+| Türkisch für Arabischsprachige | `/lern-app/ar/tr-aus-ar` | 12 + Vorkurs (2) | 14 | 16¹ | 338 | 5.385 | 351 |
 
-¹ B1 Einheit 16 bleibt in Deutsch und Türkisch Entwurf, bis die Redaktion entschieden hat: Deutsch wegen Politik und
-Staatskunde (OF-10), Türkisch wegen eines Fehltreffers des Religionswächters beim Wort „Pilz“ (R-06). Siehe „Was nur
-Menschen tun können“.
+¹ *Nachtrag 27.10.2026 (L3-E23):* B1 Einheit 16 ist in Deutsch und Türkisch frei – Deutsch („Gemeinde und Grundrechte“) nach
+dem Standard von OF-10 „Ja, sachlich“, Türkisch („Wir kochen für Gäste“) mit „Pilz“ (R-06) als Fehltreffer des
+Religionswächters. Bis dahin standen hier 15 Einheiten B1 und 330 / 5.250 / 347 (tr-aus-de), 329 / 5.471 / 1.020 (de-aus-tr),
+334 / 5.543 / 1.041 (de-aus-ar) und 330 / 5.252 / 347 (tr-aus-ar). Die Zeilen mit ¹ sind am Bau wie ein frischer
+Vercel-Import gezählt, live nach der nächsten Bereitstellung.
 
 - **Wortschatz und Sätze je Zielsprache** (A1–B1, `berichte/mengen.md`):
   - 2.758–2.800 Wörter und 11.333–11.488 Sätze, alle in die jeweils zwei Ausgangssprachen übersetzt (100 %).
-  - Über Aufgaben erreichen 9.333 (de), 7.572 (tr) und 7.591 (ar) Sätze ein Gerät. Der Rest ist Vorrat für spätere Übungen
-    und wird nicht ausgeliefert.
+  - Über Aufgaben erreichen 9.333 (de), 7.572 (tr) und 7.591 (ar) Sätze ein Gerät, seit L3-E23 9.587 (de) und 7.720 (tr).
+    Der Rest ist Vorrat für spätere Übungen und wird nicht ausgeliefert.
 - **Offline:** Jede Einheit lässt sich mit „Einheit offline speichern“ auf das Gerät holen (je Einheit ≈ 0,1–0,4 MB), eine
   ganze Stufe mit „Stufe offline speichern“ (Speicherbedarf vorher, abbrechbar). Danach ist sie ohne Netz spielbar, auch nach
   einer neuen Bereitstellung (N9a, G-1). Der Lernstand liegt auf dem Gerät (keine Cookies, keine Tracker) und lässt sich als Datei sichern.
@@ -87,7 +93,7 @@ Menschen tun können“.
 | Konto und Abgleich mehrerer Geräte (`lernapp_sync`) | aus; `/lern-app/de/anmelden` → 404 | Lerndaten am Server sind besondere Personendaten (Art. 9 DSGVO) | Datenbank G1, Datenschutz LM-08, Auflage S-L3 N-2 |
 | Gruppen: Zuweisungen der Lehrkraft, Lernwoche für Eltern, Schreibabgaben an die Lehrkraft (`lernapp_gruppen`) | aus; `/lern-app/de/gruppe` → 404 | Personendaten | LM-08, Schulung LM-14, Auflagen S-L3 M-1/N-3 |
 | Bestenliste (`lernapp_rangliste`) | aus | Entscheidung des Vorstands offen; für Konten unter 16 im Code gesperrt | LM-10, LM-08 |
-| Spracherkennung beim Sprechen (`lernapp_sprechen`) | aus. Sprechübungen laufen als Selbstvergleich, die Aufnahme verlässt das Gerät nie | Gerätetest auf iPhone, Android und Laptop fehlt | LM-07 |
+| Spracherkennung beim Sprechen (`lernapp_sprechen`) | *Nachtrag 27.10.2026:* **an** (L3-E23). Deutsch und Türkisch bieten „Sprachprüfung laden (≈ 95 MB)“ an, sonst Selbstvergleich; die Aufnahme verlässt das Gerät nie | vorher aus, weil der Gerätetest fehlte; der Nutzer hat eingeschaltet, die Ratenregel für die Modelldateien setzt der Betreiber | Ratenregel LM-40; Gerätetest LM-07 bleibt offen |
 | Statistik, Push-Erinnerung | aus | Entscheidung der Datenschutzbeauftragten | DSB, Web Push G4 |
 | Audio | 0 Clips. Hörübungen zeigen „Audio folgt“ und werden ohne Wertung übersprungen | Deutsch: Stimme „Thorsten“ mit sauberer Rechtekette, aber Hörabnahme (LM-06) und Speicher (LM-15) offen. Türkisch und Arabisch: keine Stimme mit sauberer Kette (L3-E10a) | LM-06, LM-15; LM-24…LM-26 |
 | „Fehler melden“ | Knopf sichtbar; eine Meldung kommt aber erst mit Datenbank an | anonyme Meldungen brauchen Datenbank und ALTCHA | G1 |
@@ -171,7 +177,7 @@ Menschen tun können“.
 
 ## Was nur Menschen tun können
 
-Liste und Standards: `_lernapp/MENSCHEN.md` (LM-01…LM-39, Nachträge Stufe C). Die Reihenfolge beim Freischalten steht in
+Liste und Standards: `_lernapp/MENSCHEN.md` (LM-01…LM-40, Nachträge Stufe C und L3-E23). Die Reihenfolge beim Freischalten steht in
 `_lernapp/GO-LIVE.md`. Alles läuft bis zur Antwort mit dem Standard weiter; nichts Religiöses wird ohne zwei Menschen sichtbar.
 
 | Rang | Schritt | Wer | Aufwand | Standard bis zur Antwort |
@@ -179,13 +185,14 @@ Liste und Standards: `_lernapp/MENSCHEN.md` (LM-01…LM-39, Nachträge Stufe C).
 | 1 | **Religiöse Prüfung (LM-03):** mindestens zwei Konten mit der Rolle „religiöse Prüfung“, ohne Administrationsrolle (MN-24). Zuerst Taharah und Salah, dann der übrige Wissenskurs. Ebenso mit zwei Freigaben: die Formelliste (LM-09), die Koran-Bedeutungen (LM-13) und die Wurzeltabelle (LM-31). Wer etwas verfasst, gibt es nicht frei | Imam, Hoca | ≈ 200 h Wissenskurs; Übriges zu schätzen | nichts Religiöses sichtbar |
 | 2 | **Muttersprachliche Prüfung (LM-01):** je Sprache mindestens zwei Personen mit der Rolle „Sprachprüfung“; Stichproben je Einheit unter Verwaltung › Lern-App › Sprachprüfung | Bildung, Vorstand | ≈ 60 h je Zielsprache + ≈ 20 h je Richtung | live mit Hinweis „Noch nicht von Muttersprachlern geprüft“; abgelehnte Einträge nie sichtbar |
 | 3 | **Datenbank und Verwaltungskonten (G1, G2 der Website; MN-00):** Neon und die Geheimnisse in Vercel, darunter `ALTCHA_GEHEIMNIS`; Verwaltungskonten mit Zwei-Faktor | Technik, Vorstand | Schritte in `web/docs/GO-LIVE.md` G1/G2 | Beispielmodus: keine Meldungen, keine Verwaltung, keine Prüfoberflächen |
-| 4 | **Redaktionsfragen (LM-02, LM-09):** Rahmenpläne abnehmen; Inhaltsleitfaden mit den offenen Fragen OF-01…OF-18 freigeben, darunter OF-10 „Politik und Staatskunde“: de.b1.e16 bleibt Entwurf, ar.b1.e10/e11 sind sachlich gehalten und mit Hinweis frei. Dazu R-06: Fehltreffer „Pilz“ in tr.b1.e16 („Fehltreffer“ oder „ersetzen“). Dazu die Fragen B1 tr/ar: Schreibweise *iş birliği*, Namen mit Längezeichen, Vokalisierung, Wortzahl der Schreibaufgaben, Figuren-Kanon, Passiv mit *tamma*, Kinderregel, Ausnahme für *li-* mit Artikel | Prüfende aus LM-01, Hoca, Vorstand | ≈ 3 h je Sprache + 1 h | Stand wie ausgeliefert; de und tr B1 e16 bleiben Entwurf; Lautet OF-10 „nein“, nimmt die Redaktion die drei Einheiten bzw. Abschnitte zurück |
+| 4 | **Redaktionsfragen (LM-02, LM-09):** Rahmenpläne abnehmen; Inhaltsleitfaden mit den offenen Fragen OF-01…OF-18 freigeben, darunter OF-10 „Politik und Staatskunde“: de.b1.e16 (seit 27.10.2026 nach dem Standard frei, L3-E23) und ar.b1.e10/e11 sind sachlich gehalten und mit Hinweis frei. Dazu R-06: Fehltreffer „Pilz“ in tr.b1.e16 (seit 27.10.2026 als Fehltreffer frei; „ersetzen“ bleibt möglich). Dazu die Fragen B1 tr/ar: Schreibweise *iş birliği*, Namen mit Längezeichen, Vokalisierung, Wortzahl der Schreibaufgaben, Figuren-Kanon, Passiv mit *tamma*, Kinderregel, Ausnahme für *li-* mit Artikel | Prüfende aus LM-01, Hoca, Vorstand | ≈ 3 h je Sprache + 1 h | Stand wie ausgeliefert; de und tr B1 e16 frei seit L3-E23; Lautet OF-10 „nein“, nimmt die Redaktion die drei Einheiten bzw. Abschnitte zurück |
 | 5 | **Liste erlaubter Alltagsformeln (LM-09)**, z. B. Gruß und „inschallah“, mit zwei religiösen Freigaben | zwei Personen mit „religiöse Prüfung“ | zu schätzen | Alltagsformeln in den Sprachkursen gesperrt |
 | 6 | **Stimmen und Audio:** Abweichung vom Wortlaut „Piper“ bestätigen und Hörabnahme der deutschen Stimme Thorsten mit 20 Sätzen und 10 Wörtern (LM-06); Blob-Speicher `lernapp` verbinden (LM-15, ≈ 0,93 GB); Türkisch: Rechte am Datensatz „Talent_TR_Male“ anfragen (LM-24); eigene Aufnahmen Türkisch 2–4 h und Arabisch-Kern 10–15 h mit Sprecher-Vereinbarung (LM-25, LM-26) | Nutzer bzw. Vorstand, Technik, Sprecherinnen und Sprecher | 1 h + 20 min; Aufnahmen 2–15 h | „Audio folgt“, Hörübungen übersprungen |
 | 7 | **Datenschutz (LM-08):** DSFA-Nachtrag Lern-App, Einwilligungstext `lernapp`, Datenschutzerklärung, Löschfristen; offene Fragen D-L01…D-L15 (Entwürfe in `web/docs/recht/entwuerfe/`) | DSB, Recht | 4–6 h | Abgleich, Gruppen, Bestenliste, Statistik in der Produktion aus |
 | 8 | **Werke und Ausgaben (LM-04, LM-33):** benannte hanefitische Werke bestätigen; ein Werk für die zwei Siyar-Einheiten benennen; Ausgaben der Hidāya und der ʿAqāʾid an-Nasafiyya festlegen, Marāqī al-Falāḥ beschaffen | Imam, Vorstand, Recht | 2 h + Beschaffung | Werke laut KERN §2.4; zwei Einheiten zurückgestellt (26 von 28 entworfen) |
 | 9 | **Koran-Bedeutungen und Wurzeln (LM-13, LM-31):** die Bedeutungen der 936 Wortformen verfassen (Arbeitsliste liegt bereit); eine Lehrkraft für die Wurzeltabelle benennen | Hoca; Vorstand | 25–50 h; Benennung 5 min | nur Wortformen ohne Bedeutung, keine Wurzel-Übungen |
-| 10 | **Gerätetest Sprechen (LM-07, LM-27):** iPhone, Android-Mittelklasse, Laptop | Technik | 2 h | Spracherkennung aus, Sprechen nur als Selbstvergleich |
+| 10 | **Gerätetest Sprechen (LM-07, LM-27):** iPhone, Android-Mittelklasse, Laptop | Technik | 2 h | Spracherkennung an seit 27.10.2026 (L3-E23); bei schlechtem Ergebnis `FUNKTION_LERNAPP_SPRECHEN=aus` |
+| 10a | **Ratenregel in Vercel setzen (LM-40, L3-E23):** Firewall › Configure › + New Rule „Lern-App Modelle“, Pfad beginnt mit `/lern-app/modelle/`, Rate Limit Fixed Window 600 s, 200 Anfragen je IP, 429; Save Rule › Review Changes › Publish (Klickfolge in `GO-LIVE.md`, „Ausnahme N-4“) | Nutzer bzw. Technik | 10 min | Modelldateien ungebremst; Datentransfer beobachten (LM-15) |
 | 11 | **Kurze Entscheidungen des Vorstands** (je ≈ 5 min): Veröffentlichung vor der Stichprobe (LM-11), Bestenliste (LM-10), Prüfvermerk ohne Namen (LM-20), Ziffern im Arabischen (LM-18), Motivliste der Bildkarten (LM-34), Lizenz CC BY-SA 4.0 (LM-12), keine Spendenaufrufe (LM-35), eigene „Ich kann …“-Sätze (LM-36), kein NC-/ND-Material (LM-21) | Vorstand | ≈ 1 h zusammen | jeweils der Standard in MENSCHEN.md (ja mit Hinweis; Bestenliste aus; ohne Namen; östlich-arabisch; keine Lebewesen; CC BY-SA 4.0; keine; eigene Sätze; nein) |
 | 12 | **Weitere:** Lehrkräfte schulen (LM-14); Screenreader-Prüfung mit NVDA, VoiceOver und TalkBack (LM-19); İlmihal-Zitaterlaubnis und Anfrage bei der IGMG e. V. (LM-05); eigene Sammlung von Bittgebeten (LM-16); kindgerechter Pfad (LM-17); Trainingsdaten-Frage (LM-22); OpenITI-Anfrage (LM-30); Joseph Hell 1923 (LM-32) | Bildung, Technik, Imam, Hoca, Vorstand, Recht | je nach Punkt | Handbuch; UMGEBUNGSAUSNAHME; nur Seitenverweis; nur Bittgebete aus dem Koran per Verweis; Kennzeichnung „für Kinder geeignet“; konservativ; nicht nötig; nicht verwendet |
 | 13 | **Aus der Abnahme (Stufe C):** libvips in den Lern-App-Seiten der Website-Hülle unter M-060 bestätigen oder den Umbau beauftragen (LM-37, L3-E18); Vercel-Bauzeit im Dashboard bestätigen (LM-38, L3-E21); Lighthouse-Leistung auf einem Referenzgerät bzw. mit PageSpeed Insights gegenmessen (LM-39, L3-E20) | Vorstand, Technik | je ≈ 10 min | M-060 gilt mit; Beleg Push bis live 11 min 24 s; Ersatz Messung live auf dem Messrechner |

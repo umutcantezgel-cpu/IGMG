@@ -13,8 +13,9 @@ export { bewerteFormen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/form
 
 /**
  * Zeichenhilfe als eigener Chunk, geladen mit dem ersten Fokus in einem Feld (Stufe C N6, Nacharbeit): Beginnt eine Lektion
- * mit `formen` (tr.b1.e16.l07), zählt der Typ-Chunk zum Spieler-Budget (KERN §9, zusätzlich zur Hülle ≤ 60 KB). Bis dahin
- * hält ein leerer Platz die Höhe einer Zeile; sie erscheint unter der Tabelle, die Felder verschieben sich nicht.
+ * mit `formen` (tr.b1.e16.l07, ausgeliefert seit L3-E23 – das Budget-Werkzeug misst sie statt zu schätzen), zählt der
+ * Typ-Chunk zum Spieler-Budget (KERN §9, zusätzlich zur Hülle ≤ 60 KB). Bis dahin hält ein leerer Platz die Höhe einer
+ * Zeile; sie erscheint unter der Tabelle, die Felder verschieben sich nicht.
  */
 const Zeichenhilfe = lazy(() => import('./Zeichenhilfe').then((m) => ({ default: m.Zeichenhilfe })));
 const PLATZ = <div aria-hidden className="min-h-11" />;
