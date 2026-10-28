@@ -5,7 +5,8 @@ import { drizzle } from 'drizzle-orm/pglite';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
-import { fuehreStartklarAus, type Pruefung, type StartklarErgebnis } from '@/lib/startklar/pruefungen';
+import { fuehreStartklarAus, metaBeschreibungPruefen, type Pruefung, type StartklarErgebnis } from '@/lib/startklar/pruefungen';
+import { kontaktInhalt } from '@/lib/validierung/seiteninhalte';
 import journal from '../../drizzle/migrations/meta/_journal.json';
 import { testDatenbank } from './hilfen/db';
 
@@ -103,7 +104,7 @@ async function setzeSeiteninhalt(bereich: string, inhalt: unknown) {
   await db.execute(sql`insert into seiteninhalt (bereich, inhalt) values (${bereich}, ${JSON.stringify(inhalt)}::jsonb)`);
 }
 
-/** Rechtstext ohne Platzhalter. `weitere` bleibt leer, weil Absatzlisten derzeit als Platzhalter gelten (siehe unten). */
+/** Rechtstext ohne Platzhalter (Absatzlisten in `weitere`: eigener Fall unten). */
 const RECHT_OHNE_PLATZHALTER = {
   impressum: {
     verantwortlich: {
@@ -167,9 +168,8 @@ describe('Leere Seed-Lage: Inhalte und Einstellungen', () => {
     expect(befund(e, 'recht.datenschutz').status).toBe('ok');
   });
 
-  // BEKANNTER DEFEKT (OFFENE FRAGE 1 in _werkstatt): Die Platzhalterprüfung läuft auf dem JSON-Text. Eine Liste wie
-  // `[{"art":"absatz", …}]` trifft `\[[^\]]{2,}\]` auch ohne Platzhalter. Der Test bleibt bis zur Korrektur
-  // in pruefungen.ts als `fails` markiert; schlägt er nach einer Korrektur fehl, auf `it` umstellen.
+  // Die Platzhalterprüfung (`hatPlatzhalter`) sucht nur in Texten, nicht im JSON-Text: Eine Liste wie
+  // `[{"art":"absatz", …}]` ist kein Platzhalter (früher OFFENE FRAGE 1 in _werkstatt, behoben).
   it('Absatzlisten in Rechtstexten gelten nicht als Platzhalter', async () => {
     await setzeSeiteninhalt('impressum', {
       verantwortlich: RECHT_OHNE_PLATZHALTER.impressum.verantwortlich,
@@ -197,6 +197,68 @@ describe('Leere Seed-Lage: Inhalte und Einstellungen', () => {
   it('ohne Beispielinhalte: ok', async () => {
     const e = await pruefe(produktionsUmgebung());
     expect(befund(e, 'inhalte.beispiele').status).toBe('ok');
+  });
+});
+
+describe('Platzhalter der Seiteninhalte und Meta-Beschreibung (Marktstart Welle 3)', () => {
+  const BEREICHE = [
+    'igmg',
+    'kontakt',
+    'vorstand',
+    'ueber-uns',
+    'organisation-ana-teskilati',
+    'organisation-kadin-teskilati',
+    'organisation-genclik-teskilati',
+    'organisation-kadin-genclik-teskilati',
+    'hadsch-umra',
+    'dachverband',
+  ];
+  const platzhalterBefunde = (e: StartklarErgebnis) => e.pruefungen.filter((p) => p.id.startsWith('inhalte.platzhalter-'));
+
+  it('je Bereich eine Prüfung; Platzhalter sind nie ein Fehler', async () => {
+    const e = await pruefe(produktionsUmgebung());
+    expect(platzhalterBefunde(e).map((p) => p.id)).toEqual(BEREICHE.map((b) => `inhalte.platzhalter-${b}`));
+    expect(platzhalterBefunde(e).filter((p) => p.status === 'fehler')).toEqual([]);
+  });
+
+  it('Platzhalter: Warnung in produktion, Hinweis in vorschau; die Meldung nennt Beispiele', async () => {
+    await setzeSeiteninhalt('vorstand', { fuehrungSeit: '1978', vorstand: [], vorsitzende: [{ name: '[Name – Vorsitz]', von: '1978' }] });
+    const produktion = befund(await pruefe(produktionsUmgebung()), 'inhalte.platzhalter-vorstand');
+    expect(produktion.status).toBe('warnung');
+    expect(produktion.meldung).toContain('„[Name – Vorsitz]“');
+    expect(produktion.ort).toContain('Vorstand');
+    expect(befund(await pruefe(vorschauUmgebung()), 'inhalte.platzhalter-vorstand').status).toBe('hinweis');
+  });
+
+  it('nicht gespeichert: geprüft werden die Standardwerte der Seite (Kontakt: „[Adresse]“)', async () => {
+    const e = befund(await pruefe(produktionsUmgebung()), 'inhalte.platzhalter-kontakt');
+    expect(e.status).toBe('warnung');
+    expect(e.meldung).toContain('Nicht gespeichert');
+    expect(e.meldung).toContain('„[Adresse]“');
+  });
+
+  it('ohne Platzhalter: ok (auch wenn das JSON Listen enthält)', async () => {
+    const kontakt = kontaktInhalt.parse({
+      adresse: 'Teststraße 1, 00000 Musterstadt',
+      telefon: '00 00 0000',
+      notfallTelefon: '00 00 0001',
+      anfahrtOeffentlich: { de: 'Bushaltestelle Test (Linien 1, 2)' },
+    });
+    await setzeSeiteninhalt('kontakt', kontakt);
+    await setzeSeiteninhalt('dachverband', { eintraege: [] });
+    const e = await pruefe(produktionsUmgebung());
+    expect(befund(e, 'inhalte.platzhalter-kontakt')).toMatchObject({ status: 'ok', meldung: 'Ohne Platzhalter.' });
+    expect(befund(e, 'inhalte.platzhalter-dachverband').status).toBe('ok');
+  });
+
+  it('Meta-Beschreibung: aktuelle Texte ok; Platzhalter oder leer → Fehler in produktion, Warnung sonst', async () => {
+    expect(befund(await pruefe(produktionsUmgebung()), 'auslieferung.meta-beschreibung').status).toBe('ok');
+    expect(befund(await pruefe(produktionsUmgebung(), null), 'auslieferung.meta-beschreibung').status).toBe('ok');
+    const texte = { de: '[Beschreibung – Gemeinde]', tr: 'Metin', en: ' ' };
+    const produktion = metaBeschreibungPruefen(texte, true);
+    expect(produktion.status).toBe('fehler');
+    expect(produktion.meldung).toContain('(de, en)');
+    expect(metaBeschreibungPruefen(texte, false).status).toBe('warnung');
   });
 });
 

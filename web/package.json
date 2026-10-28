@@ -44,6 +44,7 @@
     "start:standalone": "node scripts/start-standalone.mjs",
     "db:bau-vorbereiten": "node scripts/bau-datenbank.mjs",
     "sprachen:pruefen": "node scripts/sprachen-pruefen.mjs",
+    "links:pruefen": "node scripts/links-pruefen.mjs",
     "messen": "node scripts/messen.mjs"
   },
   "dependencies": {
