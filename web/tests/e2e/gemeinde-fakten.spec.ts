@@ -61,15 +61,20 @@ test.describe('Über uns', () => {
     await page.goto('/ueber-uns');
     const satz = ohneMarken(ueberUns.de.ueberUns.dachverband);
     await expect(page.getByText(satz, { exact: true })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Mehr über die IGMG', exact: true })).toHaveAttribute('href', '/igmg');
-    await expect(page.getByRole('link', { name: dachverband.de.dachverband.quellenLink, exact: true })).toHaveAttribute(
+    // Im Inhalt: Der Fuß führt denselben Link im Block „IGMG-Netzwerk“ (P7)
+    const inhalt = page.getByRole('main');
+    await expect(inhalt.getByRole('link', { name: 'Mehr über die IGMG', exact: true })).toHaveAttribute('href', '/igmg');
+    await expect(inhalt.getByRole('link', { name: dachverband.de.dachverband.quellenLink, exact: true })).toHaveAttribute(
       'href',
       '/quellen#dachverband',
     );
 
     await page.goto('/tr/hakkimizda');
     await expect(page.getByText(ohneMarken(ueberUns.tr.ueberUns.dachverband), { exact: true })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'IGMG hakkında daha fazla bilgi', exact: true })).toHaveAttribute('href', '/tr/igmg');
+    await expect(page.getByRole('main').getByRole('link', { name: 'IGMG hakkında daha fazla bilgi', exact: true })).toHaveAttribute(
+      'href',
+      '/tr/igmg',
+    );
   });
 });
 
@@ -81,7 +86,8 @@ test.describe('Organisationen', () => {
     const extern = page.getByRole('link', { name: `${dachverband.de.dachverband.ziele.frauenorganisation.titel}: externe Seite` });
     await expect(extern).toHaveAttribute('href', 'https://www.igmg.org/frauenorganisation/');
     await expect(extern).toHaveAttribute('rel', 'noopener noreferrer');
-    await expect(page.getByRole('link', { name: o.mehr, exact: true })).toHaveAttribute('href', '/igmg');
+    // Im Inhalt: Der Fuß führt denselben Link im Block „IGMG-Netzwerk“ (P7)
+    await expect(page.getByRole('main').getByRole('link', { name: o.mehr, exact: true })).toHaveAttribute('href', '/igmg');
     await expect(page.getByRole('main')).toContainText('2009');
   });
 
