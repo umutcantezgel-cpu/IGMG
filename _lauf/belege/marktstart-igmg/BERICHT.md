@@ -110,7 +110,7 @@ Einmaliger Abgleich am 28.10.2026, im Speicher, ohne Entpacken:
 Alle in `_lauf/MENSCHEN.md` § 8; vor dem Livegang `web/docs/GO-LIVE.md` C6–C14.
 
 - **A (vor dem Livegang zwingend):** M-099 schriftliche Zustimmung der IGMG; M-100 offizieller Datenzugang Gebetszeiten; M-101 Imam prüft die vier Erklärtexte und „Bedeutung“/Leitbild; M-111 Datenschutzerklärung YouTube und Karte; M-114 Wissens-Vorschau beim Start.
-- **B:** M-102 muttersprachliche Prüfung tr/en; M-103 Regionalverband Hessen; M-104 Ansprechperson und Seminartermine Hadsch & Umra; M-106 Fitre-Betrag; M-109 Unternehmensprofile und Webmaster-Konten; M-110 KI-Crawler; M-113 Positivliste „Aus dem Dachverband“; M-115 zuständige Regionalstelle; M-118 Jahre der Vorstand-Chronik; M-119 Satzungs-Zusammenfassung und Hasene-Text.
+- **B:** M-102 muttersprachliche Prüfung tr/en; M-103 Regionalverband Hessen; M-104 Ansprechperson und Seminartermine Hadsch & Umra; M-106 Fitre-Betrag; M-109 Unternehmensprofile und Webmaster-Konten; M-110 KI-Crawler; M-113 Positivliste „Aus dem Dachverband“; M-115 zuständige Regionalstelle; M-118 Jahre der Vorstand-Chronik; M-119 Satzungs-Zusammenfassung und Hasene-Text; M-120 Fitre-Linie (E-046).
 - **C:** M-105 englischer Name der AT; M-107 jährliche Pflege; M-108 tip.igmg.org, YouTube, Apps; M-112 Moscheeverzeichnis; M-116 Tonsprache der Videos; M-117 Fotos 2008/2011.
 - **Beantwortet bzw. fortgeschrieben:** M-025 und M-069 (1978), M-032 und M-074 (Broschüre Juni 2026, Zentralkontakt), M-017, M-017a, M-017b, M-082 (IGMG-Gebetskalender), M-012, M-019, M-020, M-075.
 

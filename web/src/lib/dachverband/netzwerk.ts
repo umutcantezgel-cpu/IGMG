@@ -110,11 +110,41 @@ const vergleichbar = (adresse: string): string | null => {
   }
 };
 
+/** Hostname ohne „www.“ (sabahulkesi.com = www.sabahulkesi.com); null bei ungültiger Adresse. */
+const hostOhneWww = (adresse: string): string | null => {
+  try {
+    return new URL(adresse).hostname.replace(/^www\./, '');
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * Hosts, deren ganze Website laut Verzeichnis nur eine andere Sprache als Deutsch hat (`tuerkisch`: alle Seitensprachen
+ * landen dort), mit dieser Sprache. Deutsche Ziele zählen nicht: Ohne eigene Adresse gilt beim Aufrufer ohnehin Deutsch,
+ * und eine gepflegte türkische oder englische Unterseite (etwa hasene.org/tr/) soll keinen Hinweis „(auf Deutsch)“
+ * bekommen. Teilen sich Ziele mit verschiedenen Sprachen einen Host, gilt er nicht als einsprachig.
+ */
+const EINSPRACHIGE_HOSTS: ReadonlyMap<string, Locale> = (() => {
+  const hosts = new Map<string, Locale | null>();
+  for (const z of Object.values(NETZWERK) as NetzwerkZiel[]) {
+    const sprachen = new Set(Object.values(z.zielSprache));
+    const nur = sprachen.size === 1 && !sprachen.has('de') ? z.zielSprache.de : null;
+    for (const adresse of Object.values(z.url)) {
+      const host = hostOhneWww(adresse);
+      if (host) hosts.set(host, hosts.has(host) && hosts.get(host) !== nur ? null : nur);
+    }
+  }
+  return new Map([...hosts].filter((e): e is [string, Locale] => e[1] !== null));
+})();
+
 /**
  * Sprache, in der eine gepflegte Adresse auf einer Seite der Sprache `sprache` gelesen wird, wenn sie im Verzeichnis
  * steht – etwa Sabah Ülkesi (nur Türkisch), das auf der Strukturseite nur unter „de“ gespeichert ist. Zuerst wie
  * `netzwerkZiel` für diese Sprache, sonst nach der Sprachfassung, unter der die Adresse steht. Vergleich nach URL-Norm
- * (abschließendes „/“ der Startseite egal). null: nicht im Verzeichnis, der Aufrufer entscheidet wie bisher.
+ * (abschließendes „/“ der Startseite egal). Sonst nach dem Host, wenn die ganze Website nur eine Sprache hat
+ * (`EINSPRACHIGE_HOSTS`: auch sabahulkesi.com ohne „www.“ oder eine Unterseite). null: nicht im Verzeichnis, der
+ * Aufrufer entscheidet wie bisher.
  */
 export function netzwerkZielSprache(href: string, sprache: Locale): Locale | null {
   const gesucht = vergleichbar(href);
@@ -126,5 +156,5 @@ export function netzwerkZielSprache(href: string, sprache: Locale): Locale | nul
   for (const z of Object.values(NETZWERK) as NetzwerkZiel[])
     for (const [fassung, adresse] of Object.entries(z.url) as [Locale, string][])
       if (vergleichbar(adresse) === gesucht) return z.zielSprache[fassung];
-  return null;
+  return EINSPRACHIGE_HOSTS.get(hostOhneWww(gesucht) ?? '') ?? null;
 }

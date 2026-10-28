@@ -339,4 +339,4 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
 - **MENSCHEN.md** (`_gemeinde/MENSCHEN.md` für die Gemeinde-Plattform, `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md` für den Vorlauf): alle offenen Entscheidungen und Aufgaben für Menschen.
 - **BETRIEB.md** (`web/docs/BETRIEB.md`): Betrieb mit Docker und Betrieb auf Vercel (§ 9).
 - **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0024; für den Marktstart IGMG ADR 0046 bis 0049.
-- **Marktstart IGMG:** offene Menschen-Punkte M-099 bis M-119 in `_lauf/MENSCHEN.md`, Bericht `_lauf/belege/marktstart-igmg/BERICHT.md`.
+- **Marktstart IGMG:** offene Menschen-Punkte M-099 bis M-120 in `_lauf/MENSCHEN.md`, Bericht `_lauf/belege/marktstart-igmg/BERICHT.md`.

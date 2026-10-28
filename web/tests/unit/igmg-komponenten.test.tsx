@@ -147,6 +147,20 @@ describe('Struktur: Gremien, Fachvereine, Organisationskarten', () => {
         expect(link, s).toContain(`>${D.aufTuerkisch}</span>`);
       }
     }
+    // gespeichert ohne „www.“ bzw. als Unterseite: dieselbe Website, weiter Türkisch
+    sprache = 'tr';
+    const ohneWww = schema.parse({
+      struktur: {
+        fachvereine: [
+          { name: 'Sabah Ülkesi', bereich: { de: 'Kunst' }, url: { de: 'https://sabahulkesi.com' } },
+          { name: 'Sabah Ülkesi Seite', bereich: { de: 'Kunst' }, url: { de: 'https://www.sabahulkesi.com/hakkimizda/' } },
+        ],
+      },
+    });
+    const tr = renderToStaticMarkup(await Struktur({ inhalt: ohneWww, sprache: 'tr' }));
+    expect(tr).toContain('href="https://sabahulkesi.com" hrefLang="tr"');
+    expect(tr).toContain('href="https://www.sabahulkesi.com/hakkimizda/" hrefLang="tr"');
+    expect(tr).not.toContain(dachverband.tr.dachverband.aufDeutsch);
     // Adressen außerhalb des Verzeichnisses wie bisher: ohne eigene Fassung gilt die deutsche Seite
     sprache = 'en';
     const fremd = schema.parse({

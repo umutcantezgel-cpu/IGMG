@@ -99,6 +99,21 @@ describe('IGMG-Netzwerk', () => {
     expect(netzwerkZielSprache('keine adresse', 'de')).toBeNull();
   });
 
+  it('netzwerkZielSprache: Websites nur auf Türkisch auch ohne „www.“ und mit Unterseite, deutsche Hosts nicht pauschal', () => {
+    for (const s of SPRACHEN) {
+      expect(netzwerkZielSprache('https://sabahulkesi.com', s), s).toBe('tr');
+      expect(netzwerkZielSprache('https://www.sabahulkesi.com/hakkimizda/', s), s).toBe('tr');
+      expect(netzwerkZielSprache('https://www.perspektif.eu/', s), s).toBe('tr');
+      expect(netzwerkZielSprache('https://camiahaber.com/gundem/', s), s).toBe('tr');
+    }
+    // Host mit deutschen Zielen: eine gepflegte Unterseite in anderer Sprache bleibt Sache des Aufrufers
+    expect(netzwerkZielSprache('https://www.hasene.org/tr/', 'tr')).toBeNull();
+    expect(netzwerkZielSprache('https://eurohalal.eu/en/', 'en')).toBeNull();
+    // Hosts mit mehreren Sprachen (igmg.org, igmgreisen.com) nur mit genauer Adresse
+    expect(netzwerkZielSprache('https://www.igmg.org/unbekannt/', 'tr')).toBeNull();
+    expect(netzwerkZielSprache('https://igmgreisen.com/', 'tr')).toBeNull();
+  });
+
   it('jedes Ziel hat Titel und Kurzbeschreibung in de, tr und en (messages/bereiche/dachverband.json)', () => {
     for (const s of SPRACHEN) {
       const ziele = texte[s].dachverband.ziele as Record<string, { titel: string; beschreibung: string }>;

@@ -1,8 +1,9 @@
 // Inhaltsmigration „Marktstart IGMG“ (Welle 3, E-044, Nachtrag ADR 0019): bringt Beispielinhalte (ist_beispiel = true) der
-// Bereiche igmg, ueber-uns, vorstand, der vier Organisationen, dachverband und hadsch-umra auf den Stand der Seeds und legt
-// fehlende Bereiche an; ergänzt die Videos von IGMG Reisen im Seiteninhalt „wissen“ und KI-Entwürfe, die diese Datenbank nie
-// bekommen hat (ADR 0047, Merker in `einstellung`: endgültig Gelöschtes kommt nicht zurück). Redaktionell gespeicherte
-// Inhalte bleiben unberührt. Idempotent, mit Audit-Eintrag je Änderung, eine Transaktion unter der Sperre der Inhaltsstände.
+// Bereiche igmg, ueber-uns, vorstand, der vier Organisationen, dachverband, hadsch-umra und datenschutz (Entwurf, M-111,
+// nur solange Beispielinhalt) auf den Stand der Seeds und legt fehlende Bereiche an; ergänzt die Videos von IGMG Reisen im
+// Seiteninhalt „wissen“ und KI-Entwürfe, die diese Datenbank nie bekommen hat (ADR 0047, Merker in `einstellung`: endgültig
+// Gelöschtes kommt nicht zurück). Redaktionell gespeicherte Inhalte bleiben unberührt. Idempotent, mit Audit-Eintrag je
+// Änderung, eine Transaktion unter der Sperre der Inhaltsstände.
 // Logik und Tests: src/lib/inhalt/stand-marktstart.ts, src/lib/inhalt/seed-stand.ts, tests/unit/inhalte-marktstart.test.ts,
 // tests/integration/inhalte-marktstart.test.ts.
 // Aufruf: pnpm inhalte:marktstart (DATABASE_URL oder PGlite), nach pnpm inhalte:2026. Danach Cache erneuern (Tag
