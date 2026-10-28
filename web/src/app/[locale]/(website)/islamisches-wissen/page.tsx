@@ -13,8 +13,8 @@ import { ladeWissensInhalt, ladeWissensThemen } from '@/server/queries/wissen';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('wissen');
-  return metadatenFuer({ pfad: '/islamisches-wissen', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.wissen');
+  return metadatenFuer({ pfad: '/islamisches-wissen', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**

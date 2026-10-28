@@ -16,8 +16,8 @@ import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('korankurse');
-  return metadatenFuer({ pfad: '/bildung/korankurse', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.korankurse');
+  return metadatenFuer({ pfad: '/bildung/korankurse', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**

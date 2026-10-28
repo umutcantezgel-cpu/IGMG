@@ -9,6 +9,7 @@ import { IGMGTabs } from '@/components/website/igmg/IGMGTabs';
 import { Kontakt } from '@/components/website/igmg/Kontakt';
 import { Struktur } from '@/components/website/igmg/Struktur';
 import { Ueberblick } from '@/components/website/igmg/Ueberblick';
+import { GemeindeJsonLd } from '@/components/website/GemeindeJsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import type { Locale } from '@/i18n/routing';
@@ -18,8 +19,8 @@ import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('igmg');
-  return metadatenFuer({ pfad: '/igmg', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.igmg');
+  return metadatenFuer({ pfad: '/igmg', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**
@@ -39,6 +40,7 @@ export default async function IGMGSeite() {
   const faqTitel = t('faqTitel');
   return (
     <Seitenrahmen bereich="moschee" seite="igmg" sprachZiel="/igmg" pfad={[{ label: tp('igmg') }]}>
+      <GemeindeJsonLd />
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 py-abschnitt-klein md:px-8">
         <IGMGTabs

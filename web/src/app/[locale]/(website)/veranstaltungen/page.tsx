@@ -16,8 +16,8 @@ export const ensureStatic = 'navigation';
 const KATEGORIEN = ['gebet', 'bildung', 'gemeinde', 'kultur', 'jugend', 'frauen'] as const;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('veranstaltungen');
-  return metadatenFuer({ pfad: '/veranstaltungen', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.veranstaltungen');
+  return metadatenFuer({ pfad: '/veranstaltungen', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**

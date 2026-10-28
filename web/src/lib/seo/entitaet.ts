@@ -1,6 +1,6 @@
 /**
  * Sprachneutrale Entitätsdaten der Gemeinde und ihres Dachverbands (Plan Marktstart, E-044; K-16) für strukturierte
- * Daten, Metadaten und llms.txt (Verwendung folgt mit P8). Nur Belegtes (G-05); Personennamen stehen hier nie (G-04).
+ * Daten (`jsonld.ts`), Metadaten und `/llms.txt` (`llms.ts`). Nur Belegtes (G-05); Personennamen stehen hier nie (G-04).
  * Der lokalisierte Name der Moschee steht in messages/{de,tr,en}.json unter `meta.moscheeName` – hier nur der Schlüssel.
  */
 
@@ -14,6 +14,8 @@ export const ENTITAET = {
   moscheeNameSchluessel: 'meta.moscheeName',
   /** Weitere Namen in allen Sprachen (schema.org `alternateName`); „IGMG-Gemeinde Wetzlar“ wie im Artikel von 2008. */
   alternateName: ['Fatih-Moschee Wetzlar', 'Wetzlar Fatih Camii', 'Fatih Mosque Wetzlar', 'IGMG-Gemeinde Wetzlar'],
+  /** Sitz der Gemeinde (Ort, Bundesland, Land): geografische Tatsachen, gelten auch ohne gepflegte Straße (M-010). */
+  sitz: { ort: 'Wetzlar', kreis: 'Lahn-Dill-Kreis', bundesland: 'Hessen', land: 'DE' },
   /** Gründungsjahr der Gemeinde (Nutzerentscheidung E-044 Nr. 4, Beleg: 30-Jahr-Feier 2008). */
   gruendung: '1978',
   gruendungBeleg: ARTIKEL_2008,

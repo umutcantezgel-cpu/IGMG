@@ -11,8 +11,8 @@ import { sendeVoranmeldung } from '@/server/actions/formulare/voranmeldung';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('voranmeldung');
-  return metadatenFuer({ pfad: '/bildung/voranmeldung', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.voranmeldung');
+  return metadatenFuer({ pfad: '/bildung/voranmeldung', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /** Schüler-Voranmeldung (design/StudentRegistration.dc.html, Blatt S20, B05): FormWizard in vier Schritten, Warteliste. */

@@ -26,8 +26,8 @@ const KNOPF =
 const TEXTLINK = 'inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('kalender');
-  return metadatenFuer({ pfad: '/kalender', titel: t('titel'), beschreibung: t('metaBeschreibung') });
+  const t = await getTranslations('seo.kalender');
+  return metadatenFuer({ pfad: '/kalender', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**

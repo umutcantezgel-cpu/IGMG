@@ -17,8 +17,8 @@ export const ensureStatic = 'navigation';
 const KATEGORIEN = ['ankuendigung', 'gemeinde', 'veranstaltung', 'bildung', 'religioes', 'soziales'] as const;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('nachrichten');
-  return metadatenFuer({ pfad: '/nachrichten', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.nachrichten');
+  return metadatenFuer({ pfad: '/nachrichten', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /** Nachrichtenliste (design/News.dc.html, Blatt S06): Kategoriefilter, Beitragskarten, Leerzustand. */

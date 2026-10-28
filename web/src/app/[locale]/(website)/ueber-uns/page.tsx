@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { GemeindeJsonLd } from '@/components/website/GemeindeJsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Stern8 } from '@/components/website/Icons';
@@ -24,8 +25,8 @@ export const ensureStatic = 'navigation';
 const QUELLEN_STAND = '2026-10-27';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('ueberUns');
-  return metadatenFuer({ pfad: '/ueber-uns', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.ueberUns');
+  return metadatenFuer({ pfad: '/ueber-uns', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**
@@ -46,6 +47,7 @@ export default async function UeberUnsSeite() {
   const aufrufTitel = t('aufrufTitel');
   return (
     <Seitenrahmen bereich="moschee" seite="ueber-uns" sprachZiel="/ueber-uns" pfad={[{ label: tp('ueberUns') }]}>
+      <GemeindeJsonLd />
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
 
       {/* Geschichte: Lesespalte und Bildfläche nebeneinander, erster Absatz als Einleitung */}

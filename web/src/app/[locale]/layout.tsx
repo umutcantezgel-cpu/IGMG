@@ -3,7 +3,9 @@ import { ServiceWorkerAnmeldung } from '@/components/website/ServiceWorkerAnmeld
 import { getTranslations } from 'next-intl/server';
 import { locale } from 'next/root-params';
 import { routing } from '@/i18n/routing';
+import { indexierungGesperrt, NOINDEX } from '@/lib/seo/indexierung';
 import { oeffentlicheAdresse } from '@/lib/umgebung';
+import { ladeEinstellung } from '@/server/queries/einstellungen';
 import { schriftKlassen } from '../schriften';
 import '../globals.css';
 
@@ -11,14 +13,19 @@ export function generateStaticParams() {
   return routing.locales.map((l) => ({ locale: l }));
 }
 
+/**
+ * Standard-Metadaten aller Seiten. Indexierungs-Schranke (ADR 0049): Mit eingeschaltetem Konzept-Hinweis (Einstellung
+ * „allgemein“, wie im Seitenrahmen) auf Vercel `noindex, follow` – Seiten ohne eigene robots-Angabe erben sie.
+ */
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('meta');
+  const [t, { konzepthinweis }] = await Promise.all([getTranslations('meta'), ladeEinstellung('allgemein')]);
   return {
     metadataBase: new URL(oeffentlicheAdresse(process.env)),
     title: { default: t('titel'), template: `%s · ${t('titel')}` },
     description: t('beschreibung'),
     applicationName: t('titel'),
     icons: { icon: '/symbole/symbol-192.png', apple: '/symbole/apple-touch-icon.png' },
+    ...(indexierungGesperrt(konzepthinweis) ? { robots: NOINDEX } : {}),
   };
 }
 

@@ -13,8 +13,8 @@ import { UnsereMoschee } from '@/components/website/start/UnsereMoschee';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { moschee } from '@/lib/seo/jsonld';
-import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
+import { gemeindeGraph } from '@/lib/seo/jsonld';
+import { basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { sichtbareAbschnitte, type StartseitenAbschnitt } from '@/lib/startseite/abschnitte';
 import { cn } from '@/lib/utils';
 import { heuteBerlin } from '@/lib/zeit/heute';
@@ -27,10 +27,10 @@ import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const [t, tm] = await Promise.all([getTranslations('start'), getTranslations('meta')]);
-  const meta = await metadatenFuer({ pfad: '/', titel: null, beschreibung: t('metaBeschreibung') });
-  // Ohne eigenen Titel setzt die Startseite den Namen selbst: openGraph ersetzt das Layout-Objekt vollständig (Next.js)
-  return { ...meta, openGraph: { ...meta.openGraph, title: tm('titel') } };
+  const [t, tm] = await Promise.all([getTranslations('seo.start'), getTranslations('meta')]);
+  const meta = await metadatenFuer({ pfad: '/', titel: null, beschreibung: t('beschreibung') });
+  // Titel ohne Vorlage (ADR 0049); openGraph ersetzt das Layout-Objekt vollständig (Next.js) und trägt den Namen selbst
+  return { ...meta, title: { absolute: t('titel') }, openGraph: { ...meta.openGraph, title: tm('titel') } };
 }
 
 const sekundaer =
@@ -144,7 +144,7 @@ export default async function Startseite() {
   };
   return (
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
-      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
+      <JsonLd daten={gemeindeGraph({ basis: basisUrl(), kontakt, sprache })} />
       <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
         <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-5 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16">
           <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">

@@ -120,6 +120,20 @@ export async function ladeNachrichtenSlugs(): Promise<string[]> {
   return zeilen.map((z) => z.slug);
 }
 
+/** Slugs mit Änderungszeitpunkt für die Sitemap (lastModified, ADR 0049): dieselbe Auswahl wie ladeNachricht. */
+export async function ladeNachrichtenStaende(): Promise<{ slug: string; aktualisiertAm: string }[]> {
+  'use cache: remote';
+  cacheLife('hours');
+  cacheTag(TAG.nachrichten);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – die Sitemap nennt dann keine Beiträge
+  if (!datenbankVerfuegbar()) return [];
+  const zeilen = await db
+    .select({ slug: schema.nachricht.slug, aktualisiertAm: schema.nachricht.aktualisiertAm })
+    .from(schema.nachricht)
+    .where(sichtbarInListen());
+  return zeilen.map((z) => ({ slug: z.slug, aktualisiertAm: z.aktualisiertAm.toISOString() }));
+}
+
 /** Weitere sichtbare Beiträge derselben Kategorie, neueste zuerst, ohne den angegebenen Beitrag (Detailseite). */
 export async function ladeAehnlicheNachrichten(
   kategorie: NachrichtDaten['kategorie'],

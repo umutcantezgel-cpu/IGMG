@@ -12,8 +12,10 @@ export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('anzeige');
-  // Ohne Beschreibung erbte die Seite die Platzhalter-Beschreibung des Layouts; die Überschrift beschreibt den Inhalt
-  return metadatenFuer({ pfad: '/gebetszeiten/anzeige', titel: t('titel'), beschreibung: t('ueberschrift') });
+  // Ohne Beschreibung erbte die Seite die Beschreibung des Layouts; die Überschrift beschreibt den Inhalt. Vollbild für den
+  // Bildschirm der Moschee, eine dünne Dublette von /gebetszeiten: nie im Suchindex, Links bleiben verfolgbar (ADR 0049)
+  const meta = await metadatenFuer({ pfad: '/gebetszeiten/anzeige', titel: t('titel'), beschreibung: t('ueberschrift') });
+  return { ...meta, robots: { index: false, follow: true } };
 }
 
 async function texte(locale: Locale): Promise<AnzeigeTexte> {

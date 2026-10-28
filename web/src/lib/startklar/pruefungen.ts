@@ -323,7 +323,7 @@ async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produ
     titel: 'Hinweis „Konzept-Website“',
     status: konzepthinweis ? (produktion ? 'fehler' : 'warnung') : 'ok',
     meldung: konzepthinweis
-      ? 'Der Dialog „Alle angezeigten Daten sind fiktiv“ ist eingeschaltet und erscheint jedem Besucher.'
+      ? 'Der Dialog „Alle angezeigten Daten sind fiktiv“ ist eingeschaltet und erscheint jedem Besucher. Solange er an ist, ist die Seite auf Vercel noindex (nicht in Suchmaschinen) und /llms.txt antwortet mit 404 (ADR 0049).'
       : 'Der Konzept-Hinweis ist ausgeschaltet.',
     ort: 'Einstellung „allgemein.konzepthinweis“ (MENSCHEN ML-03)',
     aufwand: '5 min',

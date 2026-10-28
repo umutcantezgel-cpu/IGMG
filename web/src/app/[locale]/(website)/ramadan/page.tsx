@@ -27,8 +27,8 @@ export const ensureStatic = 'navigation';
 const TEXTLINK = 'inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('ramadan');
-  return metadatenFuer({ pfad: '/ramadan', titel: t('titelOhneJahr'), beschreibung: t('metaBeschreibung') });
+  const t = await getTranslations('seo.ramadan');
+  return metadatenFuer({ pfad: '/ramadan', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**
