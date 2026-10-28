@@ -9,7 +9,9 @@ import { datumVon, LOCALE, tagTitel } from '@/components/website/kalender/Monats
 import { UmraImRamadan } from '@/components/website/hadsch-umra/UmraImRamadan';
 import { PageHeader } from '@/components/website/PageHeader';
 import { FastenbogenLive } from '@/components/website/ramadan/FastenbogenLive';
+import { RamadanBegleiter } from '@/components/website/ramadan/RamadanBegleiter';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { funktionAn } from '@/lib/funktionen';
@@ -36,7 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Ramadan (AUFTRAG 3.10, B-20): Imsakiye aller Ramadan-Tage aus den Gebetszeiten (Import, sonst Berechnung – wie
  * /gebetszeiten), druckbar mit hervorgehobenem Imsak und Iftar; Fastenbogen; Kadir-Nacht und Bayram aus den
  * besonderen Tagen; Teravih und Fitre als Platzhalter der Gemeinde. Außerhalb des Ramadan ein Hinweis ohne Countdown
- * („beginnt voraussichtlich am …“) und – mit Schalter `ramadan_vorschau` – die Imsakiye als Vorschau.
+ * („beginnt voraussichtlich am …“) und – mit Schalter `ramadan_vorschau` – die Imsakiye als Vorschau. In beiden Zweigen der
+ * Ramadan-Begleiter der IGMG; beim Fitre-Abschnitt die Erklärung zu Zakat, Fitra und Kurban (Plan Marktstart P7).
  */
 export default async function RamadanSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -57,6 +60,9 @@ export default async function RamadanSeite() {
     return (
       <Seitenrahmen bereich="islam" seite="ramadan" sprachZiel="/ramadan" pfad={pfad}>
         <PageHeader kennung={t('kennung')} titel={t('titelOhneJahr')} untertitel={t('untertitel')} />
+        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 py-abschnitt-klein md:px-8">
+          <RamadanBegleiter sprache={sprache} className="max-w-text" />
+        </div>
       </Seitenrahmen>
     );
   }
@@ -131,39 +137,43 @@ export default async function RamadanSeite() {
                 <ArrowRight aria-hidden className="size-5" />
               </Link>
             </section>
+            <WissenErklaerung slug="zakat-fitra-qurban" />
             <UmraImRamadan />
           </div>
-          <section aria-labelledby="ramadan-naechte" className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6">
-            <h2 id="ramadan-naechte" className="flex items-center gap-2.5 font-text text-20 font-bold tracking-normal">
-              <Stern8 aria-hidden className="size-4 shrink-0 text-gruen-700" />
-              {t('naechte.titel')}
-            </h2>
-            <ul className="flex flex-col gap-3">
-              {besondere
-                .filter((b) => b.datum >= tagPlus(zeitraum.von, -30) && b.datum <= tagPlus(zeitraum.bis, 3))
-                .map((b) => (
-                  <li key={b.id} className="flex gap-3">
-                    <SternMarke vorlaeufig={b.vorlaeufig} className="mt-0.5 size-6" />
-                    <div className="flex flex-col">
-                      <span className="font-bold">{tagTitel(b, sprache, tv)}</span>
-                      <span className="text-16 text-tinte-2">
-                        <time dateTime={b.datum}>{datumLang(datumVon(b.datum), sprache)}</time> · {hijriText(b.datum, locale)}
-                      </span>
-                      {b.art === 'kandil' ? <span className="text-16 text-tinte-2">{t('naechte.nacht')}</span> : null}
-                      {b.vorlaeufig ? (
-                        <span className="mt-1 self-start rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
-                          {tkal('vorlaeufig')}
+          <div className="flex flex-col gap-6">
+            <section aria-labelledby="ramadan-naechte" className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6">
+              <h2 id="ramadan-naechte" className="flex items-center gap-2.5 font-text text-20 font-bold tracking-normal">
+                <Stern8 aria-hidden className="size-4 shrink-0 text-gruen-700" />
+                {t('naechte.titel')}
+              </h2>
+              <ul className="flex flex-col gap-3">
+                {besondere
+                  .filter((b) => b.datum >= tagPlus(zeitraum.von, -30) && b.datum <= tagPlus(zeitraum.bis, 3))
+                  .map((b) => (
+                    <li key={b.id} className="flex gap-3">
+                      <SternMarke vorlaeufig={b.vorlaeufig} className="mt-0.5 size-6" />
+                      <div className="flex flex-col">
+                        <span className="font-bold">{tagTitel(b, sprache, tv)}</span>
+                        <span className="text-16 text-tinte-2">
+                          <time dateTime={b.datum}>{datumLang(datumVon(b.datum), sprache)}</time> · {hijriText(b.datum, locale)}
                         </span>
-                      ) : null}
-                    </div>
-                  </li>
-                ))}
-            </ul>
-            <Link href="/kalender" className={TEXTLINK}>
-              {t('kalenderLink')}
-              <ArrowRight aria-hidden className="size-5" />
-            </Link>
-          </section>
+                        {b.art === 'kandil' ? <span className="text-16 text-tinte-2">{t('naechte.nacht')}</span> : null}
+                        {b.vorlaeufig ? (
+                          <span className="mt-1 self-start rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
+                            {tkal('vorlaeufig')}
+                          </span>
+                        ) : null}
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+              <Link href="/kalender" className={TEXTLINK}>
+                {t('kalenderLink')}
+                <ArrowRight aria-hidden className="size-5" />
+              </Link>
+            </section>
+            <RamadanBegleiter sprache={sprache} />
+          </div>
         </div>
 
         {zeigeTabelle && tage.length ? (

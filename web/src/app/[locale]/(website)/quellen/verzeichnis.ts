@@ -6,8 +6,10 @@
  * Sprachdaten, Bildkarten und Spracherkennung mit denselben Angaben wie `/lern-app/[ui]/quellen`; die Namensnennungen der
  * Daten kommen aus `src/lib/lernapp/quellen.ts` (eine Quelle für beide Seiten, abgeglichen mit `web/daten/<ordner>/QUELLE.md`).
  */
+import { HUTBA_FEED } from '@/lib/dachverband/feed';
 import { NETZWERK } from '@/lib/dachverband/netzwerk';
 import { DATEN, ORT_DRITTLIZENZEN } from '@/lib/lernapp/quellen';
+import { ENTITAET } from '@/lib/seo/entitaet';
 
 export type Lizenz = { name: string; url: string };
 
@@ -20,6 +22,11 @@ export type QuellenEintrag = {
   url: string;
   /** Lizenz mit Name und Text; ohne Eintrag steht die Lizenz als Text in `quellen.eintraege.<id>.lizenz` */
   lizenz?: Lizenz;
+  /**
+   * Übernahme mit Zustimmung der IGMG (Nutzerentscheidung vom 27.10.2026, E-044 Nr. 1): statt einer Lizenz der gemeinsame
+   * Text `quellen.dachverband.lizenz` (Texte eigenständig formuliert, Zahlen und Kontaktdaten mit Quelle übernommen).
+   */
+  zustimmung?: true;
   /** Herkunft des Inhalts, wenn sie von der Bezugsquelle abweicht (Hadith: sunnah.com laut References.md) */
   herkunft?: { name: string; url: string };
   /** Es gibt `quellen.eintraege.<id>.aenderungen` bzw. `.hinweis` */
@@ -46,6 +53,12 @@ const APACHE = { name: 'Apache-2.0', url: 'https://www.apache.org/licenses/LICEN
 const CC_BY_2_FR = { name: 'CC BY 2.0 FR', url: 'https://creativecommons.org/licenses/by/2.0/fr/' };
 const CC_BY_SA_4 = { name: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' };
 const ISC = { name: 'ISC', url: 'https://opensource.org/license/isc-license-txt' };
+
+/** Urheber der Inhalte des Dachverbands (Impressum igmg.org). */
+const IGMG_EV = 'Islamische Gemeinschaft Millî Görüş e. V., Köln';
+const IGMG = 'https://www.igmg.org';
+/** IGMG-Bericht zum Tag der offenen Moschee 2011 in Wetzlar (17.10.2011); gleiche Adresse wie `ARTIKEL_2011` im Seed „ueber-uns“. */
+export const ARTIKEL_WETZLAR_2011 = `${IGMG}/gutes-wetter-und-gute-gespra%c2%a4che-ae-tag-der-offenen-moschee-2011-in-wetzlar/`;
 
 export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'uebersetzungsbedingungen' | 'stimmen' | 'ofl' }[] = [
   {
@@ -130,6 +143,58 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
         urheber: 'Batoul Apps, Copyright (c) 2016',
         url: 'https://github.com/batoulapps/adhan-js',
         lizenz: MIT,
+      },
+    ],
+  },
+  {
+    // Marktstart P7 (ADR 0046): Quellen zum Dachverband; Anker #dachverband (Quellenzeilen auf /igmg, /ueber-uns, …). Ohne
+    // Lizenzobjekt – Übernahme mit Zustimmung der IGMG. Der Gebetskalender steht oben unter „gebetszeiten“.
+    id: 'dachverband',
+    eintraege: [
+      { id: 'igmg-website', name: 'igmg.org', urheber: IGMG_EV, url: NETZWERK.igmg.url.de, zustimmung: true },
+      {
+        id: 'igmg-broschuere-en',
+        name: 'IGMG-Broschüre (Englisch)',
+        urheber: IGMG_EV,
+        url: `${IGMG}/wp-content/uploads/2026/07/english_igmg.pdf`,
+        zustimmung: true,
+      },
+      {
+        id: 'igmg-broschuere-tr',
+        name: 'IGMG-Broschüre (Türkisch)',
+        urheber: IGMG_EV,
+        url: `${IGMG}/wp-content/uploads/2026/04/IGMG_broshure_tr_new.pdf`,
+        zustimmung: true,
+      },
+      { id: 'igmg-satzung', name: 'Satzung der IGMG', urheber: IGMG_EV, url: NETZWERK.satzung.url.de, zustimmung: true },
+      {
+        id: 'igmg-wetzlar-2008',
+        name: 'IGMG-Gemeinde Wetzlar feiert 30. Jubiläum (07.04.2008)',
+        urheber: IGMG_EV,
+        url: ENTITAET.gruendungBeleg,
+        zustimmung: true,
+      },
+      {
+        id: 'igmg-wetzlar-2011',
+        name: 'Tag der offenen Moschee 2011 in Wetzlar (17.10.2011)',
+        urheber: IGMG_EV,
+        url: ARTIKEL_WETZLAR_2011,
+        zustimmung: true,
+      },
+      { id: 'igmg-hutba-feed', name: 'Freitagspredigt der IGMG (RSS-Feed)', urheber: IGMG_EV, url: HUTBA_FEED, zustimmung: true },
+      {
+        id: 'hasene',
+        name: 'Hasene International',
+        urheber: 'HASENE International e. V., Köln',
+        url: NETZWERK.hasene.url.de,
+        zustimmung: true,
+      },
+      {
+        id: 'igmg-reisen',
+        name: 'IGMG Reisen (igmgreisen.com)',
+        urheber: 'IGMG Hadsch-Umra Reisen GmbH, Köln',
+        url: NETZWERK.reisen.url.de,
+        zustimmung: true,
       },
     ],
   },

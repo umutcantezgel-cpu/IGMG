@@ -3,15 +3,21 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { AktuelleHutba } from '@/components/website/dachverband/HutbaKarte';
+import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
 import { textMitSprache } from '@/components/website/Text';
 import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum';
+import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
 import { WissenInsel } from '@/components/website/wissen/WissenInsel';
 import type { WissenTexte } from '@/components/website/wissen/typen';
 import type { Locale } from '@/i18n/routing';
+import { youtubeLink } from '@/lib/einbettung/youtube';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeWissensInhalt, ladeWissensThemen } from '@/server/queries/wissen';
 
 export const ensureStatic = 'navigation';
+
+/** „Mehr beim Dachverband“ (Marktstart P7): Ziele aus dem IGMG-Netzwerk in dieser Reihenfolge. */
+const WISSEN_DACHVERBAND = ['freitagspredigt', 'islamSchnellErklaert', 'derIslam', 'qalam', 'umreYoldasim', 'reisen'] as const;
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('seo.wissen');
@@ -22,7 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Islamisches Wissen (design/IslamicKnowledge.dc.html, Blatt S14): Themen als Filter, Reiter Artikel, Videos und
  * Experten. Themen kommen aus der Tabelle wissen_thema, Artikel, Videos und Experten aus dem Seiteninhalt „wissen“.
  * Die Seite ist vollständig statisch (K-01, keine Cookies, kein Datum im Render); nur die Insel filtert und
- * wechselt die Reiter im Browser (K-12).
+ * wechselt die Reiter im Browser (K-12). Marktstart P7: neben der Freitagspredigt die Erklärung zum Freitagsgebet, unter der
+ * Insel „Mehr beim Dachverband“ (Server-Komponenten, nur Links). Videos mit YouTube-ID erscheinen nur als Link.
  */
 export default async function IslamischesWissenSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -49,6 +56,7 @@ export default async function IslamischesWissenSeite() {
     videoAnsehen: t('videos.ansehen'),
     videoHinweis: t('videos.hinweis'),
     videoPlatzhalter: t('videos.platzhalter'),
+    videoLink: t('videos.youtube'),
     expertenTitel: t('experten.titel'),
     expertenBadge: t('experten.badge'),
     mehrErfahren: t('experten.mehr'),
@@ -66,7 +74,11 @@ export default async function IslamischesWissenSeite() {
       <PageHeader kennung={t('eyebrow')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
         {/* Marktstart P3: Freitagspredigt der IGMG vom {Datum} – nur Titel, Datum und Link, kein Auszug (G-06) */}
-        <AktuelleHutba sprache={sprache} />
+        {/* Marktstart P7: daneben die Erklärung zum Freitagsgebet (fehlt sie, nimmt die Karte die ganze Breite) */}
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+          <AktuelleHutba sprache={sprache} className="lg:flex-1" />
+          <WissenErklaerung slug="friday-prayer" className="lg:flex-1" />
+        </div>
         <WissenInsel
           sprache={SPRACH_KENNUNG[sprache]}
           texte={texte}
@@ -94,6 +106,8 @@ export default async function IslamischesWissenSeite() {
               dauer: v.dauer,
               beschreibung: textMitSprache(v.beschreibung, sprache),
               vorschau: t('videos.vorschau', { titel: titel.text }),
+              // Nur ein Link zu YouTube, keine Einbettung (K-12: die Seite liegt an der JS-Grenze; K-14: kein Abruf beim Laden)
+              ...(v.youtubeId ? { link: youtubeLink(v.youtubeId) } : {}),
             };
           })}
           experten={inhalt.experten.map((e) => ({
@@ -105,6 +119,14 @@ export default async function IslamischesWissenSeite() {
             anzahlArtikel: deutsch(e.anzahlArtikel),
           }))}
         />
+        {/* Marktstart P7: weiterführende Angebote der IGMG – Server-Komponente unter der Insel, nur Links (K-12, K-14) */}
+        <section aria-labelledby="wissen-dachverband" data-wissen="dachverband" className="flex max-w-seitenkopf flex-col gap-4 pt-4">
+          <h2 id="wissen-dachverband" className="text-display-2 text-balance">
+            {t('dachverband.titel')}
+          </h2>
+          <p className="max-w-text text-18 text-pretty text-tinte-2">{t('dachverband.text')}</p>
+          <Verweisliste eintraege={WISSEN_DACHVERBAND} />
+        </section>
       </div>
     </Seitenrahmen>
   );

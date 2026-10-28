@@ -6,9 +6,10 @@
       "untertitel": "Woher die Texte, Daten, Schriften und Programme dieser Website stammen – mit Urheber, Lizenz und Verweis auf die Quelle.",
       "fussLink": "Quellen",
       "inhaltsverzeichnis": "Inhalt",
-      "standTitel": "Stand: 26. Oktober 2026",
+      "standTitel": "Stand: 28. Oktober 2026",
       "standText": "Übernommene Dateien liegen mit Prüfsumme im Quellcode der Website: unverändert oder, wo es hier vermerkt ist, gefiltert, gekürzt bzw. umformatiert. Religiöse Inhalte erscheinen öffentlich erst nach der Prüfung durch den Imam bzw. die Lehrkraft.",
       "standVorschau": "Ausnahme: Der Wissenskurs der Lern-App ist derzeit als ungeprüfter Entwurf zur Prüfung sichtbar und dort als solcher gekennzeichnet; was zwei Gelehrte der Gemeinde geprüft haben, trägt den Prüfvermerk.",
+      "standVorschauWebsite": "Ausnahme auf der Website: Erklärtexte unter „Wissen“, die der Imam noch nicht geprüft hat, sind als „Entwurf zur Prüfung“ gekennzeichnet sichtbar; mit der Freigabe entfällt die Kennzeichnung.",
       "felder": {
         "urheber": "Urheber",
         "lizenz": "Lizenz",
@@ -26,6 +27,7 @@
         "hadith": "Hadith",
         "orte": "Ortsdaten",
         "gebetszeiten": "Gebetszeiten",
+        "dachverband": "Dachverband (IGMG)",
         "schriften": "Schriften",
         "bibliotheken": "Programmbibliotheken",
         "sprachausgabe": "Sprachausgabe der Lern-App",
@@ -38,11 +40,15 @@
         "hadith": "Der arabische Text von Sahih al-Bukhari stammt aus einer frei verfügbaren Sammlung von Hadith-Ausgaben.",
         "orte": "Für die Gebetszeiten an Ihrem Ort nutzen wir eine kleine Ortsliste. Sie wird nur in Ihrem Browser ausgewertet; Ihr Standort verlässt Ihr Gerät nicht.",
         "gebetszeiten": "Die Gebetszeiten werden mit einer quelloffenen Bibliothek berechnet, solange keine bestätigte Jahrestabelle vorliegt.",
+        "dachverband": "Die Fatih-Moschee Wetzlar gehört zur Islamischen Gemeinschaft Millî Görüş (IGMG). Was diese Website über den Dachverband, seine Fachvereine und die Geschichte der Gemeinde sagt, stützt sich auf die folgenden Quellen. Die Texte sind eigenständig formuliert; Zahlen, Daten und Kontaktangaben stehen mit Quelle und Stand.",
         "schriften": "Alle Schriften liegen auf unserem eigenen Server. Es werden keine Schriften von fremden Diensten geladen.",
         "bibliotheken": "Die Website ist mit freier Software gebaut. Die wichtigsten Bibliotheken mit ihrer Lizenz:",
         "sprachausgabe": "Für die Hörübungen der Lern-App ist eine synthetische Stimme (Sprachausgabe) vorgesehen. Ihre Aufnahmen werden vorab auf unseren Rechnern erzeugt und erst nach bestandener Hörabnahme in die Übungen übernommen; im Browser läuft keine Sprachausgabe. Solange es für eine Sprache keine freigegebene Stimme gibt, steht bei der Übung „Audio folgt“.",
         "lernapp-daten": "Die Sprachkurse der Lern-App nutzen Sätze und Wörterbuchangaben aus offenen Sammlungen. Die Namensnennung je Satz und Eintrag steht im Kurspaket und auf der Seite „Quellen und Lizenzen“ der Lern-App bei jeder Einheit, die auf dem Gerät liegt – auch offline. Häufigkeitslisten dienen nur der Auswahl der Wörter. Die Lerninhalte selbst stehen unter CC BY-SA 4.0.",
         "lernapp-spracherkennung": "Die Sprechübung der Lern-App erkennt Gesprochenes nur auf dem eigenen Gerät. Modell und Laufzeit kommen von unserem Server; die Aufnahme verlässt das Gerät nicht."
+      },
+      "dachverband": {
+        "lizenz": "Übernahme mit Zustimmung der IGMG (27.10.2026); Texte eigenständig formuliert, Zahlen und Kontaktdaten mit Quelle übernommen."
       },
       "stimmen": {
         "ohneFreigabe": "Noch ohne freigegebene Stimme: {sprachen}.",
@@ -104,6 +110,42 @@
         "adhan": {
           "fassung": "Version 4.4.6.",
           "verwendung": "Berechnung der Gebetszeiten und der Qibla-Richtung."
+        },
+        "igmg-website": {
+          "fassung": "Seiten von igmg.org, abgerufen am 13.10.2026; Verweise geprüft am 27.10.2026.",
+          "verwendung": "Grundlage der eigenen Texte über den Dachverband auf den Seiten „IGMG“, „Über uns“ und den Seiten der Organisationen; Verweise ins IGMG-Netzwerk, etwa im Fuß der Website."
+        },
+        "igmg-broschuere-en": {
+          "fassung": "2. Auflage, Köln, Juni 2026.",
+          "verwendung": "Kennzahlen des Dachverbands (Moscheegemeinden, Zweigstellen, Regionen, Mitglieder, Ehrenamtliche) auf der Seite „IGMG“, jeweils mit Stand."
+        },
+        "igmg-broschuere-tr": {
+          "fassung": "5. Auflage, September 2025.",
+          "verwendung": "Abgleich der Kennzahlen mit der englischen Ausgabe."
+        },
+        "igmg-satzung": {
+          "fassung": "Fassung auf igmg.org, abgerufen am 13.10.2026.",
+          "verwendung": "Organe des Dachverbands auf der Seite „IGMG“ und die Fördermitgliedschaft auf der Seite „Mitglied werden“ (§ 4.4, § 5, § 7.3)."
+        },
+        "igmg-wetzlar-2008": {
+          "fassung": "Bericht vom 07.04.2008.",
+          "verwendung": "Beleg für das Gründungsjahr 1978 und die Zugehörigkeit zum Regionalverband Hessen; Station 2008 auf der Seite „Über uns“."
+        },
+        "igmg-wetzlar-2011": {
+          "fassung": "Bericht vom 17.10.2011.",
+          "verwendung": "Beleg für die Station 2011 (Tag der offenen Moschee) auf der Seite „Über uns“."
+        },
+        "igmg-hutba-feed": {
+          "fassung": "Laufend; der Server gleicht den Feed täglich ab, sobald die Datenbank angeschlossen ist.",
+          "verwendung": "Nur Titel, Datum und Link der Freitagspredigten im Bereich „Aus dem Dachverband“ – kein Auszug aus dem Predigttext."
+        },
+        "hasene": {
+          "fassung": "Verweise geprüft am 27.10.2026.",
+          "verwendung": "Verweise auf Spenden für Kurban, Zakat, Fitra und Nothilfe sowie auf den Zakat-Rechner (Seite „Spenden“); keine Texte oder Bilder übernommen."
+        },
+        "igmg-reisen": {
+          "fassung": "Seiten von igmgreisen.com, abgerufen am 13.10.2026; Verweise geprüft am 27.10.2026.",
+          "verwendung": "Verweise auf Hadsch- und Umra-Angebote, Unterlagen und Videos; Titel und YouTube-Kennung von zwei Videos unter „Wissen“ (dort nur als Link zu YouTube)."
         },
         "atkinson": {
           "fassung": "Über @fontsource/atkinson-hyperlegible-next 5.3.0, selbst gehostet.",
@@ -228,9 +270,10 @@
       "untertitel": "Bu web sitesindeki metinlerin, verilerin, yazı tiplerinin ve programların nereden geldiği – hak sahibi, lisans ve kaynak bağlantısıyla.",
       "fussLink": "Kaynaklar",
       "inhaltsverzeichnis": "İçindekiler",
-      "standTitel": "Tarih: 26 Ekim 2026",
+      "standTitel": "Tarih: 28 Ekim 2026",
       "standText": "Alınan dosyalar sağlama toplamıyla web sitesinin kaynak kodunda yer alır: değiştirilmeden ya da burada belirtildiği yerde filtrelenmiş, kısaltılmış veya yeniden biçimlendirilmiş olarak. Dinî içerikler ancak imam ya da öğretmen tarafından incelendikten sonra yayımlanır.",
       "standVorschau": "İstisna: Öğrenme uygulamasındaki bilgi kursu şu anda henüz incelenmemiş bir taslak olarak görünür ve orada böyle işaretlenmiştir; cemaatin iki âliminin incelediği dersler inceleme notunu taşır.",
+      "standVorschauWebsite": "Web sitesindeki istisna: “Bilgi” bölümünde imamın henüz incelemediği açıklama metinleri “İnceleme taslağı” olarak işaretlenmiş şekilde görünür; onaydan sonra bu işaret kalkar.",
       "felder": {
         "urheber": "Hak sahibi",
         "lizenz": "Lisans",
@@ -248,6 +291,7 @@
         "hadith": "Hadis",
         "orte": "Yer verileri",
         "gebetszeiten": "Namaz vakitleri",
+        "dachverband": "Genel merkez (IGMG)",
         "schriften": "Yazı tipleri",
         "bibliotheken": "Program kütüphaneleri",
         "sprachausgabe": "Öğrenme uygulamasının ses sentezi",
@@ -260,11 +304,15 @@
         "hadith": "Sahîh-i Buhârî'nin Arapça metni, serbestçe erişilebilen bir hadis koleksiyonundan alınmıştır.",
         "orte": "Bulunduğunuz yerin namaz vakitleri için küçük bir yer listesi kullanıyoruz. Liste yalnızca tarayıcınızda işlenir; konumunuz cihazınızdan çıkmaz.",
         "gebetszeiten": "Onaylanmış bir yıllık takvim bulunmadığı sürece namaz vakitleri açık kaynaklı bir kütüphaneyle hesaplanır.",
+        "dachverband": "Wetzlar Fatih Camii, İslam Toplumu Millî Görüş’e (IGMG) bağlıdır. Bu sitede teşkilat, ona bağlı kuruluşlar ve cemaatimizin tarihi hakkında yazılanlar aşağıdaki kaynaklara dayanır. Metinler bağımsız olarak yazılmıştır; rakamlar, tarihler ve iletişim bilgileri kaynağı ve tarihiyle birlikte verilir.",
         "schriften": "Tüm yazı tipleri kendi sunucumuzda bulunur. Yabancı hizmetlerden yazı tipi yüklenmez.",
         "bibliotheken": "Web sitesi özgür yazılımla geliştirilmiştir. En önemli kütüphaneler ve lisansları:",
         "sprachausgabe": "Öğrenme uygulamasının dinleme alıştırmaları için yapay bir ses (ses sentezi) öngörülmüştür. Ses kayıtları önceden kendi bilgisayarlarımızda üretilir ve ancak dinleme denetiminden geçtikten sonra alıştırmalara eklenir; tarayıcıda ses sentezi çalışmaz. Bir dil için onaylanmış bir ses olmadığı sürece alıştırmada „Ses kaydı gelecek“ yazar.",
         "lernapp-daten": "Öğrenme uygulamasının dil kursları açık koleksiyonlardaki cümleleri ve sözlük bilgilerini kullanır. Cümle ve kayıt bazında atıf, kurs paketinde ve öğrenme uygulamasının „Kaynaklar ve lisanslar“ sayfasında cihazdaki her ünite için yer alır; çevrimdışı da görünür. Sıklık listeleri yalnızca kelime seçimine yarar. Öğrenme içeriklerinin kendisi CC BY-SA 4.0 lisansı altındadır.",
         "lernapp-spracherkennung": "Öğrenme uygulamasının konuşma alıştırması, söyleneni yalnızca kendi cihazınızda tanır. Model ve çalışma ortamı kendi sunucumuzdan gelir; ses kaydı cihazdan çıkmaz."
+      },
+      "dachverband": {
+        "lizenz": "IGMG’nin onayıyla kullanılmaktadır (27.10.2026); metinler bağımsız olarak yazılmış, rakamlar ve iletişim bilgileri kaynağıyla birlikte alınmıştır."
       },
       "stimmen": {
         "ohneFreigabe": "Henüz onaylanmış sesi olmayan diller: {sprachen}.",
@@ -326,6 +374,42 @@
         "adhan": {
           "fassung": "Sürüm 4.4.6.",
           "verwendung": "Namaz vakitlerinin ve kıble yönünün hesaplanması."
+        },
+        "igmg-website": {
+          "fassung": "igmg.org sayfaları, 13.10.2026 tarihinde alındı; bağlantılar 27.10.2026 tarihinde kontrol edildi.",
+          "verwendung": "“IGMG”, “Hakkımızda” ve teşkilat sayfalarında genel merkez hakkındaki kendi metinlerimizin temeli; sitenin alt kısmı gibi yerlerde IGMG ağına bağlantılar."
+        },
+        "igmg-broschuere-en": {
+          "fassung": "2. baskı, Köln, Haziran 2026.",
+          "verwendung": "“IGMG” sayfasındaki teşkilat rakamları (cami cemaatleri, şubeler, bölgeler, üyeler, gönüllüler), her biri tarihiyle."
+        },
+        "igmg-broschuere-tr": {
+          "fassung": "5. baskı, Eylül 2025.",
+          "verwendung": "Rakamların İngilizce baskıyla karşılaştırılması."
+        },
+        "igmg-satzung": {
+          "fassung": "igmg.org’daki metin, 13.10.2026 tarihinde alındı.",
+          "verwendung": "“IGMG” sayfasında teşkilatın organları ve “Üye ol” sayfasında destekçi üyelik (madde 4.4, 5, 7.3)."
+        },
+        "igmg-wetzlar-2008": {
+          "fassung": "07.04.2008 tarihli haber.",
+          "verwendung": "1978 kuruluş yılı ve Hessen bölgesine bağlılık için kaynak; “Hakkımızda” sayfasındaki 2008 durağı."
+        },
+        "igmg-wetzlar-2011": {
+          "fassung": "17.10.2011 tarihli haber.",
+          "verwendung": "“Hakkımızda” sayfasındaki 2011 durağı (Açık Cami Günü) için kaynak."
+        },
+        "igmg-hutba-feed": {
+          "fassung": "Sürekli; veritabanı bağlandıktan sonra sunucu akışı her gün karşılaştırır.",
+          "verwendung": "“Genel merkezden” bölümünde cuma hutbelerinin yalnızca başlığı, tarihi ve bağlantısı – hutbe metninden alıntı yoktur."
+        },
+        "hasene": {
+          "fassung": "Bağlantılar 27.10.2026 tarihinde kontrol edildi.",
+          "verwendung": "Kurban, zekât, fitre ve acil yardım bağışlarına ve zekât hesaplayıcısına bağlantılar (“Bağış” sayfası); metin veya görsel alınmadı."
+        },
+        "igmg-reisen": {
+          "fassung": "igmgreisen.com sayfaları, 13.10.2026 tarihinde alındı; bağlantılar 27.10.2026 tarihinde kontrol edildi.",
+          "verwendung": "Hac ve umre programlarına, belgelere ve videolara bağlantılar; “Bilgi” bölümünde iki videonun başlığı ve YouTube kimliği (orada yalnızca YouTube bağlantısı olarak)."
         },
         "atkinson": {
           "fassung": "@fontsource/atkinson-hyperlegible-next 5.3.0 üzerinden, kendi sunucumuzda.",
@@ -450,9 +534,10 @@
       "untertitel": "Where the texts, data, fonts and software of this website come from – with author, licence and a link to the source.",
       "fussLink": "Sources",
       "inhaltsverzeichnis": "Contents",
-      "standTitel": "As of 26 October 2026",
+      "standTitel": "As of 28 October 2026",
       "standText": "Adopted files are kept with a checksum in the website’s source code: unchanged or, where noted here, filtered, shortened or reformatted. Religious content is published only after it has been reviewed by the imam or the teacher.",
       "standVorschau": "Exception: the knowledge course in the learning app is currently shown as an unreviewed draft for review and is marked as such there; lessons reviewed by two scholars of the community carry a review note.",
+      "standVorschauWebsite": "Exception on the website: explanatory texts under “Knowledge” that the imam has not yet reviewed are shown, marked as a “Draft for review”; the marking is removed once they are approved.",
       "felder": {
         "urheber": "Author",
         "lizenz": "Licence",
@@ -470,6 +555,7 @@
         "hadith": "Hadith",
         "orte": "Place data",
         "gebetszeiten": "Prayer times",
+        "dachverband": "Umbrella organisation (IGMG)",
         "schriften": "Fonts",
         "bibliotheken": "Software libraries",
         "sprachausgabe": "Speech synthesis in the learning app",
@@ -482,11 +568,15 @@
         "hadith": "The Arabic text of Sahih al-Bukhari comes from a freely available collection of hadith editions.",
         "orte": "For the prayer times at your location we use a short list of places. It is evaluated only in your browser; your location never leaves your device.",
         "gebetszeiten": "As long as no confirmed annual timetable is available, the prayer times are calculated with an open-source library.",
+        "dachverband": "Fatih Mosque Wetzlar belongs to the Islamic Community Millî Görüş (IGMG). What this website says about the umbrella organisation, its affiliated associations and the history of our community is based on the sources below. The texts are written independently; figures, dates and contact details are given with their source and date.",
         "schriften": "All fonts are hosted on our own server. No fonts are loaded from third-party services.",
         "bibliotheken": "This website is built with free software. The most important libraries and their licences:",
         "sprachausgabe": "A synthetic voice (speech synthesis) is planned for the listening exercises of the learning app. Its recordings are generated in advance on our own computers and only added to the exercises after passing a listening review; no speech synthesis runs in the browser. As long as a language has no approved voice, the exercise notes that audio will follow.",
         "lernapp-daten": "The language courses of the learning app use sentences and dictionary data from open collections. The attribution for each sentence and entry is part of the course package and appears on the learning app’s page of sources and licences for every unit stored on the device – also offline. Frequency lists only help to choose the words. The learning content itself is licensed under CC BY-SA 4.0.",
         "lernapp-spracherkennung": "The speaking exercise of the learning app recognises speech only on your own device. Model and runtime come from our own server; the recording never leaves the device."
+      },
+      "dachverband": {
+        "lizenz": "Used with the consent of IGMG (27 Oct 2026); texts written independently, figures and contact details taken over with their source."
       },
       "stimmen": {
         "ohneFreigabe": "No approved voice yet: {sprachen}.",
@@ -548,6 +638,42 @@
         "adhan": {
           "fassung": "Version 4.4.6.",
           "verwendung": "Calculation of the prayer times and the qibla direction."
+        },
+        "igmg-website": {
+          "fassung": "Pages of igmg.org, retrieved on 13 Oct 2026; links checked on 27 Oct 2026.",
+          "verwendung": "Basis for our own texts about the umbrella organisation on the “IGMG”, “About Us” and organisation pages; links into the IGMG network, for example in the website footer."
+        },
+        "igmg-broschuere-en": {
+          "fassung": "2nd edition, Cologne, June 2026.",
+          "verwendung": "Key figures of the umbrella organisation (mosque communities, branches, regions, members, volunteers) on the “IGMG” page, each with its date."
+        },
+        "igmg-broschuere-tr": {
+          "fassung": "5th edition, September 2025.",
+          "verwendung": "Cross-check of the key figures against the English edition."
+        },
+        "igmg-satzung": {
+          "fassung": "Version on igmg.org, retrieved on 13 Oct 2026.",
+          "verwendung": "Bodies of the umbrella organisation on the “IGMG” page and supporting membership on the “Become a member” page (sections 4.4, 5, 7.3)."
+        },
+        "igmg-wetzlar-2008": {
+          "fassung": "Report of 7 April 2008.",
+          "verwendung": "Evidence for the founding year 1978 and membership of the Hesse region; the 2008 milestone on the “About Us” page."
+        },
+        "igmg-wetzlar-2011": {
+          "fassung": "Report of 17 October 2011.",
+          "verwendung": "Evidence for the 2011 milestone (Open Mosque Day) on the “About Us” page."
+        },
+        "igmg-hutba-feed": {
+          "fassung": "Ongoing; once the database is connected, the server checks the feed daily.",
+          "verwendung": "Only the title, date and link of the Friday sermons in the “From the umbrella organisation” section – no excerpt from the sermon text."
+        },
+        "hasene": {
+          "fassung": "Links checked on 27 Oct 2026.",
+          "verwendung": "Links to donations for Qurban, Zakat, Fitra and emergency relief and to the Zakat calculator (“Donate” page); no texts or images taken over."
+        },
+        "igmg-reisen": {
+          "fassung": "Pages of igmgreisen.com, retrieved on 13 Oct 2026; links checked on 27 Oct 2026.",
+          "verwendung": "Links to Hajj and Umrah programmes, documents and videos; titles and YouTube IDs of two videos under “Knowledge” (shown there only as a link to YouTube)."
         },
         "atkinson": {
           "fassung": "Via @fontsource/atkinson-hyperlegible-next 5.3.0, self-hosted.",

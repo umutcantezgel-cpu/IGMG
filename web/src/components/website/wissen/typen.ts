@@ -20,6 +20,8 @@ export type WissenTexte = {
   videoAnsehen: string;
   videoHinweis: string;
   videoPlatzhalter: string;
+  /** „Auf YouTube ansehen“: reiner Link für Videos mit YouTube-ID (Marktstart P7, keine Einbettung). */
+  videoLink: string;
   expertenTitel: string;
   expertenBadge: string;
   mehrErfahren: string;
@@ -58,6 +60,11 @@ export type VideoAnzeige = {
   beschreibung: Anzeige;
   /** Fertiger Text für das Vorschaubild („Vorschaubild: Titel“). */
   vorschau: string;
+  /**
+   * Adresse „Auf YouTube ansehen“ (`youtubeLink`, vom Server berechnet), nur bei gepflegter YouTube-ID. Bewusst nur ein Link
+   * und keine Einbettung nach Klick: /islamisches-wissen liegt beim JavaScript schon an der Grenze (K-12, Marktstart P7).
+   */
+  link?: string;
 };
 
 export type ExpertenAnzeige = {

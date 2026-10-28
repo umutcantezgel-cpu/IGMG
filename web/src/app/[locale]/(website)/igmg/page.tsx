@@ -10,9 +10,11 @@ import { Kontakt } from '@/components/website/igmg/Kontakt';
 import { Struktur } from '@/components/website/igmg/Struktur';
 import { Ueberblick } from '@/components/website/igmg/Ueberblick';
 import { GemeindeJsonLd } from '@/components/website/GemeindeJsonLd';
+import { JsonLd } from '@/components/website/JsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import type { Locale } from '@/i18n/routing';
+import { faqSeite } from '@/lib/seo/jsonld';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 
@@ -38,9 +40,12 @@ export default async function IGMGSeite() {
     ladeSeiteninhalt('igmg'),
   ]);
   const faqTitel = t('faqTitel');
+  // FAQPage nur aus den sichtbaren Fragen ohne Platzhalter (Marktstart P7/P8, ADR 0049)
+  const faqDaten = faqSeite(inhalt.faq, sprache);
   return (
     <Seitenrahmen bereich="moschee" seite="igmg" sprachZiel="/igmg" pfad={[{ label: tp('igmg') }]}>
       <GemeindeJsonLd />
+      {faqDaten ? <JsonLd daten={faqDaten} /> : null}
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 py-abschnitt-klein md:px-8">
         <IGMGTabs

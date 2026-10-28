@@ -5,8 +5,10 @@ import { Stern8 } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { GiroCode } from '@/components/website/spenden/GiroCode';
+import { HaseneKasten } from '@/components/website/spenden/HaseneKasten';
 import { KopierKnopf } from '@/components/website/spenden/KopierKnopf';
 import { Text } from '@/components/website/Text';
+import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -28,7 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
  * Spenden (AUFTRAG 3.10, MN-13): Bankverbindung aus der Einstellung „spenden“, Spendenzwecke und je Zweck ein statischer
  * GiroCode (EPC-QR, ohne Betrag). Kein Zahlungsdienst – die Banking-App öffnet die Überweisung. Ohne gültige IBAN
  * (Prüfziffer) ein ehrlicher Platzhalter und kein QR-Code. Statisch; Änderungen in der Verwaltung erneuern den Tag
- * „einstellungen“.
+ * „einstellungen“. Unter beiden Zweigen (auch ohne IBAN) der Kasten „Weltweit helfen mit Hasene“ mit der Erklärung zu Zakat,
+ * Fitra und Kurban (Plan Marktstart P7): Spenden an den Dachverband, ausdrücklich nicht an die Gemeinde – ohne GiroCode und
+ * ohne Feld in der Einstellung.
  */
 export default async function SpendenSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -193,6 +197,10 @@ export default async function SpendenSeite() {
             </div>
           </>
         )}
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+          <HaseneKasten className="lg:flex-1" />
+          <WissenErklaerung slug="zakat-fitra-qurban" className="lg:flex-1" />
+        </div>
       </div>
     </Seitenrahmen>
   );

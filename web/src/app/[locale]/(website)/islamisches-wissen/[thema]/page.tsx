@@ -13,6 +13,7 @@ import { ThemaWeiter } from '@/components/website/wissen/ThemaWeiter';
 import { EntwurfHinweis } from '@/components/website/wissen/EntwurfHinweis';
 import type { WissenTexte } from '@/components/website/wissen/typen';
 import type { Locale } from '@/i18n/routing';
+import { youtubeLink } from '@/lib/einbettung/youtube';
 import { text } from '@/lib/i18n/inhalt';
 import { NOINDEX } from '@/lib/seo/indexierung';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -104,6 +105,8 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
         dauer: v.dauer,
         beschreibung: textMitSprache(v.beschreibung, sprache),
         vorschau: t('videos.vorschau', { titel: videoTitel.text }),
+        // Nur ein Link zu YouTube, keine Einbettung (Marktstart P7, K-12/K-14)
+        ...(v.youtubeId ? { link: youtubeLink(v.youtubeId) } : {}),
       };
     });
   const experten = inhalt.experten.map((e) => ({
@@ -137,6 +140,7 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
     videoAnsehen: t('videos.ansehen'),
     videoHinweis: t('videos.hinweis'),
     videoPlatzhalter: t('videos.platzhalter'),
+    videoLink: t('videos.youtube'),
     expertenTitel: t('experten.titel'),
     expertenBadge: t('experten.badge'),
     mehrErfahren: t('experten.mehr'),

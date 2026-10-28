@@ -8,7 +8,8 @@ import type { BereichsSeed } from './typ';
  * Sprachfassungen aus bestand/src/app/components/IslamicKnowledge.tsx (Z47–60, 74–87, 101–114) in der Tabelle
  * wissen_thema; Artikel, Videos und Experten als Seiteninhalt „wissen“ (istBeispiel). Personennamen, Autorennamen
  * und Institutionen sind Platzhalter (G-04, G-05). Nur der Sachtext „Allah“ ist ausgeschrieben; die übrigen Artikel
- * zeigen den Beispieltext der Oberfläche. Videoquellen fehlen: keine Adressen, keine Einbettung (K-14).
+ * zeigen den Beispieltext der Oberfläche. Den sechs Bestandsvideos fehlt die Quelle (keine Adresse); zwei Videos von IGMG
+ * Reisen tragen eine YouTube-ID und erscheinen nur als Link, nie eingebettet (K-14, Marktstart P7).
  *
  * Religiöse Freigabe (F-40, ADR 0030): Die Themen sind der Bestand vor der Freigabepflicht und bleiben öffentlich – wie
  * Migration 0015 für bestehende Datenbanken: „geprüft“ ohne prüfende Person, mit Vermerk im Freigabe-Verlauf.
@@ -16,11 +17,15 @@ import type { BereichsSeed } from './typ';
 
 const THEMEN_QUELLE = 'design/IslamicKnowledge.dc.html:136; bestand/IslamicKnowledge.tsx:47–60 (de), 74–87 (tr), 101–114 (en)';
 
+/** Videoseite von IGMG Reisen (Crawl vom 13.10.2026): Quelle der beiden Videos mit YouTube-ID (Marktstart P7). */
+const REISEN_VIDEOS = 'https://www.igmgreisen.com/de/videos/ (tr: https://www.igmgreisen.com/videolar/)';
+
 const INHALT_QUELLE =
   'design/IslamicKnowledge.dc.html:139–155 (Artikel, Videos), 158–161 (Experten, nur Platzhalter); ' +
   'bestand/IslamicKnowledge.tsx:135–196 (Videos: Titel, Dauer, Beschreibung), 198–284 (Artikel: Titel, Thema, Lesezeit, Datum), ' +
   '208 (Sachtext Allah de), 210 (tr), 211 (en), 331–383 (Experten: nur Platzhalter, G-04); ' +
-  'Autorennamen und Institutionen durch Platzhalter ersetzt (G-04)';
+  'Autorennamen und Institutionen durch Platzhalter ersetzt (G-04); ' +
+  `Videos video-hadsch und video-umra-gepaeck: YouTube-ID und Titel de/tr laut ${REISEN_VIDEOS}, en-Titel und Beschreibungen eigene Worte (Marktstart P7, Zustimmung der IGMG E-044)`;
 
 type ThemaQuelle = { slug: string; de: string; tr: string; en: string; sortierung: number };
 
@@ -150,7 +155,47 @@ const ARTIKEL = [
   },
 ];
 
-/** Sechs Videos (D:150–155): Titel, Dauer und Beschreibung wörtlich aus Design und Bestand. Keine Videoquelle (K-14). */
+/**
+ * Zwei Videos von IGMG Reisen beim Thema „Fünf Säulen“ (Marktstart P7): YouTube-ID und Titel de/tr von der Videoseite des
+ * Reisedienstes (`REISEN_VIDEOS`), en-Titel und Beschreibungen eigene Worte, Dauer unbekannt (leer). Exportiert für die
+ * Stand-Migration (Welle 3): Bestehende Datenbanken bekommen sie nicht über diesen Seed (onConflictDoNothing).
+ */
+export const VIDEOS_IGMG_REISEN = [
+  {
+    schluessel: 'video-hadsch',
+    thema: 'fivestoesarz',
+    titel: { de: 'Wie wird der Hadsch verrichtet?', tr: 'Hac Nasıl Yapılır', en: 'How Is the Hajj Performed?' },
+    dauer: '',
+    beschreibung: {
+      de: 'Ein Film von IGMG Reisen, dem Reisedienst des Dachverbands, über den Ablauf der Pilgerfahrt nach Mekka.',
+      tr: 'Teşkilatın seyahat hizmeti IGMG Hac ve Umre’nin, Mekke’ye yapılan hac yolculuğunun nasıl geçtiğini anlatan filmi.',
+      en: 'A film by IGMG Reisen, the umbrella organisation’s travel service, on how the pilgrimage to Mecca unfolds.',
+    },
+    youtubeId: 'ytTuELK2slU',
+  },
+  {
+    schluessel: 'video-umra-gepaeck',
+    thema: 'fivestoesarz',
+    titel: {
+      de: 'IGMG Umra – Was gehört ins Reisegepäck?',
+      tr: 'IGMG Umre – Yanınızda Olması Gereken Eşyalar',
+      en: 'IGMG Umrah – What to Pack',
+    },
+    dauer: '',
+    beschreibung: {
+      de: 'Praktische Hinweise von IGMG Reisen, was Pilgerinnen und Pilger für die Umra einpacken sollten.',
+      tr: 'IGMG Hac ve Umre’den, umreye gidenlerin yanlarına alması gerekenlere dair pratik bilgiler.',
+      en: 'Practical tips from IGMG Reisen on what pilgrims should pack for Umrah.',
+    },
+    youtubeId: 'eYOO4BNqx0Q',
+  },
+];
+
+/**
+ * Sechs Videos (D:150–155): Titel, Dauer und Beschreibung wörtlich aus Design und Bestand – ohne YouTube-ID, weil keine
+ * Quelle belegt ist (G-05). Danach die zwei Videos von IGMG Reisen; die Seite zeigt für sie nur einen Link zu YouTube
+ * (K-14). Videos sind kein neues Wissensthema – die zwölf geprüften Themen bleiben (verwaltung-wissen.test).
+ */
 const VIDEOS = [
   {
     schluessel: 'video-1',
@@ -222,6 +267,7 @@ const VIDEOS = [
       en: 'What is Ramadan and why do Muslims fast?',
     },
   },
+  ...VIDEOS_IGMG_REISEN,
 ];
 
 /** Vier Experten (D:158–161): nur Platzhalter, keine Namen und Institutionen (G-04, L:285). */
