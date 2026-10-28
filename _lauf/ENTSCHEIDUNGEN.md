@@ -198,3 +198,8 @@ Grundlage: Crawls von igmg.org und igmgreisen.com (Stand 13.10.2026) und der fre
 - K-16: JSON-LD zusätzlich mit WebSite und FAQPage; Organization trägt den Dachverband (`parentOrganization`) und den Regionalverband (`memberOf`).
 - G-10: Testanpassungen im Marktstart-Lauf, die Abgenommenes berühren (z. B. CSP `frame-src`, Startseiten-Ordnung, Name der Moschee im JSON-LD, Routentabellen), laufen unter dieser Entscheidung.
 Grund: Der Kern beschrieb die Routen seit dem Lauf „Gemeinde-Plattform“ nicht mehr vollständig; E-044 Nr. 3 macht den IGMG-Gebetskalender zur verbindlichen Quelle.
+
+**E-046 · 2026-10-28 · Nutzer · Fitre und Vorschau für den Vorstand**
+Aus der Gegenprüfung des Marktstart-Branches:
+1. **Fitre: beides.** Die Gemeinde nimmt die Fitre selbst entgegen (Knopf auf `/ramadan` bleibt); man kann sie auch direkt bei Hasene geben. Der Wissens-Entwurf „Zakat, Fitra, Fidya und Kurban“ sagt deshalb nicht mehr pauschal, die Spenden gingen nicht an die Fatih-Moschee Wetzlar, sondern: Was man direkt bei Hasene gibt, geht an Hasene; die Fitre nimmt auch die Gemeinde entgegen. Ob und wie die Gemeinde weiterleitet, steht nicht im Text (G-05) und ist ein Menschen-Punkt.
+2. **Vorschau:** Der PR umutcantezgel-cpu/IGMG#5 wird nach grüner Gesamtprüfung nach `main` gemergt; die Live-Seite zeigt den neuen Stand weiter mit Konzept-Hinweis und `noindex` (E-044 Nr. 6). Die Vorstandsvorlage verlinkt die Live-Seite.
