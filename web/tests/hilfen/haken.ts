@@ -2,11 +2,13 @@ import type { ReactElement, ReactNode } from 'react';
 
 /**
  * Kleiner Ersatz für die React-Hooks EINER Komponente, damit Unit-Tests ohne Browser (environment node, kein jsdom)
- * Klicks, Eingaben und Ankerwechsel einer Client-Insel nachstellen können. Nachgebildet ist, was React dabei verspricht:
- * Zustand nach Aufrufreihenfolge; gleicher Wert bricht ohne Neuzeichnen ab (Object.is); Änderungen in einem Ereignis
- * werden gebündelt und danach einmal gezeichnet; Zustand beim Rendern angepasst zeichnet sofort neu; useSyncExternalStore
- * liest den Stand bei jedem Rendern, beim Hydrieren zuerst den Server-Stand, und zeichnet neu, wenn das Abo eine Änderung
- * meldet. Kinder werden nicht gerendert (flach): Tests suchen Elemente im Baum und rufen deren Handler auf.
+ * Klicks, Eingaben und Ankerwechsel einer Client-Insel nachstellen können. Nachgebildet ist: Zustand nach Aufrufreihenfolge;
+ * gleicher Wert (Object.is) bricht immer ohne Neuzeichnen ab. Das ist strenger als React, das die Komponente dabei noch
+ * einmal aufrufen darf (nach einer Änderung tut es das meist einmal und liest dabei useSyncExternalStore neu). Scheitert ein
+ * Test nur daran, belegt das keinen Fehler im Browser. Weiter: Änderungen in einem Ereignis werden gebündelt und danach
+ * einmal gezeichnet; Zustand beim Rendern angepasst zeichnet sofort neu; useSyncExternalStore liest den Stand bei jedem
+ * Rendern, beim Hydrieren zuerst den Server-Stand, und zeichnet neu, wenn das Abo eine Änderung meldet. Kinder werden nicht
+ * gerendert (flach): Tests suchen Elemente im Baum und rufen deren Handler auf.
  *
  * Einbinden (vor dem Import der Komponente, die Datei darf react-dom nicht nutzen):
  * `vi.mock('react', async (original) => ({ ...(await original<object>()), ...(await import('../hilfen/haken')).HAKEN }))`.

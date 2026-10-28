@@ -85,6 +85,8 @@ describe('Reiter der IGMG-Seite: Anker und Auswahl', () => {
     expect(aktiv(tabs)).toBe('bedeutung');
   });
 
+  // Sichert den Ablauf nur ab. Am alten Stand scheiterte er allein im Nachbau: React ruft die Komponente beim Klick nach dem
+  // Ankersprung noch einmal auf und liest dabei den schon ersetzten Anker (in Chromium nachgeprüft, kein toter Klick)
   it('ein Link auf der Seite zu einem Reiter wählt ihn; der Klick zurück auf den vorher gewählten Reiter wirkt', () => {
     const tabs = montiere(IGMGTabs, props, { hydrieren: true });
     klicke(tabs, 'bedeutung');
