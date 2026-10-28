@@ -77,6 +77,8 @@ Die Website der IGMG-Gemeinde Wetzlar (`web/`, Next.js 16.4, de/tr/en) geht an d
 | P7 | Unit 223/4.070; E2E `querverlinkung.spec` 18/18; Barrierefreiheit/Datenschutz 115 grün, 8 rot (6 × axe auf `/igmg`, behoben in `6bb4640`; 2 × Zeitgrenze `/anmelden` ohne Datenbank) |
 | Zusammengeführt (`6bb4640`) | Unit 224 Dateien, 4.092 Tests; `sprachen:pruefen` grün; Integration vor P4/P7: 97 Dateien, 4.001 Tests |
 | Welle 3 Doku | Unit `inhalte-waechter`, `igmg-seed`, `wissen-entwuerfe` 37/37; `seiteninhalte-grenzen`, `inhalte-waechter`, `startklar-meilensteine` 45/45; Integration `startklar`, `inhalte-2026`, `verwaltung-seiteninhalte` 77/77; `sprachen:pruefen` 3.561 Schlüssel |
+| Welle 3 Code | Unit 226/4.112; Integration 98/4.015; `seo.spec` über 1.161 Sitemap-Adressen grün; E2E 15 Specs: 711 grün, 20 rot nur ohne Laufzeit-Datenbank (`/anmelden` u. a., am Ausgangsstand ebenso) |
+| **Endstand nach der Gegenprüfung** (`4009ed8`) | `pnpm check` grün: Unit 228 Dateien, 4.134 Tests; `sprachen:pruefen` 3.563 Schlüssel; Integration 98 Dateien, 4.029 Tests (2 Dateien ohne `TEST_PG_URL` übersprungen); `vercel-build` ohne `VERCEL` grün; Standalone-Server (`SITE_MODE=vorschau`): 14 Stichproben 200 (`/`, `/igmg`, `/hadsch-umra`, `/ramadan`, `/spenden`, `/gebetszeiten`, `/islamisches-wissen`, `/suche`, `/tr/hac-umre`, `/en/hajj-umrah`, `/llms.txt`, `/sitemap.xml`, `/robots.txt`, `/api/gebetszeiten/2026-11`); Vercel (beide Projekte) und Netlify grün |
 
 **JavaScript beim ersten Laden** (gzip, Grenze 180 kB; Messung Welle 3 gegen den Ausgangsstand `9cb7e75`):
 
