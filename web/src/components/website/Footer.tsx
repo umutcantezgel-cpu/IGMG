@@ -53,6 +53,7 @@ export async function Footer() {
     { label: t('qSpenden'), ziel: '/projekte' },
     { label: t('qKontakt'), ziel: '/kontakt' },
     { label: t('qUeberUns'), ziel: '/ueber-uns' },
+    { label: t('qHadschUmra'), ziel: '/hadsch-umra' },
   ];
   // Schnellzugriff aus der Verwaltung (Fußmenü, ADR 0032), sonst der Bestand
   const ausDb = await ladeFussMenue(sprache);

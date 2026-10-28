@@ -6,6 +6,7 @@ import { datumMitJahr } from '@/components/website/gebetszeiten/zeiten';
 import { Stern8 } from '@/components/website/Icons';
 import { SternMarke } from '@/components/website/kalender/Marken';
 import { datumVon, LOCALE, tagTitel } from '@/components/website/kalender/MonatsKalender';
+import { UmraImRamadan } from '@/components/website/hadsch-umra/UmraImRamadan';
 import { PageHeader } from '@/components/website/PageHeader';
 import { FastenbogenLive } from '@/components/website/ramadan/FastenbogenLive';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
@@ -130,6 +131,7 @@ export default async function RamadanSeite() {
                 <ArrowRight aria-hidden className="size-5" />
               </Link>
             </section>
+            <UmraImRamadan />
           </div>
           <section aria-labelledby="ramadan-naechte" className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6">
             <h2 id="ramadan-naechte" className="flex items-center gap-2.5 font-text text-20 font-bold tracking-normal">

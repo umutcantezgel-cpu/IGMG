@@ -3,6 +3,7 @@ import { afterAll, describe, expect, it } from 'vitest';
 import { VERWALTUNG_BEREICHE } from '@/components/verwaltung/seiteninhalte/bereiche';
 import { schema } from '@/lib/db';
 import { SEITENINHALT } from '@/lib/validierung/seiteninhalte';
+import { HADSCH_UMRA_BEISPIEL } from '../../drizzle/seeds/bereiche/hadsch-umra';
 import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
 
 /**
@@ -174,6 +175,47 @@ describe('Speichern: Zeile, Audit und Cache', () => {
     const oeffentlich = await ladeSeiteninhalt('ueber-uns');
     expect(oeffentlich.geschichte.absaetze[0]?.absatz.de).toBe(TEXT_UEBER_UNS);
     expect(oeffentlich.istBeispiel).toBe(false);
+  });
+});
+
+describe('Hadsch & Umra (Plan Marktstart P4)', () => {
+  /** Eingabe wie aus dem Editor: der Beispielinhalt, das erste Video als kopierte YouTube-Adresse. */
+  function eingabe(): Record<string, unknown> {
+    const e = JSON.parse(JSON.stringify(HADSCH_UMRA_BEISPIEL)) as { videos: { youtubeId: string }[] } & Record<string, unknown>;
+    e.videos[0].youtubeId = 'https://www.youtube.com/watch?v=ytTuELK2slU';
+    return e;
+  }
+
+  it('Organisationsredaktion darf nicht speichern', async () => {
+    await angemeldetAls([{ rolle: 'organisationsredaktion', organisation: 'gt' }]);
+    expect(await speichern('hadsch-umra', eingabe())).toEqual({ fehler: 'keinRecht' });
+    expect(await zeile('hadsch-umra')).toBeUndefined();
+  });
+
+  it('fremder Host im Link und Rückflug vor dem Hinflug: Feldfehler am Pfad, nichts gespeichert', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const e = eingabe() as { programme: { link: unknown }[]; abfluege: { eintraege: { hin: string; rueck: string }[] } };
+    e.programme[0].link = { de: 'https://reisebuero.example/hadsch/' };
+    e.abfluege.eintraege[0].rueck = '2027-04-01';
+    const ergebnis = await speichern('hadsch-umra', e);
+    expect(ergebnis.fehler).toBe('pruefen');
+    expect(ergebnis.feldFehler?.['programme.0.link.de']).toBe('ungueltig');
+    expect(ergebnis.feldFehler?.['abfluege.eintraege.0.rueck']).toBe('rueckVorHin');
+    expect(await zeile('hadsch-umra')).toBeUndefined();
+  });
+
+  it('Redaktion speichert; die YouTube-Adresse wird zur ID; Audit, Cache-Tag und öffentliche Abfrage', async () => {
+    const id = await angemeldetAls([{ rolle: 'redaktion' }]);
+    expect(await speichern('hadsch-umra', eingabe())).toMatchObject({ gespeichert: expect.any(Number) as number });
+    const gespeichert = await zeile('hadsch-umra');
+    expect(gespeichert).toMatchObject({ bereich: 'hadsch-umra', istBeispiel: false, quelle: 'verwaltung', aktualisiertVon: id });
+    expect((gespeichert?.inhalt as { videos: { youtubeId: string }[] }).videos[0].youtubeId).toBe('ytTuELK2slU');
+    const audit = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielId, 'hadsch-umra'));
+    expect(audit).toEqual([expect.objectContaining({ aktion: 'inhalt.geaendert', zielTyp: 'seiteninhalt', details: null })]);
+    expect(aufrufe.updateTag).toContain('seiteninhalt:hadsch-umra');
+    const oeffentlich = await ladeSeiteninhalt('hadsch-umra');
+    expect(oeffentlich.abfluege.eintraege).toHaveLength(8);
+    expect(oeffentlich.ansprechperson.name).toBe('[Ansprechperson Hadsch & Umra – von der Gemeinde]');
   });
 });
 

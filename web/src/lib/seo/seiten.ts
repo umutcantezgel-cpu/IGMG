@@ -21,6 +21,7 @@ export const SEO_SEITEN = [
   { pfad: '/bildung/korankurse', schluessel: 'korankurse' },
   { pfad: '/bildung/voranmeldung', schluessel: 'voranmeldung' },
   { pfad: '/ramadan', schluessel: 'ramadan' },
+  { pfad: '/hadsch-umra', schluessel: 'hadschUmra' },
   { pfad: '/kalender', schluessel: 'kalender' },
   { pfad: '/islamisches-wissen', schluessel: 'wissen' },
   { pfad: '/vorstand', schluessel: 'vorstand' },

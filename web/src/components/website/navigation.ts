@@ -86,6 +86,7 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string, scha
         p('hadith', 'hadith', 'bHadith', '/hadith'),
         p('kalender', 'kalender', 'bKalender', '/kalender'),
         p('ramadan', 'ramadan', 'bRamadan', '/ramadan'),
+        p('hadsch-umra', 'hadschUmra', 'bHadschUmra', '/hadsch-umra'),
         ...(schalter.hatim ? [p('hatim', 'hatim', 'bHatim', '/hatim')] : []),
         p('islamisches-wissen', 'wissen', 'bWissen', '/islamisches-wissen'),
       ],

@@ -3,11 +3,20 @@ import type { SEITENINHALT } from '@/lib/validierung/seiteninhalte';
 
 /**
  * Bereiche des Moduls „Seiteninhalte I“ (V05): Über uns, Vorstand, Projekte, IGMG, Impressum und Datenschutz, dazu „Aus
- * dem Dachverband“ (Marktstart P3: Freitagspredigt und Gemeinschaftsthemen der IGMG). Die
+ * dem Dachverband“ (Marktstart P3: Freitagspredigt und Gemeinschaftsthemen der IGMG) und „Hadsch & Umra“ (Marktstart P4). Die
  * Kontaktdaten und die vier Organisationen pflegen andere Pakete; die Übersicht verlinkt sie nur.
  * Reine Daten und Typen ohne Datenbank, damit Server, Browser und Tests dieselbe Liste nutzen.
  */
-export const VERWALTUNG_BEREICHE = ['ueber-uns', 'vorstand', 'projekte', 'igmg', 'impressum', 'datenschutz', 'dachverband'] as const;
+export const VERWALTUNG_BEREICHE = [
+  'ueber-uns',
+  'vorstand',
+  'projekte',
+  'igmg',
+  'impressum',
+  'datenschutz',
+  'dachverband',
+  'hadsch-umra',
+] as const;
 export type VerwaltungBereich = (typeof VERWALTUNG_BEREICHE)[number];
 
 export function istVerwaltungBereich(wert: string): wert is VerwaltungBereich {

@@ -51,6 +51,8 @@ import seo from './seo.json';
 // Marktstart mit IGMG-Daten (E-044): Netzwerk-Verweise und Einbettungen nach Klick
 import dachverband from './dachverband.json';
 import einbettung from './einbettung.json';
+// Marktstart P4: Seite „Hadsch & Umra“
+import hadschUmra from './hadsch-umra.json';
 type Teil = Record<string, unknown>;
 export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 
@@ -100,4 +102,5 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   seo,
   dachverband,
   einbettung,
+  'hadsch-umra': hadschUmra,
 };

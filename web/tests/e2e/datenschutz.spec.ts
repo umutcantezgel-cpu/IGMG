@@ -113,6 +113,8 @@ const ROUTEN = [
   // FUNKTION_HATIM/FUNKTION_NEWSLETTER aus (404), und diese Tabelle erwartet 200 – eintragen, sobald der E2E-Bau sie einschaltet.
   { id: 'kalender', seite: 'Kalender', de: '/kalender', tr: '/tr/takvim', en: '/en/calendar' },
   { id: 'ramadan', seite: 'Ramadan', de: '/ramadan', tr: '/tr/ramazan', en: '/en/ramadan' },
+  // Marktstart P4 (E-045): Videos erst nach Klick – beim Laden und Bedienen keine Anfrage an YouTube
+  { id: 'hadschumra', seite: 'Hadsch & Umra', de: '/hadsch-umra', tr: '/tr/hac-umre', en: '/en/hajj-umrah' },
   { id: 'spenden', seite: 'Spenden', de: '/spenden', tr: '/tr/bagis', en: '/en/donate' },
 ] as const;
 

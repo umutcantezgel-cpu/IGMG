@@ -2,6 +2,7 @@
 
 import type { VerwaltungsStand } from './bereiche';
 import { DachverbandFormular } from './Dachverband';
+import { HadschUmraFormular } from './HadschUmra';
 import { IgmgFormular } from './Igmg';
 import type { Aktion } from './Rahmen';
 import { DatenschutzFormular, ImpressumFormular } from './Rechtstexte';
@@ -29,5 +30,7 @@ export function SeiteninhaltFormular({ stand, nurLesen, aktion }: { stand: Verwa
       return <DatenschutzFormular startwerte={stand.inhalt} nurLesen={nurLesen} aktion={aktion} />;
     case 'dachverband':
       return <DachverbandFormular startwerte={stand.inhalt} nurLesen={nurLesen} aktion={aktion} />;
+    case 'hadsch-umra':
+      return <HadschUmraFormular startwerte={stand.inhalt} nurLesen={nurLesen} aktion={aktion} />;
   }
 }

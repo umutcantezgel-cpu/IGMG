@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { schema as dachverband } from './seiteninhalte/dachverband';
 import { schema as datenschutz } from './seiteninhalte/datenschutz';
+import { schema as hadschUmra } from './seiteninhalte/hadsch-umra';
 import { schema as igmg } from './seiteninhalte/igmg';
 import { schema as impressum } from './seiteninhalte/impressum';
 import { schema as organisation } from './seiteninhalte/organisation';
@@ -109,5 +110,7 @@ export const SEITENINHALT = {
   datenschutz,
   // Plan Marktstart P3: Einträge „Aus dem Dachverband“ (Freitagspredigt und Gemeinschaftsthemen, E-044 Nr. 2)
   dachverband,
+  // Plan Marktstart P4: Seite „Hadsch & Umra“ (Fristen, Programme, Abflüge, Anmeldung, Unterlagen, Videos, Fragen)
+  'hadsch-umra': hadschUmra,
 } as const;
 export type SeitenBereich = keyof typeof SEITENINHALT;

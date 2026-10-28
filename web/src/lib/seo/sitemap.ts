@@ -43,6 +43,8 @@ export const FESTE_ZIELE = [
   '/kalender',
   '/ramadan',
   '/spenden',
+  // Marktstart P4
+  '/hadsch-umra',
 ] as const satisfies readonly Ziel[];
 
 /** Ein Ziel mit optionalem Änderungszeitpunkt (ISO, aus `aktualisiertAm`). */

@@ -33,6 +33,7 @@ const ROUTEN = [
   { id: 'projekte', de: '/projekte', tr: '/tr/projeler', en: '/en/projects' },
   { id: 'kontakt', de: '/kontakt', tr: '/tr/iletisim', en: '/en/contact' },
   { id: 'igmg', de: '/igmg', tr: '/tr/igmg', en: '/en/igmg' },
+  { id: 'hadschumra', de: '/hadsch-umra', tr: '/tr/hac-umre', en: '/en/hajj-umrah' },
   { id: 'quran', de: '/quran', tr: '/tr/kuran', en: '/en/quran' },
   { id: 'sure', de: '/quran/1', tr: '/tr/kuran/1', en: '/en/quran/1' },
   { id: 'wissen', de: '/islamisches-wissen', tr: '/tr/islami-bilgiler', en: '/en/islamic-knowledge' },
