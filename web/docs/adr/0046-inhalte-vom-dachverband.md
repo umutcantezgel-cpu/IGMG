@@ -1,0 +1,43 @@
+# ADR 0046 – Inhalte vom Dachverband
+
+- Status: **angenommen 27.10.2026 (Nutzer)** (Lauf „Marktstart mit IGMG-Daten“) · Bezug: `_lauf/ENTSCHEIDUNGEN.md` E-044 (Nr. 1, 2, 4, 5) und E-045 (KERN 1.2); Plan „IGMG-Daten für den Marktstart“ (Grundsätze für alle Pakete, P1, P3, P7, Welle 3); Crawls von igmg.org und igmgreisen.com (Stand 13.10.2026) · schreibt ADR 0015 (Seeds und Beispielinhalte) fort; berührt ADR 0008 (Gebetszeiten), ADR 0012 (CSP), ADR 0019 (Migration) und ADR 0030 (KI-Regel); Fortschreibung der KI-Regel für die Website in ADR 0047
+
+## Kontext
+
+- Die Fatih-Moschee Wetzlar gehört als Moscheegemeinde zur Islamischen Gemeinschaft Millî Görüş (IGMG). Die Seite `/igmg` zeigte bis Oktober 2026 Platzhalter, zwei unbelegte Zahlen (518 Moscheen, 350.000 Menschen erreicht), einen veralteten Präsidiumstext und zwei Absätze, die wörtlich von igmg.org stammten.
+- Ausgewertet wurden 1.301 Seiten von igmg.org und 88 Seiten von igmgreisen.com (13.10.2026). Alle Platzhalter der Seite lassen sich belegen, am jüngsten durch die englische IGMG-Broschüre (2. Auflage, Juni 2026); die türkische Broschüre (5. Auflage, September 2025) nennt dieselben Werte. Die IGMG nennt an anderen Stellen ältere, abweichende Zahlen (40 Regionen, 170.000 bzw. 180.000 Mitglieder).
+- Impressum und Broschüren verlangen für Vervielfältigungen eine schriftliche Zustimmung. Die IGMG hat zugestimmt (E-044 Nr. 1). Wörtliche Kopien konkurrieren in der Suche mit dem Original (Doppel-Content).
+- Die IGMG veröffentlicht Freitagspredigten als öffentlichen RSS-Feed, betreibt einen Gebetskalender mit Wetzlar (ID 20238) und ein Netz aus Fachvereinen und Medien. Bisher verlinkte die Website keine dieser Seiten.
+- Rahmen: keine Anfragen an Dritte beim Seitenaufruf (K-14), statische öffentliche Seiten (K-01), Personennamen nie (G-04), nur Belegtes (G-05), keine Verse, Hadithe und Bittgebete von Agenten (G-06, ADR 0030 Nr. 4).
+
+## Entscheidung
+
+1. **Zustimmung:** Inhalte vom Dachverband nutzen wir mit Zustimmung der IGMG (E-044 Nr. 1). Der schriftliche Nachweis wird abgelegt, auch für Daten des Gebetskalenders, Bilder und Logo (Menschen-Punkt M-099). Bilder, Logos und PDF-Kopien übernehmen wir bis dahin nicht.
+2. **Fakten ja, Texte eigen:** Zahlen, Daten, Namen von Organen und Kontaktdaten übernehmen wir mit Quelle und Stand. Alle Texte formulieren wir selbst in Deutsch, Türkisch und Englisch, für Suche und Antwortmaschinen: Antwort zuerst, Fragen als Zwischenüberschriften, „Islamische Gemeinschaft Millî Görüş (IGMG)“ beim ersten Nennen, Ortsbezug Wetzlar. Wörtlich bleiben nur Eigennamen, Titel und gekennzeichnete Zitate; Prüfmaß ist „keine Folge von acht oder mehr Wörtern aus dem Crawl“.
+3. **Eine Quelle je Zahlenreihe:** Die Kennzahlen auf `/igmg` stammen aus einer datierten Quelle (Broschüre Juni 2026), ohne Mischung mit älteren Werten. Gespeichert werden Wert und Art (`genau`, `ueber`, `rund`) mit optionalem Zusatz; die Seite formatiert je Sprache (`src/lib/dachverband/kennzahl.ts`, Türkisch ohne Kasusendung). Alte Texte bleiben gültig (Schema-Union, ADR 0019). IGMG-Zahlen stehen nur auf `/igmg`, nie neben Zahlen der Gemeinde. Unbelegte Werte entfallen (518, 350.000).
+4. **Quelle und Stand sichtbar:** Jede Seed-Zeile trägt in `quelle` die URLs und das Abrufdatum. Die Seite zeigt eine Stand- und Quellenzeile (Komponente `Quellenzeile`, Verweis auf `/quellen#dachverband`); Kennzahlen zeigen ihren Monat und ihre Quelle direkt am Zahlenkasten.
+5. **Religiöses:** Für Inhalte vom Dachverband gilt G-06 unverändert: keine Verstexte, Hadithe, Bittgebete, Übersetzungen und keine arabische Schrift. Versangaben nur, wenn die verlinkte IGMG-Quelle sie selbst nennt (Bedeutung des Namens: Nahl 123, Âli Imrân 95, Nisâ 125). Fragen und Antworten auf `/igmg` sind organisatorisch, nicht fiqhbezogen. Erklärtexte zu Hadsch, Festen, Zakat und Freitagsgebet regelt ADR 0047 gesondert. Bedeutung und Leitbild prüft der Imam (M-101).
+6. **Keine Personennamen** aus dem Crawl, weder in Seeds noch in Tests oder Dokumentation (G-04); Funktionen werden ohne Namen beschrieben.
+7. **Keine Politik:** Keine politischen Pressemitteilungen und keine Zusammenfassung der politischen Vorgeschichte und früherer Abspaltungen; dafür genügt der Link auf die Geschichtsseite der IGMG.
+8. **Gemeindefakten nur mit Beleg:** Gründung 1978, Zugehörigkeit zum Regionalverband Hessen (Beleg 2008, Bestätigung M-103), 30-Jahr-Feier 2008 und Tag der offenen Moschee 2011. Was der Crawl nicht belegt, bleibt Platzhalter.
+9. **Netzwerk-Verzeichnis:** Alle Ziele beim Dachverband, bei IGMG Reisen und bei den Fachvereinen stehen typisiert in `src/lib/dachverband/netzwerk.ts` (Adresse je Sprache, Zielsprache, Stand `NETZWERK_STAND`); Titel und Kurzbeschreibungen in `messages/bereiche/dachverband.json`. Seiteninhalte verweisen bevorzugt per Schlüssel, eigene Verweise nur mit https. Gerendert wird mit `Verweisliste` (`hrefLang`, sichtbarer Sprachhinweis beim Rückfall, Linkname mit Kontext). Linkpflege jährlich (M-107); nicht aufgenommen: `tip.igmg.org`, YouTube-Kanal, App-Store-Links (M-108).
+10. **Nur Links beim Seitenaufruf:** Die Website lädt nichts vom Dachverband nach, zeigt keine fremden Bilder und bettet keine IGMG-Seiten ein (K-14). Daten vom Dachverband holt nur der Server – per Cron oder auf Knopfdruck in der Verwaltung – und legt sie in der eigenen Datenbank ab.
+11. **Hutba-Feed (Paket P3):** Freitagspredigten kommen aus dem öffentlichen RSS-Feed der IGMG. Gelesen werden nur Titel, Link und Datum; der Predigttext (`content`) wird verworfen (G-06). Der Abgleich läuft serverseitig als Wartungsroute mit Cron; neue Einträge tragen `herkunft: feed`, die Redaktion kann sie ausblenden. Andere Kategorien des Feeds werden nicht automatisch übernommen (Nr. 7).
+12. **Einbettung nur nach Klick:** Videos (YouTube, nur über `youtube-nocookie.com`) und Karten laden erst nach einem Klick (`NachKlick`, ohne Vorschaubild vom Anbieter); die CSP erlaubt dafür in `frame-src` nur OpenStreetMap und youtube-nocookie (ADR 0012, Datenschutzerklärung M-111).
+13. **Stand-Migration:** Neue Beispielstände gelangen in bestehende Datenbanken über eine idempotente Stand-Migration, die nur Zeilen mit `istBeispiel = true` ersetzt (Welle 3, Muster `seed-stand.ts`); redaktionell gepflegte Zeilen bleiben unberührt.
+
+## Alternativen
+
+- **Wörtliche Übernahme** der IGMG-Texte (bisheriger Seed): verworfen – Doppel-Content, Abhängigkeit von Formulierungen, die sich ändern, und ältere Zahlen in der Selbstdarstellung.
+- **Nur verlinken, nichts übernehmen:** verworfen – `/igmg` bliebe voller Platzhalter; Besucherinnen und Besucher erwarten die Grundfakten auf der Seite ihrer Gemeinde.
+- **Live-Abruf beim Seitenaufruf** (Feed, Gebetskalender, Zahlen): verworfen – Anfrage an Dritte (K-14), statische Seiten (K-01) und Ausfallrisiko.
+- **Einbettung von IGMG-Seiten oder -Formularen** (z. B. Fördermitgliedschaft mit reCAPTCHA): verworfen – nur Links.
+- **Zahlen aus mehreren Quellen mischen** (z. B. 40 Regionen aus der Selbstdarstellung, 200.000 Mitglieder aus der Broschüre): verworfen – widersprüchlich, nicht datierbar.
+
+## Folgen
+
+- `/igmg` zeigt belegte Kennzahlen mit Stand, Leitbild, Gremien laut Satzung, Fachvereine, Zentralkontakt mit Website-Link, „Mehr bei der IGMG“, organisatorische Fragen und eine Quellenzeile; die fünf Reiter bleiben (kein sechster Reiter), sind aber per Anker verlinkbar (`docs/ABWEICHUNGEN.md`).
+- Neue Seiteninhalt-Felder sind leer bzw. `null` und werden dann ausgeblendet; gespeicherte Fassungen aus der Zeit davor parsen weiter. Die Verwaltung übernimmt alte Zahlentexte beim Öffnen als Zahl mit Art.
+- Pflege: Zahlen jährlich nach neuer Broschüre (M-107), Links jährlich prüfen (`NETZWERK_STAND`), Übersetzungen muttersprachlich prüfen (M-102), Bedeutung und Leitbild durch den Imam (M-101).
+- Risiken: Ohne abgelegte schriftliche Zustimmung (M-099) sind übernommene Fakten angreifbar; Dateipfade der Broschüren ändern sich jährlich; die Leitung der IGMG kann nach der Generalversammlung am 08.11.2026 wechseln (betrifft nur Funktionsbeschreibungen, keine Namen).
+- Tests: `tests/unit/igmg-seed.test.ts` (keine unbelegten Zahlen, keine Platzhalter, drei Sprachen, Zeitleiste, alte Fassungen), `tests/unit/igmg-kennzahl.test.ts`, `tests/unit/igmg-komponenten.test.tsx`, `tests/unit/inhalte-waechter.test.ts` (Mobilnummern, arabische Schrift, Platzhalter-Parität, deutsche Füllwörter), `tests/unit/dachverband-netzwerk.test.ts`; E2E `tests/e2e/welle-a/igmg-inhalte.spec.ts`.
