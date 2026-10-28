@@ -126,3 +126,36 @@ Alle in `_lauf/MENSCHEN.md` § 8; vor dem Livegang `web/docs/GO-LIVE.md` C6–C1
 - **Wissens-Vorschau:** Der Schalter zeigt jedes Thema „zur Prüfung“, auch Texte der Redaktion (gekennzeichnet, ohne „KI“). Die Verwaltungsliste zeigt solche Themen als „nicht öffentlich“.
 - **Begriffe:** Türkisch „Gelehrtenrat“ ist vereinheitlicht; Englisch („Religious Advisory Council“ / „council of scholars“) und „Ramadan-Begleiter“ sind noch uneinheitlich (M-102).
 - **Parallele Bauten:** Gleichzeitige `vercel-build`-Läufe ohne Datenbank teilen `/tmp/igmg-pglite-bau` und stören sich (BETRIEB § 8).
+
+## 9 Unabhängige Gegenprüfung (28.10.2026)
+
+Nach Welle 3 hat ein eigener Workflow den ganzen Branch gegen `9cb7e75` geprüft: acht Bereichsprüfer (Gebetszeiten, Dachverband, SEO, Hadsch & Umra, `/igmg` und Gemeinde, Wissen und Einbettung, Welle-3-Code, Inhalte und Regeln), je Bereich ein Skeptiker, der jeden Fund zu widerlegen versuchte. 29 Funde; drei Skeptiker fielen an der Nutzungsgrenze aus, ihre Funde wurden beim Beheben zuerst am Code geprüft. Behoben in einem zweiten Workflow (drei Pakete in Worktrees, je mit Skeptiker und Nachbesserung) und von Hand; jeder Fix hat einen Test, der am alten Stand scheitert.
+
+**Behoben** (Schwere nach Gegenprüfung):
+
+| Bereich | Fund | Schwere | Commit |
+| --- | --- | --- | --- |
+| Wissen / Stand-Migration | Endgültig gelöschte KI-Entwürfe kamen mit jedem Bau zurück; jetzt Merker `wissen_entwuerfe_angelegt`, Audit nur für Eingefügtes, Transaktionssperre 4242018 | hoch | `8e2c5cb` |
+| Inhalte | Fitre-Widerspruch zwischen `/ramadan` und Wissens-Entwurf; nach E-046 nennen Entwurf und Hasene-Kasten beide Wege, M-120 | hoch | `c871651` |
+| Gebetszeiten | Erledigte Konflikte erschienen wieder, „IGMG-Werte übernehmen“ griff auf alte Läufe | mittel | `b90a012` |
+| Gebetszeiten | Freigegebene auffällige Tage hielten jeden Folgelauf an (tägliche Freigabe und Mail) | mittel | `b90a012` |
+| Gebetszeiten | Konflikt-Mail täglich durch das gleitende Fenster | mittel | `b90a012` |
+| Gebetszeiten | Startklar „ok“, obwohl die Quelle „Berechnung“ alle Tabellen ignoriert | mittel | `b90a012` |
+| Dachverband | Editor scheiterte nach „Jetzt aus dem Feed holen“ an der Obergrenze | mittel | `e3c124f` |
+| Wissen | Neu angelegtes, eingereichtes Thema öffentlich ohne Cache-Erneuerung | mittel | `8e2c5cb` |
+| `/igmg` (Verwaltung) | Kennzahl verlor beim Leeren Art und Zusatz | mittel | `af8907b` |
+| Datenschutz | Klick-Hinweis und Entwurf verschwiegen die Speicherung durch YouTube nach dem Klick; Entwurf erreicht bestehende Datenbanken (nur Beispielinhalt) | mittel | `c871651` |
+| Dachverband (`/igmg`) | Camia als „frühere Zeitschrift“ statt laufender Zeitung (Broschüre 2026, S. 100) | mittel | `c871651` |
+| Gebetszeiten | Trockenlauf meldete anderen Status als der echte Lauf | niedrig | `b90a012` |
+| Dachverband | Rückfall-Hinweis innerhalb `lang="de"`; „19:30 Uhr“ als Versangabe gesperrt | niedrig | `e3c124f` |
+| Hadsch & Umra | Feste „Regionalstelle Hessen“ trotz offenem M-115; Unterlagen-Angaben (Sprache, Ausgabe); fehlender Hinweis „(auf Englisch)“ | niedrig | `e3c124f` |
+| SEO | Mehrzeilige Adresse im JSON-LD falsch zerlegt | niedrig | `af8907b` |
+| `/igmg` | Fehler bei Nachkommazahl ohne Feldbezug; fremder Anker setzte den Reiter zurück | niedrig | `af8907b`, `1811d8c` |
+| Suche | Titel-Suche ohne Datenbank zeigte Entwürfe ohne Marke | niedrig | `8e2c5cb` |
+| `/igmg` | Sabah Ülkesi als deutschsprachig ausgewiesen | niedrig | `c871651`, `3bcffb3` |
+
+**Verworfen** (Skeptiker oder Prüfung am Code): RSS-Regex mit quadratischer Laufzeit (nur bei manipuliertem igmg.org, Bau bricht sauber ab), eingefügte Tabelle ohne Ortszeile (zwei Abweichungen von der Anleitung nötig), Sitemap in `robots.txt` unter der Schranke (gewollt, ADR 0049), FAQ-Frist Hadsch 2027 (datiert und sachlich richtig), Kasten „Umra im Ramadan“ (belegt), „toter Klick“ der Reiter (mit echtem React nicht nachstellbar; die Vereinfachung bleibt).
+
+**Nebenbefund ohne Handlungsbedarf:** Auf einer frischen PostgreSQL-**16**-Datenbank bricht die Migration ab („unsafe use of new value … rolle“, alle offenen Migrationen in einer Transaktion). Bekannt und dokumentiert (VERCEL.md 2.1, GO-LIVE G1, `tests/e2e/LIESMICH.md` 1a): Neon und Docker laufen mit PostgreSQL 17, das diesen Fall erlaubt. Nachgestellt am 28.10.2026 mit einem lokalen 16er-Cluster.
+
+**Hinweis Stand-Migration:** Geänderte Texte der Wissens-Entwürfe (Fitre-Absatz) erreichen bestehende Datenbanken nicht, weil die Migration Entwürfe nur einmal anlegt; neue Datenbanken (`db:seed`) haben den neuen Text (GO-LIVE C9, von Hand nachziehen).
