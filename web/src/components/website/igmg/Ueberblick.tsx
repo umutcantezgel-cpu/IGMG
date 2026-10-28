@@ -69,7 +69,12 @@ export async function Ueberblick({ inhalt, sprache }: { inhalt: IgmgInhalt; spra
             <div key={kachel.schluessel} className="flex flex-col gap-0.5 border-t border-gruen-800 py-3">
               <dt className="text-gruen-100">{kachel.label}</dt>
               <dd className="text-36 font-bold break-words">{kachel.wert}</dd>
-              {kachel.zusatz ? <Text feld={kachel.zusatz} sprache={sprache} className="text-16 text-gruen-100" /> : null}
+              {/* In der Gruppe einer <dl> sind nur dt und dd erlaubt (axe „definition-list“) – der Zusatz ist ein zweites dd */}
+              {kachel.zusatz ? (
+                <dd className="text-16 text-gruen-100">
+                  <Text feld={kachel.zusatz} sprache={sprache} />
+                </dd>
+              ) : null}
             </div>
           ))}
         </dl>
