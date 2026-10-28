@@ -36,7 +36,7 @@ export async function Verweisliste({
 }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('dachverband');
-  const hinweis: Partial<Record<Locale, string>> = { de: t('aufDeutsch'), tr: t('aufTuerkisch') };
+  const hinweis: Partial<Record<Locale, string>> = { de: t('aufDeutsch'), tr: t('aufTuerkisch'), en: t('aufEnglisch') };
 
   const zeilen: Zeile[] = eintraege.map((e, i) => {
     if (istNetzwerk(e)) {

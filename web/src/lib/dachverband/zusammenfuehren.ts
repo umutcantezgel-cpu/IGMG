@@ -21,6 +21,8 @@ export type Zusammenfuehrung = {
   neu: DachverbandEintrag[];
   vorhanden: number;
   entfernt: number;
+  /** Kennungen der wegen der Obergrenze entfernten Feed-Einträge (der Editor nimmt sie aus seinem Stand) */
+  entfernteSchluessel: string[];
 };
 
 /**
@@ -59,6 +61,7 @@ export function fuehreZusammen(
   let behalten = [...bestand];
   let ueber = behalten.length + neu.length - max;
   let entfernt = 0;
+  let entfernteSchluessel: string[] = [];
   if (ueber > 0) {
     // Zuerst die ältesten Feed-Einträge, die nicht mehr im Feed stehen (sie kämen nie zurück)
     const entbehrlich = behalten
@@ -68,9 +71,10 @@ export function fuehreZusammen(
     const weg = new Set(entbehrlich.map((e) => e.schluessel));
     behalten = behalten.filter((e) => !weg.has(e.schluessel));
     entfernt = weg.size;
+    entfernteSchluessel = [...weg];
     ueber -= weg.size;
   }
   // Reicht das nicht, bleiben die ältesten neuen Predigten draußen (der Bestand hat höchstens `max` Einträge)
   if (ueber > 0) neu = neu.slice(0, Math.max(0, neu.length - ueber));
-  return { eintraege: [...neu, ...behalten], neu, vorhanden, entfernt };
+  return { eintraege: [...neu, ...behalten], neu, vorhanden, entfernt, entfernteSchluessel };
 }

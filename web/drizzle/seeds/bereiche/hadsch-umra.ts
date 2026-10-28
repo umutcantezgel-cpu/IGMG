@@ -45,9 +45,9 @@ const SEMINARE = {
 
 export const HADSCH_UMRA_BEISPIEL: z.input<typeof inhaltSchema> = {
   einleitung: {
-    de: 'Die Fatih-Moschee Wetzlar begleitet alle, die von Wetzlar aus zum Hadsch oder zur Umra aufbrechen möchten. Gereist wird mit IGMG Reisen, der IGMG Hadsch-Umra Reisen GmbH der Islamischen Gemeinschaft Millî Görüş (IGMG) mit Sitz in Köln. Angemeldet wird über ihre Regionalstelle für Hessen; für Gruppen aus Hessen nennt IGMG Reisen Abflüge ab Frankfurt am Main. Hier finden Sie Fristen, Termine, Unterlagen und Antworten auf häufige Fragen.',
-    tr: 'Wetzlar Fatih Camii, Wetzlar’dan hacca veya umreye gitmek isteyen herkese bu yolda eşlik eder. Yolculuk, merkezi Köln’de bulunan İslam Toplumu Millî Görüş’ün (IGMG) seyahat şirketi IGMG Reisen (IGMG Hadsch-Umra Reisen GmbH) ile yapılır. Kayıt, şirketin Hessen bölge temsilciliği üzerinden yapılır; IGMG Reisen, Hessen’den katılan gruplar için Frankfurt’tan kalkışlar planlıyor. Bu sayfada son başvuru tarihlerini, uçuş tarihlerini, gerekli belgeleri ve sık sorulan soruların cevaplarını bulabilirsiniz.',
-    en: 'Fatih Mosque Wetzlar supports everyone in Wetzlar who wishes to set out on Hajj or Umrah. The journey itself is organised by IGMG Reisen, the travel company (IGMG Hadsch-Umra Reisen GmbH) of the Islamic Community Millî Görüş (IGMG), based in Cologne. Registration goes through its regional office for Hesse; for groups from Hesse, IGMG Reisen lists departures from Frankfurt am Main. On this page you will find deadlines, dates, documents and answers to common questions.',
+    de: 'Die Fatih-Moschee Wetzlar begleitet alle, die von Wetzlar aus zum Hadsch oder zur Umra aufbrechen möchten. Gereist wird mit IGMG Reisen, der IGMG Hadsch-Umra Reisen GmbH der Islamischen Gemeinschaft Millî Görüş (IGMG) mit Sitz in Köln. Angemeldet wird über die Regionalstellen von IGMG Reisen; Wetzlar liegt in Hessen, und für Gruppen aus Hessen nennt IGMG Reisen Abflüge ab Frankfurt am Main. Hier finden Sie Fristen, Termine, Unterlagen und Antworten auf häufige Fragen.',
+    tr: 'Wetzlar Fatih Camii, Wetzlar’dan hacca veya umreye gitmek isteyen herkese bu yolda eşlik eder. Yolculuk, merkezi Köln’de bulunan İslam Toplumu Millî Görüş’ün (IGMG) seyahat şirketi IGMG Reisen (IGMG Hadsch-Umra Reisen GmbH) ile yapılır. Kayıt, şirketin bölge temsilcilikleri üzerinden yapılır; Wetzlar Hessen’dedir ve IGMG Reisen, Hessen’den katılan gruplar için Frankfurt’tan kalkışlar planlıyor. Bu sayfada son başvuru tarihlerini, uçuş tarihlerini, gerekli belgeleri ve sık sorulan soruların cevaplarını bulabilirsiniz.',
+    en: 'Fatih Mosque Wetzlar supports everyone in Wetzlar who wishes to set out on Hajj or Umrah. The journey itself is organised by IGMG Reisen, the travel company (IGMG Hadsch-Umra Reisen GmbH) of the Islamic Community Millî Görüş (IGMG), based in Cologne. Registration goes through its regional offices; Wetzlar is in Hesse, and for groups from Hesse, IGMG Reisen lists departures from Frankfurt am Main. On this page you will find deadlines, dates, documents and answers to common questions.',
   },
   hinweise: [
     {
@@ -200,7 +200,8 @@ export const HADSCH_UMRA_BEISPIEL: z.input<typeof inhaltSchema> = {
         en: 'Forms: medical certificate, parental consent, cancellation request',
       },
       url: 'reisenDokumente',
-      sprache: 'de-tr',
+      // Einverständnis der Eltern tr/en, Rücktrittsantrag tr/de (Crawl A7)
+      sprache: 'mehrsprachig',
     },
     {
       titel: {
@@ -209,8 +210,8 @@ export const HADSCH_UMRA_BEISPIEL: z.input<typeof inhaltSchema> = {
         en: 'Hajj and Umrah guides and a health guide to download',
       },
       url: 'reisenDokumente',
+      // Führer 2016, Gesundheitsratgeber 2015 (Crawl A7) – darum ohne gemeinsame Ausgabe
       sprache: 'tr',
-      jahr: '2016',
     },
     {
       titel: { de: 'Umra-Begleiter der IGMG', tr: 'IGMG’nin Umre Yoldaşım rehberi', en: 'IGMG Umrah companion' },

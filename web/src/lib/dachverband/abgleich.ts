@@ -44,6 +44,8 @@ export type DachverbandAbgleichErgebnis = {
   geaendert: boolean;
   /** Die neuen Einträge (für die Verwaltung, die sie in ihren Bearbeitungsstand übernimmt) */
   neueEintraege: DachverbandEintrag[];
+  /** Kennungen der entfernten Einträge (die Verwaltung nimmt sie aus ihrem Bearbeitungsstand, sonst scheitert das Speichern an der Obergrenze) */
+  entfernteSchluessel: string[];
 };
 
 const leer = (o: Partial<DachverbandAbgleichErgebnis>): DachverbandAbgleichErgebnis => ({
@@ -57,6 +59,7 @@ const leer = (o: Partial<DachverbandAbgleichErgebnis>): DachverbandAbgleichErgeb
   fehlerCode: null,
   geaendert: false,
   neueEintraege: [],
+  entfernteSchluessel: [],
   ...o,
 });
 
@@ -106,6 +109,7 @@ export async function gleicheDachverbandAb(
       vorhanden: z.vorhanden,
       entfernt: z.entfernt,
       neueEintraege: z.neu,
+      entfernteSchluessel: z.entfernteSchluessel,
     });
   }
 
@@ -152,6 +156,7 @@ export async function gleicheDachverbandAb(
         entfernt: z.entfernt,
         geaendert: true,
         neueEintraege: z.neu,
+        entfernteSchluessel: z.entfernteSchluessel,
       });
     }),
   );

@@ -12,7 +12,8 @@ const LINK =
 
 /**
  * Link zu IGMG Reisen oder zur IGMG (Plan Marktstart P4, K-14): nur ein Link, keine Anfrage beim Aufruf. Die Zielsprache
- * steht in `hrefLang`; weicht sie von der Seite ab, steht der Hinweis sichtbar daneben („(auf Deutsch)“, „(auf Türkisch)“).
+ * steht in `hrefLang`; weicht sie von der Seite ab, steht der Hinweis sichtbar daneben („(auf Deutsch)“, „(auf Türkisch)“,
+ * „(auf Englisch)“).
  * Linkname mit Kontext nach MUSTER §4: sichtbarer Text vorn, dann `kontext` (z. B. der Titel des Programms) oder
  * „externe Seite“. Server-Komponente ohne Client-JavaScript (K-12).
  */
@@ -36,7 +37,11 @@ export async function ZielLink({
 }) {
   const t = await getTranslations({ locale: sprache, namespace: 'dachverband' });
   const link = zielFuer(ziel, sprache);
-  const hinweis = sprachHinweis({ aufDeutsch: t('aufDeutsch'), aufTuerkisch: t('aufTuerkisch') }, link.zielSprache, sprache);
+  const hinweis = sprachHinweis(
+    { aufDeutsch: t('aufDeutsch'), aufTuerkisch: t('aufTuerkisch'), aufEnglisch: t('aufEnglisch') },
+    link.zielSprache,
+    sprache,
+  );
   const sichtbar = hinweis ? `${text} ${hinweis}` : text;
   return (
     <a

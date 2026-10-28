@@ -120,6 +120,7 @@ export type FeedZustand = {
     fehlerCode: string | null;
   };
   neueEintraege?: DachverbandEintrag[];
+  entfernteSchluessel?: string[];
   /** Zeitpunkt der Antwort (der Editor übernimmt die Einträge je Antwort genau einmal) */
   zeit?: number;
 };
@@ -146,6 +147,7 @@ export async function holeDachverbandFeed(_vorher: FeedZustand, _fd: FormData): 
       fehlerCode: e.fehlerCode,
     },
     neueEintraege: e.neueEintraege,
+    entfernteSchluessel: e.entfernteSchluessel,
     zeit: Date.now(),
   };
 }

@@ -293,10 +293,10 @@
       },
       "feed": {
         "titel": "IGMG-Feed der Freitagspredigten",
-        "text": "Der Abgleich läuft täglich automatisch und übernimmt neue Freitagspredigten mit Titel, Datum und Link. Vorhandene und ausgeblendete Einträge bleiben unverändert.",
+        "text": "Der Abgleich läuft täglich automatisch und übernimmt neue Freitagspredigten mit Titel, Datum und Link. Vorhandene und ausgeblendete Einträge bleiben unverändert; erst über 60 Einträgen entfallen die ältesten Predigten, die nicht mehr im Feed stehen.",
         "holen": "Jetzt aus dem Feed holen",
         "laeuft": "Wird geholt …",
-        "neu": "Übernommen: {neu} neue Freitagspredigten (schon vorhanden: {vorhanden}, nicht übernommen: {abgewiesen}). Sie sind veröffentlicht und stehen oben in der Liste.",
+        "neu": "Übernommen: {neu} neue Freitagspredigten (schon vorhanden: {vorhanden}, nicht übernommen: {abgewiesen}, wegen der Obergrenze entfernt: {entfernt}). Sie sind veröffentlicht und stehen oben in der Liste.",
         "unveraendert": "Keine neuen Freitagspredigten im Feed (schon vorhanden: {vorhanden}).",
         "fehler": "Der Feed der IGMG ließ sich nicht abrufen oder lesen ({code}). Bitte später erneut versuchen.",
         "unlesbar": "Der gespeicherte Inhalt passt nicht zu den Regeln; der Abgleich hat nichts geändert. Bitte die markierten Einträge korrigieren und speichern.",
@@ -345,7 +345,7 @@
       "ungueltigerPfad": "Bitte einen Pfad unter /public angeben, z. B. /bilder/datei.jpg.",
       "ungueltigeAuswahl": "Bitte eine Auswahl aus der Liste treffen.",
       "hutbaOhneKurztext": "Freitagspredigten haben keinen Kurztext. Bitte leeren.",
-      "ohneZitat": "Bitte ohne Anführungszeichen und ohne Versangaben (Sure und Vers).",
+      "ohneZitat": "Bitte ohne Anführungszeichen und ohne Versangaben (Sure und Vers). Uhrzeiten mit „Uhr“ schreiben (19:30 Uhr) oder mit Punkt (19.30).",
       "doppelt": "Diese Kennung gibt es schon. Bitte den Eintrag entfernen oder neu anlegen.",
       "rueckVorHin": "Der Rückflug darf nicht vor dem Hinflug liegen."
     },

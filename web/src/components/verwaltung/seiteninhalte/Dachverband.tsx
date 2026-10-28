@@ -45,21 +45,22 @@ const leererEintrag = (vorhanden: readonly DachverbandEintrag[]): DachverbandEin
  * „Jetzt aus dem Feed holen“: eigenes Formular außerhalb des Bearbeitungsformulars (Formulare dürfen nicht verschachtelt
  * sein). Neue Einträge aus der Antwort gehen an den Editor, damit das nächste Speichern sie nicht überschreibt.
  */
-function FeedAbruf({ onNeu }: { onNeu: (neu: DachverbandEintrag[]) => void }) {
+function FeedAbruf({ onNeu }: { onNeu: (neu: DachverbandEintrag[], entfernt: string[]) => void }) {
   const t = useTranslations('verwaltung.seiteninhalte.dachverband.feed');
   const [zustand, absenden, laeuft] = useActionState<FeedZustand, FormData>(holeDachverbandFeed, {});
   const verarbeitet = useRef<number | undefined>(undefined);
   useEffect(() => {
     if (!zustand.zeit || verarbeitet.current === zustand.zeit) return;
     verarbeitet.current = zustand.zeit;
-    if (zustand.neueEintraege?.length) onNeu(zustand.neueEintraege);
+    if (zustand.neueEintraege?.length || zustand.entfernteSchluessel?.length)
+      onNeu(zustand.neueEintraege ?? [], zustand.entfernteSchluessel ?? []);
   }, [zustand, onNeu]);
   const e = zustand.ergebnis;
   const meldung = zustand.fehler ? (
     <Meldung art="fehler">{t(zustand.fehler)}</Meldung>
   ) : e ? (
     e.status === 'ok' ? (
-      <Meldung art="erfolg">{t('neu', { neu: e.neu, vorhanden: e.vorhanden, abgewiesen: e.abgewiesen })}</Meldung>
+      <Meldung art="erfolg">{t('neu', { neu: e.neu, vorhanden: e.vorhanden, abgewiesen: e.abgewiesen, entfernt: e.entfernt })}</Meldung>
     ) : e.status === 'unveraendert' ? (
       <Meldung art="info">{t('unveraendert', { vorhanden: e.vorhanden })}</Meldung>
     ) : e.status === 'uebersprungen' ? (
@@ -128,10 +129,13 @@ export function DachverbandFormular({
     requestAnimationFrame(() => document.getElementById('si-eintraege-0')?.focus());
   };
 
-  const uebernimmFeed = (neue: DachverbandEintrag[]) =>
+  // Wie der Abgleich in der Datenbank: neue vorn, wegen der Obergrenze entfernte heraus (sonst scheitert das nächste Speichern)
+  const uebernimmFeed = (neue: DachverbandEintrag[], entfernt: string[]) =>
     setWert((alt) => {
-      const vorhanden = new Set(alt.eintraege.map((e) => e.schluessel));
-      return { ...alt, eintraege: [...neue.filter((n) => !vorhanden.has(n.schluessel)), ...alt.eintraege] };
+      const weg = new Set(entfernt);
+      const behalten = alt.eintraege.filter((e) => !weg.has(e.schluessel));
+      const vorhanden = new Set(behalten.map((e) => e.schluessel));
+      return { ...alt, eintraege: [...neue.filter((n) => !vorhanden.has(n.schluessel)), ...behalten] };
     });
 
   return (

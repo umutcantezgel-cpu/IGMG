@@ -10,10 +10,18 @@ import type { DachverbandEintrag } from '@/lib/validierung/seiteninhalte/dachver
 export const EXTERN_LINK =
   'inline-flex min-h-12 flex-wrap items-center gap-x-2 self-start font-bold text-gruen-700 underline underline-offset-4 transition duration-(--dauer-rueckmeldung) hover:decoration-2';
 
-/** Sichtbarer Sprachhinweis zur Zielsprache („(auf Deutsch)“, „(auf Türkisch)“) oder nichts, wenn sie zur Seite passt. */
-export function sprachHinweis(texte: { aufDeutsch: string; aufTuerkisch: string }, ziel: Locale, sprache: Locale): string | undefined {
+/**
+ * Sichtbarer Sprachhinweis zur Zielsprache („(auf Deutsch)“, „(auf Türkisch)“, „(auf Englisch)“) oder nichts, wenn sie zur
+ * Seite passt. Englische Ziele gibt es nur bei eigenen Adressen der Redaktion (Hadsch & Umra); wer sie anbietet, gibt
+ * `aufEnglisch` mit.
+ */
+export function sprachHinweis(
+  texte: { aufDeutsch: string; aufTuerkisch: string; aufEnglisch?: string },
+  ziel: Locale,
+  sprache: Locale,
+): string | undefined {
   if (ziel === sprache) return undefined;
-  return ziel === 'de' ? texte.aufDeutsch : ziel === 'tr' ? texte.aufTuerkisch : undefined;
+  return ziel === 'de' ? texte.aufDeutsch : ziel === 'tr' ? texte.aufTuerkisch : texte.aufEnglisch;
 }
 
 /**
@@ -68,8 +76,9 @@ export async function DachverbandKarte({
         {titel.rueckfall ? <span className="text-16 text-tinte-2">{texte.aufDeutsch}</span> : null}
       </div>
       {kurz?.text ? (
-        <p lang={kurz.rueckfall ? 'de' : undefined} className="max-w-text text-18 leading-relaxed text-pretty text-tinte-2">
-          {kurz.text}
+        <p className="max-w-text text-18 leading-relaxed text-pretty text-tinte-2">
+          <span lang={kurz.rueckfall ? 'de' : undefined}>{kurz.text}</span>
+          {/* Hinweis in der Seitensprache, außerhalb von lang="de" (WCAG 3.1.2) */}
           {kurz.rueckfall && !titel.rueckfall ? <span className="text-16"> {texte.aufDeutsch}</span> : null}
         </p>
       ) : null}

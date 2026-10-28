@@ -66,6 +66,8 @@ describe('fuehreZusammen', () => {
     const z = fuehreZusammen(alt, [feed('neu', '2026-10-23'), feed('feed-im-feed', '2025-01-01')], 4);
     expect(z.eintraege.map((e) => e.schluessel)).toEqual(['neu', 'red-1', 'feed-alt', 'feed-im-feed']);
     expect(z).toMatchObject({ entfernt: 1, vorhanden: 1 });
+    // Der Editor bekommt die Kennungen, damit er sie aus seinem Stand nimmt (sonst scheitert das Speichern an der Obergrenze)
+    expect(z.entfernteSchluessel).toEqual(['feed-aelter']);
     // ausgeblendet und noch im Feed: bleibt (sonst käme sie beim nächsten Lauf sichtbar zurück)
     expect(z.eintraege.find((e) => e.schluessel === 'feed-im-feed')?.sichtbar).toBe(false);
   });
@@ -81,7 +83,7 @@ describe('fuehreZusammen', () => {
   it('zweiter Lauf mit demselben Feed: nichts Neues', () => {
     const erster = fuehreZusammen([], [feed('a', '2026-10-09'), feed('b', '2026-10-16')]);
     const zweiter = fuehreZusammen(erster.eintraege, [feed('a', '2026-10-09'), feed('b', '2026-10-16')]);
-    expect(zweiter).toMatchObject({ neu: [], vorhanden: 2, entfernt: 0 });
+    expect(zweiter).toMatchObject({ neu: [], vorhanden: 2, entfernt: 0, entfernteSchluessel: [] });
     expect(zweiter.eintraege).toEqual(erster.eintraege);
   });
 

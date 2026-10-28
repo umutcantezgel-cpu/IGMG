@@ -30,8 +30,11 @@ export const DACHVERBAND_MAX = 60;
 /** Kennung eines Eintrags (aus dem Adressteil der IGMG-Seite oder von der Verwaltung erzeugt). */
 export const SCHLUESSEL_MUSTER = /^[a-z0-9-]{3,80}$/;
 
-/** Versangabe wie „49:6“ oder „2 : 255“ (G-06: nur, wenn die verlinkte Quelle sie nennt – hier nie). */
-export const VERSANGABE = /\b\d{1,3}\s?:\s?\d{1,3}\b/;
+/**
+ * Versangabe wie „49:6“ oder „2 : 255“ (G-06: nur, wenn die verlinkte Quelle sie nennt – hier nie). Eine Uhrzeit mit
+ * „Uhr“ dahinter („19:30 Uhr“) ist keine; ohne „Uhr“ bleibt die Zahl gesperrt, weil sie sich nicht unterscheiden lässt.
+ */
+export const VERSANGABE = /\b\d{1,3}\s?:\s?\d{1,3}\b(?!\s?Uhr\b)/;
 /** Anführungszeichen (Zitate gehören nicht in Titel und Kurztexte). Apostrophe (’) bleiben erlaubt. */
 export const ZITATZEICHEN = /[„“”"«»‚]/;
 

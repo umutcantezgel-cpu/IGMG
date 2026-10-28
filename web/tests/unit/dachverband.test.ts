@@ -88,6 +88,9 @@ describe('Schema', () => {
     expect(ohneZitat('Rechte und Pflichten in sozialen Medien')).toBe(true);
     expect(ohneZitat('Kaaba: Orientierung für Körper und Geist')).toBe(true);
     expect(ohneZitat('Women’s Organisation')).toBe(true);
+    // Uhrzeit mit „Uhr“ ist keine Versangabe; ohne „Uhr“ bleibt die Zahl gesperrt (G-06)
+    expect(ohneZitat('Info-Abend um 19:30 Uhr in den Gemeinden')).toBe(true);
+    expect(ohneZitat('Treffen 19:30')).toBe(false);
     for (const text of ['Sure 49:6', 'vgl. 2 : 255', '„Zitat“', '"Zitat"', '«Zitat»', 'Er sagte: “Hallo”'])
       expect(ohneZitat(text), text).toBe(false);
     const p = dachverbandEintrag.safeParse(
