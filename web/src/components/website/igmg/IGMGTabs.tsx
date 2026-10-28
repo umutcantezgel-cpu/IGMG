@@ -20,16 +20,22 @@ const keinAnker = () => '';
  * tab und tabpanel, aria-selected und aria-controls; Pfeiltasten sowie Pos1 und Ende verschieben den Fokus und
  * wählen den Reiter aus (automatische Aktivierung). Inaktive Felder tragen nur das hidden-Attribut.
  * Abweichung von Blatt INTERAKTIONEN 1 (Plan Marktstart P1, docs/ABWEICHUNGEN.md): Jeder Reiter ist per Anker
- * verlinkbar (#ueberblick, #bedeutung, …). Ein gültiger Anker in der Adresse wählt den Reiter; ein Wechsel ersetzt den
- * Anker per `history.replaceState` (kein neuer Verlaufseintrag, kein Sprung). Die Client-Insel bekommt nur Texte und
- * Inhalte als Props (K-12). Darstellung wie die Tab-Leiste der Gebetszeiten; der neue Inhalt blendet nach einem Wechsel
- * ein (B-04).
+ * verlinkbar (#ueberblick, #bedeutung, …). Ein neuer gültiger Anker in der Adresse (beim Laden, Link auf der Seite) wählt
+ * den Reiter; fremde Anker wie der Sprunglink #inhalt lassen die Auswahl stehen. Ein Wechsel ersetzt den Anker per
+ * `history.replaceState` (kein neuer Verlaufseintrag, kein Sprung). Die Client-Insel bekommt nur Texte und Inhalte als
+ * Props (K-12). Darstellung wie die Tab-Leiste der Gebetszeiten; der neue Inhalt blendet nach einem Wechsel ein (B-04).
  */
 export function IGMGTabs({ reiter, standard, beschriftung }: { reiter: Reiter[]; standard: string; beschriftung: string }) {
   const anker = useSyncExternalStore(abonniereAnker, liesAnker, keinAnker);
   const [gewaehlt, setGewaehlt] = useState(standard);
-  // Ein gültiger Anker hat Vorrang; nach einem Klick stimmen Anker und Auswahl ohnehin überein
-  const aktiv = reiter.some((r) => r.schluessel === anker) ? anker : gewaehlt;
+  // Angezeigt wird nur die Auswahl. Ändert sich der Anker, übernimmt sie ihn, wenn er einen Reiter nennt (Zustand beim
+  // Rendern angepasst); Anfangswert „“, damit auch ein schon beim ersten Rendern vorhandener Anker zählt
+  const [letzterAnker, setLetzterAnker] = useState('');
+  if (anker !== letzterAnker) {
+    setLetzterAnker(anker);
+    if (reiter.some((r) => r.schluessel === anker)) setGewaehlt(anker);
+  }
+  const aktiv = gewaehlt;
   /** Der neue Inhalt blendet erst nach einem Wechsel ein (B-04); beim ersten Laden steht er sofort da. */
   const [gewechselt, setGewechselt] = useState(false);
   const id = useId();

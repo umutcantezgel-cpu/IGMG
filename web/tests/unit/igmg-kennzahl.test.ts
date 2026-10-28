@@ -117,6 +117,20 @@ describe('Schema: Kennzahl als Union (alter Text | Wert mit Art)', () => {
     expect(kennzahl.safeParse('x'.repeat(41)).success).toBe(false);
   });
 
+  it('Fehler einer Zahl landen am Feld `wert` (Sprungverweis der Fehlerliste, aria-invalid), nicht als invalid_union', () => {
+    const fehler = (zahlen: Record<string, unknown>) =>
+      schema.safeParse({ zahlen }).error?.issues.map((i) => ({ pfad: i.path.join('.'), code: i.code, meldung: i.message }));
+    expect(fehler({ moscheen: { wert: 2.5, art: 'rund' } })).toEqual([
+      { pfad: 'zahlen.moscheen.wert', code: 'custom', meldung: 'ungueltigeZahl' },
+    ]);
+    expect(fehler({ mitglieder: { wert: 1.5 } })?.[0]).toMatchObject({ pfad: 'zahlen.mitglieder.wert', meldung: 'ungueltigeZahl' });
+    expect(fehler({ region: { name: 'Hessen', zweigstellen: { wert: 0.5 } } })?.[0]).toMatchObject({
+      pfad: 'zahlen.region.zweigstellen.wert',
+    });
+    expect(fehler({ moscheen: { wert: -1 } })?.[0]).toMatchObject({ pfad: 'zahlen.moscheen.wert', code: 'too_small' });
+    expect(fehler({ moscheen: { wert: 2_000_000_000 } })?.[0]).toMatchObject({ pfad: 'zahlen.moscheen.wert', code: 'too_big' });
+  });
+
   it('Standardwerte: bestehende Kennzahlen als Platzhalter, neue Felder leer (ausgeblendet)', () => {
     const z = schema.parse({}).zahlen;
     expect(z.moscheen).toBe('[Zahl fehlt: Moscheen]');

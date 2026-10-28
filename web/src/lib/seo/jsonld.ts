@@ -112,13 +112,15 @@ const WOCHENTAGE = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fri
 
 /**
  * Anschrift der Moschee: Ort, Bundesland und Land immer (Entität geografisch verankert, auch vor M-010); Straße und
- * Postleitzahl nur aus einer gepflegten Adresse („Straße Nr., PLZ Ort“, sonst der ganze Text als Straße).
+ * Postleitzahl nur aus einer gepflegten Adresse („Straße Nr., PLZ Ort“, sonst der ganze Text als Straße). Das Feld der
+ * Verwaltung ist mehrzeilig: Zeilenumbrüche (mit oder ohne Komma davor) gelten als Komma.
  */
 function anschriftWetzlar(adresse: string | undefined) {
-  const teile = adresse ? /^(.+?),\s*(\d{5})\s+\S.*$/.exec(adresse) : null;
+  const text = adresse?.replace(/\s*,?\s*\r?\n\s*/g, ', ');
+  const teile = text ? /^(.+?),\s*(\d{5})\s+\S.*$/.exec(text) : null;
   return {
     '@type': 'PostalAddress',
-    ...(adresse ? { streetAddress: teile ? teile[1] : adresse } : {}),
+    ...(text ? { streetAddress: teile ? teile[1] : text } : {}),
     ...(teile ? { postalCode: teile[2] } : {}),
     addressLocality: ENTITAET.sitz.ort,
     addressRegion: ENTITAET.sitz.bundesland,

@@ -121,6 +121,17 @@ describe('Bereich und Inhalt', () => {
     expect(await zeile('igmg')).toEqual(vorher);
   });
 
+  it('Kennzahl mit Nachkommastelle: ungueltigeZahl am Zahlenfeld (…wert), nicht an der Kennzahl; nichts gespeichert', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const vorher = await zeile('igmg');
+    const eingabe = standard('igmg') as { zahlen: Record<string, unknown> };
+    eingabe.zahlen.moscheen = { wert: 2.5, art: 'rund', zusatz: { de: 'davon 3 im Aufbau' } };
+    const ergebnis = await speichern('igmg', eingabe);
+    expect(ergebnis.fehler).toBe('pruefen');
+    expect(ergebnis.feldFehler).toEqual({ 'zahlen.moscheen.wert': 'ungueltigeZahl' });
+    expect(await zeile('igmg')).toEqual(vorher);
+  });
+
   it('ungültige E-Mail-Adresse im Vorstand: ungueltigeAdresse am Feld des Mitglieds, Stand bleibt unverändert', async () => {
     await angemeldetAls([{ rolle: 'redaktion' }]);
     const vorher = await zeile('vorstand');

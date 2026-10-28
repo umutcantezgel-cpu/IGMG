@@ -15,6 +15,8 @@ type Fachverein = IgmgInhalt['struktur']['fachvereine'][number];
 type Frage = IgmgInhalt['faq'][number];
 type Adressen = Verweis['url'];
 type Zahlen = IgmgInhalt['zahlen'];
+/** Art und Zusatz einer Kennzahl mit Zahl (ohne die Zahl selbst). */
+type KennzahlAngaben = Omit<Exclude<Kennzahl, string>, 'wert'>;
 
 /** Arten einer Kennzahl wie im Schema (hier als Liste, damit das Schema nicht ins Browser-Bundle gerät). */
 const ZAHL_ARTEN = ['genau', 'ueber', 'rund'] as const satisfies readonly ZahlArt[];
@@ -47,9 +49,10 @@ const adressen = (de: string, tr: string, en: string): Adressen => ({ de, ...(tr
 /**
  * Kennzahl (Plan P1): Zahl, Art („genau“, „über“, „rund“) und optionaler Zusatz. Ein alter Text, der sich nicht als Zahl
  * lesen ließ (Platzhalter „[Zahl fehlt: …]“), bleibt sichtbar, bis eine Zahl eingetragen ist. Ohne Zahl gilt `ohneWert`
- * (leer: die Kachel entfällt).
+ * (leer: die Kachel entfällt). Wird die Zahl nur geleert (Rücktaste vor der neuen Ziffer), merkt sich das Feld Art und
+ * Zusatz, zeigt sie weiter und setzt sie mit der nächsten Zahl wieder ein; gespeichert wird ohne Zahl trotzdem `ohneWert`.
  */
-function KennzahlFeld({
+export function KennzahlFeld({
   pfad,
   label,
   wert,
@@ -65,6 +68,11 @@ function KennzahlFeld({
   const t = useTranslations('verwaltung.seiteninhalte');
   const zahl = typeof wert === 'object' && wert !== null ? wert : null;
   const text = typeof wert === 'string' && wert ? wert : null;
+  /** Art und Zusatz einer geleerten Zahl (nur in diesem Feld, nicht im gespeicherten Inhalt). */
+  const [gemerkt, setGemerkt] = useState<KennzahlAngaben | null>(null);
+  const angaben: KennzahlAngaben | null = zahl ?? (text ? null : gemerkt);
+  /** Art oder Zusatz geändert: an der Kennzahl, oder bei geleerter Zahl nur gemerkt. */
+  const setzeAngaben = (neu: KennzahlAngaben) => (zahl ? onChange({ wert: zahl.wert, ...neu }) : setGemerkt(neu));
   return (
     <fieldset className="flex min-w-0 flex-col gap-3 rounded-md border border-linie p-4">
       <legend className="px-1 font-bold">{label}</legend>
@@ -75,29 +83,34 @@ function KennzahlFeld({
           wert={zahl?.wert ?? null}
           min={0}
           hinweis={t('igmg.hinweis.kennzahl')}
-          onChange={(n) =>
-            onChange(n === null ? ohneWert : { wert: n, art: zahl?.art ?? 'genau', ...(zahl?.zusatz ? { zusatz: zahl.zusatz } : {}) })
-          }
+          onChange={(n) => {
+            if (n !== null) {
+              onChange({ wert: n, art: angaben?.art ?? 'genau', ...(angaben?.zusatz ? { zusatz: angaben.zusatz } : {}) });
+              return;
+            }
+            if (angaben) setGemerkt({ art: angaben.art, ...(angaben.zusatz ? { zusatz: angaben.zusatz } : {}) });
+            onChange(ohneWert);
+          }}
         />
-        {zahl ? (
+        {angaben ? (
           <AuswahlFeld
             pfad={`${pfad}.art`}
             label={t('feld.art')}
-            wert={zahl.art}
+            wert={angaben.art}
             optionen={ZAHL_ARTEN.map((art) => ({ wert: art, text: t(`igmg.zahlArt.${art}`) }))}
-            onChange={(art) => onChange({ ...zahl, art })}
+            onChange={(art) => setzeAngaben({ ...angaben, art })}
           />
         ) : null}
       </div>
-      {zahl ? (
+      {angaben ? (
         <MehrsprachigFeld
           pfad={`${pfad}.zusatz`}
           label={t('feld.zusatz')}
-          wert={zahl.zusatz ?? { de: '' }}
+          wert={angaben.zusatz ?? { de: '' }}
           pflicht={false}
           onChange={(neu) => {
             const zusatz = optional(neu);
-            onChange(zusatz ? { ...zahl, zusatz } : { wert: zahl.wert, art: zahl.art });
+            setzeAngaben(zusatz ? { art: angaben.art, zusatz } : { art: angaben.art });
           }}
         />
       ) : null}

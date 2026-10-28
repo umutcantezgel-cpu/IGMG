@@ -19,10 +19,12 @@ export type ZahlArt = (typeof ZAHL_ARTEN)[number];
  * Kennzahl: neu als Wert mit Art und optionalem Zusatz („davon 3 im Aufbau“); die Ausgabe formatiert je Sprache
  * (`formatKennzahl`, src/lib/dachverband/kennzahl.ts). Ein Text wie vor P1 („518“, „[Zahl fehlt: …]“) bleibt gültig und
  * erscheint unverändert (Blatt S12, Auffälligkeit 1).
+ * Ganze Zahl als eigene Regel statt `.int()`: `.int()` bricht die Prüfung ab, dann meldet die Union nur `invalid_union`
+ * an der Kennzahl selbst. So landet „2,5“ als `ungueltigeZahl` am Feld `….wert` (Fehlerliste, aria-invalid).
  */
 export const kennzahl = z.union([
   z.object({
-    wert: z.number().int().min(0).max(1_000_000_000),
+    wert: z.number().min(0).max(1_000_000_000).refine(Number.isInteger, 'ungueltigeZahl'),
     art: z.enum(ZAHL_ARTEN).default('genau'),
     zusatz: mehrsprachigOptional(80).optional(),
   }),

@@ -208,6 +208,25 @@ describe('gemeindeGraph', () => {
     );
     expect(teilweise.address).not.toHaveProperty('streetAddress');
   });
+
+  it('mehrzeilige Adresse aus der Verwaltung: Zeilenumbruch gilt als Komma, Straße und PLZ getrennt', () => {
+    for (const adresse of [
+      'Testweg 1\n35578 Wetzlar',
+      'Testweg 1,\n35578 Wetzlar',
+      'Testweg 1\r\n35578 Wetzlar',
+      'Testweg 1 \n 35578 Wetzlar\n',
+    ]) {
+      const m = knoten(gemeindeGraph({ basis: 'https://example.test', kontakt: { adresse }, sprache: 'de' }), 'Mosque');
+      expect(m.address, JSON.stringify(adresse)).toMatchObject({ streetAddress: 'Testweg 1', postalCode: '35578' });
+    }
+    // Ohne Postleitzahl bleibt der ganze Text die Straße, aber einzeilig
+    const ohnePlz = knoten(
+      gemeindeGraph({ basis: 'https://example.test', kontakt: { adresse: 'Testweg 1\nHinterhaus' }, sprache: 'de' }),
+      'Mosque',
+    );
+    expect(ohnePlz.address).toMatchObject({ streetAddress: 'Testweg 1, Hinterhaus' });
+    expect(ohnePlz.address).not.toHaveProperty('postalCode');
+  });
 });
 
 describe('faqSeite', () => {
