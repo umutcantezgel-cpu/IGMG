@@ -170,6 +170,22 @@ Die Datenbank ist PostgreSQL. Wir nutzen Neon über den Vercel Marketplace. Der 
 - **Wo:** Die Neon-Integration setzt sie nach ADR 0019 zusammen mit `DATABASE_URL` **[prüfen: ob die Integration das tut]**. Fehlt sie in Abschnitt 4, trägst du sie wie `DATABASE_URL` ein.
 - **Prüfpunkt:** Das Bauprotokoll zeigt `[migration] Verbindung: direkt (DATABASE_URL_UNPOOLED)`. Die Warnung „Nur eine Pooler-Adresse vorhanden“ darf nicht erscheinen.
 
+**2.5 Ohne Rechner: Beispielinhalte und erstes Konto aus dem Bau (E-047)**
+
+Hat niemand einen Rechner mit Zugang zur Datenbank, übernimmt der erste Production-Bau `pnpm db:seed` und `pnpm verwaltung:einladen` (Nachtrag ADR 0019 vom 28.10.2026). Mit Rechner geht weiter der Weg aus `web/docs/BETRIEB.md` § 2.
+
+- **Variablen, nur Production:** `ERSTBEFUELLUNG=1`, `ERSTE_VERWALTUNG_EMAIL=<adresse>`, `ERSTE_VERWALTUNG_NAME=<Vorname Nachname>` (Abschnitt 4; `web/docs/deploy/VERCEL-ENV.md`).
+- **Vorher:** Settings › Security › „Build Logs and Source Protection“ eingeschaltet lassen **[prüfen: Menüname]**. Dann sehen nur Team-Mitglieder das Bauprotokoll und damit den Einladungslink.
+- **Bauprotokoll nach dem Redeploy (Production):**
+  - `[migration] Migrationen angewendet.`
+  - `[erstbefuellung] Seeds eingespielt, Merker gesetzt.` (ein späterer Bau meldet „Seeds schon früher eingespielt“)
+  - `[erstbefuellung] Einladung für das erste Verwaltungskonto (Administration) …`, darunter der Link `https://<produktionsadresse>/verwaltung/einladung/<token>`
+- **Danach:** Link öffnen, Passwort setzen, Zwei-Faktor-App einrichten (Pflicht). Dann alle drei Variablen löschen. Gibt es ein Konto mit Administration, legt kein Bau mehr eine Einladung an.
+- **Regeln:**
+  - Die Seeds laufen genau einmal je Datenbank (Merker `erstbefuellung` in `einstellung`). Sie legen die Beispielinhalte an und schalten den Konzept-Hinweis „Daten fiktiv“ ein; endgültig Gelöschtes kommt nicht zurück.
+  - Der Link gilt 72 Stunden und einmal. Ein weiterer Bau mit den Variablen widerruft den alten Link und schreibt einen neuen ins Protokoll; es gilt immer der neueste.
+  - Fehlt eine der beiden `ERSTE_VERWALTUNG_*`-Variablen, ist die Adresse ungültig oder steht in `ERSTBEFUELLUNG` etwas anderes als `1`, bricht der Production-Bau mit `[erstbefuellung] FEHLER: …` ab. In Preview steht nur ein Hinweis im Protokoll.
+
 ## 3. Dateispeicher in Frankfurt (3 Minuten)
 
 Hochgeladene Bilder brauchen einen Speicher, der nicht auf der Festplatte des Servers liegt. Auf Vercel ist das Dateisystem schreibgeschützt (ADR 0020, Ziel). Der Zielspeicher ist Vercel Blob (ADR 0020, Weg 1).
@@ -358,14 +374,14 @@ Was sie bedeuten:
 
 ## 9. Wiederkehrende Aufgaben (Crons)
 
-- **Was läuft:** Die Löschfristen und der erneute Versand des Mail-Ausgangs, täglich nachts (ADR 0021, Ziel).
-- **Routen:** `/api/wartung/loeschfristen` und `/api/wartung/mail-ausgang` (`web/src/app/api/wartung/`).
+- **Was läuft:** täglich die Löschfristen, der erneute Versand des Mail-Ausgangs (ADR 0021, Ziel), der Abgleich der Gebetszeiten mit dem IGMG-Gebetskalender (ADR 0048) und der Abgleich der Freitagspredigten für „Aus dem Dachverband“ (ADR 0046).
+- **Routen:** `/api/wartung/loeschfristen`, `/api/wartung/mail-ausgang`, `/api/wartung/gebetszeiten-abgleich` und `/api/wartung/dachverband-abgleich` (`web/src/app/api/wartung/`).
 - **Wann:** Vercel ruft die Crons nur in der Produktion auf (https://vercel.com/docs/cron-jobs/quickstart). Die Vorschau hat keine Crons (ADR 0021, Folgen).
 - **Absicherung:** Vercel sendet `Authorization: Bearer <CRON_SECRET>`. Die App prüft diesen Wert (https://vercel.com/docs/cron-jobs/manage-cron-jobs; `web/src/lib/wartung/zugang.ts` Zeilen 19–23).
-- **Zeitplan:** In `/vercel.json` (Repository-Wurzel) unter `crons`, in UTC: Löschfristen um 01:00 UTC (`0 1 * * *`), Mail-Ausgang um 02:00 UTC (`0 2 * * *`) (ADR 0021; `web/docs/BETRIEB.md` § 9).
+- **Zeitplan:** In `/vercel.json` (Repository-Wurzel) unter `crons`, in UTC: Löschfristen 01:00 (`0 1 * * *`), Mail-Ausgang 02:00 (`0 2 * * *`), Dachverband 04:00 (`0 4 * * *`), Gebetszeiten 20:00 (`0 20 * * *`). Das Projekt mit Root `web` liest `web/vercel.json` mit denselben vier Einträgen (ADR 0021; `web/docs/BETRIEB.md` § 9).
 - **Hobby-Tarif:** Der Auftrag sagt „einmal am Tag, irgendwann in der angegebenen Stunde“ (AUFTRAG V-06). **Die Vercel-Doku für diese Frequenz habe ich nicht gefunden [prüfen].** Der Tarif gehört zu ML-09 in `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`.
-- **Stand:** Eingetragen (`/vercel.json`, Zeilen 12–15).
-- **Prüfen:** Team › Projekt `igmg-wetzlar` › Cron Jobs **[prüfen]**, oder auf der Kommandozeile `vercel crons ls` (https://vercel.com/docs/cli/crons). `vercel crons run <Pfad>` funktioniert nur, wenn schon eine Produktion mit dem Cron existiert.
+- **Stand:** Eingetragen (`/vercel.json`, Zeilen 12–17; `web/vercel.json`).
+- **Prüfen:** Team › Projekt › Settings › Cron Jobs zeigt **4** Einträge **[prüfen: Menüname]**, oder auf der Kommandozeile `vercel crons ls` (https://vercel.com/docs/cli/crons). `vercel crons run <Pfad>` funktioniert nur, wenn schon eine Produktion mit dem Cron existiert.
 
 ## 10. Zusammenführen auf `main`
 

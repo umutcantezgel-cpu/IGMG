@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { erstbefuellungImBau } from './erstbefuellung-regel.mjs';
 
 const wurzel = join(import.meta.dirname, '..');
 const lauf = (befehl, argumente, env = process.env) => execFileSync(befehl, argumente, { cwd: wurzel, env, stdio: 'inherit' });
@@ -17,6 +18,12 @@ lauf('node', ['scripts/lernapp-modelle.mjs']);
 if (process.env.DATABASE_URL) {
   console.log(`[bau] Datenbank vorhanden (${process.env.VERCEL_ENV ?? 'lokal'}): Migration unter Sperre, dann Bau.`);
   lauf('node', ['scripts/migriere-mit-sperre.mjs']);
+  // Erstbefüllung (E-047, Nachtrag ADR 0019 vom 28.10.2026): nur im Production-Bau und nur auf Anforderung – Seeds einmalig
+  // (Merker in `einstellung`), erstes Verwaltungskonto als Einladung mit Link im Bauprotokoll. Vor den Inhaltsständen,
+  // wie in der Bau-Datenbank (scripts/bau-datenbank.mjs): erst Seeds, dann Inhaltsdaten.
+  const erst = erstbefuellungImBau(process.env);
+  for (const h of erst.hinweise) console.warn(`[bau] Erstbefüllung: ${h}`);
+  if (erst.seed || erst.einladung || erst.fehler.length) lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/erstbefuellung.ts']);
   // Inhaltsdaten (ADR 0025): idempotent über SHA-256 – schreibt nur, wenn sich eine Quelldatei geändert hat
   lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts']);
   // Lern-App-Inhalte (PLAN §6.6): idempotent über SHA-256 je Datei und inhaltHash je Eintrag; ohne Testkurs

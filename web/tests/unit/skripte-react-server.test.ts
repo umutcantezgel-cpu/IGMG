@@ -17,6 +17,7 @@ const SKRIPTE = [
   'scripts/inhalte-import.ts',
   'scripts/inhalte-2026.ts',
   'scripts/inhalte-marktstart.ts',
+  'scripts/erstbefuellung.ts',
   'drizzle/seeds/index.ts',
   'scripts/lernapp/import.ts',
   'scripts/lernapp/pruefen.ts',

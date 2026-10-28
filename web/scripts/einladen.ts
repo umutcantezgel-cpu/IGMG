@@ -4,11 +4,11 @@
 // ohne Verwaltungsrolle führt der Link auf die Einladungsseite der Website (/einladung/<token>).
 // Der Link erscheint NUR in dieser Ausgabe; gespeichert wird nur der Hash des Tokens.
 import { parseArgs } from 'node:util';
-import { createHash, randomBytes } from 'node:crypto';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
-import { einladung, type EinladungGemeindeRolle } from '../src/lib/db/schema/rechte';
+import { type EinladungGemeindeRolle } from '../src/lib/db/schema/rechte';
 import { gemeindeRolleEnum } from '../src/lib/db/schema/typen';
+import { einladungsLink, legeEinladungAn } from '../src/lib/rechte/einladung-anlegen';
 import { ROLLEN, ORGANISATION_KUERZEL, type Rolle, type OrganisationKuerzel } from '../src/lib/rechte/matrix';
 
 const { values } = parseArgs({
@@ -60,21 +60,18 @@ async function main() {
   if (!url) fehler('DATABASE_URL fehlt.');
   const pool = new Pool({ connectionString: url });
   const db = drizzle(pool, { casing: 'snake_case' });
-  const token = randomBytes(32).toString('base64url');
   const stunden = Number(values['gueltig-stunden']);
-  await db.insert(einladung).values({
+  const { token } = await legeEinladungAn(db, {
     email: emailGeprueft,
     name: nameGeprueft,
     rollen: rollen.map((r) => (r === 'organisationsredaktion' ? { rolle: r, organisation } : { rolle: r })),
     gemeindeRollen,
-    tokenHash: createHash('sha256').update(token, 'utf8').digest('hex'),
-    laeuftAb: new Date(Date.now() + stunden * 3_600_000),
+    stunden,
     erstelltVon: 'kommandozeile',
   });
   await pool.end();
-  const basis = process.env.APP_URL ?? 'http://localhost:3000';
-  const pfad = rollen.length > 0 ? `/verwaltung/einladung/${token}` : `/einladung/${token}`;
-  console.log(values.nur_token ? token : `Einladung angelegt (gültig ${stunden} h). Link:\n${basis}${pfad}`);
+  const link = einladungsLink(process.env.APP_URL ?? 'http://localhost:3000', token, rollen.length > 0);
+  console.log(values.nur_token ? token : `Einladung angelegt (gültig ${stunden} h). Link:\n${link}`);
 }
 
 main().catch((e) => {
