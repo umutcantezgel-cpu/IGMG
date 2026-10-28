@@ -6,7 +6,8 @@ import { expect, test, type Page, type Response } from '@playwright/test';
  * Datenschutz-Technik öffentlicher Seiten (K-14, G-07, K-01, K-03). Beim Laden und bei der Bedienung (ans Ende
  * scrollen, Sprachmenü bzw. auf dem Telefon das Menü öffnen) gehen alle Anfragen an die eigene Herkunft oder sind
  * data:/blob:; bekannte Dritt-Dienste fehlen. Nach dem Besuch aller Routen gibt es keine Cookies und nur
- * Speicherschlüssel mit dem Präfix igmg-. Die Startseite sendet eine CSP mit default-src 'self' ohne Drittanbieter-Hosts.
+ * Speicherschlüssel mit dem Präfix igmg-. Die Startseite sendet eine CSP mit default-src 'self' ohne Drittanbieter-Hosts;
+ * einzige Ausnahme sind die zwei Rahmen-Hosts in frame-src für Karte und Videos nach Klick (Plan Marktstart, E-045).
  */
 
 /**
@@ -230,12 +231,26 @@ async function setCookieBefunde(dokumente: Response[]): Promise<string[]> {
   return befunde;
 }
 
+/**
+ * Einzige Ausnahme der Herkunftsregel (Plan Marktstart, ADR 0012, E-045): Karte und Videos laden erst nach einem Klick,
+ * dann in einem Rahmen genau dieser Hosts. Nur in `frame-src` und fest hier eingetragen (nicht aus header.ts importiert):
+ * Jede Erweiterung bleibt eine bewusste Änderung dieses Tests.
+ */
+const RAHMEN_AUSNAHMEN = ['https://www.openstreetmap.org', 'https://www.youtube-nocookie.com'];
+
+function istRahmenAusnahme(direktive: string, quelle: string): boolean {
+  return direktive === 'frame-src' && RAHMEN_AUSNAHMEN.includes(quelle);
+}
+
 function istDrittHost(quelle: string): boolean {
   if (quelle.startsWith("'") || ERLAUBTE_SCHEMAS.includes(quelle.toLowerCase())) return false;
   return /^(https?|wss?|ftp):/i.test(quelle) || quelle.includes('.') || quelle.includes('*');
 }
 
-/** Prüft eine CSP: default-src 'self' und kein Drittanbieter-Host in irgendeiner Direktive. Liefert die Befunde. */
+/**
+ * Prüft eine CSP: default-src 'self' und kein Drittanbieter-Host in irgendeiner Direktive – außer den Rahmen-Hosts in
+ * frame-src (`RAHMEN_AUSNAHMEN`). Liefert die Befunde.
+ */
 function pruefeCsp(richtlinie: string): string[] {
   const direktiven = richtlinie
     .split(';')
@@ -248,7 +263,7 @@ function pruefeCsp(richtlinie: string): string[] {
   else if (!standard.includes("'self'")) befunde.push("default-src ohne 'self'");
   for (const [name, ...quellen] of direktiven) {
     for (const quelle of quellen) {
-      if (istDrittHost(quelle)) befunde.push(`${name.toLowerCase()}: ${quelle}`);
+      if (istDrittHost(quelle) && !istRahmenAusnahme(name.toLowerCase(), quelle)) befunde.push(`${name.toLowerCase()}: ${quelle}`);
     }
   }
   return befunde;
@@ -429,5 +444,18 @@ test.describe('Gegenprobe der Prüfregeln', () => {
     expect(pruefeCsp("default-src 'self'; img-src 'self' https://bilder.example.test")).toEqual(['img-src: https://bilder.example.test']);
     expect(pruefeCsp("img-src 'self'")).toEqual(['default-src fehlt']);
     expect(pruefeCsp("default-src 'none'")).toEqual(["default-src ohne 'self'"]);
+  });
+
+  test('CSP-Prüfung: Rahmen-Ausnahme nur in frame-src und nur für OpenStreetMap und youtube-nocookie', () => {
+    expect(pruefeCsp("default-src 'self'; frame-src 'self' https://www.openstreetmap.org https://www.youtube-nocookie.com")).toEqual([]);
+    // Gegenfall: ein anderer Host in frame-src wird weiter gemeldet (auch youtube.com selbst und Platzhalter)
+    expect(pruefeCsp("default-src 'self'; frame-src 'self' https://www.youtube.com https://*.openstreetmap.org")).toEqual([
+      'frame-src: https://www.youtube.com',
+      'frame-src: https://*.openstreetmap.org',
+    ]);
+    // Dieselben Hosts außerhalb von frame-src bleiben Befunde
+    expect(
+      pruefeCsp("default-src 'self'; img-src 'self' https://www.openstreetmap.org; connect-src https://www.youtube-nocookie.com"),
+    ).toEqual(['img-src: https://www.openstreetmap.org', 'connect-src: https://www.youtube-nocookie.com']);
   });
 });

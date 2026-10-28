@@ -8,9 +8,10 @@ import { schema as ueberUns } from './seiteninhalte/ueber-uns';
 import { schema as vorstand } from './seiteninhalte/vorstand';
 
 import { mehrsprachig } from './mehrsprachig';
+import { HTTPS_URL } from './url';
 
-/** Externe Adresse: nur https mit Host (keine javascript:-, data:- oder http-Links in öffentlichen Seiten). */
-export const HTTPS_URL = z.url({ protocol: /^https$/, hostname: z.regexes.domain });
+/** Externe Adresse (nur https mit Host); liegt in `./url`, damit die Schemas unter `seiteninhalte/` sie ohne Zyklus nutzen. */
+export { HTTPS_URL } from './url';
 
 export { mehrsprachig, mehrsprachigOptional } from './mehrsprachig';
 

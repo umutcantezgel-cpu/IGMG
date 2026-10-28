@@ -42,7 +42,7 @@ const inhalt: z.input<typeof inhaltSchema> = {
       },
       {
         de: 'Demnach beschreibt „Millî Görüş“ („görüş“ türkisch für „Sichtweise“) eine Gemeinschaft, die ihre Sichtweise und ihren Glauben auf die Gemeinschaft Abrahams zurückführt und dem Weg des Propheten Muhammad folgt. Ihr Ziel ist es, dieser Perspektive und dem Selbstverständnis einer islamischen Gemeinschaft gerecht zu werden, und sich für das Wohlergehen der Menschen einzusetzen.',
-        tr: `"Millî Görüş" ("görüş" Türkçe'de "bakış açısı" anlamına gelir) demnach bir toplumu tanımlar ki, bakış açısını ve inancını İbrahim topluluğuna dayandırır ve Peygamber Muhammed'in yolunu takip eder. Amacı, bu perspektife ve bir İslami toplumun öz anlayışına uygun olmak ve insanların refahı için çalışmaktır.`,
+        tr: `Buna göre "Millî Görüş" ("görüş" Türkçe'de "bakış açısı" anlamına gelir) bir toplumu tanımlar ki, bakış açısını ve inancını İbrahim topluluğuna dayandırır ve Peygamber Muhammed'in yolunu takip eder. Amacı, bu perspektife ve bir İslami toplumun öz anlayışına uygun olmak ve insanların refahı için çalışmaktır.`,
         en: 'Accordingly, "Millî Görüş" ("görüş" Turkish for "perspective") describes a community that traces its perspective and faith back to the community of Abraham and follows the path of Prophet Muhammad. Its goal is to live up to this perspective and the self-understanding of an Islamic community, and to work for the welfare of people.',
       },
     ],

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   PFAD_BERECHTIGUNGEN,
+  RAHMEN_QUELLEN,
   cspLernApp,
   cspOeffentlich,
   cspVerwaltung,
@@ -44,6 +45,27 @@ describe('Berechtigungen je Pfad (ADR 0028, ADR 0029)', () => {
     for (const p of ['/anmelden', '/mein-bereich/kinder', '/tr/hesabim', '/en/my-account/teaching', '/konto/bestaetigen', '/tr/giris'])
       expect(istKontoPfad(p)).toBe(true);
     for (const p of ['/', '/kontakt', '/gebetszeiten', '/en/accounting', '/kontoauszug', '/quran/2']) expect(istKontoPfad(p)).toBe(false);
+  });
+});
+
+describe('Rahmen nur für Einbettungen nach Klick (Plan Marktstart, ADR 0012, K-14)', () => {
+  const FRAME_SRC = "frame-src 'self' https://www.openstreetmap.org https://www.youtube-nocookie.com";
+  const teil = (csp: string, name: string) => csp.split('; ').find((t) => t.startsWith(`${name} `)) ?? '';
+
+  it('frame-src genau eigener Ursprung, OpenStreetMap und youtube-nocookie – in jeder CSP; frame-ancestors bleibt none', () => {
+    expect(RAHMEN_QUELLEN).toEqual(["'self'", 'https://www.openstreetmap.org', 'https://www.youtube-nocookie.com']);
+    for (const csp of [cspOeffentlich(), cspLernApp(), cspVerwaltung('n')]) {
+      expect(teil(csp, 'frame-src')).toBe(FRAME_SRC);
+      expect(teil(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
+      expect(teil(csp, 'default-src')).toBe("default-src 'self'");
+    }
+  });
+
+  it('öffentliche Seiten senden frame-src über next.config.ts (auch nach einem Seitenwechsel gilt dieselbe CSP)', async () => {
+    for (const pfad of ['/', '/kontakt', '/tr/iletisim', '/en/contact']) {
+      const k = await kopfzeilenFuer(pfad);
+      expect(teil(k['content-security-policy'] ?? '', 'frame-src'), pfad).toBe(FRAME_SRC);
+    }
   });
 });
 

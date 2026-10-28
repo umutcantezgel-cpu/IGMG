@@ -179,3 +179,22 @@ Diese Texte bleiben im Klartext, damit Liste, Suche und Zähler funktionieren. D
   - Bild-URL im Inhalt speichern: verwaist beim Löschen, kein Alt-Text.
   - `next/image` als Client-Komponente: zusätzliches JavaScript.
   - Eine Such-Schnittstelle für Medien: mehr Angriffsfläche ohne Bedarf.
+
+## Marktstart mit IGMG-Daten (Plan vom 27./28.10.2026)
+
+**E-044 · 2026-10-27/28 · Nutzer · Marktstart mit IGMG-Daten**
+Grundlage: Crawls von igmg.org und igmgreisen.com (Stand 13.10.2026) und der freigegebene Plan. Verbindlich:
+1. **Zustimmung der IGMG liegt vor.** Texte schreibt der Lauf selbst, abgeleitet aus den IGMG-Quellen und für Suche und Antwortmaschinen formuliert (kein Doppel-Content, keine wörtlichen Übernahmen). Fakten wie Zahlen und Kontakt werden mit Quelle und Stand übernommen.
+2. **„Aus dem Dachverband“** zeigt Freitagspredigt (Hutba) und Gemeinschaftsthemen, **keine politischen Pressemitteilungen**.
+3. **Der IGMG-Gebetskalender ist die offizielle Quelle** der Gebetszeiten (Wetzlar, ID 20238). Gewünscht ist ein automatischer Abgleich; die eigene Berechnung weicht heute bis zu 4–6 Minuten ab. Die interne AJAX-Schnittstelle von igmg.org wird nicht umgangen.
+4. **Gründungsjahr der Gemeinde: 1978.** Beleg: IGMG-Artikel vom 07.04.2008 zur 30-Jahr-Feier (Regionalverband Hessen); der Artikel vom 17.10.2011 nennt die „Fatih Moschee Wetzlar“.
+5. **Religiöse Erklärtexte** (Hadsch/Umra, Feste und Kalender, Zakat/Fitra/Kurban, Freitagsgebet) schreibt der Agent. Sie gehen sofort live, deutlich gekennzeichnet als „Entwurf zur Prüfung“; der Imam gibt sie später über das bestehende Freigabeverfahren frei (Fortschreibung von ADR 0030 Nr. 4 für die Website, ADR 0047). Koranverse, Hadithe und Bittgebete schreibt der Agent weiterhin nie (G-06).
+6. **Indexierung:** `noindex`, solange der Konzept-Hinweis „Daten fiktiv“ aktiv ist; danach wird die Seite automatisch indexierbar.
+7. **Vor dem Marktstart wird die Datenbank angeschlossen** (GO-LIVE G1). Damit laufen Verwaltung, Gebetszeiten-Abgleich und Hutba-Pflege live.
+
+**E-045 · 2026-10-28 · Orchestrator (mit Plan freigegeben, E-044) · KERN 1.2**
+- K-03: um die öffentlichen Bestandsrouten ergänzt, die in `web/src/i18n/routing.ts` stehen, aber im Kern fehlten (`/meldung`, `/barrierefreiheit`, `/quellen`, `/quran/cuz/[nr]`, `/quran/tajwid`, `/hadith` mit Bukhari und Auswahl, `/lernen`, `/elifbe` mit Buchstaben, Lektion und Üben, `/kalender`, `/ramadan`, `/hatim`, `/hatim/[id]`, `/spenden`, `/newsletter`), und um die neue Seite `/hadsch-umra` (tr `/hac-umre`, en `/hajj-umrah`).
+- K-08 (a): verbindlich sind Tabellen aus dem Import oder aus dem Abgleich mit dem IGMG-Gebetskalender (offizielle Quelle, ADR 0048). (b) bleibt als Ersatz mit Hinweis „berechnet“.
+- K-16: JSON-LD zusätzlich mit WebSite und FAQPage; Organization trägt den Dachverband (`parentOrganization`) und den Regionalverband (`memberOf`).
+- G-10: Testanpassungen im Marktstart-Lauf, die Abgenommenes berühren (z. B. CSP `frame-src`, Startseiten-Ordnung, Name der Moschee im JSON-LD, Routentabellen), laufen unter dieser Entscheidung.
+Grund: Der Kern beschrieb die Routen seit dem Lauf „Gemeinde-Plattform“ nicht mehr vollständig; E-044 Nr. 3 macht den IGMG-Gebetskalender zur verbindlichen Quelle.

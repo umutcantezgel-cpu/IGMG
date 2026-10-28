@@ -46,6 +46,9 @@ import chatFenster from './chat-fenster.json';
 import unterricht from './unterricht.json';
 import kinder from './kinder.json';
 import seiten from './seiten.json';
+// Marktstart mit IGMG-Daten (E-044): Netzwerk-Verweise und Einbettungen nach Klick
+import dachverband from './dachverband.json';
+import einbettung from './einbettung.json';
 type Teil = Record<string, unknown>;
 export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 
@@ -92,4 +95,6 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   unterricht,
   kinder,
   seiten,
+  dachverband,
+  einbettung,
 };
