@@ -71,8 +71,8 @@
 10. **Prüfung:** Unit `jsonld.test.ts` (Graph, `@id`-Verweise, Platzhalter, Beispiel-E-Mail, FAQ, Maskierung),
     `sitemap.test.ts`, `seo-metadaten.test.ts` (Längen, Schranke, `/llms.txt`); E2E `tests/e2e/seo.spec.ts` ruft jede
     Sitemap-Adresse ohne Browser ab (Titel, Beschreibung, canonical, hreflang, eine h1, JSON-LD, keine fremden
-    img/script/iframe, `noindex` passend zur an `/llms.txt` erkannten Schranke) – auch gegen live über `E2E_BASIS`. Eine
-    Linkprüfung der externen Ziele (`pnpm links:pruefen`) folgt in Welle 3.
+    img/script/iframe, `noindex` passend zur an `/llms.txt` erkannten Schranke) – auch gegen live über `E2E_BASIS`. Die
+    Linkprüfung der externen Ziele läuft getrennt vom Bau: `pnpm links:pruefen [basis] [--quellen]` (Welle 3, BETRIEB § 4d).
 
 ## Folgen
 

@@ -93,7 +93,7 @@
   unverändert grün, weil die Integrationstests mit ausgeschaltetem Schalter laufen.
 - Menschen: Der Imam prüft die vier Entwürfe (MENSCHEN M-101); die türkischen und englischen Texte prüfen Muttersprachler
   (M-102); der Vorstand entscheidet, ob die Vorschau beim öffentlichen Start an bleibt.
-- Offen: Der Stand-Kasten auf `/quellen` sagt noch, religiöse Inhalte erschienen erst nach der Prüfung; er braucht einen
-  Ausnahme-Satz wie für die Lern-App (Paket P7 bzw. Welle 3).
+- Erledigt (P7): Der Stand-Kasten auf `/quellen` nennt die Ausnahme für die Website (`quellen.standVorschauWebsite`), wie
+  für die Lern-App.
 - Risiko: ungeprüfter religiöser Text ist öffentlich. Abfederung: Quellenbindung, Wächter, deutliche Kennzeichnung,
   `noindex`, „Zurückweisen“ je Text und Abschalten für alle.
