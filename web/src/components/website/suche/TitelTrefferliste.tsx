@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { EntwurfMarke } from '@/components/website/wissen/EntwurfMarke';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { TITEL_ARTEN, type TitelArt, type TitelTreffer } from '@/lib/suche/titelindex';
@@ -37,10 +38,17 @@ function adresse(z: TitelTreffer, sprache: Locale): string {
  * Treffer der Titel-Suche ohne Datenbank (`sucheFuerSeite`, Modus „titel“), gruppiert wie die Trefferliste der
  * Volltextsuche: Überschrift mit Zahl, Karten im Kartenraster, die ganze Karte klickbar. Ohne Ausschnitt (der Index
  * kennt nur Titel); Suren zeigen ihre Nummer und den arabischen Namen aus den Quelldaten, Hadith-Bücher Sammlung und Nummer.
+ * Wissensthemen „zur Prüfung“ (Schalter `website_wissen_vorschau`, ADR 0047) tragen die Marke „Entwurf“ wie in der
+ * Trefferliste.
  */
 export async function TitelTrefferliste({ treffer }: { treffer: TitelTreffer[] }) {
   const sprache = (await getLocale()) as Locale;
-  const [t, tq, th] = await Promise.all([getTranslations('suche'), getTranslations('quranSeite'), getTranslations('hadith')]);
+  const [t, tq, th, tw] = await Promise.all([
+    getTranslations('suche'),
+    getTranslations('quranSeite'),
+    getTranslations('hadith'),
+    getTranslations('wissen.entwurf'),
+  ]);
   const gruppen = TITEL_ARTEN.map((art) => ({ art, eintraege: treffer.filter((z) => z.art === art) })).filter(
     (g) => g.eintraege.length > 0,
   );
@@ -76,6 +84,7 @@ export async function TitelTrefferliste({ treffer }: { treffer: TitelTreffer[] }
                         {z.titel}
                       </NextLink>
                     </h4>
+                    {z.entwurf ? <EntwurfMarke text={tw('marke')} /> : null}
                     {unter || z.nebentitel ? (
                       <p className="flex flex-wrap items-baseline justify-between gap-x-3 text-16 text-tinte-2">
                         {unter ? <span>{unter}</span> : null}

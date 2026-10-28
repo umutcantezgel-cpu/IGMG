@@ -35,7 +35,7 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
           {e.lizenz.name}
         </a>
       ) : (
-        t(`eintraege.${e.id}.lizenz`)
+        t(e.zustimmung ? 'dachverband.lizenz' : `eintraege.${e.id}.lizenz`)
       ),
     },
     { label: t('felder.fassung'), wert: t(`eintraege.${e.id}.fassung`) },
@@ -114,11 +114,16 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
  * mit Namensnennung, Bildkarten, Spracherkennung mit den Drittlizenzen von ONNX Runtime (Volltext vom eigenen Ursprung).
  * Sprachausgabe: vorgesehene Stimmen mit Herkunftskette; Sprachen ohne freigegebene Stimme aus `audio/stimmen.ts` (Stufe C).
  * Schriften mit dem OFL-Volltext, Bibliotheken samt libvips hinter sharp (Stufe C, Z-L17). Mit `lernapp_wissen_vorschau`
- * (L3-E22) nennt der Stand-Kasten die Ausnahme: der Wissenskurs ist als ungeprüfter Entwurf zur Prüfung sichtbar.
+ * (L3-E22) nennt der Stand-Kasten die Ausnahme: der Wissenskurs ist als ungeprüfter Entwurf zur Prüfung sichtbar; ebenso mit
+ * `website_wissen_vorschau` (ADR 0047) die gekennzeichneten Erklärtexte unter „Wissen“. Abschnitt „dachverband“ (Marktstart
+ * P7, ADR 0046): Quellen zum Dachverband, übernommen mit Zustimmung der IGMG.
  */
 export default async function QuellenSeite() {
   const t = await getTranslations('quellen');
-  const wissenVorschau = await funktionAn('lernapp_wissen_vorschau');
+  const [wissenVorschau, websiteVorschau] = await Promise.all([
+    funktionAn('lernapp_wissen_vorschau'),
+    funktionAn('website_wissen_vorschau'),
+  ]);
   // Sprachen der Lern-App ohne freigegebene Stimme (keine Stimme oder Hörabnahme LM-06 offen): dort „Audio folgt“ (Z-L21)
   const ohneStimme = SPRACHEN.filter((x) => !freigegebeneStimme(x));
   const aufzaehlung = new Intl.ListFormat(await getLocale(), { type: 'conjunction' });
@@ -137,6 +142,7 @@ export default async function QuellenSeite() {
               <p className="text-pretty text-tinte-2">
                 {t('standText')}
                 {wissenVorschau ? <span data-wissen-vorschau="quellen"> {t('standVorschau')}</span> : null}
+                {websiteVorschau ? <span data-wissen-vorschau="website"> {t('standVorschauWebsite')}</span> : null}
               </p>
             </div>
           </div>

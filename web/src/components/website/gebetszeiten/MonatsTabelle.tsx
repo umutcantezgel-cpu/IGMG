@@ -8,6 +8,8 @@ export type MonatsTabelleTexte = {
   titel: string;
   untertitel: string;
   berechnet: string;
+  /** Marke je gerechnetem Tag in einem gemischten Monat („vorläufig“, ADR 0048) */
+  vorlaeufig: string;
   ramadan: string;
   datum: string;
   namen: Record<Gebet, string>;
@@ -17,9 +19,12 @@ export type MonatsTabelleTexte = {
 
 /**
  * Monatsübersicht eines Monats (Tab Monatlich, Blatt S02): jeder Tag des Monats, Ramadan-Tage mit Textmarke,
- * Hinweis „berechnet“ solange die Quelle nicht bestätigt ist. Die Tabelle hat eine Beschriftung (caption).
+ * Hinweis „berechnet (vorläufig)“ solange die Quelle nicht bestätigt ist. Mischt ein Monat Tabellen-Tage (IGMG oder
+ * Import) mit gerechneten Tagen, trägt jeder gerechnete Tag die Marke „vorläufig“ (ADR 0048). Die Tabelle hat eine
+ * Beschriftung (caption).
  */
 export function MonatsTabelle({ monat, texte }: { monat: GebetszeitenMonat; texte: MonatsTabelleTexte }) {
+  const jeTag = monat.quelle === 'gemischt' && texte.hinweis;
   return (
     <section className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -54,6 +59,9 @@ export function MonatsTabelle({ monat, texte }: { monat: GebetszeitenMonat; text
                     {tagKurz(tag.datum)}
                     {tag.ramadan ? (
                       <span className="rounded-pill bg-gruen-700 px-2 py-0.5 text-16 font-bold text-weiss">{texte.ramadan}</span>
+                    ) : null}
+                    {jeTag && tag.quelle === 'berechnet' ? (
+                      <span className="rounded-pill bg-warnung-toenung px-2 py-0.5 text-16 font-bold text-warnung">{texte.vorlaeufig}</span>
                     ) : null}
                   </span>
                 </th>

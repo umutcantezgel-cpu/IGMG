@@ -31,7 +31,8 @@ const impressum: z.input<typeof impressumSchema> = {
   ],
 };
 
-const datenschutz: z.input<typeof datenschutzSchema> = {
+/** Entwurf „datenschutz“; auch Zielstand der Stand-Migration „marktstart“ (nur Beispielinhalte, `stand-marktstart.ts`). */
+export const DATENSCHUTZ_BEISPIEL: z.input<typeof datenschutzSchema> = {
   datenschutzbeauftragte: '[Datenschutzbeauftragte/r – Angaben von der Gemeinde]',
   daten: [
     {
@@ -187,7 +188,7 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     {
       art: 'absatz',
       text: {
-        de: 'Die öffentlichen Seiten laden keine Inhalte von Dritten. Schriften, Bilder und Skripte stammen von dieser Website; auch der Bot-Schutz (ALTCHA) läuft auf dem eigenen Server ohne Cookies.',
+        de: 'Ohne Ihren Klick laden die öffentlichen Seiten keine Inhalte von Dritten. Schriften, Bilder und Skripte stammen von dieser Website; auch der Bot-Schutz (ALTCHA) läuft auf dem eigenen Server ohne Cookies. Was erst nach einem Klick geladen wird, beschreiben die Absätze „Karte“ und „Videos“.',
       },
     },
     {
@@ -198,11 +199,24 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     },
     {
       art: 'absatz',
-      text: { de: '[Hinweis für die Prüfung: Die Karte ist in dieser Fassung noch nicht eingebaut. Die Angabe gilt erst mit dem Einbau.]' },
+      text: {
+        de: 'Videos (Entwurf): Auf einzelnen Seiten, etwa „Hadsch & Umra“, lassen sich Videos von YouTube ansehen. Ein Video lädt erst, wenn Sie auf „Video laden“ klicken, und zwar über youtube-nocookie.com, eine Adresse von Google (YouTube) für eingebettete Videos. Erst mit diesem Klick übermittelt Ihr Browser Ihre IP-Adresse und die Herkunftsseite an Google; als Herkunft geht nur die Adresse dieser Website mit, ohne den Pfad der Unterseite. Vor dem Klick zeigt die Seite kein Vorschaubild von YouTube und lädt nichts von Google. Nach dem Klick kann YouTube (Google) Daten in Ihrem Browser speichern, etwa Cookies oder Einträge im lokalen Speicher, und Angaben dazu verarbeiten, wie Sie das Video nutzen. Was Google nach dem Klick verarbeitet und speichert: [Angaben zu Anbieter, Zweck und Speicherdauer – Rechtsberatung].',
+      },
+    },
+    {
+      art: 'absatz',
+      text: {
+        de: '[Hinweis für die Prüfung (ENTWURF, M-111): Videos und Karte laden seit dem Marktstart (Oktober 2026) nur nach einem Klick, über youtube-nocookie.com bzw. openstreetmap.org (die Karte ohne Herkunftsseite). Die Karte erscheint erst, wenn die Koordinaten bestätigt sind (M-010). Rechtsgrundlage, Anbieterangaben, die Speicherung im Browser nach dem Klick und Drittlandübermittlung sind vor dem Einbinden von Videos zu prüfen (G-08).]',
+      },
     },
   ],
   browser: [
-    { art: 'absatz', text: { de: 'Auf den öffentlichen Seiten setzt die Website keine Cookies.' } },
+    {
+      art: 'absatz',
+      text: {
+        de: 'Auf den öffentlichen Seiten setzt die Website selbst keine Cookies. Erst wenn Sie ein Video laden, kann YouTube (Google) Cookies setzen oder Daten im lokalen Speicher Ihres Browsers ablegen (Absatz „Videos“ unter „Empfänger und Dienste Dritter“).',
+      },
+    },
     {
       art: 'absatz',
       text: {
@@ -242,7 +256,7 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
 const QUELLE_IMPRESSUM =
   'Blatt S23 (ABSCHNITTE: Gliederung Impressum; G-05, G-08); design/Footer.dc.html:29–31 (Platzhalter statt Beispielwert)';
 
-const QUELLE_DATENSCHUTZ =
+export const DATENSCHUTZ_QUELLE =
   'Blatt S23 (ABSCHNITTE: Gliederung Datenschutz; DATEN: Bestandsfelder je Formular, Schüler-Voranmeldung-Beschriftungen gegengeprüft); ' +
   'Technik: src/lib/validierung/formulare/veranstaltungsanmeldung.ts, src/lib/formulare/verarbeiten.ts, src/lib/krypto/index.ts, ' +
   'src/lib/validierung/ratenbegrenzung.ts, src/lib/validierung/altcha.ts, src/lib/mail/vorlagen/index.tsx, ' +
@@ -253,7 +267,7 @@ const QUELLE_DATENSCHUTZ =
 export const seed: BereichsSeed = async (db) => {
   const zeilen = [
     { bereich: 'impressum', istBeispiel: true, quelle: QUELLE_IMPRESSUM, inhalt: impressumSchema.parse(impressum) },
-    { bereich: 'datenschutz', istBeispiel: true, quelle: QUELLE_DATENSCHUTZ, inhalt: datenschutzSchema.parse(datenschutz) },
+    { bereich: 'datenschutz', istBeispiel: true, quelle: DATENSCHUTZ_QUELLE, inhalt: datenschutzSchema.parse(DATENSCHUTZ_BEISPIEL) },
   ];
   const r = await db
     .insert(schema.seiteninhalt)

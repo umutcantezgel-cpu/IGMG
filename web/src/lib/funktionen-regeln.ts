@@ -16,6 +16,8 @@ export const FUNKTIONEN = [
   'newsletter',
   'hadith_gesamt',
   'ramadan_vorschau',
+  // Marktstart IGMG (ADR 0047): religiöse Erklärtexte der Website als gekennzeichneter „Entwurf zur Prüfung“
+  'website_wissen_vorschau',
   // Lauf Lern-App (ADR 0035, KERN 4.0 §6): ausgeschaltet heißt 404 und die Links verschwinden
   'lernapp',
   'lernapp_ungeprueft',
@@ -42,6 +44,10 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  * Personendaten): Entscheidung des Nutzers vom 27.10.2026 (`_lernapp/ENTSCHEIDUNGEN.md` L3-E22). Vor dem öffentlichen Start
  * ausschalten (`FUNKTION_LERNAPP_WISSEN_VORSCHAU=aus`) – dann gilt wieder allein die Sperre bis zu zwei Freigaben; das
  * Startklar-Cockpit warnt, solange sie in der Produktion an ist.
+ * `website_wissen_vorschau` (Wissensthemen der Website „zur Prüfung“ als deutlich gekennzeichneter „Entwurf zur Prüfung –
+ * noch nicht vom Imam geprüft“, `noindex`, ohne Personendaten, ohne Voraussetzung): Entscheidung des Nutzers vom 27./28.10.2026
+ * (E-044 Nr. 5, ADR 0047) – in allen Betriebsarten an. Abschalten mit `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus` (Umgebung) oder
+ * der Einstellung „funktionen“; dann ist wieder allein „geprüft“ öffentlich (ADR 0030 Nr. 2).
  * `lernapp_sprechen` (Spracherkennung im Browser für de/tr, ohne Personendaten: die Aufnahme bleibt im Arbeitsspeicher des
  * Geräts, das Modell lädt erst auf Wunsch): Entscheidung des Nutzers vom 27.10.2026 (`_lernapp/ENTSCHEIDUNGEN.md` L3-E23).
  * Den Schutz der Modelldateien vor Massenabrufen (S-L3 N-4) setzt der Betreiber als Ratenregel der Vercel-Firewall
@@ -50,6 +56,7 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  */
 export const IN_PRODUKTION_AN: readonly Funktion[] = [
   'hadith_gesamt',
+  'website_wissen_vorschau',
   'lernapp',
   'lernapp_ungeprueft',
   'lernapp_wissen_vorschau',

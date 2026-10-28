@@ -44,7 +44,8 @@ export type AnzeigeFolie = FolieZeitplan &
       }
   );
 
-export type AnzeigeDaten = { folien: AnzeigeFolie[]; einstellung: AnzeigeEinstellungen };
+/** `gebetszeitenStand`: Kennung der Gebetszeiten (ADR 0048) – ändert sie sich, lädt die Anzeige neu (Korrektur am selben Tag). */
+export type AnzeigeDaten = { folien: AnzeigeFolie[]; einstellung: AnzeigeEinstellungen; gebetszeitenStand?: string };
 
 /** Mehrsprachiger Text in der Anzeigesprache, sonst Deutsch (sichtbarer Rückfall, `lang` setzt der Aufrufer). */
 export function textIn(m: Mehrsprachig | null | undefined, sprache: AnzeigeSprache): { text: string; sprache: AnzeigeSprache } | null {

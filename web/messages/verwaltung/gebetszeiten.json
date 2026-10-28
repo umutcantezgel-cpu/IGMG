@@ -1,7 +1,7 @@
 {
   "gebetszeiten": {
     "titel": "Gebetszeiten",
-    "untertitel": "Woher die Zeiten auf der Website und der Moschee-Anzeige stammen: verbindliche Tabelle der Gemeinde oder vorläufige Berechnung.",
+    "untertitel": "Woher die Zeiten auf der Website und der Moschee-Anzeige stammen: IGMG-Gebetskalender, Tabelle der Gemeinde oder vorläufige Berechnung.",
     "oeffentlich": "Öffentliche Seite ansehen",
     "vollbild": "Moschee-Anzeige ansehen",
     "nurLesen": "Sie können die Einstellungen nur ansehen.",
@@ -19,25 +19,30 @@
       "quelleBerechnung": "Aktive Quelle: Berechnung",
       "bestaetigt": "Von der Gemeinde bestätigt – der Hinweis „berechnet“ entfällt.",
       "unbestaetigt": "Nicht bestätigt – öffentlich steht der Hinweis „berechnet“.",
-      "abdeckung": "Importierte Zeiten liegen bis {datum} vor.",
-      "keineImporte": "Es liegen keine importierten Zeiten ab heute vor.",
-      "luecke": "Achtung: Für die nächsten 30 Tage fehlen importierte Zeiten. Fehlende Tage werden berechnet angezeigt."
+      "abdeckung": "Zeiten aus Tabellen (IGMG-Kalender oder Gemeinde) liegen bis {datum} vor.",
+      "keineImporte": "Ab heute liegen keine Zeiten aus Tabellen vor.",
+      "luecke": "Achtung: Für die nächsten 30 Tage fehlen Zeiten aus Tabellen. Fehlende Tage werden als „berechnet (vorläufig)“ angezeigt.",
+      "quelleIgmg": "Aktive Quelle: IGMG-Gebetskalender (Abgleich oder eingefügte Tabelle)",
+      "rueckfallNaeherung": "Tage ohne Tabelle: Näherung „IGMG (angenähert)“",
+      "rueckfallMethode": "Tage ohne Tabelle: eingestellte Methode"
     },
     "quelle": {
       "titel": "Quelle",
       "legende": "Welche Zeiten gelten?",
-      "import": "Tabellen-Import",
-      "importText": "Verbindliche Zeiten aus einer Tabelle der Gemeinde (CSV oder JSON).",
+      "import": "Tabelle der Gemeinde",
+      "importText": "Verbindliche Zeiten aus einer Tabelle der Gemeinde (CSV oder JSON). IGMG-Zeiten gelten für Tage ohne eigene Tabelle.",
       "berechnung": "Berechnung",
-      "berechnungText": "Vorläufig berechnet nach den Einstellungen unten. Öffentlich als „berechnet“ gekennzeichnet, solange nicht bestätigt.",
+      "berechnungText": "Nur gerechnet – Tabellen bleiben unberücksichtigt. Öffentlich als „berechnet (vorläufig)“ gekennzeichnet, solange nicht bestätigt.",
       "bestaetigt": "Die Gemeinde hat diese Quelle bestätigt",
       "bestaetigtHinweis": "Nur setzen, wenn die Verantwortlichen der Gemeinde die Zeiten geprüft und freigegeben haben (G-06).",
       "speichern": "Quelle speichern",
-      "gespeichert": "Die Quelle wurde gespeichert. Die öffentlichen Seiten zeigen sie sofort."
+      "gespeichert": "Die Quelle wurde gespeichert. Die öffentlichen Seiten zeigen sie sofort.",
+      "igmg": "IGMG-Gebetskalender",
+      "igmgText": "Offizielle Zeiten der IGMG aus dem Abgleich oder aus einer eingefügten Tabelle. Tabellen der Gemeinde haben Vorrang."
     },
     "berechnung": {
       "titel": "Berechnung",
-      "text": "Gilt, wenn die Berechnung aktiv ist, und für Tage ohne importierte Zeiten. Alle Werte bitte mit der Gemeinde abstimmen (M-017).",
+      "text": "Gilt für Tage ohne Tabelle und wenn nur gerechnet wird. Alle Werte bitte mit der Gemeinde abstimmen (M-017).",
       "methode": "Berechnungsmethode",
       "madhab": "Asr-Berechnung",
       "madhabShafi": "Shafi (erste Schattenlänge)",
@@ -69,7 +74,12 @@
         "Qatar": "Katar",
         "Singapore": "Singapur",
         "Tehran": "Teheran"
-      }
+      },
+      "rueckfall": "Rechnung für Tage ohne Tabelle",
+      "rueckfallNaeherung": "IGMG (angenähert)",
+      "rueckfallNaeherungText": "Winkel und Zuschläge abgestimmt auf den IGMG-Kalender (Standard). Die Methode unten gilt dann nicht.",
+      "rueckfallMethode": "Methode",
+      "rueckfallMethodeText": "Berechnungsmethode, Asr-Berechnung, Regel für hohe Breiten und Anpassungen wie unten eingestellt."
     },
     "import": {
       "titel": "Tabellen-Import",
@@ -81,18 +91,37 @@
       "fehlerDatei": "Bitte wählen Sie eine CSV- oder JSON-Datei bis 200 kB.",
       "fehlerArt": {
         "format": "Format oder Spalten stimmen nicht",
-        "reihenfolge": "Datum nicht aufsteigend",
+        "reihenfolge": "Zeiten nicht in der richtigen Reihenfolge",
         "doppelt": "Datum doppelt",
         "luecke": "Ein Tag fehlt",
         "leer": "Keine Zeilen gefunden",
         "zuViele": "Mehr als 800 Zeilen",
-        "datum": "Ungültiges Datum"
+        "datum": "Ungültiges Datum",
+        "stadt": "Die Tabelle gehört zu einem anderen Ort als dem der Gemeinde"
       },
       "pruefungOk": "Die Datei ist gültig: {anzahl} Tage vom {von} bis {bis}. Bitte die ersten Tage prüfen.",
       "alsQuelle": "Danach den Tabellen-Import als aktive Quelle verwenden",
       "uebernehmen": "Import übernehmen",
       "abbrechen": "Andere Datei wählen",
-      "uebernommen": "{anzahl} Tage wurden übernommen. Vorhandene Tage im Zeitraum wurden ersetzt."
+      "uebernommen": "{anzahl} Tage wurden übernommen. Vorhandene Tage im Zeitraum wurden ersetzt.",
+      "fehlerTabelle": "Bitte fügen Sie die kopierte Tabelle ein (höchstens 200 kB).",
+      "herkunftIgmg": "Herkunft: IGMG-Gebetskalender",
+      "herkunftOrt": "Ort laut Tabelle: {ort}",
+      "tabelleOk": "Die Tabelle ist gültig: {anzahl} Tage vom {von} bis {bis}. Bitte die ersten Tage prüfen.",
+      "alsQuelleIgmg": "Danach den IGMG-Gebetskalender als aktive Quelle verwenden",
+      "einfuegen": {
+        "titel": "Tabelle aus dem IGMG-Gebetskalender einfügen",
+        "text": "So übernehmen Sie einen Monat von igmg.org, solange es keinen automatischen Abgleich gibt. Die Tage werden als IGMG-Zeiten gespeichert; öffentlich steht „Quelle: IGMG-Gebetskalender“ mit dem heutigen Stand.",
+        "schritt1": "IGMG-Gebetskalender für Wetzlar öffnen (Link unten), Jahr und Monat wählen.",
+        "schritt2": "Die Tabelle mit der Maus markieren – vom Ortsnamen „Wetzlar (DE)“ bis zur letzten Zeile – und kopieren.",
+        "schritt3": "Hier einfügen und „Tabelle prüfen“ wählen. Kopf und Ortsname dürfen mitkopiert werden.",
+        "schritt4": "Die ersten Tage mit der Seite der IGMG vergleichen und übernehmen.",
+        "link": "IGMG-Gebetskalender für Wetzlar öffnen",
+        "linkKontext": "externe Seite der IGMG",
+        "feld": "Kopierte Tabelle",
+        "feldHinweis": "Je Zeile ein Datum (TT.MM.JJJJ) und sechs Zeiten: İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı.",
+        "pruefen": "Tabelle prüfen"
+      }
     },
     "importe": {
       "titel": "Bisherige Importe",
@@ -114,7 +143,112 @@
     "fehler": {
       "pruefen": "Bitte prüfen Sie die markierten Felder.",
       "ungueltig": "Dieser Wert ist nicht gültig.",
-      "keinRecht": "Dafür fehlt Ihnen die Berechtigung."
+      "keinRecht": "Dafür fehlt Ihnen die Berechtigung.",
+      "tabelle": "Bitte fügen Sie die kopierte Tabelle ein (höchstens 200 kB).",
+      "zuOft": "Bitte warten Sie 5 Minuten bis zum nächsten Abgleich.",
+      "veraltet": "Diese Lieferung ist nicht mehr offen.",
+      "zuWenigeTage": "Für einen Vorschlag braucht es mindestens 14 Tage aus dem IGMG-Kalender in der Datenbank."
+    },
+    "abgleich": {
+      "titel": "IGMG-Abgleich",
+      "text": "Holt die Zeiten täglich aus dem offiziellen Zugang der IGMG, prüft sie und übernimmt Änderungen. Tabellen der Gemeinde werden nie überschrieben.",
+      "nichtEingerichtet": "Kein offizieller IGMG-Zugang eingerichtet (GEBETSZEITEN_IGMG_URL) und keine Jahresdatei vorhanden. Der Abgleich tut nichts; es gelten eingefügte Tabellen und die Näherung. Den Zugang erbittet der Vorstand bei der IGMG (M-100).",
+      "feed": "Offizieller Zugang der IGMG ist eingerichtet.",
+      "datei": "Eine Jahresdatei der IGMG liegt vor.",
+      "aus": "Der tägliche Abgleich ist ausgeschaltet.",
+      "an": "Der tägliche Abgleich ist eingeschaltet (20 Uhr UTC).",
+      "letzterErfolg": "Letzter erfolgreicher Abgleich: {zeit}",
+      "keinErfolg": "Noch kein erfolgreicher Abgleich.",
+      "laeufeTitel": "Letzte Läufe",
+      "keineLaeufe": "Noch keine Läufe.",
+      "spalten": {
+        "zeit": "Zeitpunkt",
+        "status": "Ergebnis",
+        "tage": "Geprüft / neu / geändert",
+        "konflikte": "Konflikte",
+        "abweichung": "Größte Abweichung"
+      },
+      "minuten": "{anzahl} Min.",
+      "status": {
+        "ok": "übernommen",
+        "unveraendert": "unverändert",
+        "auffaellig": "auffällig – wartet auf Freigabe",
+        "freigegeben": "freigegeben",
+        "fehler": "Fehler",
+        "nicht_eingerichtet": "nicht eingerichtet",
+        "inaktiv": "ausgeschaltet",
+        "uebersprungen": "übersprungen (läuft bereits)"
+      },
+      "fehlerCode": {
+        "nicht_eingerichtet": "Zugang nicht eingerichtet",
+        "adresse": "Adresse des Zugangs ungültig",
+        "netz": "Netzwerkfehler",
+        "zeitlimit": "Zeitlimit überschritten",
+        "status": "Antwort mit Fehlerstatus",
+        "zu_gross": "Antwort größer als 1 MB",
+        "inhaltstyp": "Antwort weder JSON noch CSV",
+        "format": "Format der Lieferung unbekannt",
+        "pruefsumme": "Prüfsumme der Jahresdatei stimmt nicht",
+        "plausibilitaet": "Lieferung unplausibel (Reihenfolge, Sprünge, Sommerzeit oder Ort)",
+        "unbekannt": "Unbekannter Fehler"
+      },
+      "jetzt": "Jetzt abgleichen",
+      "ergebnis": "{status}: {geprueft} Tage geprüft, {neu} neu, {geaendert} geändert, {konflikte} Konflikte.",
+      "zuOft": "Bitte warten Sie 5 Minuten bis zum nächsten Abgleich.",
+      "einstellungen": "Einstellungen des Abgleichs",
+      "aktiv": "Täglich automatisch abgleichen",
+      "stadtId": "Stadt-ID im IGMG-Kalender",
+      "stadtIdHinweis": "Wetzlar hat die ID 20238.",
+      "stadtName": "Ort",
+      "tageVoraus": "Tage im Voraus",
+      "freigabe": "Freigabe",
+      "freigabeAutomatisch": "Plausible Lieferungen sofort übernehmen",
+      "freigabePruefen": "Jede Änderung erst nach Freigabe übernehmen",
+      "speichern": "Abgleich speichern",
+      "gespeichert": "Die Einstellungen des Abgleichs wurden gespeichert.",
+      "ausstehendTitel": "Lieferung wartet auf Freigabe",
+      "ausstehendText": "{tage} Tage wurden geliefert, aber noch nicht übernommen. Auffällige Abweichungen zur Näherung:",
+      "abweichung": "{datum}, {gebet}: {minuten} Min.",
+      "freigeben": "Lieferung übernehmen",
+      "freigegeben": "{anzahl} Tage wurden übernommen.",
+      "veraltet": "Diese Lieferung ist nicht mehr offen.",
+      "konflikteTitel": "Abweichungen zum Import der Gemeinde",
+      "konflikteText": "An diesen Tagen weicht der IGMG-Kalender von der Tabelle der Gemeinde ab. Es gilt weiter die Tabelle der Gemeinde.",
+      "konflikteUebernehmen": "IGMG-Werte für diese Tage übernehmen",
+      "konflikteHinweis": "Alternativ unten unter „Bisherige Importe“ den Import entfernen.",
+      "konflikteUebernommen": "Für {anzahl} Tage gelten jetzt die IGMG-Werte."
+    },
+    "naeherung": {
+      "titel": "Näherung „IGMG (angenähert)“",
+      "text": "Für Tage ohne Tabelle rechnet die Website mit Winkeln und Zuschlägen, die auf den IGMG-Kalender abgestimmt sind. Mit IGMG-Tagen in der Datenbank lässt sich die Näherung neu kalibrieren; gespeichert wird erst nach Ihrer Übernahme.",
+      "werte": "İmsak {fajr}°, Yatsı {isha}°; Zuschläge in Sekunden: {temkin}",
+      "kalibriert": "Kalibriert am {am} an: {basis} ({tage} Tage, höchstens {fehler} Min. Abweichung).",
+      "vorschlagen": "Vorschlag berechnen",
+      "zuWenigeTage": "Für einen Vorschlag braucht es mindestens 14 Tage aus dem IGMG-Kalender in der Datenbank.",
+      "vorschlagTitel": "Vorschlag aus {tage} IGMG-Tagen (nicht gespeichert)",
+      "gueteSpalte": "Gebet",
+      "exakt": "Tage exakt",
+      "max": "Größte Abweichung",
+      "warnung": {
+        "einMonat": "Nur ein Monat: Die Winkel für İmsak und Yatsı lassen sich damit nicht sicher bestimmen.",
+        "ohneSommer": "Ohne Daten aus Mai bis August: Im Sommer bleibt die Näherung unsicher.",
+        "zuWenige": "Sehr wenige Tage: Der Vorschlag ist nur ein grober Anhalt."
+      },
+      "uebernehmen": "Vorschlag übernehmen",
+      "uebernommen": "Die Näherung wurde gespeichert und gilt für alle Tage ohne Tabelle.",
+      "vorschauTitel": "Vorschau der nächsten 7 Tage mit dem Vorschlag"
+    },
+    "mail": {
+      "betreff": "Gebetszeiten: {art}",
+      "text": "Beim IGMG-Abgleich der Gebetszeiten gibt es etwas zu prüfen: {art}. Diese E-Mail enthält keine Zeiten und keine weiteren Daten.",
+      "knopf": "In der Verwaltung ansehen",
+      "hinweis": "Sie erhalten diese Nachricht, weil Sie in der Verwaltung die Gebetszeiten bearbeiten dürfen.",
+      "art": {
+        "stoerung": "Der Abgleich ist dreimal in Folge fehlgeschlagen",
+        "auffaellig": "Eine Lieferung ist auffällig und wartet auf Freigabe",
+        "abdeckung": "Für die nächsten 14 Tage fehlen Zeiten aus dem IGMG-Kalender",
+        "konflikte": "Der IGMG-Kalender weicht an einigen Tagen vom Import der Gemeinde ab"
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { mehrsprachig } from '../../../lib/validierung/mehrsprachig';
+import { youtubeId } from '../../../lib/validierung/url';
 
 /**
  * Inhalte der Seite „Islamisches Wissen“ (Blatt S14): Artikel, Videos und Experten als Seiteninhalt
@@ -22,13 +23,18 @@ export const artikelInhalt = z.object({
   text: mehrsprachig(4000).optional(),
 });
 
-/** Video: nur Titel, Dauer und Beschreibung. Eine Videoquelle (URL) ist noch nicht belegt, daher kein Feld dafür. */
+/**
+ * Video: Titel, Dauer (leer, wenn unbekannt) und Beschreibung; optional die YouTube-ID (Marktstart P7). Eingefügte Adressen
+ * (`youtu.be/…`, `watch?v=…`) werden zur ID; gespeichert wird nur sie. Die Seite zeigt daraus nur den Link „Auf YouTube
+ * ansehen“ (`youtubeLink`) – keine Einbettung, kein Vorschaubild (K-14, K-12). Ohne ID bleibt der Platzhalter.
+ */
 export const videoInhalt = z.object({
   schluessel: z.string().trim().min(1).max(60),
   thema: z.string().trim().min(1).max(60),
   titel: mehrsprachig(200),
   dauer: z.string().trim().max(20),
   beschreibung: mehrsprachig(1000),
+  youtubeId: youtubeId.optional(),
 });
 
 /** Experte: Name und Institution als Text, Fachgebiet und Bio mehrsprachig, Artikelzahl als Text (berechnet, sobald Namen stehen). */

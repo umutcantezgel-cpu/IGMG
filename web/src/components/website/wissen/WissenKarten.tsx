@@ -73,10 +73,12 @@ export function VideoKarte({
         <h4 lang={v.titel.lang} className="text-24">
           {v.titel.text}
         </h4>
-        <span className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
-          <Clock aria-hidden className="size-4" />
-          {v.dauer}
-        </span>
+        {v.dauer ? (
+          <span className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
+            <Clock aria-hidden className="size-4" />
+            {v.dauer}
+          </span>
+        ) : null}
         <p className="text-16 text-tinte-2">{texte.videoHinweis}</p>
         <button
           type="button"

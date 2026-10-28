@@ -60,6 +60,21 @@ const httpUrl = z.string().refine((text) => {
     return false;
   }
 });
+/**
+ * Zugang zum IGMG-Gebetskalender (ADR 0048): https, Host vorhanden, keine Zugangsdaten in der Adresse; die Platzhalter
+ * {stadt}, {jahr}, {monat} werden für die Prüfung durch Beispielwerte ersetzt. Gleiche Regel in `gebetszeiten/quellen/igmg-feed.ts`.
+ */
+export function igmgZugangGueltig(text: string): boolean {
+  const ersetzt = text.replaceAll('{stadt}', '20238').replaceAll('{jahr}', '2026').replaceAll('{monat}', '01');
+  if (/[{}\s]/.test(ersetzt)) return false;
+  try {
+    const url = new URL(ersetzt);
+    return url.protocol === 'https:' && url.hostname !== '' && url.username === '' && url.password === '';
+  } catch {
+    return false;
+  }
+}
+const igmgZugang = z.string().refine(igmgZugangGueltig);
 const geheimnis = z.string().min(32);
 const schluessel32 = z.base64().refine((text) => base64Bytes(text) === 32);
 const hostname = z.string().regex(/^[a-z0-9-]+(\.[a-z0-9-]+)+$/i);
@@ -345,6 +360,37 @@ export const VARIABLEN: readonly Variable[] = [
     pruefung: geheimnis,
     regel: 'mindestens 32 Zeichen',
     abhilfe: GEHEIM_ABHILFE,
+  },
+  {
+    name: 'GEBETSZEITEN_IGMG_URL',
+    zweck:
+      'Offiziell von der IGMG bereitgestellter Zugang zum Gebetskalender (JSON oder CSV) für den täglichen Abgleich (ADR 0048); ohne Wert gleicht nichts ab',
+    muster: false,
+    pflicht: NIE,
+    bereich: ['Production'],
+    beispiel: 'https://<von der IGMG genannte Adresse>?stadt={stadt}&jahr={jahr}&monat={monat}',
+    herkunft:
+      'Von der IGMG (MENSCHEN M-100). Nie die interne Schnittstelle der Website, kein PDF-Export. Platzhalter {stadt}, {jahr}, {monat} setzt der Abgleich ein. Nicht in der Verwaltung änderbar (SSRF)',
+    geheim: false,
+    erzeugbar: false,
+    pruefung: igmgZugang,
+    regel: 'https-Adresse ohne Zugangsdaten; Platzhalter {stadt}, {jahr}, {monat} erlaubt',
+    abhilfe: 'Die von der IGMG genannte Adresse eintragen oder leer lassen (dann gilt die Näherung bzw. der Import).',
+  },
+  {
+    name: 'GEBETSZEITEN_IGMG_SCHLUESSEL',
+    zweck: 'Schlüssel zum IGMG-Zugang; geht nur als Header „Authorization: Bearer …“ mit, nie in der Adresse und nie ins Protokoll',
+    muster: false,
+    pflicht: NIE,
+    gilt: (env) => gesetzt(env, 'GEBETSZEITEN_IGMG_URL') !== undefined,
+    bereich: ['Production'],
+    beispiel: '<von der IGMG vergeben, nie ein echter Wert im Repository>',
+    herkunft: 'Von der IGMG, zusammen mit GEBETSZEITEN_IGMG_URL (MENSCHEN M-100)',
+    geheim: true,
+    erzeugbar: false,
+    pruefung: z.string().regex(/^[\x21-\x7e]{8,512}$/),
+    regel: '8 bis 512 sichtbare ASCII-Zeichen',
+    abhilfe: 'Den Schlüssel der IGMG eintragen oder die Variable entfernen, wenn der Zugang keinen braucht.',
   },
   {
     name: 'VAPID_PRIVAT',

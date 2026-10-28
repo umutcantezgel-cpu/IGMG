@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import type { NetzwerkSchluessel } from '../../dachverband/netzwerk';
 import { mehrsprachig } from '../mehrsprachig';
 
 /**
@@ -7,6 +8,21 @@ import { mehrsprachig } from '../mehrsprachig';
  */
 export const AKTIVITAET_SYMBOLE = ['heart', 'book-open', 'users', 'graduation-cap', 'pencil', 'target', 'monitor', 'star'] as const;
 export type AktivitaetSymbol = (typeof AKTIVITAET_SYMBOLE)[number];
+
+/**
+ * Seiten beim Dachverband, auf die eine Organisationsseite verweisen kann (Plan Marktstart, E-044): Schlüssel aus dem
+ * IGMG-Netzwerk (`src/lib/dachverband/netzwerk.ts`) – Adressen und Linktexte pflegt das Netzwerk, nicht die Redaktion.
+ * Frauen-, Jugend- und Frauenjugendorganisation haben eigene Seiten bei der IGMG; für die AT passt die Selbstdarstellung.
+ */
+export const DACHVERBAND_ZIELE = [
+  'frauenorganisation',
+  'jugendorganisation',
+  'frauenjugendorganisation',
+  'selbstdarstellung',
+  'struktur',
+  'igmg',
+] as const satisfies readonly NetzwerkSchluessel[];
+export type DachverbandZiel = (typeof DACHVERBAND_ZIELE)[number];
 
 /** E-Mail der Organisation (mailto-Link, wenn gültig): gültige Adresse, leer oder der Platzhalter (G-05). */
 const kontaktMail = (platzhalter: string) =>
@@ -50,6 +66,12 @@ export const schema = z.object({
       email: kontaktMail('[E-Mail]'),
     })
     .default({ adresse: '[Adresse]', telefon: '[Telefonnummer]', email: '[E-Mail]' }),
+  /**
+   * Verweis auf die passende Seite beim Dachverband (null: kein Verweis). Ein unbekannter Schlüssel – etwa nach einer
+   * Umbenennung im Netzwerk – gilt als „kein Verweis“: Sonst fiele der ganze gespeicherte Inhalt in `ladeSeiteninhalt`
+   * auf die Platzhalter zurück. Ältere Inhalte ohne das Feld bleiben gültig.
+   */
+  dachverband: z.enum(DACHVERBAND_ZIELE).nullable().default(null).catch(null),
 });
 
 export type OrganisationInhalt = z.infer<typeof schema>;

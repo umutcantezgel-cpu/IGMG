@@ -5,9 +5,12 @@ import { istVerwaltungBereich } from '@/components/verwaltung/seiteninhalte/bere
 import { protokolliere } from '@/lib/audit';
 import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
+import { gleicheDachverbandAb, type DachverbandAbgleichStatus } from '@/lib/dachverband/abgleich';
 import { db, schema } from '@/lib/db';
 import { darf, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { SEITENINHALT } from '@/lib/validierung/seiteninhalte';
+import type { DachverbandEintrag } from '@/lib/validierung/seiteninhalte/dachverband';
+import { pruefeRate, type Grenze } from '@/lib/validierung/ratenbegrenzung';
 
 /**
  * Verwaltung „Seiteninhalte I“ (V05, Muster 5): Über uns, Vorstand, Projekte, IGMG, Impressum und Datenschutz.
@@ -40,6 +43,10 @@ function fehlerSchluessel(problem: z.core.$ZodIssue): string {
       return 'ungueltigeAuswahl';
     case 'invalid_union':
       return letzter === 'email' ? 'ungueltigeAdresse' : 'ungueltig';
+    case 'custom':
+      // Eigene Regeln eines Schemas nennen ihren Textschlüssel als Meldung (z. B. „ohneZitat“, Aus dem Dachverband);
+      // Standardmeldungen von Zod (mit Leerzeichen) gelten als „ungültig“
+      return /^[a-z][A-Za-z]{2,40}$/.test(problem.message) ? problem.message : 'ungueltig';
     default:
       return 'ungueltig';
   }
@@ -94,4 +101,53 @@ export async function speichereSeiteninhalt(_vorher: SpeicherZustand, fd: FormDa
   });
   inhaltGeaendert(TAG.seiteninhalt(bereich));
   return { gespeichert: Date.now() };
+}
+
+/**
+ * Aus dem Dachverband (Plan Marktstart P3): „Jetzt aus dem Feed holen“. Recht `seiteninhalt.bearbeiten` (Sitzung, zweiter
+ * Faktor, Rolle), höchstens ein Abruf je 5 Minuten (wie der IGMG-Abgleich der Gebetszeiten), dann derselbe Abgleich wie
+ * der Cron (`lib/dachverband/abgleich.ts`) – mit der Person im Audit. Die neuen Einträge gehen an den Editor zurück, damit
+ * er sie in seinen Bearbeitungsstand übernimmt (sonst überschriebe das nächste Speichern sie).
+ */
+export type FeedZustand = {
+  fehler?: 'keinRecht' | 'zuOft';
+  ergebnis?: {
+    status: DachverbandAbgleichStatus;
+    neu: number;
+    vorhanden: number;
+    abgewiesen: number;
+    entfernt: number;
+    fehlerCode: string | null;
+  };
+  neueEintraege?: DachverbandEintrag[];
+  entfernteSchluessel?: string[];
+  /** Zeitpunkt der Antwort (der Editor übernimmt die Einträge je Antwort genau einmal) */
+  zeit?: number;
+};
+
+const FEED_GRENZE: Grenze = { max: 1, fensterSekunden: 300 };
+
+export async function holeDachverbandFeed(_vorher: FeedZustand, _fd: FormData): Promise<FeedZustand> {
+  let a: Angemeldet;
+  try {
+    a = await verlangeRecht('seiteninhalt.bearbeiten');
+  } catch {
+    return { fehler: 'keinRecht' };
+  }
+  if (!(await pruefeRate('verwaltung-dachverband-abgleich', 'gemeinde', FEED_GRENZE)).erlaubt) return { fehler: 'zuOft' };
+  const e = await gleicheDachverbandAb({ benutzerId: a.benutzerId });
+  if (e.geaendert) inhaltGeaendert(TAG.seiteninhalt('dachverband'));
+  return {
+    ergebnis: {
+      status: e.status,
+      neu: e.neu,
+      vorhanden: e.vorhanden,
+      abgewiesen: e.abgewiesen,
+      entfernt: e.entfernt,
+      fehlerCode: e.fehlerCode,
+    },
+    neueEintraege: e.neueEintraege,
+    entfernteSchluessel: e.entfernteSchluessel,
+    zeit: Date.now(),
+  };
 }

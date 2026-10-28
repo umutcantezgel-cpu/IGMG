@@ -11,6 +11,7 @@ import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeFussMenue } from '@/server/queries/menues';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { JetztGeoeffnet } from './fuss/JetztGeoeffnet';
+import { FussNetzwerk } from './fuss/Netzwerk';
 import { oeffnungszeitText } from './fuss/zeiten';
 import { Facebook, Instagram, Stern8, Youtube } from './Icons';
 import type { Ziel } from './navigation';
@@ -34,10 +35,12 @@ const SOZIAL_PLATZHALTER = 'flex size-12 items-center justify-center rounded-md 
 
 /**
  * Footer (02.4, design/Footer.dc.html): Gemeinde, Kontakt, Öffnungszeiten, Schnellzugriff (Laufbuch D-07),
- * Webseite für Ihre Moschee, Rechtslinks. Kontaktdaten aus „Seiteninhalte › Kontaktdaten“ (Platzhalter bis zur Pflege).
- * Social-Media-Links erst, wenn hinterlegt (M-020) – sonst sichtbar als Platzhalter ohne Ziel.
- * Raster: eine Spalte, ab 768 px zwei, ab 1240 px drei. Fünf Spalten brachen „Webseite für Ihre Moschee“ um und
- * verschoben die Trennlinie dieser Spalte; in drei Spalten bleiben alle Köpfe einzeilig, die Linien liegen auf einer Höhe.
+ * IGMG-Netzwerk (Plan Marktstart P7), Webseite für Ihre Moschee, Rechtslinks. Kontaktdaten aus „Seiteninhalte ›
+ * Kontaktdaten“ (Platzhalter bis zur Pflege). Social-Media-Links erst, wenn hinterlegt (M-020) – sonst sichtbar als
+ * Platzhalter ohne Ziel.
+ * Raster: eine Spalte, ab 768 px zwei, ab 1240 px drei – sechs Blöcke, also drei bzw. zwei volle Zeilen (P7: „Webseite für
+ * Ihre Moschee“ spannt nicht mehr über zwei Spalten). Fünf Spalten brachen „Webseite für Ihre Moschee“ um und verschoben
+ * die Trennlinie dieser Spalte; in drei Spalten bleiben alle Köpfe einzeilig, die Linien liegen auf einer Höhe.
  */
 export async function Footer() {
   const sprache = (await getLocale()) as Locale;
@@ -50,9 +53,10 @@ export async function Footer() {
     { label: t('qGebetszeiten'), ziel: '/gebetszeiten' },
     { label: t('qVeranstaltungen'), ziel: '/veranstaltungen' },
     { label: t('qBildung'), ziel: '/bildung/korankurse' },
-    { label: t('qSpenden'), ziel: '/projekte' },
+    { label: t('qSpenden'), ziel: '/spenden' },
     { label: t('qKontakt'), ziel: '/kontakt' },
     { label: t('qUeberUns'), ziel: '/ueber-uns' },
+    { label: t('qHadschUmra'), ziel: '/hadsch-umra' },
   ];
   // Schnellzugriff aus der Verwaltung (Fußmenü, ADR 0032), sonst der Bestand
   const ausDb = await ladeFussMenue(sprache);
@@ -156,7 +160,8 @@ export async function Footer() {
             ))}
           </ul>
         </nav>
-        <div className="flex flex-col gap-3 md:col-span-2">
+        <FussNetzwerk ueberschrift={ueberschrift} linkKlasse={TEXTLINK} />
+        <div className="flex flex-col gap-3">
           {ueberschrift(t('moscheeWebseite'))}
           <p className="text-16 text-gruen-100">{t('moscheeWebseiteText')}</p>
           <Link href="/webseite-fuer-moscheen" className={ANFRAGEN}>

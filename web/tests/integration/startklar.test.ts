@@ -5,7 +5,8 @@ import { drizzle } from 'drizzle-orm/pglite';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
-import { fuehreStartklarAus, type Pruefung, type StartklarErgebnis } from '@/lib/startklar/pruefungen';
+import { fuehreStartklarAus, metaBeschreibungPruefen, type Pruefung, type StartklarErgebnis } from '@/lib/startklar/pruefungen';
+import { kontaktInhalt } from '@/lib/validierung/seiteninhalte';
 import journal from '../../drizzle/migrations/meta/_journal.json';
 import { testDatenbank } from './hilfen/db';
 
@@ -23,7 +24,7 @@ const db = pgDb as unknown as Datenbank;
 afterAll(() => client.close());
 
 beforeEach(async () => {
-  await db.execute(sql`truncate table einstellung, seiteninhalt, veranstaltung, nachricht cascade`);
+  await db.execute(sql`truncate table einstellung, seiteninhalt, veranstaltung, nachricht, gebetszeit_tag, gebetszeit_abgleich cascade`);
 });
 
 const geheimnis = () => randomBytes(32).toString('base64');
@@ -82,11 +83,28 @@ async function setzeEinstellung(schluessel: string, wert: unknown) {
   await db.execute(sql`insert into einstellung (schluessel, wert) values (${schluessel}, ${JSON.stringify(wert)}::jsonb)`);
 }
 
+/** Zeiten aus dem IGMG-Kalender ab dem Prüftag (11.10.2026) für `anzahl` Tage (ADR 0048). */
+async function setzeIgmgTage(anzahl: number, quelle: 'igmg' | 'import' = 'igmg') {
+  for (let i = 0; i < anzahl; i++) {
+    const datum = new Date(Date.UTC(2026, 9, 11 + i)).toISOString().slice(0, 10);
+    await db.execute(
+      sql`insert into gebetszeit_tag (datum, imsak, gunes, ogle, ikindi, aksam, yatsi, quelle) values (${datum}, '06:02', '07:44', '13:28', '16:21', '19:01', '20:30', ${quelle}::gebetszeit_quelle)`,
+    );
+  }
+}
+
+/** Ein Lauf des IGMG-Abgleichs im Protokoll. */
+async function setzeLauf(status: string, gestartet: string, konflikte = 0) {
+  await db.execute(
+    sql`insert into gebetszeit_abgleich (quelle, status, gestartet, konflikte) values ('igmg-feed', ${status}, ${gestartet}::timestamptz, ${konflikte})`,
+  );
+}
+
 async function setzeSeiteninhalt(bereich: string, inhalt: unknown) {
   await db.execute(sql`insert into seiteninhalt (bereich, inhalt) values (${bereich}, ${JSON.stringify(inhalt)}::jsonb)`);
 }
 
-/** Rechtstext ohne Platzhalter. `weitere` bleibt leer, weil Absatzlisten derzeit als Platzhalter gelten (siehe unten). */
+/** Rechtstext ohne Platzhalter (Absatzlisten in `weitere`: eigener Fall unten). */
 const RECHT_OHNE_PLATZHALTER = {
   impressum: {
     verantwortlich: {
@@ -150,9 +168,8 @@ describe('Leere Seed-Lage: Inhalte und Einstellungen', () => {
     expect(befund(e, 'recht.datenschutz').status).toBe('ok');
   });
 
-  // BEKANNTER DEFEKT (OFFENE FRAGE 1 in _werkstatt): Die Platzhalterprüfung läuft auf dem JSON-Text. Eine Liste wie
-  // `[{"art":"absatz", …}]` trifft `\[[^\]]{2,}\]` auch ohne Platzhalter. Der Test bleibt bis zur Korrektur
-  // in pruefungen.ts als `fails` markiert; schlägt er nach einer Korrektur fehl, auf `it` umstellen.
+  // Die Platzhalterprüfung (`hatPlatzhalter`) sucht nur in Texten, nicht im JSON-Text: Eine Liste wie
+  // `[{"art":"absatz", …}]` ist kein Platzhalter (früher OFFENE FRAGE 1 in _werkstatt, behoben).
   it('Absatzlisten in Rechtstexten gelten nicht als Platzhalter', async () => {
     await setzeSeiteninhalt('impressum', {
       verantwortlich: RECHT_OHNE_PLATZHALTER.impressum.verantwortlich,
@@ -180,6 +197,68 @@ describe('Leere Seed-Lage: Inhalte und Einstellungen', () => {
   it('ohne Beispielinhalte: ok', async () => {
     const e = await pruefe(produktionsUmgebung());
     expect(befund(e, 'inhalte.beispiele').status).toBe('ok');
+  });
+});
+
+describe('Platzhalter der Seiteninhalte und Meta-Beschreibung (Marktstart Welle 3)', () => {
+  const BEREICHE = [
+    'igmg',
+    'kontakt',
+    'vorstand',
+    'ueber-uns',
+    'organisation-ana-teskilati',
+    'organisation-kadin-teskilati',
+    'organisation-genclik-teskilati',
+    'organisation-kadin-genclik-teskilati',
+    'hadsch-umra',
+    'dachverband',
+  ];
+  const platzhalterBefunde = (e: StartklarErgebnis) => e.pruefungen.filter((p) => p.id.startsWith('inhalte.platzhalter-'));
+
+  it('je Bereich eine Prüfung; Platzhalter sind nie ein Fehler', async () => {
+    const e = await pruefe(produktionsUmgebung());
+    expect(platzhalterBefunde(e).map((p) => p.id)).toEqual(BEREICHE.map((b) => `inhalte.platzhalter-${b}`));
+    expect(platzhalterBefunde(e).filter((p) => p.status === 'fehler')).toEqual([]);
+  });
+
+  it('Platzhalter: Warnung in produktion, Hinweis in vorschau; die Meldung nennt Beispiele', async () => {
+    await setzeSeiteninhalt('vorstand', { fuehrungSeit: '1978', vorstand: [], vorsitzende: [{ name: '[Name – Vorsitz]', von: '1978' }] });
+    const produktion = befund(await pruefe(produktionsUmgebung()), 'inhalte.platzhalter-vorstand');
+    expect(produktion.status).toBe('warnung');
+    expect(produktion.meldung).toContain('„[Name – Vorsitz]“');
+    expect(produktion.ort).toContain('Vorstand');
+    expect(befund(await pruefe(vorschauUmgebung()), 'inhalte.platzhalter-vorstand').status).toBe('hinweis');
+  });
+
+  it('nicht gespeichert: geprüft werden die Standardwerte der Seite (Kontakt: „[Adresse]“)', async () => {
+    const e = befund(await pruefe(produktionsUmgebung()), 'inhalte.platzhalter-kontakt');
+    expect(e.status).toBe('warnung');
+    expect(e.meldung).toContain('Nicht gespeichert');
+    expect(e.meldung).toContain('„[Adresse]“');
+  });
+
+  it('ohne Platzhalter: ok (auch wenn das JSON Listen enthält)', async () => {
+    const kontakt = kontaktInhalt.parse({
+      adresse: 'Teststraße 1, 00000 Musterstadt',
+      telefon: '00 00 0000',
+      notfallTelefon: '00 00 0001',
+      anfahrtOeffentlich: { de: 'Bushaltestelle Test (Linien 1, 2)' },
+    });
+    await setzeSeiteninhalt('kontakt', kontakt);
+    await setzeSeiteninhalt('dachverband', { eintraege: [] });
+    const e = await pruefe(produktionsUmgebung());
+    expect(befund(e, 'inhalte.platzhalter-kontakt')).toMatchObject({ status: 'ok', meldung: 'Ohne Platzhalter.' });
+    expect(befund(e, 'inhalte.platzhalter-dachverband').status).toBe('ok');
+  });
+
+  it('Meta-Beschreibung: aktuelle Texte ok; Platzhalter oder leer → Fehler in produktion, Warnung sonst', async () => {
+    expect(befund(await pruefe(produktionsUmgebung()), 'auslieferung.meta-beschreibung').status).toBe('ok');
+    expect(befund(await pruefe(produktionsUmgebung(), null), 'auslieferung.meta-beschreibung').status).toBe('ok');
+    const texte = { de: '[Beschreibung – Gemeinde]', tr: 'Metin', en: ' ' };
+    const produktion = metaBeschreibungPruefen(texte, true);
+    expect(produktion.status).toBe('fehler');
+    expect(produktion.meldung).toContain('(de, en)');
+    expect(metaBeschreibungPruefen(texte, false).status).toBe('warnung');
   });
 });
 
@@ -298,10 +377,124 @@ describe('Mail', () => {
   });
 });
 
+describe('Gebetszeiten aus dem IGMG-Kalender (ADR 0048)', () => {
+  it('Abdeckung: unter 7 Tagen Fehler in produktion, Warnung in vorschau; 30 Tage ok', async () => {
+    await setzeIgmgTage(5);
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('fehler');
+    expect(befund(await pruefe(vorschauUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('warnung');
+    await db.execute(sql`truncate table gebetszeit_tag cascade`);
+    await setzeIgmgTage(30, 'import');
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('ok');
+  });
+
+  it('Abdeckung mit aktiver Quelle „Berechnung“: Tabellen zählen nicht (öffentlich ungenutzt), Hinweis auf die Quelle', async () => {
+    await setzeIgmgTage(30);
+    await setzeEinstellung('gebetszeiten', { aktiveQuelle: 'berechnung' });
+    const p = befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung');
+    expect(p.status).toBe('fehler');
+    expect(p.meldung).toMatch(/aktive Quelle ist „Berechnung“/);
+    expect(befund(await pruefe(vorschauUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('warnung');
+  });
+
+  it('Abgleich ausgeschaltet: Hinweis; eingeschaltet ohne Erfolg oder mit 3 Fehlschlägen in Folge: Fehler; alt: Warnung', async () => {
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('hinweis');
+    await setzeEinstellung('gebetszeiten', { abgleich: { aktiv: true } });
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('fehler');
+    await setzeLauf('ok', '2026-10-08T20:00:00Z');
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('warnung');
+    await setzeLauf('unveraendert', '2026-10-10T20:00:00Z');
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('ok');
+    for (const s of ['2026-10-11T08:00:00Z', '2026-10-11T09:00:00Z', '2026-10-11T10:00:00Z']) await setzeLauf('fehler', s);
+    const e = befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich');
+    expect(e.status).toBe('fehler');
+    expect(e.meldung).toContain('3-mal in Folge');
+  });
+
+  it('offene Konflikte mit dem Import: Hinweis; ein späterer Lauf ohne Konflikte erledigt sie', async () => {
+    await setzeLauf('ok', '2026-10-10T20:00:00Z', 3);
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-konflikte').status).toBe('hinweis');
+    await setzeLauf('unveraendert', '2026-10-11T08:00:00Z', 0);
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-konflikte').status).toBe('ok');
+  });
+
+  it('ohne GEBETSZEITEN_IGMG_URL ein manueller Punkt „IGMG-Datenzugang“; mit Adresse keiner', async () => {
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-igmg-zugang').status).toBe('manuell');
+    const mit = await pruefe(produktionsUmgebung({ GEBETSZEITEN_IGMG_URL: 'https://kalender.example.test/{stadt}/{jahr}/{monat}' }));
+    expect(mit.pruefungen.some((p) => p.id === 'inhalte.gebetszeiten-igmg-zugang')).toBe(false);
+  });
+});
+
+describe('Aus dem Dachverband (Marktstart P3)', () => {
+  // Prüftag 11.10.2026: Grenze für die neueste sichtbare Freitagspredigt ist der 27.09.2026 (14 Tage)
+  const hutba = (schluessel: string, datum: string, teil: Record<string, unknown> = {}) => ({
+    schluessel,
+    art: 'hutba',
+    datum,
+    titel: { de: `Predigt ${schluessel}` },
+    url: `https://www.igmg.org/${schluessel}/`,
+    sichtbar: true,
+    herkunft: 'feed',
+    ...teil,
+  });
+  const befundDachverband = async () => befund(await pruefe(produktionsUmgebung()), 'inhalte.dachverband-aktuell');
+
+  it('ohne Seiteninhalt oder ohne sichtbare Freitagspredigt: Warnung mit Ort', async () => {
+    const leer = await befundDachverband();
+    expect(leer).toMatchObject({ status: 'warnung', bereich: 'inhalte' });
+    expect(leer.ort).toContain('Aus dem Dachverband');
+    await setzeSeiteninhalt('dachverband', { eintraege: [hutba('versteckt', '2026-10-09', { sichtbar: false })] });
+    expect((await befundDachverband()).status).toBe('warnung');
+  });
+
+  it('neueste sichtbare Freitagspredigt höchstens 14 Tage alt: ok; älter: Warnung', async () => {
+    await setzeSeiteninhalt('dachverband', { eintraege: [hutba('frisch', '2026-10-09'), hutba('alt', '2026-09-04')] });
+    const ok = await befundDachverband();
+    expect(ok.status).toBe('ok');
+    expect(ok.meldung).toContain('2026-10-09');
+    await db.execute(sql`update seiteninhalt set inhalt = ${JSON.stringify({ eintraege: [hutba('alt', '2026-09-25')] })}::jsonb`);
+    const alt = await befundDachverband();
+    expect(alt.status).toBe('warnung');
+    expect(alt.meldung).toContain('älter als 14 Tage');
+    await db.execute(sql`update seiteninhalt set inhalt = ${JSON.stringify({ eintraege: [hutba('grenze', '2026-09-27')] })}::jsonb`);
+    expect((await befundDachverband()).status).toBe('ok');
+  });
+
+  it('sichtbare, aber abgelaufene Einträge: Hinweis mit Kennung; ausgeblendete zählen nicht', async () => {
+    const thema = (schluessel: string, gueltigBis: string, sichtbar = true) => ({
+      ...hutba(schluessel, '2026-09-11'),
+      art: 'kampagne',
+      herkunft: 'redaktion',
+      gueltigBis,
+      sichtbar,
+    });
+    await setzeSeiteninhalt('dachverband', {
+      eintraege: [
+        hutba('frisch', '2026-10-09'),
+        thema('vorbei', '2026-10-10'),
+        thema('heute-noch', '2026-10-11'),
+        thema('aus', '2026-09-30', false),
+      ],
+    });
+    const e = await befundDachverband();
+    expect(e.status).toBe('hinweis');
+    expect(e.meldung).toContain('vorbei');
+    expect(e.meldung).not.toMatch(/heute-noch|: aus/);
+  });
+
+  it('gespeicherter Inhalt passt nicht zum Schema: Warnung', async () => {
+    await setzeSeiteninhalt('dachverband', { eintraege: [{ ...hutba('pm', '2026-10-09'), art: 'pressemitteilung' }] });
+    const e = await befundDachverband();
+    expect(e.status).toBe('warnung');
+    expect(e.meldung).toContain('passt nicht zum Schema');
+  });
+});
+
 describe('Gesamtergebnis', () => {
   it('saubere Produktionslage ist startklar (keine Fehler)', async () => {
     await setzeEinstellung('allgemein', { konzepthinweis: false });
     await setzeEinstellung('gebetszeiten', { bestaetigt: true });
+    // ADR 0048: zur sauberen Lage gehören Zeiten aus dem IGMG-Kalender für die nächsten 30 Tage (sonst Fehler unter 7 Tagen)
+    await setzeIgmgTage(30);
     await setzeSeiteninhalt('impressum', RECHT_OHNE_PLATZHALTER.impressum);
     await setzeSeiteninhalt('datenschutz', RECHT_OHNE_PLATZHALTER.datenschutz);
 

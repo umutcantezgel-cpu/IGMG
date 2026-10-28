@@ -53,10 +53,16 @@ test('Organisationsredaktion GT speichert die eigene Organisation; die öffentli
   const mission = `Testmission ${randomBytes(3).toString('hex')}`;
   await page.goto('/verwaltung/seiteninhalte/organisationen/gt');
   await expect(page.getByRole('heading', { level: 1, name: 'Gençlik Teşkilatı' })).toBeVisible();
+  // Die Seite beim Dachverband steht aus dem Seed in der Auswahl und geht beim Speichern nicht verloren (E-044)
+  await expect(page.getByLabel('Seite beim Dachverband', { exact: true })).toHaveValue('jugendorganisation');
   await fuelleUebernommen(page, page.getByLabel('Mission (Pflichtfeld)', { exact: true }), mission);
   await page.getByRole('button', { name: 'Speichern', exact: true }).click();
   await expect(page.getByRole('status').filter({ hasText: 'Die Änderungen wurden gespeichert.' })).toBeVisible();
   await oeffentlichBis(page, '/organisationen/genclik-teskilati', () => expect(page.getByText(mission)).toBeVisible({ timeout: 1000 }));
+  await expect(page.getByRole('link', { name: /^Jugendorganisation der IGMG/ })).toHaveAttribute(
+    'href',
+    'https://www.igmg.org/jugendorganisation/',
+  );
 });
 
 test('Kontaktdaten: Fehler am Feld mit Sprungverweis, dann speichern; die Kontaktseite zeigt die Angaben', async ({ page }) => {

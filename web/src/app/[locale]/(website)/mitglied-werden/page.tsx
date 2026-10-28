@@ -2,6 +2,7 @@ import { ArrowLeft, BookOpen, Calendar, Clock, Heart, Info, Mail, MessageSquare,
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { FormularInsel } from '@/components/formular/FormularInsel';
+import { FoerdermitgliedKasten } from '@/components/website/formulare/FoerdermitgliedKasten';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { MitgliedsantragFormular } from '@/components/website/formulare/MitgliedsantragFormular';
 import { PageHeader } from '@/components/website/PageHeader';
@@ -15,8 +16,8 @@ import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('mitglied');
-  return metadatenFuer({ pfad: '/mitglied-werden', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.mitgliedWerden');
+  return metadatenFuer({ pfad: '/mitglied-werden', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**
@@ -30,7 +31,10 @@ const VORTEILE = [
   { Icon: Heart, schluessel: 'wachstum' },
 ] as const;
 
-/** Anmeldung zur Gemeinde (Blatt S21, design/JoinUs.dc.html): drei Schritte, Vorteile und Kontakt daneben. */
+/**
+ * Anmeldung zur Gemeinde (Blatt S21, design/JoinUs.dc.html): drei Schritte, Vorteile und Kontakt daneben. In der Seitenspalte
+ * zusätzlich „Fördermitglied der IGMG“ (Plan Marktstart P7) – getrennt von der Anmeldung, weil es ein anderer Verein ist.
+ */
 export default async function MitgliedWerdenSeite() {
   const sprache = (await getLocale()) as Locale;
   // Telefon und E-Mail aus den Kontaktdaten (Seiteninhalte), Bürozeiten als Beispieltext je Sprache (Tor B/C R-BC-D1, Frage 4)
@@ -76,6 +80,7 @@ export default async function MitgliedWerdenSeite() {
                 ))}
               </ul>
             </section>
+            <FoerdermitgliedKasten />
             <section aria-labelledby="mitglied-fragen" className="flex flex-col gap-3 rounded-lg bg-gruen-950 p-6 text-weiss">
               <h2 id="mitglied-fragen" className="flex items-center gap-2.5 text-24 leading-ueberschrift">
                 <Info aria-hidden="true" className="size-6 shrink-0 text-gruen-100" />

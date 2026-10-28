@@ -1,6 +1,7 @@
 import { ArrowRight, Info, Printer } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
 import { DruckKnopf } from '@/components/website/gebetszeiten/DruckKnopf';
 import { Stern8 } from '@/components/website/Icons';
 import { SternMarke, TerminMarke } from '@/components/website/kalender/Marken';
@@ -10,6 +11,7 @@ import { RichText } from '@/components/website/RichText';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Text } from '@/components/website/Text';
 import { webcalAdresse } from '@/components/website/veranstaltungen/KalenderAbo';
+import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { hijriText } from '@/lib/gebetszeiten/hijri';
@@ -26,14 +28,16 @@ const KNOPF =
 const TEXTLINK = 'inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('kalender');
-  return metadatenFuer({ pfad: '/kalender', titel: t('titel'), beschreibung: t('metaBeschreibung') });
+  const t = await getTranslations('seo.kalender');
+  return metadatenFuer({ pfad: '/kalender', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**
  * Kalender (AUFTRAG 3.10): zwölf Monate ab dem laufenden mit Hidschri-Tagen, besonderen Tagen (geprüft oder
  * „vorläufig – berechnet“), Veranstaltungen und iCal-Abo der besonderen Tage. Achtstern-Marken statt Mondsicheln.
- * Statisch; „heute“ kommt aus dem stündlich erneuerten Datum (`heuteBerlin`). Druckbar.
+ * Statisch; „heute“ kommt aus dem stündlich erneuerten Datum (`heuteBerlin`). Druckbar. Im Kasten „Gut zu wissen“ der Satz
+ * zur verbindlichen Bekanntgabe durch die IGMG mit Links (Gelehrtenrat, Feste), darunter die Erklärung zum islamischen
+ * Kalender (Plan Marktstart P7).
  */
 export default async function KalenderSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -118,6 +122,10 @@ export default async function KalenderSeite() {
               </h2>
               <p className="text-16">{t('hinweis')}</p>
               <p className="text-16">{t('nachtHinweis')}</p>
+              <p data-kalender="igmg" className="text-16">
+                {t('igmg')}
+              </p>
+              <Verweisliste eintraege={['gelehrtenratHilal', 'feste']} mitBeschreibung={false} className="print:hidden" />
               <h3 className="mt-2 font-text text-16 font-bold tracking-normal">{t('legende.titel')}</h3>
               <ul className="flex flex-col gap-2 text-16">
                 <li className="flex items-center gap-2">
@@ -143,6 +151,7 @@ export default async function KalenderSeite() {
                 <li>{t('legende.hijri')}</li>
               </ul>
             </section>
+            <WissenErklaerung slug="islamic-calendar" className="print:hidden" />
             <section
               aria-labelledby="kalender-abo"
               className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6 print:hidden"

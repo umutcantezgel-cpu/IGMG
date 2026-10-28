@@ -5,14 +5,19 @@ import { Suspense } from 'react';
 import { RichText } from '@/components/website/RichText';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { textMitSprache } from '@/components/website/Text';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum';
 import { ThemaInsel } from '@/components/website/wissen/ThemaInsel';
 import { ThemaKopf } from '@/components/website/wissen/ThemaKopf';
 import { ThemaNavigation } from '@/components/website/wissen/ThemaNavigation';
 import { ThemaWeiter } from '@/components/website/wissen/ThemaWeiter';
+import { EntwurfHinweis } from '@/components/website/wissen/EntwurfHinweis';
+import { VideoLink } from '@/components/website/wissen/VideoLink';
 import type { WissenTexte } from '@/components/website/wissen/typen';
 import type { Locale } from '@/i18n/routing';
+import { youtubeLink } from '@/lib/einbettung/youtube';
 import { text } from '@/lib/i18n/inhalt';
+import { NOINDEX } from '@/lib/seo/indexierung';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeWissensInhalt, ladeWissensSlugs, ladeWissensThema, ladeWissensThemen } from '@/server/queries/wissen';
 
@@ -30,17 +35,22 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/islamisc
   if (!thema) return {};
   const sprache = locale as Locale;
   const t = await getTranslations('wissen');
-  return metadatenFuer({
+  const metadaten = await metadatenFuer({
     pfad: { pathname: '/islamisches-wissen/[thema]', params: { thema: thema.slug } },
     titel: text(thema.titel, sprache),
     beschreibung: text(thema.kurztext, sprache) || t('untertitel'),
   });
+  // Ungeprüfter Entwurf (ADR 0047): nicht in den Index, damit er nie als geprüfte Auskunft gefunden wird. Nur dann setzen –
+  // `robots` der Seite ersetzt das des Layouts vollständig (Indexierungs-Schranke, ADR 0049).
+  return thema.entwurf ? { ...metadaten, robots: NOINDEX } : metadaten;
 }
 
 /**
  * Themenseite Islamisches Wissen (Blatt S14, Route /islamisches-wissen/[thema]): Der Filter der Übersicht steht hier
  * in der Adresse. Themen, Artikel und Videos kommen aus der Wissens-Query (A11); Experten gelten für alle Themen.
- * URL-Daten nur innerhalb von Suspense lesen (MUSTER 1).
+ * URL-Daten nur innerhalb von Suspense lesen (MUSTER 1). Ein Thema „zur Prüfung“ (Schalter `website_wissen_vorschau`,
+ * ADR 0047) trägt im Kopf die Marke „Entwurf“ und oben im Inhalt den Hinweis „Entwurf zur Prüfung – noch nicht vom Imam
+ * geprüft“; es ist `noindex` und steht nicht in der Sitemap.
  */
 export default function IslamischesWissenThemaSeite({ params }: PageProps<'/[locale]/islamisches-wissen/[thema]'>) {
   return (
@@ -67,8 +77,9 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
   const deutsch = (wert: string) => ({ text: wert, lang: sprache === 'de' ? undefined : 'de' });
   const titel = textMitSprache(thema.titel, sprache);
   const untertitel = thema.kurztext ? textMitSprache(thema.kurztext, sprache) : null;
-  const aktuell = { schluessel: thema.slug, label: titel };
-  const themenAnzeige = themen.map((th) => ({ schluessel: th.slug, label: textMitSprache(th.titel, sprache) }));
+  const marke = (entwurf: boolean) => (entwurf ? t('entwurf.marke') : undefined);
+  const aktuell = { schluessel: thema.slug, label: titel, marke: marke(thema.entwurf) };
+  const themenAnzeige = themen.map((th) => ({ schluessel: th.slug, label: textMitSprache(th.titel, sprache), marke: marke(th.entwurf) }));
   // Vorheriges und nächstes Thema in derselben Reihenfolge wie die Übersicht; am Anfang und Ende fehlt eine Seite.
   const reihe = themenAnzeige.findIndex((th) => th.schluessel === thema.slug);
   const vorher = reihe > 0 ? themenAnzeige[reihe - 1] : null;
@@ -96,6 +107,8 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
         dauer: v.dauer,
         beschreibung: textMitSprache(v.beschreibung, sprache),
         vorschau: t('videos.vorschau', { titel: videoTitel.text }),
+        // Nur ein Link zu YouTube, keine Einbettung (Marktstart P7, K-12/K-14)
+        ...(v.youtubeId ? { link: <VideoLink href={youtubeLink(v.youtubeId)} text={t('videos.youtube')} titel={videoTitel.text} /> } : {}),
       };
     });
   const experten = inhalt.experten.map((e) => ({
@@ -148,8 +161,9 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
       sprachZiel={{ pathname: '/islamisches-wissen/[thema]', params: { thema: thema.slug } }}
       pfad={[{ label: tk('wissen'), ziel: '/islamisches-wissen' }, { label: titel.text }]}
     >
-      <ThemaKopf kennung={t('eyebrow')} titel={titel} untertitel={untertitel} />
+      <ThemaKopf kennung={t('eyebrow')} titel={titel} untertitel={untertitel} marke={aktuell.marke} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
+        {thema.entwurf ? <EntwurfHinweis titel={t('entwurf.titel')} text={t(thema.kiEntwurf ? 'entwurf.textKi' : 'entwurf.text')} /> : null}
         {einfuehrung ? (
           <section aria-labelledby="thema-einfuehrung" className="flex max-w-text flex-col gap-4">
             <h2 id="thema-einfuehrung" className="text-display-2">
@@ -165,6 +179,7 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
           artikel={artikel}
           videos={videos}
           experten={experten}
+          leerGrafik={<Zustandsgrafik art="leer" />}
           themen={
             <ThemaNavigation
               titel={texte.themenTitel}

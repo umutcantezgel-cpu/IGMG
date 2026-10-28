@@ -14,8 +14,16 @@ function richtlinie(teile: Record<string, string[]>): string {
     .join('; ');
 }
 
+/**
+ * Erlaubte Rahmen (`frame-src`, Plan Marktstart, ADR 0012): Karte und Videos laden erst nach einem Klick (K-14), dann aber
+ * nur von genau diesen Hosts. Global statt je Pfad, weil eine CSP je Dokument gilt und nach einem Seitenwechsel im
+ * Browser die CSP der Einstiegsseite bleibt. `frame-ancestors 'none'` (niemand bettet diese Website ein) bleibt.
+ */
+export const RAHMEN_QUELLEN: readonly string[] = ["'self'", 'https://www.openstreetmap.org', 'https://www.youtube-nocookie.com'];
+
 const gemeinsam: Record<string, string[]> = {
   'default-src': ["'self'"],
+  'frame-src': [...RAHMEN_QUELLEN],
   'img-src': ["'self'", 'data:', 'blob:'],
   'font-src': ["'self'"],
   'connect-src': ["'self'"],

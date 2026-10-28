@@ -42,7 +42,7 @@
     },
     "uebersicht": {
       "titel": "Organisationen",
-      "einleitung": "Pflegen Sie Beschreibung, Mission, Vision, Aktivitäten, Öffnungszeiten und Kontakt je Organisation. Sie sehen nur die Organisationen, für die Sie zuständig sind.",
+      "einleitung": "Pflegen Sie Beschreibung, Mission, Vision, die Seite beim Dachverband, Aktivitäten, Öffnungszeiten und Kontakt je Organisation. Sie sehen nur die Organisationen, für die Sie zuständig sind.",
       "bearbeiten": "Bearbeiten"
     },
     "kontakt": {
@@ -80,12 +80,14 @@
         "mission": "Mission und Vision",
         "aktivitaeten": "Aktivitäten",
         "oeffnungszeiten": "Öffnungszeiten",
-        "kontakt": "Kontakt"
+        "kontakt": "Kontakt",
+        "dachverband": "Dachverband"
       },
       "hinweis": {
         "aktivitaeten": "Höchstens acht Aktivitäten. Jede hat ein Symbol, einen Titel und einen Text.",
         "oeffnungszeiten": "Eine Zeile je Zeitraum, zum Beispiel „Montag bis Freitag 9:00–17:00 Uhr“. Höchstens zehn Zeilen.",
-        "kontakt": "Platzhalter gelten, bis die Gemeinde diese Angaben bestätigt hat."
+        "kontakt": "Platzhalter gelten, bis die Gemeinde diese Angaben bestätigt hat.",
+        "dachverband": "Verweis auf die passende Seite der IGMG. Adresse und Linktext pflegt das IGMG-Netzwerk der Website. Ohne Auswahl zeigt die Seite nur den Link „Mehr über die IGMG“."
       },
       "hinzufuegen": {
         "aktivitaet": "Aktivität hinzufügen",
@@ -124,7 +126,8 @@
       "symbol": "Symbol",
       "titel": "Titel",
       "text": "Text",
-      "kontakt": "Kontakt"
+      "kontakt": "Kontakt",
+      "dachverband": "Seite beim Dachverband"
     },
     "gruppe": {
       "oeffnungszeiten": "Öffnungszeit",
@@ -160,6 +163,15 @@
       "kt": "Kadın Teşkilatı",
       "gt": "Gençlik Teşkilatı",
       "kgt": "Kadın Gençlik Teşkilatı"
+    },
+    "dachverband": {
+      "keiner": "Kein Verweis",
+      "frauenorganisation": "Frauenorganisation der IGMG",
+      "jugendorganisation": "Jugendorganisation der IGMG",
+      "frauenjugendorganisation": "Frauenjugendorganisation der IGMG",
+      "selbstdarstellung": "Selbstdarstellung der IGMG",
+      "struktur": "Struktur, Fachvereine und Kooperationen der IGMG",
+      "igmg": "Startseite der IGMG"
     }
   }
 }

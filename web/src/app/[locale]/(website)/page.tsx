@@ -11,10 +11,11 @@ import { DesTages } from '@/components/website/start/DesTages';
 import { Tagesbogen } from '@/components/website/start/Tagesbogen';
 import { UnsereMoschee } from '@/components/website/start/UnsereMoschee';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
+import { DachverbandAbschnitt } from '@/components/website/dachverband/DachverbandAbschnitt';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { moschee } from '@/lib/seo/jsonld';
-import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
+import { gemeindeGraph } from '@/lib/seo/jsonld';
+import { basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { sichtbareAbschnitte, type StartseitenAbschnitt } from '@/lib/startseite/abschnitte';
 import { cn } from '@/lib/utils';
 import { heuteBerlin } from '@/lib/zeit/heute';
@@ -27,10 +28,10 @@ import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const [t, tm] = await Promise.all([getTranslations('start'), getTranslations('meta')]);
-  const meta = await metadatenFuer({ pfad: '/', titel: null, beschreibung: t('metaBeschreibung') });
-  // Ohne eigenen Titel setzt die Startseite den Namen selbst: openGraph ersetzt das Layout-Objekt vollständig (Next.js)
-  return { ...meta, openGraph: { ...meta.openGraph, title: tm('titel') } };
+  const [t, tm] = await Promise.all([getTranslations('seo.start'), getTranslations('meta')]);
+  const meta = await metadatenFuer({ pfad: '/', titel: null, beschreibung: t('beschreibung') });
+  // Titel ohne Vorlage (ADR 0049); openGraph ersetzt das Layout-Objekt vollständig (Next.js) und trägt den Namen selbst
+  return { ...meta, title: { absolute: t('titel') }, openGraph: { ...meta.openGraph, title: tm('titel') } };
 }
 
 const sekundaer =
@@ -39,7 +40,8 @@ const sekundaer =
 /**
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter;
  * im Ramadan der Fastenbogen B-20), „Unsere neue Moschee – eröffnet“ (Vorführpfad Station 1, ruhig, ohne Bewegung),
- * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3); darunter Vers und Hadith des Tages, sobald
+ * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3), „Aus dem Dachverband“ (Freitagspredigt vom
+ * {Datum} und bis zu drei Gemeinschaftsthemen der IGMG, Marktstart P3); darunter Vers und Hadith des Tages, sobald
  * die religiöse Prüfung Einträge freigegeben hat. Der Kopf mit Tagesbogen steht fest oben; Reihenfolge und Sichtbarkeit
  * der übrigen Abschnitte pflegt die Redaktion unter Verwaltung › Startseite (F-40). Ohne Datenbank oder ohne gültige
  * Einstellung gilt die Reihenfolge des Bestands (Rückfall in `ladeStartseitenOrdnung`).
@@ -140,11 +142,13 @@ export default async function Startseite() {
         </div>
       </section>
     ),
+    // Marktstart P3: Freitagspredigt und Gemeinschaftsthemen der IGMG (nur Links, Server-Komponente, K-12/K-14)
+    dachverband: <DachverbandAbschnitt variante="startseite" sprache={sprache} />,
     desTages: <DesTages daten={desTages} sprache={sprache} />,
   };
   return (
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
-      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
+      <JsonLd daten={gemeindeGraph({ basis: basisUrl(), kontakt, sprache })} />
       <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
         <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-5 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16">
           <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">

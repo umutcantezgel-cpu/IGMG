@@ -34,14 +34,17 @@
     "lernapp:audio-pruefen": "tsx --conditions=react-server scripts/lernapp/audio-pruefen.ts",
     "lernapp:audio-manifest": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/audio-manifest.ts",
     "inhalte:2026": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-2026.ts",
+    "inhalte:marktstart": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-marktstart.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",
     "startklar": "tsx --conditions=react-server --env-file-if-exists=.env scripts/startklar.ts",
+    "gebetszeiten:kalibrieren": "tsx --conditions=react-server --env-file-if-exists=.env scripts/gebetszeiten/kalibrieren.ts",
     "release:check": "node scripts/release-check.mjs",
     "format": "prettier --write",
     "start:standalone": "node scripts/start-standalone.mjs",
     "db:bau-vorbereiten": "node scripts/bau-datenbank.mjs",
     "sprachen:pruefen": "node scripts/sprachen-pruefen.mjs",
+    "links:pruefen": "node scripts/links-pruefen.mjs",
     "messen": "node scripts/messen.mjs"
   },
   "dependencies": {

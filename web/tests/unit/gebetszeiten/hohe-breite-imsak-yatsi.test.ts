@@ -1,8 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { berechneTag } from '@/lib/gebetszeiten/berechnung';
+import { STANDARD_EINSTELLUNGEN, STANDARD_NAEHERUNG } from '@/lib/gebetszeiten/typen';
 
 /**
- * BEFUND A22-1 (Festlegung ungeklärt): Imsak und Yatsı weichen vom Winkel ab, Mitte der Saison um 16 bis 36 Minuten, am Rand über 100 Minuten.
+ * BEFUND A22-1 (für die Methode weiter ungeklärt): Imsak und Yatsı weichen vom Winkel ab, Mitte der Saison um 16 bis 36 Minuten, am Rand über 100 Minuten.
+ *
+ * Anpassung Marktstart P6 (ADR 0048, E-045, G-10): Standard ist jetzt die Näherung „IGMG (angenähert)“ mit der
+ * Winkelregel statt der Siebtel-Grenze. Für sie ist A22-1 erledigt; die bekannten Fehlschläge unten gelten deshalb
+ * ausdrücklich für die Methode (Turkey, Siebtel der Nacht), die in der Verwaltung wählbar bleibt. Neu: Die Näherung folgt
+ * auch im Frühling den Winkeln (İmsak 18°, Yatsı 18° mit −11 Minuten Temkin).
  *
  * Maßstab: MENSCHEN M-017a („Imsak = Fajr bei 18°, ohne Temkin“), ADR 0008 („Turkey = Fajr 18°, Isha 17°“).
  * Verhalten der App: adhan wendet die Siebtel-der-Nacht-Grenze immer an, also Imsak = max(Fajr 18°, Sonnenaufgang − Nacht/7)
@@ -97,6 +103,11 @@ function winkelzeit(datum: string, grad: number, morgens: boolean): string {
   return wanduhr(durch);
 }
 
+/** Methode Turkey mit Siebtel der Nacht (Bestand vor ADR 0048), in der Verwaltung weiter wählbar. */
+const METHODE = { ...STANDARD_EINSTELLUNGEN, rueckfall: 'methode' as const };
+/** Yatsı der Näherung: 18°-Winkel plus Temkin (−667 s ≈ −11 Min.). */
+const YATSI_TEMKIN_MIN = Math.round(STANDARD_NAEHERUNG.temkinSek.yatsi / 60);
+
 describe('Kontrolle des Maßstabs: Winkelzeiten an den Prüftagen (A22-1)', () => {
   it('Morgendämmerung 18° und Abenddämmerung 17° liegen an den Prüftagen im erwarteten Fenster', () => {
     expect(minutenVon(winkelzeit('2026-03-28', -18, true))).toBeGreaterThanOrEqual(minutenVon('04:00'));
@@ -109,26 +120,40 @@ describe('Kontrolle des Maßstabs: Winkelzeiten an den Prüftagen (A22-1)', () =
     expect(minutenVon(winkelzeit('2026-10-11', -17, false))).toBeLessThanOrEqual(minutenVon('20:40'));
   });
 
-  it('11.10.2026: Imsak entspricht Fajr 18° und Yatsı Isha 17° (±4 Min.), weil dort die Grenze nicht wirkt', () => {
-    const t = berechneTag('2026-10-11');
+  it('11.10.2026 (Methode): Imsak entspricht Fajr 18° und Yatsı Isha 17° (±4 Min.), weil dort die Grenze nicht wirkt', () => {
+    const t = berechneTag('2026-10-11', METHODE);
     expect(Math.abs(minutenVon(t.imsak) - minutenVon(winkelzeit('2026-10-11', -18, true)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
     expect(Math.abs(minutenVon(t.yatsi) - minutenVon(winkelzeit('2026-10-11', -17, false)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
   });
 });
 
-describe('FIXME A22-1: Imsak und Yatsı im Frühling entsprechen den Winkeln (bekannter Fehlschlag)', () => {
-  it.fails('FIXME A22-1 · 28.03.2026: Imsak entspricht Fajr 18° (±4 Min.); App 04:35, Winkel ca. 04:19', () => {
-    const t = berechneTag('2026-03-28');
+describe('Standard Näherung IGMG (ADR 0048): Imsak und Yatsı folgen auch im Frühling den Winkeln (A22-1 erledigt)', () => {
+  it.each(['2026-03-28', '2026-04-15'])('%s: Imsak entspricht Fajr 18° (±4 Min.)', (datum) => {
+    const t = berechneTag(datum);
+    expect(Math.abs(minutenVon(t.imsak) - minutenVon(winkelzeit(datum, -18, true)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
+  });
+
+  it('15.04.2026: Yatsı entspricht Isha 18° mit Temkin (±4 Min.) und liegt nahe am 17°-Winkel', () => {
+    const t = berechneTag('2026-04-15');
+    const winkel18 = minutenVon(winkelzeit('2026-04-15', -18, false)) + YATSI_TEMKIN_MIN;
+    expect(Math.abs(minutenVon(t.yatsi) - winkel18)).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
+    expect(Math.abs(minutenVon(t.yatsi) - minutenVon(winkelzeit('2026-04-15', -17, false)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
+  });
+});
+
+describe('FIXME A22-1 (Methode): Imsak und Yatsı im Frühling entsprechen den Winkeln (bekannter Fehlschlag)', () => {
+  it.fails('FIXME A22-1 · 28.03.2026: Imsak entspricht Fajr 18° (±4 Min.); Methode 04:35, Winkel ca. 04:19', () => {
+    const t = berechneTag('2026-03-28', METHODE);
     expect(Math.abs(minutenVon(t.imsak) - minutenVon(winkelzeit('2026-03-28', -18, true)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
   });
 
-  it.fails('FIXME A22-1 · 15.04.2026: Imsak entspricht Fajr 18° (±4 Min.); App 05:05, Winkel ca. 04:29', () => {
-    const t = berechneTag('2026-04-15');
+  it.fails('FIXME A22-1 · 15.04.2026: Imsak entspricht Fajr 18° (±4 Min.); Methode 05:05, Winkel ca. 04:29', () => {
+    const t = berechneTag('2026-04-15', METHODE);
     expect(Math.abs(minutenVon(t.imsak) - minutenVon(winkelzeit('2026-04-15', -18, true)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
   });
 
-  it.fails('FIXME A22-1 · 15.04.2026: Yatsı entspricht Isha 17° (±4 Min.); App 21:48, Winkel ca. 22:14', () => {
-    const t = berechneTag('2026-04-15');
+  it.fails('FIXME A22-1 · 15.04.2026: Yatsı entspricht Isha 17° (±4 Min.); Methode 21:48, Winkel ca. 22:14', () => {
+    const t = berechneTag('2026-04-15', METHODE);
     expect(Math.abs(minutenVon(t.yatsi) - minutenVon(winkelzeit('2026-04-15', -17, false)))).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
   });
 });

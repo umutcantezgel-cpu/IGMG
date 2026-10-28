@@ -1,7 +1,7 @@
 import { defineRouting } from 'next-intl/routing';
 
 /**
- * Sprachen und lokalisierte Pfade (K-02, K-03, KERN 1.1).
+ * Sprachen und lokalisierte Pfade (K-02, K-03, KERN 1.2).
  * Deutsch ohne Präfix, /tr und /en mit Präfix. Keine Spracherkennung und kein Cookie:
  * Die Sprache steht allein in der Adresse (öffentliche Seiten lesen keine Cookies, K-01).
  * hreflang setzen die Seiten selbst über generateMetadata (alternateLinks: false).
@@ -69,6 +69,8 @@ export const routing = defineRouting({
     '/elifbe/ueben': { de: '/elifbe/ueben', tr: '/elifba/alistirma', en: '/arabic-alphabet/practice' },
     '/kalender': { de: '/kalender', tr: '/takvim', en: '/calendar' },
     '/ramadan': { de: '/ramadan', tr: '/ramazan', en: '/ramadan' },
+    // Marktstart P4 (KERN 1.2, K-03, E-045): Pilgerfahrt mit IGMG Reisen
+    '/hadsch-umra': { de: '/hadsch-umra', tr: '/hac-umre', en: '/hajj-umrah' },
     '/hatim': { de: '/hatim', tr: '/hatim', en: '/khatm' },
     '/hatim/[id]': { de: '/hatim/[id]', tr: '/hatim/[id]', en: '/khatm/[id]' },
     '/spenden': { de: '/spenden', tr: '/bagis', en: '/donate' },

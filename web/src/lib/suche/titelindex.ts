@@ -11,7 +11,8 @@ import { sucheNormal } from '@/lib/quran/suche';
  * Der Index enthält keine religiösen Texte: Surennamen und Buchtitel stammen aus den Quelldaten (web/daten), Hadithe
  * nur als Nummer mit Stelle. Reine Funktionen ohne Datenbank, vollständig unit-testbar.
  */
-export const SUCHINDEX_VERSION = 1;
+// 2: Wissensthemen tragen `entwurf` (ADR 0047) – ein Index der Version 1 kennt die Kennzeichnung nicht und gilt als veraltet
+export const SUCHINDEX_VERSION = 2;
 /** Dateiname im Projektstamm (gitignored); beim Bau geschrieben, in die Funktion der Suche mitgenommen (next.config.ts). */
 export const SUCHINDEX_DATEI = '.suchindex.json';
 /** Höchstens so viele Titel-Treffer (wie die Volltextsuche, `suche.ts`). */
@@ -23,7 +24,8 @@ const slug = z.string().min(1).max(200);
 const eintrag = z.discriminatedUnion('art', [
   z.object({ art: z.literal('nachricht'), slug, titel: mehrsprachig }),
   z.object({ art: z.literal('veranstaltung'), slug, titel: mehrsprachig }),
-  z.object({ art: z.literal('wissen'), slug, titel: mehrsprachig }),
+  // `entwurf`: „zur Prüfung“, öffentlich nur mit dem Schalter `website_wissen_vorschau` und mit Marke „Entwurf“ (ADR 0047)
+  z.object({ art: z.literal('wissen'), slug, titel: mehrsprachig, entwurf: z.boolean().optional() }),
   z.object({
     art: z.literal('seite'),
     slugs: z.object({ de: slug, tr: slug.nullable(), en: slug.nullable() }),
@@ -74,6 +76,8 @@ export type TitelTreffer = {
   nr?: number;
   slug?: string;
   href?: string;
+  /** Wissensthema „zur Prüfung“ (ADR 0047): Die Trefferliste zeigt die Marke „Entwurf“ wie die Volltextsuche. */
+  entwurf?: boolean;
 };
 
 /** Feste Seite aus dem Menü (Header): Beschriftung und fertige Adresse in der Sprache der Seite. */
@@ -105,10 +109,14 @@ export function sucheTitel(index: SuchIndex, begriff: string, sprache: Locale, f
   for (const e of index.eintraege) {
     switch (e.art) {
       case 'nachricht':
-      case 'veranstaltung':
-      case 'wissen': {
+      case 'veranstaltung': {
         const titel = inSprache(e.titel, sprache);
         kandidaten.push({ t: { art: e.art, titel, slug: e.slug }, schluessel: [titel] });
+        break;
+      }
+      case 'wissen': {
+        const titel = inSprache(e.titel, sprache);
+        kandidaten.push({ t: { art: 'wissen', titel, slug: e.slug, ...(e.entwurf ? { entwurf: true } : {}) }, schluessel: [titel] });
         break;
       }
       case 'seite': {

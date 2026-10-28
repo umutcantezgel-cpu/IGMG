@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { EntwurfMarke } from '@/components/website/wissen/EntwurfMarke';
 import { Link } from '@/i18n/link';
 import { cn } from '@/lib/utils';
 import { MARKE_AN, MARKE_AUS, type SuchArt, type SuchTreffer } from '@/server/queries/suche';
@@ -40,9 +41,10 @@ function Ausschnitt({ text }: { text: string }) {
 /**
  * Treffer gruppiert nach Bereichen: je Gruppe Überschrift mit Zahl, Einträge als Karten im Kartenraster.
  * Die ganze Karte ist klickbar (Titel-Link mit ::after, REFERENZ §2). Datum gibt die Abfrage nicht her – entfällt.
+ * Wissensthemen „zur Prüfung“ (Schalter `website_wissen_vorschau`, ADR 0047) tragen die Marke „Entwurf“.
  */
 export async function Trefferliste({ treffer }: { treffer: SuchTreffer[] }) {
-  const t = await getTranslations('suche');
+  const [t, tw] = await Promise.all([getTranslations('suche'), getTranslations('wissen.entwurf')]);
   const gruppen = BEREICHE.map((art) => ({ art, eintraege: treffer.filter((z) => z.art === art) })).filter((g) => g.eintraege.length > 0);
   return (
     <div className="flex flex-col gap-10">
@@ -67,6 +69,7 @@ export async function Trefferliste({ treffer }: { treffer: SuchTreffer[] }) {
                       {z.titel}
                     </Link>
                   </h4>
+                  {z.entwurf ? <EntwurfMarke text={tw('marke')} /> : null}
                   {z.ausschnitt ? <Ausschnitt text={z.ausschnitt} /> : null}
                 </article>
               </li>

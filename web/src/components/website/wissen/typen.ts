@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 /** Text aus den Daten. `lang="de"` markiert den sichtbaren Rückfall, wenn die gewählte Sprache fehlt (K-02). */
 export type Anzeige = { text: string; lang?: string };
 
@@ -32,7 +33,11 @@ export type WissenTexte = {
   schliessen: string;
 };
 
-export type ThemaAnzeige = { schluessel: string; label: Anzeige };
+/**
+ * Thema in Filter und Themenleiste. `marke`: Text der Marke „Entwurf“, wenn das Thema noch nicht religiös geprüft ist
+ * (nur mit dem Schalter `website_wissen_vorschau` sichtbar, ADR 0047).
+ */
+export type ThemaAnzeige = { schluessel: string; label: Anzeige; marke?: string };
 
 export type ArtikelAnzeige = {
   schluessel: string;
@@ -54,6 +59,12 @@ export type VideoAnzeige = {
   beschreibung: Anzeige;
   /** Fertiger Text für das Vorschaubild („Vorschaubild: Titel“). */
   vorschau: string;
+  /**
+   * Link „Auf YouTube ansehen“ (Server-Komponente `VideoLink`, fertig gerendert), nur bei gepflegter YouTube-ID. Bewusst nur
+   * ein Link und keine Einbettung nach Klick; vom Server, damit Markup und Zeichen nicht ins Client-Bundle gehen – die
+   * Wissensseiten liegen beim JavaScript an der Grenze (K-12, Marktstart P7, Welle 3).
+   */
+  link?: ReactNode;
 };
 
 export type ExpertenAnzeige = {

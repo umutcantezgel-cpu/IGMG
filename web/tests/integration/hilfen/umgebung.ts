@@ -12,3 +12,7 @@ delete process.env.DATABASE_URL;
 // Vorschau ungeprüfter Wissensinhalte (L3-E22): in Tests standardmäßig aus – außerhalb der Produktion wäre sie sonst an und
 // jede Sperre bis zu zwei Freigaben aufgehoben. Tests der Vorschau schalten sie ausdrücklich ein.
 process.env.FUNKTION_LERNAPP_WISSEN_VORSCHAU = 'aus';
+// Religiöse Erklärtexte der Website als gekennzeichneter Entwurf (ADR 0047): in Tests ebenso standardmäßig aus – sonst wären
+// Themen „zur Prüfung“ öffentlich und die Tests der Freigabe (öffentlich nur „geprüft“) liefen mit einem anderen Stand. Tests
+// der Vorschau schalten sie ausdrücklich ein (`tests/integration/wissen-entwuerfe.test.ts`).
+process.env.FUNKTION_WEBSITE_WISSEN_VORSCHAU = 'aus';

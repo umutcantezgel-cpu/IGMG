@@ -1,10 +1,16 @@
 import { resolveTxt } from 'node:dns/promises';
-import { count, eq, sql } from 'drizzle-orm';
+import { count, eq, inArray, sql } from 'drizzle-orm';
 import journal from '../../../drizzle/migrations/meta/_journal.json';
+import de from '../../../messages/de.json';
+import en from '../../../messages/en.json';
+import tr from '../../../messages/tr.json';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
+import { SEITENINHALT, type SeitenBereich } from '@/lib/validierung/seiteninhalte';
 import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projekte';
+import { dachverbandPruefen } from './dachverband';
+import { gebetszeitenPruefen } from './gebetszeiten';
 import { gemeindePruefen } from './gemeinde';
 import { lernappPruefen } from './lernapp';
 import { vergangeneOffene } from './meilensteine';
@@ -68,6 +74,91 @@ function hatPlatzhalter(wert: unknown): boolean {
   if (Array.isArray(wert)) return wert.some(hatPlatzhalter);
   if (wert && typeof wert === 'object') return Object.values(wert).some(hatPlatzhalter);
   return false;
+}
+
+/** Bis zu `max` verschiedene Platzhalter aus den Texten eines Inhalts (Beispiele für die Meldung). */
+function platzhalterBeispiele(wert: unknown, max = 3, gefunden = new Set<string>()): string[] {
+  if (gefunden.size >= max) return [...gefunden];
+  if (typeof wert === 'string') {
+    for (const t of wert.matchAll(new RegExp(PLATZHALTER, 'g'))) if (gefunden.size < max) gefunden.add(t[0]);
+  } else if (wert && typeof wert === 'object') {
+    for (const w of Array.isArray(wert) ? wert : Object.values(wert)) platzhalterBeispiele(w, max, gefunden);
+  }
+  return [...gefunden];
+}
+
+/**
+ * Seiteninhalte, deren Platzhalter die Gemeinde vor dem Start füllt (Marktstart Welle 3): in der Produktion Warnung,
+ * sonst Hinweis. Ohne gespeicherten Inhalt zeigt die Seite die Standardwerte des Schemas – geprüft werden dann diese.
+ */
+const PLATZHALTER_SEITEN: { bereich: SeitenBereich; titel: string; ort: string }[] = [
+  { bereich: 'igmg', titel: 'IGMG', ort: 'Verwaltung › Seiteninhalte › IGMG (MENSCHEN M-103, M-107)' },
+  { bereich: 'kontakt', titel: 'Kontaktdaten', ort: 'Verwaltung › Seiteninhalte › Kontaktdaten' },
+  { bereich: 'vorstand', titel: 'Vorstand', ort: 'Verwaltung › Seiteninhalte › Vorstand' },
+  { bereich: 'ueber-uns', titel: 'Über uns', ort: 'Verwaltung › Seiteninhalte › Über uns' },
+  { bereich: 'organisation-ana-teskilati', titel: 'Ana Teşkilatı (AT)', ort: 'Verwaltung › Seiteninhalte › Organisationen › AT' },
+  { bereich: 'organisation-kadin-teskilati', titel: 'Kadın Teşkilatı (KT)', ort: 'Verwaltung › Seiteninhalte › Organisationen › KT' },
+  { bereich: 'organisation-genclik-teskilati', titel: 'Gençlik Teşkilatı (GT)', ort: 'Verwaltung › Seiteninhalte › Organisationen › GT' },
+  {
+    bereich: 'organisation-kadin-genclik-teskilati',
+    titel: 'Kadın Gençlik Teşkilatı (KGT)',
+    ort: 'Verwaltung › Seiteninhalte › Organisationen › KGT',
+  },
+  { bereich: 'hadsch-umra', titel: 'Hadsch & Umra', ort: 'Verwaltung › Seiteninhalte › Hadsch & Umra (MENSCHEN M-104)' },
+  { bereich: 'dachverband', titel: 'Aus dem Dachverband', ort: 'Verwaltung › Seiteninhalte › Aus dem Dachverband' },
+];
+
+async function seitenPlatzhalterPruefen(db: Datenbank, neu: (p: Pruefung) => void, produktion: boolean) {
+  const zeilen = await db
+    .select({ bereich: schema.seiteninhalt.bereich, inhalt: schema.seiteninhalt.inhalt })
+    .from(schema.seiteninhalt)
+    .where(
+      inArray(
+        schema.seiteninhalt.bereich,
+        PLATZHALTER_SEITEN.map((s) => s.bereich),
+      ),
+    );
+  for (const s of PLATZHALTER_SEITEN) {
+    const zeile = zeilen.find((z) => z.bereich === s.bereich);
+    const standard = SEITENINHALT[s.bereich].safeParse({});
+    // Ohne Zeile: Standardwerte der Seite; sind sie ungültig, zählt der Bereich als offen
+    const inhalt = zeile ? zeile.inhalt : standard.success ? standard.data : null;
+    const beispiele = inhalt === null ? [] : platzhalterBeispiele(inhalt);
+    const offen = inhalt === null || hatPlatzhalter(inhalt);
+    neu({
+      id: `inhalte.platzhalter-${s.bereich}`,
+      bereich: 'inhalte',
+      titel: `Platzhalter: ${s.titel}`,
+      status: offen ? (produktion ? 'warnung' : 'hinweis') : 'ok',
+      meldung: !offen
+        ? 'Ohne Platzhalter.'
+        : `${zeile ? 'Enthält' : 'Nicht gespeichert – die Standardwerte enthalten'} noch Platzhalter in eckigen Klammern${
+            beispiele.length ? ` (z. B. ${beispiele.map((b) => `„${b}“`).join(', ')})` : ''
+          }. Werte der Gemeinde eintragen oder den Abschnitt leeren.`,
+      ort: s.ort,
+      aufwand: '15–30 min',
+    });
+  }
+}
+
+/**
+ * Meta-Beschreibung der Website (`meta.beschreibung` in messages/{de,tr,en}.json): Suchmaschinen und Vorschauen zeigen
+ * sie. Ein Platzhalter („[“) ist in der Produktion ein Fehler, sonst eine Warnung. Bereich „auslieferung“: Der Text kommt
+ * mit dem Bau, nicht aus der Datenbank – die Prüfung läuft auch ohne Datenbank.
+ */
+export function metaBeschreibungPruefen(texte: Record<'de' | 'tr' | 'en', string>, produktion: boolean): Pruefung {
+  const offen = (Object.keys(texte) as (keyof typeof texte)[]).filter((s) => texte[s].includes('[') || !texte[s].trim());
+  return {
+    id: 'auslieferung.meta-beschreibung',
+    bereich: 'auslieferung',
+    titel: 'Meta-Beschreibung der Website',
+    status: offen.length ? (produktion ? 'fehler' : 'warnung') : 'ok',
+    meldung: offen.length
+      ? `„meta.beschreibung“ enthält noch einen Platzhalter oder ist leer (${offen.join(', ')}). Suchmaschinen zeigen diesen Text.`
+      : 'Die Meta-Beschreibung ist in allen drei Sprachen gesetzt.',
+    ort: 'messages/{de,tr,en}.json › meta.beschreibung (neuer Bau nötig)',
+    aufwand: '15 min',
+  };
 }
 
 export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<StartklarErgebnis> {
@@ -239,7 +330,38 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
         aufwand: '5 min',
       });
     }
+    // Aus dem Dachverband (Marktstart P3, ADR 0046): neueste sichtbare Freitagspredigt höchstens 14 Tage alt, Ablauf
+    try {
+      await dachverbandPruefen(db, kontext.jetzt ?? new Date(), neu);
+    } catch {
+      neu({
+        id: 'inhalte.dachverband-aktuell',
+        bereich: 'inhalte',
+        titel: 'Aus dem Dachverband aktuell',
+        status: 'fehler',
+        meldung: 'Der Seiteninhalt „Aus dem Dachverband“ lässt sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
+    // Gebetszeiten aus dem IGMG-Gebetskalender (ADR 0048): Abdeckung, Abgleich, Konflikte, Jahresdatei, Datenzugang
+    try {
+      await gebetszeitenPruefen(db, env, produktion, kontext.jetzt ?? new Date(), neu);
+    } catch {
+      neu({
+        id: 'inhalte.gebetszeiten-lesbar',
+        bereich: 'inhalte',
+        titel: 'Gebetszeiten lesbar',
+        status: 'fehler',
+        meldung: 'Gebetszeiten und Abgleichprotokoll lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
   }
+
+  // Meta-Beschreibung (fester Text aus messages, unabhängig von der Datenbank)
+  neu(metaBeschreibungPruefen({ de: de.meta.beschreibung, tr: tr.meta.beschreibung, en: en.meta.beschreibung }, produktion));
 
   // 4. Mail-DNS (SPF, DMARC) der Absender-Domain
   const absenderDomain = /@([^>\s]+)>?\s*$/.exec(env.MAIL_ABSENDER ?? '')?.[1];
@@ -308,7 +430,7 @@ async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produ
     titel: 'Hinweis „Konzept-Website“',
     status: konzepthinweis ? (produktion ? 'fehler' : 'warnung') : 'ok',
     meldung: konzepthinweis
-      ? 'Der Dialog „Alle angezeigten Daten sind fiktiv“ ist eingeschaltet und erscheint jedem Besucher.'
+      ? 'Der Dialog „Alle angezeigten Daten sind fiktiv“ ist eingeschaltet und erscheint jedem Besucher. Solange er an ist, ist die Seite auf Vercel noindex (nicht in Suchmaschinen) und /llms.txt antwortet mit 404 (ADR 0049).'
       : 'Der Konzept-Hinweis ist ausgeschaltet.',
     ort: 'Einstellung „allgemein.konzepthinweis“ (MENSCHEN ML-03)',
     aufwand: '5 min',
@@ -377,6 +499,8 @@ async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produ
     ort: 'Verwaltung › Seiteninhalte › Projekte (MENSCHEN MN-08, MN-13)',
     aufwand: '30 min',
   });
+
+  await seitenPlatzhalterPruefen(db, neu, produktion);
 
   for (const bereich of ['impressum', 'datenschutz'] as const) {
     const [zeile] = await db

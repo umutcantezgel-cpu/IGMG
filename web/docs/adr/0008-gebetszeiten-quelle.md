@@ -46,3 +46,9 @@ Falsch, wenn die IGMG eine eigene, deutlich abweichende Berechnung nutzt (Hinwei
 - adhan wendet die Hochbreiten-Regel (`SeventhOfTheNight`) nicht nur in der Hochsommer-Lücke an, sondern immer als Grenze: Imsak = max(Winkel, Sonnenaufgang − Nacht/7), Yatsı = min(Winkel, Sonnenuntergang + Nacht/7). In Wetzlar weicht die Berechnung deshalb in Frühjahr und Herbst bis zu 36 Min. (Imsak, später) bzw. 26 Min. (Yatsı, früher) vom Winkel 18°/17° ab – beides nicht zur vorsichtigen Seite.
 - Entscheidung offen bei der Gemeinde (M-082, G-06). Bis dahin bleibt die Berechnung unverändert, die Zeiten sind als „berechnet“ gekennzeichnet; der vorgesehene Normalfall ist der Import der offiziellen Zeiten (Verwaltung Gebetszeiten, C07).
 - `tests/unit/gebetszeiten/hohe-breite-imsak-yatsi.test.ts` prüft den Winkel als erwarteten Fehlschlag (`it.fails`) und wird rot, sobald eine Festlegung umgesetzt ist.
+
+## Nachtrag 2026-10-28 (Marktstart IGMG, ADR 0048)
+
+- **Abgelöst für offiziell bereitgestellte Quellen:** Zeile „Kein automatischer Abruf“ im Befund und „Weg 3 scheidet aus“ in der Bewertung gelten nicht mehr für einen von der IGMG bereitgestellten Zugang. Die IGMG hat zugestimmt, ihr Gebetskalender ist die offizielle Quelle (E-044 Nr. 1 und 3). Der Abgleich läuft nur aus Cron und Verwaltung, nie beim Seitenaufruf (K-14), und nie über die interne Schnittstelle der Website igmg.org (keine Umgehung von Bot-Sperren). Einzelheiten: ADR 0048.
+- `quelle` kennt zusätzlich `'igmg'`; Vorrang je Tag: Import der Gemeinde, IGMG (Datenbank), IGMG-Jahresdatei, dann Rechnung. Standard der Rechnung ist die kalibrierte Näherung „IGMG (angenähert)“ (Winkelregel statt Siebtel der Nacht) – damit ist Befund A22-1 für den Standard erledigt; die Methode mit Siebtel-Regel bleibt wählbar und behält die beschriebene Abweichung (M-082).
+- Die Monatsdaten als statisches JSON liefert die Lese-API `/api/gebetszeiten/<JJJJ-MM>` (ADR 0048 Nr. 10).

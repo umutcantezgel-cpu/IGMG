@@ -22,6 +22,7 @@ export const ZIEL_VORSCHLAEGE = [
   '/igmg',
   '/quran',
   '/islamisches-wissen',
+  '/hadsch-umra',
   '/bildung/korankurse',
   '/bildung/voranmeldung',
   '/mitglied-werden',

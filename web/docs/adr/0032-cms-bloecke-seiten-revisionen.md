@@ -61,3 +61,9 @@
 - Die Adresse (Slug) ist nach dem Anlegen fest; so gibt es keine toten Links und keine Weiterleitungen.
 - Papierkorb 30 Tage (Löschlauf); endgültig löschen samt Revisionen und Verlauf nur aus dem Papierkorb und mit Rückfrage.
 - Rechte: `startseite.bearbeiten` haben Redaktion und Administration, `wissen.bearbeiten` zusätzlich die religiöse Prüfung (Matrix unverändert). Beide stehen in der generierten Rechte-Matrix (`tests/integration/verwaltung/rechte-matrix-gemeinde.test.ts`).
+
+## Nachtrag 2026-10-28 (Marktstart IGMG: Video nur über `NachKlick` auf festen Seiten)
+
+- **Kein CMS-Baustein „Video“:** Videos erscheinen nur auf festen Seiten über die Komponente `NachKlick` (youtube-nocookie, erst nach Klick, ADR 0012 Nachtrag). Die Blockliste der CMS-Seiten bleibt unverändert; ein frei setzbarer Video-Block würde die Auswahl der Quellen, die Datenschutzerklärung (M-111) und das JS-Budget (K-12) der Redaktion überlassen.
+- **Wo Videos stehen:** `/hadsch-umra` (Seiteninhalt `hadsch-umra`, Feld `videos[]` mit `youtubeId`, gepflegt in Verwaltung › Seiteninhalte). Auf `/islamisches-wissen` tragen Wissensvideos ein optionales Feld `youtubeId`, werden aber nur als Link „Auf YouTube ansehen“ gezeigt, weil die Seite nah an der Grenze von 180 kB JavaScript liegt (`docs/ABWEICHUNGEN.md`). Diese IDs pflegen nur Seed und Stand-Migration; einen Editor dafür gibt es nicht.
+- **Umkehrprobe:** Wünscht die Redaktion Videos auf eigenen Seiten, braucht es einen eigenen Block mit fester Host-Liste, Datenschutz-Prüfung und Messung des JS-Budgets – als neuer Nachtrag zu diesem ADR.

@@ -1,17 +1,33 @@
 import { describe, expect, it } from 'vitest';
 import { berechneTag } from '@/lib/gebetszeiten/berechnung';
 import { naechstesGebet, restzeit, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
-import type { Tageszeiten } from '@/lib/gebetszeiten/typen';
+import { STANDARD_EINSTELLUNGEN, STANDARD_NAEHERUNG, type Tageszeiten } from '@/lib/gebetszeiten/typen';
 
 /**
  * Akzeptanzkriterium K-08 (2) Sommerzeit: Tage um die Umstellung (letzter Sonntag im März und Oktober 2026: 29.03. und 25.10.)
  * liefern Ortszeit Europe/Berlin ohne Stundensprung-Fehler; die Restzeit läuft über die Umstellung korrekt.
  *
  * Maßstab für Mittag, Güneş und Akşam ist eine eigene Sonnenrechnung (Zeitgleichung und Deklination nach Spencer,
- * Sonnenhöhe −0,833° für Auf- und Untergang), in die Berliner Wanduhr umgerechnet per Intl. Dazu die Turkey-Anpassungen
- * aus M-017b (Sonnenaufgang −7, Mittag +5, Sonnenuntergang +7 Minuten). Die Toleranz von 3 Minuten deckt Rundung und
- * Näherungen ab; ein Stundensprung wäre 60 Minuten.
+ * Sonnenhöhe −0,833° für Auf- und Untergang), in die Berliner Wanduhr umgerechnet per Intl. Dazu die Zuschläge des
+ * jeweiligen Verfahrens: Turkey-Anpassungen aus M-017b (Sonnenaufgang −7, Mittag +5, Sonnenuntergang +7 Minuten) bzw. der
+ * Temkin der Näherung „IGMG (angenähert)“ (ADR 0048, Standard seit Marktstart P6; Akşam +8,45 Minuten – deshalb ist die
+ * Prüfung seither je Verfahren getrennt). Die Toleranz von 3 Minuten deckt Rundung und Näherungen ab; ein Stundensprung
+ * wäre 60 Minuten.
  */
+const VERFAHREN = {
+  methode: {
+    einstellung: { ...STANDARD_EINSTELLUNGEN, rueckfall: 'methode' as const },
+    zuschlagMin: { gunes: -7, ogle: 5, aksam: 7 },
+  },
+  naeherung: {
+    einstellung: STANDARD_EINSTELLUNGEN,
+    zuschlagMin: {
+      gunes: STANDARD_NAEHERUNG.temkinSek.gunes / 60,
+      ogle: STANDARD_NAEHERUNG.temkinSek.ogle / 60,
+      aksam: STANDARD_NAEHERUNG.temkinSek.aksam / 60,
+    },
+  },
+};
 
 const BREITE = 50.567;
 const LAENGE = 8.5;
@@ -90,34 +106,43 @@ function mittag(j: number, m: number, t: number): number {
   return Date.UTC(j, m - 1, t) + (720 - 4 * LAENGE - zeitgleichung(tagImJahr(j, m, t))) * MINUTE;
 }
 
-/** Erwartete Berliner Ortszeiten aus der eigenen Sonnenrechnung plus Turkey-Anpassungen (M-017b). */
-function erwartet(datum: string): { gunes: string; ogle: string; aksam: string } {
+/** Erwartete Berliner Ortszeiten aus der eigenen Sonnenrechnung plus Zuschläge des Verfahrens (Minuten). */
+function erwartet(datum: string, zuschlag: { gunes: number; ogle: number; aksam: number }): { gunes: string; ogle: string; aksam: string } {
   const [j, m, t] = datum.split('-').map(Number);
   const beginn = Date.UTC(j, m - 1, t);
   const aufgang = durchgang(beginn, beginn + 12 * STUNDE, -0.833, true);
   const untergang = durchgang(beginn + 12 * STUNDE, beginn + 24 * STUNDE, -0.833, false);
   if (aufgang === undefined || untergang === undefined) throw new Error(`kein Auf- oder Untergang am ${datum}`);
   return {
-    gunes: wanduhr(aufgang - 7 * MINUTE),
-    ogle: wanduhr(mittag(j, m, t) + 5 * MINUTE),
-    aksam: wanduhr(untergang + 7 * MINUTE),
+    gunes: wanduhr(aufgang + zuschlag.gunes * MINUTE),
+    ogle: wanduhr(mittag(j, m, t) + zuschlag.ogle * MINUTE),
+    aksam: wanduhr(untergang + zuschlag.aksam * MINUTE),
   };
 }
 
-describe('Ortszeit an den Umstellungstagen (K-08 2)', () => {
-  it.each(['2026-03-27', '2026-03-28', '2026-03-29', '2026-03-30', '2026-03-31', '2026-10-24', '2026-10-25', '2026-10-26', '2026-10-27'])(
-    'am %s liegen Güneş, Öğle und Akşam innerhalb von 3 Min. der Berliner Sonnenrechnung',
-    (datum) => {
-      const app = berechneTag(datum);
-      const soll = erwartet(datum);
-      for (const g of ['gunes', 'ogle', 'aksam'] as const) {
-        expect(
-          Math.abs(minutenVon(app[g]) - minutenVon(soll[g])),
-          `${datum} ${g}: App ${app[g]}, Sonnenrechnung ${soll[g]}`,
-        ).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
-      }
-    },
-  );
+const UMSTELLUNGSTAGE = [
+  '2026-03-27',
+  '2026-03-28',
+  '2026-03-29',
+  '2026-03-30',
+  '2026-03-31',
+  '2026-10-24',
+  '2026-10-25',
+  '2026-10-26',
+  '2026-10-27',
+];
+
+describe.each(Object.entries(VERFAHREN))('Ortszeit an den Umstellungstagen (K-08 2), Verfahren %s', (_name, verfahren) => {
+  it.each(UMSTELLUNGSTAGE)('am %s liegen Güneş, Öğle und Akşam innerhalb von 3 Min. der Berliner Sonnenrechnung', (datum) => {
+    const app = berechneTag(datum, verfahren.einstellung);
+    const soll = erwartet(datum, verfahren.zuschlagMin);
+    for (const g of ['gunes', 'ogle', 'aksam'] as const) {
+      expect(
+        Math.abs(minutenVon(app[g]) - minutenVon(soll[g])),
+        `${datum} ${g}: App ${app[g]}, Sonnenrechnung ${soll[g]}`,
+      ).toBeLessThanOrEqual(TOLERANZ_MINUTEN);
+    }
+  });
 });
 
 describe('Umstellungsmomente als Zeitpunkte (K-08 2)', () => {

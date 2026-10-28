@@ -5,6 +5,8 @@ import { Stern8 } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Text } from '@/components/website/Text';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
+import { DachverbandAbschnitt } from '@/components/website/dachverband/DachverbandAbschnitt';
+import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
@@ -48,6 +50,9 @@ function brauchtRueckfall(sprache: Sprache, felder: (Mehrsprachig | null | undef
  * Organisationsseite (Blatt C11, design/OrganizationPage.dc.html): Kopf mit Logo und Organisationsfarbe, Über,
  * Mission, Vision, Aktivitäten, Veranstaltungen, Nachrichten, Kontakt und die übrigen Organisationen.
  * Reine Server-Komponente ohne Interaktion; Farben nur über Tokens, alle Texte aus messages/Seiteninhalt.
+ * Marktstart (E-044): Unter Mission und Vision die Zeile „Teil der IGMG“ mit der Seite beim Dachverband (Seiteninhalt
+ * `dachverband`, nur ein Link, K-14) und dem internen Link auf /igmg; darunter (P3) die Einträge „Aus dem Dachverband“
+ * zur Organisation, falls vorhanden.
  */
 export async function OrganizationPage({ org, inhalt, veranstaltungen, nachrichten }: OrganizationPageProps) {
   const sprache = (await getLocale()) as Locale;
@@ -115,6 +120,17 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               <Text feld={inhalt.vision} sprache={sprache} als="p" />
             </div>
           </div>
+          {/* Teil der IGMG (E-044): Seite der Organisation beim Dachverband (extern, aus dem Netzwerk) und /igmg */}
+          <div className="flex max-w-text flex-col gap-2 border-t border-linie pt-6">
+            <h3 className="font-text text-20 leading-snug font-bold tracking-normal">{t('dachverband.titel')}</h3>
+            {inhalt.dachverband ? <Verweisliste eintraege={[inhalt.dachverband]} mitBeschreibung={false} /> : null}
+            <Link href="/igmg" className={MEHR_LINK}>
+              {t('dachverband.mehr')}
+              <ArrowRight aria-hidden className="size-5" />
+            </Link>
+          </div>
+          {/* Marktstart P3: Einträge „Aus dem Dachverband“ der passenden Art (KT Frauen, GT Jugend, KGT junge Frauen; AT keine) */}
+          <DachverbandAbschnitt variante="organisation" sprache={sprache} kuerzel={org} />
         </section>
       </div>
 

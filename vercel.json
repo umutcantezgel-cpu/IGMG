@@ -11,6 +11,8 @@
   "rewrites": [{ "source": "/(.*)", "destination": { "service": "web" } }],
   "crons": [
     { "path": "/api/wartung/loeschfristen", "schedule": "0 1 * * *" },
-    { "path": "/api/wartung/mail-ausgang", "schedule": "0 2 * * *" }
+    { "path": "/api/wartung/mail-ausgang", "schedule": "0 2 * * *" },
+    { "path": "/api/wartung/gebetszeiten-abgleich", "schedule": "0 20 * * *" },
+    { "path": "/api/wartung/dachverband-abgleich", "schedule": "0 4 * * *" }
   ]
 }

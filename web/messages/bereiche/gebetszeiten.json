@@ -36,7 +36,9 @@
       "tabelleDatum": "Datum",
       "ramadan": "Ramadan",
       "drucken": "Drucken",
-      "methodeUnbekannt": "Die eingestellte Berechnungsmethode ist hier nicht einzeln aufgeführt."
+      "methodeUnbekannt": "Die eingestellte Berechnungsmethode ist hier nicht einzeln aufgeführt.",
+      "berechnetVorlaeufig": "berechnet (vorläufig)",
+      "vorlaeufig": "vorläufig"
     },
     "gebetszeitenQibla": {
       "panel": "Qibla",
@@ -97,6 +99,10 @@
         "makkah": {
           "name": "Umm Al-Qura University",
           "desc": "Fajr: 18,5°, Isha: 90 min"
+        },
+        "igmg": {
+          "name": "IGMG (angenähert)",
+          "desc": "İmsak {fajr}°, Yatsı {isha}°, Zuschläge je Gebet in Sekunden, abgestimmt auf den IGMG-Kalender"
         }
       },
       "quelle_label": "Quelle der Zeiten",
@@ -114,7 +120,34 @@
       "richtung_west": "W",
       "anpassungen_titel": "Manuelle Anpassungen",
       "imsak": "Imsak Anpassung (Min.)",
-      "isha": "Isha Anpassung (Min.)"
+      "isha": "Isha Anpassung (Min.)",
+      "quelle_igmg": "IGMG-Gebetskalender"
+    },
+    "gebetszeitenQuelle": {
+      "igmg": "Quelle: IGMG-Gebetskalender, Stand {datum}.",
+      "igmgOhneStand": "Quelle: IGMG-Gebetskalender.",
+      "import": "Quelle: Gebetszeitentabelle der Gemeinde.",
+      "berechnet": "Tage ohne Tabelle: berechnet (vorläufig), angenähert an den IGMG-Kalender.",
+      "berechnetMethode": "Tage ohne Tabelle: berechnet (vorläufig) nach der eingestellten Methode."
+    },
+    "gebetszeitenFaq": {
+      "titel": "Fragen zu den Gebetszeiten in Wetzlar",
+      "quelle": {
+        "frage": "Woher stammen die Gebetszeiten?",
+        "antwort": "Maßgeblich ist der Gebetskalender der Islamischen Gemeinschaft Millî Görüş (IGMG), zu der die Fatih-Moschee Wetzlar gehört. Liegen für einen Tag Zeiten aus diesem Kalender vor, zeigen wir sie unverändert und nennen den Stand.\n\nFür alle übrigen Tage rechnet die Website eine Näherung an den IGMG-Kalender und kennzeichnet sie als „berechnet (vorläufig)“."
+      },
+      "vorlaeufig": {
+        "frage": "Warum steht bei manchen Tagen „berechnet (vorläufig)“?",
+        "antwort": "Für diese Tage liegt noch keine Tabelle aus dem IGMG-Kalender vor. Dann ergeben sich die Zeiten aus dem Sonnenstand über Wetzlar, abgestimmt auf die Werte des IGMG-Kalenders. Ein Unterschied von wenigen Minuten ist möglich, im Sommer auch mehr. Maßgeblich bleibt der IGMG-Kalender."
+      },
+      "offiziell": {
+        "frage": "Wo finde ich den offiziellen IGMG-Gebetskalender für Wetzlar?",
+        "antwort": "Auf der Website der IGMG; dort ist Wetzlar als Ort hinterlegt. Den Link finden Sie unter der Monatsübersicht und im Reiter Einstellungen. Beim Öffnen dieser Seite lädt unsere Website nichts von igmg.org – erst Ihr Klick führt zur IGMG."
+      },
+      "anzeige": {
+        "frage": "Wie aktuell sind die Zeiten auf dem Bildschirm in der Moschee?",
+        "antwort": "Der Bildschirm im Gebetsraum zeigt dieselben Zeiten wie diese Seite. Ändern sie sich, lädt er sie innerhalb weniger Minuten neu. Ohne Internet läuft er mit dem zuletzt geladenen Stand weiter."
+      }
     }
   },
   "tr": {
@@ -154,7 +187,9 @@
       "tabelleDatum": "Tarih",
       "ramadan": "Ramazan",
       "drucken": "Yazdır",
-      "methodeUnbekannt": "Ayarlanan hesaplama yöntemi burada ayrıca gösterilmiyor."
+      "methodeUnbekannt": "Ayarlanan hesaplama yöntemi burada ayrıca gösterilmiyor.",
+      "berechnetVorlaeufig": "hesaplanmış (geçici)",
+      "vorlaeufig": "geçici"
     },
     "gebetszeitenQibla": {
       "panel": "Kıble",
@@ -215,6 +250,10 @@
         "makkah": {
           "name": "Umm Al-Qura University",
           "desc": "Fecr: 18,5°, Yatsı: 90 dk."
+        },
+        "igmg": {
+          "name": "IGMG (yaklaşık)",
+          "desc": "İmsak {fajr}°, Yatsı {isha}°, her vakit için saniye cinsinden temkin; IGMG takvimine göre ayarlanmış"
         }
       },
       "quelle_label": "Vakitlerin kaynağı",
@@ -232,7 +271,34 @@
       "richtung_west": "B",
       "anpassungen_titel": "Manuel düzeltmeler",
       "imsak": "İmsak düzeltmesi (Dk.)",
-      "isha": "Yatsı düzeltmesi (Dk.)"
+      "isha": "Yatsı düzeltmesi (Dk.)",
+      "quelle_igmg": "IGMG namaz takvimi"
+    },
+    "gebetszeitenQuelle": {
+      "igmg": "Kaynak: IGMG namaz takvimi, güncelleme tarihi {datum}.",
+      "igmgOhneStand": "Kaynak: IGMG namaz takvimi.",
+      "import": "Kaynak: cemaatimizin namaz vakitleri çizelgesi.",
+      "berechnet": "Çizelgesi olmayan günler: hesaplanmış (geçici), IGMG takvimine yaklaştırılmış.",
+      "berechnetMethode": "Çizelgesi olmayan günler: seçili yönteme göre hesaplanmış (geçici)."
+    },
+    "gebetszeitenFaq": {
+      "titel": "Wetzlar namaz vakitleri hakkında sorular",
+      "quelle": {
+        "frage": "Namaz vakitleri nereden geliyor?",
+        "antwort": "Esas alınan, Wetzlar Fatih Camii’nin bağlı olduğu İslam Toplumu Millî Görüş’ün (IGMG) namaz takvimidir. Bir gün için bu takvimden vakitler mevcutsa onları değiştirmeden ve güncelleme tarihiyle gösteriyoruz.\n\nDiğer bütün günler için site, IGMG takvimine yaklaştırılmış bir hesaplama yapar ve bu günleri “hesaplanmış (geçici)” olarak işaretler."
+      },
+      "vorlaeufig": {
+        "frage": "Bazı günlerde neden “hesaplanmış (geçici)” yazıyor?",
+        "antwort": "Bu günler için henüz IGMG takviminden bir çizelge yok. O zaman vakitler, Wetzlar üzerindeki güneşin konumuna göre hesaplanır ve IGMG takviminin değerlerine göre ayarlanır. Birkaç dakikalık fark olabilir, yazın daha fazlası da mümkündür. Belirleyici olan yine IGMG takvimidir."
+      },
+      "offiziell": {
+        "frage": "Wetzlar için resmî IGMG namaz takvimini nerede bulurum?",
+        "antwort": "IGMG’nin internet sitesinde; orada Wetzlar şehir olarak kayıtlıdır. Bağlantıyı aylık çizelgenin altında ve Ayarlar sekmesinde bulabilirsiniz. Bu sayfa açılırken sitemiz igmg.org’dan hiçbir şey yüklemez; IGMG sayfası ancak siz tıkladığınızda açılır."
+      },
+      "anzeige": {
+        "frage": "Camideki ekranda vakitler ne kadar güncel?",
+        "antwort": "Namaz salonundaki ekran bu sayfayla aynı vakitleri gösterir. Vakitler değişirse birkaç dakika içinde kendini yeniler. İnternet bağlantısı yoksa en son yüklenen durumla çalışmaya devam eder."
+      }
     }
   },
   "en": {
@@ -272,7 +338,9 @@
       "tabelleDatum": "Date",
       "ramadan": "Ramadan",
       "drucken": "Print",
-      "methodeUnbekannt": "The configured calculation method is not listed individually here."
+      "methodeUnbekannt": "The configured calculation method is not listed individually here.",
+      "berechnetVorlaeufig": "calculated (provisional)",
+      "vorlaeufig": "provisional"
     },
     "gebetszeitenQibla": {
       "panel": "Qibla",
@@ -333,6 +401,10 @@
         "makkah": {
           "name": "Umm Al-Qura University",
           "desc": "Fajr: 18.5°, Isha: 90 min"
+        },
+        "igmg": {
+          "name": "IGMG (approximated)",
+          "desc": "Imsak {fajr}°, Isha {isha}°, per-prayer offsets in seconds, tuned to the IGMG calendar"
         }
       },
       "quelle_label": "Source of the times",
@@ -350,7 +422,34 @@
       "richtung_west": "W",
       "anpassungen_titel": "Manual adjustments",
       "imsak": "Imsak adjustment (min.)",
-      "isha": "Isha adjustment (min.)"
+      "isha": "Isha adjustment (min.)",
+      "quelle_igmg": "IGMG prayer calendar"
+    },
+    "gebetszeitenQuelle": {
+      "igmg": "Source: IGMG prayer calendar, last updated {datum}.",
+      "igmgOhneStand": "Source: IGMG prayer calendar.",
+      "import": "Source: the community's prayer time table.",
+      "berechnet": "Days without a table: calculated (provisional), approximating the IGMG calendar.",
+      "berechnetMethode": "Days without a table: calculated (provisional) with the selected method."
+    },
+    "gebetszeitenFaq": {
+      "titel": "Questions about prayer times in Wetzlar",
+      "quelle": {
+        "frage": "Where do the prayer times come from?",
+        "antwort": "The reference is the prayer calendar of the Islamic Community Millî Görüş (IGMG), to which the Fatih Mosque Wetzlar belongs. Where times from this calendar are available for a day, we show them unchanged together with the date of the last update.\n\nFor all other days, the website calculates an approximation of the IGMG calendar and marks those days as “calculated (provisional)”."
+      },
+      "vorlaeufig": {
+        "frage": "Why do some days say “calculated (provisional)”?",
+        "antwort": "No table from the IGMG calendar is available for these days yet. The times are then derived from the position of the sun over Wetzlar and tuned to the values of the IGMG calendar. A difference of a few minutes is possible, and more in summer. The IGMG calendar remains authoritative."
+      },
+      "offiziell": {
+        "frage": "Where can I find the official IGMG prayer calendar for Wetzlar?",
+        "antwort": "On the IGMG website, where Wetzlar is listed as a city. You will find the link below the monthly overview and in the Settings tab. Opening this page loads nothing from igmg.org; only your click takes you to the IGMG."
+      },
+      "anzeige": {
+        "frage": "How current are the times on the screen in the mosque?",
+        "antwort": "The screen in the prayer hall shows the same times as this page. When they change, it reloads them within a few minutes. Without an internet connection, it keeps running with the most recently loaded data."
+      }
     }
   }
 }

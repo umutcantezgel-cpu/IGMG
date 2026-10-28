@@ -86,16 +86,20 @@ export function AnzeigeLive({
   const [online, setOnline] = useState(true);
   const [daten, setDaten] = useState<AnzeigeDaten>(anzeige);
 
-  // Neue Folien und Einstellungen ohne Neuladen übernehmen; Fehler (kein Netz) lassen den Stand unverändert
+  // Neue Folien und Einstellungen ohne Neuladen übernehmen; Fehler (kein Netz) lassen den Stand unverändert. Haben sich die
+  // Gebetszeiten geändert (Import, IGMG-Abgleich, ADR 0048), lädt die Anzeige neu – die Zeiten kommen mit der Seite.
   useEffect(() => {
     let aktiv = true;
+    const geladenerStand = anzeige.gebetszeitenStand;
     const abrufen = async () => {
       if (!navigator.onLine) return;
       try {
         const antwort = await fetch('/api/anzeige', { cache: 'no-store' });
         if (!antwort.ok) return;
         const neu: unknown = await antwort.json();
-        if (aktiv && gueltigeDaten(neu)) setDaten(neu);
+        if (!aktiv || !gueltigeDaten(neu)) return;
+        if (geladenerStand && neu.gebetszeitenStand && neu.gebetszeitenStand !== geladenerStand) window.location.reload();
+        else setDaten(neu);
       } catch {
         // ohne Netz weiter mit dem letzten Stand
       }
@@ -105,7 +109,7 @@ export function AnzeigeLive({
       aktiv = false;
       window.clearInterval(takt);
     };
-  }, []);
+  }, [anzeige.gebetszeitenStand]);
 
   useEffect(() => {
     const geladenAm = berlinerDatum(new Date());

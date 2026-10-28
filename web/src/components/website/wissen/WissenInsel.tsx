@@ -1,10 +1,9 @@
 'use client';
 
 import { Check, FileText, Info, Play, Search, Users, X } from 'lucide-react';
-import { type KeyboardEvent, type MouseEvent, useEffect, useId, useRef, useState } from 'react';
+import { type KeyboardEvent, type MouseEvent, type ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { klassen } from '@/lib/klassen';
 import { ArtikelInhalt, ExpertenInhalt, VideoInhalt } from './WissenDialogInhalt';
-import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { ArtikelKarte, ExpertenKarte, VideoKarte } from './WissenKarten';
 import {
   type Anzeige,
@@ -25,6 +24,16 @@ export type WissenInselProps = {
   artikel: ArtikelAnzeige[];
   videos: VideoAnzeige[];
   experten: ExpertenAnzeige[];
+  /**
+   * Marke „Entwurf“ (`EntwurfMarke`), vom Server fertig gerendert, für Themen mit `marke` (ADR 0047). So bleiben Markup und
+   * Zeichen aus dem Client-Bundle (K-12, Welle 3 – JS-Grenze der Wissensseiten).
+   */
+  entwurfMarke?: ReactNode;
+  /**
+   * Zustandsgrafik „leer“ für „keine Treffer“, vom Server fertig gerendert: Die Grafik (Achtstern mit Lucide-Pfaden) bleibt so
+   * aus dem Client-Bundle (K-12, Welle 3 – JS-Grenze der Wissensseiten).
+   */
+  leerGrafik?: ReactNode;
 };
 
 const REITER_ICON = { artikel: FileText, videos: Play, experten: Users } as const;
@@ -37,7 +46,7 @@ type Dialog = { art: 'artikel' | 'video' | 'experte'; schluessel: string };
  * Tastatur nach WAI-ARIA: Pfeiltasten, Pos1 und Ende. Dialoge sind native `<dialog>`-Elemente mit Fokusrückgabe.
  * Videos werden nie eingebettet; ohne Videoquelle steht nur ein Platzhalter (K-14, G-05).
  */
-export function WissenInsel({ sprache, texte, themen, artikel, videos, experten }: WissenInselProps) {
+export function WissenInsel({ sprache, texte, themen, artikel, videos, experten, entwurfMarke, leerGrafik }: WissenInselProps) {
   const id = useId();
   const [suche, setSuche] = useState('');
   const [thema, setThema] = useState<string | null>(null);
@@ -167,7 +176,9 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                   an ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
-                <span lang={th.label.lang}>{th.label.text}</span>
+                <span className="flex flex-col items-start gap-1">
+                  <span lang={th.label.lang}>{th.label.text}</span> {th.marke ? entwurfMarke : null}
+                </span>
                 {an ? <Check aria-hidden className="size-5 shrink-0 text-gruen-700" /> : null}
               </button>
             );
@@ -232,7 +243,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
             <div role="status">
               {gefArtikel.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
-                  <Zustandsgrafik art="leer" />
+                  {leerGrafik}
                   <p className="max-w-text text-20 text-tinte-2">{texte.artikelLeer}</p>
                 </div>
               ) : null}
@@ -257,7 +268,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
             <div role="status">
               {gefVideos.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
-                  <Zustandsgrafik art="leer" />
+                  {leerGrafik}
                   <p className="max-w-text text-20 text-tinte-2">{texte.videosLeer}</p>
                 </div>
               ) : null}

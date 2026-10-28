@@ -4,6 +4,7 @@ import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
+import { funktionAn } from '@/lib/funktionen';
 import { BUKHARI, enthaeltArabisch, hadithNummerAus, suchAusschnitt, teilVon, type Ausschnitt } from '@/lib/hadith/anzeige';
 import { normalisiereArabisch } from '@/lib/hadith/import';
 import { sucheHadithNummer, sucheTitel, type FesteSeite, type TitelTreffer } from '@/lib/suche/titelindex';
@@ -17,7 +18,11 @@ import { ladeSuchIndex } from './suchindex';
  * den Cache über die Inhalts-Tags.
  */
 export type SuchArt = 'nachricht' | 'veranstaltung' | 'wissen';
-export type SuchTreffer = { art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number };
+/**
+ * `entwurf`: Wissensthema „zur Prüfung“, nur mit dem Schalter `website_wissen_vorschau` gefunden (ADR 0047) – die
+ * Trefferliste kennzeichnet es wie die Themenseite.
+ */
+export type SuchTreffer = { art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number; entwurf: boolean };
 
 export const SUCHE_MAX_LAENGE = 100;
 /** Steuerzeichen für Treffer im Ausschnitt (kommen in Inhalten nicht vor). */
@@ -37,7 +42,15 @@ export function teilwortMuster(q: string): string | null {
   return `%${q.replace(/[\\%_]/g, (z) => `\\${z}`)}%`;
 }
 
-function teil(art: SuchArt, tabelle: string, sprache: Sprache, frage: SQL, sichtbar: SQL, muster: string | null): SQL {
+function teil(
+  art: SuchArt,
+  tabelle: string,
+  sprache: Sprache,
+  frage: SQL,
+  sichtbar: SQL,
+  muster: string | null,
+  entwurf: SQL = sql`false`,
+): SQL {
   const spalte = sql.raw(`suche_${sprache}`);
   const titel = sql`coalesce(${sql.raw(tabelle)}.titel->>${sprache}, ${sql.raw(tabelle)}.titel->>'de')`;
   const text = sql`coalesce(${sql.raw(tabelle)}.klartext->>${sprache}, ${sql.raw(tabelle)}.klartext->>'de', '')`;
@@ -46,7 +59,8 @@ function teil(art: SuchArt, tabelle: string, sprache: Sprache, frage: SQL, sicht
   return sql`select ${art} as art, ${sql.raw(tabelle)}.slug as slug, ${titel} as titel,
     ts_headline(${sql.raw(`'${KONFIG[sprache]}'`)}::regconfig, ${text}, ${frage},
       ${`StartSel=${MARKE_AN}, StopSel=${MARKE_AUS}, MaxWords=28, MinWords=12, MaxFragments=1, FragmentDelimiter=" … "`}) as ausschnitt,
-    ts_rank(${sql.raw(tabelle)}.${spalte}, ${frage}) as rang
+    ts_rank(${sql.raw(tabelle)}.${spalte}, ${frage}) as rang,
+    ${entwurf} as entwurf
     from ${sql.raw(tabelle)} where ${trifft} and ${sichtbar}`;
 }
 
@@ -63,10 +77,14 @@ export function bereinigeSuche(roh: unknown): string {
 export async function suche(begriff: string, sprache: Sprache): Promise<SuchTreffer[]> {
   'use cache';
   cacheLife('hours');
-  cacheTag(TAG.nachrichten, TAG.veranstaltungen, TAG.wissen);
+  cacheTag(TAG.nachrichten, TAG.veranstaltungen, TAG.wissen, TAG.einstellungen);
   const q = bereinigeSuche(begriff);
   // Beispielmodus ohne Datenbank (ADR 0019): keine Treffer statt Absturz
   if (q.length < 2 || !datenbankVerfuegbar()) return [];
+  // Wissensthemen: öffentlich nur „geprüft“ (F-40); mit `website_wissen_vorschau` auch „zur Prüfung“ (ADR 0047)
+  const wissenFreigabe = (await funktionAn('website_wissen_vorschau'))
+    ? sql`wissen_thema.freigabe in ('geprueft', 'zur_pruefung')`
+    : sql`wissen_thema.freigabe = 'geprueft'`;
   const frage = sql`websearch_to_tsquery(${sql.raw(`'${KONFIG[sprache]}'`)}::regconfig, ${q})`;
   const muster = teilwortMuster(q);
   const veroeffentlicht = (t: string) => sql`${sql.raw(t)}.status = 'veroeffentlicht' and ${sql.raw(t)}.im_papierkorb_seit is null`;
@@ -75,14 +93,19 @@ export async function suche(begriff: string, sprache: Sprache): Promise<SuchTref
     union all
     ${teil('veranstaltung', 'veranstaltung', sprache, frage, veroeffentlicht('veranstaltung'), muster)}
     union all
-    ${teil('wissen', 'wissen_thema', sprache, frage, sql`${veroeffentlicht('wissen_thema')} and wissen_thema.freigabe = 'geprueft'`, muster)}
+    ${teil('wissen', 'wissen_thema', sprache, frage, sql`${veroeffentlicht('wissen_thema')} and ${wissenFreigabe}`, muster, sql`wissen_thema.freigabe <> 'geprueft'`)}
   ) as treffer order by rang desc, titel asc limit 30`;
-  const ergebnis = await db.execute<{ art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number | string }>(anfrage);
-  const zeilen =
-    'rows' in ergebnis
-      ? ergebnis.rows
-      : (ergebnis as unknown as { art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number | string }[]);
-  return zeilen.map((z) => ({ art: z.art, slug: z.slug, titel: z.titel, ausschnitt: z.ausschnitt ?? '', rang: Number(z.rang) }));
+  type Zeile = { art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number | string; entwurf: boolean | null };
+  const ergebnis = await db.execute<Zeile>(anfrage);
+  const zeilen = 'rows' in ergebnis ? ergebnis.rows : (ergebnis as unknown as Zeile[]);
+  return zeilen.map((z) => ({
+    art: z.art,
+    slug: z.slug,
+    titel: z.titel,
+    ausschnitt: z.ausschnitt ?? '',
+    rang: Number(z.rang),
+    entwurf: z.entwurf === true,
+  }));
 }
 
 /** Treffer der Hadith-Suche: Bezug und Ausschnitt aus dem unveränderten arabischen Text (Trefferwörter markiert). */

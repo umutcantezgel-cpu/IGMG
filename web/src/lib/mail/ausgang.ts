@@ -136,6 +136,23 @@ export async function planeHinweis(
     .values({ vorlage: 'hinweis', sprache: 'de', datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId });
 }
 
+/** Empfänger der Hinweise zum IGMG-Abgleich: alle, die die Gebetszeiten bearbeiten dürfen (ADR 0048). */
+export const GEBETSZEITEN_EMPFAENGER = 'recht:gebetszeiten.bearbeiten';
+
+/**
+ * Hinweis zum IGMG-Abgleich der Gebetszeiten (Vorlage „gebetszeiten“, ADR 0048), nur beim Zustandswechsel: Abgleich
+ * gestört, Lieferung auffällig, Abdeckung zu kurz oder neue Konflikte mit dem Import. Ohne Daten, nur der Pfad zur Verwaltung.
+ */
+export async function planeGebetszeitenHinweis(
+  o: { art: 'stoerung' | 'auffaellig' | 'abdeckung' | 'konflikte' },
+  tx: Pick<typeof db, 'insert'> = db,
+): Promise<void> {
+  const paket = verschluessele({ an: GEBETSZEITEN_EMPFAENGER, daten: { art: o.art, pfad: '/verwaltung/gebetszeiten' } });
+  await tx
+    .insert(schema.mailAusgang)
+    .values({ vorlage: 'gebetszeiten', sprache: 'de', datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId });
+}
+
 /**
  * Hinweis an die betroffene Person eines Verwaltungskontos (Nacharbeit N4, Vorlage „betroffen“, Deutsch): Entzug einer
  * Schutzrolle beantragt bzw. vollzogen, Konto mit Schutzrolle gesperrt. Nur die Art des Vorgangs und die Rolle, keine
@@ -232,6 +249,18 @@ async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt
       knopf: t('hinweis.knopf'),
       hinweis: t('hinweis.hinweis'),
       link: `${basisUrl()}${/^\/verwaltung\//.test(inhalt.daten.pfad ?? '') ? inhalt.daten.pfad : '/verwaltung'}`,
+    });
+  }
+  if (vorlage === 'gebetszeiten') {
+    // IGMG-Abgleich (ADR 0048): nur die Art des Zustands, keine Zeiten und keine Daten
+    const t = uebersetzer('de', { verwaltung: VERWALTUNG.gebetszeiten }, 'verwaltung.gebetszeiten.mail');
+    const art = t(`art.${inhalt.daten.art}`);
+    return benachrichtigungMail({
+      betreff: t('betreff', { art }),
+      text: t('text', { art }),
+      knopf: t('knopf'),
+      hinweis: t('hinweis'),
+      link: `${basisUrl()}/verwaltung/gebetszeiten`,
     });
   }
   if (vorlage === 'betroffen') {

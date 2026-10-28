@@ -11,8 +11,8 @@ import { PageHeader } from '@/components/website/PageHeader';
 import { JsonLd } from '@/components/website/JsonLd';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import type { Locale } from '@/i18n/routing';
-import { moschee } from '@/lib/seo/jsonld';
-import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
+import { gemeindeGraph } from '@/lib/seo/jsonld';
+import { basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
 import { sendeKontakt } from '@/server/actions/formulare/kontakt';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
@@ -20,8 +20,8 @@ import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('kontakt');
-  return metadatenFuer({ pfad: '/kontakt', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.kontakt');
+  return metadatenFuer({ pfad: '/kontakt', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /** Kontakt & Anfahrt (design/Contact.dc.html, Blatt S11): Kontaktdaten, Öffnungszeiten, Anfahrt, Karte erst nach Klick. */
@@ -36,7 +36,7 @@ export default async function KontaktSeite() {
   ]);
   return (
     <Seitenrahmen bereich="moschee" seite="kontakt" sprachZiel="/kontakt" pfad={[{ label: tp('kontakt') }]}>
-      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
+      <JsonLd daten={gemeindeGraph({ basis: basisUrl(), kontakt, sprache })} />
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 py-abschnitt-klein md:gap-16 md:px-8">
         {/* Erster Block (H-B10): Telefonreihenfolge im DOM – Kontaktdaten, Formular, dann die Begleitspalte; ab 1024 px nebeneinander */}

@@ -161,6 +161,38 @@ describe('Organisationen', () => {
     });
   });
 
+  it('Seite beim Dachverband (E-044): Auswahl wird gespeichert und öffentlich gelesen; unbekannter Schlüssel heißt „kein Verweis“', async () => {
+    await angemeldetAls([{ rolle: 'administration' }]);
+    const bereich = 'organisation-kadin-teskilati';
+    expect(
+      await actions.speichereOrganisation(
+        'kt',
+        {},
+        formular({ inhalt: orgJson({ beschreibung: { de: 'Testbeschreibung KT Zwei' }, dachverband: 'frauenorganisation' }) }),
+      ),
+    ).toEqual({ gespeichert: expect.any(Number) });
+    expect((await zeileZu(bereich)).inhalt).toMatchObject({ dachverband: 'frauenorganisation' });
+    expect((await oeffentlich.ladeSeiteninhalt(bereich)).dachverband).toBe('frauenorganisation');
+
+    // Unbekannt (oder von Hand verändert): wird zu null, der übrige Inhalt bleibt gültig und wird gespeichert
+    expect(
+      await actions.speichereOrganisation(
+        'kt',
+        {},
+        formular({ inhalt: orgJson({ beschreibung: { de: 'Testbeschreibung KT Drei' }, dachverband: 'https://beispiel.example.test' }) }),
+      ),
+    ).toEqual({ gespeichert: expect.any(Number) });
+    expect((await zeileZu(bereich)).inhalt).toMatchObject({ beschreibung: { de: 'Testbeschreibung KT Drei' }, dachverband: null });
+
+    // Ältere gespeicherte Inhalte ohne das Feld bleiben lesbar (kein Rückfall auf die Platzhalter)
+    await db
+      .update(schema.seiteninhalt)
+      .set({ inhalt: { ...organisationSchema.parse({}), beschreibung: { de: 'Testbeschreibung KT Alt' }, dachverband: undefined } })
+      .where(eq(schema.seiteninhalt.bereich, bereich));
+    const stand = await q.ladeSeiteninhaltFuerVerwaltung(bereich);
+    expect(stand).toMatchObject({ lesbar: true, inhalt: { beschreibung: { de: 'Testbeschreibung KT Alt' }, dachverband: null } });
+  });
+
   it('Speichern ist sofort öffentlich lesbar; Cache-Tag und Audit ohne Personendaten', async () => {
     const id = await angemeldetAls([{ rolle: 'organisationsredaktion', organisation: 'gt' }]);
     await actions.speichereOrganisation('gt', {}, formular({ inhalt: orgJson({ mission: { de: 'Testmission GT Eins' } }) }));

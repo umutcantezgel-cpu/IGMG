@@ -46,6 +46,13 @@ import chatFenster from './chat-fenster.json';
 import unterricht from './unterricht.json';
 import kinder from './kinder.json';
 import seiten from './seiten.json';
+// Marktstart (P8): Metatitel und -beschreibungen je Seite, Texte für /llms.txt (ADR 0049)
+import seo from './seo.json';
+// Marktstart mit IGMG-Daten (E-044): Netzwerk-Verweise und Einbettungen nach Klick
+import dachverband from './dachverband.json';
+import einbettung from './einbettung.json';
+// Marktstart P4: Seite „Hadsch & Umra“
+import hadschUmra from './hadsch-umra.json';
 type Teil = Record<string, unknown>;
 export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 
@@ -92,4 +99,8 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   unterricht,
   kinder,
   seiten,
+  seo,
+  dachverband,
+  einbettung,
+  'hadsch-umra': hadschUmra,
 };

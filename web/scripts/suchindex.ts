@@ -7,7 +7,7 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { eq } from 'drizzle-orm';
 import { holeDb, schema } from '../src/lib/db';
-import { entscheide } from '../src/lib/funktionen-regeln';
+import { entscheide, entscheideWirksam } from '../src/lib/funktionen-regeln';
 import { baueSuchIndex } from '../src/lib/suche/titelindex-bau';
 import { pruefeSuchIndex, SUCHINDEX_DATEI } from '../src/lib/suche/titelindex';
 import { EINSTELLUNG } from '../src/lib/validierung/einstellungen';
@@ -17,8 +17,11 @@ async function main() {
   // Gesamtsammlung wie beim Vorrendern der Buchseiten: Umgebung → Einstellung der Bau-Datenbank → Standard der Betriebsart
   const [zeile] = await db.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, 'funktionen')).limit(1);
   const einstellung = EINSTELLUNG.funktionen.schema.safeParse(zeile?.wert ?? {});
-  const hadith = entscheide('hadith_gesamt', process.env, einstellung.success ? einstellung.data : null);
-  const index = await baueSuchIndex(db, { hadith });
+  const werte = einstellung.success ? einstellung.data : null;
+  const hadith = entscheide('hadith_gesamt', process.env, werte);
+  // Wissens-Entwürfe „zur Prüfung“ wie die vorgerenderten Themenseiten (ADR 0047)
+  const wissenEntwuerfe = entscheideWirksam('website_wissen_vorschau', process.env, werte);
+  const index = await baueSuchIndex(db, { hadith, wissenEntwuerfe });
   if (!pruefeSuchIndex(index)) throw new Error('Suchindex ungültig');
   const ziel = join(import.meta.dirname, '..', SUCHINDEX_DATEI);
   const text = JSON.stringify(index);

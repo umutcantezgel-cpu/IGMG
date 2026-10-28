@@ -2,7 +2,7 @@
 
 Für alle, die auf der Website der Gemeinde Nachrichten, Seiten, Menüs und die Anzeige im Gebetsraum pflegen. Du brauchst kein Technikwissen. Die Schritte sind kurz.
 
-**Stand:** 15.10.2026. **Nachrichten, Veranstaltungen, Ankündigungen, Medien, Seiten mit Bausteinen, Menüs, Startseite, Islamisches Wissen, Weiterleitungen, Freigaben und Anzeige-Folien** gibt es in der Verwaltung; dieses Handbuch beschreibt die Bildschirme so, wie sie sind. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**).
+**Stand:** 15.10.2026, Abschnitt 12 vom 28.10.2026. **Nachrichten, Veranstaltungen, Ankündigungen, Medien, Seiten mit Bausteinen, Menüs, Startseite, Islamisches Wissen, Weiterleitungen, Freigaben und Anzeige-Folien** gibt es in der Verwaltung; dieses Handbuch beschreibt die Bildschirme so, wie sie sind. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**).
 
 ## 1. Das Wichtigste vorab
 
@@ -91,7 +91,7 @@ Enthält die Seite Vers- oder Hadith-Blöcke, ist zusätzlich die **religiöse F
 ## 5. Menüs, Startseite und Islamisches Wissen
 
 - **Menüs:** Verwaltung → **„Menüs“**. Wähle das Menü: **Hauptmenü (Kopf)** aus Gruppen (höchstens 6 Gruppen mit je 12 Einträgen) oder **Schnellzugriff (Fuß)** (höchstens 12 Einträge). „Gruppe hinzufügen“, „Eintrag hinzufügen“; die Reihenfolge änderst du mit „Nach oben“ und „Nach unten“. Jeder Eintrag zeigt auf eine Seite der Website. [Bildschirmfoto folgt] Gibt es kein Menü in der Datenbank, nutzt die Website das feste Standardmenü.
-- **Startseite:** Verwaltung → **„Startseite“**. [Bildschirmfoto folgt] Oben steht immer der **Kopf mit dem Tagesbogen**; er lässt sich nicht verschieben. Darunter legst du die Reihenfolge der Abschnitte fest: **Unsere neue Moschee**, **Veranstaltungen**, **Neuigkeiten** und **Vers und Hadith des Tages** (dieser erscheint nur, wenn die religiöse Prüfung Einträge freigegeben hat).
+- **Startseite:** Verwaltung → **„Startseite“**. [Bildschirmfoto folgt] Oben steht immer der **Kopf mit dem Tagesbogen**; er lässt sich nicht verschieben. Darunter legst du die Reihenfolge der Abschnitte fest: **Unsere neue Moschee**, **Veranstaltungen**, **Neuigkeiten**, **Aus dem Dachverband** (Freitagspredigt und Aktionen der IGMG, siehe 12.3) und **Vers und Hadith des Tages** (dieser erscheint nur, wenn die religiöse Prüfung Einträge freigegeben hat). In einer schon gespeicherten Reihenfolge steht „Aus dem Dachverband“ zuerst ganz unten; verschiebe ihn bei Bedarf.
   1. Verschiebe einen Abschnitt mit **„Nach oben“** und **„Nach unten“** (geht auch mit der Tastatur: Tab bis zum Knopf, dann Enter; der Bildschirmleser sagt die neue Stelle an).
   2. Nimm den Haken bei **„Anzeigen“** weg, wenn ein Abschnitt vorübergehend nicht erscheinen soll.
   3. Tippe auf **„Reihenfolge speichern“**. Die Startseite zeigt die neue Reihenfolge sofort, in allen Sprachen.
@@ -182,3 +182,104 @@ Der Bildschirm im Gebetsraum zeigt die Gebetszeiten und dazwischen **Folien**. D
 | Passwort oder Zwei-Faktor           | Administration bittet, es zurückzusetzen                         |
 
 **Kontakte:** Administration [Name, Telefon] · Technik [Name, Telefon] · Imam/Hoca für religiöse Freigaben [Name].
+
+## 12. Inhalte vom Dachverband (Marktstart IGMG, Stand 28.10.2026)
+
+Seit Oktober 2026 nutzt die Website Inhalte der Islamischen Gemeinschaft Millî Görüş (IGMG): Zahlen und Kontakt auf `/igmg`, Freitagspredigten und Aktionen, die Seite „Hadsch & Umra“, die Gebetszeiten aus dem IGMG-Gebetskalender und vier Erklärtexte als Entwurf. Die IGMG hat zugestimmt (ADR 0046); der schriftliche Nachweis folgt (MENSCHEN M-099).
+
+### 12.1 Schreibregeln (Suche, Antwortmaschinen, KI-Suche)
+
+Diese Regeln gelten für jeden neuen Text auf der Website, in allen drei Sprachen.
+
+1. **Selbst formulieren.** Nie acht oder mehr Wörter am Stück von igmg.org, igmgreisen.com oder einer anderen Seite übernehmen. Erlaubt sind nur Eigennamen, Titel (etwa der Titel einer Freitagspredigt) und gekennzeichnete Zitate. Sonst gilt der Text als Doppel-Inhalt und schadet in der Suche.
+2. **Die Antwort zuerst.** Der erste Satz beantwortet die Frage, Einzelheiten folgen. Zwischenüberschriften dürfen Fragen sein, so wie Menschen suchen: „Wann muss ich mich für Hadsch 2027 anmelden?“
+3. **Namen beim ersten Nennen ganz ausschreiben:** „Islamische Gemeinschaft Millî Görüş (IGMG)“, danach „IGMG“. Die Gemeinde heißt als Marke „IGMG Wetzlar“, die Moschee „Fatih-Moschee Wetzlar“ (TR „Wetzlar Fatih Camii“, EN „Fatih Mosque Wetzlar“), immer mit „Wetzlar“.
+4. **Ortsbezug:** Wetzlar, Lahn-Dill-Kreis, Mittelhessen, Hessen – wo es passt, nicht in jedem Satz.
+5. **Quelle und Stand zeigen.** Zahlen und Termine vom Dachverband stehen nur mit Quelle und Datum („Angaben nach …, Stand …“). Zahlen der IGMG stehen nur auf `/igmg`, nie neben Zahlen der Gemeinde.
+6. **Nur Belegtes.** Was kein Beleg trägt, bleibt Platzhalter in eckigen Klammern. Keine Personennamen und keine Telefonnummern aus den Seiten der IGMG (G-04); Ansprechpersonen nur mit deren Einverständnis.
+7. **Keine Politik:** keine Pressemitteilungen und keine politischen Themen aus dem Dachverband.
+8. **Titel und Beschreibung für die Suche:** Titel höchstens 60 Zeichen, Beschreibung 120 bis 155 Zeichen, mit dem Suchbegriff vorn (etwa „Gebetszeiten Wetzlar“, „Wetzlar namaz vakitleri“, „Umra Anmeldung Hessen“). Die Überschrift auf der Seite darf anders lauten als der Titel.
+9. **Datiert statt „aktuell“:** „Freitagspredigt vom 23. Oktober 2026“, nie „Predigt der Woche“. So bleibt jede Aussage richtig, auch wenn die Seite einmal älter ist.
+10. **Religiöses wie bisher (siehe 1):** keine Verse, Hadithe, Bittgebete, Übersetzungen und keine arabische Schrift. Versangaben nur, wenn die verlinkte IGMG-Seite sie selbst nennt.
+
+### 12.2 Glossar Deutsch, Türkisch, Englisch
+
+So schreiben wir die Begriffe überall gleich. Wer eine neue Übersetzung braucht, nimmt sie von hier. Abweichungen bitte an die Technik melden (MENSCHEN M-102).
+
+| Deutsch                                           | Türkisch                                 | Englisch                                        | Hinweis                                                         |
+| ------------------------------------------------- | ---------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------- |
+| Islamische Gemeinschaft Millî Görüş (IGMG)        | İslam Toplumu Millî Görüş (IGMG)         | Islamic Community Millî Görüş (IGMG)            | beim ersten Nennen ganz                                         |
+| IGMG Wetzlar                                      | IGMG Wetzlar                             | IGMG Wetzlar                                    | Marke der Gemeinde                                              |
+| Fatih-Moschee Wetzlar                             | Wetzlar Fatih Camii                      | Fatih Mosque Wetzlar                            | Name der Moschee, immer mit „Wetzlar“                           |
+| Moscheegemeinde                                   | cami cemiyeti                            | mosque community                                |                                                                 |
+| Region Hessen (Regionalverband)                   | Hessen bölgesi                           | Hesse region                                    | Zugehörigkeit belegt 2008, Bestätigung M-103                    |
+| Zweigstelle                                       | şube                                     | branch                                          |                                                                 |
+| Schura                                            | Şura                                     | Shura                                           | oberstes Organ der IGMG                                         |
+| Vorstand (der IGMG)                               | Yönetim Kurulu                           | Board of Directors                              |                                                                 |
+| Präsidium                                         | Başkanlık Divanı                         | Presidium                                       |                                                                 |
+| Erweiterter Vorstand                              | Merkez Yürütme Kurulu                    | Central Executive Committee                     |                                                                 |
+| Kuratorium                                        | Mütevelli Heyeti                         | Board of Trustees                               |                                                                 |
+| Wahlrat                                           | Seçim Kurulu                             | Electoral Council                               |                                                                 |
+| Gelehrtenrat                                      | **Din İstişare Kurulu**                  | Religious Advisory Council                      | TR wie in der Broschüre der IGMG; EN noch uneinheitlich (M-102) |
+| Prüfungsausschuss                                 | Denetim Kurulu                           | Audit Committee                                 |                                                                 |
+| Frauenorganisation (KT)                           | Kadınlar Teşkilatı                       | women’s organisation                            |                                                                 |
+| Jugendorganisation (GT)                           | Gençlik Teşkilatı                        | youth organisation                              |                                                                 |
+| Frauenjugendorganisation (KGT)                    | Kadınlar Gençlik Teşkilatı               | young women’s organisation                      |                                                                 |
+| Ana Teşkilatı (AT)                                | Ana Teşkilatı                            | [englischer Name offen]                         | M-105                                                           |
+| Freitagspredigt (Hutba)                           | cuma hutbesi                             | Friday sermon                                   |                                                                 |
+| Aktion                                            | kampanya                                 | campaign                                        | Art im Abschnitt „Aus dem Dachverband“                          |
+| Hadsch, Umra                                      | hac, umre                                | Hajj, Umrah                                     | Seite: „Hadsch & Umra“, „Hac ve Umre“, „Hajj & Umrah“           |
+| IGMG Reisen                                       | IGMG Hac ve Umre                         | IGMG Reisen                                     | Reiseveranstalter der IGMG (igmgreisen.com)                     |
+| Zakat, Fitra, Kurban                              | zekât, fitre, kurban                     | zakat, fitra, qurban                            | über Hasene; die Fitra nimmt auch die Gemeinde entgegen (E-046) |
+| Hasene                                            | Hasene                                   | Hasene                                          | Hilfsorganisation, Eigenname                                    |
+| Fördermitglied der IGMG                           | IGMG destekçi üyeliği                    | supporting member of IGMG                       | Mitgliedschaft im Dachverband, nicht in der Gemeinde            |
+| IGMG-Gebetskalender                               | IGMG namaz takvimi                       | IGMG prayer calendar                            | offizielle Quelle der Gebetszeiten                              |
+| berechnet (vorläufig)                             | hesaplanmış (geçici)                     | calculated (provisional)                        | Gebetszeiten ohne IGMG-Tabelle                                  |
+| Ramadan-Begleiter                                 | Ramazan Yoldaşım                         | Ramadan companion                               | Eigenname der IGMG-Broschüre; Schreibweise noch uneinheitlich   |
+| Umra-Begleiter                                    | Umre Yoldaşım                            | Umrah companion                                 | Eigenname der IGMG-Broschüre                                    |
+| Entwurf zur Prüfung – noch nicht vom Imam geprüft | İnceleme taslağı – imam henüz incelemedi | Draft for review – not yet reviewed by the imam | Marke der Erklärtexte (12.6)                                    |
+
+### 12.3 Aus dem Dachverband und Freitagspredigten pflegen
+
+Verwaltung → **„Seiteninhalte“** → **„Aus dem Dachverband“**. Die Einträge erscheinen auf der Startseite (Abschnitt „Aus dem Dachverband“), auf `/nachrichten`, auf `/islamisches-wissen` (die neueste Predigt) und auf den Seiten der Organisationen (nach Art).
+
+1. **Freitagspredigten kommen von selbst.** Die Website holt sie jeden Morgen aus dem Feed der IGMG. Mit **„Jetzt aus dem Feed holen“** geht es sofort (höchstens einmal in fünf Minuten).
+2. **Nur Titel, Datum und Link.** Eine Predigt hat keinen Kurztext, keine Versangaben und keine Anführungszeichen; die Verwaltung lehnt das ab. Der Text der Predigt steht nur bei der IGMG.
+3. **Ausblenden statt löschen.** Soll eine Predigt oder Aktion nicht erscheinen, nimm den Haken bei **„sichtbar“** weg. Eine gelöschte Predigt holt der nächste Abgleich wieder zurück.
+4. **„Freitagspredigt eintragen“**, falls der Feed einmal ausfällt: Datum ist der Freitag (JJJJ-MM-TT), Titel wie bei der IGMG, Link auf igmg.org. Türkisch und Englisch nur, wenn es eine eigene Fassung gibt.
+5. **Aktionen und Bildungsangebote** (Tag der offenen Moschee, Ramadan-Begleiter, Qalam …) legst du selbst an: Art wählen, Titel, ein Kurztext in eigenen Worten (zwei bis drei Sätze), Link. Mit **„Anzeigen bis“** verschwindet ein Eintrag von selbst.
+6. **Was nicht hineingehört:** Pressemitteilungen und politische Themen. Wer unsicher ist, fragt den Vorstand (die Liste der erlaubten Themen bestätigt der Vorstand, MENSCHEN).
+7. Höchstens 60 Einträge; ältere Predigten aus dem Feed fallen dann weg.
+
+### 12.4 Hadsch & Umra pflegen
+
+Verwaltung → **„Seiteninhalte“** → **„Hadsch & Umra“**. Die Angaben stammen von IGMG Reisen; verbindlich ist immer IGMG Reisen.
+
+1. **Jedes Jahr nach der Ausschreibung** (Hadsch meist im Herbst): Hinweise mit Frist, Reiseprogramme (nur als Link, **ohne Preise**), Abflüge ab Frankfurt mit Gruppe, Flughafen-Kürzel und Daten, dazu **Stand** und Quelle.
+2. **Hinweise mit „Anzeigen bis“** und vergangene Abflüge blendet die Website von selbst aus. Die Seite erneuert sich stündlich.
+3. **Ansprechperson:** Name und Telefon nur mit Einverständnis der Person. Keine Telefonnummern der Regionalstellen; dafür steht der Link auf IGMG Reisen.
+4. **Unterlagen:** nur aktuelle Formulare und Ratgeber verlinken, mit Sprache und Ausgabe.
+5. **Videos:** nur von IGMG Reisen; die elfstellige ID oder die kopierte YouTube-Adresse eintragen. Videos laden erst nach einem Klick. Bevor weitere Videos dazukommen, muss die Datenschutzerklärung geprüft sein (MENSCHEN M-111).
+6. **Fragen und Antworten:** nur Organisatorisches (Anmeldung, Fristen, Abflug, Unterlagen). Religiöse Erklärungen stehen im Wissensthema „Hadsch und Umra“ (12.6).
+
+### 12.5 Gebetszeiten aus dem IGMG-Gebetskalender übernehmen
+
+Der IGMG-Gebetskalender ist die offizielle Quelle (Wetzlar, Stadt-ID 20238). Solange es keinen automatischen Abgleich gibt, überträgst du einen Monat von Hand:
+
+1. Verwaltung → **„Gebetszeiten“** → **„Tabelle aus dem IGMG-Gebetskalender einfügen“**.
+2. **„IGMG-Gebetskalender für Wetzlar öffnen“**, Jahr und Monat wählen.
+3. Die Tabelle mit der Maus markieren – vom Ortsnamen „Wetzlar (DE)“ bis zur letzten Zeile – und kopieren. Kopf und Ortsname dürfen mit.
+4. Ins Feld **„Kopierte Tabelle“** einfügen und **„Tabelle prüfen“** wählen. Die Verwaltung erkennt die Spalten İmsak, Güneş, Öğle, İkindi, Akşam, Yatsı und prüft, ob die Tabelle zu Wetzlar gehört.
+5. Die ersten Tage mit der Seite der IGMG vergleichen, dann übernehmen. Öffentlich steht danach „Quelle: IGMG-Gebetskalender, Stand …“.
+6. **Vor dem Ende des Monats** den nächsten Monat übertragen; das Startklar-Cockpit warnt, wenn weniger als 30 der nächsten Tage aus einer Tabelle stammen. Tage ohne IGMG-Tabelle zeigt die Website als „berechnet (vorläufig)“.
+7. Läuft später der **automatische Abgleich**, überschreibt er deine Tabelle nie. Weicht der IGMG-Kalender ab, zeigt die Verwaltung die Tage unter „Abweichungen zum Import der Gemeinde“; dort übernimmst du die IGMG-Werte oder entfernst den Import.
+
+### 12.6 Erklärtexte als „Entwurf zur Prüfung“ und ihre Freigabe
+
+Vier Themen unter „Islamisches Wissen“ – Hadsch und Umra, Islamischer Kalender, Zakat, Fitra und Kurban, Freitagsgebet – hat eine KI aus Quellen der IGMG geschrieben (ADR 0047). Sie stehen schon öffentlich, aber sichtbar als **„Entwurf zur Prüfung – noch nicht vom Imam geprüft“**.
+
+1. **Die Redaktion ändert diese Texte nicht inhaltlich.** Fehler meldest du dem Imam oder der Hoca.
+2. **Freigabe:** Verwaltung → **„Freigaben“**. Die religiöse Prüfung gibt einen Text frei; dann verschwindet die Kennzeichnung. **„Zurückweisen“** nimmt den Text sofort von der Website.
+3. **Alle Entwürfe auf einmal verbergen** kann die Technik mit dem Schalter `website_wissen_vorschau` (Verwaltung › Einstellungen › Funktionen oder `FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus`). Ob die Vorschau beim öffentlichen Start an bleibt, entscheidet der Vorstand.
+4. Beträge (Fitra, Fidya) nennen die Texte bewusst nicht; die gibt die IGMG jedes Jahr bekannt.
+5. **Endgültig löschen ist endgültig:** Löschst du einen dieser Entwürfe aus dem Papierkorb (oder leert sich der Papierkorb nach 30 Tagen), kommt er auch mit einer neuen Version der Website nicht zurück. Willst du ihn wiederhaben, lege das Thema neu an.

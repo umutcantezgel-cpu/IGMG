@@ -7,8 +7,10 @@ import { z } from 'zod';
  * Der Kopf mit Tagesbogen (Hero) steht immer oben und ist kein Abschnitt dieser Liste. Darunter folgen die Abschnitte in
  * der gespeicherten Reihenfolge; ausgeblendete Abschnitte entfallen. Ohne Datenbank (Beispielmodus), ohne gespeicherte
  * Ordnung oder bei ungültigem Wert gilt der Bestand: {@link STANDARD_ORDNUNG} (Rückfall).
+ * Marktstart P3 (E-044 Nr. 2): „Aus dem Dachverband“ (`dachverband`) steht nach den Neuigkeiten; in gespeicherten
+ * Ordnungen von vorher fehlt er und wird von {@link ordnungAus} sichtbar am Ende ergänzt.
  */
-export const STARTSEITE_ABSCHNITTE = ['moschee', 'veranstaltungen', 'neuigkeiten', 'desTages'] as const;
+export const STARTSEITE_ABSCHNITTE = ['moschee', 'veranstaltungen', 'neuigkeiten', 'dachverband', 'desTages'] as const;
 export type StartseitenAbschnitt = (typeof STARTSEITE_ABSCHNITTE)[number];
 
 export type AbschnittEintrag = { schluessel: StartseitenAbschnitt; sichtbar: boolean };

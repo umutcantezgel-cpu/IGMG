@@ -17,8 +17,8 @@ import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('projekte');
-  return metadatenFuer({ pfad: '/projekte', titel: t('kopf.titel'), beschreibung: t('kopf.untertitel') });
+  const t = await getTranslations('seo.projekte');
+  return metadatenFuer({ pfad: '/projekte', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**

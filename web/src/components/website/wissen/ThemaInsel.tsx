@@ -4,7 +4,6 @@ import { FileText, Info, Play, Search, Users, X } from 'lucide-react';
 import { type KeyboardEvent, type MouseEvent, type ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { klassen } from '@/lib/klassen';
 import { ArtikelInhalt, ExpertenInhalt, VideoInhalt } from './WissenDialogInhalt';
-import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { ArtikelKarte, ExpertenKarte, VideoKarte } from './WissenKarten';
 import { type Anzeige, type ArtikelAnzeige, type ExpertenAnzeige, REITER, type Reiter, type VideoAnzeige, type WissenTexte } from './typen';
 
@@ -21,6 +20,11 @@ export type ThemaInselProps = {
   experten: ExpertenAnzeige[];
   /** Server-gerenderte Themenleiste mit Filterzeile, zwischen Suche und Reitern (Designreihenfolge). */
   themen: ReactNode;
+  /**
+   * Zustandsgrafik „leer“ für „keine Treffer“, vom Server fertig gerendert: Die Grafik (Achtstern mit Lucide-Pfaden) bleibt so
+   * aus dem Client-Bundle (K-12, Welle 3 – JS-Grenze der Wissensseiten).
+   */
+  leerGrafik?: ReactNode;
 };
 
 const REITER_ICON = { artikel: FileText, videos: Play, experten: Users } as const;
@@ -33,7 +37,7 @@ type Dialog = { art: 'artikel' | 'video' | 'experte'; schluessel: string };
  * kein Umschalten. Tastatur und Dialoge wie in der Übersicht (WissenInsel): Pfeiltasten, Pos1, Ende; natives
  * <dialog> mit Fokusrückgabe. Videos werden nie eingebettet (K-14).
  */
-export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, themen }: ThemaInselProps) {
+export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, themen, leerGrafik }: ThemaInselProps) {
   const id = useId();
   const [suche, setSuche] = useState('');
   const [reiter, setReiter] = useState<Reiter>('artikel');
@@ -186,7 +190,7 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
             <div role="status">
               {gefArtikel.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
-                  <Zustandsgrafik art="leer" />
+                  {leerGrafik}
                   <p className="max-w-text text-20 text-tinte-2">{texte.artikelLeer}</p>
                 </div>
               ) : null}
@@ -211,7 +215,7 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
             <div role="status">
               {gefVideos.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
-                  <Zustandsgrafik art="leer" />
+                  {leerGrafik}
                   <p className="max-w-text text-20 text-tinte-2">{texte.videosLeer}</p>
                 </div>
               ) : null}

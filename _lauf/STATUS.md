@@ -1,5 +1,10 @@
 # STATUS
 
+## Marktstart mit IGMG-Daten (Stand 28.10.2026)
+- **Lauf läuft:** Pakete Fundament, P1–P8 gemergt auf `claude/peaceful-dirac-e7a06r` (Draft-PR umutcantezgel-cpu/IGMG#5); Welle 3 (Stand-Migration, Prüfwerkzeuge, Doku) in Arbeit, danach Gesamtverifikation, Push und PR-Beschreibung.
+- **Plan:** `/root/.claude/plans/root-claude-uploads-d2cbb575-0c84-5ded-cozy-llama.md`. Entscheidungen E-044/E-045 (`ENTSCHEIDUNGEN.md`), KERN 1.2, ADR 0046–0049.
+- **Bericht:** `belege/marktstart-igmg/BERICHT.md`. Menschen-Punkte M-099–M-120 (`MENSCHEN.md` § 8), Livegang: `web/docs/GO-LIVE.md` C6–C14.
+
 **Statuszeile:** ABGESCHLOSSEN (Übergang an den Release-Lauf, R-E02, 2026-10-11) · Wellen A–C fertig · Welle D: Suche, PWA, sitemap/robots, Quran-Import und -Seiten, JSON-LD, OG-Bilder · C11b, C17 fertig · offene Punkte → Startklar-Audit (`_lauf/release/`)
 
 ## Endstand des Aufbau-Laufs (2026-10-11, 13:15)

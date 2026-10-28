@@ -5,7 +5,8 @@ import type { Anzeige, ArtikelAnzeige, ExpertenAnzeige, VideoAnzeige, WissenText
 
 /**
  * Inhalte des nativen Dialogs (design/IslamicKnowledge.dc.html, Z95–129). Der Rahmen mit Schaltfläche „Schließen“
- * steht in der Insel; hier nur die drei Fassungen. Videos bleiben ohne Einbettung (K-14).
+ * steht in der Insel; hier nur die drei Fassungen. Videos bleiben ohne Einbettung (K-14); mit YouTube-ID steht statt des
+ * Platzhalters ein reiner Link „Auf YouTube ansehen“ (keine Anfrage beim Aufruf), fertig vom Server (`VideoLink`).
  */
 
 export function ArtikelInhalt({
@@ -74,10 +75,12 @@ export function VideoInhalt({ video: v, titelId, texte }: { video: VideoAnzeige;
       <h2 id={titelId} lang={v.titel.lang} className="pr-14 text-30">
         {v.titel.text}
       </h2>
-      <span className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
-        <Clock aria-hidden className="size-4" />
-        {v.dauer}
-      </span>
+      {v.dauer ? (
+        <span className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
+          <Clock aria-hidden className="size-4" />
+          {v.dauer}
+        </span>
+      ) : null}
       <div
         className={cn(
           'flex aspect-video flex-col items-center justify-center gap-2 rounded-lg border border-linie p-4 text-center',
@@ -86,7 +89,7 @@ export function VideoInhalt({ video: v, titelId, texte }: { video: VideoAnzeige;
       >
         <Play aria-hidden className="size-8 text-gruen-700" />
         <span className="font-bold">{v.titel.text}</span>
-        <span className="text-16 text-tinte-2">{texte.videoPlatzhalter}</span>
+        {v.link ?? <span className="text-16 text-tinte-2">{texte.videoPlatzhalter}</span>}
       </div>
       <h3 className="font-text text-18 font-bold">{texte.dialogBeschreibung}</h3>
       <p lang={v.beschreibung.lang} className="max-w-text text-pretty">

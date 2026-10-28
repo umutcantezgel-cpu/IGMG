@@ -24,6 +24,9 @@ const OEFFENTLICH: Record<VerwaltungBereich, Pfad> = {
   igmg: '/igmg',
   impressum: '/impressum',
   datenschutz: '/datenschutz',
+  // Aus dem Dachverband: Startseite (dazu /nachrichten, /islamisches-wissen und die Organisationsseiten)
+  dachverband: '/',
+  'hadsch-umra': '/hadsch-umra',
 };
 
 /**

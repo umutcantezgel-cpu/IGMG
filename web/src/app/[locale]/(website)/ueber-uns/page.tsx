@@ -1,23 +1,32 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { GemeindeJsonLd } from '@/components/website/GemeindeJsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Stern8 } from '@/components/website/Icons';
 import { Text } from '@/components/website/Text';
 import { Trenner } from '@/components/website/Zustandsgrafik';
+import { Quellenzeile } from '@/components/website/dachverband/Quellenzeile';
 import { Aufruf } from '@/components/website/ueber-uns/Aufruf';
 import { Bildflaeche } from '@/components/website/ueber-uns/Bildflaeche';
 import { Werte } from '@/components/website/ueber-uns/Werte';
 import { Zeitleiste } from '@/components/website/ueber-uns/Zeitleiste';
+import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 
 export const ensureStatic = 'navigation';
 
+/**
+ * Stand der übernommenen Angaben (Gründungsjahr 1978, Stationen 2008 und 2011, Regionalverband Hessen): Tag der Prüfung
+ * der IGMG-Berichte vom 07.04.2008 und 17.10.2011 (E-044). Die Belege stehen im Seed und auf /quellen.
+ */
+const QUELLEN_STAND = '2026-10-27';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('ueberUns');
-  return metadatenFuer({ pfad: '/ueber-uns', titel: t('titel'), beschreibung: t('untertitel') });
+  const t = await getTranslations('seo.ueberUns');
+  return metadatenFuer({ pfad: '/ueber-uns', titel: t('titel'), beschreibung: t('beschreibung') });
 }
 
 /**
@@ -25,6 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Redaktionelle Texte kommen aus dem Seiteninhalt „ueber-uns“, feste Überschriften und Schaltflächen aus messages.
  * Komposition nach der Referenz (O-10): vollbreite Abschnitte im Wechsel Papier/Sand, Kopfblock mit `text-display-2`.
  * Abschnittsköpfe (H-B12): Kennung mit Achtstern über dem Titel; der Weg steht im Breitformat neben seinem Kopf.
+ * Marktstart (E-044): Unter der Geschichte ordnet ein fester Satz die Gemeinde in den Dachverband ein (Link auf /igmg),
+ * die Quellenzeile nennt Herkunft und Stand der übernommenen Angaben.
  */
 export default async function UeberUnsSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -36,6 +47,7 @@ export default async function UeberUnsSeite() {
   const aufrufTitel = t('aufrufTitel');
   return (
     <Seitenrahmen bereich="moschee" seite="ueber-uns" sprachZiel="/ueber-uns" pfad={[{ label: tp('ueberUns') }]}>
+      <GemeindeJsonLd />
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
 
       {/* Geschichte: Lesespalte und Bildfläche nebeneinander, erster Absatz als Einleitung */}
@@ -61,7 +73,18 @@ export default async function UeberUnsSeite() {
                   className={i === 0 ? 'text-20 leading-einleitung text-tinte' : 'text-18'}
                 />
               ))}
+              {/* Einordnung in den Dachverband (E-044): fester Text, damit Entität und Region überall gleich lauten */}
+              <p className="text-18">
+                {t.rich('dachverband', {
+                  link: (teil) => (
+                    <Link href="/igmg" className="font-bold underline underline-offset-3">
+                      {teil}
+                    </Link>
+                  ),
+                })}
+              </p>
             </div>
+            <Quellenzeile quelle={t('quelle')} stand={QUELLEN_STAND} />
           </div>
           <Bildflaeche beschriftung={t('bildHistorie')} className="aspect-4/3 rounded-lg lg:sticky lg:top-8 lg:col-span-5" />
         </div>
