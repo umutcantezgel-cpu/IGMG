@@ -186,7 +186,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
     },
     kurztext: {
       de: 'Der islamische Kalender folgt dem Mond und zählt die Jahre ab der Hidschra. Ein Monat beginnt, wenn die neue Mondsichel sichtbar ist; die IGMG legt den Beginn nach einem Beschluss ihres Gelehrtenrats fest. Dazu die Feste und gesegneten Nächte im Überblick.',
-      tr: 'İslami takvim aya göre işler ve yılları hicretten itibaren sayar. Yeni ay, hilal görüldüğünde başlar; IGMG ayın başlangıcını âlimler kurulunun kararına göre belirler. Bayramlar ve mübarek geceler de burada kısaca anlatılıyor.',
+      tr: 'İslami takvim aya göre işler ve yılları hicretten itibaren sayar. Yeni ay, hilal görüldüğünde başlar; IGMG ayın başlangıcını Din İstişare Kurulu’nun kararına göre belirler. Bayramlar ve mübarek geceler de burada kısaca anlatılıyor.',
       en: 'The Islamic calendar follows the moon and counts its years from the Hijrah. A month begins when the new crescent is visible; IGMG sets the start according to a decision of its council of scholars. Here is an overview of the festivals and blessed nights.',
     },
     inhalt: {
@@ -226,7 +226,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         '### İslami bir ay ne zaman başlar?',
         'Bir ay, güneş battıktan sonra yeni hilal batı ufkunda görüldüğünde başlar ve bir sonraki hilal görülünce sona erer.',
         '### IGMG ayın başlangıcını nasıl belirler?',
-        'IGMG, âlimler kurulunun 2013’te yayımladığı bir karara uyar. Bu karar, Avrupa Fetva ve Araştırma Konseyi’nin (ECFR) 1999’da Köln’de ve 2009’da İstanbul’da aldığı kararlara ve 2008’de IGMG genel merkezinde yapılan bir toplantıya dayanır. En önemli kurallar:',
+        'IGMG, Din İstişare Kurulu’nun 2013’te yayımladığı bir karara uyar. Bu karar, Avrupa Fetva ve Araştırma Konseyi’nin (ECFR) 1999’da Köln’de ve 2009’da İstanbul’da aldığı kararlara ve 2008’de IGMG genel merkezinde yapılan bir toplantıya dayanır. En önemli kurallar:',
         '- Belirleyici olan hilalin görülmesidir; çıplak gözle ya da teleskopla.',
         '- Görüldüğü bildirilen hilal astronomik hesaplarla da desteklenmelidir.',
         '- Hilal ancak kavuşumdan sonra güneşe uzaklığı 8 dereceyi aşıyorsa ve güneş battıktan sonra ufkun en az 5 derece üzerindeyse görülebilir kabul edilir.',
@@ -244,7 +244,7 @@ export const WISSEN_ENTWUERFE: readonly WissenEntwurf[] = [
         'Bunların yanı sıra Hz. Peygamber’in doğumu (Mevlid) ve İslami yılın ilk ayı olan Muharrem’in 10’undaki Aşure günü de anma günleridir.',
         '### Kaynaklar',
         '- {IGMG: İslami bayramlar (Almanca)|feste}',
-        '- {IGMG âlimler kurulunun hilal kararı (Almanca, 2013)|gelehrtenratHilal}',
+        '- {IGMG Din İstişare Kurulu’nun hilal kararı (Almanca, 2013)|gelehrtenratHilal}',
         '- {Cuma hutbesi: Hicret ve yeni hicri yıl (Almanca, 2005)|hidschraNeujahr}',
         '- {Cuma hutbesi: Üç aylar ve Regaib Kandili (Almanca, 2015)|regaib}',
         '- {Cuma hutbesi: Miraç (Almanca, 2014)|miradsch}',
