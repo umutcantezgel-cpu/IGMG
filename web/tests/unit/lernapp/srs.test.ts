@@ -127,8 +127,9 @@ describe('Nachspielen', () => {
   it('Eigenschaft: Reihenfolge des Eintreffens ist gleichgültig (deterministisch nach Sortierung)', () => {
     fc.assert(
       fc.property(
+        // (Gerät, Nummer) ist je Konto eindeutig (`lernapp_ereignis_eindeutig`); Dubletten mit verschiedener Note gibt es nicht
         fc
-          .array(bewertung, { maxLength: 25 })
+          .uniqueArray(bewertung, { maxLength: 25, selector: (x) => `${x.geraet}:${x.seq}` })
           .chain((liste) => fc.tuple(fc.constant(liste), fc.shuffledSubarray(liste, { minLength: liste.length, maxLength: liste.length }))),
         ([liste, gemischt]) => {
           const x = spieleNach(liste);
