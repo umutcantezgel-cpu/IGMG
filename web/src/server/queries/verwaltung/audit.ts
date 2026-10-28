@@ -84,6 +84,8 @@ export const AKTION_SCHLUESSEL = {
   'gebetszeiten.importiert': 'gebetszeitenImportiert',
   'gebetszeiten.import_entfernt': 'gebetszeitenImportEntfernt',
   'gebetszeiten.einstellung': 'gebetszeitenEinstellung',
+  'gebetszeiten.abgleich': 'gebetszeitenAbgleich',
+  'gebetszeiten.konflikt_uebernommen': 'gebetszeitenKonfliktUebernommen',
   'einstellung.geaendert': 'einstellungGeaendert',
   'ticket.angelegt': 'ticketAngelegt',
   'ticket.geaendert': 'ticketGeaendert',

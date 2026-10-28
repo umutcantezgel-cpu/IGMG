@@ -23,7 +23,7 @@ const db = pgDb as unknown as Datenbank;
 afterAll(() => client.close());
 
 beforeEach(async () => {
-  await db.execute(sql`truncate table einstellung, seiteninhalt, veranstaltung, nachricht cascade`);
+  await db.execute(sql`truncate table einstellung, seiteninhalt, veranstaltung, nachricht, gebetszeit_tag, gebetszeit_abgleich cascade`);
 });
 
 const geheimnis = () => randomBytes(32).toString('base64');
@@ -80,6 +80,23 @@ async function pruefe(env: Umgebung, datenbank: Datenbank | null = db) {
 
 async function setzeEinstellung(schluessel: string, wert: unknown) {
   await db.execute(sql`insert into einstellung (schluessel, wert) values (${schluessel}, ${JSON.stringify(wert)}::jsonb)`);
+}
+
+/** Zeiten aus dem IGMG-Kalender ab dem Prüftag (11.10.2026) für `anzahl` Tage (ADR 0048). */
+async function setzeIgmgTage(anzahl: number, quelle: 'igmg' | 'import' = 'igmg') {
+  for (let i = 0; i < anzahl; i++) {
+    const datum = new Date(Date.UTC(2026, 9, 11 + i)).toISOString().slice(0, 10);
+    await db.execute(
+      sql`insert into gebetszeit_tag (datum, imsak, gunes, ogle, ikindi, aksam, yatsi, quelle) values (${datum}, '06:02', '07:44', '13:28', '16:21', '19:01', '20:30', ${quelle}::gebetszeit_quelle)`,
+    );
+  }
+}
+
+/** Ein Lauf des IGMG-Abgleichs im Protokoll. */
+async function setzeLauf(status: string, gestartet: string, konflikte = 0) {
+  await db.execute(
+    sql`insert into gebetszeit_abgleich (quelle, status, gestartet, konflikte) values ('igmg-feed', ${status}, ${gestartet}::timestamptz, ${konflikte})`,
+  );
 }
 
 async function setzeSeiteninhalt(bereich: string, inhalt: unknown) {
@@ -298,10 +315,50 @@ describe('Mail', () => {
   });
 });
 
+describe('Gebetszeiten aus dem IGMG-Kalender (ADR 0048)', () => {
+  it('Abdeckung: unter 7 Tagen Fehler in produktion, Warnung in vorschau; 30 Tage ok', async () => {
+    await setzeIgmgTage(5);
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('fehler');
+    expect(befund(await pruefe(vorschauUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('warnung');
+    await db.execute(sql`truncate table gebetszeit_tag cascade`);
+    await setzeIgmgTage(30, 'import');
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('ok');
+  });
+
+  it('Abgleich ausgeschaltet: Hinweis; eingeschaltet ohne Erfolg oder mit 3 Fehlschlägen in Folge: Fehler; alt: Warnung', async () => {
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('hinweis');
+    await setzeEinstellung('gebetszeiten', { abgleich: { aktiv: true } });
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('fehler');
+    await setzeLauf('ok', '2026-10-08T20:00:00Z');
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('warnung');
+    await setzeLauf('unveraendert', '2026-10-10T20:00:00Z');
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('ok');
+    for (const s of ['2026-10-11T08:00:00Z', '2026-10-11T09:00:00Z', '2026-10-11T10:00:00Z']) await setzeLauf('fehler', s);
+    const e = befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich');
+    expect(e.status).toBe('fehler');
+    expect(e.meldung).toContain('3-mal in Folge');
+  });
+
+  it('offene Konflikte mit dem Import: Hinweis; ein späterer Lauf ohne Konflikte erledigt sie', async () => {
+    await setzeLauf('ok', '2026-10-10T20:00:00Z', 3);
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-konflikte').status).toBe('hinweis');
+    await setzeLauf('unveraendert', '2026-10-11T08:00:00Z', 0);
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-konflikte').status).toBe('ok');
+  });
+
+  it('ohne GEBETSZEITEN_IGMG_URL ein manueller Punkt „IGMG-Datenzugang“; mit Adresse keiner', async () => {
+    expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-igmg-zugang').status).toBe('manuell');
+    const mit = await pruefe(produktionsUmgebung({ GEBETSZEITEN_IGMG_URL: 'https://kalender.example.test/{stadt}/{jahr}/{monat}' }));
+    expect(mit.pruefungen.some((p) => p.id === 'inhalte.gebetszeiten-igmg-zugang')).toBe(false);
+  });
+});
+
 describe('Gesamtergebnis', () => {
   it('saubere Produktionslage ist startklar (keine Fehler)', async () => {
     await setzeEinstellung('allgemein', { konzepthinweis: false });
     await setzeEinstellung('gebetszeiten', { bestaetigt: true });
+    // ADR 0048: zur sauberen Lage gehören Zeiten aus dem IGMG-Kalender für die nächsten 30 Tage (sonst Fehler unter 7 Tagen)
+    await setzeIgmgTage(30);
     await setzeSeiteninhalt('impressum', RECHT_OHNE_PLATZHALTER.impressum);
     await setzeSeiteninhalt('datenschutz', RECHT_OHNE_PLATZHALTER.datenschutz);
 

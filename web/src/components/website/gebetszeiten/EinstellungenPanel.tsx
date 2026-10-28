@@ -1,15 +1,20 @@
 import { Check, Settings } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Text } from '@/components/website/Text';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
+import type { Zeitquelle } from '@/lib/gebetszeiten/typen';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
 
-/** Berechnungsmethoden wie im Design (Berechnungsmethode). Die Seite ordnet ihre Werte hier zu. */
-export const BERECHNUNGS_METHODEN = ['turkey', 'mwl', 'isna', 'egypt', 'makkah'] as const;
+/**
+ * Berechnungsmethoden wie im Design (Berechnungsmethode), davor die Näherung „IGMG (angenähert)“ (ADR 0048). Die Seite
+ * ordnet ihre Werte hier zu.
+ */
+export const BERECHNUNGS_METHODEN = ['igmg', 'turkey', 'mwl', 'isna', 'egypt', 'makkah'] as const;
 export type BerechnungsMethode = (typeof BERECHNUNGS_METHODEN)[number];
 /** Quelle der Zeiten wie im Datenmodell. */
-export type Zeitquelle = 'import' | 'berechnet';
+export type { Zeitquelle };
 export type Madhab = 'hanafi' | 'shafi';
 
 export type EinstellungenPanelProps = {
@@ -21,10 +26,14 @@ export type EinstellungenPanelProps = {
   laenge: number;
   quelle: Zeitquelle;
   methode: BerechnungsMethode;
+  /** Winkel der Näherung (nur bei `methode` „igmg“ angezeigt) */
+  winkel?: { fajr: number; isha: number };
   anpassungImsakMin: number;
   anpassungIshaMin: number;
   /** Nur angezeigt, wenn übergeben (nicht im Design, siehe Bericht). */
   madhab?: Madhab | null;
+  /** Quellen- und Standzeile (ADR 0048), auf dem Server gerendert */
+  quellenzeile?: ReactNode;
 };
 
 /**
@@ -39,9 +48,11 @@ export async function EinstellungenPanel({
   laenge,
   quelle,
   methode,
+  winkel,
   anpassungImsakMin,
   anpassungIshaMin,
   madhab,
+  quellenzeile,
 }: EinstellungenPanelProps) {
   const t = await getTranslations('gebetszeitenEinstellungen');
   const koordinatenText = t('koordinaten', {
@@ -80,7 +91,11 @@ export async function EinstellungenPanel({
               >
                 <span className="flex min-w-0 flex-1 flex-col leading-snug">
                   <strong>{t(`methoden.${m}.name`)}</strong>
-                  <span className="text-16 text-tinte-2">{t(`methoden.${m}.desc`)}</span>
+                  <span className="text-16 text-tinte-2">
+                    {m === 'igmg'
+                      ? t('methoden.igmg.desc', { fajr: zahl(winkel?.fajr ?? 18, sprache), isha: zahl(winkel?.isha ?? 18, sprache) })
+                      : t(`methoden.${m}.desc`)}
+                  </span>
                 </span>
                 {aktiv ? (
                   <span className="inline-flex shrink-0 items-center gap-1.5 rounded-pill bg-gruen-700 px-3 py-0.5 text-16 font-bold text-weiss">
@@ -95,7 +110,7 @@ export async function EinstellungenPanel({
         <dl className="grid gap-4 pt-2 md:grid-cols-2">
           <div className="flex flex-col gap-1">
             <dt className="text-16 font-bold text-tinte-2">{t('quelle_label')}</dt>
-            <dd className="m-0">{quelle === 'import' ? t('quelle_import') : t('quelle_berechnet')}</dd>
+            <dd className="m-0">{t(`quelle_${quelle}`)}</dd>
           </div>
           {madhab ? (
             <div className="flex flex-col gap-1">
@@ -104,6 +119,7 @@ export async function EinstellungenPanel({
             </div>
           ) : null}
         </dl>
+        {quellenzeile}
       </section>
 
       <section aria-labelledby="einst-standort" className="flex flex-col gap-3">
@@ -118,21 +134,30 @@ export async function EinstellungenPanel({
         </div>
       </section>
 
-      <section aria-labelledby="einst-anpassung" className="flex flex-col gap-3">
-        <h4 id="einst-anpassung" className="font-text text-16 font-bold">
-          {t('anpassungen_titel')}
-        </h4>
-        <dl className="grid gap-4 md:grid-cols-2">
-          <div className="flex flex-col gap-2">
-            <dt className="text-16 font-bold">{t('imsak')}</dt>
-            <dd className="m-0 flex h-12 items-center rounded-md bg-sand px-3.5 text-18 tabular-nums">{anpassungImsakMin}</dd>
-          </div>
-          <div className="flex flex-col gap-2">
-            <dt className="text-16 font-bold">{t('isha')}</dt>
-            <dd className="m-0 flex h-12 items-center rounded-md bg-sand px-3.5 text-18 tabular-nums">{anpassungIshaMin}</dd>
-          </div>
-        </dl>
-      </section>
+      {/* Minuten-Anpassungen gehören zur Methode; die Näherung trägt ihre Zuschläge selbst (ADR 0048) */}
+      {methode !== 'igmg' ? (
+        <section aria-labelledby="einst-anpassung" className="flex flex-col gap-3">
+          <h4 id="einst-anpassung" className="font-text text-16 font-bold">
+            {t('anpassungen_titel')}
+          </h4>
+          <dl className="grid gap-4 md:grid-cols-2">
+            <div className="flex flex-col gap-2">
+              <dt className="text-16 font-bold">{t('imsak')}</dt>
+              <dd className="m-0 flex h-12 items-center rounded-md bg-sand px-3.5 text-18 tabular-nums">{anpassungImsakMin}</dd>
+            </div>
+            <div className="flex flex-col gap-2">
+              <dt className="text-16 font-bold">{t('isha')}</dt>
+              <dd className="m-0 flex h-12 items-center rounded-md bg-sand px-3.5 text-18 tabular-nums">{anpassungIshaMin}</dd>
+            </div>
+          </dl>
+        </section>
+      ) : null}
     </div>
   );
+}
+
+const ZAHL_LOCALE: Record<Sprache, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
+/** Winkel mit Komma bzw. Punkt nach Sprache (18 bzw. 17,5). */
+function zahl(wert: number, sprache: Sprache): string {
+  return new Intl.NumberFormat(ZAHL_LOCALE[sprache], { maximumFractionDigits: 1 }).format(wert);
 }

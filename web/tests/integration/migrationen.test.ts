@@ -13,8 +13,24 @@ describe('Migrationen (K-05)', () => {
     // 34 bis Lauf Gestaltung, + 62 Tabellen Lauf Gemeinde-Plattform (Migration 0008), + quran_vers_auswahl (0012),
     // + rollen_antrag (0013, Vier-Augen-Prinzip für Schutzrollen), + mail_zusammenfassung (0016, F-38),
     // + 20 Inhaltstabellen (0018), 6 Nutzungstabellen (0019), 2 Tabellen des Audio-Studios (0020) und 3 Gruppentabellen
-    // (0021) der Lern-App, + lernapp_tag_kurs (0022, Tagessummen je Kurs, S-L3 M-1)
-    expect(r.rows[0]?.n).toBe(131);
+    // (0021) der Lern-App, + lernapp_tag_kurs (0022, Tagessummen je Kurs, S-L3 M-1), + gebetszeit_abgleich (0024, ADR 0048)
+    expect(r.rows[0]?.n).toBe(132);
+  });
+
+  it('IGMG-Abgleich: 0024 ergänzt den Enum-Wert igmg, keine Migration nutzt ihn als Literal (ADR 0048)', async () => {
+    const ordner = join(import.meta.dirname, '../../drizzle/migrations');
+    const ohneKommentar = (datei: string) =>
+      readFileSync(join(ordner, datei), 'utf8')
+        .split('\n')
+        .filter((z) => !z.startsWith('--') || z.startsWith('--> statement-breakpoint'))
+        .join('\n');
+    const nutzer = readdirSync(ordner).filter((d) => /^\d{4}_.*\.sql$/.test(d) && d.slice(0, 4) >= '0024');
+    for (const datei of nutzer) {
+      const ohneEnum = ohneKommentar(datei).replace(`ALTER TYPE "public"."gebetszeit_quelle" ADD VALUE 'igmg' BEFORE 'berechnet';`, '');
+      expect(ohneEnum, datei).not.toMatch(/'igmg'/);
+    }
+    const werte = await db.execute<{ w: string }>(sql`select unnest(enum_range(null::gebetszeit_quelle))::text as w`);
+    expect(werte.rows.map((z) => z.w)).toEqual(['import', 'igmg', 'berechnet']);
   });
 
   it('Lern-App: 0017 ergänzt nur Enum-Werte, spätere Migrationen nutzen sie nicht als Literal (PostgreSQL 16)', async () => {

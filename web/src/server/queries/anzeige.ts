@@ -7,6 +7,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { ladeBilder } from '@/lib/medien/bild';
+import { ladeGebetszeitenKennung } from './gebetszeiten';
 import { loeseHadithe, loeseVerse, versSchluessel, type VersVerweis } from './religioese-verweise';
 
 /**
@@ -14,13 +15,15 @@ import { loeseHadithe, loeseVerse, versSchluessel, type VersVerweis } from './re
  * Öffentlich nur Folien mit Status „veroeffentlicht“, die noch nicht abgelaufen sind; Vers- und Hadith-Folien nur mit
  * religiöser Freigabe „geprueft“. Den Zeitplan (von/bis, Wochentage) wertet der Browser aus – so läuft die Anzeige
  * ohne Netz weiter. Gecacht mit Tag `anzeige` (plus `quran`, `hadith`, `medien` für die aufgelösten Verweise).
+ * Dazu die Kennung der Gebetszeiten (Tags `gebetszeiten`, `einstellungen`, ADR 0048): ändert sie sich, lädt die Anzeige neu.
  * Beispielmodus ohne Datenbank (ADR 0019): keine Folien, Standard-Einstellung – nie ein Absturz.
  */
 export async function ladeAnzeige(): Promise<AnzeigeDaten> {
   'use cache: remote';
   cacheLife('hours');
-  cacheTag(TAG.anzeige, TAG.quran, TAG.hadith, TAG.medien);
-  if (!datenbankVerfuegbar()) return { folien: [], einstellung: leseAnzeigeEinstellung({}) };
+  cacheTag(TAG.anzeige, TAG.quran, TAG.hadith, TAG.medien, TAG.gebetszeiten, TAG.einstellungen);
+  const gebetszeitenStand = await ladeGebetszeitenKennung();
+  if (!datenbankVerfuegbar()) return { folien: [], einstellung: leseAnzeigeEinstellung({}), gebetszeitenStand };
   const f = schema.anzeigeFolie;
   const [[einstellung], zeilen] = await Promise.all([
     db
@@ -53,7 +56,7 @@ export async function ladeAnzeige(): Promise<AnzeigeDaten> {
       )
       .orderBy(asc(f.reihenfolge), asc(f.erstelltAm)),
   ]);
-  return { folien: await loeseFolien(zeilen), einstellung: leseAnzeigeEinstellung(einstellung?.wert) };
+  return { folien: await loeseFolien(zeilen), einstellung: leseAnzeigeEinstellung(einstellung?.wert), gebetszeitenStand };
 }
 
 type FolienZeile = {

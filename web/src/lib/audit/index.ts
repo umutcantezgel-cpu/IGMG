@@ -77,6 +77,9 @@ export type AuditAktion =
   | 'gebetszeiten.importiert'
   | 'gebetszeiten.import_entfernt'
   | 'gebetszeiten.einstellung'
+  // IGMG-Abgleich (ADR 0048): Systemlauf (benutzerId null) oder Freigabe in der Verwaltung; Konflikttage übernommen
+  | 'gebetszeiten.abgleich'
+  | 'gebetszeiten.konflikt_uebernommen'
   | 'einstellung.geaendert'
   | 'ticket.angelegt'
   | 'ticket.geaendert'

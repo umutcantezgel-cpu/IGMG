@@ -5,6 +5,7 @@ import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
 import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projekte';
+import { gebetszeitenPruefen } from './gebetszeiten';
 import { gemeindePruefen } from './gemeinde';
 import { lernappPruefen } from './lernapp';
 import { vergangeneOffene } from './meilensteine';
@@ -235,6 +236,20 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
         titel: 'Lern-App lesbar',
         status: 'fehler',
         meldung: 'Schalter, Prüfende und Einheiten der Lern-App lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
+    // Gebetszeiten aus dem IGMG-Gebetskalender (ADR 0048): Abdeckung, Abgleich, Konflikte, Jahresdatei, Datenzugang
+    try {
+      await gebetszeitenPruefen(db, env, produktion, kontext.jetzt ?? new Date(), neu);
+    } catch {
+      neu({
+        id: 'inhalte.gebetszeiten-lesbar',
+        bereich: 'inhalte',
+        titel: 'Gebetszeiten lesbar',
+        status: 'fehler',
+        meldung: 'Gebetszeiten und Abgleichprotokoll lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
         ort: 'Vercel › Deployments › Redeploy',
         aufwand: '5 min',
       });

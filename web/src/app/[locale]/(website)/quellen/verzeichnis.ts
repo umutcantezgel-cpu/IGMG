@@ -6,6 +6,7 @@
  * Sprachdaten, Bildkarten und Spracherkennung mit denselben Angaben wie `/lern-app/[ui]/quellen`; die Namensnennungen der
  * Daten kommen aus `src/lib/lernapp/quellen.ts` (eine Quelle für beide Seiten, abgeglichen mit `web/daten/<ordner>/QUELLE.md`).
  */
+import { NETZWERK } from '@/lib/dachverband/netzwerk';
 import { DATEN, ORT_DRITTLIZENZEN } from '@/lib/lernapp/quellen';
 
 export type Lizenz = { name: string; url: string };
@@ -115,6 +116,14 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
   {
     id: 'gebetszeiten',
     eintraege: [
+      // Marktstart P6 (ADR 0048): Zeiten aus dem IGMG-Gebetskalender mit Zustimmung der IGMG (so in quellen.json unter „lizenz“)
+      {
+        id: 'igmg-gebetskalender',
+        name: 'IGMG-Gebetskalender',
+        urheber: 'Islamische Gemeinschaft Millî Görüş (IGMG), Köln',
+        url: NETZWERK.gebetskalender.url.de,
+        hinweis: true,
+      },
       {
         id: 'adhan',
         name: 'adhan-js',

@@ -773,6 +773,38 @@ function gebetszeitenFaelle(): Fall[] {
       (a) => a.gebetszeiten.entferneImport(formular({ id: randomUUID() })),
       (a) => expect(a.weiter).toBe('/verwaltung/gebetszeiten?entfernt=1'),
     ),
+    // IGMG-Abgleich und Näherung (Marktstart P6, ADR 0048)
+    einfach(
+      'speichereAbgleich',
+      (a) => a.gebetszeiten.speichereAbgleich({}, formular({})),
+      (a) => expect(rueckgabe(a)).toMatchObject({ fehler: 'pruefen' }),
+    ),
+    einfach(
+      'gleicheJetztAb',
+      (a) => a.gebetszeiten.gleicheJetztAb({}, formular({})),
+      // Ohne GEBETSZEITEN_IGMG_URL und ohne Jahresdatei tut der Abgleich nichts; ab dem zweiten Aufruf greift die Grenze
+      (a) => expect([undefined, 'zuOft']).toContain((rueckgabe(a) as { fehler?: string }).fehler),
+    ),
+    einfach(
+      'gebeAbgleichFrei',
+      (a) => a.gebetszeiten.gebeAbgleichFrei({}, formular({})),
+      (a) => expect(rueckgabe(a)).toMatchObject({ fehler: 'pruefen' }),
+    ),
+    einfach(
+      'uebernehmeKonflikte',
+      (a) => a.gebetszeiten.uebernehmeKonflikte({}, formular({})),
+      (a) => expect(rueckgabe(a)).toMatchObject({ uebernommen: 0 }),
+    ),
+    einfach(
+      'schlageNaeherungVor',
+      (a) => a.gebetszeiten.schlageNaeherungVor({}, formular({})),
+      (a) => expect(rueckgabe(a)).toMatchObject({ fehler: 'zuWenigeTage' }),
+    ),
+    einfach(
+      'uebernehmeNaeherung',
+      (a) => a.gebetszeiten.uebernehmeNaeherung({}, formular({})),
+      (a) => expect(rueckgabe(a)).toMatchObject({ fehler: 'pruefen' }),
+    ),
   ];
 }
 

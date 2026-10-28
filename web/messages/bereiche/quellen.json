@@ -178,6 +178,12 @@
           "fassung": "Version 1.31.0-dev.20260914-8d85527a0 (WebAssembly, nur Prozessor).",
           "verwendung": "Laufzeit der Spracherkennung im Browser.",
           "hinweis": "ONNX Runtime enthält Teile anderer freier Projekte; ihre Lizenzen stehen in der Datei ThirdPartyNotices (Stand 8d85527). Darunter ist Eigen (MPL-2.0); den Quellcode gibt es unter gitlab.com/libeigen/eigen."
+        },
+        "igmg-gebetskalender": {
+          "lizenz": "Übernahme mit Zustimmung der IGMG (Entscheidung vom 27. Oktober 2026); keine freie Lizenz.",
+          "fassung": "Zeiten für Wetzlar (Stadt-ID 20238), je Tag mit dem Stand der Übernahme.",
+          "verwendung": "Gebetszeiten auf der Website, in der Gebetszeitenleiste, auf dem Bildschirm in der Moschee und in der Lese-API; Abstimmung der Näherung „IGMG (angenähert)“.",
+          "hinweis": "Übernommen wird nur über einen von der IGMG bereitgestellten Zugang oder von Hand in der Verwaltung – nie beim Aufruf einer Seite. Tage ohne IGMG-Zeiten sind als „berechnet (vorläufig)“ gekennzeichnet."
         }
       },
       "bibliotheken": {
@@ -394,6 +400,12 @@
           "fassung": "Sürüm 1.31.0-dev.20260914-8d85527a0 (WebAssembly, yalnızca işlemci).",
           "verwendung": "Konuşma tanımanın tarayıcıdaki çalışma ortamı.",
           "hinweis": "ONNX Runtime başka özgür projelerin parçalarını içerir; lisansları ThirdPartyNotices dosyasındadır (sürüm 8d85527). Bunlar arasında Eigen (MPL-2.0) de vardır; kaynak kodu gitlab.com/libeigen/eigen adresindedir."
+        },
+        "igmg-gebetskalender": {
+          "lizenz": "IGMG’nin onayıyla alınmıştır (27 Ekim 2026 tarihli karar); serbest lisans yoktur.",
+          "fassung": "Wetzlar için vakitler (şehir kimliği 20238), her gün için alındığı tarihle.",
+          "verwendung": "İnternet sitesindeki, namaz vakitleri çubuğundaki, camideki ekrandaki ve okuma arayüzündeki namaz vakitleri; “IGMG (yaklaşık)” hesaplamasının ayarlanması.",
+          "hinweis": "Vakitler yalnızca IGMG’nin sağladığı bir erişim yoluyla ya da yönetim panelinde elle alınır; hiçbir zaman bir sayfa açılırken alınmaz. IGMG vakti olmayan günler “hesaplanmış (geçici)” olarak işaretlenir."
         }
       },
       "bibliotheken": {
@@ -610,6 +622,12 @@
           "fassung": "Version 1.31.0-dev.20260914-8d85527a0 (WebAssembly, CPU only).",
           "verwendung": "Runtime of the speech recognition in the browser.",
           "hinweis": "ONNX Runtime contains parts of other free projects; their licences are listed in the ThirdPartyNotices file (revision 8d85527). Among them is Eigen (MPL-2.0); its source code is available at gitlab.com/libeigen/eigen."
+        },
+        "igmg-gebetskalender": {
+          "lizenz": "Used with the consent of the IGMG (decision of 27 October 2026); no open licence.",
+          "fassung": "Times for Wetzlar (city ID 20238), each day with the date it was taken over.",
+          "verwendung": "Prayer times on the website, in the prayer time bar, on the screen in the mosque and in the read API; tuning of the “IGMG (approximated)” calculation.",
+          "hinweis": "Times are only taken over through access provided by the IGMG or manually in the administration area, never when a page is opened. Days without IGMG times are marked as “calculated (provisional)”."
         }
       },
       "bibliotheken": {

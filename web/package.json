@@ -37,6 +37,7 @@
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",
     "startklar": "tsx --conditions=react-server --env-file-if-exists=.env scripts/startklar.ts",
+    "gebetszeiten:kalibrieren": "tsx --conditions=react-server --env-file-if-exists=.env scripts/gebetszeiten/kalibrieren.ts",
     "release:check": "node scripts/release-check.mjs",
     "format": "prettier --write",
     "start:standalone": "node scripts/start-standalone.mjs",

@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { DruckKnopf } from '@/components/website/gebetszeiten/DruckKnopf';
 import { EinstellungenPanel } from '@/components/website/gebetszeiten/EinstellungenPanel';
+import { GebetszeitenFaq } from '@/components/website/gebetszeiten/GebetszeitenFaq';
+import { GebetszeitenQuelle } from '@/components/website/gebetszeiten/GebetszeitenQuelle';
 import { GebetszeitenSeite } from '@/components/website/gebetszeiten/GebetszeitenSeite';
 import { MeinOrt, type MeinOrtTexte } from '@/components/website/gebetszeiten/MeinOrt';
 import { MonatsTabelle } from '@/components/website/gebetszeiten/MonatsTabelle';
@@ -68,9 +70,13 @@ export default async function GebetszeitenSeitePage() {
 
   const namen = Object.fromEntries(GEBETE.map((g) => [g, tl(g)])) as Record<Gebet, string>;
   const beschreibungen = Object.fromEntries(GEBETE.map((g) => [g, t(`beschreibungen.${g}`)])) as Record<Gebet, string>;
-  const methode = METHODEN_ANZEIGE[einst.methode] ?? null;
+  const n = einst.naeherung;
+  // Näherung „IGMG (angenähert)“ als Rückfall (ADR 0048), sonst die eingestellte Methode
+  const methode = einst.rueckfall === 'naeherung' ? 'igmg' : (METHODEN_ANZEIGE[einst.methode] ?? null);
   const hinweisHeute = fenster.quelle === 'berechnet' && !fenster.bestaetigt;
   const datumText = datumMitJahr(heute.datum, sprache);
+  // Stand der IGMG-Zeiten in beiden Monaten (jüngster), für die Quellenzeile unter den Tabellen
+  const monatsStand = monate.reduce<string | null>((s, m) => (m.stand && (!s || m.stand > s) ? m.stand : s), null);
 
   const monatPanel = (
     <div id="gebetszeiten-monat" className="flex flex-col gap-6">
@@ -87,14 +93,21 @@ export default async function GebetszeitenSeitePage() {
           texte={{
             titel: t('monatTitel', { monat: monatsname(m.monat, sprache) }),
             untertitel: t('monatUntertitel'),
-            berechnet: tl('berechnet'),
+            berechnet: t('berechnetVorlaeufig'),
+            vorlaeufig: t('vorlaeufig'),
             ramadan: t('ramadan'),
             datum: t('tabelleDatum'),
             namen,
-            hinweis: m.quelle !== 'import' && !m.bestaetigt,
+            hinweis: (m.quelle === 'berechnet' || m.quelle === 'gemischt') && !m.bestaetigt,
           }}
         />
       ))}
+      <GebetszeitenQuelle
+        tage={monate.flatMap((m) => m.tage)}
+        stand={monatsStand}
+        rueckfall={einst.rueckfall}
+        bestaetigt={einst.bestaetigt}
+      />
     </div>
   );
 
@@ -170,6 +183,9 @@ export default async function GebetszeitenSeitePage() {
         anpassungen: einst.anpassungen,
         breite: einst.breite,
         laenge: einst.laenge,
+        // Gleiches Verfahren wie in Wetzlar, damit „Unterschied zu Wetzlar“ nur den Ort vergleicht (ADR 0048)
+        rueckfall: einst.rueckfall,
+        naeherung: { fajrWinkel: n.fajrWinkel, ishaWinkel: n.ishaWinkel, temkinSek: n.temkinSek, hoheBreite: n.hoheBreite },
       }}
       symbole={{ gps: <LocateFixed aria-hidden className="size-5" />, liste: <List aria-hidden className="size-5" /> }}
     />
@@ -217,9 +233,13 @@ export default async function GebetszeitenSeitePage() {
       laenge={einst.laenge}
       quelle={fenster.quelle}
       methode={methode}
+      winkel={{ fajr: n.fajrWinkel, isha: n.ishaWinkel }}
       anpassungImsakMin={einst.anpassungen.imsak ?? 0}
       anpassungIshaMin={einst.anpassungen.yatsi ?? 0}
       madhab={null}
+      quellenzeile={
+        <GebetszeitenQuelle tage={fenster.tage} stand={fenster.stand} rueckfall={einst.rueckfall} bestaetigt={fenster.bestaetigt} />
+      }
     />
   ) : (
     <section className="rounded-lg border border-linie bg-weiss p-5 md:p-8">
@@ -229,7 +249,7 @@ export default async function GebetszeitenSeitePage() {
 
   return (
     <Seitenrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" leiste={null} pfad={[{ label: tk('gebetszeiten') }]}>
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-8 md:px-8 md:pt-12">
         <div className="flex min-w-0 flex-col gap-2">
           <h1 className="text-display-1 text-pretty">{t('titel')}</h1>
           {/* Telefon: Datum und „Vollbild“ in der ersten Zeile, Ort und Hinweis darunter; ab md eine Zeile, „Vollbild“ rechts */}
@@ -256,7 +276,7 @@ export default async function GebetszeitenSeitePage() {
             {hinweisHeute ? (
               <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
                 <Info aria-hidden className="size-4" />
-                {tl('berechnet')}
+                {t('berechnetVorlaeufig')}
               </span>
             ) : null}
           </div>
@@ -318,6 +338,10 @@ export default async function GebetszeitenSeitePage() {
             sprache={sprache}
           />
         ) : null}
+      </div>
+      {/* „Woher stammen die Gebetszeiten?“ (ADR 0048): Server-Text mit nativen Aufklappern, kein JavaScript (K-12) */}
+      <div className="pb-12 md:pb-24">
+        <GebetszeitenFaq />
       </div>
     </Seitenrahmen>
   );

@@ -270,6 +270,8 @@ describe('Reihenfolge, Löschen, Einstellung', () => {
           freitag: { aktiv: true, vorMin: 45, nachMin: 60 },
           folienDauerSek: 12,
         },
+        // Kennung der Gebetszeiten (ADR 0048): die Anzeige lädt neu, sobald sie sich ändert
+        gebetszeitenStand: expect.stringMatching(/^[0-9a-f]{16}$/),
       });
       expect(await ladeDesTages('2026-10-13')).toEqual({ vers: null, hadith: null });
     } finally {
