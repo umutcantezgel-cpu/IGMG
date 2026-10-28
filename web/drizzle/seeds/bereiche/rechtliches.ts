@@ -198,7 +198,15 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     },
     {
       art: 'absatz',
-      text: { de: '[Hinweis für die Prüfung: Die Karte ist in dieser Fassung noch nicht eingebaut. Die Angabe gilt erst mit dem Einbau.]' },
+      text: {
+        de: 'Videos (Entwurf): Auf einzelnen Seiten, etwa „Hadsch & Umra“, lassen sich Videos von YouTube ansehen. Ein Video lädt erst, wenn Sie auf „Video laden“ klicken, und zwar über youtube-nocookie.com, eine Adresse von Google (YouTube) für eingebettete Videos. Erst mit diesem Klick übermittelt Ihr Browser Ihre IP-Adresse und die Herkunftsseite an Google; als Herkunft geht nur die Adresse dieser Website mit, ohne den Pfad der Unterseite. Vor dem Klick zeigt die Seite kein Vorschaubild von YouTube und lädt nichts von Google. Was Google nach dem Klick verarbeitet und speichert: [Angaben zu Anbieter, Zweck und Speicherdauer – Rechtsberatung].',
+      },
+    },
+    {
+      art: 'absatz',
+      text: {
+        de: '[Hinweis für die Prüfung (ENTWURF, M-111): Videos und Karte laden seit dem Marktstart (Oktober 2026) nur nach einem Klick, über youtube-nocookie.com bzw. openstreetmap.org (die Karte ohne Herkunftsseite). Die Karte erscheint erst, wenn die Koordinaten bestätigt sind (M-010). Rechtsgrundlage, Anbieterangaben und Drittlandübermittlung sind vor dem Einbinden von Videos zu prüfen (G-08).]',
+      },
     },
   ],
   browser: [
