@@ -11,24 +11,36 @@ type Eingabe = z.input<typeof inhaltSchema>;
  * (bestand/src/app/components/*Organization.tsx, Übersetzungen); wo der Bestand nichts liefert, fehlt die Fassung
  * und der Text erscheint auf Deutsch mit Hinweis (K-02). Öffnungszeiten gibt es nur auf Deutsch.
  * Adresse, Telefon und E-Mail bleiben Platzhalter in eckigen Klammern, weil die Vorlage nur Beispielwerte nennt (G-05).
+ * Marktstart (E-044): Verweis auf die passende Seite beim Dachverband (`dachverband`, Schlüssel aus dem IGMG-Netzwerk);
+ * KT, GT und KGT nennen in eigenen Worten ihre Eigenständigkeit seit 2009 (Belege in QUELLE_MARKTSTART). Die AT-Texte
+ * deuten „Ana“ nicht mehr als Anatolien; die Bedeutung klärt die Gemeinde, der englische Titel in messages bleibt bis
+ * dahin (Menschen-Punkt M-105).
  */
 const KONTAKT_PLATZHALTER = { adresse: '[Adresse]', telefon: '[Telefonnummer]', email: '[E-Mail]' };
 
-const SEITEN: { slug: string; quelle: string; inhalt: Eingabe }[] = [
+/** Belege für den Satz zur Eigenständigkeit seit 2009 und für die Verweise (Abruf 13.10.2026, geprüft 27.10.2026). */
+const QUELLE_MARKTSTART =
+  'Marktstart E-044: Eigenständigkeit seit 2009 nach https://www.igmg.org/vom-samen-zum-baum-historische-entwicklung-und-grundsaetze-der-igmg/ ' +
+  'und https://www.igmg.org/struktur-fachvereine-und-kooperationen/ (eigene Worte); Verweis „dachverband“ aus src/lib/dachverband/netzwerk.ts';
+
+/** Beispielinhalte der vier Organisationen mit Quelle (exportiert für Stand-Migrationen und Tests). */
+export const ORGANISATIONEN_BEISPIEL: { slug: string; quelle: string; inhalt: Eingabe }[] = [
   {
     slug: 'ana-teskilati',
     quelle:
-      'design/OrganizationPage.dc.html:96-103 (Daten at); bestand/src/app/components/AnatolianOrganization.tsx (Übersetzungen tr/en); Blatt S15',
+      'design/OrganizationPage.dc.html:96-103 (Daten at); bestand/src/app/components/AnatolianOrganization.tsx (Übersetzungen tr/en); Blatt S15; ' +
+      'Anatolien-Deutung entfernt (M-105); ' +
+      QUELLE_MARKTSTART,
     inhalt: {
       beschreibung: {
-        de: 'Die Ana Teşkilatı (AT) ist eine wichtige Organisation innerhalb der IGMG, die sich der Förderung kultureller Identität, Gemeinschaftsbildung und sozialer Aktivitäten widmet. Wir verbinden Menschen aus verschiedenen Regionen Anatoliens und stärken die Bande unserer Gemeinschaft.',
-        tr: "Ana Teşkilatı (AT), IGMG bünyesinde kültürel kimliği, toplum oluşumunu ve sosyal faaliyetleri desteklemeye adanmış önemli bir organizasyondur. Anadolu'nun farklı bölgelerinden insanları bir araya getiriyor ve topluluğumuzun bağlarını güçlendiriyoruz.",
-        en: 'The Anatolian Organization (AT) is an important organization within IGMG dedicated to promoting cultural identity, community building, and social activities. We connect people from various regions of Anatolia and strengthen the bonds of our community.',
+        de: 'Die Ana Teşkilatı (AT) ist eine wichtige Organisation innerhalb der Islamischen Gemeinschaft Millî Görüş (IGMG), die sich der Förderung kultureller Identität, Gemeinschaftsbildung und sozialer Aktivitäten widmet. Wir verbinden Menschen unterschiedlicher Herkunft und stärken die Bande unserer Gemeinschaft.',
+        tr: 'Ana Teşkilatı (AT), İslam Toplumu Millî Görüş (IGMG) bünyesinde kültürel kimliği, toplum oluşumunu ve sosyal faaliyetleri desteklemeye adanmış önemli bir organizasyondur. Farklı kökenlerden insanları bir araya getiriyor ve topluluğumuzun bağlarını güçlendiriyoruz.',
+        en: 'The Ana Teşkilatı (AT) is an important organization within the Islamic Community Millî Görüş (IGMG) dedicated to promoting cultural identity, community building, and social activities. We bring together people of different backgrounds and strengthen the bonds of our community.',
       },
       mission: {
-        de: 'Bewahrung und Förderung der anatolischen Kultur und Traditionen innerhalb der deutschen Gesellschaft, während wir gleichzeitig Integration und interkulturelle Verständigung fördern.',
-        tr: 'Alman toplumunda Anadolu kültürü ve geleneklerini korumak ve geliştirmek, aynı zamanda entegrasyonu ve kültürlerarası anlayışı desteklemek.',
-        en: 'Preserving and promoting Anatolian culture and traditions within German society while fostering integration and intercultural understanding.',
+        de: 'Bewahrung und Förderung unserer Kultur und Traditionen innerhalb der deutschen Gesellschaft, während wir gleichzeitig Integration und interkulturelle Verständigung fördern.',
+        tr: 'Alman toplumunda kültürümüzü ve geleneklerimizi korumak ve geliştirmek, aynı zamanda entegrasyonu ve kültürlerarası anlayışı desteklemek.',
+        en: 'Preserving and promoting our culture and traditions within German society while fostering integration and intercultural understanding.',
       },
       vision: {
         de: 'Eine starke, vereinte Gemeinschaft zu schaffen, die ihre kulturellen Wurzeln ehrt und gleichzeitig aktiv zur deutschen Gesellschaft beiträgt.',
@@ -75,17 +87,19 @@ const SEITEN: { slug: string; quelle: string; inhalt: Eingabe }[] = [
       ],
       oeffnungszeiten: [{ de: 'Montag–Freitag: 18:00–21:00 Uhr' }, { de: 'Samstag: 14:00–18:00 Uhr' }, { de: 'Sonntag: 14:00–17:00 Uhr' }],
       kontakt: KONTAKT_PLATZHALTER,
+      dachverband: 'selbstdarstellung',
     },
   },
   {
     slug: 'kadin-teskilati',
     quelle:
-      'design/OrganizationPage.dc.html:104-111 (Daten kt); bestand/src/app/components/WomensOrganization.tsx (Übersetzungen tr/en); Blatt S16',
+      'design/OrganizationPage.dc.html:104-111 (Daten kt); bestand/src/app/components/WomensOrganization.tsx (Übersetzungen tr/en); Blatt S16; ' +
+      QUELLE_MARKTSTART,
     inhalt: {
       beschreibung: {
-        de: 'Die Kadın Teşkilatı (KT) ist das Herzstück der Frauenarbeit in der IGMG Wetzlar. Wir sind eine Gemeinschaft starker Frauen, die sich für Bildung, soziale Unterstützung und spirituelle Entwicklung einsetzen. Unsere Organisation bietet einen sicheren Raum für muslimische Frauen, um ihre Talente zu entfalten und ihre Gemeinschaft zu stärken.',
-        tr: "Kadın Teşkilatı (KT), IGMG Wetzlar'daki kadın çalışmalarının kalbidir. Eğitim, sosyal destek ve manevi gelişim için çaba gösteren güçlü kadınların topluluğuyuz. Organizasyonumuz Müslüman kadınların yeteneklerini geliştirmeleri ve topluluklarını güçlendirmeleri için güvenli bir alan sunar.",
-        en: "The Women's Organization (KT) is the heart of women's work at IGMG Wetzlar. We are a community of strong women dedicated to education, social support, and spiritual development. Our organization provides a safe space for Muslim women to develop their talents and strengthen their community.",
+        de: 'Die Kadın Teşkilatı (KT) ist das Herzstück der Frauenarbeit in der IGMG Wetzlar. Wir sind eine Gemeinschaft starker Frauen, die sich für Bildung, soziale Unterstützung und spirituelle Entwicklung einsetzen. Unsere Organisation bietet einen sicheren Raum für muslimische Frauen, um ihre Talente zu entfalten und ihre Gemeinschaft zu stärken. Als Frauenorganisation der Islamischen Gemeinschaft Millî Görüş (IGMG) ist die KT seit 2009 eigenständig – mit eigenen Leitungsgremien in jeder Region und jeder Gemeinde.',
+        tr: "Kadın Teşkilatı (KT), IGMG Wetzlar'daki kadın çalışmalarının kalbidir. Eğitim, sosyal destek ve manevi gelişim için çaba gösteren güçlü kadınların topluluğuyuz. Organizasyonumuz Müslüman kadınların yeteneklerini geliştirmeleri ve topluluklarını güçlendirmeleri için güvenli bir alan sunar. İslam Toplumu Millî Görüş (IGMG) bünyesindeki kadın teşkilatı olarak KT, 2009'dan bu yana müstakil bir yapıdır; her bölgede ve her cemaatte kendi yönetim kurulları bulunur.",
+        en: "The Women's Organization (KT) is the heart of women's work at IGMG Wetzlar. We are a community of strong women dedicated to education, social support, and spiritual development. Our organization provides a safe space for Muslim women to develop their talents and strengthen their community. As the women's organization of the Islamic Community Millî Görüş (IGMG), the KT has been independent since 2009, with its own governing bodies in every region and every local community.",
       },
       mission: {
         de: 'Muslimische Frauen zu stärken durch Bildung, soziale Unterstützung und spirituelle Führung, während wir gleichzeitig unsere kulturellen Werte und religiösen Prinzipien wahren.',
@@ -137,17 +151,19 @@ const SEITEN: { slug: string; quelle: string; inhalt: Eingabe }[] = [
       ],
       oeffnungszeiten: [{ de: 'Dienstag & Donnerstag: 14:00–17:00 Uhr' }, { de: 'Samstag: 10:00–13:00 Uhr' }],
       kontakt: KONTAKT_PLATZHALTER,
+      dachverband: 'frauenorganisation',
     },
   },
   {
     slug: 'genclik-teskilati',
     quelle:
-      'design/OrganizationPage.dc.html:112-119 (Daten gt); bestand/src/app/components/YouthOrganization.tsx (Übersetzungen tr/en); Blatt S17',
+      'design/OrganizationPage.dc.html:112-119 (Daten gt); bestand/src/app/components/YouthOrganization.tsx (Übersetzungen tr/en); Blatt S17; ' +
+      QUELLE_MARKTSTART,
     inhalt: {
       beschreibung: {
-        de: 'Die Gençlik Teşkilatı (GT) ist das dynamische Herz der Jugendarbeit in der IGMG Wetzlar. Wir bieten jungen Menschen zwischen 14 und 30 Jahren einen Raum für persönliche Entwicklung, spirituelles Wachstum und aktive Teilnahme an der Gemeinschaft. Unsere Programme kombinieren moderne Ansätze mit traditionellen islamischen Werten.',
-        tr: "Gençlik Teşkilatı (GT), IGMG Wetzlar'daki gençlik çalışmasının dinamik kalbidir. 14-30 yaş arası gençlere kişisel gelişim, manevi büyüme ve topluma aktif katılım için alan sunuyoruz. Programlarımız modern yaklaşımları geleneksel İslami değerlerle birleştiriyor.",
-        en: 'The Youth Organization (GT) is the dynamic heart of youth work at IGMG Wetzlar. We provide young people between 14 and 30 years old with a space for personal development, spiritual growth, and active participation in the community. Our programs combine modern approaches with traditional Islamic values.',
+        de: 'Die Gençlik Teşkilatı (GT) ist das dynamische Herz der Jugendarbeit in der IGMG Wetzlar. Wir bieten jungen Menschen zwischen 14 und 30 Jahren einen Raum für persönliche Entwicklung, spirituelles Wachstum und aktive Teilnahme an der Gemeinschaft. Unsere Programme kombinieren moderne Ansätze mit traditionellen islamischen Werten. Als Jugendorganisation der Islamischen Gemeinschaft Millî Görüş (IGMG) ist die GT seit 2009 eigenständig – mit eigenen Leitungsgremien in jeder Region und jeder Gemeinde.',
+        tr: "Gençlik Teşkilatı (GT), IGMG Wetzlar'daki gençlik çalışmasının dinamik kalbidir. 14-30 yaş arası gençlere kişisel gelişim, manevi büyüme ve topluma aktif katılım için alan sunuyoruz. Programlarımız modern yaklaşımları geleneksel İslami değerlerle birleştiriyor. İslam Toplumu Millî Görüş (IGMG) bünyesindeki gençlik teşkilatı olarak GT, 2009'dan bu yana müstakil bir yapıdır; her bölgede ve her cemaatte kendi yönetim kurulları bulunur.",
+        en: 'The Youth Organization (GT) is the dynamic heart of youth work at IGMG Wetzlar. We provide young people between 14 and 30 years old with a space for personal development, spiritual growth, and active participation in the community. Our programs combine modern approaches with traditional Islamic values. As the youth organization of the Islamic Community Millî Görüş (IGMG), the GT has been independent since 2009, with its own governing bodies in every region and every local community.',
       },
       mission: {
         de: 'Junge Muslime zu selbstbewussten, engagierten Bürgern zu erziehen, die ihre religiöse Identität mit gesellschaftlicher Verantwortung verbinden.',
@@ -204,17 +220,19 @@ const SEITEN: { slug: string; quelle: string; inhalt: Eingabe }[] = [
         { de: 'Sonntag: 14:00–18:00 Uhr' },
       ],
       kontakt: KONTAKT_PLATZHALTER,
+      dachverband: 'jugendorganisation',
     },
   },
   {
     slug: 'kadin-genclik-teskilati',
     quelle:
-      'design/OrganizationPage.dc.html:120-127 (Daten kgt); bestand/src/app/components/WomensYouthOrganization.tsx (Übersetzungen tr/en); Blatt S18',
+      'design/OrganizationPage.dc.html:120-127 (Daten kgt); bestand/src/app/components/WomensYouthOrganization.tsx (Übersetzungen tr/en); Blatt S18; ' +
+      QUELLE_MARKTSTART,
     inhalt: {
       beschreibung: {
-        de: 'Die Kadın Gençlik Teşkilatı (KGT) ist eine lebendige Gemeinschaft junger muslimischer Frauen zwischen 16 und 30 Jahren. Wir bieten einen unterstützenden Raum für persönliche Entwicklung, spirituelles Wachstum und kreative Entfaltung. Unsere Programme verbinden islamische Werte mit modernen Bildungsansätzen und bereiten junge Frauen auf eine erfolgreiche Zukunft vor.',
-        tr: 'Kadın Gençlik Teşkilatı (KGT), 16-30 yaş arası genç Müslüman kadınların canlı bir topluluğudur. Kişisel gelişim, manevi büyüme ve yaratıcı gelişim için destekleyici bir alan sunuyoruz. Programlarımız İslami değerleri modern eğitim yaklaşımlarıyla birleştiriyor ve genç kadınları başarılı bir geleceğe hazırlıyor.',
-        en: "The Women's Youth Organization (KGT) is a vibrant community of young Muslim women between 16 and 30 years old. We provide a supportive space for personal development, spiritual growth, and creative expression. Our programs combine Islamic values with modern educational approaches and prepare young women for a successful future.",
+        de: 'Die Kadın Gençlik Teşkilatı (KGT) ist eine lebendige Gemeinschaft junger muslimischer Frauen zwischen 16 und 30 Jahren. Wir bieten einen unterstützenden Raum für persönliche Entwicklung, spirituelles Wachstum und kreative Entfaltung. Unsere Programme verbinden islamische Werte mit modernen Bildungsansätzen und bereiten junge Frauen auf eine erfolgreiche Zukunft vor. Als Frauenjugendorganisation der Islamischen Gemeinschaft Millî Görüş (IGMG) ist die KGT seit 2009 eigenständig – mit eigenen Leitungsgremien in jeder Region und jeder Gemeinde.',
+        tr: "Kadın Gençlik Teşkilatı (KGT), 16-30 yaş arası genç Müslüman kadınların canlı bir topluluğudur. Kişisel gelişim, manevi büyüme ve yaratıcı gelişim için destekleyici bir alan sunuyoruz. Programlarımız İslami değerleri modern eğitim yaklaşımlarıyla birleştiriyor ve genç kadınları başarılı bir geleceğe hazırlıyor. İslam Toplumu Millî Görüş (IGMG) bünyesindeki genç kadınlar teşkilatı olarak KGT, 2009'dan bu yana müstakil bir yapıdır; her bölgede ve her cemaatte kendi yönetim kurulları bulunur.",
+        en: "The Women's Youth Organization (KGT) is a vibrant community of young Muslim women between 16 and 30 years old. We provide a supportive space for personal development, spiritual growth, and creative expression. Our programs combine Islamic values with modern educational approaches and prepare young women for a successful future. As the young women's organization of the Islamic Community Millî Görüş (IGMG), the KGT has been independent since 2009, with its own governing bodies in every region and every local community.",
       },
       mission: {
         de: 'Junge muslimische Frauen zu selbstbewussten, gebildeten und spirituell gefestigten Persönlichkeiten zu entwickeln, die ihre Träume verwirklichen und positive Veränderungen in der Gesellschaft bewirken.',
@@ -266,13 +284,14 @@ const SEITEN: { slug: string; quelle: string; inhalt: Eingabe }[] = [
       ],
       oeffnungszeiten: [{ de: 'Dienstag: 16:00–19:00 Uhr' }, { de: 'Donnerstag: 17:00–20:00 Uhr' }, { de: 'Samstag: 14:00–17:00 Uhr' }],
       kontakt: KONTAKT_PLATZHALTER,
+      dachverband: 'frauenjugendorganisation',
     },
   },
 ];
 
 /** Seed „organisationen“ (Welle A): je Organisation ein Seiteninhalt, idempotent, mit Quelle, geprüft gegen das Schema. */
 export const seed: BereichsSeed = async (db) => {
-  const werte = SEITEN.map((s) => ({
+  const werte = ORGANISATIONEN_BEISPIEL.map((s) => ({
     bereich: `organisation-${s.slug}`,
     istBeispiel: true,
     quelle: s.quelle,

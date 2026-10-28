@@ -28,7 +28,10 @@ const amtszeit = z.object({
 });
 
 export const schema = z.object({
-  /** Jahr für die Kennung „Führung seit …“ (BoardMembers.dc.html:30). Der Bestand nennt 1976 als Gründungsjahr (offen). */
+  /**
+   * Jahr für die Kennung „Führung seit …“ (BoardMembers.dc.html:30). Gründungsjahr der Gemeinde ist 1978 (E-044 Nr. 4,
+   * Beleg: IGMG-Bericht zur 30-Jahr-Feier vom 07.04.2008); Design und Bestand nannten 1975 bzw. 1976.
+   */
   fuehrungSeit: z.string().trim().min(1).max(10).default('[Jahr]'),
   vorstand: z.array(vorstandsmitglied).max(40).default([]),
   vorsitzende: z.array(amtszeit).max(40).default([]),

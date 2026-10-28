@@ -126,21 +126,25 @@ export function TextFeld({
   );
 }
 
-/** Auswahlfeld (Auswahlliste) mit Fehler am Feld; die Werte sind Schlüssel des Schemas. */
+/** Auswahlfeld (Auswahlliste) mit Hinweis und Fehler am Feld; die Werte sind Schlüssel des Schemas. */
 export function AuswahlFeld({
   pfad,
   label,
+  hinweis,
   wert,
   onChange,
   optionen,
   feldFehler,
+  breit,
 }: {
   pfad: string;
   label: string;
+  hinweis?: string;
   wert: string;
   onChange: (wert: string) => void;
   optionen: { wert: string; label: string }[];
   feldFehler?: Record<string, Fehlerschluessel>;
+  breit?: boolean;
 }) {
   const t = useTranslations('verwaltung.seiteninhalteOrganisationen');
   const schluessel = feldFehler?.[pfad];
@@ -148,6 +152,8 @@ export function AuswahlFeld({
     <Rahmen
       id={feldId(pfad)}
       label={label}
+      hinweis={hinweis}
+      breit={breit}
       fehler={schluessel ? t(`fehler.${schluessel}`) : undefined}
       kinder={(aria) => (
         <select {...aria} value={wert} onChange={(e) => onChange(e.target.value)} className={eingabe}>

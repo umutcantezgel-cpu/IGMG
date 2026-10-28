@@ -4,31 +4,41 @@ import { Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useActionState, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { AKTIVITAET_SYMBOLE, type AktivitaetSymbol, type OrganisationInhalt } from '@/lib/validierung/seiteninhalte/organisation';
+import {
+  AKTIVITAET_SYMBOLE,
+  DACHVERBAND_ZIELE,
+  type AktivitaetSymbol,
+  type DachverbandZiel,
+  type OrganisationInhalt,
+} from '@/lib/validierung/seiteninhalte/organisation';
 import { Abschnitt, AuswahlFeld, Hinweise, MehrsprachigFeld, Reihe, Rueckmeldung, TextFeld, type Aktion } from './bausteine';
 import { ausMehr, hatPlatzhalter, leerMehr, zuMehr, type MehrText } from './formwerte';
 import { useListe } from './liste';
 
-type OrgZustand = {
+export type OrgZustand = {
   beschreibung: MehrText;
   mission: MehrText;
   vision: MehrText;
   kontakt: { adresse: string; telefon: string; email: string };
+  /** Seite beim Dachverband; leer heißt „kein Verweis“ (null im Inhalt). */
+  dachverband: DachverbandZiel | '';
 };
 
-type AktivitaetZustand = { symbol: AktivitaetSymbol; titel: MehrText; text: MehrText };
+export type AktivitaetZustand = { symbol: AktivitaetSymbol; titel: MehrText; text: MehrText };
 
-function ausOrganisation(o: OrganisationInhalt): OrgZustand {
+/** Inhalt → Formwerte. Jedes Feld des Schemas muss hier und in `organisationInhalt` stehen, sonst geht es beim Speichern verloren. */
+export function ausOrganisation(o: OrganisationInhalt): OrgZustand {
   return {
     beschreibung: ausMehr(o.beschreibung),
     mission: ausMehr(o.mission),
     vision: ausMehr(o.vision),
     kontakt: { adresse: o.kontakt.adresse, telefon: o.kontakt.telefon, email: o.kontakt.email },
+    dachverband: o.dachverband ?? '',
   };
 }
 
 /** Formwerte → Schema-Form (JSON). Name und Untertitel sind festgelegt und stehen nicht im Inhalt. */
-function organisationInhalt(z: OrgZustand, aktivitaeten: AktivitaetZustand[], zeilen: MehrText[]) {
+export function organisationInhalt(z: OrgZustand, aktivitaeten: AktivitaetZustand[], zeilen: MehrText[]) {
   return {
     beschreibung: zuMehr(z.beschreibung),
     mission: zuMehr(z.mission),
@@ -36,6 +46,7 @@ function organisationInhalt(z: OrgZustand, aktivitaeten: AktivitaetZustand[], ze
     aktivitaeten: aktivitaeten.map((a) => ({ symbol: a.symbol, titel: zuMehr(a.titel), text: zuMehr(a.text) })),
     oeffnungszeiten: zeilen.map((w) => zuMehr(w)),
     kontakt: { adresse: z.kontakt.adresse.trim(), telefon: z.kontakt.telefon.trim(), email: z.kontakt.email.trim() },
+    dachverband: z.dachverband === '' ? null : z.dachverband,
   };
 }
 
@@ -49,7 +60,8 @@ type Props = {
 
 /**
  * Inhalt einer Organisationsseite (Bereich `organisation-…`, Muster 4/6). Das Ziel steht in der Action (an die
- * Seite gebunden), die Oberfläche zeigt nur die Angaben dieser Organisation.
+ * Seite gebunden), die Oberfläche zeigt nur die Angaben dieser Organisation. Die Seite beim Dachverband ist eine
+ * Auswahl aus dem IGMG-Netzwerk (E-044) – keine freie Adresse; Linktexte und Adressen pflegt das Netzwerk.
  */
 export function OrganisationFormular({ aktion, startwerte, name, beispiel, unlesbar }: Props) {
   const t = useTranslations('verwaltung.seiteninhalteOrganisationen');
@@ -125,6 +137,25 @@ export function OrganisationFormular({ aktion, startwerte, name, beispiel, unles
                   max={600}
                 />
               </>
+            }
+          />
+
+          <Abschnitt
+            titel={t('organisation.abschnitt.dachverband')}
+            kinder={
+              <AuswahlFeld
+                pfad="dachverband"
+                label={t('feld.dachverband')}
+                hinweis={t('organisation.hinweis.dachverband')}
+                wert={org.dachverband}
+                onChange={(ziel) => setze('dachverband', ziel as DachverbandZiel | '')}
+                optionen={[
+                  { wert: '', label: t('dachverband.keiner') },
+                  ...DACHVERBAND_ZIELE.map((z) => ({ wert: z, label: t(`dachverband.${z}`) })),
+                ]}
+                feldFehler={fehler}
+                breit
+              />
             }
           />
 
