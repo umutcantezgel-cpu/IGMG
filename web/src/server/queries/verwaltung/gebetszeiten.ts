@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, count, desc, eq, gt, gte, inArray, lte, max } from 'drizzle-orm';
+import { and, count, desc, eq, gte, inArray, lte, max, ne } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { AbgleichStatus } from '@/lib/db/schema/gebetszeiten';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
@@ -141,7 +141,9 @@ export async function ladeAbgleichStand(stadtId: string): Promise<AbgleichStand>
       .orderBy(desc(a.gestartet))
       .limit(1),
     db.select(spalten).from(a).where(eq(a.status, 'auffaellig')).orderBy(desc(a.gestartet)).limit(1),
-    db.select(spalten).from(a).where(gt(a.konflikte, 0)).orderBy(desc(a.gestartet)).limit(1),
+    // Konflikte gelten aus dem jüngsten Lauf ohne Fehler (wie `uebernimmKonflikte`); ein späterer Lauf ohne Konflikte
+    // oder die Übernahme hat ältere erledigt
+    db.select(spalten).from(a).where(ne(a.status, 'fehler')).orderBy(desc(a.gestartet)).limit(1),
   ]);
   const ohneDetails = <T extends { details: unknown }>({ details: _d, ...rest }: T) => rest;
   const offenDetails = (offen?.details ?? {}) as { auffaellig?: Auffaelligkeit[]; ausstehend?: unknown[] };
@@ -155,7 +157,8 @@ export async function ladeAbgleichStand(stadtId: string): Promise<AbgleichStand>
     ausstehend: ausstehend
       ? { ...ohneDetails(ausstehend), auffaellig: offenDetails.auffaellig ?? [], tage: offenDetails.ausstehend?.length ?? 0 }
       : null,
-    konflikte: ((konflikt?.details ?? {}) as { konflikte?: AbgleichStand['konflikte'] }).konflikte ?? [],
+    konflikte:
+      konflikt && konflikt.konflikte > 0 ? (((konflikt.details ?? {}) as { konflikte?: AbgleichStand['konflikte'] }).konflikte ?? []) : [],
   };
 }
 

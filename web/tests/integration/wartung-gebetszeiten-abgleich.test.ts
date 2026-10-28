@@ -17,6 +17,7 @@ import { alsRouteHandler, angemeldetAls, aufrufe, formular, verwaltungsUmgebung 
 const { client, db } = await verwaltungsUmgebung();
 const route = await import('@/app/api/wartung/gebetszeiten-abgleich/route');
 const { gleicheAb, gebeLaufFrei } = await import('@/lib/gebetszeiten/abgleich');
+const { ladeAbgleichStand } = await import('@/server/queries/verwaltung/gebetszeiten');
 const { feedQuelle } = await import('@/lib/gebetszeiten/quellen/igmg-feed');
 const { ladeGebetszeitenMonat, ladeGebetszeitenFenster } = await import('@/server/queries/gebetszeiten');
 const actions = await import('@/server/actions/gebetszeiten');
@@ -357,5 +358,80 @@ describe('Einstellungen des Abgleichs und der Näherung (Verwaltung)', () => {
     expect(await actions.uebernehmeNaeherung({}, formular({ naeherung: v.vorschlag!.naeherung }))).toEqual({ ok: true });
     expect(await einstellung()).toMatchObject({ rueckfall: 'naeherung', naeherung: { kalibriert: { basis: vorschlag.kalibriert.basis } } });
     expect(await actions.uebernehmeNaeherung({}, formular({ naeherung: '{"fajrWinkel": 99}' }))).toEqual({ fehler: 'pruefen' });
+  });
+});
+
+describe('Gleitendes Fenster über mehrere Tage (Gegenprüfung 28.10.2026)', () => {
+  const morgen = () => new Date(Date.now() + 86_400_000);
+  beforeEach(async () => {
+    await db.delete(schema.gebetszeitAbgleich);
+    await db.delete(schema.gebetszeitTag);
+    await setzeEinstellung({ aktiveQuelle: 'igmg', abgleich: { aktiv: true, stadtId: '20238', freigabe: 'sofort' } });
+  });
+
+  it('Konflikte aus zwei Läufen: nach der Übernahme ist nichts mehr offen; ein zweiter Klick schreibt nichts', async () => {
+    await gleicheAb({ quelle: fakeQuelle() });
+    const datum = tagPlus(5);
+    await db.update(schema.gebetszeitTag).set({ quelle: 'import', aksam: '17:00:00' }).where(eq(schema.gebetszeitTag.datum, datum));
+    await gleicheAb({ quelle: fakeQuelle() });
+    await gleicheAb({ quelle: fakeQuelle() });
+    expect((await ladeAbgleichStand('20238')).konflikte).toHaveLength(1);
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    expect(await actions.uebernehmeKonflikte({}, new FormData())).toEqual({ uebernommen: 1 });
+    expect((await ladeAbgleichStand('20238')).konflikte).toEqual([]);
+    expect(await actions.uebernehmeKonflikte({}, new FormData())).toEqual({ uebernommen: 0 });
+  });
+
+  it('dauerhafter Import: Tage, die vorne herausfallen oder hinten hineinrücken, lösen keinen neuen Konflikt-Hinweis aus', async () => {
+    await gleicheAb({ quelle: fakeQuelle() });
+    for (const n of [-1, 5])
+      await db
+        .update(schema.gebetszeitTag)
+        .set({ quelle: 'import', aksam: '17:00:00' })
+        .where(eq(schema.gebetszeitTag.datum, tagPlus(n)));
+    const mailsVorher = (await mails()).length;
+    expect(await gleicheAb({ quelle: fakeQuelle() })).toMatchObject({ konflikte: 2 });
+    expect((await mails()).length).toBe(mailsVorher + 1);
+    // Nächster Tag: gestern fällt heraus, das Fenster wächst hinten – kein neuer Konflikt, keine Mail
+    expect(await gleicheAb({ quelle: fakeQuelle(), jetzt: morgen() })).toMatchObject({ konflikte: 1 });
+    expect((await mails()).length).toBe(mailsVorher + 1);
+    // Ein wirklich neuer Konflikt meldet sich
+    await db
+      .update(schema.gebetszeitTag)
+      .set({ quelle: 'import', aksam: '17:00:00' })
+      .where(eq(schema.gebetszeitTag.datum, tagPlus(8)));
+    expect(await gleicheAb({ quelle: fakeQuelle(), jetzt: morgen() })).toMatchObject({ konflikte: 2 });
+    expect((await mails()).length).toBe(mailsVorher + 2);
+  });
+
+  it('ein freigegebener auffälliger Tag hält die Läufe der Folgetage nicht erneut an', async () => {
+    // Yatsı um Tag X ansteigend (4, 8, 12, 8, 4 Minuten): kein Tagessprung über 6 Minuten, nur X über 10 Minuten
+    const x = 10;
+    for (const [n, min] of [
+      [-2, 4],
+      [-1, 8],
+      [0, 12],
+      [1, 8],
+      [2, 4],
+    ] as const) {
+      const datum = tagPlus(x + n);
+      feed.aenderungen.set(datum, { yatsi: plus(berechneTag(datum, STANDARD_EINSTELLUNGEN).yatsi, min) });
+    }
+    const e = await gleicheAb({ quelle: fakeQuelle() });
+    expect(e).toMatchObject({ status: 'auffaellig', auffaellig: 1 });
+    const ich = (await angemeldetAls([{ rolle: 'redaktion' }]))!;
+    expect((await gebeLaufFrei(e.laufId!, ich))?.tage).toBeGreaterThan(0);
+    const mailsVorher = (await mails()).length;
+    // Folgetag: X ist gespeichert und unverändert, hinten kommt ein unauffälliger Tag dazu → „ok“, keine Mail
+    const folge = await gleicheAb({ quelle: fakeQuelle(), jetzt: morgen() });
+    expect(folge).toMatchObject({ status: 'ok', auffaellig: 0 });
+    expect(folge.tageNeu).toBeGreaterThan(0);
+    expect((await mails()).length).toBe(mailsVorher);
+  });
+
+  it('Trockenlauf meldet denselben Status wie der echte Lauf (Freigabe „prüfen“)', async () => {
+    await setzeEinstellung({ aktiveQuelle: 'igmg', abgleich: { aktiv: true, stadtId: '20238', freigabe: 'pruefen' } });
+    expect(await gleicheAb({ quelle: fakeQuelle(), trocken: true })).toMatchObject({ status: 'auffaellig', auffaellig: 0 });
+    expect(await gleicheAb({ quelle: fakeQuelle() })).toMatchObject({ status: 'auffaellig', auffaellig: 0 });
   });
 });

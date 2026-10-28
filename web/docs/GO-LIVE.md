@@ -143,7 +143,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E; danach G (Gemeinde-Platt
   - **Schritte:**
     1. Offiziellen Zugang bei der IGMG anfragen (Feed mit Schlüssel oder Jahresdatei für Wetzlar, Stadt-ID 20238; dazu Rechenmethode und Sommerregel; M-100).
     2. `GEBETSZEITEN_IGMG_URL` (https, Platzhalter `{stadt}`, `{jahr}`, `{monat}`) und gegebenenfalls `GEBETSZEITEN_IGMG_SCHLUESSEL` in Production setzen (`docs/deploy/VERCEL-ENV.md`), neu bereitstellen. Eine gelieferte Jahresdatei liegt stattdessen unter `web/daten/igmg-gebetskalender/<stadtId>-<jahr>.csv` mit `QUELLE.md` (SHA-256, Abrufdatum).
-    3. Verwaltung › Gebetszeiten › „IGMG-Abgleich“: einschalten und die Freigabe-Art wählen („sofort übernehmen“ oder „erst nach Freigabe“).
+    3. Verwaltung › Gebetszeiten › „IGMG-Abgleich“: einschalten und die Freigabe-Art wählen („sofort übernehmen“ oder „erst nach Freigabe“). Als aktive Quelle „IGMG-Gebetskalender“ wählen – der Seed setzt „Berechnung“, und damit nutzt die Website keine Tabelle (Startklar `inhalte.gebetszeiten-abdeckung` meldet das).
     4. Bis der Zugang da ist: Monate über „Tabelle aus dem IGMG-Gebetskalender einfügen“ übernehmen (`docs/handbuch/redaktion.md` 12.5).
   - **Das siehst du, wenn es geklappt hat:** Für die nächsten 30 Tage liegen IGMG-Zeiten vor (unter 7 Tagen ist es in der Produktion ein Fehler). Im Startklar-Cockpit sind `inhalte.gebetszeiten-abdeckung`, `inhalte.gebetszeiten-abgleich`, `inhalte.gebetszeiten-konflikte`, `inhalte.gebetszeiten-datei` und `inhalte.gebetszeiten-igmg-zugang` grün oder begründet. `/gebetszeiten` zeigt „Quelle: IGMG-Gebetskalender, Stand …“ statt „berechnet (vorläufig)“.
 

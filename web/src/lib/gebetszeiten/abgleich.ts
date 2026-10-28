@@ -1,6 +1,5 @@
 import 'server-only';
-import { createHash } from 'node:crypto';
-import { and, desc, eq, gte, inArray, lt, lte, ne, notInArray, sql } from 'drizzle-orm';
+import { and, desc, eq, gt, gte, inArray, lt, lte, ne, notInArray, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import type { AbgleichStatus } from '@/lib/db/schema/gebetszeiten';
@@ -51,6 +50,7 @@ export type AbgleichErgebnis = {
 type Zustand = 'ok' | 'stoerung' | 'auffaellig' | 'abdeckung';
 type LaufDetails = {
   zustand?: Zustand;
+  /** nur in älteren Läufen gespeichert; der Konflikt-Hinweis vergleicht heute die Konflikte selbst (`neueKonflikte`) */
   konfliktKennung?: string;
   konflikte?: Konflikt[];
   konfliktTage?: LieferTag[];
@@ -111,13 +111,31 @@ const leer = (o: Partial<AbgleichErgebnis>): AbgleichErgebnis => ({
   ...o,
 });
 
-const kennungVon = (k: Konflikt[]) =>
-  k.length
-    ? createHash('sha256')
-        .update(JSON.stringify(k.map((x) => [x.datum, x.abweichungMin])))
-        .digest('hex')
-        .slice(0, 16)
-    : '';
+const konfliktSchluessel = (k: Konflikt) => `${k.datum}|${JSON.stringify(k.abweichungMin)}`;
+
+/**
+ * Neue Konflikte gegenüber dem letzten Lauf ohne Fehler: ein Tag mit dieser Abweichung stand dort noch nicht. Tage, die nur
+ * vorne aus dem gleitenden Fenster fallen oder hinten neu hineinrücken (Tageslauf), sind kein neuer Konflikt – sonst käme der
+ * Hinweis bei einem dauerhaften Import täglich (ADR 0048 Nr. 11).
+ */
+function neueKonflikte(konflikte: readonly Konflikt[], vorlauf: { bis: string | null; details: LaufDetails } | undefined): Konflikt[] {
+  const bekannt = vorlauf?.details.konflikte ?? [];
+  if (!vorlauf || !bekannt.length) return [...konflikte];
+  const schluessel = new Set(bekannt.map(konfliktSchluessel));
+  return konflikte.filter((k) => !schluessel.has(konfliktSchluessel(k)) && (!vorlauf.bis || k.datum <= vorlauf.bis));
+}
+
+/**
+ * Eine Regel für echten Lauf und Trockenlauf: Änderungen mit Auffälligkeit (nur an neuen oder geänderten Tagen – schon
+ * gespeicherte, einmal freigegebene Tage halten spätere Läufe nicht erneut an) oder mit Freigabe „prüfen“ warten auf die
+ * Verwaltung.
+ */
+function relevanteAuffaelligkeiten(auffaellig: readonly Auffaelligkeit[], diff: { neu: LieferTag[]; geaendert: LieferTag[] }) {
+  const daten = new Set([...diff.neu, ...diff.geaendert].map((d) => d.datum));
+  return auffaellig.filter((f) => daten.has(f.datum));
+}
+const statusVon = (aenderungen: number, auffaellig: number, freigabe: string): AbgleichStatus =>
+  aenderungen && (auffaellig || freigabe === 'pruefen') ? 'auffaellig' : aenderungen ? 'ok' : 'unveraendert';
 
 type Tx = Parameters<Parameters<typeof db.transaction>[0]>[0];
 
@@ -144,7 +162,12 @@ async function schreibeTage(tx: Tx, tage: readonly LieferTag[], laufId: string |
 /** Die letzten Läufe (neueste zuerst) für Zustand, Fehlerfolge und Konflikt-Kennung. */
 async function letzteLaeufe(tx: Tx | typeof db, anzahl: number) {
   return tx
-    .select({ id: schema.gebetszeitAbgleich.id, status: schema.gebetszeitAbgleich.status, details: schema.gebetszeitAbgleich.details })
+    .select({
+      id: schema.gebetszeitAbgleich.id,
+      status: schema.gebetszeitAbgleich.status,
+      bis: schema.gebetszeitAbgleich.bis,
+      details: schema.gebetszeitAbgleich.details,
+    })
     .from(schema.gebetszeitAbgleich)
     .orderBy(desc(schema.gebetszeitAbgleich.gestartet))
     .limit(anzahl);
@@ -229,14 +252,15 @@ export async function gleicheAb(
       .from(schema.gebetszeitTag)
       .where(and(gte(schema.gebetszeitTag.datum, von), lte(schema.gebetszeitTag.datum, bis)));
     const diff = vergleiche(new Map(bestand.map((b) => [b.datum, b as BestandTag])), tage);
+    const relevant = relevanteAuffaelligkeiten(auffaellig, diff);
     return leer({
       ...basis,
-      status: auffaellig.length ? 'auffaellig' : diff.neu.length + diff.geaendert.length ? 'ok' : 'unveraendert',
+      status: statusVon(diff.neu.length + diff.geaendert.length, relevant.length, abgleich.freigabe),
       tageGeprueft: tage.length,
       tageNeu: diff.neu.length,
       tageGeaendert: diff.geaendert.length,
       konflikte: diff.konflikte.length,
-      auffaellig: auffaellig.length,
+      auffaellig: relevant.length,
       maxAbweichungMin: diff.maxAbweichungMin,
     });
   }
@@ -245,11 +269,19 @@ export async function gleicheAb(
     db.transaction(async (tx) => {
       const vorher = await letzteLaeufe(tx, FEHLER_IN_FOLGE - 1);
       const vorherDetails = (vorher[0]?.details ?? {}) as LaufDetails;
+      // Vergleich der Konflikte mit dem letzten Lauf, der Konflikte kennen konnte (ohne Fehler)
+      const [vorlaufOhneFehler] = await tx
+        .select({ bis: schema.gebetszeitAbgleich.bis, details: schema.gebetszeitAbgleich.details })
+        .from(schema.gebetszeitAbgleich)
+        .where(ne(schema.gebetszeitAbgleich.status, 'fehler'))
+        .orderBy(desc(schema.gebetszeitAbgleich.gestartet))
+        .limit(1);
       const vorherZustand: Zustand = vorherDetails.zustand ?? 'ok';
       const details: LaufDetails = {};
       let status: AbgleichStatus;
       let zustand: Zustand;
       let diff = { neu: [] as LieferTag[], geaendert: [] as LieferTag[], konflikte: [] as Konflikt[], maxAbweichungMin: 0 };
+      let relevant: Auffaelligkeit[] = [];
 
       if (fehlerCode) {
         status = 'fehler';
@@ -266,9 +298,10 @@ export async function gleicheAb(
           .where(and(gte(t.datum, von), lte(t.datum, bis)));
         diff = vergleiche(new Map(bestand.map((b) => [b.datum, b as BestandTag])), tage);
         const aenderungen = diff.neu.length + diff.geaendert.length;
-        if (aenderungen && (auffaellig.length || abgleich.freigabe === 'pruefen')) {
+        relevant = relevanteAuffaelligkeiten(auffaellig, diff);
+        if (statusVon(aenderungen, relevant.length, abgleich.freigabe) === 'auffaellig') {
           status = 'auffaellig';
-          details.auffaellig = auffaellig.slice(0, 60);
+          details.auffaellig = relevant.slice(0, 60);
           details.ausstehend = [...diff.neu, ...diff.geaendert];
           zustand = 'auffaellig';
         } else {
@@ -276,9 +309,6 @@ export async function gleicheAb(
           zustand = 'ok';
         }
       }
-      // Ein Fehlschlag kennt keine Konflikte; er trägt die bisherige Kennung weiter (sonst käme der Hinweis erneut)
-      const kennung = fehlerCode ? (vorherDetails.konfliktKennung ?? '') : kennungVon(diff.konflikte);
-      details.konfliktKennung = kennung;
       if (diff.konflikte.length) {
         details.konflikte = diff.konflikte.slice(0, 400);
         details.konfliktTage = tage.filter((d) => diff.konflikte.some((k) => k.datum === d.datum));
@@ -333,13 +363,20 @@ export async function gleicheAb(
         tx,
       );
       if (zustand !== 'ok' && zustand !== vorherZustand) await planeGebetszeitenHinweis({ art: zustand }, tx);
-      if (kennung && kennung !== (vorherDetails.konfliktKennung ?? '')) await planeGebetszeitenHinweis({ art: 'konflikte' }, tx);
+      if (
+        !fehlerCode &&
+        neueKonflikte(
+          diff.konflikte,
+          vorlaufOhneFehler && { bis: vorlaufOhneFehler.bis, details: (vorlaufOhneFehler.details ?? {}) as LaufDetails },
+        ).length
+      )
+        await planeGebetszeitenHinweis({ art: 'konflikte' }, tx);
       await raeumeAuf(tx, jetzt);
-      return { laufId: zeile.id, status, diff, monate: monateVon(geschrieben) };
+      return { laufId: zeile.id, status, diff, relevant, monate: monateVon(geschrieben) };
     }),
   );
   if (lauf.uebersprungen) return leer({ ...basis, status: 'uebersprungen' });
-  const { laufId, status, diff, monate } = lauf.ergebnis;
+  const { laufId, status, diff, relevant, monate } = lauf.ergebnis;
   return leer({
     ...basis,
     status,
@@ -348,7 +385,7 @@ export async function gleicheAb(
     tageNeu: diff.neu.length,
     tageGeaendert: diff.geaendert.length,
     konflikte: diff.konflikte.length,
-    auffaellig: auffaellig.length,
+    auffaellig: fehlerCode ? auffaellig.length : relevant.length,
     maxAbweichungMin: diff.maxAbweichungMin,
     fehlerCode,
     monate,
@@ -405,13 +442,15 @@ export async function gebeLaufFrei(laufId: string, benutzerId: string): Promise<
 export async function uebernimmKonflikte(benutzerId: string): Promise<{ tage: number; monate: string[] }> {
   return db.transaction(async (tx) => {
     const a = schema.gebetszeitAbgleich;
+    // Wie die Anzeige (`ladeAbgleichStand`): nur der jüngste Lauf ohne Fehler zählt; ein späterer Lauf ohne Konflikte
+    // (etwa nach „Import entfernen“) hat sie erledigt
     const [lauf] = await tx
-      .select({ id: a.id, details: a.details })
+      .select({ id: a.id, konflikte: a.konflikte, details: a.details })
       .from(a)
-      .where(sql`${a.konflikte} > 0`)
+      .where(ne(a.status, 'fehler'))
       .orderBy(desc(a.gestartet))
       .limit(1);
-    const tage = ((lauf?.details ?? {}) as LaufDetails).konfliktTage ?? [];
+    const tage = lauf && lauf.konflikte > 0 ? (((lauf.details ?? {}) as LaufDetails).konfliktTage ?? []) : [];
     if (!lauf || !tage.length) return { tage: 0, monate: [] };
     const t = schema.gebetszeitTag;
     await tx
@@ -427,7 +466,7 @@ export async function uebernimmKonflikte(benutzerId: string): Promise<{ tage: nu
           aktualisiertAm: sql`now()`,
         },
       });
-    await tx.update(a).set({ konflikte: 0 }).where(eq(a.id, lauf.id));
+    await tx.update(a).set({ konflikte: 0 }).where(gt(a.konflikte, 0));
     await protokolliere(
       { benutzerId, aktion: 'gebetszeiten.konflikt_uebernommen', zielTyp: 'gebetszeiten', zielId: lauf.id, details: { tage: tage.length } },
       tx,

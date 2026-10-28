@@ -387,6 +387,15 @@ describe('Gebetszeiten aus dem IGMG-Kalender (ADR 0048)', () => {
     expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('ok');
   });
 
+  it('Abdeckung mit aktiver Quelle „Berechnung“: Tabellen zählen nicht (öffentlich ungenutzt), Hinweis auf die Quelle', async () => {
+    await setzeIgmgTage(30);
+    await setzeEinstellung('gebetszeiten', { aktiveQuelle: 'berechnung' });
+    const p = befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abdeckung');
+    expect(p.status).toBe('fehler');
+    expect(p.meldung).toMatch(/aktive Quelle ist „Berechnung“/);
+    expect(befund(await pruefe(vorschauUmgebung()), 'inhalte.gebetszeiten-abdeckung').status).toBe('warnung');
+  });
+
   it('Abgleich ausgeschaltet: Hinweis; eingeschaltet ohne Erfolg oder mit 3 Fehlschlägen in Folge: Fehler; alt: Warnung', async () => {
     expect(befund(await pruefe(produktionsUmgebung()), 'inhalte.gebetszeiten-abgleich').status).toBe('hinweis');
     await setzeEinstellung('gebetszeiten', { abgleich: { aktiv: true } });

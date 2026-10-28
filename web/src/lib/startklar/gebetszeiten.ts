@@ -46,15 +46,21 @@ export async function gebetszeitenPruefen(
       .from(tg)
       .where(and(gte(tg.datum, heute), lte(tg.datum, tagPlus(heute, 29)), ne(tg.quelle, 'berechnet')))
   ).length;
+  // Mit der aktiven Quelle „Berechnung“ lesen die öffentlichen Lader keine Tabelle (server/queries/gebetszeiten.ts) – dann
+  // zählen vorhandene Tabellen-Tage nicht als Abdeckung
+  const berechnung = einstellung.aktiveQuelle === 'berechnung';
+  const wirksam = berechnung ? 0 : tage;
   neu({
     id: 'inhalte.gebetszeiten-abdeckung',
     bereich: 'inhalte',
     titel: 'Gebetszeiten aus dem IGMG-Kalender (30 Tage)',
-    status: tage >= 30 ? 'ok' : tage < 7 && produktion ? 'fehler' : 'warnung',
+    status: wirksam >= 30 ? 'ok' : wirksam < 7 && produktion ? 'fehler' : 'warnung',
     meldung:
-      tage >= 30
+      wirksam >= 30
         ? 'Für die nächsten 30 Tage liegen Zeiten aus Tabellen vor (IGMG-Kalender oder Gemeinde).'
-        : `Nur ${tage} der nächsten 30 Tage haben Zeiten aus einer Tabelle; die übrigen sind „berechnet (vorläufig)“. Monat aus dem IGMG-Gebetskalender einfügen oder den Abgleich einrichten.`,
+        : berechnung && tage
+          ? `Für ${tage} der nächsten 30 Tage liegen Zeiten aus Tabellen vor, aber die aktive Quelle ist „Berechnung“ – öffentlich erscheinen alle Tage als „berechnet (vorläufig)“. Verwaltung › Gebetszeiten › Quelle auf „IGMG-Gebetskalender“ stellen.`
+          : `Nur ${wirksam} der nächsten 30 Tage haben Zeiten aus einer Tabelle; die übrigen sind „berechnet (vorläufig)“. Monat aus dem IGMG-Gebetskalender einfügen oder den Abgleich einrichten${berechnung ? ' und die Quelle auf „IGMG-Gebetskalender“ stellen' : ''}.`,
     ort: ORT,
     aufwand: '10 min je Monat',
   });
