@@ -1,7 +1,7 @@
 # STATUS
 
 ## Marktstart mit IGMG-Daten (Stand 28.10.2026)
-- **Lauf läuft:** Pakete Fundament, P1–P8 gemergt auf `claude/peaceful-dirac-e7a06r` (Draft-PR umutcantezgel-cpu/IGMG#5); Welle 3 (Stand-Migration, Prüfwerkzeuge, Doku) in Arbeit, danach Gesamtverifikation, Push und PR-Beschreibung.
+- **Abgeschlossen 28.10.2026:** Fundament, P1–P8, Welle 3 und die Befunde der unabhängigen Gegenprüfung (Bericht § 9) über umutcantezgel-cpu/IGMG#5 nach `main` gemergt (`722828a`). Live auf igmg-wetzlar.vercel.app geprüft: neuer Stand, Konzept-Hinweis an, `noindex, follow`, `/llms.txt` 404. Entscheidungen E-044 bis E-046.
 - **Plan:** `/root/.claude/plans/root-claude-uploads-d2cbb575-0c84-5ded-cozy-llama.md`. Entscheidungen E-044/E-045 (`ENTSCHEIDUNGEN.md`), KERN 1.2, ADR 0046–0049.
 - **Bericht:** `belege/marktstart-igmg/BERICHT.md`. Menschen-Punkte M-099–M-120 (`MENSCHEN.md` § 8), Livegang: `web/docs/GO-LIVE.md` C6–C14.
 
