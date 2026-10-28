@@ -34,6 +34,7 @@
     "lernapp:audio-pruefen": "tsx --conditions=react-server scripts/lernapp/audio-pruefen.ts",
     "lernapp:audio-manifest": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/audio-manifest.ts",
     "inhalte:2026": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-2026.ts",
+    "inhalte:marktstart": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-marktstart.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",
     "startklar": "tsx --conditions=react-server --env-file-if-exists=.env scripts/startklar.ts",

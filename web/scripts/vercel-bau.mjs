@@ -21,6 +21,10 @@ if (process.env.DATABASE_URL) {
   lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts']);
   // Lern-App-Inhalte (PLAN §6.6): idempotent über SHA-256 je Datei und inhaltHash je Eintrag; ohne Testkurs
   lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts']);
+  // Inhaltsstände (Nachtrag ADR 0019): nur Beispielinhalte (ist_beispiel = true) auf den Seed-Stand, fehlende Bereiche
+  // anlegen; Redaktionelles bleibt. Idempotent (zweiter Lauf ändert nichts), Reihenfolge: erst 2026, dann Marktstart.
+  lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-2026.ts']);
+  lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-marktstart.ts']);
   lauf('pnpm', ['exec', 'next', 'build']);
 } else {
   console.warn('[bau] WARNUNG: DATABASE_URL fehlt – Bau mit Beispielinhalten aus einer PGlite-Bau-Datenbank (ADR 0017).');
