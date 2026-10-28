@@ -16,6 +16,7 @@ const manifest = await import('@/app/lern-app/[ui]/manifest.webmanifest/route');
 afterAll(() => client.close());
 afterEach(() => {
   delete process.env.FUNKTION_LERNAPP;
+  delete process.env.VERCEL;
 });
 
 /** Kommt die Komponente irgendwo im Baum vor? */
@@ -48,5 +49,20 @@ describe('Schalter lernapp im Wurzel-Layout und im Manifest', () => {
     const r = await manifestAntwort();
     expect(r.status).toBe(404);
     expect(r.headers.get('cache-control')).toBe('no-store');
+  });
+});
+
+/**
+ * Indexierungs-Schranke (ADR 0049, E-047): Die Lern-App liegt auf derselben Domain wie die Website und bekommt mit dem
+ * Konzept-Hinweis (Standard: an) auf Vercel ebenfalls `noindex, follow`; lokal und in E2E-Läufen bleiben die Metadaten frei.
+ */
+describe('Indexierungs-Schranke im Wurzel-Layout', () => {
+  it('Konzept-Hinweis an, auf Vercel: noindex, follow', async () => {
+    process.env.VERCEL = '1';
+    expect((await layout.generateMetadata()).robots).toEqual({ index: false, follow: true });
+  });
+
+  it('ohne VERCEL=1: keine robots-Angabe', async () => {
+    expect((await layout.generateMetadata()).robots).toBeUndefined();
   });
 });

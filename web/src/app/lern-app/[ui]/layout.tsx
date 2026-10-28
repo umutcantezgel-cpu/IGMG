@@ -9,7 +9,9 @@ import { LERNAPP_FARBE } from '@/lib/lernapp/farben';
 import { OBERFLAECHEN, richtung } from '@/lib/lernapp/kurse';
 import { oberflaeche } from '@/lib/lernapp/seite';
 import { lernTexte } from '@/lib/lernapp/texte';
+import { indexierungGesperrt, NOINDEX } from '@/lib/seo/indexierung';
 import { oeffentlicheAdresse } from '@/lib/umgebung';
+import { ladeEinstellung } from '@/server/queries/einstellungen';
 import { schriftKlassen } from '../../schriften';
 import { schriftArabischUi } from '../schrift';
 import '../../globals.css';
@@ -25,11 +27,15 @@ export function generateStaticParams() {
  */
 export const unstable_paramMatching = { ui: 'not-found' } as const;
 
+/**
+ * Indexierungs-Schranke wie im Website-Layout (ADR 0049, E-047): Mit eingeschaltetem Konzept-Hinweis auf Vercel
+ * `noindex, follow` – die Lern-App liegt auf derselben Domain und gehört bis dahin auch nicht in die Suche.
+ */
 export async function generateMetadata(): Promise<Metadata> {
   const sprache = await oberflaeche();
   const t = lernTexte(sprache);
   // Schalter `lernapp` aus: kein Manifest (die Seite ist ein 404, nichts zum Installieren; ADR 0035)
-  const an = await funktionAn('lernapp');
+  const [an, { konzepthinweis }] = await Promise.all([funktionAn('lernapp'), ladeEinstellung('allgemein')]);
   return {
     metadataBase: new URL(oeffentlicheAdresse(process.env)),
     title: { default: t('meta.name'), template: `%s · ${t('meta.name')}` },
@@ -38,6 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ...(an ? { manifest: `/lern-app/${sprache}/manifest.webmanifest` } : {}),
     icons: { icon: '/lern-app/symbole/symbol-192.png', apple: '/lern-app/symbole/apple-touch-icon.png' },
     appleWebApp: { capable: true, title: t('meta.kurzname'), statusBarStyle: 'default' },
+    ...(indexierungGesperrt(konzepthinweis) ? { robots: NOINDEX } : {}),
   };
 }
 

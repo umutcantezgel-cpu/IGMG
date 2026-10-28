@@ -20,7 +20,7 @@ Alle Platzhalter in eckigen Klammern sind von der Gemeinde zu füllen (`_lauf/ME
    - Beim Start wendet die App alle Migrationen an (`MIGRATION_BEIM_START=1`, im Image gesetzt). Schlägt eine Migration fehl, startet die App nicht.
    - Danach lässt sie alle vorgerenderten Inhalte verfallen (`CACHE_ERNEUERN_BEIM_START=1`, ADR 0017): Das Image wird gegen eine Bau-Datenbank mit Beispielinhalten gebaut; die erste Anfrage je Seite rendert aus der echten Datenbank neu.
 4. Health-Check: `curl -s http://127.0.0.1:3000/api/health` → `{"status":"ok"}` (prüft auch die Datenbank).
-5. Erstes Administrationskonto (M-052): `docker compose exec app node … ` bzw. lokal `pnpm verwaltung:einladen --email <adresse> --name "<Name>" --rolle administration` – gibt den Einladungslink aus. Die Person legt ihr Passwort fest und richtet die Zwei-Faktor-Anmeldung ein (Pflicht).
+5. Erstes Administrationskonto (M-052): `docker compose exec app node … ` bzw. lokal `pnpm verwaltung:einladen --email <adresse> --name "<Name>" --rolle administration` – gibt den Einladungslink aus. Die Person legt ihr Passwort fest und richtet die Zwei-Faktor-Anmeldung ein (Pflicht). Auf Vercel ohne Rechner mit Datenbankzugang: `ERSTE_VERWALTUNG_EMAIL` und `ERSTE_VERWALTUNG_NAME` in Production setzen, der nächste Production-Bau schreibt den Link ins Bauprotokoll; die Beispielinhalte dazu mit `ERSTBEFUELLUNG=1` (einmal je Datenbank, Merker `erstbefuellung`; E-047, `docs/deploy/VERCEL.md` 2.5).
 
 ## 3 Pflichtwerte in `.env`
 
