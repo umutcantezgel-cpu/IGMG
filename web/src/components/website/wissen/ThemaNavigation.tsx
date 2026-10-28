@@ -1,6 +1,7 @@
 import { Check, X } from 'lucide-react';
 import { Link } from '@/i18n/link';
 import { cn } from '@/lib/utils';
+import { EntwurfMarke } from './EntwurfMarke';
 import type { ThemaAnzeige } from './typen';
 
 export type ThemaNavigationProps = {
@@ -17,7 +18,8 @@ export type ThemaNavigationProps = {
 /**
  * Themenleiste der Themenseite (design/IslamicKnowledge.dc.html Z24–31, Blatt S14). Auf der Themenseite hat jedes
  * Thema eine eigene Adresse, deshalb sind die Schaltflächen des Designs hier Links. Das aktuelle Thema trägt
- * aria-current und das Häkchen; „Filter entfernen“ führt zur Übersicht. Server-Komponente ohne Client-Code (K-12).
+ * aria-current und das Häkchen; „Filter entfernen“ führt zur Übersicht. Themen „zur Prüfung“ tragen die Marke „Entwurf“
+ * (ADR 0047). Server-Komponente ohne Client-Code (K-12).
  */
 export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen, aktuell }: ThemaNavigationProps) {
   return (
@@ -38,7 +40,9 @@ export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen,
                   ist ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
-                <span lang={th.label.lang}>{th.label.text}</span>
+                <span className="flex flex-col items-start gap-1">
+                  <span lang={th.label.lang}>{th.label.text}</span> {th.marke ? <EntwurfMarke text={th.marke} /> : null}
+                </span>
                 {ist ? <Check aria-hidden className="size-5 shrink-0 text-gruen-700" /> : null}
               </Link>
             </li>

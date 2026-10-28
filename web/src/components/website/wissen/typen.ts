@@ -32,7 +32,11 @@ export type WissenTexte = {
   schliessen: string;
 };
 
-export type ThemaAnzeige = { schluessel: string; label: Anzeige };
+/**
+ * Thema in Filter und Themenleiste. `marke`: Text der Marke „Entwurf“, wenn das Thema noch nicht religiös geprüft ist
+ * (nur mit dem Schalter `website_wissen_vorschau` sichtbar, ADR 0047).
+ */
+export type ThemaAnzeige = { schluessel: string; label: Anzeige; marke?: string };
 
 export type ArtikelAnzeige = {
   schluessel: string;

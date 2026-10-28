@@ -10,6 +10,7 @@ import type { BereichsSeed } from './typ';
 import { seed as ueberUns } from './ueber-uns';
 import { seed as vorstand } from './vorstand';
 import { seed as wissen } from './wissen';
+import { seed as wissenEntwuerfe } from './wissen-entwuerfe';
 
 /** Seeds je Bereich (E-027) – in dieser Reihenfolge nach den Grund-Seeds. Neue Bereiche nur hier eintragen. */
 export const BEREICHS_SEEDS: { name: string; lauf: BereichsSeed }[] = [
@@ -22,6 +23,8 @@ export const BEREICHS_SEEDS: { name: string; lauf: BereichsSeed }[] = [
   { name: 'organisationen', lauf: organisationen },
   { name: 'korankurse', lauf: korankurse },
   { name: 'wissen', lauf: wissen },
+  // Nach „wissen“: KI-Entwürfe „zur Prüfung“ (ADR 0047), nicht als geprüfter Bestand
+  { name: 'wissen-entwuerfe', lauf: wissenEntwuerfe },
   { name: 'rechtliches', lauf: rechtliches },
   { name: 'seiten (CMS)', lauf: seiten },
 ];

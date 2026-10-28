@@ -12,7 +12,14 @@ const prod = { SITE_MODE: 'produktion', NODE_ENV: 'production' };
 describe('Funktionsschalter (ADR 0035)', () => {
   it('Produktion: ohne Angaben ist alles aus – außer den freigegebenen Funktionen ohne Personendaten', () => {
     for (const f of FUNKTIONEN) expect(entscheide(f, prod, null)).toBe(IN_PRODUKTION_AN.includes(f));
-    expect(IN_PRODUKTION_AN).toEqual(['hadith_gesamt', 'lernapp', 'lernapp_ungeprueft', 'lernapp_wissen_vorschau', 'lernapp_meldungen']);
+    expect(IN_PRODUKTION_AN).toEqual([
+      'hadith_gesamt',
+      'website_wissen_vorschau',
+      'lernapp',
+      'lernapp_ungeprueft',
+      'lernapp_wissen_vorschau',
+      'lernapp_meldungen',
+    ]);
   });
 
   it('Funktionen mit Personendaten sind in der Produktion nie standardmäßig an', () => {
@@ -32,6 +39,31 @@ describe('Funktionsschalter (ADR 0035)', () => {
     expect(entscheide('chat', prod, { chat: true })).toBe(true);
     expect(entscheide('chat', { ...prod, FUNKTION_CHAT: 'aus' }, { chat: true })).toBe(false);
     expect(entscheide('push', { ...prod, FUNKTION_PUSH: 'an' }, { push: false })).toBe(true);
+  });
+});
+
+describe('Schalter website_wissen_vorschau (ADR 0047, Nutzerentscheidung E-044 Nr. 5)', () => {
+  const f = 'website_wissen_vorschau' as const;
+
+  it('bekannt, in der Einstellung erlaubt, ohne Personendaten und ohne Voraussetzung', () => {
+    expect(FUNKTIONEN).toContain(f);
+    expect(funktionenEinstellung.safeParse({ [f]: false }).success).toBe(true);
+    expect(MIT_PERSONENDATEN).not.toContain(f);
+    expect(VORAUSSETZUNGEN[f]).toBeUndefined();
+  });
+
+  it('Standard an in allen Betriebsarten – auch mit ausgeschalteter Lern-App', () => {
+    expect(entscheideWirksam(f, prod, null)).toBe(true);
+    expect(entscheideWirksam(f, { NODE_ENV: 'development' }, null)).toBe(true);
+    expect(entscheideWirksam(f, { SITE_MODE: 'vorschau', NODE_ENV: 'production' }, null)).toBe(true);
+    expect(entscheideWirksam(f, { ...prod, FUNKTION_LERNAPP: 'aus' }, null)).toBe(true);
+  });
+
+  it('abschaltbar per Umgebung (schlägt die Einstellung) oder Einstellung „funktionen“', () => {
+    expect(entscheideWirksam(f, { ...prod, FUNKTION_WEBSITE_WISSEN_VORSCHAU: 'aus' }, null)).toBe(false);
+    expect(entscheideWirksam(f, { ...prod, FUNKTION_WEBSITE_WISSEN_VORSCHAU: 'aus' }, { [f]: true })).toBe(false);
+    expect(entscheideWirksam(f, prod, { [f]: false })).toBe(false);
+    expect(entscheideWirksam(f, { ...prod, FUNKTION_WEBSITE_WISSEN_VORSCHAU: 'an' }, { [f]: false })).toBe(true);
   });
 });
 

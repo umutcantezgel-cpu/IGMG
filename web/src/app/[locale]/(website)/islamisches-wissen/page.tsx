@@ -70,7 +70,12 @@ export default async function IslamischesWissenSeite() {
         <WissenInsel
           sprache={SPRACH_KENNUNG[sprache]}
           texte={texte}
-          themen={themen.map((th) => ({ schluessel: th.slug, label: textMitSprache(th.titel, sprache) }))}
+          themen={themen.map((th) => ({
+            schluessel: th.slug,
+            label: textMitSprache(th.titel, sprache),
+            // Noch nicht religiös geprüft (Schalter `website_wissen_vorschau`, ADR 0047): Marke „Entwurf“
+            marke: th.entwurf ? t('entwurf.marke') : undefined,
+          }))}
           artikel={inhalt.artikel.map((a) => ({
             schluessel: a.schluessel,
             thema: a.thema,

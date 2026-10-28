@@ -5,6 +5,7 @@ import { type KeyboardEvent, type MouseEvent, useEffect, useId, useRef, useState
 import { klassen } from '@/lib/klassen';
 import { ArtikelInhalt, ExpertenInhalt, VideoInhalt } from './WissenDialogInhalt';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
+import { EntwurfMarke } from './EntwurfMarke';
 import { ArtikelKarte, ExpertenKarte, VideoKarte } from './WissenKarten';
 import {
   type Anzeige,
@@ -167,7 +168,9 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                   an ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
-                <span lang={th.label.lang}>{th.label.text}</span>
+                <span className="flex flex-col items-start gap-1">
+                  <span lang={th.label.lang}>{th.label.text}</span> {th.marke ? <EntwurfMarke text={th.marke} /> : null}
+                </span>
                 {an ? <Check aria-hidden className="size-5 shrink-0 text-gruen-700" /> : null}
               </button>
             );

@@ -104,6 +104,8 @@ export const funktionenEinstellung = z.object({
   newsletter: z.boolean().optional(),
   hadith_gesamt: z.boolean().optional(),
   ramadan_vorschau: z.boolean().optional(),
+  // Marktstart IGMG (ADR 0047)
+  website_wissen_vorschau: z.boolean().optional(),
   // Lauf Lern-App (KERN 4.0 §6)
   lernapp: z.boolean().optional(),
   lernapp_ungeprueft: z.boolean().optional(),

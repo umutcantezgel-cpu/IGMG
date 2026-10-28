@@ -13,6 +13,7 @@ import {
 import { pruefeKette } from '@/lib/chat/hashkette';
 import { bewerteDL16, type DL16Befund, type Schutzmassnahme } from '@/lib/lernapp/schreiben/kinderschutz';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
+import { ENTWURF_OEFFENTLICH } from '@/lib/wissen/entwurf';
 import type { Pruefung } from './pruefungen';
 
 /**
@@ -37,6 +38,7 @@ const NAMEN: Record<Funktion, string> = {
   newsletter: 'Newsletter',
   hadith_gesamt: 'Bukhari-Gesamtsammlung',
   ramadan_vorschau: 'Ramadan-Vorschau',
+  website_wissen_vorschau: 'Islamisches Wissen: Erklärtexte als gekennzeichneter Entwurf zur Prüfung',
   lernapp: 'Lern-App',
   lernapp_ungeprueft: 'Lern-App: Einheiten vor der Muttersprachler-Stichprobe (mit Hinweis)',
   lernapp_wissen_vorschau: 'Lern-App: Wissenskurs als ungeprüfter Entwurf (Vorschau)',
@@ -452,6 +454,31 @@ export async function gemeindePruefen(
           : 'Kein religiöser Inhalt wartet auf die Prüfung.',
     ort: 'Verwaltung › Freigaben (Rolle „religiöse Prüfung“, MENSCHEN MN-20, MN-24)',
     aufwand: '30 min',
+  });
+
+  // ADR 0047: Wissensthemen „zur Prüfung“ sind mit `website_wissen_vorschau` öffentlich – gekennzeichnet, `noindex`. Bewusst
+  // gewollt (Nutzerentscheidung E-044 Nr. 5), deshalb nur ein Hinweis, solange solche Entwürfe sichtbar sind
+  const wissenVorschau = entscheideWirksam('website_wissen_vorschau', env, leseSchalter(schalterWert));
+  const wt = schema.wissenThema;
+  const [entwuerfe] = wissenVorschau
+    ? await db
+        .select({ anzahl: count() })
+        .from(wt)
+        .where(and(eq(wt.status, 'veroeffentlicht'), inArray(wt.freigabe, [...ENTWURF_OEFFENTLICH]), isNull(wt.imPapierkorbSeit)))
+    : [{ anzahl: 0 }];
+  const sichtbareEntwuerfe = Number(entwuerfe?.anzahl ?? 0);
+  neu({
+    id: 'gemeinde.wissen-vorschau',
+    bereich: 'gemeinde',
+    titel: 'Islamisches Wissen: Entwürfe zur Prüfung',
+    status: sichtbareEntwuerfe > 0 ? 'hinweis' : 'ok',
+    meldung: !wissenVorschau
+      ? 'Die Vorschau ist aus: Öffentlich sind nur Wissensthemen, die die religiöse Prüfung freigegeben hat.'
+      : sichtbareEntwuerfe > 0
+        ? `${sichtbareEntwuerfe === 1 ? 'Ein Wissensthema ist' : `${sichtbareEntwuerfe} Wissensthemen sind`} als „Entwurf zur Prüfung – noch nicht vom Imam geprüft“ öffentlich (gekennzeichnet, noindex, nicht in der Sitemap). Der Imam gibt sie unter Verwaltung › Freigaben frei; „Zurückweisen“ nimmt einen Text sofort von der Website.`
+        : 'Die Vorschau ist an, aber kein Wissensthema wartet sichtbar auf die Prüfung.',
+    ort: 'Verwaltung › Freigaben; abschalten mit FUNKTION_WEBSITE_WISSEN_VORSCHAU=aus oder Einstellung „funktionen“ (ADR 0047, MENSCHEN M-101)',
+    aufwand: '30 min je Thema (Prüfung)',
   });
 
   // QuranEnc-Bedingung: Übersetzungen regelmäßig auf neue Versionen prüfen (90 Tage)

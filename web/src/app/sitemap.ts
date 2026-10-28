@@ -45,10 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ziel: { pathname: '/nachrichten/[slug]' as const, params: { slug: n.slug } },
         geaendert: n.aktualisiertAm,
       })),
-      ...themen.map((t) => ({
-        ziel: { pathname: '/islamisches-wissen/[thema]' as const, params: { thema: t.slug } },
-        geaendert: t.aktualisiertAm,
-      })),
+      // Ungeprüfte Entwürfe (Schalter `website_wissen_vorschau`, ADR 0047) sind `noindex` und stehen nicht in der Sitemap
+      ...themen
+        .filter((t) => !t.entwurf)
+        .map((t) => ({
+          ziel: { pathname: '/islamisches-wissen/[thema]' as const, params: { thema: t.slug } },
+          geaendert: t.aktualisiertAm,
+        })),
       ...Array.from({ length: 114 }, (_, i) => ({ pathname: '/quran/[sure]' as const, params: { sure: String(i + 1) } })),
       ...Array.from({ length: 30 }, (_, i) => ({ pathname: '/quran/cuz/[nr]' as const, params: { nr: String(i + 1) } })),
       ...BUCHSTABEN_SLUGS.map((buchstabe) => ({ pathname: '/elifbe/buchstaben/[buchstabe]' as const, params: { buchstabe } })),

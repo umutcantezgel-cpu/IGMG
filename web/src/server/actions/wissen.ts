@@ -11,9 +11,10 @@ import { TAG } from '@/lib/cache/tags';
 import { schreibeRevision } from '@/lib/cms/revision';
 import { db, schema, type Transaktion } from '@/lib/db';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
-import { betrifftOeffentlich, gleicherInhalt, statusNachSpeichern, type FreigabeStatus } from '@/lib/religioes/freigabe';
+import { gleicherInhalt, statusNachSpeichern, type FreigabeStatus } from '@/lib/religioes/freigabe';
 import { richtextSchema } from '@/lib/validierung/richtext';
 import { WISSEN_FELDER, wissenDatensatz, wissenKlartext, wissenSchema, type WissenInhaltDaten } from '@/lib/validierung/wissen';
+import { wissenCacheBetroffen } from '@/lib/wissen/entwurf';
 
 /**
  * Verwaltung „Islamisches Wissen“ (F-40, Plan §3.7 und §5, ADR 0030; MUSTER 5). Recht `wissen.bearbeiten` (Redaktion,
@@ -23,8 +24,9 @@ import { WISSEN_FELDER, wissenDatensatz, wissenKlartext, wissenSchema, type Wiss
  * Religiöse Freigabe: Entwurf → zur Prüfung → geprüft. Freigeben nur in der Warteschlange „Freigaben“ (Rolle
  * `religioese_pruefung`, Vier-Augen-Prinzip: wer zuletzt verfasst hat, gibt nicht selbst frei). Jede inhaltliche
  * Änderung setzt ein geprüftes Thema auf „zur Prüfung“ zurück (`statusNachSpeichern`); öffentlich ist nur, was geprüft
- * UND sichtbar geschaltet ist. Jeder Statuswechsel steht im Freigabe-Verlauf und im Audit (ohne Inhalte); jedes
- * Speichern legt eine Revision an. Ändert sich, was öffentlich ist, verfällt der Cache-Tag `wissen`.
+ * UND sichtbar geschaltet ist – mit dem Schalter `website_wissen_vorschau` auch „zur Prüfung“ als gekennzeichneter Entwurf
+ * (ADR 0047). Jeder Statuswechsel steht im Freigabe-Verlauf und im Audit (ohne Inhalte); jedes Speichern legt eine Revision
+ * an. Ändert sich, was öffentlich ist oder sein kann, verfällt der Cache-Tag `wissen` (`wissenCacheBetroffen`).
  */
 export type WissenZustand = {
   fehler?: string;
@@ -153,9 +155,9 @@ export async function speichereWissensThema(_vorher: WissenZustand, fd: FormData
   });
   if (!ergebnis) return { fehler: 'nichtGefunden', werte };
   const { alt, neu, geaendert, statusGeaendert } = ergebnis;
-  // Öffentlich ist nur „geprüft“ und sichtbar: betroffen, wenn vorher oder nachher geprüft war
-  if (betrifftOeffentlich(alt.freigabe, neu, geaendert) || (statusGeaendert && (alt.freigabe === 'geprueft' || neu === 'geprueft')))
-    inhaltGeaendert(TAG.wissen);
+  // Öffentlich ist, was sichtbar und „geprüft“ ist – mit dem Schalter `website_wissen_vorschau` auch „zur Prüfung“ als
+  // gekennzeichneter Entwurf (ADR 0047): betroffen, wenn vorher oder nachher einer dieser Stände galt
+  if (wissenCacheBetroffen(alt.freigabe, neu, geaendert, statusGeaendert)) inhaltGeaendert(TAG.wissen);
   refresh();
   return { gespeichert: Date.now(), freigabe: neu };
 }
@@ -337,6 +339,6 @@ export async function wissensRevisionWiederherstellen(fd: FormData): Promise<voi
     return { alt, neu, geaendert };
   });
   if (!ergebnis) return;
-  if (betrifftOeffentlich(ergebnis.alt.freigabe, ergebnis.neu, ergebnis.geaendert)) inhaltGeaendert(TAG.wissen);
+  if (wissenCacheBetroffen(ergebnis.alt.freigabe, ergebnis.neu, ergebnis.geaendert, false)) inhaltGeaendert(TAG.wissen);
   redirect(`/verwaltung/wissen/${ergebnis.alt.id}?wiederhergestellt=1`);
 }

@@ -2,6 +2,7 @@
 
 - Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §5 (Religiöse Freigabe, KI-Regel), §1 („bewusst abgelehnt“), §7 (Z-15, Risiko „Religiöser Fehler“), MN-06, MN-20
 - Fortgeschrieben 16.10.2026 (Lauf „Lern-App“): Nr. 4 (KI-Regel) für die Lern-App fortgeschrieben durch ADR 0040 („KI-Regel 2“, Nutzerentscheidung L3-E01: KI-Entwurf mit Quellenangabe, zwei Freigaben); für die übrige Website gilt Nr. 4 unverändert.
+- Fortgeschrieben 28.10.2026 (Lauf Marktstart IGMG): Nr. 2 und Nr. 4 für die Wissensthemen der Website durch ADR 0047 („KI-Regel 3“, Nutzerentscheidung E-044 Nr. 5: KI-Entwurf aus verlinkten IGMG-Quellen, sofort öffentlich als deutlich gekennzeichneter „Entwurf zur Prüfung – noch nicht vom Imam geprüft“, Schalter `website_wissen_vorschau`, `noindex`, Freigabe weiter nach Nr. 2); Verse, Hadithe, Bittgebete, Übersetzungen religiöser Texte und arabische Schrift bleiben verboten.
 
 ## Kontext
 
