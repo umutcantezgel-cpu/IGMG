@@ -4,7 +4,8 @@
 import { holeDb } from '../../src/lib/db';
 import { fuehreSeedsAus } from './alle';
 
-fuehreSeedsAus(holeDb())
+Promise.resolve()
+  .then(() => fuehreSeedsAus(holeDb()))
   .then(({ fehler }) => {
     console.log(fehler.length ? `Seeds mit Fehlern: ${fehler.join(', ')}` : 'Seeds fertig.');
     process.exit(fehler.length ? 1 : 0);

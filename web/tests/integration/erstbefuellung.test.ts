@@ -52,11 +52,13 @@ describe('Seeds einmalig', () => {
       seed: 'eingespielt',
       einladung: { art: 'nicht_angefordert' },
     });
-    expect(await merker()).toMatchObject([{ wert: { am: '2026-10-28T20:00:00.000Z' }, geaendertVon: VON_BAU }]);
+    expect(await merker()).toMatchObject([{ wert: { am: '2026-10-28T20:00:00.000Z', ergebnis: 'eingespielt' }, geaendertVon: VON_BAU }]);
     expect((await fuehreErstbefuellungAus(db, nurSeed, { seeds: s.lauf, basis: BASIS })).seed).toBe('schon_erfolgt');
     expect(s.zaehler.laeufe).toBe(1);
     const audit = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.aktion, 'einstellung.geaendert'));
-    expect(audit).toMatchObject([{ benutzerId: null, zielId: ERSTBEFUELLUNG_MERKER, details: { quelle: VON_BAU } }]);
+    expect(audit).toMatchObject([
+      { benutzerId: null, zielId: ERSTBEFUELLUNG_MERKER, details: { quelle: VON_BAU, ergebnis: 'eingespielt' } },
+    ]);
   });
 
   it('gescheiterter Seed: Fehler, kein Merker – der nächste Bau versucht es erneut', async () => {
@@ -68,6 +70,15 @@ describe('Seeds einmalig', () => {
     const heil = zaehlSeeds();
     expect((await fuehreErstbefuellungAus(db, nurSeed, { seeds: heil.lauf, basis: BASIS })).seed).toBe('eingespielt');
     expect(heil.zaehler.laeufe).toBe(1);
+  });
+
+  it('Datenbank mit Konten, aber ohne Merker: keine Seeds (sie brächten Gelöschtes zurück), nur der Merker', async () => {
+    await db.insert(schema.user).values({ id: 'u1', name: 'Testperson Eins', email: PERSON.email, emailVerified: true });
+    const s = zaehlSeeds();
+    expect((await fuehreErstbefuellungAus(db, nurSeed, { seeds: s.lauf, basis: BASIS })).seed).toBe('konten_vorhanden');
+    expect(s.zaehler.laeufe).toBe(0);
+    expect(await merker()).toMatchObject([{ wert: { ergebnis: 'konten_vorhanden' } }]);
+    expect((await fuehreErstbefuellungAus(db, nurSeed, { seeds: s.lauf, basis: BASIS })).seed).toBe('schon_erfolgt');
   });
 
   it(
@@ -132,15 +143,22 @@ describe('Erstes Verwaltungskonto', () => {
     expect(cli.widerrufenAm).toBeNull();
   });
 
-  it('mit Konto in Rolle Administration: keine Einladung, nichts widerrufen', async () => {
-    await fuehreErstbefuellungAus(db, nurEinladung, { seeds: zaehlSeeds().lauf, basis: BASIS });
+  it('mit Konto in Rolle Administration: keine neue Einladung, offene Bau-Einladung widerrufen', async () => {
+    const erst = await fuehreErstbefuellungAus(db, nurEinladung, { seeds: zaehlSeeds().lauf, basis: BASIS });
+    if (erst.einladung.art !== 'angelegt') throw new Error('erwartet: angelegt');
     await db.insert(schema.user).values({ id: 'u1', name: 'Testperson Eins', email: PERSON.email, emailVerified: true });
     await db.insert(schema.rolleZuweisung).values({ benutzerId: 'u1', rolle: 'administration' });
     expect((await fuehreErstbefuellungAus(db, nurEinladung, { seeds: zaehlSeeds().lauf, basis: BASIS })).einladung).toEqual({
       art: 'konto_vorhanden',
+      widerrufen: 1,
     });
     const zeilen = await db.select().from(schema.einladung);
     expect(zeilen).toHaveLength(1);
-    expect(zeilen[0].widerrufenAm).toBeNull();
+    expect(zeilen[0].widerrufenAm).not.toBeNull();
+    expect(await ladeGueltigeEinladung(tokenAus(erst.einladung.link))).toBeNull();
+    expect((await fuehreErstbefuellungAus(db, nurEinladung, { seeds: zaehlSeeds().lauf, basis: BASIS })).einladung).toEqual({
+      art: 'konto_vorhanden',
+      widerrufen: 0,
+    });
   });
 });

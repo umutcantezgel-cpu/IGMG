@@ -182,8 +182,8 @@ Hat niemand einen Rechner mit Zugang zur Datenbank, übernimmt der erste Product
   - `[erstbefuellung] Einladung für das erste Verwaltungskonto (Administration) …`, darunter der Link `https://<produktionsadresse>/verwaltung/einladung/<token>`
 - **Danach:** Link öffnen, Passwort setzen, Zwei-Faktor-App einrichten (Pflicht). Dann alle drei Variablen löschen. Gibt es ein Konto mit Administration, legt kein Bau mehr eine Einladung an.
 - **Regeln:**
-  - Die Seeds laufen genau einmal je Datenbank (Merker `erstbefuellung` in `einstellung`). Sie legen die Beispielinhalte an und schalten den Konzept-Hinweis „Daten fiktiv“ ein; endgültig Gelöschtes kommt nicht zurück.
-  - Der Link gilt 72 Stunden und einmal. Ein weiterer Bau mit den Variablen widerruft den alten Link und schreibt einen neuen ins Protokoll; es gilt immer der neueste.
+  - Die Seeds laufen genau einmal je Datenbank (Merker `erstbefuellung` in `einstellung`) und nur, solange die Datenbank noch kein Konto hat. Sie legen die Beispielinhalte an und schalten den Konzept-Hinweis „Daten fiktiv“ ein; endgültig Gelöschtes kommt nicht zurück. Deshalb `ERSTBEFUELLUNG=1` zusammen mit den `ERSTE_VERWALTUNG_*`-Variablen setzen, nicht erst nach dem ersten Konto (dann meldet der Bau „Die Datenbank hat schon Konten – keine Seeds“).
+  - Der Link gilt 72 Stunden und einmal. Ein weiterer Bau mit den Variablen widerruft den alten Link und schreibt einen neuen ins Protokoll; es gilt immer der neueste. Den Link gleich nach dem Bau annehmen: Wer ihn zuerst öffnet, legt das Konto an.
   - Fehlt eine der beiden `ERSTE_VERWALTUNG_*`-Variablen, ist die Adresse ungültig oder steht in `ERSTBEFUELLUNG` etwas anderes als `1`, bricht der Production-Bau mit `[erstbefuellung] FEHLER: …` ab. In Preview steht nur ein Hinweis im Protokoll.
 
 ## 3. Dateispeicher in Frankfurt (3 Minuten)

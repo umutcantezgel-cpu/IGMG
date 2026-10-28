@@ -22,6 +22,10 @@ async function main() {
   if (plan.einladung && !basis) throw new Error('Weder APP_URL noch VERCEL_PROJECT_PRODUCTION_URL gesetzt – kein Einladungslink möglich.');
   const url = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
   if (!url) throw new Error('DATABASE_URL fehlt.');
+  // Wie scripts/migriere-mit-sperre.mjs: Die Sitzungssperre braucht eine direkte Verbindung. Ohne sie bleiben die Seeds
+  // idempotent und die Einladung durch ihre Transaktionssperre geschützt; nur zwei gleichzeitige Bauläufe spielen dann ein.
+  if (!process.env.DATABASE_URL_UNPOOLED && /-pooler\./.test(new URL(url).hostname))
+    console.warn('[erstbefuellung] WARNUNG: Nur eine Pooler-Adresse vorhanden. Für die Sperre DATABASE_URL_UNPOOLED setzen.');
   const pool = new pg.Pool({ connectionString: url, max: 1 });
   const sperre = await pool.connect();
   try {
@@ -29,8 +33,14 @@ async function main() {
     const e = await fuehreErstbefuellungAus(holeDb(), plan, { seeds: fuehreSeedsAus, basis: basis ?? '' });
     if (e.seed === 'eingespielt') p('Seeds eingespielt, Merker gesetzt. ERSTBEFUELLUNG kann jetzt aus den Umgebungsvariablen.');
     if (e.seed === 'schon_erfolgt') p('Seeds schon früher eingespielt (Merker vorhanden) – nichts zu tun.');
-    if (e.einladung.art === 'konto_vorhanden')
+    if (e.seed === 'konten_vorhanden')
+      p(
+        'Die Datenbank hat schon Konten – keine Seeds (sie brächten Gelöschtes zurück), nur den Merker gesetzt. ERSTBEFUELLUNG kann aus den Umgebungsvariablen.',
+      );
+    if (e.einladung.art === 'konto_vorhanden') {
+      if (e.einladung.widerrufen) p(`${e.einladung.widerrufen} offene Bau-Einladung(en) widerrufen.`);
       p('Ein Konto mit Rolle Administration gibt es schon – keine Einladung. ERSTE_VERWALTUNG_* kann aus den Umgebungsvariablen.');
+    }
     if (e.einladung.art === 'angelegt') {
       if (e.einladung.widerrufen) p(`${e.einladung.widerrufen} ältere Bau-Einladung(en) widerrufen – es gilt nur der Link unten.`);
       p(`Einladung für das erste Verwaltungskonto (Administration), einmal verwendbar, gültig bis ${e.einladung.laeuftAb.toISOString()}:`);
