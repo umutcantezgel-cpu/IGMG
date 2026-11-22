@@ -24,7 +24,7 @@ test.beforeEach(async ({ context }) => {
 });
 
 test.describe('Startseite', () => {
-  test('„Unsere neue Moschee ist eröffnet“: Name und Text aus dem Seiteninhalt, Fotoplatzhalter, Wege zu Projekt und Geschichte', async ({
+  test('„Unsere neue Moschee ist eröffnet“: Name aus dem Seiteninhalt, Bildfläche ohne Foto, kein Platzhalter, Wege zu Projekt und Geschichte', async ({
     page,
   }) => {
     await page.goto('/');
@@ -32,9 +32,11 @@ test.describe('Startseite', () => {
     await expect(abschnitt).toBeVisible();
     await expect(abschnitt).toContainText('Neue Fatih-Moschee');
     await expect(abschnitt).toContainText(projekte.de.projekte.status.fertiggestellt);
-    // Eröffnungsdatum und Foto sind Platzhalter der Gemeinde (MN-08), kein echtes Bild
-    await expect(abschnitt).toContainText(/\[Datum – von der Gemeinde\]/);
-    await expect(abschnitt.getByRole('img', { name: /\[Foto von der Gemeinde\]/ })).toBeVisible();
+    // Eröffnungsdatum und Ort sind Platzhalter der Gemeinde (MN-08): Sätze damit erscheinen nicht (ADR 0050 Nr. 7) – es
+    // steht der allgemeine Satz. Statt eines Fotos die Bildfläche mit dem Markenmotiv, kein echtes Bild.
+    expect(await abschnitt.innerText()).not.toMatch(/\[[^\]]+\]/);
+    await expect(abschnitt).toContainText(START.moschee.text);
+    await expect(abschnitt.locator('[data-bildflaeche]')).toBeVisible();
     await expect(abschnitt.locator('img')).toHaveCount(0);
     await expect(abschnitt.getByRole('link', { name: START.moschee.projekt })).toHaveAttribute('href', '/projekte');
     await expect(abschnitt.getByRole('link', { name: START.moschee.geschichte })).toHaveAttribute('href', '/ueber-uns');

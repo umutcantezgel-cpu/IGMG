@@ -30,6 +30,7 @@ const STATUS_STIL: Record<ProjektStatus, { Icon: LucideIcon; klasse: string }> =
 export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
   const tAllg = await getTranslations('allgemein');
+  const tStart = await getTranslations('start');
   const p = inhalt.projekt;
   const name = textMitSprache(p.name, sprache, { platzhalter: true });
   const ort = textMitSprache(p.ort, sprache, { platzhalter: true });
@@ -112,6 +113,9 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
           <p lang={beschreibung.lang} className="max-w-text text-18 leading-relaxed text-pretty">
             {beschreibung.text}
           </p>
+        ) : fertig ? (
+          // Beschreibung der Gemeinde noch ohne fertigen Satz: derselbe allgemeine Satz wie auf der Startseite
+          <p className="max-w-text text-18 leading-relaxed text-pretty">{tStart('moschee.text')}</p>
         ) : null}
         {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
         {fakten.length > 0 ? (
