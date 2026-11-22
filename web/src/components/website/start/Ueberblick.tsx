@@ -71,7 +71,7 @@ export async function Ueberblick({ sprache }: { sprache: Locale }) {
                   {t(`${schluessel}.link`)}
                   <ArrowRight
                     aria-hidden
-                    className="size-5 shrink-0 transition duration-(--dauer-rueckmeldung) group-hover:translate-x-1"
+                    className="size-5 shrink-0 motion-safe:transition motion-safe:duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1"
                   />
                 </span>
               </div>
