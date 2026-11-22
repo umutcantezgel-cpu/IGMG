@@ -614,7 +614,6 @@
     "bildung": "Bildung",
     "voranmeldung": "Schüler-Voranmeldung",
     "korankurse": "Korankurse",
-    "islamunterricht": "Islamunterricht",
     "anmelden": "Anmelden",
     "kontoMenue": "Konto-Menü",
     "angemeldetAls": "Angemeldet als",
@@ -631,9 +630,8 @@
     "bGebetszeiten": "Tägliche Gebetszeiten und Kalender",
     "bQuran": "Koran lesen und studieren",
     "bWissen": "Islamisches Wissen und Lehre",
-    "bVoranmeldung": "Voranmeldung für Bildungsprogramme",
-    "bKorankurse": "Koran lernen für alle Altersgruppen",
-    "bIslamunterricht": "Grundlagen des Islam",
+    "bVoranmeldung": "Kind oder sich selbst für einen Kurs anmelden",
+    "bKorankurse": "Koran lernen in der Moschee – für alle Altersgruppen",
     "menue": "Menü",
     "menueOeffnen": "Menü öffnen",
     "menueSchliessen": "Menü schließen",
@@ -646,9 +644,9 @@
     "hadith": "Hadith",
     "bHadith": "Sahih al-Bukhari und ausgewählte Hadithe",
     "lernen": "Lernen",
-    "bLernen": "Dein Weg vom ersten Buchstaben bis zum Koran",
-    "lernApp": "Sprachen lernen",
-    "bLernApp": "Lern-App: Deutsch, Türkisch und Arabisch von A1 bis B1",
+    "bLernen": "Übersicht: Ihr Weg vom ersten Buchstaben bis zum Koran",
+    "lernApp": "Lern-App",
+    "bLernApp": "Sprachen und Wissen üben – in kleinen Lektionen, auch ohne Konto",
     "elifbe": "Elifbe",
     "bElifbe": "Das arabische Alphabet Schritt für Schritt",
     "kalender": "Kalender",
@@ -724,7 +722,8 @@
     "impressum": "Impressum",
     "rechtliches": "Rechtliches",
     "sozial": "Soziale Medien",
-    "platzhalterLink": "{netz} [{netz}-Link]"
+    "ort": "Fatih-Moschee Wetzlar",
+    "kontaktSeite": "Kontakt und Anfahrt"
   },
   "allgemein": {
     "beispielinhalt": "Beispielinhalt",
@@ -825,7 +824,8 @@
     "moschee": {
       "titel": "Unsere neue Moschee ist eröffnet",
       "projekt": "Zum Projekt",
-      "geschichte": "Unsere Geschichte"
+      "geschichte": "Unsere Geschichte",
+      "text": "Die neue Fatih-Moschee ist fertig – ein Ort für Gebet, Bildung und Begegnung, offen für alle Menschen."
     },
     "fasten": {
       "vorschauTitel": "Fastenbogen – Vorschau",
@@ -833,6 +833,47 @@
       "zeigen": "Fastenbogen zeigen (Ramadan-Vorschau)",
       "zurueck": "Tagesbogen zeigen",
       "ramadan": "Imsakiye und Ramadan"
+    },
+    "ueberblick": {
+      "kennung": "Auf einen Blick",
+      "titel": "Was Sie hier finden",
+      "neu": "Neu",
+      "text": "Gebet, Koran, Lernen und Gemeindeleben – alles an einem Ort, auf Deutsch, Türkisch und Englisch.",
+      "gebetszeiten": {
+        "titel": "Gebetszeiten",
+        "text": "Die Zeiten für Wetzlar – heute, für die Woche und für den ganzen Monat.",
+        "link": "Zeiten ansehen"
+      },
+      "quran": {
+        "titel": "Koran",
+        "text": "Alle 114 Suren lesen – mit Übersetzung und farbig markierten Tajwid-Regeln.",
+        "link": "Koran öffnen"
+      },
+      "lernApp": {
+        "titel": "Lern-App",
+        "text": "Sprachen und Wissen in kleinen Lektionen üben – ohne Konto, auch ohne Netz.",
+        "link": "Jetzt lernen"
+      },
+      "elifbe": {
+        "titel": "Elifbe",
+        "text": "Das arabische Alphabet Schritt für Schritt – mit Schreibweg und Übungen.",
+        "link": "Elifbe öffnen"
+      },
+      "veranstaltungen": {
+        "titel": "Veranstaltungen",
+        "text": "Kurse, Treffen und besondere Tage – sehen, was ansteht, und gleich anmelden.",
+        "link": "Termine ansehen"
+      },
+      "mitglied": {
+        "titel": "Mitglied werden",
+        "text": "Teil der Gemeinde werden – der Antrag lässt sich online ausfüllen.",
+        "link": "Zum Antrag"
+      },
+      "kontakt": {
+        "titel": "Kontakt",
+        "text": "Fragen, Anliegen oder ein Besuch: Schreiben Sie uns.",
+        "link": "Kontakt aufnehmen"
+      }
     }
   },
   "veranstaltungen": {

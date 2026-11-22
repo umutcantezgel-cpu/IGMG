@@ -1,15 +1,25 @@
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { waehle, type Sprache } from '@/lib/i18n/inhalt';
+import { ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
+import type { ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
 
 /** Gebietsschema je Sprache für Zahlen und Beträge: Deutsch und Türkisch „1.200“, Englisch „1,200“ (wie im Bestand). */
 const GEBIET: Record<Sprache, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
 
-/** True, wenn ein angezeigtes Feld nur deutsch vorliegt; dann zeigt die Seite den Hinweis „Nur auf Deutsch verfügbar“ (K-02). */
+/**
+ * True, wenn ein angezeigtes Feld nur deutsch vorliegt; dann zeigt die Seite den Hinweis „Nur auf Deutsch verfügbar“ (K-02).
+ * Felder, von denen ohne die Platzhalter „[…]“ nichts bleibt, erscheinen nicht und zählen darum nicht.
+ */
 export function brauchtRueckfall(sprache: Sprache, felder: (Mehrsprachig | null | undefined)[]): boolean {
   return felder.some((feld) => {
     const w = waehle(feld, sprache);
-    return w.rueckfall && w.text !== '';
+    return w.rueckfall && ohnePlatzhalter(w.text) !== '';
   });
+}
+
+/** Meilensteine, die öffentlich erscheinen: nur solche mit Titel (ein Titel, der nur Platzhalter ist, zählt nicht). */
+export function sichtbareMeilensteine(inhalt: ProjekteInhalt, sprache: Sprache): ProjekteInhalt['meilensteine'] {
+  return inhalt.meilensteine.filter((m) => ohnePlatzhalter(waehle(m.titel, sprache).text) !== '');
 }
 
 /** Ganze Zahl mit Tausendertrennzeichen in der Sprache der Seite. */

@@ -195,11 +195,17 @@ describe('/ramadan: Ramadan-Begleiter', () => {
     }
   });
 
-  it('Fitre-Platzhalter: Bekanntgabe der IGMG statt Diyanet, in allen Sprachen in eckigen Klammern', () => {
-    expect(ramadan.de.ramadan.gemeinde.fitre).toBe('[Fitre-Betrag – Bekanntgabe der IGMG, vom Vorstand bestätigt]');
+  it('Fitre: Bekanntgabe der IGMG statt Diyanet; Teravih, Fitre und Iftar in allen Sprachen ohne Platzhalter „[…]“ und ohne Betrag', () => {
+    expect(ramadan.de.ramadan.gemeinde.fitre).toBe('Den Fitre-Betrag gibt die IGMG bekannt; die Gemeinde nennt ihn vor dem Ramadan.');
     for (const s of ['de', 'tr', 'en'] as const) {
-      expect(ramadan[s].ramadan.gemeinde.fitre).toMatch(/^\[.*IGMG.*\]$/);
-      expect(ramadan[s].ramadan.gemeinde.fitre).not.toContain('Diyanet');
+      const g = ramadan[s].ramadan.gemeinde;
+      expect(g.fitre).toContain('IGMG');
+      expect(g.fitre).not.toContain('Diyanet');
+      for (const text of [g.teravih, g.fitre, g.iftar]) {
+        // Neutraler Satz statt Platzhalter: keine eckigen Klammern, keine erfundene Uhrzeit und kein Betrag
+        expect(text).not.toMatch(/[[\]]/);
+        expect(text).not.toMatch(/\d/);
+      }
     }
   });
 });

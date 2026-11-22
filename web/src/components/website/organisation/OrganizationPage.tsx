@@ -3,7 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { z } from 'zod';
 import { Stern8 } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
-import { Text } from '@/components/website/Text';
+import { Text, textMitSprache } from '@/components/website/Text';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { DachverbandAbschnitt } from '@/components/website/dachverband/DachverbandAbschnitt';
 import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
@@ -11,6 +11,7 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { waehle, type Sprache } from '@/lib/i18n/inhalt';
+import { angabe, ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
 import { cn } from '@/lib/utils';
 import type { OrganisationInhalt } from '@/lib/validierung/seiteninhalte/organisation';
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
@@ -27,6 +28,8 @@ const ANZAHL = 3;
 const KNOPF =
   'inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck';
 
+const KARTEN_TITEL = 'flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal';
+
 export type OrganizationPageProps = {
   /** Organisation (Enum at | kt | gt | kgt, D-06). Unbekannte Adressen prüft die Seite vorher (notFound). */
   org: Kuerzel;
@@ -38,11 +41,11 @@ export type OrganizationPageProps = {
   nachrichten: NachrichtDaten[];
 };
 
-/** Rückfall auf Deutsch nötig, wenn ein gezeigter Text nur auf Deutsch vorliegt (K-02). */
+/** Rückfall auf Deutsch nötig, wenn ein gezeigter Text nur auf Deutsch vorliegt (K-02); Platzhalter „[…]“ zählen nicht. */
 function brauchtRueckfall(sprache: Sprache, felder: (Mehrsprachig | null | undefined)[]): boolean {
   return felder.some((f) => {
     const w = waehle(f, sprache);
-    return w.rueckfall && w.text !== '';
+    return w.rueckfall && ohnePlatzhalter(w.text) !== '';
   });
 }
 
@@ -53,6 +56,8 @@ function brauchtRueckfall(sprache: Sprache, felder: (Mehrsprachig | null | undef
  * Marktstart (E-044): Unter Mission und Vision die Zeile „Teil der IGMG“ mit der Seite beim Dachverband (Seiteninhalt
  * `dachverband`, nur ein Link, K-14) und dem internen Link auf /igmg; darunter (P3) die Einträge „Aus dem Dachverband“
  * zur Organisation, falls vorhanden.
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht (`src/lib/inhalt/platzhalter.ts`): Im Kontaktblock entfällt jede Angabe
+ * ohne Wert samt Beschriftung; ohne eigene Adresse, Telefonnummer und E-Mail führt der Block zur Kontaktseite der Gemeinde.
  */
 export async function OrganizationPage({ org, inhalt, veranstaltungen, nachrichten }: OrganizationPageProps) {
   const sprache = (await getLocale()) as Locale;
@@ -66,6 +71,12 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
   const termine = veranstaltungen.filter((v) => v.organisation === org && !v.vergangen).slice(0, ANZAHL);
   const meldungen = nachrichten.filter((n) => n.organisation === org).slice(0, ANZAHL);
   const mail = z.email().safeParse(inhalt.kontakt.email).success ? inhalt.kontakt.email : null;
+  // Angaben, die noch Platzhalter sind, entfallen samt Beschriftung; Mission und Vision nur mit Text
+  const adresse = angabe(inhalt.kontakt.adresse);
+  const telefon = angabe(inhalt.kontakt.telefon);
+  const zeiten = inhalt.oeffnungszeiten.filter((zeile) => textMitSprache(zeile, sprache, { platzhalter: true }).text);
+  const mission = textMitSprache(inhalt.mission, sprache, { platzhalter: true });
+  const vision = textMitSprache(inhalt.vision, sprache, { platzhalter: true });
   const hinweis = (felder: (Mehrsprachig | null | undefined)[]) =>
     brauchtRueckfall(sprache, felder) ? <p className="text-16 text-tinte-2">{ta('nurDeutsch')}</p> : null;
 
@@ -98,28 +109,40 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
                 {t(`${kennung}.aboutTitle`)}
               </h2>
             </div>
-            <Text feld={inhalt.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
+            <Text
+              feld={inhalt.beschreibung}
+              sprache={sprache}
+              als="p"
+              platzhalter
+              className="max-w-text text-18 leading-relaxed text-pretty"
+            />
             {hinweis([inhalt.beschreibung, inhalt.mission, inhalt.vision])}
           </div>
-          <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <div className={cn('flex flex-col overflow-hidden rounded-lg', s.tint)}>
-              <div aria-hidden className={cn('h-1.5 shrink-0', s.band)} />
-              <div className="flex flex-col gap-2 px-6 pt-4.5 pb-6">
-                <h3 className="flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal">
-                  <Award aria-hidden className={cn('size-6 shrink-0', s.ink)} />
-                  {t('about.mission')}
-                </h3>
-                <Text feld={inhalt.mission} sprache={sprache} als="p" />
-              </div>
+          {mission.text || vision.text ? (
+            <div className="grid items-stretch gap-6 md:grid-cols-2">
+              {mission.text ? (
+                <div className={cn('flex flex-col overflow-hidden rounded-lg', s.tint)}>
+                  <div aria-hidden className={cn('h-1.5 shrink-0', s.band)} />
+                  <div className="flex flex-col gap-2 px-6 pt-4.5 pb-6">
+                    <h3 className={KARTEN_TITEL}>
+                      <Award aria-hidden className={cn('size-6 shrink-0', s.ink)} />
+                      {t('about.mission')}
+                    </h3>
+                    <p lang={mission.lang}>{mission.text}</p>
+                  </div>
+                </div>
+              ) : null}
+              {vision.text ? (
+                <div className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-6">
+                  <h3 className={KARTEN_TITEL}>
+                    <Telescope aria-hidden className={cn('size-6 shrink-0', s.ink)} />
+                    {t('about.vision')}
+                  </h3>
+                  <p lang={vision.lang}>{vision.text}</p>
+                </div>
+              ) : null}
             </div>
-            <div className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-6">
-              <h3 className="flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal">
-                <Telescope aria-hidden className={cn('size-6 shrink-0', s.ink)} />
-                {t('about.vision')}
-              </h3>
-              <Text feld={inhalt.vision} sprache={sprache} als="p" />
-            </div>
-          </div>
+          ) : null}
           {/* Teil der IGMG (E-044): Seite der Organisation beim Dachverband (extern, aus dem Netzwerk) und /igmg */}
           <div className="flex max-w-text flex-col gap-2 border-t border-linie pt-6">
             <h3 className="font-text text-20 leading-snug font-bold tracking-normal">{t('dachverband.titel')}</h3>
@@ -213,47 +236,60 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             <h2 id={`${org}-kontakt`} className="text-display-2">
               {t('contact.title')}
             </h2>
-            <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="flex min-w-0 flex-col gap-1">
-                <dt className={cn('font-bold', s.ink)}>{t('contact.address')}</dt>
-                <dd>
-                  {t('contact.gemeinde')}
-                  <br />
-                  {inhalt.kontakt.adresse}
-                </dd>
-              </div>
-              <div className="flex min-w-0 flex-col gap-1">
-                <dt className={cn('font-bold', s.ink)}>{t('contact.phone')}</dt>
-                <dd>{inhalt.kontakt.telefon}</dd>
-              </div>
-              <div className="flex min-w-0 flex-col gap-1">
-                <dt className={cn('font-bold', s.ink)}>{t('contact.email')}</dt>
-                <dd className="wrap-anywhere">
-                  {mail ? (
-                    <a href={`mailto:${mail}`} className="text-tinte underline underline-offset-3">
-                      {mail}
-                    </a>
-                  ) : (
-                    inhalt.kontakt.email
-                  )}
-                </dd>
-              </div>
-              <div className="flex min-w-0 flex-col gap-1">
-                <dt className={cn('font-bold', s.ink)}>{t('contact.hours')}</dt>
-                <dd className="flex flex-col">
-                  {inhalt.oeffnungszeiten.map((zeile, i) => (
-                    <Text key={i} feld={zeile} sprache={sprache} className="block" />
-                  ))}
-                </dd>
-              </div>
-            </dl>
-            {hinweis(inhalt.oeffnungszeiten)}
+            {adresse || telefon || mail || zeiten.length ? (
+              <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {adresse ? (
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <dt className={cn('font-bold', s.ink)}>{t('contact.address')}</dt>
+                    <dd>
+                      {t('contact.gemeinde')}
+                      <br />
+                      {adresse}
+                    </dd>
+                  </div>
+                ) : null}
+                {telefon ? (
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <dt className={cn('font-bold', s.ink)}>{t('contact.phone')}</dt>
+                    <dd>{telefon}</dd>
+                  </div>
+                ) : null}
+                {mail ? (
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <dt className={cn('font-bold', s.ink)}>{t('contact.email')}</dt>
+                    <dd className="wrap-anywhere">
+                      <a href={`mailto:${mail}`} className="text-tinte underline underline-offset-3">
+                        {mail}
+                      </a>
+                    </dd>
+                  </div>
+                ) : null}
+                {zeiten.length ? (
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <dt className={cn('font-bold', s.ink)}>{t('contact.hours')}</dt>
+                    <dd className="flex flex-col">
+                      {zeiten.map((zeile, i) => (
+                        <Text key={i} feld={zeile} sprache={sprache} platzhalter className="block" />
+                      ))}
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+            ) : null}
+            {hinweis(zeiten)}
+            {/* Ohne eigene Adresse, Telefonnummer und E-Mail: ein Satz und der Weg zur Kontaktseite der Gemeinde */}
+            {adresse || telefon || mail ? null : <p className="max-w-text text-18 text-pretty">{t('contact.ueberGemeinde')}</p>}
             {mail ? (
               <a href={`mailto:${mail}`} aria-label={`${t('contact.button')}: ${name}`} className={KNOPF}>
                 <Mail aria-hidden className="size-5" />
                 {t('contact.button')}
               </a>
-            ) : null}
+            ) : (
+              <Link href="/kontakt" className={KNOPF}>
+                {t('contact.seite')}
+                <ArrowRight aria-hidden className="size-5" />
+              </Link>
+            )}
           </div>
         </section>
       </div>

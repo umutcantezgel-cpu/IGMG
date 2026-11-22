@@ -5,8 +5,9 @@ import type { Anzeige, ArtikelAnzeige, ExpertenAnzeige, VideoAnzeige, WissenText
 
 /**
  * Inhalte des nativen Dialogs (design/IslamicKnowledge.dc.html, Z95–129). Der Rahmen mit Schaltfläche „Schließen“
- * steht in der Insel; hier nur die drei Fassungen. Videos bleiben ohne Einbettung (K-14); mit YouTube-ID steht statt des
- * Platzhalters ein reiner Link „Auf YouTube ansehen“ (keine Anfrage beim Aufruf), fertig vom Server (`VideoLink`).
+ * steht in der Insel; hier nur die drei Fassungen. Videos bleiben ohne Einbettung (K-14): Es steht ein reiner Link „Auf
+ * YouTube ansehen“ (keine Anfrage beim Aufruf), fertig vom Server (`VideoLink`). Angaben, die noch Platzhalter der
+ * Gemeinde sind, kommen leer bzw. als `null` an und entfallen samt ihrer Zeile.
  */
 
 export function ArtikelInhalt({
@@ -36,7 +37,9 @@ export function ArtikelInhalt({
         {x.titel.text}
       </h2>
       <p className="text-16 text-tinte-2">
-        <span lang={x.autor.lang}>{x.autor.text}</span> · {x.datum}
+        {x.autor ? <span lang={x.autor.lang}>{x.autor.text}</span> : null}
+        {x.autor && x.datum ? ' · ' : null}
+        {x.datum}
       </p>
       <p lang={x.text?.lang} className="max-w-text text-pretty">
         {x.text ? x.text.text : texte.artikelBeispiel}
@@ -56,7 +59,9 @@ export function ArtikelInhalt({
                   {s.titel.text}
                 </span>
                 <span className="text-16 text-tinte-2">
-                  <span lang={s.autor.lang}>{s.autor.text}</span> · {s.lesezeit}
+                  {s.autor ? <span lang={s.autor.lang}>{s.autor.text}</span> : null}
+                  {s.autor ? ' · ' : null}
+                  {s.lesezeit}
                 </span>
               </button>
             </li>
@@ -89,12 +94,16 @@ export function VideoInhalt({ video: v, titelId, texte }: { video: VideoAnzeige;
       >
         <Play aria-hidden className="size-8 text-gruen-700" />
         <span className="font-bold">{v.titel.text}</span>
-        {v.link ?? <span className="text-16 text-tinte-2">{texte.videoPlatzhalter}</span>}
+        {v.link}
       </div>
-      <h3 className="font-text text-18 font-bold">{texte.dialogBeschreibung}</h3>
-      <p lang={v.beschreibung.lang} className="max-w-text text-pretty">
-        {v.beschreibung.text}
-      </p>
+      {v.beschreibung.text ? (
+        <>
+          <h3 className="font-text text-18 font-bold">{texte.dialogBeschreibung}</h3>
+          <p lang={v.beschreibung.lang} className="max-w-text text-pretty">
+            {v.beschreibung.text}
+          </p>
+        </>
+      ) : null}
     </>
   );
 }
@@ -115,22 +124,32 @@ export function ExpertenInhalt({
       <h2 id={titelId} lang={e.name.lang} className="pr-14 text-30">
         {e.name.text}
       </h2>
-      <p lang={e.fachgebiet.lang} className="font-bold text-gruen-800">
-        {e.fachgebiet.text}
-      </p>
-      <p lang={e.institution.lang} className="text-tinte-2">
-        {e.institution.text}
-      </p>
-      <h3 className="mt-2 font-text text-18 font-bold">{texte.dialogUeber}</h3>
-      <p lang={e.bio.lang} className="max-w-text text-pretty">
-        {e.bio.text}
-      </p>
-      <div className="flex items-baseline gap-2">
-        <strong lang={e.anzahlArtikel.lang} className="text-30">
-          {e.anzahlArtikel.text}
-        </strong>
-        <span className="text-tinte-2">{texte.zahlArtikel}</span>
-      </div>
+      {e.fachgebiet.text ? (
+        <p lang={e.fachgebiet.lang} className="font-bold text-gruen-800">
+          {e.fachgebiet.text}
+        </p>
+      ) : null}
+      {e.institution.text ? (
+        <p lang={e.institution.lang} className="text-tinte-2">
+          {e.institution.text}
+        </p>
+      ) : null}
+      {e.bio.text ? (
+        <>
+          <h3 className="mt-2 font-text text-18 font-bold">{texte.dialogUeber}</h3>
+          <p lang={e.bio.lang} className="max-w-text text-pretty">
+            {e.bio.text}
+          </p>
+        </>
+      ) : null}
+      {e.anzahlArtikel.text ? (
+        <div className="flex items-baseline gap-2">
+          <strong lang={e.anzahlArtikel.lang} className="text-30">
+            {e.anzahlArtikel.text}
+          </strong>
+          <span className="text-tinte-2">{texte.zahlArtikel}</span>
+        </div>
+      ) : null}
       <button type="button" onClick={onAlleArtikel} className={VOLL}>
         {texte.dialogArtikelAnzeigen}
       </button>

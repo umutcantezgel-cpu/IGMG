@@ -4,6 +4,7 @@ import { zielFuer } from '@/components/website/CourseCard';
 import { Text } from '@/components/website/Text';
 import { Link } from '@/i18n/link';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { telefonHref } from '@/lib/telefon';
 import type { KursDaten } from '@/server/queries/kurse';
 
@@ -32,7 +33,9 @@ export async function AnmeldeKarte({
     const ziel = zielFuer(kurs.anmeldeweg, kurs.slug);
     return ziel ? [{ kurs, ziel }] : [];
   });
-  const telefonZiel = telefonHref(kontakt.telefon);
+  // Telefonzeile nur mit Nummer: Ein Platzhalter der Gemeinde „[…]“ erscheint öffentlich nicht
+  const telefon = angabe(kontakt.telefon);
+  const telefonZiel = telefonHref(telefon);
 
   return (
     <section aria-labelledby="reg" className="overflow-hidden rounded-lg bg-gruen-50">
@@ -74,17 +77,19 @@ export async function AnmeldeKarte({
           <h3 className="font-text text-18 font-bold">{t('kontaktUeberschrift')}</h3>
           <p className="max-w-text leading-einleitung text-pretty text-tinte-2">{t('kontaktText')}</p>
           <div className="flex flex-col">
-            <p className="flex min-h-12 items-center gap-2.5">
-              <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
-              {t('telefon')}
-              {telefonZiel ? (
-                <a href={telefonZiel} className="wrap-anywhere text-gruen-700 underline underline-offset-3">
-                  {kontakt.telefon}
-                </a>
-              ) : (
-                <span>{kontakt.telefon}</span>
-              )}
-            </p>
+            {telefon ? (
+              <p className="flex min-h-12 items-center gap-2.5">
+                <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
+                {t('telefon')}
+                {telefonZiel ? (
+                  <a href={telefonZiel} className="wrap-anywhere text-gruen-700 underline underline-offset-3">
+                    {telefon}
+                  </a>
+                ) : (
+                  <span>{telefon}</span>
+                )}
+              </p>
+            ) : null}
             <p className="flex min-h-12 items-center gap-2.5">
               <Mail aria-hidden className="size-5 shrink-0 text-gruen-700" />
               {t('email')}

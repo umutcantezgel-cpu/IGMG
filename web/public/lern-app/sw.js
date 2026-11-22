@@ -25,6 +25,7 @@
  *   Die Drittlizenzen von ONNX Runtime (`/lern-app/lizenzen/…?v=<fassung>`, Z-L17) legt der Download der Sprachprüfung
  *   selbst in diesen Vorrat (`fuelleVorrat`, er räumt dabei ältere Fassungen weg); der Worker liefert sie von dort – Abgleich
  *   samt Suchteil, eine alte Fassung nie für eine neue Adresse –, sonst aus dem Netz (ohne sie vorzuhalten).
+ * Logos des gemeinsamen Rahmens (Kopf und Fuß der Website stehen auch im Lernbereich): Vorrat zuerst, in der Hülle.
  * Seiten: Netz zuerst, gelungene Antworten in die Hülle – unter dem Pfad ohne Suchteil (`ignoreSearch`, z. B.
  * `…/ueben?l=…`); ohne Netz die Seite aus der Hülle, dem Kursvorrat oder einem älteren Bau, sonst der Start der
  * Oberflächensprache.
@@ -54,6 +55,13 @@ const GRENZE_DATEIEN = 600;
 
 const istSeitePfad = (pfad) => /^\/lern-app\/(de|tr|ar)(\/[a-z0-9-]+)*$/.test(pfad);
 const istAnmeldung = (pfad) => /^\/lern-app\/[^/]+\/anmelden(\/|$)/.test(pfad);
+/**
+ * Logos im Kopf und Fuß der Website, die auch im Lernbereich stehen (gemeinsamer Rahmen): direkt (`/bilder/logos/…`,
+ * so auf Vercel) oder über die Bildroute von Next (`/_next/image?url=/bilder/logos/…`). Vorrat zuerst, in der Hülle.
+ */
+const istLogo = (url) =>
+  url.pathname.startsWith('/bilder/logos/') ||
+  (url.pathname === '/_next/image' && (url.searchParams.get('url') || '').startsWith('/bilder/logos/'));
 const istBauVorrat = (name) => name.startsWith(SCHALE_PRAEFIX) || name.startsWith(KURSE_PRAEFIX);
 const istKurs = (ui, kurs) => OBERFLAECHEN.includes(ui) && KURS_SLUGS.includes(kurs);
 const LERNPFAD = /^\/lern-app\/(de|tr|ar)\/([a-z0-9-]+)$/;
@@ -508,6 +516,11 @@ self.addEventListener('fetch', (e) => {
   if (pfad.startsWith('/lern-app/lizenzen/')) {
     // ohne `ignoreSearch`: Die Fassung (`?v=`) gehört zum Schlüssel
     e.respondWith(caches.match(anfrage, { cacheName: MODELLE }).then((vorrat) => vorrat || fetch(anfrage)));
+    return;
+  }
+  if (istLogo(url)) {
+    // Ohne Netz und ohne Vorrat bleibt die Stelle leer (dekoratives Bild neben dem Namen)
+    e.respondWith(vorratZuerst(anfrage, SCHALE));
     return;
   }
   if (anfrage.mode === 'navigate' && istSeitePfad(pfad)) {

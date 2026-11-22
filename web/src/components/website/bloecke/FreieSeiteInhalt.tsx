@@ -9,24 +9,29 @@ import { Bloecke } from './Bloecke';
 
 /**
  * Inhalt einer freien Seite: Kopf (Titel, Kurzbeschreibung, Hinweis auf deutschen Rückfall) und Bausteine. Öffentliche
- * Seite und Vorschau der Verwaltung nutzen dieselbe Ausgabe.
+ * Seite und Vorschau der Verwaltung nutzen dieselbe Ausgabe – mit einem Unterschied: Die öffentliche Seite (`oeffentlich`)
+ * zeigt keine Platzhalter der Gemeinde „[…]“ (Kurzbeschreibung und Bausteine, `./oeffentlich.ts`); in der Verwaltung
+ * bleiben sie sichtbar.
  */
 export async function FreieSeiteInhalt({
   seite,
   sprache,
   eingebettet = false,
+  oeffentlich = false,
 }: {
   seite: SeiteOeffentlich;
   sprache: Sprache;
   /** In einer Verwaltungsseite (Fassung ansehen): Titel als h2 statt eigenem Seitenkopf mit h1. */
   eingebettet?: boolean;
+  /** Öffentliche Seite: ohne Platzhalter „[…]“. */
+  oeffentlich?: boolean;
 }) {
   const [t, tk] = await Promise.all([
     getTranslations({ locale: sprache, namespace: 'bloecke' }),
     getTranslations({ locale: sprache, namespace: 'karten' }),
   ]);
   const titel = textMitSprache(seite.titel, sprache);
-  const beschreibung = textMitSprache(seite.beschreibung, sprache);
+  const beschreibung = textMitSprache(seite.beschreibung, sprache, { platzhalter: oeffentlich });
   const stand = sprache === 'de' ? 100 : uebersetzungsstand(seite.titel, seite.beschreibung, seite.bloecke)[sprache];
   const hinweis =
     stand < 100 ? (
@@ -62,7 +67,7 @@ export async function FreieSeiteInhalt({
         untertitelLang={beschreibung.lang}
         kinder={hinweis}
       />
-      <Bloecke bloecke={seite.bloecke} sprache={sprache} bilder={seite.bilder} dateien={seite.dateien} />
+      <Bloecke bloecke={seite.bloecke} sprache={sprache} bilder={seite.bilder} dateien={seite.dateien} oeffentlich={oeffentlich} />
     </>
   );
 }

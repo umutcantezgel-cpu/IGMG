@@ -124,10 +124,7 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
               </div>
               <div className="flex flex-col gap-1">
                 <dt className="text-16 font-bold text-tinte-2">{t('buchstabe.mahrec')}</dt>
-                <dd className="flex flex-col gap-1">
-                  <span className="text-18">{t(`mahrec.${b.mahrec}`)}</span>
-                  <span className="text-16 text-tinte-2">{t('buchstabe.mahrecPlatzhalter')}</span>
-                </dd>
+                <dd className="text-18">{t(`mahrec.${b.mahrec}`)}</dd>
               </div>
               <div className="flex flex-col gap-2">
                 <dt className="text-16 font-bold text-tinte-2">{t('buchstabe.audio')}</dt>

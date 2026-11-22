@@ -23,6 +23,7 @@ const TOENUNG_WICHTIG = 'bg-tag-wichtig-bg text-tag-wichtig';
  * NewsCard (design/NewsCard.dc.html): „gross“ (Startseite, Aufmacher), „kompakt“ (Startseite, Seitenspalte),
  * „standard“ (Nachrichtenliste, ähnliche Artikel). Ganze Karte klickbar über ::after.
  * `rahmen={false}` (nur „kompakt“, H-C03): Zeile ohne eigenen Rahmen für eine gemeinsame Liste; Hover als Hintergrund.
+ * Im Kurztext entfallen Sätze mit Platzhalter der Gemeinde „[…]“; bleibt nichts, steht die Karte ohne Kurztext.
  */
 export async function NewsCard({
   n,
@@ -122,7 +123,13 @@ export async function NewsCard({
           </h3>
           {/* Kurztext nach dem Titel nur in der Seitenspalte; unter 1240 px ausgeblendet, ab dort zwei Zeilen mit „…“ */}
           {auszug ? (
-            <Text feld={n.kurztext} sprache={sprache} als="p" className="hidden text-16 leading-normal text-tinte-2 menu:line-clamp-2" />
+            <Text
+              feld={n.kurztext}
+              sprache={sprache}
+              als="p"
+              platzhalter
+              className="hidden text-16 leading-normal text-tinte-2 menu:line-clamp-2"
+            />
           ) : null}
         </div>
       </article>
@@ -168,7 +175,7 @@ export async function NewsCard({
           >
             {titel.text}
           </h3>
-          <Text feld={n.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty text-tinte-2" />
+          <Text feld={n.kurztext} sprache={sprache} als="p" platzhalter className="max-w-text text-pretty text-tinte-2" />
           {/* Textlink wie in der Standardkarte: kein gefüllter Knopf; der Überzug trägt die ganze Karte (Klick auf Bild, Titel, Kurztext) */}
           <Link
             href={ziel}
@@ -222,7 +229,7 @@ export async function NewsCard({
         <h3 lang={titel.lang} data-morph="titel" className="text-24 leading-tight text-balance">
           {titel.text}
         </h3>
-        <Text feld={n.kurztext} sprache={sprache} als="p" className="text-pretty text-tinte-2" />
+        <Text feld={n.kurztext} sprache={sprache} als="p" platzhalter className="text-pretty text-tinte-2" />
         {/* Linktext mit unsichtbarem Titel statt aria-label: „Weiterlesen“ allein ist nichtssagend (Lighthouse link-text) */}
         <Link
           href={ziel}

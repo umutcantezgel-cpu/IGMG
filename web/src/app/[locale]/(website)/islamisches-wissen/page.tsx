@@ -6,14 +6,13 @@ import { AktuelleHutba } from '@/components/website/dachverband/HutbaKarte';
 import { Verweisliste } from '@/components/website/dachverband/Verweisliste';
 import { textMitSprache } from '@/components/website/Text';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
-import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum';
+import { wissenAnzeige } from '@/components/website/wissen/anzeige';
+import { SPRACH_KENNUNG } from '@/components/website/wissen/datum';
 import { EntwurfMarke } from '@/components/website/wissen/EntwurfMarke';
-import { VideoLink } from '@/components/website/wissen/VideoLink';
 import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
 import { WissenInsel } from '@/components/website/wissen/WissenInsel';
 import type { WissenTexte } from '@/components/website/wissen/typen';
 import type { Locale } from '@/i18n/routing';
-import { youtubeLink } from '@/lib/einbettung/youtube';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeWissensInhalt, ladeWissensThemen } from '@/server/queries/wissen';
 
@@ -32,14 +31,17 @@ export async function generateMetadata(): Promise<Metadata> {
  * Experten. Themen kommen aus der Tabelle wissen_thema, Artikel, Videos und Experten aus dem Seiteninhalt „wissen“.
  * Die Seite ist vollständig statisch (K-01, keine Cookies, kein Datum im Render); nur die Insel filtert und
  * wechselt die Reiter im Browser (K-12). Marktstart P7: neben der Freitagspredigt die Erklärung zum Freitagsgebet, unter der
- * Insel „Mehr beim Dachverband“ (Server-Komponenten, nur Links). Videos mit YouTube-ID erscheinen nur als Link.
+ * Insel „Mehr beim Dachverband“ (Server-Komponenten, nur Links). Videos mit YouTube-ID erscheinen nur als Link; ohne
+ * ID und überall, wo noch ein Platzhalter der Gemeinde „[…]“ steht, entfällt der Eintrag bzw. die Angabe (`wissenAnzeige`).
  */
 export default async function IslamischesWissenSeite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('wissen');
   const [themen, inhalt] = await Promise.all([ladeWissensThemen(), ladeWissensInhalt()]);
-  // Klartext aus der Datenbank ist deutsch; in tr und en erscheint er mit lang="de" als sichtbarer Rückfall (K-02).
-  const deutsch = (text: string) => ({ text, lang: sprache === 'de' ? undefined : 'de' });
+  const anzeige = wissenAnzeige(inhalt, sprache, {
+    vorschau: (titel) => t('videos.vorschau', { titel }),
+    youtube: t('videos.youtube'),
+  });
 
   const texte: WissenTexte = {
     suchLabel: t('suche.label'),
@@ -58,7 +60,6 @@ export default async function IslamischesWissenSeite() {
     videosLeer: t('videos.leer'),
     videoAnsehen: t('videos.ansehen'),
     videoHinweis: t('videos.hinweis'),
-    videoPlatzhalter: t('videos.platzhalter'),
     expertenTitel: t('experten.titel'),
     expertenBadge: t('experten.badge'),
     mehrErfahren: t('experten.mehr'),
@@ -92,36 +93,9 @@ export default async function IslamischesWissenSeite() {
           }))}
           entwurfMarke={<EntwurfMarke text={t('entwurf.marke')} />}
           leerGrafik={<Zustandsgrafik art="leer" />}
-          artikel={inhalt.artikel.map((a) => ({
-            schluessel: a.schluessel,
-            thema: a.thema,
-            titel: textMitSprache(a.titel, sprache),
-            autor: deutsch(a.autor),
-            lesezeit: a.lesezeit,
-            datum: a.datum ? datumAnzeige(a.datum, sprache) : '',
-            text: a.text ? textMitSprache(a.text, sprache) : null,
-          }))}
-          videos={inhalt.videos.map((v) => {
-            const titel = textMitSprache(v.titel, sprache);
-            return {
-              schluessel: v.schluessel,
-              thema: v.thema,
-              titel,
-              dauer: v.dauer,
-              beschreibung: textMitSprache(v.beschreibung, sprache),
-              vorschau: t('videos.vorschau', { titel: titel.text }),
-              // Nur ein Link zu YouTube, keine Einbettung (K-12: die Seite liegt an der JS-Grenze; K-14: kein Abruf beim Laden)
-              ...(v.youtubeId ? { link: <VideoLink href={youtubeLink(v.youtubeId)} text={t('videos.youtube')} titel={titel.text} /> } : {}),
-            };
-          })}
-          experten={inhalt.experten.map((e) => ({
-            schluessel: e.schluessel,
-            name: deutsch(e.name),
-            fachgebiet: textMitSprache(e.fachgebiet, sprache),
-            institution: deutsch(e.institution),
-            bio: textMitSprache(e.bio, sprache),
-            anzahlArtikel: deutsch(e.anzahlArtikel),
-          }))}
+          artikel={anzeige.artikel}
+          videos={anzeige.videos}
+          experten={anzeige.experten}
         />
         {/* Marktstart P7: weiterführende Angebote der IGMG – Server-Komponente unter der Insel, nur Links (K-12, K-14) */}
         <section aria-labelledby="wissen-dachverband" data-wissen="dachverband" className="flex max-w-seitenkopf flex-col gap-4 pt-4">

@@ -1,5 +1,6 @@
 import { ArrowRight, Megaphone } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { hatPlatzhalter } from '@/components/website/Platzhalter';
 import { textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { istErlaubterLink } from '@/lib/inhalt/links';
@@ -9,9 +10,11 @@ import { KategorieMarke } from './KategorieMarke';
 /**
  * Block „Ankündigungen“ oberhalb der Nachrichtenliste (E-033): aktive Ankündigungen nach Priorität, in den
  * Info-Farben der Kategorie „Ankündigung“ (01 Grundlagen). Server-Komponente ohne Client-JS; leer = nichts rendern.
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht: Im Text entfallen die Sätze damit, eine Ankündigung mit Platzhalter
+ * im Titel entfällt ganz.
  */
 export async function Ankuendigungen({ sprache }: { sprache: Sprache }) {
-  const liste = await ladeAnkuendigungen();
+  const liste = (await ladeAnkuendigungen()).filter((a) => !hatPlatzhalter(textMitSprache(a.titel, sprache).text));
   if (liste.length === 0) return null;
   const t = await getTranslations('nachrichten.ankuendigungen');
   return (
@@ -23,7 +26,7 @@ export async function Ankuendigungen({ sprache }: { sprache: Sprache }) {
       <ul className="grid gap-4 md:grid-cols-2">
         {liste.map((a) => {
           const titel = textMitSprache(a.titel, sprache);
-          const inhalt = textMitSprache(a.inhalt, sprache);
+          const inhalt = textMitSprache(a.inhalt, sprache, { platzhalter: true });
           // Erneut prüfen, bevor ein Link ausgegeben wird (ADR 0006): gespeicherte Werte sind nicht vertrauenswürdig
           const link = a.link && istErlaubterLink(a.link) ? a.link : null;
           return (
@@ -42,9 +45,11 @@ export async function Ankuendigungen({ sprache }: { sprache: Sprache }) {
               <h3 lang={titel.lang} className="font-text text-24 leading-tight font-bold tracking-normal text-balance">
                 {titel.text}
               </h3>
-              <p lang={inhalt.lang} className="text-18 leading-relaxed text-pretty text-tinte">
-                {inhalt.text}
-              </p>
+              {inhalt.text ? (
+                <p lang={inhalt.lang} className="text-18 leading-relaxed text-pretty text-tinte">
+                  {inhalt.text}
+                </p>
+              ) : null}
               {link ? (
                 <a
                   href={link}

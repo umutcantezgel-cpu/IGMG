@@ -63,9 +63,10 @@ function Weg({
 }
 
 /**
- * Hadith-Einstieg (AUFTRAG 3.3): sachliche Angaben zur Sammlung aus dem Import (Bücher, Anzahl, Zählung der Quelle),
- * die Einführung als Platzhalter für den Imam (keine religiösen Aussagen von der Website), die Wege zur Auswahl und –
- * nur mit Schalter `hadith_gesamt` – zu allen Büchern, der Stand der geprüften Übersetzungen und die Quellenzeile.
+ * Hadith-Einstieg (AUFTRAG 3.3): sachliche Angaben zur Sammlung aus dem Import (Bücher, Anzahl, Zählung der Quelle), die
+ * Wege zur Auswahl und – nur mit Schalter `hadith_gesamt` – zu allen Büchern, der Stand der geprüften Übersetzungen und
+ * die Quellenzeile. Eine Einführung zur Sammlung schreibt der Imam; bis dahin steht hier keine (keine religiösen Aussagen
+ * von der Website, kein Platzhalter).
  * Statisch; der Schalter wird beim Rendern gelesen (Umgebung, sonst Einstellung).
  */
 export default async function HadithSeite() {
@@ -88,9 +89,6 @@ export default async function HadithSeite() {
               {t('sammlung.titel')}
             </h2>
             <p className="max-w-text text-20 leading-einleitung text-pretty">{sammlungText}</p>
-            <p className="max-w-text self-start rounded-md border border-dashed border-rand bg-weiss px-4 py-3 text-tinte-2">
-              {t('sammlung.einfuehrung')}
-            </p>
             {u.sammlung ? (
               <div className="flex max-w-text flex-col gap-2">
                 <h3 className="font-text text-20 font-bold tracking-normal">{t('sammlung.bezugTitel')}</h3>

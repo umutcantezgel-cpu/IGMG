@@ -9,7 +9,9 @@ import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { metadatenFuer } from '@/lib/seo/metadaten';
+import { telefonHref } from '@/lib/telefon';
 import { sendeMitgliedsantrag } from '@/server/actions/formulare/mitgliedsantrag';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 
@@ -21,8 +23,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Gemeindekontakt ist nicht mehrsprachig (LB:226, 227, 242). Die Telefonnummer fehlt und wird als Platzhalter gezeigt;
- * E-Mail und Bürozeiten stammen aus Code und Design und sind als Beispielinhalt markiert (MENSCHEN M-011, M-012, M-019).
+ * Gemeindekontakt ist nicht mehrsprachig (LB:226, 227, 242). Angaben, die die Gemeinde noch nicht bestätigt hat,
+ * erscheinen nicht (MENSCHEN M-011, M-012, M-019): Die Telefonzeile entfällt, solange die Nummer ein Platzhalter „[…]“
+ * ist; Bürozeiten und die Karte „Unsere Gemeinde“ (Zahl der Familien) waren Beispielinhalte aus dem Design und
+ * erscheinen wieder, sobald `mitglied.fragen.zeiten` bzw. `mitglied.bild.text` mit bestätigtem Text in den
+ * Sprachdateien stehen.
  */
 const VORTEILE = [
   { Icon: Users, schluessel: 'gemeinschaft' },
@@ -37,8 +42,10 @@ const VORTEILE = [
  */
 export default async function MitgliedWerdenSeite() {
   const sprache = (await getLocale()) as Locale;
-  // Telefon und E-Mail aus den Kontaktdaten (Seiteninhalte), Bürozeiten als Beispieltext je Sprache (Tor B/C R-BC-D1, Frage 4)
+  // Telefon und E-Mail aus den Kontaktdaten (Seiteninhalte); Bürozeiten nur mit bestätigtem Text (Tor B/C R-BC-D1, Frage 4)
   const [t, tf, kontakt] = await Promise.all([getTranslations('mitglied'), getTranslations('formulare'), ladeSeiteninhalt('kontakt')]);
+  const nummer = angabe(kontakt.telefon);
+  const telefon = telefonHref(nummer);
   return (
     <Seitenrahmen bereich="keiner" seite="mitglied-werden" sprachZiel="/mitglied-werden" pfad={[{ label: t('brotkrume') }]}>
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
@@ -87,29 +94,36 @@ export default async function MitgliedWerdenSeite() {
                 {t('fragen.titel')}
               </h2>
               <p className="text-gruen-100">{t('fragen.text')}</p>
+              {nummer ? (
+                <span className="flex items-center gap-2.5">
+                  <Phone aria-hidden="true" className="size-5 shrink-0" />
+                  {telefon ? (
+                    <a
+                      href={telefon}
+                      className="inline-flex min-h-12 items-center text-weiss underline underline-offset-3 transition duration-(--dauer-rueckmeldung) hover:text-gruen-100"
+                    >
+                      {nummer}
+                    </a>
+                  ) : (
+                    nummer
+                  )}
+                </span>
+              ) : null}
               <span className="flex items-center gap-2.5">
-                <Phone aria-hidden="true" className="size-5 shrink-0" />
-                {kontakt.telefon}
+                <Mail aria-hidden="true" className="size-5 shrink-0" />
+                <a
+                  href={`mailto:${kontakt.email}`}
+                  className="inline-flex min-h-12 min-w-0 items-center wrap-anywhere text-weiss underline underline-offset-3 transition duration-(--dauer-rueckmeldung) hover:text-gruen-100"
+                >
+                  {kontakt.email}
+                </a>
               </span>
-              <span className="flex items-start gap-2.5">
-                <Mail aria-hidden="true" className="mt-3.5 size-5 shrink-0" />
-                <span className="flex min-w-0 flex-wrap items-center gap-x-2.5 gap-y-1">
-                  <a
-                    href={`mailto:${kontakt.email}`}
-                    className="inline-flex min-h-12 items-center text-weiss underline underline-offset-3 transition duration-(--dauer-rueckmeldung) hover:text-gruen-100"
-                  >
-                    {kontakt.email}
-                  </a>
-                  <span className="text-gruen-100">[{t('beispiel')}]</span>
-                </span>
-              </span>
-              <span className="flex items-start gap-2.5">
-                <Clock aria-hidden="true" className="mt-1 size-5 shrink-0" />
-                <span className="flex min-w-0 flex-wrap gap-x-2.5">
+              {t.has('fragen.zeiten') ? (
+                <span className="flex items-start gap-2.5">
+                  <Clock aria-hidden="true" className="mt-1 size-5 shrink-0" />
                   <span>{t('fragen.zeiten')}</span>
-                  <span className="text-gruen-100">[{t('beispiel')}]</span>
                 </span>
-              </span>
+              ) : null}
               <Link
                 href="/kontakt"
                 className="mt-1 inline-flex min-h-12 druck items-center gap-2 self-start rounded-md bg-weiss px-5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950"
@@ -118,15 +132,15 @@ export default async function MitgliedWerdenSeite() {
                 {t('fragen.nachricht')}
               </Link>
             </section>
-            <section className="flex flex-col overflow-hidden rounded-lg border border-linie bg-weiss">
-              <Bildplatzhalter beschriftung={t('bild.foto')} className="h-40 border-b border-linie" />
-              <div className="flex flex-col gap-1 p-5">
-                <h2 className="text-20 font-bold">{t('bild.titel')}</h2>
-                <p className="text-16 text-tinte-2">
-                  {t('bild.text')} <span className="text-tinte">[{t('beispiel')}]</span>
-                </p>
-              </div>
-            </section>
+            {t.has('bild.text') ? (
+              <section className="flex flex-col overflow-hidden rounded-lg border border-linie bg-weiss">
+                <Bildplatzhalter beschriftung={t('bild.foto')} className="h-40 border-b border-linie" />
+                <div className="flex flex-col gap-1 p-5">
+                  <h2 className="text-20 font-bold">{t('bild.titel')}</h2>
+                  <p className="text-16 text-tinte-2">{t('bild.text')}</p>
+                </div>
+              </section>
+            ) : null}
           </aside>
         </div>
       </div>

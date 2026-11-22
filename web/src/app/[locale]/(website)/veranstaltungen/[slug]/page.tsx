@@ -39,6 +39,8 @@ import type { Locale } from '@/i18n/routing';
 import { ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { datumLang } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
+import { angabe, ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
+import { ohnePlatzhalterImDokument } from '@/lib/inhalt/tiptap';
 import { telefonHref } from '@/lib/telefon';
 import { ORGANISATION, veranstaltung } from '@/lib/seo/jsonld';
 import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
@@ -65,8 +67,9 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/veransta
     pfad: { pathname: '/veranstaltungen/[slug]', params: { slug } },
     eigenesBild: true,
     titel: text(v.titel, sprache),
-    // Ohne Kurztext: Untertitel der Übersicht statt der Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
-    beschreibung: text(v.kurztext, sprache) || t('untertitel'),
+    // Ohne Kurztext (auch: nur Sätze mit Platzhalter der Gemeinde): Untertitel der Übersicht statt der
+    // Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
+    beschreibung: ohnePlatzhalter(text(v.kurztext, sprache)) || t('untertitel'),
   });
 }
 
@@ -89,9 +92,8 @@ function statusVon(v: VeranstaltungsDetail, angemeldet: number): Status {
   return 'offen';
 }
 
-/** Initialen nur für echte Namen; Platzhalter „[…]“ zeigen ein Personensymbol (G-05). */
+/** Initialen aus den großgeschriebenen Wörtern des Namens; ohne solche Wörter ein Personensymbol. */
 function initialen(name: string): string | null {
-  if (name.startsWith('[')) return null;
   const teile = name.split(/\s+/).filter((w) => /^\p{Lu}/u.test(w));
   return teile.length
     ? teile
@@ -110,6 +112,8 @@ const knopfRahmen =
  * Veranstaltungsdetails (design/EventDetails.dc.html, Blatt S05). Kopf im Seitenkopf-Muster: Rückweg, Organisation,
  * Titel, Status, Fakten und Aktionen; darunter Inhalt ohne Kästen, Anmeldung als einzige Karte. URL-Daten nur innerhalb
  * von Suspense lesen (keeping-pages-static, Schritt 3); mit ensureStatic 'navigation' wartet die erste Anfrage auf die ganze Seite.
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht (`src/lib/inhalt/platzhalter.ts`): Anschrift, Namen und Telefonnummer
+ * entfallen samt ihrer Zeile, in Texten die Sätze damit; ohne Namen steht die Organisation als Veranstalter.
  */
 export default function VeranstaltungSeite({ params }: PageProps<'/[locale]/veranstaltungen/[slug]'>) {
   return (
@@ -146,7 +150,23 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
   // Rich-Text in der Sprache, sonst sichtbarer Rückfall auf Deutsch (K-02)
   const beschreibungSprache = v.beschreibung ? (sprache !== 'de' && v.beschreibung[sprache] ? sprache : 'de') : null;
   const anmeldbar = status === 'offen';
-  const telefonZiel = telefonHref(v.kontakt?.telefon);
+  // Ohne Platzhalter der Gemeinde: Sätze mit „[…]“ entfallen, leere Einträge und Angaben ebenso
+  const ohne = { platzhalter: true };
+  const beschreibungDoc =
+    v.beschreibung && beschreibungSprache ? ohnePlatzhalterImDokument(v.beschreibung[beschreibungSprache] as JSONContent) : null;
+  const beschreibung = beschreibungDoc?.content?.length ? beschreibungDoc : null;
+  const schlagwoerter = v.schlagwoerter.map((s) => textMitSprache(s, sprache, ohne)).filter((s) => s.text);
+  const programm = v.programm.map((p) => ({ zeit: p.zeit, ...textMitSprache(p.text, sprache, ohne) })).filter((p) => p.text);
+  const hinweise = v.hinweise.map((h) => textMitSprache(h, sprache, ohne)).filter((h) => h.text);
+  const zielgruppe = textMitSprache(v.zielgruppe ?? v.teilnehmerHinweis, sprache, ohne);
+  const anschrift = angabe(kontaktSeite.adresse);
+  const veranstalterName = angabe(v.veranstalter?.name);
+  const veranstalterFunktion = textMitSprache(v.veranstalter?.funktion, sprache, ohne);
+  // Ohne gepflegten Namen ist die Organisation der Veranstaltung der Veranstalter (wie in den strukturierten Daten)
+  const veranstalterDa = Boolean(veranstalterName || orgName);
+  const kontakt = { name: angabe(v.kontakt?.name), telefon: angabe(v.kontakt?.telefon), email: angabe(v.kontakt?.email) };
+  const kontaktDa = Boolean(kontakt.name || kontakt.telefon || kontakt.email);
+  const telefonZiel = telefonHref(kontakt.telefon);
 
   // Fakt der Faktenzeile: Icon und Beschriftung, ohne eigene Fläche; ab lg durch Trennlinien getrennt
   const fakt = (Icon: typeof Calendar, label: string, inhalt: React.ReactNode) => (
@@ -263,8 +283,8 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                 MapPin,
                 t('ort'),
                 <>
-                  {v.ort ? <Text feld={v.ort} sprache={sprache} als="strong" /> : null}
-                  <span className="text-16 lg:w-0 lg:min-w-full">{kontaktSeite.adresse}</span>
+                  <Text feld={v.ort} sprache={sprache} als="strong" platzhalter />
+                  {anschrift ? <span className="text-16 lg:w-0 lg:min-w-full">{anschrift}</span> : null}
                   <Link
                     href={{ pathname: '/kontakt', hash: 'karte' }}
                     className="inline-flex min-h-12 items-center gap-1.5 font-bold text-gruen-700 underline underline-offset-4 lg:whitespace-nowrap"
@@ -273,9 +293,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                   </Link>
                 </>,
               )}
-              {v.zielgruppe || v.teilnehmerHinweis
-                ? fakt(Users, tk('zielgruppe'), <Text feld={v.zielgruppe ?? v.teilnehmerHinweis} sprache={sprache} als="strong" />)
-                : null}
+              {zielgruppe.text ? fakt(Users, tk('zielgruppe'), <strong lang={zielgruppe.lang}>{zielgruppe.text}</strong>) : null}
             </dl>
             <div className="flex flex-wrap items-center gap-3">
               {anmeldbar ? (
@@ -304,25 +322,21 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
 
       <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-12 px-4 py-abschnitt md:px-8 lg:grid-cols-3">
         <div className="flex min-w-0 flex-col gap-12 lg:col-span-2">
-          {v.beschreibung || v.schlagwoerter.length ? (
+          {beschreibung || schlagwoerter.length ? (
             <section aria-labelledby="ev-beschreibung" className="flex flex-col gap-4">
               <h2 id="ev-beschreibung" className="text-display-2">
                 {t('beschreibung')}
               </h2>
-              {v.beschreibung && beschreibungSprache ? (
-                <RichText
-                  doc={v.beschreibung[beschreibungSprache] as JSONContent}
-                  lang={beschreibungSprache !== sprache ? 'de' : undefined}
-                  className="max-w-text text-pretty"
-                />
+              {beschreibung ? (
+                <RichText doc={beschreibung} lang={beschreibungSprache !== sprache ? 'de' : undefined} className="max-w-text text-pretty" />
               ) : (
-                <Text feld={v.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty" />
+                <Text feld={v.kurztext} sprache={sprache} als="p" platzhalter className="max-w-text text-pretty" />
               )}
-              {v.schlagwoerter.length ? (
+              {schlagwoerter.length ? (
                 <ul aria-label={t('schlagwoerter')} className="flex flex-wrap gap-2">
-                  {v.schlagwoerter.map((s, i) => (
+                  {schlagwoerter.map((s, i) => (
                     <li key={i} className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2">
-                      <Text feld={s} sprache={sprache} />
+                      <span lang={s.lang}>{s.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -330,36 +344,36 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
             </section>
           ) : null}
 
-          {v.programm.length ? (
+          {programm.length ? (
             <section aria-labelledby="ev-programm" className="flex flex-col gap-4">
               <h2 id="ev-programm" className="text-display-2">
                 {t('programm')}
               </h2>
               {/* Zeitleiste: die senkrechte Linie ist ein Pseudo-Element der Liste (nur Schmuck; ein span direkt in ol wäre ungültiges HTML) */}
               <ol className="relative flex flex-col before:absolute before:inset-y-3 before:left-1.5 before:w-0.5 before:bg-linie before:content-['']">
-                {v.programm.map((p, i) => (
+                {programm.map((p, i) => (
                   <li key={i} className="relative flex items-baseline gap-4 py-2.5 pl-8">
                     <Stern8 aria-hidden className="absolute top-4 left-0 text-gruen-700" />
                     <span className="min-w-21 shrink-0 font-bold whitespace-nowrap text-gruen-800 tabular-nums">
                       {t('uhrPrefix', { zeit: p.zeit })}
                     </span>
-                    <Text feld={p.text} sprache={sprache} />
+                    <span lang={p.lang}>{p.text}</span>
                   </li>
                 ))}
               </ol>
             </section>
           ) : null}
 
-          {v.hinweise.length ? (
+          {hinweise.length ? (
             <section aria-labelledby="ev-hinweise" className="flex flex-col gap-4">
               <h2 id="ev-hinweise" className="text-display-2">
                 {t('hinweise')}
               </h2>
               <ul className="flex flex-col gap-2">
-                {v.hinweise.map((h, i) => (
+                {hinweise.map((h, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Stern8 aria-hidden className="mt-1.5 shrink-0 text-gruen-700" />
-                    <Text feld={h} sprache={sprache} />
+                    <span lang={h.lang}>{h.text}</span>
                   </li>
                 ))}
               </ul>
@@ -436,52 +450,60 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
             )}
           </section>
 
-          {v.veranstalter || v.kontakt ? (
+          {(v.veranstalter || v.kontakt) && (veranstalterDa || kontaktDa) ? (
             <section aria-labelledby="ev-veranstalter" className="flex flex-col gap-4 border-t border-linie pt-6">
               <h2 id="ev-veranstalter" className="text-24">
-                {t('veranstalter')}
+                {veranstalterDa ? t('veranstalter') : t('kontakt')}
               </h2>
-              {v.veranstalter ? (
+              {veranstalterName ? (
                 <div className="flex items-center gap-3">
                   <span
                     aria-hidden
                     className="flex size-14 shrink-0 items-center justify-center rounded-pill bg-gruen-50 font-bold text-gruen-800"
                   >
-                    {initialen(v.veranstalter.name) ?? <UserRound className="size-6" />}
+                    {initialen(veranstalterName) ?? <UserRound className="size-6" />}
                   </span>
                   <span className="flex flex-col leading-snug">
-                    <strong>{v.veranstalter.name}</strong>
-                    {v.veranstalter.funktion || orgName ? (
+                    <strong>{veranstalterName}</strong>
+                    {veranstalterFunktion.text || orgName ? (
                       <span className="text-16 text-tinte-2">
-                        {v.veranstalter.funktion ? <Text feld={v.veranstalter.funktion} sprache={sprache} /> : orgName}
+                        {veranstalterFunktion.text ? <span lang={veranstalterFunktion.lang}>{veranstalterFunktion.text}</span> : orgName}
                       </span>
                     ) : null}
                   </span>
                 </div>
+              ) : v.organisation && orgName ? (
+                <div className="flex items-center gap-3">
+                  <span aria-hidden className="flex size-14 shrink-0 items-center justify-center rounded-pill border border-linie bg-weiss">
+                    <Bild src={LOGOS[v.organisation]} alt="" width={40} height={40} className="size-9 rounded-sm" />
+                  </span>
+                  <strong className="leading-snug">{orgName}</strong>
+                </div>
               ) : null}
-              {v.kontakt ? (
-                <div className="flex flex-col gap-2 border-t border-linie pt-3">
-                  <h3 className="font-text text-18 font-bold tracking-normal">{t('kontakt')}</h3>
-                  {v.kontakt.name ? <span className="text-16 text-tinte-2">{v.kontakt.name}</span> : null}
-                  {v.kontakt.telefon ? (
+              {kontaktDa ? (
+                <div className={cn('flex flex-col gap-2', veranstalterDa && 'border-t border-linie pt-3')}>
+                  {/* Ohne Veranstalterzeile trägt schon die Abschnittsüberschrift „Kontakt“ */}
+                  {veranstalterDa ? <h3 className="font-text text-18 font-bold tracking-normal">{t('kontakt')}</h3> : null}
+                  {kontakt.name ? <span className="text-16 text-tinte-2">{kontakt.name}</span> : null}
+                  {kontakt.telefon ? (
                     <span className="flex items-center gap-2.5">
                       <Phone aria-hidden className="size-5 text-gruen-700" />
-                      {telefonZiel ? <a href={telefonZiel}>{v.kontakt.telefon}</a> : v.kontakt.telefon}
+                      {telefonZiel ? <a href={telefonZiel}>{kontakt.telefon}</a> : kontakt.telefon}
                     </span>
                   ) : null}
-                  {v.kontakt.email ? (
+                  {kontakt.email ? (
                     <a
-                      href={`mailto:${v.kontakt.email}`}
+                      href={`mailto:${kontakt.email}`}
                       className="flex min-h-12 items-center gap-2.5 wrap-anywhere underline underline-offset-3"
                     >
                       <Mail aria-hidden className="size-5 shrink-0" />
-                      {v.kontakt.email}
+                      {kontakt.email}
                     </a>
                   ) : null}
                 </div>
               ) : null}
-              {v.kontakt?.email ? (
-                <a href={`mailto:${v.kontakt.email}`} className={knopfRahmen}>
+              {kontakt.email ? (
+                <a href={`mailto:${kontakt.email}`} className={knopfRahmen}>
                   <Mail aria-hidden className="size-5" />
                   {t('nachrichtSenden')}
                 </a>

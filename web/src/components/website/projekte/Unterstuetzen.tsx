@@ -12,14 +12,17 @@ import { Spenden } from './Spenden';
  * mit Dank und zwei Knöpfen – „Kontakt aufnehmen“ führt zu /kontakt, „Jetzt spenden“ springt zur Bankverbindung. Auf dem
  * Telefon und Tablet steht der Aufruf auf dem Papier, die Spendenkarte liegt frei darunter (H-C05). Ab lg liegen Aufruf und
  * Spendenkarte nebeneinander auf einer hellen Fläche; die Spendenkarte ist weiß mit Rand und Schatten.
- * Platzhalter der Gemeinde „[…]“ sind gekennzeichnet (Sichtabnahme Runde 2, PR-3).
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht: Sätze mit Platzhalter entfallen, ein fehlender Titel fällt auf die
+ * feste Überschrift zurück. Steht noch keine Bankverbindung auf dieser Seite, führt „Jetzt spenden“ zur Seite „Spenden“.
  */
 export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
   const tAllg = await getTranslations('allgemein');
   const u = inhalt.unterstuetzung;
-  const titel = textMitSprache(u.titel, sprache).text;
-  const spendenTitel = textMitSprache(inhalt.spende.titel, sprache).text;
+  const titelFeld = textMitSprache(u.titel, sprache, { platzhalter: true });
+  const titel = titelFeld.text || t('unterstuetzen.titel');
+  const spendenTitel = textMitSprache(inhalt.spende.titel, sprache, { platzhalter: true }).text || t('spenden.titel');
+  const hatBankverbindung = textMitSprache(inhalt.spende.bankverbindung, sprache, { platzhalter: true }).text !== '';
   const rueckfall = brauchtRueckfall(sprache, [u.titel, u.text, u.dank]);
   return (
     <section aria-labelledby="unterstuetzen-titel" className="flex flex-col lg:overflow-hidden lg:rounded-lg lg:bg-gruen-50">
@@ -28,8 +31,8 @@ export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhal
         <div className="flex flex-col overflow-hidden rounded-lg bg-gruen-50 lg:overflow-visible lg:rounded-none lg:bg-transparent">
           <div aria-hidden className="h-1.5 bg-gruen-700 lg:hidden" />
           <div className="flex flex-col gap-4 p-6 md:p-12 lg:p-0">
-            <h2 id="unterstuetzen-titel" className="text-display-2">
-              <Text feld={u.titel} sprache={sprache} platzhalter />
+            <h2 id="unterstuetzen-titel" lang={titelFeld.text ? titelFeld.lang : undefined} className="text-display-2">
+              {titel}
             </h2>
             {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
             <Text feld={u.text} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" platzhalter />
@@ -44,7 +47,7 @@ export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhal
                 {t('unterstuetzen.knopf')}
               </Link>
               <Link
-                href={{ pathname: '/projekte', hash: 'spendenkonto' }}
+                href={hatBankverbindung ? { pathname: '/projekte', hash: 'spendenkonto' } : '/spenden'}
                 aria-label={t('linkKontext', { sichtbar: t('spenden.jetzt'), titel: spendenTitel })}
                 className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 rounded-lg border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 sm:w-auto"
               >

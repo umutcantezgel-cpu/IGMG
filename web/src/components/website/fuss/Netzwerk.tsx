@@ -18,7 +18,16 @@ export const FUSS_NETZWERK = ['igmg', 'reisen', 'hasene', 'gebetskalender', 'kin
  * `hrefLang` nennt die Zielsprache und der Linkname den ausgeschriebenen Hinweis (sichtbarer Text vorn, MUSTER §4).
  * Server-Komponente ohne Client-Code (K-12). Überschrift und Linkklasse kommen aus dem Fuß, damit alle Spalten gleich sind.
  */
-export async function FussNetzwerk({ ueberschrift, linkKlasse }: { ueberschrift: (titel: string) => ReactNode; linkKlasse: string }) {
+export async function FussNetzwerk({
+  ueberschrift,
+  linkKlasse,
+  vorabladen = true,
+}: {
+  ueberschrift: (titel: string) => ReactNode;
+  linkKlasse: string;
+  /** false im Lernbereich (anderes Wurzel-Layout): kein Vorabladen */
+  vorabladen?: boolean;
+}) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('dachverband');
   const texte = { aufDeutsch: t('aufDeutsch'), aufTuerkisch: t('aufTuerkisch') };
@@ -55,7 +64,7 @@ export async function FussNetzwerk({ ueberschrift, linkKlasse }: { ueberschrift:
           );
         })}
         <li>
-          <NextLink href={pfadFuer('/igmg', sprache)} className={linkKlasse}>
+          <NextLink href={pfadFuer('/igmg', sprache)} prefetch={vorabladen ? undefined : false} className={linkKlasse}>
             {t('netzwerk.mehr')}
           </NextLink>
         </li>

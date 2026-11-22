@@ -21,7 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /**
  * Tajwid-Regeln /quran/tajwid (H-Q02): alle Regeln nach den sechs Familien, Legende mit Farbe und Muster, Erklärung nur
- * mit Freigabe (sonst Platzhalter), je Regel das erste Vorkommen im Quran als Beispielvers – nur diese Regel markiert.
+ * mit Freigabe, je Regel das erste Vorkommen im Quran als Beispielvers – nur diese Regel markiert. Ohne freigegebene
+ * Erklärung steht die Karte mit Name und Beispiel; dass die Erklärungen folgen, sagt der Hinweis unter der Legende
+ * einmal (`tajwidSeite.hinweis`) – kein Platzhalter je Karte.
  * Namen und Erklärungen aus der Datenbank (Lehrkraft, ADR 0030), arabischer Text aus der Quelle.
  */
 export default async function TajwidSeite() {
@@ -98,9 +100,7 @@ export default async function TajwidSeite() {
                           {kurz ? <p className="text-18 font-bold">{kurz}</p> : null}
                           <RichText doc={erklaerung} />
                         </div>
-                      ) : (
-                        <p className="text-18 text-tinte-2">{t('tajwidLeiste.platzhalter')}</p>
-                      )}
+                      ) : null}
                       {r.hoerbeispiel ? (
                         <figure className="flex flex-col gap-1">
                           <figcaption className="text-16 font-bold">{t('tajwidLeiste.hoerbeispiel')}</figcaption>

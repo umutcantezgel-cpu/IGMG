@@ -3,9 +3,8 @@ import { getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { Stern8 } from '@/components/website/Icons';
-import { istNurPlatzhalter, MitPlatzhaltern } from '@/components/website/Platzhalter';
-import { Text, textMitSprache } from '@/components/website/Text';
-import { waehle, type Sprache } from '@/lib/i18n/inhalt';
+import { textMitSprache } from '@/components/website/Text';
+import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
 import type { ProjektStatus, ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
 import { brauchtRueckfall, zahl } from './hilfen';
@@ -23,14 +22,20 @@ const STATUS_STIL: Record<ProjektStatus, { Icon: LucideIcon; klasse: string }> =
  * Die 3D-Ansicht ist eine beschriftete Fläche, kein 3D-Viewer und keine Bibliothek (Briefing).
  * Sichtabnahme Runde 2: Die Statusplakette steht auch neben der Kennung (PR-4; die im Bild ist dann nur Bild). Bei
  * „fertiggestellt“ trägt der Seitenkopf den Namen, der Abschnittstitel heißt dann „Das Projekt“. Unter lg steht der
- * Text vor dem Bild. Platzhalter der Gemeinde „[…]“ sind als solche gekennzeichnet (PR-3, `data-platzhalter`).
+ * Text vor dem Bild.
  * Runde 3 (PF-6): Bei „fertiggestellt“ entfällt die Plakette im Bild – der Stand steht neben der Kennung und im Kopf.
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht (`src/lib/inhalt/platzhalter.ts`): Ortsetikett, Kennzahlen und
+ * Einrichtungen gibt es nur mit Wert, in der Beschreibung entfallen Sätze mit Platzhalter; nichts wird ersetzt.
  */
 export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
   const tAllg = await getTranslations('allgemein');
   const p = inhalt.projekt;
-  const name = textMitSprache(p.name, sprache).text;
+  const name = textMitSprache(p.name, sprache, { platzhalter: true });
+  const ort = textMitSprache(p.ort, sprache, { platzhalter: true });
+  const beschreibung = textMitSprache(p.beschreibung, sprache, { platzhalter: true });
+  const einheit = textMitSprache(p.kapazitaet.einheit, sprache, { platzhalter: true });
+  const einrichtungen = p.einrichtungen.map((e) => textMitSprache(e, sprache, { platzhalter: true })).filter((e) => e.text);
   const { Icon: StatusIcon, klasse } = STATUS_STIL[p.status];
   const rueckfall = brauchtRueckfall(sprache, [p.name, p.ort, p.beschreibung, p.kapazitaet.einheit, ...p.einrichtungen]);
   const fertig = p.status === 'fertiggestellt';
@@ -40,36 +45,49 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
       {t(`status.${p.status}`)}
     </>
   );
-  const gemeinde = t('platzhalter.gemeinde');
-  // Ist der Ort nur ein Platzhalter, ist das ganze Etikett der Platzhalter (kein Rahmen im Rahmen)
-  const ortNurPlatzhalter = istNurPlatzhalter(waehle(p.ort, sprache).text);
+  // Kennzahlen nur mit Wert: Was die Gemeinde noch nicht genannt hat, bekommt keine Kachel
+  const fakten: { Icon: LucideIcon; label: string; wert: ReactNode }[] = [];
+  if (p.beginn !== null) fakten.push({ Icon: Calendar, label: t('bezeichnungen.beginn'), wert: String(p.beginn) });
+  if (p.fertigstellung !== null) fakten.push({ Icon: Target, label: t('bezeichnungen.fertigstellung'), wert: String(p.fertigstellung) });
+  if (p.kapazitaet.wert !== null) {
+    fakten.push({
+      Icon: Users,
+      label: t('bezeichnungen.kapazitaet'),
+      wert: (
+        <>
+          {zahl(p.kapazitaet.wert, sprache)} {einheit.text ? <span lang={einheit.lang}>{einheit.text}</span> : null}
+        </>
+      ),
+    });
+  }
+  if (p.flaecheM2 !== null) {
+    fakten.push({ Icon: Ruler, label: t('bezeichnungen.flaeche'), wert: `${zahl(p.flaecheM2, sprache)} ${t('einheiten.m2')}` });
+  }
   return (
     <section aria-labelledby="projekt-beschreibung" className="grid items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="relative min-h-70 min-w-0 md:min-h-115 lg:col-span-7">
-        {/* Das ganze Bild ist ein Platzhalter der Gemeinde (Foto folgt) */}
-        <div data-platzhalter className="absolute inset-0">
-          {/* Unten Platz für die Etiketten (bis md zweizeilig, bei „fertiggestellt“ nur das Ortsetikett) */}
-          <Bildplatzhalter
-            beschriftung={t('3d.text', { name })}
-            className={cn('size-full rounded-lg border border-linie md:pb-0', fertig ? 'pb-16' : 'pb-32')}
-          />
-        </div>
-        <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2">
-          <span
-            data-platzhalter={ortNurPlatzhalter || undefined}
-            className={cn(
-              'rounded-lg border bg-weiss px-3.5 py-2 text-16 leading-snug text-tinte-2',
-              ortNurPlatzhalter ? 'border-dashed border-rand' : 'border-linie',
+        {/* Bildfläche, bis die Gemeinde ein Foto hinterlegt; unten Platz für die Etiketten (bis md zweizeilig) */}
+        <Bildplatzhalter
+          beschriftung={name.text ? t('3d.text', { name: name.text }) : t('kopf.eyebrow')}
+          className={cn('absolute inset-0 rounded-lg border border-linie md:pb-0', fertig ? 'pb-16' : 'pb-32')}
+        />
+        {ort.text || !fertig ? (
+          <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2">
+            {ort.text ? (
+              <span lang={ort.lang} className="rounded-lg border border-linie bg-weiss px-3.5 py-2 text-16 leading-snug text-tinte-2">
+                {ort.text}
+              </span>
+            ) : null}
+            {fertig ? null : (
+              <span
+                aria-hidden
+                className={cn('ml-auto inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}
+              >
+                {statusPlakette}
+              </span>
             )}
-          >
-            <Text feld={p.ort} sprache={sprache} platzhalter={!ortNurPlatzhalter} />
-          </span>
-          {fertig ? null : (
-            <span aria-hidden className={cn('inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}>
-              {statusPlakette}
-            </span>
-          )}
-        </div>
+          </div>
+        ) : null}
       </div>
       <div className="flex min-w-0 flex-col justify-center gap-4 max-lg:order-first lg:col-span-5">
         <div className="flex flex-col gap-3">
@@ -82,62 +100,40 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
               {statusPlakette}
             </span>
           </div>
+          {/* Ohne Namen (noch Platzhalter) heißt der Abschnitt wie bei „fertiggestellt“: „Das Projekt“ */}
           <h2 id="projekt-beschreibung" className="text-display-2">
-            {fertig ? t('bezeichnungen.dasProjekt') : <Text feld={p.name} sprache={sprache} />}
+            {fertig || !name.text ? t('bezeichnungen.dasProjekt') : <span lang={name.lang}>{name.text}</span>}
           </h2>
         </div>
-        <Text feld={p.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" platzhalter />
+        {beschreibung.text ? (
+          <p lang={beschreibung.lang} className="max-w-text text-18 leading-relaxed text-pretty">
+            {beschreibung.text}
+          </p>
+        ) : null}
         {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
-        <dl className="grid grid-cols-2 gap-3">
-          <Fakt
-            Icon={Calendar}
-            label={t('bezeichnungen.beginn')}
-            platzhalter={p.beginn === null}
-            wert={p.beginn === null ? gemeinde : String(p.beginn)}
-          />
-          <Fakt
-            Icon={Target}
-            label={t('bezeichnungen.fertigstellung')}
-            platzhalter={p.fertigstellung === null}
-            wert={p.fertigstellung === null ? gemeinde : String(p.fertigstellung)}
-          />
-          <Fakt
-            Icon={Users}
-            label={t('bezeichnungen.kapazitaet')}
-            platzhalter={p.kapazitaet.wert === null}
-            wert={
-              p.kapazitaet.wert === null ? (
-                gemeinde
-              ) : (
-                <>
-                  {zahl(p.kapazitaet.wert, sprache)} <Text feld={p.kapazitaet.einheit} sprache={sprache} platzhalter />
-                </>
-              )
-            }
-          />
-          <Fakt
-            Icon={Ruler}
-            label={t('bezeichnungen.flaeche')}
-            platzhalter={p.flaecheM2 === null}
-            wert={p.flaecheM2 === null ? gemeinde : `${zahl(p.flaecheM2, sprache)} ${t('einheiten.m2')}`}
-          />
-        </dl>
-        <div className="flex flex-col gap-2">
-          <span className="text-16 font-bold text-tinte-2">{t('bezeichnungen.einrichtungen')}</span>
-          {p.einrichtungen.length > 0 ? (
+        {fakten.length > 0 ? (
+          <dl className="grid grid-cols-2 gap-3">
+            {fakten.map((f) => (
+              <Fakt key={f.label} Icon={f.Icon} label={f.label} wert={f.wert} />
+            ))}
+          </dl>
+        ) : null}
+        {einrichtungen.length > 0 ? (
+          <div className="flex flex-col gap-2">
+            <span className="text-16 font-bold text-tinte-2">{t('bezeichnungen.einrichtungen')}</span>
             <ul className="flex flex-wrap gap-2">
-              {p.einrichtungen.map((e, i) => (
-                <li key={i} className="inline-flex items-center rounded-pill border border-linie bg-sand px-3 py-1 text-16 text-tinte-2">
-                  <Text feld={e} sprache={sprache} platzhalter />
+              {einrichtungen.map((e, i) => (
+                <li
+                  key={i}
+                  lang={e.lang}
+                  className="inline-flex items-center rounded-pill border border-linie bg-sand px-3 py-1 text-16 text-tinte-2"
+                >
+                  {e.text}
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className="text-16 text-tinte-2">
-              <MitPlatzhaltern text={gemeinde} />
-            </p>
-          )}
-        </div>
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -145,30 +141,15 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
 
 /**
  * Kennzahl mit Symbol (Beginn, Fertigstellung, Kapazität, Fläche): Symbol links, Bezeichnung und Wert rechts, 16 px
- * Innenabstand. Sichtabnahme Z-04, PR-1: Ein Platzhalter der Gemeinde steht in 16 px, normal und grau (er ist kein Wert);
- * ein echter Wert wächst mit der Kachel (18 bis 24 px, Container-Einheiten) und bricht notfalls überall um – so läuft auf
- * dem Telefon nichts über die Kachel hinaus. Runde 2 (PR-3): Die Kachel eines Platzhalters ist gestrichelt umrandet
- * (Umriss nach innen, die Maße bleiben) und der Wert trägt `data-platzhalter`.
+ * Innenabstand. Sichtabnahme Z-04, PR-1: Der Wert wächst mit der Kachel (18 bis 24 px, Container-Einheiten) und bricht
+ * notfalls überall um – so läuft auf dem Telefon nichts über die Kachel hinaus. Kacheln gibt es nur für genannte Werte.
  */
-function Fakt({ Icon, label, wert, platzhalter }: { Icon: LucideIcon; label: string; wert: ReactNode; platzhalter: boolean }) {
+function Fakt({ Icon, label, wert }: { Icon: LucideIcon; label: string; wert: ReactNode }) {
   return (
-    <div
-      className={cn(
-        '@container grid raster-symbol content-start items-start gap-x-3 gap-y-0.5 rounded-lg bg-sand p-4',
-        platzhalter && 'outline-1 -outline-offset-1 outline-rand outline-dashed',
-      )}
-    >
+    <div className="@container grid raster-symbol content-start items-start gap-x-3 gap-y-0.5 rounded-lg bg-sand p-4">
       <Icon aria-hidden className="row-span-2 mt-0.5 size-6 shrink-0 text-gruen-700" />
       <dt className="text-16 leading-snug text-tinte-2">{label}</dt>
-      <dd
-        data-platzhalter={platzhalter || undefined}
-        className={cn(
-          'min-w-0 wrap-anywhere hyphens-none',
-          platzhalter ? 'text-16 leading-snug font-normal text-tinte-2' : 'kennzahl-fliessend leading-tight font-bold',
-        )}
-      >
-        {wert}
-      </dd>
+      <dd className="min-w-0 kennzahl-fliessend leading-tight font-bold wrap-anywhere hyphens-none">{wert}</dd>
     </div>
   );
 }

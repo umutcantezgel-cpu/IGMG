@@ -1,4 +1,4 @@
-import { Building2, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Building2, Mail, MapPin, Phone } from 'lucide-react';
 import { Bild } from './Bild';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
@@ -6,6 +6,7 @@ import { Link } from '@/i18n/link';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { text } from '@/lib/i18n/inhalt';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { telefonHref } from '@/lib/telefon';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeFussMenue } from '@/server/queries/menues';
@@ -31,24 +32,29 @@ const ANFRAGEN =
   'inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-weiss px-5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 druck outline-weiss';
 const SOZIAL =
   'flex size-12 items-center justify-center rounded-md border border-gruen-100 text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck outline-weiss';
-const SOZIAL_PLATZHALTER = 'flex size-12 items-center justify-center rounded-md border border-gruen-100 text-weiss';
 
 /**
  * Footer (02.4, design/Footer.dc.html): Gemeinde, Kontakt, Öffnungszeiten, Schnellzugriff (Laufbuch D-07),
  * IGMG-Netzwerk (Plan Marktstart P7), Webseite für Ihre Moschee, Rechtslinks. Kontaktdaten aus „Seiteninhalte ›
- * Kontaktdaten“ (Platzhalter bis zur Pflege). Social-Media-Links erst, wenn hinterlegt (M-020) – sonst sichtbar als
- * Platzhalter ohne Ziel.
+ * Kontaktdaten“: Was dort noch ein Platzhalter der Gemeinde ist („[Adresse]“, „[Telefonnummer]“), erscheint nicht
+ * (`angabe`); ohne Adresse steht der Name der Moschee mit Ort. Social-Media-Links erst, wenn hinterlegt (M-020).
+ * Derselbe Fuß steht auch im Lernbereich (`components/lernapp/Rahmen.tsx`).
  * Raster: eine Spalte, ab 768 px zwei, ab 1240 px drei – sechs Blöcke, also drei bzw. zwei volle Zeilen (P7: „Webseite für
  * Ihre Moschee“ spannt nicht mehr über zwei Spalten). Fünf Spalten brachen „Webseite für Ihre Moschee“ um und verschoben
  * die Trennlinie dieser Spalte; in drei Spalten bleiben alle Köpfe einzeilig, die Linien liegen auf einer Höhe.
  */
-export async function Footer() {
+export async function Footer({ vorabladen = true }: { vorabladen?: boolean } = {}) {
+  // `vorabladen` false im Lernbereich: Die Website liegt dort in einem anderen Wurzel-Layout (ganze Seite beim Klick)
+  const prefetch = vorabladen ? undefined : false;
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('fuss');
   // Rechtslinks der neuen Seiten: Texte aus deren Bereichsdateien (messages/bereiche/barrierefreiheit.json, quellen.json)
   const [tb, tq] = await Promise.all([getTranslations('barrierefreiheit'), getTranslations('quellen')]);
   const kontakt = await ladeSeiteninhalt('kontakt');
-  const telefon = telefonHref(kontakt.telefon);
+  const adresse = angabe(kontakt.adresse);
+  const telefonText = angabe(kontakt.telefon);
+  const telefon = telefonText ? telefonHref(telefonText) : null;
+  const email = angabe(kontakt.email);
   const bestand: { label: string; ziel: Ziel }[] = [
     { label: t('qGebetszeiten'), ziel: '/gebetszeiten' },
     { label: t('qVeranstaltungen'), ziel: '/veranstaltungen' },
@@ -67,7 +73,7 @@ export async function Footer() {
     { netz: 'Facebook', url: kontakt.social.facebook, Icon: Facebook },
     { netz: 'Instagram', url: kontakt.social.instagram, Icon: Instagram },
     { netz: 'YouTube', url: kontakt.social.youtube, Icon: Youtube },
-  ];
+  ].filter((s) => Boolean(s.url));
   const ueberschrift = (titel: string) => (
     <h2 className="flex items-center gap-2 border-b border-gruen-800 pb-2 font-text text-18 font-bold tracking-normal text-wrap">
       <Stern8 className="text-gruen-100" />
@@ -86,44 +92,48 @@ export async function Footer() {
             <span className="font-display text-24 leading-tight font-semibold">IGMG Wetzlar</span>
           </div>
           <p className="text-16 leading-relaxed text-gruen-100">{t('beschreibung')}</p>
-          <ul aria-label={t('sozial')} className="flex gap-2">
-            {sozial.map(({ netz, url, Icon }) => (
-              <li key={netz}>
-                {url ? (
+          {sozial.length > 0 ? (
+            <ul aria-label={t('sozial')} className="flex gap-2">
+              {sozial.map(({ netz, url, Icon }) => (
+                <li key={netz}>
                   <a href={url} rel="noopener noreferrer" aria-label={netz} className={SOZIAL}>
                     <Icon />
                   </a>
-                ) : (
-                  <span role="img" aria-label={t('platzhalterLink', { netz })} className={SOZIAL_PLATZHALTER}>
-                    <Icon />
-                  </span>
-                )}
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
         <div className="flex flex-col gap-3">
           {ueberschrift(t('kontakt'))}
           <address className="flex flex-col text-16 not-italic">
             <span className={KONTAKTZEILE}>
               <MapPin aria-hidden className="size-5 shrink-0 text-gruen-100" />
-              <span>{kontakt.adresse}</span>
+              <span>{adresse ?? t('ort')}</span>
             </span>
-            {telefon ? (
-              <a href={telefon} className={MAILLINK}>
-                <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
-                <span>{kontakt.telefon}</span>
+            {telefonText ? (
+              telefon ? (
+                <a href={telefon} className={MAILLINK}>
+                  <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
+                  <span>{telefonText}</span>
+                </a>
+              ) : (
+                <span className={KONTAKTZEILE}>
+                  <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
+                  <span>{telefonText}</span>
+                </span>
+              )
+            ) : null}
+            {email ? (
+              <a href={`mailto:${email}`} className={MAILLINK}>
+                <Mail aria-hidden className="size-5 shrink-0 text-gruen-100" />
+                <span>{email}</span>
               </a>
-            ) : (
-              <span className={KONTAKTZEILE}>
-                <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
-                <span>{kontakt.telefon}</span>
-              </span>
-            )}
-            <a href={`mailto:${kontakt.email}`} className={MAILLINK}>
-              <Mail aria-hidden className="size-5 shrink-0 text-gruen-100" />
-              <span>{kontakt.email}</span>
-            </a>
+            ) : null}
+            <Link href="/kontakt" prefetch={prefetch} className={MAILLINK}>
+              <ArrowRight aria-hidden className="size-5 shrink-0 text-gruen-100" />
+              <span>{t('kontaktSeite')}</span>
+            </Link>
           </address>
         </div>
         <div className="flex flex-col gap-3">
@@ -153,18 +163,18 @@ export async function Footer() {
           <ul className="grid grid-cols-2 gap-x-6">
             {schnell.map((s, i) => (
               <li key={`${i}-${s.href}`}>
-                <NextLink href={s.href} lang={s.lang} className={TEXTLINK}>
+                <NextLink href={s.href} prefetch={prefetch} lang={s.lang} className={TEXTLINK}>
                   {s.label}
                 </NextLink>
               </li>
             ))}
           </ul>
         </nav>
-        <FussNetzwerk ueberschrift={ueberschrift} linkKlasse={TEXTLINK} />
+        <FussNetzwerk ueberschrift={ueberschrift} linkKlasse={TEXTLINK} vorabladen={vorabladen} />
         <div className="flex flex-col gap-3">
           {ueberschrift(t('moscheeWebseite'))}
           <p className="text-16 text-gruen-100">{t('moscheeWebseiteText')}</p>
-          <Link href="/webseite-fuer-moscheen" className={ANFRAGEN}>
+          <Link href="/webseite-fuer-moscheen" prefetch={prefetch} className={ANFRAGEN}>
             <Building2 aria-hidden className="size-5" />
             <span>{t('anfragen')}</span>
           </Link>
@@ -175,22 +185,22 @@ export async function Footer() {
           <p className="text-gruen-100">{t('rechte', { jahr })}</p>
           <ul aria-label={t('rechtliches')} className="flex flex-wrap gap-x-4 gap-y-1">
             <li>
-              <Link href="/datenschutz" className={TEXTLINK}>
+              <Link href="/datenschutz" prefetch={prefetch} className={TEXTLINK}>
                 {t('datenschutz')}
               </Link>
             </li>
             <li>
-              <Link href="/impressum" className={TEXTLINK}>
+              <Link href="/impressum" prefetch={prefetch} className={TEXTLINK}>
                 {t('impressum')}
               </Link>
             </li>
             <li>
-              <Link href="/barrierefreiheit" className={TEXTLINK}>
+              <Link href="/barrierefreiheit" prefetch={prefetch} className={TEXTLINK}>
                 {tb('fussLink')}
               </Link>
             </li>
             <li>
-              <Link href="/quellen" className={TEXTLINK}>
+              <Link href="/quellen" prefetch={prefetch} className={TEXTLINK}>
                 {tq('fussLink')}
               </Link>
             </li>

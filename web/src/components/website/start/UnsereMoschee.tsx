@@ -13,9 +13,10 @@ const TEXTLINK = 'inline-flex min-h-12 items-center gap-2 font-bold text-gruen-7
 
 /**
  * „Unsere neue Moschee – eröffnet“ (Vorführpfad Station 1, AUFTRAG 3.9): ruhiger Abschnitt ohne Bewegung unter dem
- * Bogen. Name, Beschreibung (mit Platzhaltern für Ort und Eröffnungsdatum) und Fertigstellungsjahr kommen aus dem
- * Seiteninhalt „projekte“, den die Gemeinde pflegt (MN-08) – nichts davon steht im Code. Das Foto ist ein beschrifteter
- * Platzhalter, bis die Gemeinde eines liefert: keine generierten Moscheebilder, keine Kuppel- oder Halbmondgrafik.
+ * Bogen. Name, Beschreibung und Fertigstellungsjahr kommen aus dem Seiteninhalt „projekte“, den die Gemeinde pflegt
+ * (MN-08). Sätze der Beschreibung, in denen noch ein Platzhalter der Gemeinde steht (Ort, Eröffnungsdatum), erscheinen
+ * nicht; bleibt nichts übrig, steht ein allgemeiner Satz aus den Sprachdateien. Statt eines Fotos steht die Bildfläche
+ * mit dem Markenmotiv, bis die Gemeinde eines liefert: keine generierten Moscheebilder, keine Kuppel- oder Halbmondgrafik.
  * Erscheint nur, solange das Projekt „fertiggestellt“ ist; sonst erzählt /projekte den Stand.
  */
 export async function UnsereMoschee({ sprache }: { sprache: Locale }) {
@@ -23,6 +24,7 @@ export async function UnsereMoschee({ sprache }: { sprache: Locale }) {
   const p = inhalt.projekt;
   if (p.status !== 'fertiggestellt') return null;
   const name = textMitSprache(p.name, sprache);
+  const beschreibung = textMitSprache(p.beschreibung, sprache, { platzhalter: true });
   return (
     <section aria-labelledby="moschee-titel" className="border-b border-linie bg-papier">
       <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-8 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-12 lg:gap-16">
@@ -46,12 +48,13 @@ export async function UnsereMoschee({ sprache }: { sprache: Locale }) {
             {tp('status.fertiggestellt')}
             {p.fertigstellung === null ? null : <span className="font-normal"> · {p.fertigstellung}</span>}
           </span>
-          <Text
-            feld={p.beschreibung}
-            sprache={sprache}
-            als="p"
+          {/* Beschreibung der Gemeinde ohne Sätze mit Platzhalter; solange nichts übrig bleibt, ein allgemeiner Satz */}
+          <p
+            lang={beschreibung.text ? beschreibung.lang : undefined}
             className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2"
-          />
+          >
+            {beschreibung.text || t('moschee.text')}
+          </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link href="/projekte" className={SEKUNDAER}>
               <span>{t('moschee.projekt')}</span>

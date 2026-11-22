@@ -3,14 +3,25 @@ import { Bild } from '../Bild';
 import { Achtstern } from '@/components/website/Icons';
 import { Text, textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import { ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
 import type { UeberUnsInhalt } from '@/lib/validierung/seiteninhalte/ueber-uns';
 import { cn } from '@/lib/utils';
 import type { CSSProperties } from 'react';
 import { ErstesSichtbarwerden } from '@/components/website/ErstesSichtbarwerden';
-import { Bildflaeche } from './Bildflaeche';
+import { Bildflaeche, ohneFotoVermerk } from './Bildflaeche';
 import { SYMBOL } from './symbole';
 
 type Eintrag = UeberUnsInhalt['zeitleiste'][number];
+
+/**
+ * Titel einer Station für die öffentliche Seite. Die Titel beginnen mit ihrer Jahresmarke („2019 - Umzug …“); ist diese
+ * Marke noch ein Platzhalter der Gemeinde („[Jahr – von der Gemeinde] – Eröffnung …“), entfällt nur sie, der Titel bleibt
+ * wörtlich. Jeder andere Platzhalter lässt den Satz entfallen (`ohnePlatzhalter`); leer heißt: Die Station erscheint nicht.
+ */
+export function stationsTitel(e: Eintrag, sprache: Sprache): { text: string; lang: string | undefined } {
+  const w = textMitSprache(e.titel, sprache);
+  return { text: ohnePlatzhalter(w.text.replace(/^\s*\[[^\]]*\]\s*[-–—]\s*/, '')), lang: w.lang };
+}
 
 /** Punktfarbe nach Stufe: die ersten beiden Stationen hell, die letzte Marke tiefgrün (design/AboutUs.dc.html D:46, D:92–96). Die Marke ist ein gefüllter Achtstern, die Farbe kommt über `text-*`. */
 function punktFarbe(i: number, anzahl: number): string {
@@ -29,6 +40,8 @@ function punktFarbe(i: number, anzahl: number): string {
  * Fatih-Moschee) – tiefgrüne Marke mit hellem Achtstern-Hof und grün gerahmter Karte. Der Hof liegt außerhalb des
  * Layouts, damit die Punktspalte überall gleich breit bleibt und die Linie gerade durchläuft.
  * Ära, Titel, Ort (ab md unten bündig mit der Bildfläche): Die Textspalte stapelt die drei Zeilen in fester Reihenfolge.
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht: Eine Jahresmarke oder ein Ort, die noch Platzhalter sind, entfallen;
+ * Stationen ohne Titel gibt die Seite nicht herein (`stationsTitel`).
  */
 export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprache: Sprache }) {
   return (
@@ -36,6 +49,8 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
       {eintraege.map((e, i) => {
         const Icon = SYMBOL[e.symbol];
         const bild = textMitSprache(e.bildbeschreibung, sprache);
+        const titel = stationsTitel(e, sprache);
+        const ort = textMitSprache(e.ort, sprache, { platzhalter: true });
         const ziel = eintraege.length > 1 && i === eintraege.length - 1;
         return (
           <li key={i} className="flex gap-3 md:gap-5" style={{ '--i': i, '--n': eintraege.length } as CSSProperties}>
@@ -63,18 +78,20 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
                 )}
               >
                 <div className="flex min-w-0 flex-1 flex-col justify-start gap-2">
-                  <Text feld={e.kennzeichnung} sprache={sprache} className="text-16 font-bold text-gruen-800" />
-                  <Text feld={e.titel} sprache={sprache} als="h3" className="text-24 text-pretty" />
-                  {e.ort?.de ? (
+                  <Text feld={e.kennzeichnung} sprache={sprache} platzhalter className="text-16 font-bold text-gruen-800" />
+                  <h3 lang={titel.lang} className="text-24 text-pretty">
+                    {titel.text}
+                  </h3>
+                  {ort.text ? (
                     <span className="inline-flex items-center gap-1.5 self-start text-16 text-tinte-2 md:mt-auto">
                       <MapPin aria-hidden className="size-4" />
-                      <Text feld={e.ort} sprache={sprache} />
+                      <span lang={ort.lang}>{ort.text}</span>
                     </span>
                   ) : null}
                 </div>
                 {e.bild ? (
                   <div className="relative h-28 overflow-hidden rounded-md border border-linie md:h-36 md:w-60 md:shrink-0">
-                    <Bild src={e.bild} alt={bild.text} fill sizes="(min-width: 768px) 240px, 100vw" className="object-cover" />
+                    <Bild src={e.bild} alt={ohneFotoVermerk(bild.text)} fill sizes="(min-width: 768px) 240px, 100vw" className="object-cover" />
                   </div>
                 ) : (
                   <Bildflaeche beschriftung={bild.text} lang={bild.lang} className="h-28 md:h-36 md:w-60 md:shrink-0" />

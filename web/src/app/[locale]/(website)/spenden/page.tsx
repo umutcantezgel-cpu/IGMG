@@ -29,7 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Spenden (AUFTRAG 3.10, MN-13): Bankverbindung aus der Einstellung „spenden“, Spendenzwecke und je Zweck ein statischer
  * GiroCode (EPC-QR, ohne Betrag). Kein Zahlungsdienst – die Banking-App öffnet die Überweisung. Ohne gültige IBAN
- * (Prüfziffer) ein ehrlicher Platzhalter und kein QR-Code. Statisch; Änderungen in der Verwaltung erneuern den Tag
+ * (Prüfziffer) ein ruhiger Hinweis, dass die Gemeinde die Bankverbindung auf Anfrage nennt, mit Link zur Kontaktseite –
+ * keine Bankdaten, kein QR-Code, keine Platzhalter „[…]“. Statisch; Änderungen in der Verwaltung erneuern den Tag
  * „einstellungen“. Unter beiden Zweigen (auch ohne IBAN) der Kasten „Weltweit helfen mit Hasene“ mit der Erklärung zu Zakat,
  * Fitra und Kurban (Plan Marktstart P7): Spenden an den Dachverband, ausdrücklich nicht an die Gemeinde – ohne GiroCode und
  * ohne Feld in der Einstellung; die Fitra nimmt zusätzlich auch die Gemeinde entgegen (E-046 Nr. 1).
@@ -56,7 +57,6 @@ export default async function SpendenSeite() {
                 {t('platzhalter.titel')}
               </h2>
               <p className="max-w-text text-18">{t('platzhalter.text')}</p>
-              <p className="max-w-text text-tinte-2">{t('platzhalter.eintrag')}</p>
               <p className="flex flex-wrap items-center gap-x-2">
                 {t('platzhalter.kontakt')}
                 <Link href="/kontakt" className={TEXTLINK}>
@@ -130,12 +130,15 @@ export default async function SpendenSeite() {
                   </ol>
                 </section>
 
-                <section aria-labelledby="spenden-quittung" className="order-4 flex flex-col gap-2">
-                  <h2 id="spenden-quittung" className="text-24">
-                    {t('quittung.titel')}
-                  </h2>
-                  <p className="max-w-text text-tinte-2">{t('quittung.text')}</p>
-                </section>
+                {/* Hinweis zur Zuwendungsbestätigung: erscheint, sobald der Vorstand ihn liefert (Schlüssel spenden.quittung.text) */}
+                {t.has('quittung.text') ? (
+                  <section aria-labelledby="spenden-quittung" className="order-4 flex flex-col gap-2">
+                    <h2 id="spenden-quittung" className="text-24">
+                      {t('quittung.titel')}
+                    </h2>
+                    <p className="max-w-text text-tinte-2">{t('quittung.text')}</p>
+                  </section>
+                ) : null}
               </div>
               <section
                 aria-labelledby="spenden-bank"

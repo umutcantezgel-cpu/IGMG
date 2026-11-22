@@ -20,7 +20,8 @@ function mitRueckfall(basis: Nachrichten, sprache: Nachrichten): Nachrichten {
 }
 
 /**
- * Sprache aus dem Root-Parameter `[locale]` (next/root-params, Lichtung a) – statisch renderbar.
+ * Sprache aus dem Root-Parameter `[locale]` (next/root-params, Lichtung a) – statisch renderbar. Im Lernbereich aus
+ * dessen Root-Parameter `[ui]` (`spracheImLernbereich`).
  * Fehlt ein Schlüssel in tr/en, greift Deutsch (Sicherheitsnetz); Vollständigkeit prüft `pnpm sprachen:pruefen` (Z-03).
  * Die Verwaltung ist nur deutsch (ADR 0016): Namensraum `verwaltung` immer aus de.json.
  */
@@ -33,8 +34,19 @@ function mitBereichen(basis: Nachrichten, sprache: 'de' | 'tr' | 'en'): Nachrich
   return aus;
 }
 
+/**
+ * Sprache der Website-Bausteine im Lernbereich (`/lern-app/[ui]`, eigenes Wurzel-Layout ohne `[locale]`): Kopf- und
+ * Fußzeile der Website stehen auch dort (eine Website, ein Rahmen). Türkisch bleibt Türkisch; Deutsch und Arabisch
+ * bekommen die deutsche Fassung, weil es die Website nicht auf Arabisch gibt (wie die Links aus dem Lernbereich bisher).
+ */
+async function spracheImLernbereich(): Promise<string | undefined> {
+  const ui = await rootParams.ui();
+  if (ui === 'tr') return 'tr';
+  return ui === 'de' || ui === 'ar' ? 'de' : undefined;
+}
+
 export default getRequestConfig(async ({ locale }) => {
-  const kandidat = locale ?? (await rootParams.locale());
+  const kandidat = locale ?? (await rootParams.locale()) ?? (await spracheImLernbereich());
   if (!hasLocale(routing.locales, kandidat)) notFound();
   const de = mitBereichen((await import('../../messages/de.json')).default as Nachrichten, 'de');
   if (kandidat === 'de') return { locale: kandidat, timeZone: 'Europe/Berlin', messages: de };

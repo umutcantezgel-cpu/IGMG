@@ -12,8 +12,8 @@ import de from '../../messages/de.json';
  * - Gebetszeiten: Reiterleiste einzeilig, aktiver Reiter im Blick (G-1), genau ein „Vollbild“ im Kopf (G-4), Ortsauswahl
  *   so breit wie die Tabelle und Spalten bündig (G-3), Zifferblatt mit Gradzahl (G-2).
  * - Projekte: kein Text läuft über eine Kennzahl-Kachel hinaus (PR-1), Meilensteine als gleich gebaute Zeilen (PR-2);
- *   Runde 2: Platzhalter gekennzeichnet (PR-3), Name und Status im ersten Bildschirm (PR-4), bei allen erledigten
- *   Meilensteinen kein sichtbares „Abgeschlossen“ (PR-5).
+ *   Runde 2: Name und Status im ersten Bildschirm (PR-4), bei allen erledigten Meilensteinen kein sichtbares
+ *   „Abgeschlossen“ (PR-5). Platzhalter „[…]“ erscheinen nicht mehr (PR-3, neu seit der Vorstellung 23.11.2026).
  * Texte aus messages, Inhalte aus den Seeds.
  */
 const START = de.start;
@@ -164,8 +164,10 @@ test.describe('Gebetszeiten', () => {
 test.describe('Projekte', () => {
   test('kein Text läuft über eine Kennzahl-Kachel hinaus (PR-1)', async ({ page }) => {
     await page.goto('/projekte');
+    // Kacheln gibt es nur für genannte Werte (Beispielbestand: Fertigstellung); fehlende Angaben bekommen keine Kachel
     const werte = page.locator('section[aria-labelledby="projekt-beschreibung"] dl dd');
-    await expect(werte).toHaveCount(4);
+    await expect(werte.first()).toBeVisible();
+    await expect(werte.first()).not.toHaveText('');
     const ueber = await werte.evaluateAll(
       (els) =>
         els.filter((e) => {
@@ -177,20 +179,34 @@ test.describe('Projekte', () => {
     expect(ueber).toBe(0);
   });
 
-  test('Platzhalter „[…]“ im Inhalt nur gekennzeichnet (PR-3)', async ({ page }) => {
+  test('keine Platzhalter „[…]“ im Inhalt: fehlende Angaben entfallen (PR-3, Vorstellung 23.11.2026)', async ({ page }) => {
     await page.goto('/projekte');
     const frei = await page.locator('main').evaluate((main) => {
       const funde: string[] = [];
       const gang = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
       for (let n = gang.nextNode(); n; n = gang.nextNode()) {
         const eltern = n.parentElement;
-        if (!eltern || eltern.closest('script, style, template, [data-platzhalter]')) continue;
+        if (!eltern || eltern.closest('script, style, template')) continue;
         if (/\[[^\]]+\]/.test(n.textContent ?? '')) funde.push(n.textContent ?? '');
       }
       return funde;
     });
     expect(frei).toEqual([]);
-    await expect(page.locator('main [data-platzhalter]').first()).toBeVisible();
+    // Nichts ist mehr als Platzhalter gekennzeichnet, und es bleibt keine leere Kachel oder Überschrift zurück
+    await expect(page.locator('main [data-platzhalter]')).toHaveCount(0);
+    const leer = await page
+      .locator('main')
+      .evaluate(
+        (main) =>
+          [...main.querySelectorAll('h2, h3, dt, dd')].filter((e) => !e.closest('[aria-hidden="true"]') && (e.textContent ?? '').trim() === '')
+            .length,
+      );
+    expect(leer).toBe(0);
+    // Ohne Bankverbindung: ein Satz mit dem Weg zur Kontaktseite, „Jetzt spenden“ führt zur Seite „Spenden“
+    const konto = page.locator('#spendenkonto');
+    await expect(konto).toContainText(PR.spenden.aufAnfrage);
+    await expect(konto.getByRole('link')).toHaveAttribute('href', '/kontakt');
+    await expect(page.getByRole('link', { name: new RegExp(`^${PR.spenden.jetzt}`) })).toHaveAttribute('href', '/spenden');
   });
 
   test('fertiggestellt: Name und Status im ersten Bildschirm, „Abgeschlossen“ nur für Screenreader (PR-4, PR-5)', async ({ page }) => {

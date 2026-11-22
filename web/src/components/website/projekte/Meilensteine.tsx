@@ -3,12 +3,11 @@ import type { CSSProperties } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { ErstesSichtbarwerden } from '@/components/website/ErstesSichtbarwerden';
 import { Achtstern, Stern8 } from '@/components/website/Icons';
-import { istNurPlatzhalter, MitPlatzhaltern } from '@/components/website/Platzhalter';
-import { Text } from '@/components/website/Text';
-import { waehle, type Sprache } from '@/lib/i18n/inhalt';
+import { Text, textMitSprache } from '@/components/website/Text';
+import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
 import type { ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
-import { brauchtRueckfall } from './hilfen';
+import { brauchtRueckfall, sichtbareMeilensteine } from './hilfen';
 
 type Meilenstein = ProjekteInhalt['meilensteine'][number];
 
@@ -25,17 +24,20 @@ function marken(liste: Meilenstein[]): { zuletzt: number; naechster: number } {
 /**
  * Projektmeilensteine (Design Projects.dc.html D:72–86, Sprungziel #meilensteine): Zeilen in der Reihenfolge der Liste,
  * Status „Abgeschlossen“ oder „Geplant“ je Zeile. Darüber die Meilensteinlinie (großer Moment B-08): Stand als Satz, die
- * Linie reicht bis zum letzten erledigten Meilenstein und wächst beim ersten Sichtbarwerden. Ohne Einträge ein Platzhalter.
- * Kennung „Baufortschritt“ mit Achtstern über dem Titel (Referenz: Seitenkopf).
+ * Linie reicht bis zum letzten erledigten Meilenstein und wächst beim ersten Sichtbarwerden. Ohne Einträge entfällt der
+ * Abschnitt (die Seite lässt dann auch sein Band weg). Kennung „Baufortschritt“ mit Achtstern über dem Titel (Referenz:
+ * Seitenkopf).
  * Sichtabnahme Runde 2: Sind alle Meilensteine erledigt, sagt der Stand „6 von 6“ schon alles – „Abgeschlossen“ steht
- * dann nur noch für Screenreader in jeder Zeile (PR-5; die Haken sind Bild). Platzhalter „[…]“ sind gekennzeichnet (PR-3).
+ * dann nur noch für Screenreader in jeder Zeile (PR-5; die Haken sind Bild). Platzhalter der Gemeinde „[…]“ erscheinen
+ * nicht: Ein Datum wie „[Datum]“ entfällt, ein Meilenstein ohne Titel ebenso (`sichtbareMeilensteine`).
  */
 export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
   const tAllg = await getTranslations('allgemein');
-  const liste = inhalt.meilensteine;
+  const liste = sichtbareMeilensteine(inhalt, sprache);
+  if (liste.length === 0) return null;
   const { naechster } = marken(liste);
-  const alleErledigt = liste.length > 0 && liste.every((m) => m.erledigt);
+  const alleErledigt = liste.every((m) => m.erledigt);
   const rueckfall = brauchtRueckfall(
     sprache,
     liste.flatMap((m) => [m.titel, m.beschreibung, m.datum]),
@@ -53,33 +55,25 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
         </h2>
       </div>
       {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
-      {liste.length > 0 ? (
-        <Linie
-          liste={liste}
-          sprache={sprache}
-          stand={t('meilenstein.stand', { erledigt: liste.filter((m) => m.erledigt).length, gesamt: liste.length })}
-        />
-      ) : null}
-      {liste.length > 0 ? (
-        // PR-2: alle Meilensteine als gleich gebaute Zeilen, getrennt durch eine feine 1-px-Linie
-        <ol className="divide-y divide-linie overflow-hidden rounded-lg border border-linie bg-weiss">
-          {liste.map((m, i) => (
-            <Zeile
-              key={i}
-              m={m}
-              sprache={sprache}
-              bezeichnung={bezeichnung}
-              nummer={i + 1}
-              hervorgehoben={i === naechster || (naechster < 0 && i === liste.length - 1)}
-              alleErledigt={alleErledigt}
-            />
-          ))}
-        </ol>
-      ) : (
-        <p className="text-18 text-tinte-2">
-          <MitPlatzhaltern text={t('platzhalter.gemeinde')} />
-        </p>
-      )}
+      <Linie
+        liste={liste}
+        sprache={sprache}
+        stand={t('meilenstein.stand', { erledigt: liste.filter((m) => m.erledigt).length, gesamt: liste.length })}
+      />
+      {/* PR-2: alle Meilensteine als gleich gebaute Zeilen, getrennt durch eine feine 1-px-Linie */}
+      <ol className="divide-y divide-linie overflow-hidden rounded-lg border border-linie bg-weiss">
+        {liste.map((m, i) => (
+          <Zeile
+            key={i}
+            m={m}
+            sprache={sprache}
+            bezeichnung={bezeichnung}
+            nummer={i + 1}
+            hervorgehoben={i === naechster || (naechster < 0 && i === liste.length - 1)}
+            alleErledigt={alleErledigt}
+          />
+        ))}
+      </ol>
     </section>
   );
 }
@@ -88,7 +82,7 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
  * Meilensteinlinie: gestrichelte Strecke über alle Meilensteine, durchgezogen bis zum letzten erledigten. Die Marken
  * sind Bild (aria-hidden); den Stand trägt der Satz darüber, die Einzelheiten tragen die Zeilen darunter. Der nächste
  * offene Meilenstein trägt einen gefüllten Achtstern (wie „nächstes Gebet“), erledigte einen Haken, übrige eine Ziffer.
- * Die Datumszeile lässt reine Platzhalter wie „[Datum]“ weg (Sichtabnahme Runde 2, PR-3): Die Zeilen darunter nennen sie.
+ * Die Datumszeile lässt Platzhalter wie „[Datum]“ weg (Sichtabnahme Runde 2, PR-3); ohne ein einziges Datum entfällt sie.
  */
 function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprache; stand: string }) {
   const { zuletzt, naechster } = marken(liste);
@@ -96,6 +90,7 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
   const anteil = zuletzt < 0 ? 0 : lage(zuletzt);
   // B-08 Fortschreibung (AUFTRAG 4): Ist alles erledigt, endet die Linie in der gefüllten Marke des letzten Meilensteins
   const ziel = naechster < 0 && liste.length > 0 ? liste.length - 1 : -1;
+  const daten = liste.map((m) => textMitSprache(m.datum, sprache, { platzhalter: true }));
   return (
     <ErstesSichtbarwerden className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss px-5 py-5 md:px-8">
       <p className="font-display text-24 text-tinte">{stand}</p>
@@ -142,12 +137,13 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
           )}
         </ol>
       </div>
-      {liste.length <= 6 ? (
+      {liste.length <= 6 && daten.some((d) => d.text) ? (
         <ol aria-hidden className="relative mx-4 hidden h-6 lg:block">
-          {liste.map((m, i) =>
-            istNurPlatzhalter(waehle(m.datum, sprache).text) ? null : (
+          {daten.map((d, i) =>
+            d.text ? (
               <li
                 key={i}
+                lang={d.lang}
                 className={cn(
                   'absolute top-0 text-16 whitespace-nowrap text-tinte-2 tabular-nums',
                   liste.length === 1
@@ -160,9 +156,9 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
                 )}
                 style={{ left: `${lage(i) * 100}%` }}
               >
-                <Text feld={m.datum} sprache={sprache} platzhalter />
+                {d.text}
               </li>
-            ),
+            ) : null,
           )}
         </ol>
       ) : null}
@@ -224,9 +220,7 @@ function Zeile({
         <Text feld={m.beschreibung} sprache={sprache} als="p" className="text-16 text-tinte-2" platzhalter />
       </div>
       <div className="col-start-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:col-start-3 md:row-start-1 md:mt-0.5 md:justify-end">
-        <span className="text-16 text-tinte-2 tabular-nums">
-          <Text feld={m.datum} sprache={sprache} platzhalter />
-        </span>
+        <Text feld={m.datum} sprache={sprache} platzhalter className="text-16 text-tinte-2 tabular-nums" />
         {m.erledigt && alleErledigt ? (
           <span className="sr-only">{bezeichnung.abgeschlossen}</span>
         ) : (

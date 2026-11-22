@@ -7,6 +7,7 @@ import { Link } from '@/i18n/link';
 import type { Ziel } from '@/i18n/navigation';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { text, type Sprache } from '@/lib/i18n/inhalt';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { telefonHref } from '@/lib/telefon';
 import type { BlockVon } from '@/lib/validierung/bloecke';
 import { datumszeilen } from '@/lib/zeit/datumszeilen';
@@ -84,32 +85,40 @@ export async function NachrichtenAnsicht({ b, sprache }: { b: BlockVon<'nachrich
   );
 }
 
-/** Baustein „Kontakt“: Kontaktkarte aus „Seiteninhalte › Kontaktdaten“ (Platzhalter bis zur Pflege). */
-export async function KontaktAnsicht({ b, sprache }: { b: BlockVon<'kontakt'>; sprache: Sprache }) {
+/**
+ * Baustein „Kontakt“: Kontaktkarte aus „Seiteninhalte › Kontaktdaten“. Auf der öffentlichen Seite (`oeffentlich`)
+ * entfallen Adresse und Telefonnummer, solange sie Platzhalter der Gemeinde „[…]“ sind – samt Symbol; die E-Mail bleibt.
+ * In der Verwaltung (Vorschau) stehen die Platzhalter weiter da.
+ */
+export async function KontaktAnsicht({ b, sprache, oeffentlich = false }: { b: BlockVon<'kontakt'>; sprache: Sprache; oeffentlich?: boolean }) {
   const [t, kontakt] = await Promise.all([getTranslations({ locale: sprache, namespace: 'bloecke' }), ladeSeiteninhalt('kontakt')]);
   const k = kopf(b, sprache, t('kontaktTitel'));
-  const telefon = telefonHref(kontakt.telefon);
+  const adresse = oeffentlich ? angabe(kontakt.adresse) : kontakt.adresse;
+  const nummer = oeffentlich ? angabe(kontakt.telefon) : kontakt.telefon;
+  const telefon = telefonHref(nummer);
   const zeile = 'flex min-h-12 items-center gap-3 text-18';
   return (
     <BlockRahmen beschriftung={k.id}>
       <BlockKopf id={k.id} titel={k.text} lang={k.lang} />
       <div className="grid gap-6 rounded-lg border border-linie bg-weiss p-6 shadow-s1 md:grid-cols-2 md:p-8">
         <address className="flex flex-col not-italic">
-          <span className={zeile}>
-            <MapPin aria-hidden className="size-5 shrink-0 text-gruen-700" />
-            <span>{kontakt.adresse}</span>
-          </span>
+          {adresse ? (
+            <span className={zeile}>
+              <MapPin aria-hidden className="size-5 shrink-0 text-gruen-700" />
+              <span>{adresse}</span>
+            </span>
+          ) : null}
           {telefon ? (
             <a href={telefon} className={`${zeile} underline underline-offset-4`}>
               <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
-              <span>{kontakt.telefon}</span>
+              <span>{nummer}</span>
             </a>
-          ) : (
+          ) : nummer ? (
             <span className={zeile}>
               <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
-              <span>{kontakt.telefon}</span>
+              <span>{nummer}</span>
             </span>
-          )}
+          ) : null}
           <a href={`mailto:${kontakt.email}`} className={`${zeile} underline underline-offset-4`}>
             <Mail aria-hidden className="size-5 shrink-0 text-gruen-700" />
             <span>{kontakt.email}</span>

@@ -216,7 +216,6 @@
     "bildung": "Eğitim",
     "voranmeldung": "Öğrenci Ön Kayıt",
     "korankurse": "Kuran Kursları",
-    "islamunterricht": "İslam Dersi",
     "anmelden": "Giriş Yap",
     "kontoMenue": "Hesap menüsü",
     "angemeldetAls": "Giriş yapılan hesap",
@@ -233,9 +232,8 @@
     "bGebetszeiten": "Günlük namaz vakitleri ve takvim",
     "bQuran": "Kuran okuma ve çalışma",
     "bWissen": "İslami bilgi ve öğretim",
-    "bVoranmeldung": "Eğitim programları için ön kayıt",
-    "bKorankurse": "Her yaş için Kuran öğrenme",
-    "bIslamunterricht": "İslam'ın temelleri",
+    "bVoranmeldung": "Çocuğunuzu veya kendinizi bir kursa kaydedin",
+    "bKorankurse": "Camide Kur’an öğrenimi – her yaş için",
     "menue": "Menü",
     "menueOeffnen": "Menüyü aç",
     "menueSchliessen": "Menüyü kapat",
@@ -248,9 +246,9 @@
     "hadith": "Hadis",
     "bHadith": "Sahih-i Buhari ve seçme hadisler",
     "lernen": "Öğren",
-    "bLernen": "İlk harften Kuran’a kadar yolun",
-    "lernApp": "Dil öğren",
-    "bLernApp": "Öğrenme uygulaması: A1’den B1’e Almanca, Türkçe ve Arapça",
+    "bLernen": "Genel bakış: İlk harften Kur’an’a kadar yolunuz",
+    "lernApp": "Öğrenme uygulaması",
+    "bLernApp": "Dil ve bilgi alıştırmaları – küçük derslerle, hesap olmadan da",
     "elifbe": "Elifba",
     "bElifbe": "Arap alfabesi adım adım",
     "kalender": "Takvim",
@@ -326,7 +324,8 @@
     "impressum": "Künye",
     "rechtliches": "Yasal bilgiler",
     "sozial": "Sosyal medya",
-    "platzhalterLink": "{netz} [{netz}-Link]"
+    "ort": "Wetzlar Fatih Camii",
+    "kontaktSeite": "İletişim ve ulaşım"
   },
   "allgemein": {
     "beispielinhalt": "Örnek içerik",
@@ -427,7 +426,8 @@
     "moschee": {
       "titel": "Yeni camimiz açıldı",
       "projekt": "Projeye git",
-      "geschichte": "Tarihçemiz"
+      "geschichte": "Tarihçemiz",
+      "text": "Yeni Fatih Camii tamamlandı – namaz, eğitim ve buluşma için herkese açık bir yer."
     },
     "fasten": {
       "vorschauTitel": "Oruç yayı – önizleme",
@@ -435,6 +435,47 @@
       "zeigen": "Oruç yayını göster (Ramazan önizlemesi)",
       "zurueck": "Günün yayını göster",
       "ramadan": "İmsakiye ve Ramazan"
+    },
+    "ueberblick": {
+      "kennung": "Bir bakışta",
+      "titel": "Burada neler var",
+      "neu": "Yeni",
+      "text": "Namaz, Kur’an, öğrenme ve cemaat hayatı – hepsi tek yerde; Almanca, Türkçe ve İngilizce.",
+      "gebetszeiten": {
+        "titel": "Namaz Vakitleri",
+        "text": "Wetzlar için vakitler – bugün, bu hafta ve bütün ay.",
+        "link": "Vakitleri gör"
+      },
+      "quran": {
+        "titel": "Kur’an",
+        "text": "114 surenin tamamını okuyun – meal ve renkli tecvid kurallarıyla.",
+        "link": "Kur’an’ı aç"
+      },
+      "lernApp": {
+        "titel": "Öğrenme uygulaması",
+        "text": "Küçük derslerle dil ve bilgi alıştırmaları – hesap olmadan, internetsiz de.",
+        "link": "Hemen öğren"
+      },
+      "elifbe": {
+        "titel": "Elifba",
+        "text": "Arap alfabesi adım adım – yazım yolu ve alıştırmalarla.",
+        "link": "Elifba’yı aç"
+      },
+      "veranstaltungen": {
+        "titel": "Etkinlikler",
+        "text": "Kurslar, buluşmalar ve özel günler – neler olduğunu görün, hemen kaydolun.",
+        "link": "Etkinlikleri gör"
+      },
+      "mitglied": {
+        "titel": "Üye ol",
+        "text": "Cemaatin bir parçası olun – başvuru çevrim içi doldurulabilir.",
+        "link": "Başvuruya git"
+      },
+      "kontakt": {
+        "titel": "İletişim",
+        "text": "Soru, istek veya ziyaret için bize yazın.",
+        "link": "İletişime geç"
+      }
     }
   },
   "veranstaltungen": {

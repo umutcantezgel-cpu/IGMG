@@ -105,13 +105,14 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string, scha
       schluessel: 'bildung',
       label: t('bildung'),
       punkte: [
+        // Fünf Punkte, vom Überblick zum Anmelden: Übersicht, Üben (Lern-App), Elifbe, Kurse vor Ort, Voranmeldung.
+        // „Islamunterricht“ stand hier vorläufig mit demselben Ziel wie Islam › Wissen (Laufbuch D-07, MENSCHEN M-022) –
+        // die Dopplung entfällt, bis es ein eigenes Angebot gibt.
         p('lernen', 'lernen', 'bLernen', '/lernen'),
         ...(schalter.lernApp ? [{ schluessel: 'lern-app', label: t('lernApp'), beschreibung: t('bLernApp'), href: schalter.lernApp }] : []),
         p('elifbe', 'elifbe', 'bElifbe', '/elifbe'),
-        p('voranmeldung', 'voranmeldung', 'bVoranmeldung', '/bildung/voranmeldung'),
         p('korankurse', 'korankurse', 'bKorankurse', '/bildung/korankurse'),
-        // Laufbuch D-07: „Islamunterricht“ vorläufig → Islamisches Wissen (MENSCHEN M-022)
-        p('islamunterricht', 'islamunterricht', 'bIslamunterricht', '/islamisches-wissen'),
+        p('voranmeldung', 'voranmeldung', 'bVoranmeldung', '/bildung/voranmeldung'),
       ],
     },
   ];

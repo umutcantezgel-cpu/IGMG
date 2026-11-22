@@ -1,13 +1,13 @@
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { waehle, type Sprache } from '@/lib/i18n/inhalt';
-import { MitPlatzhaltern } from './Platzhalter';
+import { ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
 
 /**
  * Mehrsprachiger Datenbanktext mit sichtbarem Rückfall (K-02, ADR 0002): Fehlt die Sprache, erscheint
  * der deutsche Text mit lang="de" (Screenreader sprechen ihn richtig aus).
- * `platzhalter` (Sichtabnahme Runde 2, PR-3; standardmäßig aus): Teile „[…]“ erscheinen als Platzhalter der Gemeinde
- * (gestrichelt, `data-platzhalter`). Nur dort einschalten, wo eckige Klammern Platzhalter sind – in Übersetzungen
- * stehen sie auch für Einschübe und dürfen dort nicht markiert werden.
+ * `platzhalter` (standardmäßig aus): Teile „[…]“ sind Platzhalter der Gemeinde und erscheinen öffentlich nicht – Sätze
+ * mit Platzhalter entfallen, bleibt nichts übrig, entfällt das Element (`src/lib/inhalt/platzhalter.ts`). Nur dort
+ * einschalten, wo eckige Klammern Platzhalter sind – in Übersetzungen stehen sie auch für Einschübe und müssen bleiben.
  */
 export function Text({
   feld,
@@ -23,15 +23,20 @@ export function Text({
   platzhalter?: boolean;
 }) {
   const w = waehle(feld, sprache);
-  if (!w.text) return null;
+  const text = platzhalter ? ohnePlatzhalter(w.text) : w.text;
+  if (!text) return null;
   return (
     <Tag lang={w.rueckfall ? 'de' : undefined} className={className}>
-      {platzhalter ? <MitPlatzhaltern text={w.text} /> : w.text}
+      {text}
     </Tag>
   );
 }
 
-export function textMitSprache(feld: Mehrsprachig | null | undefined, sprache: Sprache) {
+/**
+ * Text und Sprachkennung eines mehrsprachigen Feldes. `platzhalter`: wie bei `Text` – Sätze mit Platzhalter „[…]“
+ * entfallen; `text` ist dann leer, wenn nichts übrig bleibt.
+ */
+export function textMitSprache(feld: Mehrsprachig | null | undefined, sprache: Sprache, { platzhalter = false } = {}) {
   const w = waehle(feld, sprache);
-  return { text: w.text, lang: w.rueckfall ? 'de' : undefined };
+  return { text: platzhalter ? ohnePlatzhalter(w.text) : w.text, lang: w.rueckfall ? 'de' : undefined };
 }

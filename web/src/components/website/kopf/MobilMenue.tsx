@@ -3,7 +3,6 @@
 import { Check, ChevronDown, ChevronUp, House, LogIn, Menu, X } from 'lucide-react';
 import NextLink from 'next/link';
 import { type CSSProperties, type KeyboardEvent, type ReactNode, useRef, useState } from 'react';
-import type { Locale } from '@/i18n/routing';
 import type { Bereich, Menue } from '../navigation';
 import type { SprachEintrag } from './Sprachwahl';
 
@@ -52,6 +51,7 @@ export function MobilMenue({
   sprache,
   sprachen,
   texte,
+  vorabladen = true,
 }: {
   menues: Menue[];
   startHref: string;
@@ -63,10 +63,13 @@ export function MobilMenue({
   konto?: MobilKonto;
   aktiv: Bereich;
   aktuell: string;
-  sprache: Locale;
+  sprache: string;
   sprachen: SprachEintrag[];
   texte: Texte;
+  /** false im Lernbereich: Die Website liegt dort in einem anderen Wurzel-Layout – Vorabladen brächte nur Anfragen */
+  vorabladen?: boolean;
 }) {
+  const prefetch = vorabladen ? undefined : false;
   const dialog = useRef<HTMLDialogElement>(null);
   const [offen, setOffen] = useState<Record<string, boolean>>({ [aktiv]: true });
   const schliessen = () => dialog.current?.close();
@@ -209,6 +212,7 @@ export function MobilMenue({
                 <li>
                   <NextLink
                     href={startHref}
+                    prefetch={prefetch}
                     onClick={schliessen}
                     aria-current={aktuell === 'startseite' ? 'page' : undefined}
                     className={zeile(aktuell === 'startseite')}
@@ -220,6 +224,7 @@ export function MobilMenue({
                 <li>
                   <NextLink
                     href={gebetszeitenHref}
+                    prefetch={prefetch}
                     onClick={schliessen}
                     aria-current={aktuell === 'gebetszeiten' ? 'page' : undefined}
                     className={zeile(aktuell === 'gebetszeiten')}
@@ -270,6 +275,7 @@ export function MobilMenue({
                             <li key={p.schluessel}>
                               <NextLink
                                 href={p.href}
+                                prefetch={prefetch}
                                 onClick={schliessen}
                                 aria-current={istAktuell ? 'page' : undefined}
                                 className={`flex min-h-12 items-center gap-3 rounded-md px-3 py-2 text-18 no-underline transition duration-(--dauer-rueckmeldung) ${istAktuell ? 'bg-weiss font-bold text-gruen-800 shadow-s1' : 'text-tinte hover:bg-weiss'}`}

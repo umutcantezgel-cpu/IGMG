@@ -19,6 +19,7 @@ export function KopfMenues({
   aktuell,
   label,
   aktuelleSeiteText,
+  vorabladen = true,
 }: {
   menues: Menue[];
   startHref: string;
@@ -27,7 +28,10 @@ export function KopfMenues({
   aktuell: string;
   label: string;
   aktuelleSeiteText: string;
+  /** false im Lernbereich: Die Website liegt dort in einem anderen Wurzel-Layout – Vorabladen brächte nur Anfragen */
+  vorabladen?: boolean;
 }) {
+  const prefetch = vorabladen ? undefined : false;
   const [offen, setOffen] = useState<string | null>(null);
   const wurzel = useRef<HTMLElement>(null);
   const schliessen = useCallback(
@@ -45,6 +49,7 @@ export function KopfMenues({
         <li className="relative">
           <Link
             href={startHref}
+            prefetch={prefetch}
             aria-current={aktuell === 'startseite' ? 'page' : undefined}
             className={`relative inline-flex min-h-12 items-center rounded-md px-3 text-18 font-bold whitespace-nowrap no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 ${aktiv === 'startseite' ? 'text-gruen-800' : 'text-tinte'}`}
           >
@@ -83,6 +88,7 @@ export function KopfMenues({
                       <li key={p.schluessel}>
                         <Link
                           href={p.href}
+                          prefetch={prefetch}
                           aria-current={istAktuell ? 'page' : undefined}
                           onClick={() => setOffen(null)}
                           className={`flex min-h-14 items-center gap-3 rounded-md px-3 py-2.5 no-underline transition duration-(--dauer-rueckmeldung) ${istAktuell ? 'bg-gruen-100 text-gruen-800' : 'text-tinte hover:bg-gruen-50 hover:text-tinte'}`}

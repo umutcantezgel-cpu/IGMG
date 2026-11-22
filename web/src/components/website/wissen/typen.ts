@@ -20,7 +20,6 @@ export type WissenTexte = {
   videosLeer: string;
   videoAnsehen: string;
   videoHinweis: string;
-  videoPlatzhalter: string;
   expertenTitel: string;
   expertenBadge: string;
   mehrErfahren: string;
@@ -43,7 +42,8 @@ export type ArtikelAnzeige = {
   schluessel: string;
   thema: string;
   titel: Anzeige;
-  autor: Anzeige;
+  /** `null`, solange der Name ein Platzhalter der Gemeinde „[…]“ ist: Dann entfällt die Autorzeile. */
+  autor: Anzeige | null;
   lesezeit: string;
   /** Bereits formatiert („Mo., 15. Jan. 2024“). */
   datum: string;
@@ -60,13 +60,15 @@ export type VideoAnzeige = {
   /** Fertiger Text für das Vorschaubild („Vorschaubild: Titel“). */
   vorschau: string;
   /**
-   * Link „Auf YouTube ansehen“ (Server-Komponente `VideoLink`, fertig gerendert), nur bei gepflegter YouTube-ID. Bewusst nur
-   * ein Link und keine Einbettung nach Klick; vom Server, damit Markup und Zeichen nicht ins Client-Bundle gehen – die
-   * Wissensseiten liegen beim JavaScript an der Grenze (K-12, Marktstart P7, Welle 3).
+   * Link „Auf YouTube ansehen“ (Server-Komponente `VideoLink`, fertig gerendert). Bewusst nur ein Link und keine
+   * Einbettung nach Klick; vom Server, damit Markup und Zeichen nicht ins Client-Bundle gehen – die Wissensseiten liegen
+   * beim JavaScript an der Grenze (K-12, Marktstart P7, Welle 3). Videos ohne YouTube-ID stehen nicht auf der Seite
+   * (`anzeige.tsx`): Ohne Quelle gäbe es nichts anzusehen.
    */
-  link?: ReactNode;
+  link: ReactNode;
 };
 
+/** Fachgebiet, Institution, Bio und Artikelzahl sind leer, solange sie Platzhalter sind: Die Zeile entfällt dann. */
 export type ExpertenAnzeige = {
   schluessel: string;
   name: Anzeige;

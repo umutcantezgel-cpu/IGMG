@@ -192,7 +192,9 @@ test.describe('Adressen, Manifest und Service Worker', () => {
         name: TEXTE[ui].meta.name,
         display: 'standalone',
       });
-      expect(String(m.name)).toMatch(/^\[.+\]$/);
+      // kein Platzhalter mehr: der Name steht fest (ADR 0050)
+      expect(String(m.name)).not.toMatch(/[\[\]]/);
+      expect(String(m.name)).toContain('IGMG');
       expect(m.icons.some((i) => i.purpose === 'maskable')).toBe(true);
       for (const i of m.icons) expect((await request.get(i.src)).status(), i.src).toBe(200);
     }

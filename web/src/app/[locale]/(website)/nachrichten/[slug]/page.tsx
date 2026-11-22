@@ -1,5 +1,5 @@
 import type { JSONContent } from '@tiptap/core';
-import { ArrowLeft, BookOpen, Bookmark, Calendar, Languages } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpen, Bookmark, Calendar, Languages } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { MedienBild, SIZES_KOPF } from '@/components/website/MedienBild';
 import { JsonLd } from '@/components/website/JsonLd';
+import { LOGOS } from '@/components/website/navigation';
 import { PageHeader } from '@/components/website/PageHeader';
 import { RichText } from '@/components/website/RichText';
 import { morphStil } from '@/components/website/morph';
@@ -21,7 +22,8 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
-import { auszugImRumpf } from '@/lib/inhalt/tiptap';
+import { ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
+import { auszugImRumpf, ohnePlatzhalterImDokument } from '@/lib/inhalt/tiptap';
 import { nachricht } from '@/lib/seo/jsonld';
 import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeAehnlicheNachrichten, ladeNachricht, ladeNachrichtenSlugs, type NachrichtDaten } from '@/server/queries/nachrichten';
@@ -44,16 +46,21 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/nachrich
     pfad: { pathname: '/nachrichten/[slug]', params: { slug } },
     eigenesBild: true,
     titel: text(n.titel, sprache),
-    // Ohne Kurztext: Untertitel der Übersicht statt der Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
-    beschreibung: text(n.kurztext, sprache) || t('untertitel'),
+    // Ohne Kurztext (auch: nur Sätze mit Platzhalter der Gemeinde): Untertitel der Übersicht statt der
+    // Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
+    beschreibung: ohnePlatzhalter(text(n.kurztext, sprache)) || t('untertitel'),
   });
 }
 
-/** Rich-Text in der gewählten Sprache; fehlt sie, zeigt die Seite den deutschen Text mit Kennzeichnung (K-02). */
+/**
+ * Rich-Text in der gewählten Sprache; fehlt sie, zeigt die Seite den deutschen Text mit Kennzeichnung (K-02). Sätze mit
+ * Platzhalter der Gemeinde „[…]“ entfallen (`ohnePlatzhalterImDokument`); bleibt nichts übrig, gibt es keinen Rumpf.
+ */
 function inhaltFuer(inhalt: NachrichtDaten['inhalt'], sprache: Locale): { doc: JSONContent; rueckfall: boolean } | null {
   if (!inhalt) return null;
   const eigene = sprache === 'de' ? undefined : inhalt[sprache];
-  return eigene ? { doc: eigene, rueckfall: false } : { doc: inhalt.de, rueckfall: sprache !== 'de' };
+  const doc = ohnePlatzhalterImDokument(eigene ?? inhalt.de);
+  return doc.content?.length ? { doc, rueckfall: !eigene && sprache !== 'de' } : null;
 }
 
 /** Nachrichtendetail (design/NewsDetails.dc.html, Blatt S07). URL-Daten nur innerhalb von Suspense lesen (MUSTER 1). */
@@ -77,7 +84,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
     getTranslations('allgemein'),
   ]);
   const titel = textMitSprache(n.titel, sprache);
-  const kurz = textMitSprache(n.kurztext, sprache);
+  // Kurztext und Rumpf ohne die Sätze mit Platzhalter der Gemeinde (`src/lib/inhalt/platzhalter.ts`)
+  const kurz = textMitSprache(n.kurztext, sprache, { platzhalter: true });
   const inhaltRoh = inhaltFuer(n.inhalt, sprache);
   // Auszug und Rumpf (H-C02): Steht der Kurztext schon als erster Absatz im Rumpf, erscheint er nur einmal
   const auszug = inhaltRoh ? auszugImRumpf(inhaltRoh.doc, kurz.text) : null;
@@ -87,8 +95,6 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
   const rueckfall = sprache !== 'de' && (titel.lang === 'de' || (kurz.text !== '' && kurz.lang === 'de') || inhalt?.rueckfall === true);
   const veroeffentlicht = new Date(n.veroeffentlichtAm);
   const aehnliche = await ladeAehnlicheNachrichten(n.kategorie, n.id);
-  const autorName = t('autorName');
-  const autorFunktion = t('autorFunktion');
 
   return (
     <Seitenrahmen
@@ -161,7 +167,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                   {t('datumZeit', { datum: datumLang(veroeffentlicht, sprache), zeit: uhrzeit(veroeffentlicht, sprache) })}
                 </time>
               </span>
-              {n.lesezeit ? (
+              {/* Ohne Rumpf (nur Sätze mit Platzhalter) gibt es nichts zu lesen: keine Lesezeit */}
+              {n.lesezeit && inhalt ? (
                 <span className="inline-flex items-center gap-1.5">
                   <BookOpen aria-hidden className="size-4" />
                   {t('lesezeit', { minuten: n.lesezeit })}
@@ -175,7 +182,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
               ) : null}
             </div>
             <div className="flex flex-wrap items-center justify-between gap-4 border-y border-linie py-4">
-              <AutorZeile name={autorName} funktion={autorFunktion} />
+              {/* Absender ist die Gemeinde mit ihrem Logo – keine erfundene Person (G-04) */}
+              <AutorZeile name={t('autorName')} funktion={t('autorFunktion')} logo={LOGOS.at} />
               <div className="flex flex-wrap gap-2">
                 <TeilenKnopf titel={titel.text} texte={{ teilen: t('teilen'), kopiert: t('teilenKopiert'), fehler: t('teilenFehler') }} />
               </div>
@@ -194,7 +202,19 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
               bilder={n.textBilder}
               sprache={sprache}
             />
-          ) : null}
+          ) : (
+            // Kein Rumpf (nicht gepflegt oder nur Sätze mit Platzhalter): ein ruhiger Satz mit dem Weg zur Gemeinde
+            <div className="flex flex-col items-start gap-2">
+              <p className="max-w-text text-pretty text-tinte-2">{t('ohneInhalt')}</p>
+              <Link
+                href="/kontakt"
+                className="inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4"
+              >
+                {t('ohneInhaltKontakt')}
+                <ArrowRight aria-hidden className="size-5" />
+              </Link>
+            </div>
+          )}
           {n.schlagwoerter.length ? (
             <section aria-labelledby="nachricht-schlagwoerter" className="flex flex-col gap-3">
               <h2

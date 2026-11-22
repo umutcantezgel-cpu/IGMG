@@ -8,6 +8,7 @@ type Wert = UeberUnsInhalt['werte'][number];
 /**
  * Werte als ruhige Liste (design/AboutUs.dc.html D:62–73, H-B12): keine Karten und keine Symbolkacheln, eine grüne
  * Kopflinie je Wert, das Symbol steht vor dem Titel. Raster `raster-kacheln` (mindestens 260 px je Spalte).
+ * Sätze mit Platzhaltern der Gemeinde „[…]“ erscheinen nicht; Werte ohne Titel gibt die Seite nicht herein.
  */
 export function Werte({ eintraege, sprache }: { eintraege: Wert[]; sprache: Sprache }) {
   return (
@@ -19,9 +20,9 @@ export function Werte({ eintraege, sprache }: { eintraege: Wert[]; sprache: Spra
             <article className="flex h-full flex-col gap-3 border-t-2 border-gruen-700 pt-5">
               <h3 className="flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal">
                 <Icon aria-hidden className="size-6 shrink-0 text-gruen-700" />
-                <Text feld={w.titel} sprache={sprache} />
+                <Text feld={w.titel} sprache={sprache} platzhalter />
               </h3>
-              <Text feld={w.beschreibung} sprache={sprache} als="p" className="text-18 text-tinte-2" />
+              <Text feld={w.beschreibung} sprache={sprache} als="p" platzhalter className="text-18 text-tinte-2" />
             </article>
           </li>
         );

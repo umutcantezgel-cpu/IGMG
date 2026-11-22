@@ -7,6 +7,17 @@
 - `_gemeinde/`, `_lernapp/` und `_archiv/` sind Unterlagen abgeschlossener Läufe: dort nur auf ausdrücklichen Auftrag ändern.
 - Was nur Menschen tun können: `_lernapp/MENSCHEN.md` (LM-01…LM-40) und `_lernapp/GO-LIVE.md`.
 
+## Nachtrag 22.11.2026: ein Rahmen für Website und Lern-App, öffentliche Seiten ohne Platzhalter
+Auftrag des Nutzers vor der Vorstellung am 23.11.2026 („Verschmelze, fusioniere bitte alles … so weit wie möglich ohne
+Platzhalter“). Entscheidungen und Grenzen: `web/docs/adr/0050-ein-rahmen-fuer-website-und-lernbereich.md`.
+- Die Lern-App (`/lern-app/<ui>`) trägt Kopf und Fuß der Website (`web/src/components/lernapp/Rahmen.tsx`), darunter die
+  Leiste „Lern-App“. Website-Sprache im Lernbereich aus dem Root-Parameter `[ui]` (`web/src/i18n/request.ts`).
+- Platzhalter der Gemeinde „[…]“ erscheinen öffentlich nicht mehr (`web/src/lib/inhalt/platzhalter.ts`); sie bleiben in der
+  Datenbank und in der Verwaltung. Ausnahme: Rechtstexte (Impressum, Datenschutz, Barrierefreiheit) – dort weiter sichtbar,
+  bis Gemeinde und Rechtsberatung liefern. Nichts wurde erfunden; was fehlt, steht in `_lauf/MENSCHEN.md`.
+- Name der Lern-App: „IGMG Wetzlar – Lernen“ / „IGMG Lernen“ (ar nur die Marke); der Vorstand kann ihn ändern.
+- Lokal: CSS-Änderungen übernimmt `next dev` erst nach `rm -rf web/.next/dev/cache` (wie L-E09 beim Bau).
+
 ## Übergabe 27.10.2026 (alte Umgebung beendet, neue Umgebung übernimmt)
 Auf `main` (Stand dieses Commits) liegen zwei Nachträge auf Nutzerauftrag, beide schon gepusht:
 - **L3-E22** Wissenskurs als „Entwurf zur Prüfung“ auf der Testdomain (live geprüft, fertig).

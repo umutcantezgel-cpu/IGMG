@@ -37,7 +37,8 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Ramadan (AUFTRAG 3.10, B-20): Imsakiye aller Ramadan-Tage aus den Gebetszeiten (Import, sonst Berechnung – wie
  * /gebetszeiten), druckbar mit hervorgehobenem Imsak und Iftar; Fastenbogen; Kadir-Nacht und Bayram aus den
- * besonderen Tagen; Teravih und Fitre als Platzhalter der Gemeinde. Außerhalb des Ramadan ein Hinweis ohne Countdown
+ * besonderen Tagen; zu Teravih, Fitre und gemeinsamem Iftar je ein neutraler Satz (die Gemeinde gibt Zeit, Betrag und
+ * Termine vor dem Ramadan bekannt – keine Platzhalter „[…]“, keine erfundenen Angaben). Außerhalb des Ramadan ein Hinweis ohne Countdown
  * („beginnt voraussichtlich am …“) und – mit Schalter `ramadan_vorschau` – die Imsakiye als Vorschau. In beiden Zweigen der
  * Ramadan-Begleiter der IGMG; beim Fitre-Abschnitt die Erklärung zu Zakat, Fitra und Kurban (Plan Marktstart P7).
  */

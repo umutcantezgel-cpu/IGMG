@@ -2,6 +2,7 @@ import { Award, Building2, Mail, Phone, UserRound } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { cn } from '@/lib/utils';
 import { textMitSprache } from './Text';
 
@@ -25,9 +26,9 @@ export type PersonKarte = {
   telefon?: string;
 };
 
-/** Initialen aus den ersten zwei Namensworten; Platzhalter „[…]“ bekommen ein Personensymbol (G-05). */
-function initialen(name: string): string | null {
-  if (name.startsWith('[')) return null;
+/** Initialen aus den ersten zwei Namensworten; ohne Namen (fehlt oder Platzhalter „[…]“, G-05) ein Personensymbol. */
+function initialen(name: string | null): string | null {
+  if (!name) return null;
   const worte = name.split(/\s+/).filter((w) => /^\p{L}/u.test(w));
   if (worte.length === 0) return null;
   return worte
@@ -63,6 +64,8 @@ function Jahresmarke() {
  * Karte einer Person (design/PersonCard.dc.html, Blatt C10). Varianten: board (Aufgabenbereiche) und leader
  * (Errungenschaften in der Chronik). Kein Foto: Initialen oder Personensymbol als Ersatz (K-11: Icons aria-hidden).
  * Server-Komponente ohne Interaktion außer dem Mail-Link; die Karte selbst ist nicht verlinkt und hat darum keinen Hover.
+ * Platzhalter „[…]“ erscheinen nicht (`angabe`): Fehlt der Name, trägt das Amt die Hauptzeile (dann ohne Amts-Etikett
+ * darunter); fehlt die Telefonnummer, entfällt ihre Zeile. Ohne Namen und ohne Amt gibt es keine Karte.
  */
 export async function PersonCard({ person, variante, sprache }: { person: PersonKarte; variante: 'board' | 'leader'; sprache: Sprache }) {
   const t = await getTranslations('personCard');
@@ -71,7 +74,12 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
   const rollenSprache = person.rolle ? undefined : funktion?.lang;
   const eintraege = (person.liste ?? []).map((e) => textMitSprache(e, sprache));
   const ListenIcon = variante === 'leader' ? Award : Building2;
-  const ini = initialen(person.name);
+  const name = angabe(person.name);
+  const telefon = angabe(person.telefon);
+  // Hauptzeile: der Name, sonst das Amt (mit seiner Sprachkennung, falls es auf Deutsch zurückfällt)
+  const titel = name ?? rolle;
+  if (!titel) return null;
+  const ini = initialen(name);
 
   return (
     <article
@@ -89,16 +97,18 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
         >
           {ini ?? <UserRound aria-hidden className="size-6" />}
         </span>
-        <h3 className="min-w-0 text-24 leading-tight font-semibold break-words">{person.name}</h3>
+        <h3 lang={name ? undefined : rollenSprache} className="min-w-0 text-24 leading-tight font-semibold break-words">
+          {titel}
+        </h3>
       </div>
-      {person.aktuell || rolle || person.seit ? (
+      {person.aktuell || (name && rolle) || person.seit ? (
         <div className="flex flex-wrap gap-2">
           {person.aktuell ? (
             <span className="inline-flex rounded-pill bg-gruen-700 px-3 py-0.5 text-16 leading-normal font-bold text-weiss">
               {t('aktuell')}
             </span>
           ) : null}
-          {rolle ? (
+          {name && rolle ? (
             <span
               lang={rollenSprache}
               className="inline-flex rounded-pill bg-gruen-50 px-3 py-0.5 text-16 leading-normal font-bold text-gruen-800"
@@ -139,16 +149,16 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
           <h4 className="mb-1 font-text font-bold tracking-normal text-tinte-2">{t('kontakt')}</h4>
           <a
             href={`mailto:${person.email}`}
-            aria-label={`${person.email}: ${person.name}`}
+            aria-label={`${person.email}: ${titel}`}
             className="flex min-h-12 items-center gap-2 wrap-anywhere text-gruen-700 underline underline-offset-3"
           >
             <Mail aria-hidden className="size-4 shrink-0" />
             {person.email}
           </a>
-          {person.telefon ? (
+          {telefon ? (
             <span className="flex items-center gap-2 text-tinte-2">
               <Phone aria-hidden className="size-4 shrink-0" />
-              {person.telefon}
+              {telefon}
             </span>
           ) : null}
         </div>

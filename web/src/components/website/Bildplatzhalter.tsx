@@ -1,42 +1,37 @@
 import { cn } from '@/lib/utils';
+import { Achtstern } from './Icons';
 
-/** Beschriftete Streifen-Fläche statt Foto (readme: „Bilder: beschriftete Streifen-Platzhalter“, M-018). */
+/**
+ * Bildfläche ohne Foto: ruhiges Markenmotiv (Achtstern-Gitter auf hellem Grün, in der Mitte ein Achtstern) statt der
+ * früheren beschrifteten Streifen („Foto: …“, M-018). Solange die Gemeinde kein Foto hinterlegt hat, wirkt die Fläche
+ * gestaltet und nicht leer – ohne etwas vorzutäuschen: keine generierten Moscheebilder, keine Kuppel- oder
+ * Halbmondgrafik. Rein dekorativ (`aria-hidden`); `beschriftung` nennt weiterhin, welches Foto hierher gehört – nur noch
+ * für den Code (Aufrufer bleiben unverändert), auf der Seite steht sie nicht.
+ */
 export function Bildplatzhalter({
-  beschriftung,
   className,
-  kurz,
-  kurzBisMd,
   morph,
-  lang,
 }: {
+  /** Welches Foto hierher gehört (nur Dokumentation im Aufruf; nicht sichtbar) */
   beschriftung: string;
   className?: string;
+  /** Früher: kurze sichtbare Beschriftung; ohne Wirkung */
   kurz?: string;
-  /** Kurze Beschriftung nur unter 768 px (Karte, die auf dem Telefon zur Kompaktzeile wird); ab md die volle */
+  /** Früher: kurze Beschriftung unter 768 px; ohne Wirkung */
   kurzBisMd?: string;
   /** Markierung für den Seitenwechsel (O-13): SeitenUebergang vergibt beim Klick den Übergangsnamen */
   morph?: string;
-  /** Sprache der Beschriftung; `de` bei deutschem Rückfall (K-02) */
+  /** Früher: Sprache der Beschriftung; ohne Wirkung */
   lang?: string;
 }) {
   return (
     <div
-      role="img"
-      aria-label={beschriftung}
-      lang={lang}
+      aria-hidden="true"
       data-morph={morph}
-      className={cn('flex items-center justify-center px-4 text-center text-16 text-tinte-2 streifen-platzhalter', className)}
+      data-bildflaeche
+      className={cn('flex items-center justify-center overflow-hidden achtstern-flaeche text-gruen-700/25', className)}
     >
-      <span aria-hidden className="rounded-lg bg-weiss px-3 py-1 text-balance shadow-s1">
-        {kurzBisMd ? (
-          <>
-            <span className="md:hidden">{kurzBisMd}</span>
-            <span className="max-md:hidden">{beschriftung}</span>
-          </>
-        ) : (
-          (kurz ?? beschriftung)
-        )}
-      </span>
+      <Achtstern className="h-2/5 max-h-24 min-h-6 w-auto" />
     </div>
   );
 }

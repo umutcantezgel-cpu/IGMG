@@ -111,8 +111,11 @@ export async function EventCard({
   const liste = variante === 'liste';
   const kante = org ? org.kante : 'lg:border-gruen-700';
   const bildKlassen = aufmacher ? 'h-40 lg:h-full lg:min-h-75' : 'h-40';
+  // Ort und Zielgruppe ohne Platzhalter der Gemeinde „[…]“ (`src/lib/inhalt/platzhalter.ts`): Sätze damit entfallen
+  const ort = textMitSprache(v.ort, sprache, { platzhalter: true });
+  const zielgruppe = textMitSprache(v.zielgruppe ?? v.teilnehmerHinweis, sprache, { platzhalter: true });
   // Ohne Ort und Zielgruppe entfällt die Angabenliste; dann rücken Knöpfe bzw. Link an den Kartenboden
-  const angabenZeigen = Boolean(v.ort || v.zielgruppe || v.teilnehmerHinweis);
+  const angabenZeigen = Boolean(ort.text || zielgruppe.text);
   const zeile = (Icon: typeof MapPin, label: string, inhalt: React.ReactNode) => (
     <div className="flex items-start gap-3">
       <dt className="flex pt-0.75 text-gruen-700">
@@ -251,6 +254,7 @@ export async function EventCard({
           feld={v.kurztext}
           sprache={sprache}
           als="p"
+          platzhalter
           className={cn('text-pretty text-tinte-2', (!listenArt || liste) && 'max-md:hidden')}
         />
         {angabenZeigen ? (
@@ -261,10 +265,8 @@ export async function EventCard({
               liste && 'max-md:hidden',
             )}
           >
-            {v.ort ? zeile(MapPin, t('ort'), <Text feld={v.ort} sprache={sprache} />) : null}
-            {v.zielgruppe || v.teilnehmerHinweis
-              ? zeile(Users, t('zielgruppe'), <Text feld={v.zielgruppe ?? v.teilnehmerHinweis} sprache={sprache} />)
-              : null}
+            {ort.text ? zeile(MapPin, t('ort'), <span lang={ort.lang}>{ort.text}</span>) : null}
+            {zielgruppe.text ? zeile(Users, t('zielgruppe'), <span lang={zielgruppe.lang}>{zielgruppe.text}</span>) : null}
           </dl>
         ) : null}
         {listenArt ? (

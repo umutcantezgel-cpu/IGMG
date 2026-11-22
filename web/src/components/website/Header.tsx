@@ -46,14 +46,22 @@ export async function Header({
   aktuell,
   sprachZiel,
   konto,
+  lernbereich,
 }: {
   aktiv: Bereich;
   aktuell: string;
   sprachZiel: SprachZiel;
   konto?: KopfKonto;
+  /**
+   * Nur im Lernbereich (`/lern-app/<ui>`, eigenes Wurzel-Layout): derselbe Kopf wie auf der Website, aber die Sprachwahl
+   * nennt die Oberflächensprachen des Lernbereichs (de, tr, ar) mit ihren Adressen, und „Anmelden“ führt – mit Konten –
+   * auf die Anmeldung im Lernbereich (zurück an dieselbe Stelle).
+   */
+  lernbereich?: { sprache: string; sprachen: SprachEintrag[]; anmeldenHref?: string };
 }) {
   const sprache = (await getLocale()) as Locale;
-  const anmeldenHref = entscheide('konten', process.env, null) ? pfadFuer('/anmelden', sprache) : '/verwaltung/anmelden';
+  const anmeldenHref =
+    lernbereich?.anmeldenHref ?? (entscheide('konten', process.env, null) ? pfadFuer('/anmelden', sprache) : '/verwaltung/anmelden');
   const meinBereichHref = pfadFuer('/mein-bereich', sprache);
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
@@ -75,17 +83,23 @@ export async function Header({
     ...m,
     punkte: m.punkte.map(({ logo, ...p }) => (logo ? { ...p, logoBild: bildAttribute({ src: logo, alt: '', width: 32, height: 32 }) } : p)),
   }));
-  const sprachen: SprachEintrag[] = (['de', 'tr', 'en'] as const).map((code) => ({
-    code,
-    kurz: code.toUpperCase(),
-    name: ts(code),
-    href: sprachAdresse(sprachZiel, code),
-  }));
+  const sprachen: SprachEintrag[] =
+    lernbereich?.sprachen ??
+    (['de', 'tr', 'en'] as const).map((code) => ({
+      code,
+      kurz: code.toUpperCase(),
+      name: ts(code),
+      href: sprachAdresse(sprachZiel, code),
+    }));
+  const sprachAktuell = lernbereich?.sprache ?? sprache;
+  // Im Lernbereich nichts vorabladen: Die Website liegt in einem anderen Wurzel-Layout (ganze Seite beim Klick)
+  const vorabladen = !lernbereich;
   return (
     <header className="relative z-(--ebene-kopf) border-b border-linie bg-weiss" style={{ viewTransitionName: 'kopf' }}>
       <div className="mx-auto flex h-18 max-w-(--container-inhalt) items-center gap-3 px-4 sm:gap-4 md:px-8 menu:h-20">
         <Link
           href="/"
+          prefetch={vorabladen ? undefined : false}
           aria-label={t('logoLabel')}
           className="flex min-h-12 shrink-0 items-center gap-3 rounded-md py-1 pr-2 text-gruen-800 no-underline hover:text-gruen-800"
         >
@@ -100,6 +114,7 @@ export async function Header({
           aktuell={aktuell}
           label={t('hauptnavigation')}
           aktuelleSeiteText={t('aktuelleSeite')}
+          vorabladen={vorabladen}
         />
         <div className="ml-auto flex shrink-0 items-center gap-2">
           {/* Suche (ADR 0013): Link zur Suchseite, kein Client-JS; Design ohne Suchfeld → A-C01c. Unter 640 px im
@@ -114,7 +129,7 @@ export async function Header({
           </Link>
           <div className="hidden menu:block">
             <Sprachwahl
-              aktuell={sprache}
+              aktuell={sprachAktuell}
               sprachen={sprachen}
               texte={{ aendern: ts('aendern'), titel: ts('titel'), titelZweit: ts('titelZweit'), weitere: ts('weitere') }}
             />
@@ -151,8 +166,9 @@ export async function Header({
             }
             aktiv={aktiv}
             aktuell={aktuell}
-            sprache={sprache}
+            sprache={sprachAktuell}
             sprachen={sprachen}
+            vorabladen={vorabladen}
             texte={{
               menue: t('menue'),
               menueOeffnen: t('menueOeffnen'),

@@ -1,6 +1,7 @@
-import { CalendarClock, Phone, UserRound } from 'lucide-react';
+import { ArrowRight, CalendarClock, MessageCircle, Phone, UserRound } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { faqOhnePlatzhalter } from '@/components/website/bloecke/oeffentlich';
 import { FaqAnsicht } from '@/components/website/bloecke/TextBloecke';
 import { Quellenzeile } from '@/components/website/dachverband/Quellenzeile';
 import { Abfluege } from '@/components/website/hadsch-umra/Abfluege';
@@ -9,14 +10,14 @@ import { Videos } from '@/components/website/hadsch-umra/Videos';
 import { ZielLink } from '@/components/website/hadsch-umra/ZielLink';
 import { JsonLd } from '@/components/website/JsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
-import { MitPlatzhaltern } from '@/components/website/Platzhalter';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
-import { Text } from '@/components/website/Text';
+import { Text, textMitSprache } from '@/components/website/Text';
 import { WissenErklaerung } from '@/components/website/wissen/WissenErklaerung';
+import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { aktuelleHinweise } from '@/lib/hadsch-umra/auswahl';
 import { datumOhneWochentag } from '@/lib/i18n/format';
-import { waehle } from '@/lib/i18n/inhalt';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { faqSeite } from '@/lib/seo/jsonld';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { telefonHref } from '@/lib/telefon';
@@ -47,6 +48,9 @@ const tag = (datum: string) => new Date(`${datum}T12:00:00Z`);
  * Programme, Abflüge (vergangene ausgeblendet), Anmeldung mit Ansprechperson der Gemeinde, Unterlagen, Videos erst nach
  * Klick (K-14), Fragen mit FAQPage (K-16) und Quellenzeile. Inhalt aus dem Seiteninhalt „hadsch-umra“; statisch (K-01),
  * der Tag kommt aus `heuteBerlin()`. Nur die Videoflächen sind Client-Inseln (NachKlick, K-12).
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht (`src/lib/inhalt/platzhalter.ts`): Sätze mit Platzhalter entfallen
+ * (Einleitung, Fristen, Programme, Fragen). Die Karte der Ansprechperson zeigt nur genannte Angaben; solange weder Name
+ * noch Telefonnummer genannt sind, führt an ihrer Stelle eine Karte zur Kontaktseite der Gemeinde.
  */
 export default async function HadschUmraSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -57,21 +61,33 @@ export default async function HadschUmraSeite() {
     heuteBerlin(),
     ladeWissensThema(WISSEN_SLUG),
   ]);
-  const hinweise = aktuelleHinweise(inhalt.hinweise, heute.datum);
+  const sauber = (feld: Parameters<typeof textMitSprache>[0]) => textMitSprache(feld, sprache, { platzhalter: true });
+  const hinweise = aktuelleHinweise(inhalt.hinweise, heute.datum)
+    .map((h) => ({ ...h, anzeige: sauber(h.text) }))
+    .filter((h) => h.anzeige.text);
+  const programme = inhalt.programme.map((p) => ({ ...p, anzeige: sauber(p.titel) })).filter((p) => p.anzeige.text);
   const faqTitel = t('faqTitel');
   const faq = faqSeite(inhalt.faq, sprache);
-  const person = inhalt.ansprechperson;
+  const fragen = faqOhnePlatzhalter(inhalt.faq, sprache);
+  // Ansprechperson: nur genannte Angaben (Name, Telefonnummer, Sprechzeit)
+  const person = {
+    name: angabe(inhalt.ansprechperson.name),
+    telefon: angabe(inhalt.ansprechperson.telefon),
+    sprechzeit: sauber(inhalt.ansprechperson.sprechzeit),
+  };
   const telefon = telefonHref(person.telefon);
-  const einleitung = waehle(inhalt.einleitung, sprache);
+  const einleitung = sauber(inhalt.einleitung);
 
   return (
     <Seitenrahmen bereich="islam" seite="hadsch-umra" sprachZiel="/hadsch-umra" pfad={[{ label: tk('islam') }, { label: t('titel') }]}>
       {faq ? <JsonLd daten={faq} /> : null}
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-12 px-4 py-abschnitt-klein md:gap-16 md:px-8">
-        <p lang={einleitung.rueckfall ? 'de' : undefined} className="max-w-text text-20 leading-relaxed text-pretty">
-          <MitPlatzhaltern text={einleitung.text} />
-        </p>
+        {einleitung.text ? (
+          <p lang={einleitung.lang} className="max-w-text text-20 leading-relaxed text-pretty">
+            {einleitung.text}
+          </p>
+        ) : null}
 
         {hinweise.length ? (
           <section aria-labelledby="hu-hinweise" className="flex max-w-text flex-col gap-4 rounded-lg bg-sand p-5 md:p-6">
@@ -81,10 +97,10 @@ export default async function HadschUmraSeite() {
             </h2>
             <ul className="flex flex-col gap-4">
               {hinweise.map((h, i) => {
-                const text = waehle(h.text, sprache);
+                const text = h.anzeige;
                 return (
                   <li key={`${h.bis}-${i}`} className="flex flex-col gap-1">
-                    <p lang={text.rueckfall ? 'de' : undefined} className="text-18 font-bold">
+                    <p lang={text.lang} className="text-18 font-bold">
                       {text.text}
                     </p>
                     <p className="text-16 text-tinte-2">{t('hinweise.bis', { datum: datumOhneWochentag(tag(h.bis), sprache) })}</p>
@@ -105,7 +121,7 @@ export default async function HadschUmraSeite() {
           </section>
         ) : null}
 
-        {inhalt.programme.length ? (
+        {programme.length ? (
           <section aria-labelledby="hu-programme" className="flex flex-col gap-4">
             <div className="flex max-w-text flex-col gap-2">
               <h2 id="hu-programme" className={H2}>
@@ -114,19 +130,19 @@ export default async function HadschUmraSeite() {
               <p className="text-tinte-2">{t('programme.text')}</p>
             </div>
             <ul className="grid gap-4 md:grid-cols-2">
-              {inhalt.programme.map((p, i) => {
-                const titel = waehle(p.titel, sprache);
-                const text = p.text ? waehle(p.text, sprache) : null;
+              {programme.map((p, i) => {
+                const titel = p.anzeige;
+                const text = p.text ? sauber(p.text) : null;
                 return (
                   <li key={i} className={KARTE}>
                     <span className="self-start rounded-pill bg-gruen-50 px-3 py-0.5 text-16 font-bold text-gruen-800">
                       {t(`arten.${p.art}`)}
                     </span>
-                    <h3 lang={titel.rueckfall ? 'de' : undefined} className="font-text text-20 font-bold tracking-normal text-balance">
+                    <h3 lang={titel.lang} className="font-text text-20 font-bold tracking-normal text-balance">
                       {titel.text}
                     </h3>
                     {text?.text ? (
-                      <p lang={text.rueckfall ? 'de' : undefined} className="text-tinte-2">
+                      <p lang={text.lang} className="text-tinte-2">
                         {text.text}
                       </p>
                     ) : null}
@@ -156,32 +172,50 @@ export default async function HadschUmraSeite() {
             <Text feld={inhalt.anmeldung.text} sprache={sprache} als="p" platzhalter className="max-w-text text-18 leading-relaxed" />
             {inhalt.anmeldung.stelle ? <ZielLink ziel={inhalt.anmeldung.stelle} sprache={sprache} text={t('anmeldung.stelle')} /> : null}
           </div>
-          <div className={KARTE}>
-            <h3 className="flex items-center gap-2.5 font-text text-20 font-bold tracking-normal">
-              <UserRound aria-hidden className="size-5 shrink-0 text-gruen-700" />
-              {t('anmeldung.personTitel')}
-            </h3>
-            <p className="font-bold">
-              <MitPlatzhaltern text={person.name} />
-            </p>
-            <p className="flex min-h-12 items-center gap-2.5">
-              <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
-              <span className="sr-only">{t('anmeldung.telefon')}: </span>
-              {telefon ? (
-                <a href={telefon} className="font-bold text-gruen-700 underline underline-offset-4">
-                  {person.telefon}
-                </a>
-              ) : (
-                <MitPlatzhaltern text={person.telefon} />
-              )}
-            </p>
-            {person.sprechzeit?.de ? (
-              <p className="text-tinte-2">
-                <span className="font-bold text-tinte">{t('anmeldung.sprechzeit')}: </span>
-                <Text feld={person.sprechzeit} sprache={sprache} platzhalter />
-              </p>
-            ) : null}
-          </div>
+          {person.name || person.telefon ? (
+            <div className={KARTE}>
+              <h3 className="flex items-center gap-2.5 font-text text-20 font-bold tracking-normal">
+                <UserRound aria-hidden className="size-5 shrink-0 text-gruen-700" />
+                {t('anmeldung.personTitel')}
+              </h3>
+              {person.name ? <p className="font-bold">{person.name}</p> : null}
+              {person.telefon ? (
+                <p className="flex min-h-12 items-center gap-2.5">
+                  <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
+                  <span className="sr-only">{t('anmeldung.telefon')}: </span>
+                  {telefon ? (
+                    <a href={telefon} className="font-bold text-gruen-700 underline underline-offset-4">
+                      {person.telefon}
+                    </a>
+                  ) : (
+                    person.telefon
+                  )}
+                </p>
+              ) : null}
+              {person.sprechzeit.text ? (
+                <p className="text-tinte-2">
+                  <span className="font-bold text-tinte">{t('anmeldung.sprechzeit')}: </span>
+                  <span lang={person.sprechzeit.lang}>{person.sprechzeit.text}</span>
+                </p>
+              ) : null}
+            </div>
+          ) : (
+            // Noch keine Ansprechperson genannt: Fragen gehen über die Kontaktseite an die Gemeinde
+            <div className={KARTE}>
+              <h3 className="flex items-center gap-2.5 font-text text-20 font-bold tracking-normal">
+                <MessageCircle aria-hidden className="size-5 shrink-0 text-gruen-700" />
+                {t('anmeldung.gemeindeTitel')}
+              </h3>
+              <p className="text-tinte-2">{t('anmeldung.gemeindeText')}</p>
+              <Link
+                href="/kontakt"
+                className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4"
+              >
+                {t('anmeldung.gemeindeLink')}
+                <ArrowRight aria-hidden className="size-5" />
+              </Link>
+            </div>
+          )}
         </section>
 
         {inhalt.unterlagen.length ? (
@@ -209,10 +243,10 @@ export default async function HadschUmraSeite() {
         ) : null}
       </div>
       <div className="flex flex-col gap-12 pb-abschnitt md:gap-16">
-        {inhalt.faq.length ? (
+        {fragen.length ? (
           // Überschrift aus den Texten der Seite, in jeder Sprache gleich gesetzt (kein Rückfall-Hinweis lang="de")
           <FaqAnsicht
-            b={{ typ: 'faq', id: 'hadsch-umra-faq', titel: { de: faqTitel, tr: faqTitel, en: faqTitel }, eintraege: inhalt.faq }}
+            b={{ typ: 'faq', id: 'hadsch-umra-faq', titel: { de: faqTitel, tr: faqTitel, en: faqTitel }, eintraege: fragen }}
             sprache={sprache}
           />
         ) : null}

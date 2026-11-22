@@ -1,6 +1,8 @@
 import { ChartNoAxesColumnIncreasing, House, Library, Settings } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { pfadFuer } from '@/i18n/navigation';
+import { Footer } from '@/components/website/Footer';
+import { Header } from '@/components/website/Header';
+import type { SprachEintrag } from '@/components/website/kopf/Sprachwahl';
 import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { istKursSlug, kursInOberflaeche, OBERFLAECHEN, richtung, type Oberflaeche } from '@/lib/lernapp/kurse';
@@ -9,24 +11,26 @@ import { LernStern } from './Zeichen';
 
 export type Bereich = 'start' | 'fortschritt' | 'wortschatz' | 'einstellungen';
 
-/** Bereiche im Kopf; `spiegeln`: gerichtetes Zeichen (steigende Säulen), in `rtl` gespiegelt (KERN 4.0 §7). */
+/** Bereiche der Leiste „Lernen“; `spiegeln`: gerichtetes Zeichen (steigende Säulen), in `rtl` gespiegelt (KERN 4.0 §7). */
 const NAV = [
   { bereich: 'start', pfad: '', Zeichen: House, spiegeln: false },
   { bereich: 'fortschritt', pfad: 'fortschritt', Zeichen: ChartNoAxesColumnIncreasing, spiegeln: true },
   { bereich: 'wortschatz', pfad: 'wortschatz', Zeichen: Library, spiegeln: false },
+  { bereich: 'einstellungen', pfad: 'einstellungen', Zeichen: Settings, spiegeln: false },
 ] as const;
 
-/** Website-Seite in der passenden Sprache: tr bleibt tr, ar und de führen auf die deutsche Fassung. */
-function website(ui: Oberflaeche, ziel: '/' | '/datenschutz' | '/impressum'): { adresse: string; sprache: 'de' | 'tr' } {
-  const sprache = ui === 'tr' ? 'tr' : 'de';
-  return { adresse: pfadFuer(ziel, sprache), sprache };
-}
-
 /**
- * Rahmen jeder Lern-App-Seite (Server, ohne Programmcode im Browser): Sprunglink, Kopf mit Name, Bereichen und
- * Einstellungen, Hauptinhalt, Fuß mit Sprachwahl und Rechtlichem. Links sind einfache `<a>` (ganze Seiten, die der
- * Service Worker vorhält). `pfad` ist der Rest nach `/lern-app/<ui>` für die Sprachwahl; eine Seite, die es in einer
- * Sprache nicht gibt (Koran-Arabisch in `ar`), führt dort zum Start. Anmelden erscheint nur mit dem Schalter `konten`,
+ * Rahmen jeder Seite im Lernbereich – derselbe wie auf der Website (eine Website, ein Rahmen): Sprunglink, Kopfzeile der
+ * Website (Logo, Hauptmenü, Suche, Sprachwahl, Anmelden; „Bildung“ ist markiert), darunter die Leiste „Lernen“ mit den
+ * vier Bereichen, Hauptinhalt, Hinweisband des Lernbereichs und die Fußzeile der Website. So führt von jeder Seite ein
+ * Klick zurück auf die Website und von jeder Website-Seite einer in den Lernbereich.
+ *
+ * Kopf und Fuß der Website stehen in der passenden Website-Sprache (`src/i18n/request.ts`: tr bleibt tr, de und ar
+ * bekommen Deutsch). In der arabischen Oberfläche sind sie als deutsch und von links nach rechts ausgezeichnet
+ * (`data-website-rahmen`, Schriften in `globals.css`), der Lernbereich dazwischen bleibt arabisch und `rtl`.
+ * Die Sprachwahl im Kopf nennt die Oberflächensprachen des Lernbereichs; `pfad` ist der Rest nach `/lern-app/<ui>` –
+ * eine Seite, die es in einer Sprache nicht gibt (Koran-Arabisch in `ar`), führt dort zum Start. Links des Lernbereichs
+ * sind einfache `<a>` (ganze Seiten, die der Service Worker vorhält). Anmelden erscheint nur mit dem Schalter `konten`,
  * „Gruppe“ nur mit `lernapp_gruppen`.
  */
 export async function Rahmen({
@@ -44,15 +48,20 @@ export async function Rahmen({
   const [konten, gruppen] = await Promise.all([funktionAn('konten'), funktionAn('lernapp_gruppen')]);
   const kurs = pfad.split('/')[0];
   const sprachZiel = (s: Oberflaeche) => (istKursSlug(kurs) && !kursInOberflaeche(kurs, s) ? lernAdresse(s) : lernAdresse(s, pfad));
-  const fuss = [
+  const sprachen: SprachEintrag[] = OBERFLAECHEN.map((s) => ({
+    code: s,
+    kurz: s.toUpperCase(),
+    name: lernTexte(s)('sprache.eigenname'),
+    href: sprachZiel(s),
+  }));
+  const weitere = [
     // Gruppe (Zuweisungen, Gruppenziel, Bestenliste) nur mit dem Schalter `lernapp_gruppen` (Personendaten, L7-02)
     ...(gruppen ? [{ adresse: lernAdresse(ui, 'gruppe'), text: t('rahmen.gruppe') }] : []),
     { adresse: lernAdresse(ui, 'quellen'), text: t('rahmen.quellen') },
-    { ...website(ui, '/datenschutz'), text: t('rahmen.datenschutz') },
-    { ...website(ui, '/impressum'), text: t('rahmen.impressum') },
-    { ...website(ui, '/'), text: t('rahmen.website') },
     ...(konten ? [{ adresse: lernAdresse(ui, 'anmelden'), text: t('rahmen.anmelden') }] : []),
   ];
+  // Website-Bausteine in der arabischen Oberfläche: deutsch, von links nach rechts
+  const website = ui === 'ar' ? ({ lang: 'de', dir: 'ltr' } as const) : {};
   return (
     <>
       <a
@@ -61,82 +70,89 @@ export async function Rahmen({
       >
         {t('rahmen.zumInhalt')}
       </a>
-      <header className="border-b border-linie bg-weiss">
-        <div className="mx-auto flex max-w-(--container-inhalt) flex-wrap items-center gap-x-6 gap-y-1 px-4 pt-2 md:px-8 md:py-2">
+      <div data-website-rahmen {...website}>
+        <Header
+          aktiv="bildung"
+          aktuell="lern-app"
+          sprachZiel="/"
+          lernbereich={{ sprache: ui, sprachen, anmeldenHref: konten ? lernAdresse(ui, 'anmelden') : undefined }}
+        />
+      </div>
+      <nav aria-label={t('rahmen.navigation')} className="bg-gruen-950 text-weiss">
+        <div className="mx-auto flex max-w-(--container-inhalt) items-center gap-x-6 px-2 md:px-8">
           <a
             href={lernAdresse(ui)}
-            className="inline-flex min-h-11 items-center gap-2 font-display text-20 font-semibold text-tinte no-underline hover:text-gruen-800"
+            className="hidden min-h-14 shrink-0 items-center gap-2 font-display text-20 font-semibold text-weiss no-underline outline-weiss hover:text-gruen-100 md:inline-flex"
           >
-            <LernStern className="size-7 shrink-0 text-gruen-700" />
-            {t('meta.name')}
+            <LernStern className="size-6 shrink-0 text-gruen-100" />
+            {t('rahmen.bereich')}
           </a>
-          <nav aria-label={t('rahmen.navigation')} className="order-last w-full md:order-none md:w-auto md:flex-1">
-            <ul className="grid grid-cols-3 md:flex md:gap-1">
-              {NAV.map(({ bereich: b, pfad: p, Zeichen, spiegeln }) => (
-                <li key={b}>
+          {/* Telefon: drei beschriftete Reiter und das Zahnrad (ohne sichtbaren Text – vier Wörter passen nicht in 390 px) */}
+          <ul className="grid w-full raster-lernleiste md:flex md:w-auto md:flex-1 md:gap-1">
+            {NAV.map(({ bereich: b, pfad: p, Zeichen, spiegeln }) => {
+              const hier = bereich === b;
+              const zahnrad = b === 'einstellungen';
+              return (
+                <li key={b} className={zahnrad ? 'md:ms-auto' : undefined}>
                   <a
                     href={lernAdresse(ui, p)}
-                    aria-current={bereich === b ? 'page' : undefined}
-                    className={`flex min-h-14 flex-col items-center justify-center gap-1 border-b-2 px-2 text-16 font-bold no-underline hover:text-gruen-800 md:min-h-11 md:flex-row md:gap-2 md:rounded-md md:border-b-0 md:px-3 ${bereich === b ? 'border-gruen-700 text-gruen-800 md:bg-gruen-50' : 'border-transparent text-tinte-2'}`}
+                    aria-current={hier ? 'page' : undefined}
+                    className={`flex min-h-14 flex-col items-center justify-center gap-0.5 border-b-3 text-16 font-bold no-underline outline-weiss md:my-1.5 md:min-h-11 md:flex-row md:gap-2 md:rounded-md md:border-b-0 md:px-3 ${zahnrad ? 'min-w-14 px-3' : 'px-1'} ${hier ? 'border-weiss text-weiss md:bg-weiss md:text-gruen-950 md:hover:text-gruen-950' : 'border-transparent text-gruen-50 hover:text-weiss md:hover:bg-gruen-800'}`}
                   >
-                    <Zeichen aria-hidden className={`size-5 shrink-0 ${spiegeln ? 'rtl:-scale-x-100' : ''}`} />
-                    {t(`rahmen.${b}`)}
+                    <Zeichen
+                      aria-hidden
+                      className={`shrink-0 ${zahnrad ? 'size-6 md:size-5' : 'size-5'} ${spiegeln ? 'rtl:-scale-x-100' : ''}`}
+                    />
+                    <span className={zahnrad ? 'sr-only md:not-sr-only' : 'max-w-full truncate'}>{t(`rahmen.${b}`)}</span>
                   </a>
                 </li>
-              ))}
-            </ul>
-          </nav>
-          <a
-            href={lernAdresse(ui, 'einstellungen')}
-            aria-current={bereich === 'einstellungen' ? 'page' : undefined}
-            className={`ms-auto inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-md px-2 text-16 font-bold no-underline hover:text-gruen-800 md:ms-0 md:px-3 ${bereich === 'einstellungen' ? 'bg-gruen-50 text-gruen-800' : 'text-tinte-2'}`}
-          >
-            <Settings aria-hidden className="size-5 shrink-0" />
-            <span className="sr-only md:not-sr-only">{t('rahmen.einstellungen')}</span>
-          </a>
+              );
+            })}
+          </ul>
         </div>
-      </header>
+      </nav>
       <main id="inhalt" tabIndex={-1} className="mx-auto w-full max-w-(--container-inhalt) px-4 py-8 focus:outline-none md:px-8 md:py-12">
         {children}
       </main>
-      <footer className="border-t border-linie bg-sand">
-        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 py-8 md:px-8">
+      <section aria-label={t('rahmen.hinweisband')} className="border-t border-linie bg-sand">
+        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-4 px-4 py-6 md:px-8">
           <p className="max-w-einleitung text-16 text-tinte-2">{t('rahmen.geraet')}</p>
-          <nav aria-label={t('rahmen.sprachwahl')}>
-            <ul className="flex flex-wrap gap-x-2 gap-y-1">
-              {OBERFLAECHEN.map((s) => (
-                <li key={s}>
-                  <a
-                    href={sprachZiel(s)}
-                    hrefLang={s}
-                    lang={s}
-                    dir={richtung(s)}
-                    aria-current={s === ui ? 'page' : undefined}
-                    className={`inline-flex min-h-11 items-center rounded-md px-3 font-bold no-underline hover:bg-weiss ${s === ui ? 'bg-weiss text-tinte' : ''}`}
-                  >
-                    {lernTexte(s)('sprache.eigenname')}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav aria-label={t('rahmen.fussNavigation')}>
-            <ul className="flex flex-wrap gap-x-6 gap-y-1">
-              {fuss.map((l) => (
-                <li key={l.adresse}>
-                  <a
-                    href={l.adresse}
-                    hrefLang={'sprache' in l && l.sprache !== ui ? l.sprache : undefined}
-                    className="inline-flex min-h-11 items-center text-16 underline-offset-4 hover:underline"
-                  >
-                    {l.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2">
+            <nav aria-label={t('rahmen.sprachwahl')}>
+              <ul className="flex flex-wrap gap-x-2 gap-y-1">
+                {OBERFLAECHEN.map((s) => (
+                  <li key={s}>
+                    <a
+                      href={sprachZiel(s)}
+                      hrefLang={s}
+                      lang={s}
+                      dir={richtung(s)}
+                      aria-current={s === ui ? 'page' : undefined}
+                      className={`inline-flex min-h-11 items-center rounded-md px-3 font-bold no-underline hover:bg-weiss ${s === ui ? 'bg-weiss text-tinte' : ''}`}
+                    >
+                      {lernTexte(s)('sprache.eigenname')}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <nav aria-label={t('rahmen.fussNavigation')}>
+              <ul className="flex flex-wrap gap-x-6 gap-y-1">
+                {weitere.map((l) => (
+                  <li key={l.adresse}>
+                    <a href={l.adresse} className="inline-flex min-h-11 items-center text-16 underline-offset-4 hover:underline">
+                      {l.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
-      </footer>
+      </section>
+      <div data-website-rahmen {...website}>
+        <Footer vorabladen={false} />
+      </div>
     </>
   );
 }

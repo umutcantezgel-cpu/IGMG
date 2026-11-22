@@ -310,8 +310,28 @@
 @utility raster-symbol {
   grid-template-columns: auto minmax(0, 1fr);
 }
+/* Leiste „Lernen“ am Telefon: drei gleich breite Reiter, das Zahnrad so breit wie nötig (Rahmen.tsx) */
+@utility raster-lernleiste {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+}
 @utility streifen-platzhalter {
   background: repeating-linear-gradient(135deg, var(--color-sand) 0 10px, var(--color-papier) 10px 20px);
+}
+/*
+ * Bildfläche ohne Foto (Bildplatzhalter.tsx): ruhiges Achtstern-Gitter (Kern K-008) auf hellem Grün, das nach Sand
+ * ausläuft – ein Markenmotiv statt beschrifteter Streifen, solange die Gemeinde kein Foto hinterlegt hat. Tiefgrün mit
+ * 5 % Deckkraft (#0e3929 = --color-gruen-950; Daten-URI kennt keine CSS-Variablen). Keine Moschee-, Kuppel- oder
+ * Halbmondgrafik (M-018).
+ */
+@utility achtstern-flaeche {
+  background-color: var(--color-gruen-50);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath fill='%230e3929' fill-opacity='.05' d='M22 12 24.93 14.93H29.07V19.07L32 22 29.07 24.93V29.07H24.93L22 32 19.07 29.07H14.93V24.93L12 22 14.93 19.07V14.93H19.07Z'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, var(--color-gruen-50), var(--color-sand));
+  background-size:
+    44px 44px,
+    100% 100%;
+  background-position: center;
 }
 
 /*
@@ -497,6 +517,14 @@
   }
   [data-oberflaeche][lang='ar'] {
     --font-text: var(--font-arabisch-ui);
+  }
+  /* Kopf- und Fußzeile der Website im Lernbereich (`Rahmen.tsx`): mit den Schriften der Website – auch in der arabischen
+     Oberfläche, wo sie deutsch und von links nach rechts stehen (das Wurzel-Layout setzt dort `--font-display` am
+     `<html>`, deshalb hier beide Variablen und die Schriftfamilie selbst). */
+  [data-oberflaeche] [data-website-rahmen] {
+    --font-text: var(--schrift-text), 'Source Sans 3', system-ui, sans-serif;
+    --font-display: var(--schrift-titel), Georgia, serif;
+    font-family: var(--font-text);
   }
 }
 

@@ -216,7 +216,6 @@
     "bildung": "Education",
     "voranmeldung": "Student Pre-Registration",
     "korankurse": "Quran Courses",
-    "islamunterricht": "Islamic Studies",
     "anmelden": "Login",
     "kontoMenue": "Account menu",
     "angemeldetAls": "Signed in as",
@@ -233,9 +232,8 @@
     "bGebetszeiten": "Daily prayer times and calendar",
     "bQuran": "Read and study the Quran",
     "bWissen": "Islamic knowledge and teachings",
-    "bVoranmeldung": "Pre-registration for educational programs",
-    "bKorankurse": "Quran learning for all ages",
-    "bIslamunterricht": "Fundamentals of Islam",
+    "bVoranmeldung": "Register your child or yourself for a course",
+    "bKorankurse": "Learn the Quran at the mosque – for all ages",
     "menue": "Menu",
     "menueOeffnen": "Open menu",
     "menueSchliessen": "Close menu",
@@ -248,9 +246,9 @@
     "hadith": "Hadith",
     "bHadith": "Sahih al-Bukhari and selected hadith",
     "lernen": "Learn",
-    "bLernen": "Your path from the first letter to the Quran",
-    "lernApp": "Learn languages",
-    "bLernApp": "Learning app: German, Turkish and Arabic from A1 to B1",
+    "bLernen": "Overview: your path from the first letter to the Quran",
+    "lernApp": "Learning app",
+    "bLernApp": "Practise languages and knowledge – in short lessons, no account needed",
     "elifbe": "Elifbe",
     "bElifbe": "The Arabic alphabet step by step",
     "kalender": "Calendar",
@@ -326,7 +324,8 @@
     "impressum": "Imprint",
     "rechtliches": "Legal",
     "sozial": "Social media",
-    "platzhalterLink": "{netz} [{netz}-Link]"
+    "ort": "Fatih Mosque Wetzlar",
+    "kontaktSeite": "Contact and directions"
   },
   "allgemein": {
     "beispielinhalt": "Sample content",
@@ -427,7 +426,8 @@
     "moschee": {
       "titel": "Our new mosque is open",
       "projekt": "View the project",
-      "geschichte": "Our story"
+      "geschichte": "Our story",
+      "text": "The new Fatih Mosque is complete – a place for prayer, learning and encounter, open to everyone."
     },
     "fasten": {
       "vorschauTitel": "Fasting arc – preview",
@@ -435,6 +435,47 @@
       "zeigen": "Show fasting arc (Ramadan preview)",
       "zurueck": "Show daily arc",
       "ramadan": "Imsakiye and Ramadan"
+    },
+    "ueberblick": {
+      "kennung": "At a glance",
+      "titel": "What you will find here",
+      "neu": "New",
+      "text": "Prayer, Quran, learning and community life – all in one place, in German, Turkish and English.",
+      "gebetszeiten": {
+        "titel": "Prayer times",
+        "text": "The times for Wetzlar – today, this week and the whole month.",
+        "link": "View times"
+      },
+      "quran": {
+        "titel": "Quran",
+        "text": "Read all 114 surahs – with translation and colour-coded tajwid rules.",
+        "link": "Open the Quran"
+      },
+      "lernApp": {
+        "titel": "Learning app",
+        "text": "Practise languages and knowledge in short lessons – no account needed, works offline too.",
+        "link": "Start learning"
+      },
+      "elifbe": {
+        "titel": "Elifbe",
+        "text": "The Arabic alphabet step by step – with stroke order and exercises.",
+        "link": "Open Elifbe"
+      },
+      "veranstaltungen": {
+        "titel": "Events",
+        "text": "Courses, gatherings and special days – see what is coming up and sign up right away.",
+        "link": "View events"
+      },
+      "mitglied": {
+        "titel": "Become a member",
+        "text": "Become part of the community – the application can be completed online.",
+        "link": "To the application"
+      },
+      "kontakt": {
+        "titel": "Contact",
+        "text": "Questions, requests or a visit: write to us.",
+        "link": "Get in touch"
+      }
     }
   },
   "veranstaltungen": {

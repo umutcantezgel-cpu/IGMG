@@ -28,7 +28,7 @@ export function TextBlockAnsicht({ b, sprache, bilder }: { b: BlockVon<'text'>; 
 
 /**
  * Baustein „Hinweis mit Knopf“: helle grüne Fläche mit Band oben wie der Aufruf auf „Über uns“ (H-F01). Der Knopf
- * führt zu einer internen Seite; ist das Ziel (noch) nicht öffentlich, steht nur der Text.
+ * führt zu einer internen Seite; ist das Ziel (noch) nicht öffentlich oder fehlt die Beschriftung, steht nur der Text.
  */
 export function AufrufAnsicht({ b, sprache, href }: { b: BlockVon<'aufruf'>; sprache: Sprache; href: string | null }) {
   const titel = tx(b.titel, sprache);
@@ -46,7 +46,7 @@ export function AufrufAnsicht({ b, sprache, href }: { b: BlockVon<'aufruf'>; spr
             </h2>
             {text.text ? <Absaetze text={text.text} lang={text.lang} className="max-w-text text-18 text-tinte-2" /> : null}
           </div>
-          {href ? (
+          {href && knopf.text ? (
             <NextLink
               href={href}
               lang={knopf.lang}

@@ -4,13 +4,13 @@ import { GemeindeJsonLd } from '@/components/website/GemeindeJsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Stern8 } from '@/components/website/Icons';
-import { Text } from '@/components/website/Text';
+import { Text, textMitSprache } from '@/components/website/Text';
 import { Trenner } from '@/components/website/Zustandsgrafik';
 import { Quellenzeile } from '@/components/website/dachverband/Quellenzeile';
 import { Aufruf } from '@/components/website/ueber-uns/Aufruf';
 import { Bildflaeche } from '@/components/website/ueber-uns/Bildflaeche';
 import { Werte } from '@/components/website/ueber-uns/Werte';
-import { Zeitleiste } from '@/components/website/ueber-uns/Zeitleiste';
+import { stationsTitel, Zeitleiste } from '@/components/website/ueber-uns/Zeitleiste';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -36,14 +36,18 @@ export async function generateMetadata(): Promise<Metadata> {
  * Abschnittsköpfe (H-B12): Kennung mit Achtstern über dem Titel; der Weg steht im Breitformat neben seinem Kopf.
  * Marktstart (E-044): Unter der Geschichte ordnet ein fester Satz die Gemeinde in den Dachverband ein (Link auf /igmg),
  * die Quellenzeile nennt Herkunft und Stand der übernommenen Angaben.
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht (`src/lib/inhalt/platzhalter.ts`): Sätze mit Platzhalter entfallen,
+ * Stationen und Werte ohne Titel ebenso; ein Abschnitt ohne Inhalt entfällt samt Überschrift.
  */
 export default async function UeberUnsSeite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('ueberUns');
   const tp = await getTranslations('kopf');
   const inhalt = await ladeSeiteninhalt('ueber-uns');
-  const zeitleiste = [...inhalt.zeitleiste].sort((a, b) => a.reihenfolge - b.reihenfolge);
-  const werte = [...inhalt.werte].sort((a, b) => a.reihenfolge - b.reihenfolge);
+  const mitText = (feld: Parameters<typeof textMitSprache>[0]) => textMitSprache(feld, sprache, { platzhalter: true }).text !== '';
+  const zeitleiste = [...inhalt.zeitleiste].sort((a, b) => a.reihenfolge - b.reihenfolge).filter((e) => stationsTitel(e, sprache).text);
+  const werte = [...inhalt.werte].sort((a, b) => a.reihenfolge - b.reihenfolge).filter((w) => mitText(w.titel));
+  const gemeinschaft = inhalt.gemeinschaft.absaetze.filter((a) => mitText(a.absatz));
   const aufrufTitel = t('aufrufTitel');
   return (
     <Seitenrahmen bereich="moschee" seite="ueber-uns" sprachZiel="/ueber-uns" pfad={[{ label: tp('ueberUns') }]}>
@@ -70,6 +74,7 @@ export default async function UeberUnsSeite() {
                   feld={a.absatz}
                   sprache={sprache}
                   als="p"
+                  platzhalter
                   className={i === 0 ? 'text-20 leading-einleitung text-tinte' : 'text-18'}
                 />
               ))}
@@ -91,56 +96,62 @@ export default async function UeberUnsSeite() {
       </section>
 
       {/* Weg der Gemeinde (B-07): Kopf links und Stationen als Karten am Weg rechts (ab lg zwei Drittel) */}
-      <section aria-labelledby="ueber-reise" className="border-y border-linie bg-sand">
-        <div className="mx-auto grid max-w-(--container-inhalt) gap-10 px-4 py-abschnitt md:px-8 lg:grid-cols-3 lg:gap-12">
-          <div className="flex max-w-einleitung flex-col gap-3 lg:sticky lg:top-8 lg:self-start">
-            <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
-              <Stern8 className="size-4" />
-              {t('reiseKennung')}
-            </span>
-            <h2 id="ueber-reise" className="text-display-2">
-              {t('reiseTitel')}
-            </h2>
-            <p className="text-20 leading-einleitung text-pretty text-tinte-2">{t('reiseUntertitel')}</p>
-          </div>
-          <div className="min-w-0 lg:col-span-2">
-            <Zeitleiste eintraege={zeitleiste} sprache={sprache} />
-          </div>
-        </div>
-      </section>
-
-      {/* Gebet, Gemeinschaft, Einheit: ruhige Lesefläche, vom Achtstern-Trenner eingeleitet */}
-      <section aria-labelledby="ueber-gemeinschaft" className="bg-papier">
-        <div className="mx-auto max-w-(--container-seitenkopf) px-4 py-abschnitt md:px-8">
-          <div className="mx-auto flex w-full max-w-text flex-col gap-6">
-            <Trenner className="mx-auto w-full max-w-60" />
-            <h2 id="ueber-gemeinschaft" className="text-display-2 text-balance">
-              {t('gemeinschaftTitel')}
-            </h2>
-            <div className="fliesstext text-pretty">
-              {inhalt.gemeinschaft.absaetze.map((a, i) => (
-                <Text key={i} feld={a.absatz} sprache={sprache} als="p" className="text-18" />
-              ))}
+      {zeitleiste.length > 0 ? (
+        <section aria-labelledby="ueber-reise" className="border-y border-linie bg-sand">
+          <div className="mx-auto grid max-w-(--container-inhalt) gap-10 px-4 py-abschnitt md:px-8 lg:grid-cols-3 lg:gap-12">
+            <div className="flex max-w-einleitung flex-col gap-3 lg:sticky lg:top-8 lg:self-start">
+              <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+                <Stern8 className="size-4" />
+                {t('reiseKennung')}
+              </span>
+              <h2 id="ueber-reise" className="text-display-2">
+                {t('reiseTitel')}
+              </h2>
+              <p className="text-20 leading-einleitung text-pretty text-tinte-2">{t('reiseUntertitel')}</p>
+            </div>
+            <div className="min-w-0 lg:col-span-2">
+              <Zeitleiste eintraege={zeitleiste} sprache={sprache} />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
-      <section aria-labelledby="ueber-werte" className="border-t border-linie bg-sand">
-        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8">
-          <div className="flex max-w-einleitung flex-col gap-3">
-            <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
-              <Stern8 className="size-4" />
-              {t('wertKennung')}
-            </span>
-            <h2 id="ueber-werte" className="text-display-2">
-              {t('wertTitel')}
-            </h2>
-            <p className="text-20 leading-einleitung text-pretty text-tinte-2">{t('wertUntertitel')}</p>
+      {/* Gebet, Gemeinschaft, Einheit: ruhige Lesefläche, vom Achtstern-Trenner eingeleitet */}
+      {gemeinschaft.length > 0 ? (
+        <section aria-labelledby="ueber-gemeinschaft" className="bg-papier">
+          <div className="mx-auto max-w-(--container-seitenkopf) px-4 py-abschnitt md:px-8">
+            <div className="mx-auto flex w-full max-w-text flex-col gap-6">
+              <Trenner className="mx-auto w-full max-w-60" />
+              <h2 id="ueber-gemeinschaft" className="text-display-2 text-balance">
+                {t('gemeinschaftTitel')}
+              </h2>
+              <div className="fliesstext text-pretty">
+                {gemeinschaft.map((a, i) => (
+                  <Text key={i} feld={a.absatz} sprache={sprache} als="p" platzhalter className="text-18" />
+                ))}
+              </div>
+            </div>
           </div>
-          <Werte eintraege={werte} sprache={sprache} />
-        </div>
-      </section>
+        </section>
+      ) : null}
+
+      {werte.length > 0 ? (
+        <section aria-labelledby="ueber-werte" className="border-t border-linie bg-sand">
+          <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8">
+            <div className="flex max-w-einleitung flex-col gap-3">
+              <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+                <Stern8 className="size-4" />
+                {t('wertKennung')}
+              </span>
+              <h2 id="ueber-werte" className="text-display-2">
+                {t('wertTitel')}
+              </h2>
+              <p className="text-20 leading-einleitung text-pretty text-tinte-2">{t('wertUntertitel')}</p>
+            </div>
+            <Werte eintraege={werte} sprache={sprache} />
+          </div>
+        </section>
+      ) : null}
 
       <div className="bg-papier">
         <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt-klein md:px-8">

@@ -67,7 +67,7 @@ test('Kalender: zwölf Monate mit Hidschri-Tagen, vorläufige besondere Tage, Ac
   await expect(page.getByRole('heading', { level: 1, name: kalender.tr.kalender.titel, exact: true })).toBeVisible();
 });
 
-test('Ramadan (tr): Titel mit Jahr, Hinweis „voraussichtlich“ ohne Countdown, vorläufig, Platzhalter der Gemeinde', async ({ page }) => {
+test('Ramadan (tr): Titel mit Jahr, Hinweis „voraussichtlich“ ohne Countdown, vorläufig, Hinweise der Gemeinde', async ({ page }) => {
   const antwort = await page.goto('/tr/ramazan');
   expect(antwort?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1, name: /^Ramazan \d{4}$/ })).toBeVisible();

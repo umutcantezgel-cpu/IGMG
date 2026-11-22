@@ -3,11 +3,13 @@
 import { Check, Globe } from 'lucide-react';
 import { useCallback, useRef, useState } from 'react';
 import NextLink from 'next/link';
-import type { Locale } from '@/i18n/routing';
 import { useAussenKlick } from './useAussenKlick';
 
-/** Sprache mit fertiger Adresse derselben Seite (serverseitig über getPathname, Deutsch ohne Präfix – K-02). */
-export type SprachEintrag = { code: Locale; kurz: string; name: string; href: string };
+/**
+ * Sprache mit fertiger Adresse derselben Seite (serverseitig über getPathname, Deutsch ohne Präfix – K-02). `code` ist
+ * eine Sprache der Website (de, tr, en) oder – im Lernbereich – eine Oberflächensprache (de, tr, ar).
+ */
+export type SprachEintrag = { code: string; kurz: string; name: string; href: string };
 
 /**
  * Sprachumschalter ohne Flaggen (Laufbuch D-09): Kürzel + Eigenname. Wechselt auf dieselbe Seite
@@ -18,7 +20,7 @@ export function Sprachwahl({
   sprachen,
   texte,
 }: {
-  aktuell: Locale;
+  aktuell: string;
   sprachen: SprachEintrag[];
   texte: { aendern: string; titel: string; titelZweit: string; weitere: string };
 }) {

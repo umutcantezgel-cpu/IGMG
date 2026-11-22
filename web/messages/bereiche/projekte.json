@@ -8,7 +8,7 @@
         "titelFertig": "{name} ist eröffnet"
       },
       "3d": {
-        "text": "Foto: {name} [Foto von der Gemeinde]"
+        "text": "Foto: {name}"
       },
       "status": {
         "in_planung": "In Planung",
@@ -33,10 +33,13 @@
         "jetzt": "Jetzt spenden",
         "mehr": "Mehr erfahren",
         "fortschritt": "Spendenstand",
-        "prozent": "{prozent}% des Ziels erreicht"
+        "prozent": "{prozent}% des Ziels erreicht",
+        "titel": "Spenden",
+        "aufAnfrage": "Die Bankverbindung für Spenden nennt Ihnen die Gemeinde gern auf Anfrage."
       },
       "unterstuetzen": {
-        "knopf": "Kontakt aufnehmen"
+        "knopf": "Kontakt aufnehmen",
+        "titel": "Unterstützen Sie uns"
       },
       "meilenstein": {
         "abgeschlossen": "Abgeschlossen",
@@ -45,9 +48,6 @@
       },
       "einheiten": {
         "m2": "m²"
-      },
-      "platzhalter": {
-        "gemeinde": "[von der Gemeinde]"
       },
       "linkKontext": "{sichtbar}: {titel}"
     }
@@ -61,7 +61,7 @@
         "titelFertig": "{name} açıldı"
       },
       "3d": {
-        "text": "Fotoğraf: {name} [Fotoğraf cemaat tarafından]"
+        "text": "Fotoğraf: {name}"
       },
       "status": {
         "in_planung": "Planlamada",
@@ -86,10 +86,13 @@
         "jetzt": "Bağış Yap",
         "mehr": "Daha Fazla Bilgi",
         "fortschritt": "Bağış durumu",
-        "prozent": "Hedef: %{prozent} tamamlandı"
+        "prozent": "Hedef: %{prozent} tamamlandı",
+        "titel": "Bağış",
+        "aufAnfrage": "Bağışlar için banka bilgilerini cemaatimiz talebiniz üzerine memnuniyetle iletir."
       },
       "unterstuetzen": {
-        "knopf": "İletişime Geç"
+        "knopf": "İletişime Geç",
+        "titel": "Destek Olun"
       },
       "meilenstein": {
         "abgeschlossen": "Tamamlandı",
@@ -98,9 +101,6 @@
       },
       "einheiten": {
         "m2": "m²"
-      },
-      "platzhalter": {
-        "gemeinde": "[cemaat tarafından]"
       },
       "linkKontext": "{sichtbar}: {titel}"
     }
@@ -114,7 +114,7 @@
         "titelFertig": "{name} is open"
       },
       "3d": {
-        "text": "Photo: {name} [Photo from the community]"
+        "text": "Photo: {name}"
       },
       "status": {
         "in_planung": "In Planning",
@@ -139,10 +139,13 @@
         "jetzt": "Donate Now",
         "mehr": "Learn More",
         "fortschritt": "Donation progress",
-        "prozent": "{prozent}% of the goal reached"
+        "prozent": "{prozent}% of the goal reached",
+        "titel": "Donations",
+        "aufAnfrage": "The community will gladly share the bank details for donations on request."
       },
       "unterstuetzen": {
-        "knopf": "Get in Touch"
+        "knopf": "Get in Touch",
+        "titel": "Support Us"
       },
       "meilenstein": {
         "abgeschlossen": "Completed",
@@ -151,9 +154,6 @@
       },
       "einheiten": {
         "m2": "m²"
-      },
-      "platzhalter": {
-        "gemeinde": "[from the community]"
       },
       "linkKontext": "{sichtbar}: {titel}"
     }

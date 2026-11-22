@@ -10,8 +10,8 @@ export function generateStaticParams() {
 /**
  * Web-App-Manifest der Lern-App je Oberflächensprache (ADR 0037 Nr. 8 mit Fortschreibung S1 Nr. 5): eine `id`
  * `/lern-app/` für alle drei Sprachen (eine installierte App, die in der Sprache startet, in der sie installiert wurde),
- * `scope` `/lern-app/`, getrennt vom Manifest der Website (`app/manifest.ts`, Scope `/`). Name als Platzhalter, bis der
- * Vorstand entscheidet (OFFENE FRAGE ADR 0037); Symbole aus dem Achtstern (`scripts/lernapp-symbole.mjs`). Statisch beim
+ * `scope` `/lern-app/`, getrennt vom Manifest der Website (`app/manifest.ts`, Scope `/`). Name „IGMG Wetzlar – Lernen“,
+ * kurz „IGMG Lernen“ (tr „… Öğren“; ar ohne arabischen Namen nur die Marke, ADR 0050 Nr. 5); Symbole aus dem Achtstern (`scripts/lernapp-symbole.mjs`). Statisch beim
  * Bau erzeugt, ein Jahr im CDN (`s-maxage`); ein neuer Bau ersetzt es. Schalter `lernapp` aus → 404 (ADR 0035).
  */
 export async function GET(_anfrage: Request, { params }: RouteContext<'/lern-app/[ui]/manifest.webmanifest'>) {

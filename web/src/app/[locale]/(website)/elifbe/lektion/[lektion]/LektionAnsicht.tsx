@@ -15,7 +15,7 @@ import { ladeLektionstexte } from '@/server/queries/elifbe';
 const MED: Record<string, HarakaSchluessel> = { 'med-fatha': 'fatha', 'med-kasra': 'kasra', 'med-damma': 'damma' };
 
 /**
- * Lektion: Erklärung nur nach Freigabe (sonst Platzhalter), Silbentafel Buchstabe × Lesezeichen (aus Codepunkten,
+ * Lektion: Erklärung nur nach Freigabe (sonst entfällt der Abschnitt), Silbentafel Buchstabe × Lesezeichen (aus Codepunkten,
  * von rechts nach links wie im Elifbe-Heft) und gemischte Lesereihen mit aufklappbarer Umschrift.
  */
 export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
@@ -47,23 +47,20 @@ export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
         untertitel={t('lektion.untertitel', { kurz })}
       />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt-klein px-4 py-abschnitt-klein md:px-8">
-        <section aria-labelledby="erklaerung-titel" className="flex max-w-einleitung flex-col gap-3">
-          <h2 id="erklaerung-titel" className="text-display-2">
-            {t('lektion.erklaerungTitel')}
-          </h2>
-          {texte ? (
-            <>
-              <Text feld={texte.ziel} sprache={sprache} als="p" className="text-20 leading-einleitung" />
-              <RichText
-                doc={texte.inhalt?.[sprache] ?? texte.inhalt?.de}
-                lang={texte.inhalt?.[sprache] ? undefined : 'de'}
-                sprache={sprache}
-              />
-            </>
-          ) : (
-            <p className="text-18 text-tinte-2">{t('lektion.erklaerungPlatzhalter')}</p>
-          )}
-        </section>
+        {/* „Worum es geht“ nur mit freigegebener Erklärung der Lehrkraft; sonst beginnt die Seite mit der Silbentafel */}
+        {texte ? (
+          <section aria-labelledby="erklaerung-titel" className="flex max-w-einleitung flex-col gap-3">
+            <h2 id="erklaerung-titel" className="text-display-2">
+              {t('lektion.erklaerungTitel')}
+            </h2>
+            <Text feld={texte.ziel} sprache={sprache} als="p" className="text-20 leading-einleitung" />
+            <RichText
+              doc={texte.inhalt?.[sprache] ?? texte.inhalt?.de}
+              lang={texte.inhalt?.[sprache] ? undefined : 'de'}
+              sprache={sprache}
+            />
+          </section>
+        ) : null}
 
         <section aria-labelledby="tafel-titel" className="flex flex-col gap-5">
           <div className="flex max-w-einleitung flex-col gap-2">

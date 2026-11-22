@@ -50,7 +50,8 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/[...rest
   if (treffer?.art !== 'seite') return {};
   const s = treffer.seite;
   const titel = textMitSprache(s.titel, sprache).text;
-  const beschreibung = textMitSprache(s.beschreibung, sprache).text || undefined;
+  // Kurzbeschreibung ohne Sätze mit Platzhalter „[…]“ – auch in den Metadaten erscheinen sie nicht
+  const beschreibung = textMitSprache(s.beschreibung, sprache, { platzhalter: true }).text || undefined;
   // hreflang je Sprache mit eigenem Slug: Standard-Metadaten (Open Graph, Bild) und die Adressen dieser Seite
   const basis = await metadatenFuer({ pfad: '/', titel, beschreibung });
   const adressen = seitenAdressen(s.slugs);
@@ -106,7 +107,7 @@ async function FreieSeite({ seite, sprache }: { seite: SeiteOeffentlich; sprache
   const titel = textMitSprache(seite.titel, sprache);
   return (
     <Seitenrahmen bereich={bereich} seite={punkt} sprachZiel={{ adressen: seitenAdressen(seite.slugs) }} pfad={[{ label: titel.text }]}>
-      <FreieSeiteInhalt seite={seite} sprache={sprache} />
+      <FreieSeiteInhalt seite={seite} sprache={sprache} oeffentlich />
     </Seitenrahmen>
   );
 }

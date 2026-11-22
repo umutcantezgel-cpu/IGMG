@@ -4,9 +4,10 @@ import { istNurPlatzhalter, MitPlatzhaltern } from '@/components/website/Platzha
 import { Text } from '@/components/website/Text';
 
 /**
- * Sichtabnahme Runde 2 (X-9, PR-3): Platzhalter der Gemeinde „[…]“ sind als solche gekennzeichnet – gestrichelt, in der
- * zweiten Textfarbe, mit `data-platzhalter`. `Text` tut das nur auf Wunsch (`platzhalter`), weil eckige Klammern in
- * Übersetzungen auch Einschübe sein können.
+ * Platzhalter der Gemeinde „[…]“: In den Rechtstexten sind sie als solche gekennzeichnet (`MitPlatzhaltern`: gestrichelt,
+ * in der zweiten Textfarbe, mit `data-platzhalter`; Sichtabnahme Runde 2, X-9/PR-3). Auf allen anderen öffentlichen Seiten
+ * erscheinen sie nicht: `Text` lässt mit `platzhalter` Sätze mit Platzhalter weg – nur auf Wunsch, weil eckige Klammern
+ * in Übersetzungen auch Einschübe sein können.
  */
 describe('Platzhalter', () => {
   it('MitPlatzhaltern setzt jeden Platzhalter einzeln, der übrige Text bleibt', () => {
@@ -32,15 +33,19 @@ describe('Platzhalter', () => {
 });
 
 describe('Text mit `platzhalter`', () => {
-  const feld = { de: 'Gemeinde in [Ortsangabe – von der Gemeinde]', en: 'Community in [Location]' };
+  const feld = { de: 'Die Gemeinde lädt ein. Ort: [Ortsangabe – von der Gemeinde].', en: 'Community in [Location]' };
 
-  it('standardmäßig aus: Klammern bleiben gewöhnlicher Text', () => {
-    expect(renderToStaticMarkup(<Text feld={feld} sprache="de" />)).toBe('<span>Gemeinde in [Ortsangabe – von der Gemeinde]</span>');
+  it('standardmäßig aus: Klammern bleiben gewöhnlicher Text (Einschübe in Übersetzungen)', () => {
+    expect(renderToStaticMarkup(<Text feld={feld} sprache="de" />)).toBe(
+      '<span>Die Gemeinde lädt ein. Ort: [Ortsangabe – von der Gemeinde].</span>',
+    );
   });
 
-  it('eingeschaltet: Platzhalter gekennzeichnet, Rückfall-Sprache bleibt', () => {
-    const html = renderToStaticMarkup(<Text feld={feld} sprache="tr" als="p" platzhalter />);
-    expect(html.startsWith('<p lang="de">Gemeinde in <span data-platzhalter')).toBe(true);
-    expect(html).toContain('>[Ortsangabe – von der Gemeinde]</span></p>');
+  it('eingeschaltet: Sätze mit Platzhalter entfallen, Rückfall-Sprache bleibt', () => {
+    expect(renderToStaticMarkup(<Text feld={feld} sprache="tr" als="p" platzhalter />)).toBe('<p lang="de">Die Gemeinde lädt ein.</p>');
+  });
+
+  it('eingeschaltet und nichts bleibt übrig: kein Element', () => {
+    expect(renderToStaticMarkup(<Text feld={{ de: '[Kurzbeschreibung – von der Gemeinde]' }} sprache="de" als="p" platzhalter />)).toBe('');
   });
 });

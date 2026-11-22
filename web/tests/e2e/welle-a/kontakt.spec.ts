@@ -3,8 +3,8 @@ import kontakt from '../../../messages/bereiche/kontakt.json';
 
 /**
  * E2E Welle A (Kennung A23b), Ablauf 5: Kontakt. Die Kartenfläche der Anfahrt zeigt den Hinweis zur Datenübertragung;
- * beim Laden der Seite gibt es keine Anfrage an fremde Hosts (die Karte lädt erst nach einem Klick). Texte aus
- * messages/bereiche/kontakt.json (de).
+ * beim Laden der Seite gibt es keine Anfrage an fremde Hosts (die Karte lädt erst nach einem Klick). Angaben, die noch
+ * Platzhalter „[…]“ der Gemeinde sind, erscheinen nicht. Texte aus messages/bereiche/kontakt.json (de).
  */
 
 const t = kontakt.de.kontakt;
@@ -29,13 +29,30 @@ test('Kartenfläche der Anfahrt zeigt den Hinweis zur Datenübertragung', async 
   await expect(anfahrt.getByText(t.karte.hinweis, { exact: true })).toBeVisible();
 });
 
-test('ohne bestätigte Koordinaten lädt die Kartenfläche keine Karte und bietet keinen Ladeknopf', async ({ page }) => {
-  // Negativfall zum Hinweis: Solange die Lage nicht bestätigt ist (M-010), gibt es weder Einbettung noch Ladeknopf.
+test('ohne bestätigte Koordinaten gibt es keine Kartenfläche und keinen Ladeknopf', async ({ page }) => {
+  // Negativfall zum Hinweis: Solange die Lage nicht bestätigt ist (M-010), gibt es weder Einbettung noch Ladeknopf –
+  // und auch keine Ersatzfläche: Die Anfahrt zeigt nur die Wege, ohne Platzhalter „[…]“.
   await page.goto('/kontakt');
   const anfahrt = page.getByRole('region', { name: t.anfahrt.titel, exact: true });
-  await expect(anfahrt.getByText(t.karte.ohneKoordinaten, { exact: true })).toBeVisible();
+  await expect(anfahrt.getByRole('heading', { level: 3, name: t.anfahrt.auto, exact: true })).toBeVisible();
   await expect(anfahrt.getByRole('button', { name: t.karte.laden, exact: true })).toHaveCount(0);
   await expect(anfahrt.locator('iframe')).toHaveCount(0);
+  await expect(anfahrt.locator('.streifen-platzhalter')).toHaveCount(0);
+  await expect(anfahrt).not.toContainText(/\[[^\]]*\]/);
+});
+
+test('Angaben, die die Gemeinde noch nicht geliefert hat, erscheinen nicht als Platzhalter „[…]“', async ({ page }) => {
+  // Beispielbestand: Adresse, Telefon, Notfallnummer, Haltestelle und Linien sind Platzhalter – ihre Zeilen entfallen,
+  // E-Mail, Formular und Öffnungszeiten bleiben.
+  await page.goto('/kontakt');
+  const inhalt = page.locator('main');
+  await expect(inhalt.getByRole('heading', { level: 2, name: t.kontaktdaten.titel, exact: true })).toBeVisible();
+  await expect(inhalt.getByRole('heading', { level: 2, name: t.oeffnungszeiten.titel, exact: true })).toBeVisible();
+  await expect(inhalt.locator('a[href^="mailto:"]').first()).toBeVisible();
+  await expect(inhalt.getByRole('heading', { level: 2, name: t.notfall.titel, exact: true })).toHaveCount(0);
+  await expect(inhalt.getByRole('heading', { level: 2, name: t.adresse.titel, exact: true })).toHaveCount(0);
+  await expect(inhalt.getByRole('heading', { level: 3, name: t.anfahrt.oeffentlich, exact: true })).toHaveCount(0);
+  await expect(inhalt).not.toContainText(/\[[^\]]*\]/);
 });
 
 test('beim Laden der Kontaktseite keine Anfrage an fremde Hosts', async ({ page, baseURL }) => {

@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Achtstern } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
-import { istNurPlatzhalter } from '@/components/website/Platzhalter';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { textMitSprache } from '@/components/website/Text';
 import { Bauprojekt } from '@/components/website/projekte/Bauprojekt';
+import { sichtbareMeilensteine } from '@/components/website/projekte/hilfen';
 import { Meilensteine } from '@/components/website/projekte/Meilensteine';
 import { Unterstuetzen } from '@/components/website/projekte/Unterstuetzen';
 import type { Locale } from '@/i18n/routing';
@@ -22,19 +22,22 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Projekte (design/Projects.dc.html, Blatt S10): Bauprojekt mit 3D-Platzhalter und Fakten, Meilensteine, Unterstützen
+ * Projekte (design/Projects.dc.html, Blatt S10): Bauprojekt mit Bildfläche und Fakten, Meilensteine, Unterstützen
  * mit der Spendenkarte. Redaktionelle Inhalte kommen aus dem Seiteninhalt „projekte“, feste Überschriften
  * und Schaltflächen aus messages/bereiche/projekte.json. Keine Formulare, keine Anfragen an Dritte (K-14).
  * Sichtabnahme Runde 2 (PR-4): Ist das Projekt fertiggestellt, trägt der Kopf die Kernbotschaft „{Name} ist eröffnet“
  * mit dem gefüllten Achtstern samt Haken (dieselbe Marke wie der erreichte letzte Meilenstein, B-08; Runde 3, PF-7:
- * auch auf dem Telefon, bis md 40 px); der allgemeine Titel wird zur Unterzeile. Ein Name, der nur Platzhalter ist, bleibt aus dem Titel (G-05). Gebetsleiste als eine Zeile (X-8).
+ * auch auf dem Telefon, bis md 40 px); der allgemeine Titel wird zur Unterzeile. Gebetsleiste als eine Zeile (X-8).
+ * Platzhalter der Gemeinde „[…]“ erscheinen nicht (`src/lib/inhalt/platzhalter.ts`): Ein Name, der noch Platzhalter ist,
+ * bleibt aus dem Titel; ohne Meilensteine entfällt deren Band.
  */
 export default async function ProjekteSeite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('projekte');
   const inhalt = await ladeSeiteninhalt('projekte');
-  const name = textMitSprache(inhalt.projekt.name, sprache).text;
-  const eroeffnet = inhalt.projekt.status === 'fertiggestellt' && name !== '' && !istNurPlatzhalter(name);
+  const name = textMitSprache(inhalt.projekt.name, sprache, { platzhalter: true }).text;
+  const eroeffnet = inhalt.projekt.status === 'fertiggestellt' && name !== '';
+  const hatMeilensteine = sichtbareMeilensteine(inhalt, sprache).length > 0;
   return (
     <Seitenrahmen
       bereich="moschee"
@@ -64,12 +67,14 @@ export default async function ProjekteSeite() {
           <Bauprojekt inhalt={inhalt} sprache={sprache} />
         </div>
       </section>
-      <div className="border-y border-linie bg-sand">
-        <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
-          <Meilensteine inhalt={inhalt} sprache={sprache} />
+      {hatMeilensteine ? (
+        <div className="border-y border-linie bg-sand">
+          <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
+            <Meilensteine inhalt={inhalt} sprache={sprache} />
+          </div>
         </div>
-      </div>
-      <div className="bg-papier">
+      ) : null}
+      <div className={hatMeilensteine ? 'bg-papier' : 'border-t border-linie bg-papier'}>
         <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
           <Unterstuetzen inhalt={inhalt} sprache={sprache} />
         </div>

@@ -44,7 +44,7 @@ type Dialog = { art: 'artikel' | 'video' | 'experte'; schluessel: string };
  * Islamisches Wissen (design/IslamicKnowledge.dc.html, Blatt S14): Suche, Themen-Filter und die Reiter Artikel,
  * Videos und Experten. Alle drei Felder stehen bereits im HTML; inaktive Reiter tragen nur `hidden` (Muster IGMGTabs).
  * Tastatur nach WAI-ARIA: Pfeiltasten, Pos1 und Ende. Dialoge sind native `<dialog>`-Elemente mit Fokusrückgabe.
- * Videos werden nie eingebettet; ohne Videoquelle steht nur ein Platzhalter (K-14, G-05).
+ * Videos werden nie eingebettet (K-14): Die Seite übergibt nur Videos mit Link. Ohne Experten gibt es den Reiter nicht.
  */
 export function WissenInsel({ sprache, texte, themen, artikel, videos, experten, entwurfMarke, leerGrafik }: WissenInselProps) {
   const id = useId();
@@ -70,7 +70,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten,
   const themaAnzeige = (schluessel: string): Anzeige => themen.find((t) => t.schluessel === schluessel)?.label ?? { text: schluessel };
   const gewaehlt = thema ? themaAnzeige(thema) : null;
   // Suche und Thema wirken auf Artikel (Titel, Autor) und Videos (Titel); Experten bleiben unverändert (Blatt INTERAKTIONEN 1).
-  const gefArtikel = artikel.filter((a) => (!thema || a.thema === thema) && passt(a.titel.text, a.autor.text));
+  const gefArtikel = artikel.filter((a) => (!thema || a.thema === thema) && passt(a.titel.text, a.autor?.text));
   const gefVideos = videos.filter((v) => (!thema || v.thema === thema) && passt(v.titel.text));
 
   const artikelOffen = dialog?.art === 'artikel' ? artikel.find((a) => a.schluessel === dialog.schluessel) : undefined;
@@ -80,6 +80,8 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten,
     ? gefArtikel.filter((a) => a.thema === artikelOffen.thema && a.schluessel !== artikelOffen.schluessel).slice(0, 2)
     : [];
 
+  // Ohne Experten (solange ihre Namen Platzhalter der Gemeinde sind) entfällt der Reiter samt Feld
+  const reiterListe = experten.length ? REITER : REITER.filter((r) => r !== 'experten');
   const reiterText: Record<Reiter, string> = {
     artikel: texte.reiterArtikel,
     videos: texte.reiterVideos,
@@ -117,7 +119,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten,
   }
 
   function reiterTaste(e: KeyboardEvent<HTMLButtonElement>, index: number) {
-    const letzte = REITER.length - 1;
+    const letzte = reiterListe.length - 1;
     let ziel: number;
     switch (e.key) {
       case 'ArrowRight':
@@ -136,7 +138,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten,
         return;
     }
     e.preventDefault();
-    const neu = REITER[ziel];
+    const neu = reiterListe[ziel];
     setReiter(neu);
     reiterKnoepfe.current[neu]?.focus();
   }
@@ -207,7 +209,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten,
           aria-label={texte.reiterGruppe}
           className="flex max-w-full flex-wrap gap-1 self-start rounded-lg border border-linie bg-sand p-1"
         >
-          {REITER.map((r, i) => {
+          {reiterListe.map((r, i) => {
             const ist = reiter === r;
             const Icon = REITER_ICON[r];
             return (
@@ -287,28 +289,30 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten,
           </div>
         </div>
 
-        <div id={`${id}-feld-experten`} role="tabpanel" aria-labelledby={`${id}-reiter-experten`} hidden={reiter !== 'experten'}>
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-wrap items-center gap-3">
-              <h3 className="text-24">{texte.expertenTitel}</h3>
-              <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
-                <Info aria-hidden className="size-4" />
-                {texte.expertenBadge}
-              </span>
+        {experten.length ? (
+          <div id={`${id}-feld-experten`} role="tabpanel" aria-labelledby={`${id}-reiter-experten`} hidden={reiter !== 'experten'}>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-24">{texte.expertenTitel}</h3>
+                <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
+                  <Info aria-hidden className="size-4" />
+                  {texte.expertenBadge}
+                </span>
+              </div>
+              <ul className="grid raster-kacheln gap-4">
+                {experten.map((e) => (
+                  <li key={e.schluessel}>
+                    <ExpertenKarte
+                      experte={e}
+                      texte={texte}
+                      onOeffnen={(ausloesend) => oeffne({ art: 'experte', schluessel: e.schluessel }, ausloesend)}
+                    />
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="grid raster-kacheln gap-4">
-              {experten.map((e) => (
-                <li key={e.schluessel}>
-                  <ExpertenKarte
-                    experte={e}
-                    texte={texte}
-                    onOeffnen={(ausloesend) => oeffne({ art: 'experte', schluessel: e.schluessel }, ausloesend)}
-                  />
-                </li>
-              ))}
-            </ul>
           </div>
-        </div>
+        ) : null}
       </div>
 
       <dialog

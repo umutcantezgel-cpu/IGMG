@@ -9,6 +9,7 @@ import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Amtszeiten } from '@/components/website/vorstand/Amtszeiten';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
+import { angabe } from '@/lib/inhalt/platzhalter';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
@@ -48,7 +49,8 @@ function Leerzustand({ text, schritt }: { text: string; schritt: string | null }
 /**
  * Vorstand (design/BoardMembers.dc.html, Blatt S09): zuerst der aktuelle Vorstand, dann die Vorsitzenden als
  * Verbindungslinie der Amtszeiten (AUFTRAG 4) und Kartenraster, danach Dank mit Link zur Kontaktseite. Personen und
- * Jahre kommen aus dem Seiteninhalt (G-04), „heute“ aus dem stündlich erneuerten Datum (`heuteBerlin`).
+ * Jahre kommen aus dem Seiteninhalt (G-04), „heute“ aus dem stündlich erneuerten Datum (`heuteBerlin`). Namen, die
+ * noch Platzhalter „[…]“ sind, zeigt die Karte nicht: Das Amt steht dann in der Hauptzeile (`PersonCard`).
  * Abschnitte nach Referenz (REFERENZ §2): Kennung mit Stern, Titel `text-display-2`, Einleitung mit `max-w-einleitung`.
  */
 export default async function VorstandSeite() {
@@ -58,6 +60,8 @@ export default async function VorstandSeite() {
   const [inhalt, heute] = await Promise.all([ladeSeiteninhalt('vorstand'), heuteBerlin()]);
   // Nächster Schritt im Leerzustand erscheint, sobald vorstand.leerSchritt in den Sprachdateien steht (Bedarf)
   const leerSchritt = t.has('leerSchritt') ? t('leerSchritt') : null;
+  // Kennung „Führung seit …“ nur mit bestätigtem Jahr (Platzhalter „[Jahr]“ erscheinen öffentlich nicht)
+  const fuehrungSeit = angabe(inhalt.fuehrungSeit);
   return (
     <Seitenrahmen bereich="moschee" seite="vorstand" sprachZiel="/vorstand" pfad={[{ label: tp('vorstand') }]}>
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
@@ -108,10 +112,12 @@ export default async function VorstandSeite() {
         className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pb-abschnitt md:px-8"
       >
         <div className="flex flex-col gap-3">
-          <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
-            <Stern8 />
-            {t('fuehrungSeit', { jahr: inhalt.fuehrungSeit })}
-          </span>
+          {fuehrungSeit ? (
+            <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+              <Stern8 />
+              {t('fuehrungSeit', { jahr: fuehrungSeit })}
+            </span>
+          ) : null}
           <h2 id="vorstand-vorsitz" className="text-display-2">
             {t('vorsitzTitel')}
           </h2>

@@ -31,14 +31,18 @@ export function ArtikelKarte({
         {a.titel.text}
       </h4>
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-16 text-tinte-2">
-        <span className="inline-flex items-center gap-1.5">
-          <User aria-hidden className="size-4" />
-          <span lang={a.autor.lang}>{a.autor.text}</span>
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <Clock aria-hidden className="size-4" />
-          {a.datum}
-        </span>
+        {a.autor ? (
+          <span className="inline-flex items-center gap-1.5">
+            <User aria-hidden className="size-4" />
+            <span lang={a.autor.lang}>{a.autor.text}</span>
+          </span>
+        ) : null}
+        {a.datum ? (
+          <span className="inline-flex items-center gap-1.5">
+            <Clock aria-hidden className="size-4" />
+            {a.datum}
+          </span>
+        ) : null}
       </div>
       <button
         type="button"
@@ -112,19 +116,25 @@ export function ExpertenKarte({
         <h4 lang={e.name.lang} className="text-24">
           {e.name.text}
         </h4>
-        <p lang={e.fachgebiet.lang} className="font-bold text-gruen-800">
-          {e.fachgebiet.text}
-        </p>
-        <p lang={e.institution.lang} className="text-16 text-tinte-2">
-          {e.institution.text}
-        </p>
+        {e.fachgebiet.text ? (
+          <p lang={e.fachgebiet.lang} className="font-bold text-gruen-800">
+            {e.fachgebiet.text}
+          </p>
+        ) : null}
+        {e.institution.text ? (
+          <p lang={e.institution.lang} className="text-16 text-tinte-2">
+            {e.institution.text}
+          </p>
+        ) : null}
       </div>
-      <div className="flex items-baseline gap-2">
-        <strong lang={e.anzahlArtikel.lang} className="text-30">
-          {e.anzahlArtikel.text}
-        </strong>
-        <span className="text-tinte-2">{texte.zahlArtikel}</span>
-      </div>
+      {e.anzahlArtikel.text ? (
+        <div className="flex items-baseline gap-2">
+          <strong lang={e.anzahlArtikel.lang} className="text-30">
+            {e.anzahlArtikel.text}
+          </strong>
+          <span className="text-tinte-2">{texte.zahlArtikel}</span>
+        </div>
+      ) : null}
       <button
         type="button"
         aria-label={`${texte.mehrErfahren}: ${e.name.text}`}

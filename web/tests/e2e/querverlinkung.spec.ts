@@ -119,7 +119,7 @@ test('/mitglied-werden: Kasten „Fördermitglied der IGMG“ getrennt von der A
   await expect(kasten.locator('iframe, form')).toHaveCount(0);
 });
 
-test('/ramadan: Ramadan-Begleiter der IGMG und neuer Fitre-Platzhalter', async ({ page }) => {
+test('/ramadan: Ramadan-Begleiter der IGMG und Fitre-Hinweis ohne Platzhalter', async ({ page }) => {
   await page.goto('/ramadan');
   const R = ramadan.de.ramadan;
   const kasten = page.getByRole('region', { name: R.begleiter.titel, exact: true });
@@ -129,6 +129,8 @@ test('/ramadan: Ramadan-Begleiter der IGMG und neuer Fitre-Platzhalter', async (
     'https://www.igmg.org/ramazan-yoldasim/',
   );
   await expect(page.getByText(R.gemeinde.fitre, { exact: true })).toBeVisible();
+  // „In der Gemeinde“: neutrale Sätze, keine Platzhalter „[…]“
+  await expect(page.getByRole('region', { name: R.gemeinde.titel, exact: true })).not.toContainText(/\[[^\]]*\]/);
 });
 
 test('/kalender: verbindliche Bekanntgabe durch die IGMG mit Links zu Gelehrtenrat und Festen', async ({ page }) => {
