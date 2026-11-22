@@ -30,7 +30,9 @@ export async function FreieSeiteInhalt({
     getTranslations({ locale: sprache, namespace: 'bloecke' }),
     getTranslations({ locale: sprache, namespace: 'karten' }),
   ]);
-  const titel = textMitSprache(seite.titel, sprache);
+  // Öffentlich ohne Platzhalter; ein Titel, der nur Platzhalter ist, fällt auf die Kennung der Website zurück
+  const titelFeld = textMitSprache(seite.titel, sprache, { platzhalter: oeffentlich });
+  const titel = titelFeld.text || !oeffentlich ? titelFeld : { text: t('kennung'), lang: undefined };
   const beschreibung = textMitSprache(seite.beschreibung, sprache, { platzhalter: oeffentlich });
   const stand = sprache === 'de' ? 100 : uebersetzungsstand(seite.titel, seite.beschreibung, seite.bloecke)[sprache];
   const hinweis =

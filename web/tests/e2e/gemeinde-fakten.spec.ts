@@ -39,7 +39,7 @@ test('Startseite: Einleitung nennt die Fatih-Moschee Wetzlar und 1978 (de, tr, e
 });
 
 test.describe('Über uns', () => {
-  test('Weg der Gemeinde: 1978 zuerst, 2008 und 2011 vor 2019, Eröffnung zuletzt; Platzhalter bleiben sichtbar', async ({ page }) => {
+  test('Weg der Gemeinde: 1978 zuerst, 2008 und 2011 vor 2019, Eröffnung zuletzt; keine Platzhalter „[…]“', async ({ page }) => {
     await page.goto('/ueber-uns');
     const titel = await page.locator('section[aria-labelledby="ueber-reise"] ol > li').getByRole('heading', { level: 3 }).allInnerTexts();
     expect(titel[0]).toMatch(/^1978 - /);
@@ -47,14 +47,9 @@ test.describe('Über uns', () => {
     expect(jahr('2008')).toBeGreaterThan(0);
     expect(jahr('2011')).toBe(jahr('2008') + 1);
     expect(jahr('2019')).toBe(jahr('2011') + 1);
-    expect(titel.at(-1)).toContain('Eröffnung der neuen Fatih-Moschee');
-    await expect(
-      page
-        .getByRole('main')
-        .getByText(/\[Foto – von der Gemeinde\]/)
-        .first(),
-    ).toBeVisible();
-    await expect(page.getByRole('main')).not.toContainText('[Gründungsjahr]');
+    // Das Jahr der Eröffnung nennt die Gemeinde noch: Die Station steht ohne Jahresmarke, der Titel bleibt wörtlich
+    expect(titel.at(-1)).toBe('Eröffnung der neuen Fatih-Moschee');
+    await expect(page.getByRole('main')).not.toContainText(/\[[^\]]+\]/);
   });
 
   test('Einordnung in den Dachverband mit Link auf /igmg und Quellenzeile (de, tr)', async ({ page }) => {

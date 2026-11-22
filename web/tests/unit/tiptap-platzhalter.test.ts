@@ -39,7 +39,10 @@ describe('ohnePlatzhalterImDokument', () => {
 
   it('Sätze mit Platzhalter entfallen, der Rest bleibt wörtlich; Absätze ohne Platzhalter bleiben dieselben Knoten', () => {
     const frei = absatz('Alle sind herzlich eingeladen.');
-    const d = doc(absatz('Die neue Fatih-Moschee ist fertiggestellt. Eröffnung: [Datum – von der Gemeinde]. Wir freuen uns auf Sie.'), frei);
+    const d = doc(
+      absatz('Die neue Fatih-Moschee ist fertiggestellt. Eröffnung: [Datum – von der Gemeinde]. Wir freuen uns auf Sie.'),
+      frei,
+    );
     const ergebnis = ohnePlatzhalterImDokument(d);
     expect(ergebnis.content).toEqual([absatz('Die neue Fatih-Moschee ist fertiggestellt. Wir freuen uns auf Sie.'), frei]);
     expect(ergebnis.content?.[1]).toBe(frei);
@@ -47,16 +50,24 @@ describe('ohnePlatzhalterImDokument', () => {
 
   it('Auszeichnung bleibt: Platzhalter in fettem Text, kursives Wort im Satz danach', () => {
     const d = doc(
-      absatz('Die Eröffnung ist am ', text('[Datum]', 'bold'), '. Alle sind ', text('herzlich', 'italic'), ' eingeladen. Beginn: [Uhrzeit].'),
+      absatz(
+        'Die Eröffnung ist am ',
+        text('[Datum]', 'bold'),
+        '. Alle sind ',
+        text('herzlich', 'italic'),
+        ' eingeladen. Beginn: [Uhrzeit].',
+      ),
     );
     expect(ohnePlatzhalterImDokument(d).content).toEqual([absatz('Alle sind ', text('herzlich', 'italic'), ' eingeladen.')]);
   });
 
   it('Zeilen mit Umbruch: die Zeile mit Platzhalter entfällt samt ihrem Umbruch', () => {
-    expect(ohnePlatzhalterImDokument(doc(absatz('Teravih: [Zeit – von der Gemeinde]', umbruch, 'Iftar gemeinsam in der Moschee'))).content).toEqual([
-      absatz('Iftar gemeinsam in der Moschee'),
+    expect(
+      ohnePlatzhalterImDokument(doc(absatz('Teravih: [Zeit – von der Gemeinde]', umbruch, 'Iftar gemeinsam in der Moschee'))).content,
+    ).toEqual([absatz('Iftar gemeinsam in der Moschee')]);
+    expect(ohnePlatzhalterImDokument(doc(absatz('Iftar gemeinsam', umbruch, 'Teravih: [Zeit]'))).content).toEqual([
+      absatz('Iftar gemeinsam'),
     ]);
-    expect(ohnePlatzhalterImDokument(doc(absatz('Iftar gemeinsam', umbruch, 'Teravih: [Zeit]'))).content).toEqual([absatz('Iftar gemeinsam')]);
     expect(ohnePlatzhalterImDokument(doc(absatz('Iftar gemeinsam', umbruch, 'Teravih: [Zeit]', umbruch, 'Danach Tee'))).content).toEqual([
       absatz('Iftar gemeinsam', umbruch, 'Danach Tee'),
     ]);

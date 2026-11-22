@@ -65,7 +65,6 @@ export default async function IslamischesWissenSeite() {
     mehrErfahren: t('experten.mehr'),
     zahlArtikel: t('zahl.artikel'),
     dialogAehnlich: t('dialog.aehnlich'),
-    dialogKeine: t('dialog.keine'),
     dialogBeschreibung: t('dialog.beschreibung'),
     dialogUeber: t('dialog.ueber'),
     dialogArtikelAnzeigen: t('dialog.artikelAnzeigen'),

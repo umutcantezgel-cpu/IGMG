@@ -66,10 +66,13 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
   return (
     <section aria-labelledby="projekt-beschreibung" className="grid items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="relative min-h-70 min-w-0 md:min-h-115 lg:col-span-7">
-        {/* Bildfläche, bis die Gemeinde ein Foto hinterlegt; unten Platz für die Etiketten (bis md zweizeilig) */}
+        {/* Bildfläche, bis die Gemeinde ein Foto hinterlegt; unten Platz für die Etiketten, die es gibt (bis md je eine Zeile) */}
         <Bildplatzhalter
           beschriftung={name.text ? t('3d.text', { name: name.text }) : t('kopf.eyebrow')}
-          className={cn('absolute inset-0 rounded-lg border border-linie md:pb-0', fertig ? 'pb-16' : 'pb-32')}
+          className={cn(
+            'absolute inset-0 rounded-lg border border-linie md:pb-0',
+            ort.text && !fertig ? 'pb-32' : ort.text || !fertig ? 'pb-16' : null,
+          )}
         />
         {ort.text || !fertig ? (
           <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2">

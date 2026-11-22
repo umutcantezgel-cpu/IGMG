@@ -198,8 +198,9 @@ test.describe('Projekte', () => {
       .locator('main')
       .evaluate(
         (main) =>
-          [...main.querySelectorAll('h2, h3, dt, dd')].filter((e) => !e.closest('[aria-hidden="true"]') && (e.textContent ?? '').trim() === '')
-            .length,
+          [...main.querySelectorAll('h2, h3, dt, dd')].filter(
+            (e) => !e.closest('[aria-hidden="true"]') && (e.textContent ?? '').trim() === '',
+          ).length,
       );
     expect(leer).toBe(0);
     // Ohne Bankverbindung: ein Satz mit dem Weg zur Kontaktseite, „Jetzt spenden“ führt zur Seite „Spenden“

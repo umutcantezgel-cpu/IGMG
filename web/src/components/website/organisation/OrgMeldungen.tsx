@@ -26,7 +26,7 @@ export function OrgMeldungen({ meldungen, sprache }: { meldungen: NachrichtDaten
                 {titel.text}
               </Link>
             </h3>
-            <Text feld={n.kurztext} sprache={sprache} als="p" className="text-16 text-tinte-2" />
+            <Text feld={n.kurztext} sprache={sprache} als="p" platzhalter className="text-16 text-tinte-2" />
           </li>
         );
       })}

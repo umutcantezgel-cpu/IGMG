@@ -2,9 +2,10 @@ import { expect, test } from '@playwright/test';
 import vorstand from '../../../messages/bereiche/vorstand.json';
 
 /**
- * E2E Welle A (Kennung A23b), Ablauf 6: Vorstand, Über uns und Projekte. Jede Seite hat genau eine h1 und zeigt
- * Platzhalter in eckigen Klammern; die Namen im Vorstand sind keine erfundenen Namen. Ein Link „Kontakt aufnehmen“
- * (falls vorhanden) führt auf /kontakt mit HTTP 200. Texte aus messages/bereiche/vorstand.json (de).
+ * E2E Welle A (Kennung A23b), Ablauf 6: Vorstand, Über uns und Projekte. Jede Seite hat genau eine h1 und zeigt keine
+ * Platzhalter in eckigen Klammern (Vorstellung 23.11.2026): Was die Gemeinde noch nicht geliefert hat, entfällt. Im
+ * Vorstand steht statt eines Namens das Amt – keine erfundenen Namen. Ein Link „Kontakt aufnehmen“ (falls vorhanden)
+ * führt auf /kontakt mit HTTP 200. Texte aus messages/bereiche/vorstand.json (de), Ämter aus dem Seed.
  */
 
 const v = vorstand.de.vorstand;
@@ -27,16 +28,13 @@ function normalisiere(text: string | null): string {
 }
 
 for (const pfad of SEITEN) {
-  test(`${pfad}: genau eine h1, Platzhalter in eckigen Klammern sichtbar`, async ({ page }) => {
+  test(`${pfad}: genau eine h1, keine Platzhalter in eckigen Klammern`, async ({ page }) => {
     await page.goto(pfad);
     await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
-    await expect(
-      page
-        .getByRole('main')
-        .getByText(/\[[^\]]+\]/)
-        .filter({ visible: true })
-        .first(),
-    ).toBeVisible();
+    await expect(page.getByRole('main')).not.toContainText(/\[[^\]]+\]/);
+    // Es bleibt auch keine leere Überschrift zurück
+    const ueberschriften = await page.getByRole('main').getByRole('heading').allInnerTexts();
+    expect(ueberschriften.filter((u) => normalisiere(u) === '')).toEqual([]);
   });
 
   test(`${pfad}: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200`, async ({ page, request }) => {
@@ -55,13 +53,32 @@ for (const pfad of SEITEN) {
   });
 }
 
-test('/vorstand: die Namen im aktuellen Vorstand und bei den Vorsitzenden sind Platzhalter, keine erfundenen Namen', async ({ page }) => {
+/** Ämter des aktuellen Vorstands im Beispielbestand (drizzle/seeds/bereiche/vorstand.ts). */
+const AEMTER = [
+  'Vorsitzender',
+  'Stellvertretender Vorsitzender',
+  'Schatzmeister',
+  'Bildungsbeauftragter',
+  'Jugendbeauftragter',
+  'Sozialbeauftragter',
+];
+
+test('/vorstand: ohne Namen steht das Amt in der Hauptzeile – keine Platzhalter, keine erfundenen Namen, keine Telefonzeile', async ({
+  page,
+}) => {
   await page.goto('/vorstand');
-  for (const abschnitt of [v.aktuellTitel, v.vorsitzTitel]) {
-    const namen = await page.getByRole('region', { name: abschnitt, exact: true }).getByRole('heading', { level: 3 }).allTextContents();
-    expect(namen.length).toBeGreaterThan(0);
-    for (const name of namen) {
-      expect(normalisiere(name)).toMatch(/^\[[^\]]+\]$/);
-    }
-  }
+  const aktuell = page.getByRole('region', { name: v.aktuellTitel, exact: true });
+  const aemter = (await aktuell.getByRole('heading', { level: 3 }).allTextContents()).map(normalisiere);
+  expect(aemter).toEqual(AEMTER);
+  const vorsitz = page.getByRole('region', { name: v.vorsitzTitel, exact: true });
+  const rollen = (await vorsitz.getByRole('heading', { level: 3 }).allTextContents()).map(normalisiere);
+  expect(rollen.length).toBeGreaterThan(0);
+  for (const rolle of rollen) expect([v.rolleEhemalig, v.rolleAktuell]).toContain(rolle);
+  expect(rollen.at(-1)).toBe(v.rolleAktuell);
+  // Das Amt steht nur einmal je Karte (nicht noch als Etikett darunter); E-Mail bleibt, Telefonnummern fehlen noch
+  const ersteKarte = aktuell.locator('article').first();
+  await expect(ersteKarte.getByText(AEMTER[0], { exact: true })).toHaveCount(1);
+  await expect(ersteKarte.locator('a[href^="mailto:"]')).toBeVisible();
+  await expect(aktuell.locator('a[href^="tel:"]')).toHaveCount(0);
+  await expect(page.getByRole('main')).not.toContainText(/\[[^\]]+\]/);
 });

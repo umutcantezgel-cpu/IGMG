@@ -137,7 +137,9 @@ test('FAQPage im Kopf: parsebar, nur Fragen ohne Platzhalter; sichtbare Fragen a
   expect(fragen.length).toBeGreaterThanOrEqual(5);
   for (const f of fragen) expect(`${f.name} ${f.acceptedAnswer.text}`).not.toMatch(/\[[^\]]*\]/);
   const bereich = page.getByRole('region', { name: T.faqTitel, exact: true });
+  // Die Frage zu den Seminaren steht sichtbar ohne den Satz mit Platzhalter (Termine nennt die Gemeinde noch); im Kopf fehlt sie
   await expect(bereich.locator('details')).toHaveCount(fragen.length + 1);
+  await expect(page.getByRole('main')).not.toContainText(/\[[^\]]+\]/);
   await bereich.locator('summary').first().click();
   await expect(bereich.locator('details').first()).toHaveAttribute('open', '');
 });

@@ -25,7 +25,6 @@ export type WissenTexte = {
   mehrErfahren: string;
   zahlArtikel: string;
   dialogAehnlich: string;
-  dialogKeine: string;
   dialogBeschreibung: string;
   dialogUeber: string;
   dialogArtikelAnzeigen: string;

@@ -88,13 +88,17 @@ test('unbekannte Suren und Cüz antworten mit 404', async ({ page }) => {
   }
 });
 
-test('Tajwid-Seite: 18 Regeln in sechs Familien, Erklärung nur freigegeben (sonst Platzhalter), Beispielvers markiert', async ({
+test('Tajwid-Seite: 18 Regeln in sechs Familien, Erklärung nur freigegeben (sonst nur der Hinweis unter der Legende), Beispielvers markiert', async ({
   page,
 }) => {
   await page.goto('/quran/tajwid');
   await expect(page.locator('li[id^="regel-"]')).toHaveCount(18);
   await expect(page.locator('section[id^="familie-"]')).toHaveCount(6);
-  await expect(page.getByText(T.de.tajwidLeiste.platzhalter).first()).toBeVisible();
+  // Ohne freigegebene Erklärung steht je Karte kein Platzhalter mehr (Vorstellung 23.11.2026): Der Hinweis unter der Legende
+  // sagt einmal, dass die Erklärungen folgen; auf der ganzen Seite steht kein Text in eckigen Klammern
+  await expect(page.getByText(T.de.tajwidSeite.hinweis, { exact: true })).toBeVisible();
+  await expect(page.getByText(T.de.tajwidLeiste.platzhalter)).toHaveCount(0);
+  await expect(page.getByRole('main').getByText(/\[[^\]]+\]/)).toHaveCount(0);
   await expect(page.locator('#regel-madd_2 .beispiel-vers .tj-madd').first()).toBeAttached();
   await expect(page.locator('#regel-madd_2 .beispiel-vers .tj:not(.tj-madd)')).toHaveCount(0);
 });

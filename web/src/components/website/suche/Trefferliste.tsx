@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { EntwurfMarke } from '@/components/website/wissen/EntwurfMarke';
 import { Link } from '@/i18n/link';
+import { ohnePlatzhalter } from '@/lib/inhalt/platzhalter';
 import { cn } from '@/lib/utils';
 import { MARKE_AN, MARKE_AUS, type SuchArt, type SuchTreffer } from '@/server/queries/suche';
 
@@ -20,8 +21,25 @@ const ZIEL = {
   wissen: (slug: string) => ({ pathname: '/islamisches-wissen/[thema]' as const, params: { thema: slug } }),
 };
 
-/** Ausschnitt mit Trefferwörtern: Marken aus ts_headline → <mark>, sonst reiner Text (kein HTML aus der Datenbank). */
+/**
+ * Ausschnitt eines Treffers für die Anzeige. Nachrichten und Veranstaltungen: Sätze mit Platzhalter der Gemeinde „[…]“
+ * entfallen (`src/lib/inhalt/platzhalter.ts`) – auch wenn der Ausschnitt mitten in einem Platzhalter beginnt oder endet
+ * (dann fehlt eine Klammer und wird hier ergänzt). In Wissenstexten können eckige Klammern Einschübe sein: unverändert.
+ */
+function ausschnittFuer(z: SuchTreffer): string {
+  if (z.art === 'wissen') return z.ausschnitt;
+  let text = z.ausschnitt;
+  if (/\[[^\]]*$/.test(text)) text += ']';
+  if (/^[^[]*\]/.test(text)) text = `[${text}`;
+  return ohnePlatzhalter(text);
+}
+
+/**
+ * Ausschnitt mit Trefferwörtern: Marken aus ts_headline → <mark>, sonst reiner Text (kein HTML aus der Datenbank).
+ * Ohne Text (nichts gefunden oder nur Sätze mit Platzhalter) entfällt der Absatz.
+ */
 function Ausschnitt({ text }: { text: string }) {
+  if (!text) return null;
   const teile = text.split(new RegExp(`(${MARKE_AN}[^${MARKE_AUS}]*${MARKE_AUS})`));
   return (
     <p className="text-pretty text-tinte-2">
@@ -70,7 +88,7 @@ export async function Trefferliste({ treffer }: { treffer: SuchTreffer[] }) {
                     </Link>
                   </h4>
                   {z.entwurf ? <EntwurfMarke text={tw('marke')} /> : null}
-                  {z.ausschnitt ? <Ausschnitt text={z.ausschnitt} /> : null}
+                  <Ausschnitt text={ausschnittFuer(z)} />
                 </article>
               </li>
             ))}

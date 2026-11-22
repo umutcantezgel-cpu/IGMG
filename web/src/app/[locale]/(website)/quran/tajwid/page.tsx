@@ -107,7 +107,8 @@ export default async function TajwidSeite() {
                           <audio controls preload="none" src={r.hoerbeispiel} className="w-full" />
                         </figure>
                       ) : null}
-                      <figure className="mt-auto flex flex-col gap-2 rounded-md bg-papier p-4">
+                      {/* Mit Erklärung steht das Beispiel am Kartenboden (gleiche Höhe in der Zeile), ohne direkt unter dem Namen */}
+                      <figure className={`flex flex-col gap-2 rounded-md bg-papier p-4 ${kurz || erklaerung ? 'mt-auto' : ''}`}>
                         <figcaption className="text-16 font-bold text-tinte-2">
                           {ts('beispiel')}
                           {b ? ` · ${ts('beispielStelle', { sure: b.sure, vers: b.vers })}` : ''}

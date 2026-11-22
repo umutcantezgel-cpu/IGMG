@@ -48,7 +48,7 @@ export async function OrgTermine({ termine, sprache, org }: { termine: Veranstal
                   {uhrzeitText(v, sprache, t('ganztaegig'))}
                 </span>
               </div>
-              <Text feld={v.kurztext} sprache={sprache} als="p" className="text-16 text-tinte-2" />
+              <Text feld={v.kurztext} sprache={sprache} als="p" platzhalter className="text-16 text-tinte-2" />
             </li>
           );
         })}

@@ -91,7 +91,13 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
                 </div>
                 {e.bild ? (
                   <div className="relative h-28 overflow-hidden rounded-md border border-linie md:h-36 md:w-60 md:shrink-0">
-                    <Bild src={e.bild} alt={ohneFotoVermerk(bild.text)} fill sizes="(min-width: 768px) 240px, 100vw" className="object-cover" />
+                    <Bild
+                      src={e.bild}
+                      alt={ohneFotoVermerk(bild.text)}
+                      fill
+                      sizes="(min-width: 768px) 240px, 100vw"
+                      className="object-cover"
+                    />
                   </div>
                 ) : (
                   <Bildflaeche beschriftung={bild.text} lang={bild.lang} className="h-28 md:h-36 md:w-60 md:shrink-0" />

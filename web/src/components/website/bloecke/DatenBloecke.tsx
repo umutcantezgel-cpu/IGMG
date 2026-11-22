@@ -90,7 +90,15 @@ export async function NachrichtenAnsicht({ b, sprache }: { b: BlockVon<'nachrich
  * entfallen Adresse und Telefonnummer, solange sie Platzhalter der Gemeinde „[…]“ sind – samt Symbol; die E-Mail bleibt.
  * In der Verwaltung (Vorschau) stehen die Platzhalter weiter da.
  */
-export async function KontaktAnsicht({ b, sprache, oeffentlich = false }: { b: BlockVon<'kontakt'>; sprache: Sprache; oeffentlich?: boolean }) {
+export async function KontaktAnsicht({
+  b,
+  sprache,
+  oeffentlich = false,
+}: {
+  b: BlockVon<'kontakt'>;
+  sprache: Sprache;
+  oeffentlich?: boolean;
+}) {
   const [t, kontakt] = await Promise.all([getTranslations({ locale: sprache, namespace: 'bloecke' }), ladeSeiteninhalt('kontakt')]);
   const k = kopf(b, sprache, t('kontaktTitel'));
   const adresse = oeffentlich ? angabe(kontakt.adresse) : kontakt.adresse;

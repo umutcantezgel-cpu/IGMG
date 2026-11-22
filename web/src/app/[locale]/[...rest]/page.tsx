@@ -49,8 +49,9 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/[...rest
   const treffer = await ladeSeite(sprache, teile[0]);
   if (treffer?.art !== 'seite') return {};
   const s = treffer.seite;
-  const titel = textMitSprache(s.titel, sprache).text;
-  // Kurzbeschreibung ohne Sätze mit Platzhalter „[…]“ – auch in den Metadaten erscheinen sie nicht
+  // Titel und Kurzbeschreibung ohne Platzhalter „[…]“ – auch in den Metadaten erscheinen sie nicht
+  const tb = await getTranslations('bloecke');
+  const titel = textMitSprache(s.titel, sprache, { platzhalter: true }).text || tb('kennung');
   const beschreibung = textMitSprache(s.beschreibung, sprache, { platzhalter: true }).text || undefined;
   // hreflang je Sprache mit eigenem Slug: Standard-Metadaten (Open Graph, Bild) und die Adressen dieser Seite
   const basis = await metadatenFuer({ pfad: '/', titel, beschreibung });
@@ -95,7 +96,7 @@ async function Aufloesung({ params }: { params: Promise<{ locale: string; rest: 
 }
 
 async function FreieSeite({ seite, sprache }: { seite: SeiteOeffentlich; sprache: Locale }) {
-  const tk = await getTranslations('kopf');
+  const [tk, tb] = await Promise.all([getTranslations('kopf'), getTranslations('bloecke')]);
   // Bereich der Hauptnavigation: die Gruppe des Menüs, in der diese Seite steht (sonst keiner)
   const bestand = baueMenues(
     (k) => tk(k),
@@ -104,9 +105,10 @@ async function FreieSeite({ seite, sprache }: { seite: SeiteOeffentlich; sprache
   const ausDb = await ladeKopfMenue(sprache);
   const punkt = `seite:${seite.id}`;
   const bereich = ausDb ? bereichMit(menuesAusDb(ausDb, bestand), punkt) : 'keiner';
-  const titel = textMitSprache(seite.titel, sprache);
+  // Brotkrume wie der Seitentitel: ohne Platzhalter „[…]“, sonst die Kennung der Website
+  const titel = textMitSprache(seite.titel, sprache, { platzhalter: true }).text || tb('kennung');
   return (
-    <Seitenrahmen bereich={bereich} seite={punkt} sprachZiel={{ adressen: seitenAdressen(seite.slugs) }} pfad={[{ label: titel.text }]}>
+    <Seitenrahmen bereich={bereich} seite={punkt} sprachZiel={{ adressen: seitenAdressen(seite.slugs) }} pfad={[{ label: titel }]}>
       <FreieSeiteInhalt seite={seite} sprache={sprache} oeffentlich />
     </Seitenrahmen>
   );

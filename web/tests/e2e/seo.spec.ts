@@ -43,9 +43,10 @@ const AUSNAHMEN: { muster: RegExp; regel: Regel; grund: string; mussGreifen?: bo
     mussGreifen: false,
   },
   {
-    muster: /^(\/(tr|en))?\/(nachrichten|haberler|news)\/(neuer-imam-stellt-sich-vor|eroeffnung-der-neuen-fatih-moschee)$/,
+    muster: /^(\/(tr|en))?\/(nachrichten|haberler|news)\/eroeffnung-der-neuen-fatih-moschee$/,
     regel: 'beschreibung',
-    grund: 'Kurztexte der Beispiel-Neuigkeiten mit Platzhalter ([Name – Imam], [Datum – von der Gemeinde])',
+    grund:
+      'Kurztext der Beispiel-Neuigkeit ohne den Satz mit Platzhalter ([Datum – von der Gemeinde]) unter 50 Zeichen; besteht der Kurztext nur aus Platzhalter-Sätzen (neuer-imam-stellt-sich-vor), steht der Untertitel der Übersicht',
     mussGreifen: false,
   },
   {

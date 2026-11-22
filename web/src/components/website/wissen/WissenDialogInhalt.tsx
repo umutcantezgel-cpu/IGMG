@@ -44,32 +44,33 @@ export function ArtikelInhalt({
       <p lang={x.text?.lang} className="max-w-text text-pretty">
         {x.text ? x.text.text : texte.artikelBeispiel}
       </p>
-      <h3 className="mt-2 font-text text-18 font-bold">{texte.dialogAehnlich}</h3>
+      {/* Ohne ähnliche Artikel (Themenseite mit einem Artikel) entfällt der Abschnitt samt Überschrift */}
       {aehnlich.length ? (
-        <ul className="grid gap-3 md:grid-cols-2">
-          {aehnlich.map((s) => (
-            <li key={s.schluessel}>
-              <button
-                type="button"
-                aria-label={`${texte.weiterlesen}: ${s.titel.text}`}
-                onClick={() => onWechsel(s.schluessel)}
-                className="flex w-full druck flex-col gap-1 rounded-lg border border-linie p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
-              >
-                <span lang={s.titel.lang} className="font-bold">
-                  {s.titel.text}
-                </span>
-                <span className="text-16 text-tinte-2">
-                  {s.autor ? <span lang={s.autor.lang}>{s.autor.text}</span> : null}
-                  {s.autor ? ' · ' : null}
-                  {s.lesezeit}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="text-16 text-tinte-2">{texte.dialogKeine}</p>
-      )}
+        <>
+          <h3 className="mt-2 font-text text-18 font-bold">{texte.dialogAehnlich}</h3>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {aehnlich.map((s) => (
+              <li key={s.schluessel}>
+                <button
+                  type="button"
+                  aria-label={`${texte.weiterlesen}: ${s.titel.text}`}
+                  onClick={() => onWechsel(s.schluessel)}
+                  className="flex w-full druck flex-col gap-1 rounded-lg border border-linie p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
+                >
+                  <span lang={s.titel.lang} className="font-bold">
+                    {s.titel.text}
+                  </span>
+                  <span className="text-16 text-tinte-2">
+                    {s.autor ? <span lang={s.autor.lang}>{s.autor.text}</span> : null}
+                    {s.autor ? ' · ' : null}
+                    {s.lesezeit}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
     </>
   );
 }
