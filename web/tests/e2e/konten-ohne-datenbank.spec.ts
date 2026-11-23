@@ -41,3 +41,28 @@ test('ohne Laufzeit-Datenbank: Konto-Seiten mit echtem Status 404, öffentliche 
   expect((await request.get('/gibtsnicht')).status()).toBe(404);
   expect((await request.get('/verwaltung', { maxRedirects: 0 })).status()).not.toBe(404);
 });
+
+/**
+ * Rundgang (23.11.2026): Ohne Laufzeit-Datenbank zeigt jede Adresse der Verwaltung statt der Anmeldung die Aufnahmen aller
+ * Bildschirme hinter der Anmeldung (`src/components/verwaltung/rundgang/Rundgang.tsx`).
+ */
+test('ohne Laufzeit-Datenbank: die Verwaltung zeigt den Rundgang mit Aufnahmen', async ({ page, request }) => {
+  const gesundheit = await request.get('/api/health');
+  test.skip(gesundheit.ok(), 'Datenbank verbunden: Die Verwaltung zeigt die Anmeldung');
+
+  await page.goto('/verwaltung/anmelden');
+  await expect(page.getByRole('heading', { level: 1, name: 'Rundgang durch Verwaltung und Mitgliederbereich' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2 })).toHaveCount(8);
+  expect(await page.locator('main article').count()).toBeGreaterThan(50);
+  // Sprungmarke aus der Leiste führt zum Bereich, die erste Aufnahme dort lädt wirklich
+  await page.getByRole('navigation', { name: 'Bereiche des Rundgangs' }).getByRole('link', { name: 'Mitgliederbereich' }).click();
+  await expect(page).toHaveURL(/#mitglieder$/);
+  const bild = page.locator('#mein-bereich img').first();
+  await bild.scrollIntoViewIfNeeded();
+  await expect.poll(() => bild.evaluate((b: HTMLImageElement) => b.complete && b.naturalWidth > 0)).toBe(true);
+  // kein waagrechtes Scrollen der Seite, weder am Telefon noch am Computer
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+  // jede Adresse der Verwaltung zeigt den Rundgang
+  await page.goto('/verwaltung');
+  await expect(page.getByRole('heading', { level: 1, name: 'Rundgang durch Verwaltung und Mitgliederbereich' })).toBeVisible();
+});

@@ -1,0 +1,301 @@
+{
+  "rundgang": {
+    "dachzeile": "Vorführung",
+    "titel": "Rundgang durch Verwaltung und Mitgliederbereich",
+    "einleitung": "Diese Testversion läuft ohne Datenbank, deshalb gibt es hier noch keine Konten und keine Anmeldung. Damit Sie trotzdem alles begutachten können, zeigt dieser Rundgang jeden Bildschirm hinter der Anmeldung – für Computer und Handy.",
+    "hinweis": "Echte Aufnahmen aus der Testumgebung mit Beispieldaten: Namen, Gruppen und Texte sind Beispiele, Angaben in eckigen Klammern trägt später die Gemeinde ein. Sobald die Datenbank verbunden ist, steht an dieser Stelle die Anmeldung.",
+    "umfang": "{schirme} Bildschirme in {bereiche} Bereichen",
+    "bedienung": "In jeder Aufnahme können Sie scrollen. Ein Klick öffnet sie in voller Größe.",
+    "bereiche": "Bereiche des Rundgangs",
+    "inhalt": "Bildschirme in diesem Bereich",
+    "computer": "Computer",
+    "telefon": "Handy",
+    "bild": "Bildschirm „{titel}“, Ansicht {geraet}",
+    "oeffnen": "„{titel}“ ({geraet}) in voller Größe öffnen",
+    "nachOben": "Nach oben",
+    "gruppen": {
+      "einstieg": {
+        "titel": "Einstieg",
+        "text": "Die Anmeldung und der erste Blick danach."
+      },
+      "inhalte": {
+        "titel": "Inhalte pflegen",
+        "text": "Alles, was auf der Website steht, ändert die Gemeinde selbst – ohne Programmierer."
+      },
+      "gebet": {
+        "titel": "Gebet und Koran",
+        "text": "Gebetszeiten, besondere Tage, Koran-Inhalte und der Bildschirm im Gebetsraum."
+      },
+      "unterricht": {
+        "titel": "Unterricht und Lern-App",
+        "text": "Kurse, Gruppen und Lernende verwalten und die Inhalte der Lern-App prüfen."
+      },
+      "kommunikation": {
+        "titel": "Kommunikation",
+        "text": "Anfragen von der Website, interne Nachrichten, Tickets und Newsletter."
+      },
+      "betrieb": {
+        "titel": "Betrieb und Sicherheit",
+        "text": "Wer darf was, was ist passiert und was fehlt bis zum Livegang."
+      },
+      "mitglieder": {
+        "titel": "Mitgliederbereich",
+        "text": "„Mein Bereich“: Das sehen Mitglieder, Eltern und Kinder nach der Anmeldung auf der Website."
+      },
+      "lehrkraft": {
+        "titel": "Für Lehrkräfte",
+        "text": "Anwesenheit, Fortschritt und Gruppenchat – am Handy im Unterrichtsraum."
+      }
+    },
+    "schirme": {
+      "verwaltung-anmelden": {
+        "titel": "Anmeldung der Verwaltung",
+        "text": "E-Mail, Passwort und ein zweiter Faktor per Authenticator-App. Konten entstehen nur per Einladung."
+      },
+      "uebersicht": {
+        "titel": "Übersicht",
+        "text": "Der erste Blick nach dem Anmelden: offene Aufgaben als Kennzahlen, aktuelle Neuigkeiten und die nächsten Veranstaltungen."
+      },
+      "gemeinde-im-blick": {
+        "titel": "Gemeinde im Blick",
+        "text": "Zahlen für die Leitung – ohne Namen und ohne Personendaten. Der Bericht lässt sich drucken."
+      },
+      "neuigkeiten": {
+        "titel": "Neuigkeiten",
+        "text": "Alle Nachrichten der Gemeinde mit Datum, Kategorie und Status. Gelöschtes liegt im Papierkorb."
+      },
+      "neuigkeit": {
+        "titel": "Nachricht bearbeiten",
+        "text": "Titel, Kurztext, Bild und Text in einer Maske – mit einfacher Werkzeugleiste und Link zur öffentlichen Ansicht."
+      },
+      "veranstaltungen": {
+        "titel": "Veranstaltungen",
+        "text": "Kommende und vergangene Termine, auch wiederkehrende, mit Organisation und Status."
+      },
+      "veranstaltung": {
+        "titel": "Veranstaltung bearbeiten",
+        "text": "Titel, Beschreibung, Bild, Datum und Uhrzeit. Der Termin erscheint danach auf der Seite „Veranstaltungen“."
+      },
+      "ankuendigungen": {
+        "titel": "Ankündigungen",
+        "text": "Kurze Hinweise für die Website – sichtbar, solange sie gelten."
+      },
+      "seiteninhalte": {
+        "titel": "Seiteninhalte",
+        "text": "Die Texte der festen Seiten – Über uns, Vorstand, Kontakt, Organisationen. Deutsch ist Pflicht, Türkisch und Englisch sind möglich."
+      },
+      "seiteninhalte-kontakt": {
+        "titel": "Kontaktdaten",
+        "text": "Adresse, Telefon, Öffnungszeiten und Anfahrt an einer Stelle. Die Angaben erscheinen auf der Kontaktseite und in der Fußzeile. Was noch in eckigen Klammern steht, trägt die Gemeinde hier ein."
+      },
+      "seiten": {
+        "titel": "Eigene Seiten",
+        "text": "Neue Seiten aus Bausteinen zusammensetzen: Text, Bilder, Fragen und Antworten, Termine."
+      },
+      "seite": {
+        "titel": "Seite bearbeiten",
+        "text": "Bausteine hinzufügen und in die richtige Reihenfolge schieben. Erst Entwurf, dann öffentlich; frühere Fassungen bleiben erhalten."
+      },
+      "startseite": {
+        "titel": "Startseite",
+        "text": "Die Reihenfolge der Abschnitte auf der Startseite festlegen und einzelne Abschnitte ein- oder ausblenden."
+      },
+      "menues": {
+        "titel": "Menüs",
+        "text": "Hauptmenü und Schnellzugriff im Fuß: welche Seiten erscheinen, in welcher Reihenfolge und mit welcher Beschriftung."
+      },
+      "weiterleitungen": {
+        "titel": "Weiterleitungen",
+        "text": "Ändert sich eine Adresse, führt eine Weiterleitung Besucher und Suchmaschinen von der alten zur neuen."
+      },
+      "medien": {
+        "titel": "Medien",
+        "text": "Bilder und PDF-Aushänge für die Website. Jedes Bild bekommt eine Beschreibung für Menschen, die es nicht sehen."
+      },
+      "wissen": {
+        "titel": "Islamisches Wissen",
+        "text": "Die Themen der Seite „Islamisches Wissen“. Öffentlich wird ein Thema erst, wenn die religiöse Prüfung es freigegeben hat."
+      },
+      "freigaben": {
+        "titel": "Freigaben",
+        "text": "Inhalte, die auf eine Prüfung warten. Religiöse Inhalte gibt nur die religiöse Prüfung frei – vorher erscheint nichts öffentlich."
+      },
+      "gebetszeiten": {
+        "titel": "Gebetszeiten",
+        "text": "Woher die Zeiten kommen: IGMG-Gebetskalender, eigene Tabelle der Gemeinde oder vorläufige Berechnung – mit täglichem Abgleich."
+      },
+      "besondere-tage": {
+        "titel": "Besondere Tage",
+        "text": "Kandil-Nächte, Ramadan und Bayram für Kalender und Website. Vorschläge werden berechnet, die Gemeinde bestätigt sie."
+      },
+      "koran": {
+        "titel": "Koran & Hadith",
+        "text": "Übersetzungsausgaben freigeben, Wortbedeutungen und Tajwid-Texte erfassen. Öffentlich erscheint nur, was religiös geprüft ist."
+      },
+      "rezitationen": {
+        "titel": "Rezitationen",
+        "text": "Eigene Aufnahmen für den Koran-Leser – öffentlich erst, wenn die Rechte geklärt sind und die religiöse Prüfung zugestimmt hat."
+      },
+      "hatim": {
+        "titel": "Hatim",
+        "text": "Gemeinsame Hatims anlegen und abschließen. Gemeindemitglieder übernehmen ihre Cüz im Mitgliederbereich."
+      },
+      "anzeige": {
+        "titel": "Anzeige im Gebetsraum",
+        "text": "Folien für den Bildschirm im Gebetsraum. Ohne Folien zeigt er Uhr und Gebetszeiten, während des Gebets bleiben die Folien aus."
+      },
+      "kurse": {
+        "titel": "Kurse",
+        "text": "Die Kursangebote der Website: Zielgruppe, Zeiten und ob eine Anmeldung nötig ist."
+      },
+      "gruppen": {
+        "titel": "Gruppen",
+        "text": "Lerngruppen mit Leitung, Mitgliedern und Terminen."
+      },
+      "gruppe": {
+        "titel": "Eine Gruppe",
+        "text": "Leitung, Termine und Mitglieder auf einen Blick. Der Gruppenchat ist nur offen, wenn mindestens zwei Erwachsene die Gruppe leiten."
+      },
+      "lernende": {
+        "titel": "Lernende",
+        "text": "Datensparsame Liste: nur Vorname mit Initial, Gruppe und Alter. Alles Weitere steht verschlüsselt in der Detailansicht."
+      },
+      "lernender": {
+        "titel": "Ein Kind in der Detailansicht",
+        "text": "Angaben, Eltern, Gruppen und der eigene Zugang eines Kindes. Jeder Abruf wird protokolliert."
+      },
+      "lehrplan": {
+        "titel": "Lehrplan",
+        "text": "Stufen je Kursart – Elifbe, Koran, Tecvid, İlmihal, Hifz. Die Bezeichnungen legt die Lehrkraft fest."
+      },
+      "lernapp": {
+        "titel": "Lern-App: Übersicht",
+        "text": "Stand der Sprachkurse: was geprüft ist, was noch auf Menschen wartet und die Prüfquoten je Sprache."
+      },
+      "lernapp-kurs": {
+        "titel": "Lern-App: ein Kurs",
+        "text": "Alle Einheiten und Lektionen eines Kurses mit Status. Jede Lektion lässt sich in der Vorschau durchspielen."
+      },
+      "lernapp-sprachpruefung": {
+        "titel": "Lern-App: Sprachprüfung",
+        "text": "Muttersprachlerinnen und Muttersprachler beurteilen Stichproben in ihrer Sprache."
+      },
+      "lernapp-audio": {
+        "titel": "Lern-App: Audio-Studio",
+        "text": "Fehlende und auffällige Tonclips je Kurs – mit der Wahl zwischen Sprachausgabe und Aufnahmen von Menschen."
+      },
+      "eingaenge": {
+        "titel": "Eingänge",
+        "text": "Anfragen aus den Formularen der Website mit Art, Status und Export. Die Liste selbst zeigt keine Personendaten."
+      },
+      "postfach": {
+        "titel": "Nachrichten",
+        "text": "Internes Postfach der Verwaltung. Es werden keine E-Mails verschickt."
+      },
+      "tickets": {
+        "titel": "Tickets",
+        "text": "Meldungen und Anliegen aus der Gemeinde mit Status und Priorität."
+      },
+      "newsletter": {
+        "titel": "Newsletter",
+        "text": "Ausgaben schreiben und an bestätigte Empfänger versenden. Adressen sieht hier niemand – nur die Anzahl."
+      },
+      "benutzer": {
+        "titel": "Benutzer und Rollen",
+        "text": "Wer in der Verwaltung arbeitet und was die Person darf. Einladung per E-Mail, Zwei-Faktor-Anmeldung für alle."
+      },
+      "gemeinde-konten": {
+        "titel": "Gemeinde-Konten",
+        "text": "Konten für Gemeinde, Eltern, Lehrkräfte und Schüler. Sperren beendet sofort alle Sitzungen."
+      },
+      "audit": {
+        "titel": "Audit-Log",
+        "text": "Wer hat wann auf Personendaten zugegriffen oder Inhalte geändert? Der Verlauf lässt sich nicht ändern."
+      },
+      "startklar": {
+        "titel": "Startklar-Cockpit",
+        "text": "Zeigt vor dem Livegang, was noch fehlt, wo man es behebt und wie lange es dauert. Die Aufnahme zeigt den Stand der Testumgebung."
+      },
+      "einstellungen": {
+        "titel": "Einstellungen",
+        "text": "Löschfristen für Anfragen, Bankverbindung und Spendenzwecke."
+      },
+      "styleguide": {
+        "titel": "Styleguide",
+        "text": "Farben, Schriften und Bausteine der Website an einem Ort – damit alles aus einem Guss bleibt."
+      },
+      "verwaltung-konto": {
+        "titel": "Mein Konto",
+        "text": "Das eigene Passwort ändern und Ersatzcodes für die Zwei-Faktor-Anmeldung erzeugen."
+      },
+      "konto-anmelden": {
+        "titel": "Anmelden",
+        "text": "Der Zugang für Mitglieder und Eltern – mit E-Mail oder Passkey. Kinder melden sich mit einem eigenen Kinderzugang an."
+      },
+      "konto-registrieren": {
+        "titel": "Registrieren",
+        "text": "Ein Gemeinde-Konto für Mitglieder und Besucher anlegen."
+      },
+      "konto-passwort": {
+        "titel": "Passwort vergessen",
+        "text": "Ein Link per E-Mail setzt das Passwort neu. Das Passwort eines Kinderzugangs setzen die Eltern neu."
+      },
+      "mein-bereich": {
+        "titel": "Mein Bereich",
+        "text": "Die persönliche Startseite: nächstes Gebet, die eigenen Bereiche und Hinweise zum Konto."
+      },
+      "mein-kinder": {
+        "titel": "Meine Kinder",
+        "text": "Eltern sehen Gruppe, nächsten Termin und Zugang jedes Kindes."
+      },
+      "mein-kind": {
+        "titel": "Ein Kind aus Sicht der Eltern",
+        "text": "Nächster Termin, Anwesenheit und Fortschritt – und die Abmeldung, wenn das Kind einmal fehlt."
+      },
+      "mein-gruppe": {
+        "titel": "Gruppe",
+        "text": "Zeiten, Ort, Leitung und die nächsten Termine der Gruppe."
+      },
+      "mein-chat": {
+        "titel": "Elternkanal",
+        "text": "Nachrichten zwischen Lehrkraft und Eltern – mit Regeln, festen Zeiten und einem Knopf zum Melden."
+      },
+      "mein-lesezeichen": {
+        "titel": "Lesezeichen",
+        "text": "Die gespeicherten Stellen im Koran-Leser."
+      },
+      "mein-konto": {
+        "titel": "Konto",
+        "text": "Profil, Sprache, Passwort und Sicherheit."
+      },
+      "kind-bereich": {
+        "titel": "Mein Bereich für Kinder",
+        "text": "Kinder sehen ihren Lernweg, ihre Gruppe und den nächsten Termin – in einfacher Sprache."
+      },
+      "unterricht": {
+        "titel": "Unterricht",
+        "text": "Der Tag der Lehrkraft: der Unterricht von heute, die nächsten Termine und die eigenen Gruppen."
+      },
+      "unterricht-gruppe": {
+        "titel": "Gruppe der Lehrkraft",
+        "text": "Von hier aus geht es zu Fortschritt, Lern-App, Moderation, Gruppenchat und Elternkanal; darunter die nächsten Termine."
+      },
+      "unterricht-anwesenheit": {
+        "titel": "Anwesenheit",
+        "text": "Ein Tipp je Kind: da, später, entschuldigt oder fehlt. Abmeldungen der Eltern sind schon eingetragen."
+      },
+      "unterricht-fortschritt": {
+        "titel": "Fortschritt",
+        "text": "Die Stufen je Kind per Tipp weiterschalten und Hifz-Abschnitte eintragen."
+      },
+      "unterricht-lernapp": {
+        "titel": "Lern-App im Unterricht",
+        "text": "Einheiten der Lern-App zuweisen, Schreibaufgaben ansehen und ein gemeinsames Wochenziel setzen."
+      },
+      "unterricht-moderation": {
+        "titel": "Moderation",
+        "text": "Gemeldete Nachrichten ansehen und Kanäle pausieren. Jede Maßnahme braucht einen Grund und wird protokolliert."
+      }
+    }
+  }
+}

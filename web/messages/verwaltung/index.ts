@@ -41,6 +41,7 @@ import sicherheit from './sicherheit.json';
 import startseite from './startseite.json';
 import wissen from './wissen.json';
 import lernapp from './lernapp.json';
+import rundgang from './rundgang.json';
 
 type Teil = Record<string, unknown>;
 
@@ -81,4 +82,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   startseite,
   wissen,
   lernapp,
+  rundgang,
 };

@@ -18,6 +18,12 @@ Platzhalter“). Entscheidungen und Grenzen: `web/docs/adr/0050-ein-rahmen-fuer-
 - Name der Lern-App: „IGMG Wetzlar – Lernen“ / „IGMG Lernen“ (ar nur die Marke); der Vorstand kann ihn ändern.
 - Lokal: CSS-Änderungen übernimmt `next dev` erst nach `rm -rf web/.next/dev/cache` (wie L-E09 beim Bau).
 
+## Nachtrag 23.11.2026: Rundgang statt „Verwaltung noch nicht eingerichtet“
+Auftrag des Nutzers am Tag der Vorstellung („es ist eine Testversion – mach, dass man das Design einfach alles begutachten
+kann“). Die Testadresse läuft ohne Datenbank; dort zeigt jede Adresse der Verwaltung jetzt einen Rundgang mit Aufnahmen
+aller Bildschirme hinter der Anmeldung (Verwaltung, „Mein Bereich“, Unterricht; Computer und Handy). Entscheidung und
+Rückbau: `web/docs/adr/0051-rundgang-in-der-vorfuehrung-ohne-datenbank.md`. Mit verbundener Datenbank erscheint er nicht.
+
 ## Übergabe 27.10.2026 (alte Umgebung beendet, neue Umgebung übernimmt)
 Auf `main` (Stand dieses Commits) liegen zwei Nachträge auf Nutzerauftrag, beide schon gepusht:
 - **L3-E22** Wissenskurs als „Entwurf zur Prüfung“ auf der Testdomain (live geprüft, fertig).
