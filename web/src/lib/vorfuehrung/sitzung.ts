@@ -1,6 +1,7 @@
 import 'server-only';
 import { eq } from 'drizzle-orm';
 import { cookies } from 'next/headers';
+import { connection } from 'next/server';
 import { db, schema } from '@/lib/db';
 import { VORFUEHRUNG_COOKIE, kontoZuSchluessel, type VorfuehrungsKonto } from './konten';
 import { vorfuehrung } from './modus';
@@ -23,6 +24,9 @@ export async function gewaehlterTestzugang(): Promise<VorfuehrungsKonto | null> 
  * Schnappschuss. Der zweite Faktor gilt als erfüllt: Der Testzugang soll ohne Einrichtung in alle Bereiche führen.
  */
 export async function vorfuehrungsSitzung(): Promise<VorfuehrungsSitzung | null> {
+  // Erst die Anfrage abwarten – wie `headers()` im Betrieb. Cookies sind auch beim Vorab-Rendern zur Laufzeit lesbar; ohne
+  // diese Zeile liefe der Code dort weiter bis zur Uhrzeit, und Next meldete je Seite „unstable value Date.now()“.
+  await connection();
   const konto = await gewaehlterTestzugang();
   if (!konto) return null;
   const [u] = await db
