@@ -64,5 +64,14 @@ Stellen, die `vorfuehrung()` lesen.
 ## Prüfung
 
 - `tests/unit/vorfuehrung.test.ts`: Kennzeichen (nie mit `DATABASE_URL`), Testzugänge, Schalter, Schnappschuss packen und
-  entpacken, Pfade außerhalb des Ziels.
-- Lokal wie auf Vercel gebaut (ohne `.env`, `VERCEL=1`, ohne Datenbank) und gestartet: Ergebnis im PR.
+  entpacken, Pfade außerhalb des Ziels. `tests/unit/vorfuehrung-anmelden.test.ts`: die Aktion setzt außerhalb der
+  Vorführung und mit `DATABASE_URL` kein Cookie.
+- Unit 4217 Tests und Integration 4041 Tests grün (Integration: die Anmeldung mit Better Auth über `holeSitzung()`).
+- Lokal wie auf Vercel gebaut (ohne `.env`, `VERCEL=1`, ohne Datenbank, 2505 Seiten) und ohne Datenbank und Geheimnisse
+  gestartet: zwei Klick-Durchläufe ohne Befund, Fehlerprotokoll leer; erster Datenzugriff rund 1,5 s, der ganze Server
+  0,7–1,2 GB Arbeitsspeicher.
+- **Auf der Testadresse (23.11.2026, Bau 5c1c6bd):** falsches Passwort mit Hinweis; Anmeldung von Hand als Verwaltung;
+  40 Seiten der Verwaltung; Nachricht bearbeiten; Abmelden; Eltern, Lehrkraft und Kind in „Mein Bereich“ und im Unterricht;
+  öffentliche Seiten und Rundgang – alles mit Status 200 und Überschrift, kein Seitenfehler. Ohne Anmeldung führen
+  `/verwaltung/…` und `/mein-bereich` zum Testzugang. Warme Seiten 0,6–1,3 s; der erste Zugriff einer frischen Instanz
+  dauerte einmal 4 s, einmal 7 s und einmal 24 s (Unterricht › Lern-App).
