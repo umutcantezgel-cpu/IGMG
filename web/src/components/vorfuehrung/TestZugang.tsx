@@ -1,116 +1,154 @@
-import { GraduationCap, Images, LayoutDashboard, LogIn, Smile, Users } from 'lucide-react';
+import { ArrowRight, Images, KeyRound } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Feld } from '@/components/verwaltung/Feld';
 import { Meldung } from '@/components/verwaltung/Meldung';
-import { VORFUEHRUNG_KONTEN, VORFUEHRUNG_PASSWORT, type VorfuehrungsSchluessel } from '@/lib/vorfuehrung/konten';
-import { testzugangAnmelden } from '@/server/actions/vorfuehrung';
+import { VORFUEHRUNG_KONTEN, VORFUEHRUNG_PASSWORT, type VorfuehrungsKonto } from '@/lib/vorfuehrung/konten';
+import { testzugangAbmelden, testzugangAnmelden } from '@/server/actions/vorfuehrung';
+import { AnmeldeKnopf } from './AnmeldeKnopf';
 
-const ZEICHEN: Record<VorfuehrungsSchluessel, typeof Users> = {
-  verwaltung: LayoutDashboard,
-  eltern: Users,
-  lehrkraft: GraduationCap,
-  kind: Smile,
-};
+const BEREICHE = [
+  { bereich: 'verwaltung', titel: 'gruppeVerwaltung' },
+  { bereich: 'mein-bereich', titel: 'gruppeMeinBereich' },
+] as const;
 
 /**
- * Anmeldeseite der Vorführung mit Testzugang (ADR 0052): vier Zugänge mit je einem Knopf – Verwaltung, Eltern, Lehrkraft,
- * Kind – und darunter dasselbe zum Selbsteintragen. Benutzername und Passwort stehen offen da; der Testzugang schützt
- * nichts, die Vorführung enthält nur Beispieldaten (Hinweis oben). Ohne Client-JavaScript: jedes Formular ruft die Server
- * Action auf, falsche Eingaben kommen mit `?fehler=1` zurück.
+ * Anmeldeseite der Vorführung mit Testzugang (ADR 0052): ein Login-Fenster – Benutzername, Passwort, Anmelden. Je nach
+ * Benutzername öffnet sich ein eigener Bereich mit eigenen Rechten (sechs Rollen der Verwaltung, drei Kontoarten in „Mein
+ * Bereich“). Daneben die Liste der Benutzernamen mit dem, was sie sehen und dürfen, und je einem Knopf zum direkten
+ * Anmelden; das Passwort ist für alle gleich und steht dabei. Der Testzugang schützt nichts, die Vorführung enthält nur
+ * Beispieldaten. Wer schon angemeldet ist, sieht das hier und kann den Benutzer wechseln. Ohne Client-JavaScript
+ * benutzbar: Formulare rufen die Server Action auf, falsche Eingaben kommen mit `?fehler=1` zurück.
  */
-export async function TestZugang({ fehler, abgemeldet }: { fehler: boolean; abgemeldet: boolean }) {
+export async function TestZugang({
+  fehler,
+  abgemeldet,
+  angemeldet,
+}: {
+  fehler: boolean;
+  abgemeldet: boolean;
+  angemeldet: VorfuehrungsKonto | null;
+}) {
   const t = await getTranslations('verwaltung.vorfuehrung');
   const tv = await getTranslations('verwaltung');
   return (
-    <main id="inhalt" className="mx-auto flex min-h-dvh w-full max-w-(--container-seitenkopf) flex-col justify-center px-4 py-10 md:py-14">
-      <div className="mb-6 flex items-center gap-3">
+    <main id="inhalt" className="mx-auto w-full max-w-(--container-inhalt) px-4 py-8 md:px-8 md:py-12">
+      <div className="mb-8 flex items-center gap-3">
         <Image src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10 rounded-sm" />
         <p className="font-display text-20 font-semibold">IGMG Wetzlar</p>
       </div>
-      <h1 className="text-display-2">{t('titel')}</h1>
-      <p className="mt-3 max-w-einleitung text-18 text-pretty text-tinte-2">{t('einleitung')}</p>
-      <div className="mt-6 flex flex-col gap-3">
-        {fehler ? (
-          <Meldung art="fehler" id="testzugang-meldung">
-            {t('fehler')}
-          </Meldung>
-        ) : null}
-        {abgemeldet ? <Meldung art="info">{t('abgemeldet')}</Meldung> : null}
-        <Meldung art="info">{t('hinweis')}</Meldung>
-      </div>
+      <div className="flex flex-col gap-8 verwaltung:flex-row verwaltung:items-start verwaltung:gap-12">
+        <section aria-labelledby="anmelden-titel" className="w-full shrink-0 verwaltung:sticky verwaltung:top-8 verwaltung:w-104">
+          <div className="rounded-lg border border-linie bg-weiss p-6 shadow-s2 md:p-8">
+            <h1 id="anmelden-titel" className="text-display-2">
+              {t('titel')}
+            </h1>
+            <p className="mt-3 text-pretty text-tinte-2">{t('untertitel')}</p>
+            <div className="mt-5 flex flex-col gap-3">
+              {fehler ? (
+                <Meldung art="fehler" id="testzugang-meldung">
+                  {t('fehler')}
+                </Meldung>
+              ) : null}
+              {abgemeldet ? <Meldung art="info">{t('abgemeldet')}</Meldung> : null}
+              {angemeldet ? (
+                <div className="rounded-md border border-gruen-700 bg-gruen-50 px-4 py-3">
+                  <p className="font-bold text-gruen-800">{t('angemeldet', { name: t(`konten.${angemeldet.schluessel}.name`) })}</p>
+                  <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <Button asChild size="sm">
+                      <NextLink href={angemeldet.ziel} prefetch={false}>
+                        {t('weiter')}
+                        <ArrowRight aria-hidden />
+                      </NextLink>
+                    </Button>
+                    <form action={testzugangAbmelden}>
+                      <Button type="submit" variant="link" size="sm">
+                        {t('abmelden')}
+                      </Button>
+                    </form>
+                  </div>
+                  <p className="mt-2 text-16 text-tinte-2">{t('wechseln')}</p>
+                </div>
+              ) : null}
+            </div>
+            <form action={testzugangAnmelden} className="mt-5 flex flex-col gap-5">
+              <Feld
+                id="testzugang-benutzername"
+                name="benutzername"
+                type="text"
+                autoComplete="username"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck={false}
+                required
+                label={t('benutzername')}
+              />
+              <Feld
+                id="testzugang-passwort"
+                name="passwort"
+                type="password"
+                autoComplete="current-password"
+                required
+                label={t('passwort')}
+              />
+              <AnmeldeKnopf text={t('anmelden')} laeuft={t('laeuft')} />
+            </form>
+          </div>
+          <p className="mt-4 flex items-start gap-2 text-16 text-tinte-2">{t('hinweis')}</p>
+          <div className="mt-2 flex flex-col">
+            <NextLink href="/verwaltung/rundgang" prefetch={false} className="inline-flex min-h-11 items-center gap-2 font-bold">
+              <Images aria-hidden className="size-5 shrink-0" />
+              {t('rundgang')}
+            </NextLink>
+            <NextLink href="/" prefetch={false} className="inline-flex min-h-11 items-center font-bold">
+              {tv('shell.zurWebsite')}
+            </NextLink>
+          </div>
+        </section>
 
-      <h2 className="mt-10 font-display text-24 font-semibold">{t('zugaenge')}</h2>
-      <ul className="mt-4 grid gap-4 md:grid-cols-2">
-        {VORFUEHRUNG_KONTEN.map((k) => {
-          const Zeichen = ZEICHEN[k.schluessel];
-          const name = t(`konten.${k.schluessel}.name`);
-          return (
-            <li key={k.schluessel} className="flex flex-col rounded-lg border border-linie bg-weiss p-5 shadow-s1">
-              <div className="flex items-center gap-3">
-                <span aria-hidden className="flex size-11 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-800">
-                  <Zeichen className="size-6" />
-                </span>
-                <h3 className="font-display text-20 font-semibold">{name}</h3>
-              </div>
-              <p className="mt-3 text-pretty text-tinte-2">{t(`konten.${k.schluessel}.text`)}</p>
-              <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-1 rounded-md bg-sand px-4 py-3 text-16">
-                <dt className="text-tinte-2">{t('benutzername')}</dt>
-                <dt className="text-tinte-2">{t('passwort')}</dt>
-                <dd className="font-bold break-all">{k.benutzername}</dd>
-                <dd className="font-bold break-all">{VORFUEHRUNG_PASSWORT}</dd>
-              </dl>
-              <form action={testzugangAnmelden} className="mt-4 flex grow items-end">
-                <input type="hidden" name="benutzername" value={k.benutzername} />
-                <input type="hidden" name="passwort" value={VORFUEHRUNG_PASSWORT} />
-                <Button
-                  type="submit"
-                  variant={k.schluessel === 'verwaltung' ? 'default' : 'secondary'}
-                  className="w-full whitespace-normal"
-                >
-                  <LogIn aria-hidden />
-                  {t('anmeldenAls', { name })}
-                </Button>
-              </form>
-            </li>
-          );
-        })}
-      </ul>
-
-      <section aria-labelledby="testzugang-selbst" className="mt-8 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6">
-        <h2 id="testzugang-selbst" className="font-display text-24 font-semibold">
-          {t('selbst')}
-        </h2>
-        <p className="mt-1 text-tinte-2">{t('selbstText')}</p>
-        <form action={testzugangAnmelden} className="mt-4 grid items-end gap-4 md:grid-cols-3">
-          <Feld
-            id="testzugang-benutzername"
-            name="benutzername"
-            type="text"
-            autoComplete="username"
-            autoCapitalize="none"
-            spellCheck={false}
-            required
-            label={t('benutzername')}
-          />
-          <Feld id="testzugang-passwort" name="passwort" type="password" autoComplete="current-password" required label={t('passwort')} />
-          <Button type="submit" className="w-full">
-            <LogIn aria-hidden />
-            {t('anmelden')}
-          </Button>
-        </form>
-      </section>
-
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-2">
-        <NextLink href="/verwaltung/rundgang" prefetch={false} className="inline-flex min-h-12 items-center gap-2 font-bold">
-          <Images aria-hidden className="size-5" />
-          {t('rundgang')}
-        </NextLink>
-        <NextLink href="/" prefetch={false} className="inline-flex min-h-12 items-center font-bold">
-          {tv('shell.zurWebsite')}
-        </NextLink>
+        <section aria-labelledby="zugaenge-titel" className="min-w-0 flex-1">
+          <h2 id="zugaenge-titel" className="font-display text-24 font-semibold">
+            {t('zugaenge')}
+          </h2>
+          <p className="mt-3 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md bg-sand px-4 py-3 text-18">
+            <KeyRound aria-hidden className="size-5 shrink-0 text-gruen-800" />
+            <span className="text-tinte-2">{t('passwortAlle')}:</span>
+            <strong className="font-bold break-all">{VORFUEHRUNG_PASSWORT}</strong>
+          </p>
+          {BEREICHE.map((b) => (
+            <div key={b.bereich} className="mt-6">
+              <h3 className="text-16 font-bold text-tinte-2">{t(b.titel)}</h3>
+              <ul className="mt-2 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1">
+                {VORFUEHRUNG_KONTEN.filter((k) => k.bereich === b.bereich).map((k) => {
+                  const name = t(`konten.${k.schluessel}.name`);
+                  return (
+                    <li
+                      key={k.schluessel}
+                      className="flex flex-col gap-3 border-t border-linie px-4 py-4 first:border-t-0 md:flex-row md:items-center md:gap-5 md:px-5"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <strong className="rounded-sm bg-gruen-50 px-2 py-0.5 text-18 font-bold break-all text-gruen-800">
+                            {k.benutzername}
+                          </strong>
+                          <span className="font-bold">{name}</span>
+                        </p>
+                        <p className="mt-1 text-pretty text-tinte-2">{t(`konten.${k.schluessel}.text`)}</p>
+                      </div>
+                      <form action={testzugangAnmelden} className="shrink-0 md:w-40">
+                        <input type="hidden" name="benutzername" value={k.benutzername} />
+                        <input type="hidden" name="passwort" value={VORFUEHRUNG_PASSWORT} />
+                        <AnmeldeKnopf klein text={t('direkt')} laeuft={t('laeuft')} ariaLabel={t('anmeldenAls', { name })} />
+                      </form>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </section>
       </div>
     </main>
   );

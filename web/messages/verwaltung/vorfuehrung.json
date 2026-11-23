@@ -1,36 +1,67 @@
 {
   "vorfuehrung": {
-    "titel": "Testzugang",
-    "einleitung": "Diese Testversion hat ein einfaches Login. Wählen Sie einen Zugang und sehen Sie sich alles an – oder tragen Sie Benutzername und Passwort selbst ein.",
-    "hinweis": "Testversion mit Beispieldaten: Alle Namen und Inhalte sind Beispiele. Was Sie hier ändern, wird nicht dauerhaft gespeichert.",
-    "zugaenge": "Zugänge",
+    "titel": "Anmelden",
+    "untertitel": "Benutzername und Passwort eingeben. Je nach Benutzername öffnet sich ein eigener Bereich mit eigenen Rechten.",
+    "hinweis": "Testversion mit Beispieldaten. Was Sie hier ändern, wird nicht dauerhaft gespeichert.",
     "benutzername": "Benutzername",
     "passwort": "Passwort",
     "anmelden": "Anmelden",
-    "anmeldenAls": "Als {name} anmelden",
-    "selbst": "Selbst eintragen",
-    "selbstText": "Das Passwort ist für alle Zugänge gleich.",
-    "fehler": "Benutzername oder Passwort stimmt nicht. Die Zugänge stehen auf dieser Seite.",
+    "laeuft": "Anmeldung läuft …",
+    "fehler": "Benutzername oder Passwort stimmt nicht. Die Benutzernamen stehen in der Liste, das Passwort ist für alle gleich.",
     "abgemeldet": "Sie sind abgemeldet.",
+    "angemeldet": "Sie sind angemeldet als {name}.",
+    "weiter": "Weiter zu meinem Bereich",
+    "abmelden": "Abmelden",
+    "wechseln": "Mit einem anderen Benutzernamen anmelden: einfach unten eintragen.",
+    "zugaenge": "Benutzernamen dieser Testversion",
+    "passwortAlle": "Passwort für alle",
+    "spalteName": "Benutzername",
+    "spalteBereich": "Bereich und Rechte",
+    "spalteAktion": "Direkt",
+    "anmeldenAls": "Als {name} anmelden",
+    "direkt": "Anmelden",
+    "gruppeVerwaltung": "Verwaltung",
+    "gruppeMeinBereich": "Mein Bereich",
     "rundgang": "Lieber nur ansehen? Zum Rundgang mit Bildschirmfotos",
     "band": "Testversion mit Beispieldaten – Änderungen werden nicht dauerhaft gespeichert.",
-    "bandWechseln": "Zugang wechseln",
+    "bandAngemeldet": "Angemeldet als {name}",
+    "bandWechseln": "Benutzer wechseln",
     "konten": {
-      "verwaltung": {
-        "name": "Verwaltung",
-        "text": "Inhalte pflegen, Gebetszeiten, Kurse, Benutzer und alles Weitere hinter der Website."
+      "admin": {
+        "name": "Administration",
+        "text": "Sieht und darf alles: Inhalte, Gebetszeiten, Kurse, Benutzer, Einstellungen, Audit-Log."
       },
-      "eltern": {
-        "name": "Eltern",
-        "text": "„Mein Bereich“ aus Sicht einer Familie: Kinder, Termine, Anwesenheit und Elternkanal."
+      "redaktion": {
+        "name": "Redaktion",
+        "text": "Pflegt die Website: Neuigkeiten, Veranstaltungen, Seiten, Menüs, Medien, Newsletter. Keine Benutzerverwaltung, keine Lernenden."
+      },
+      "bildung": {
+        "name": "Bildung",
+        "text": "Kurse, Gruppen, Lernende, Lehrplan und die Lern-App. Keine Website-Inhalte."
+      },
+      "vorstand": {
+        "name": "Vorstand",
+        "text": "Liest „Gemeinde im Blick“ und die Übersichten – ändert keine Inhalte."
+      },
+      "imam": {
+        "name": "Imam",
+        "text": "Prüft religiöse Inhalte und gibt sie frei: Koran & Hadith, Islamisches Wissen, Freigaben."
+      },
+      "mitglieder": {
+        "name": "Mitgliederverwaltung",
+        "text": "Bearbeitet Mitgliedsanträge und sieht die Gemeinde-Konten. Keine Inhalte, keine Kurse."
       },
       "lehrkraft": {
         "name": "Lehrkraft",
-        "text": "Unterricht: Anwesenheit erfassen, Fortschritt eintragen und den Gruppenchat moderieren."
+        "text": "Unterricht: Anwesenheit erfassen, Fortschritt eintragen, Gruppenchat moderieren."
+      },
+      "eltern": {
+        "name": "Eltern",
+        "text": "Die eigene Familie: Kinder, Termine, Anwesenheit, Elternkanal."
       },
       "kind": {
         "name": "Kind",
-        "text": "„Mein Bereich“ für Kinder: Lernweg, Gruppe und nächster Termin."
+        "text": "Der eigene Lernweg, die Gruppe und der nächste Termin."
       }
     }
   }

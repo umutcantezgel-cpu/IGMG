@@ -26,3 +26,9 @@ export async function testzugangAnmelden(daten: FormData): Promise<void> {
   });
   redirect(konto.ziel);
 }
+
+/** Abmelden auf der Anmeldeseite der Vorführung: Cookie des Testzugangs löschen und dort bleiben. */
+export async function testzugangAbmelden(): Promise<void> {
+  if (vorfuehrung()) (await cookies()).delete(VORFUEHRUNG_COOKIE);
+  redirect('/verwaltung/anmelden?abgemeldet=1');
+}

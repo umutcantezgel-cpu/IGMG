@@ -25,16 +25,25 @@ gehen können, sich da alles angucken können.“ Eine Datenbank in Vercel einri
    dieselbe Instanz treffen; mit der Instanz ist es weg, und andere Instanzen haben es nie gesehen. Das steht als Band über
    der Verwaltung und über „Mein Bereich“ und auf der Anmeldeseite. Die öffentlichen Seiten bleiben auf dem Stand des Baus
    (Cache-Profile „dauerhaft“, ADR 0019).
-4. **Testzugang statt Anmeldung.** Vier feste Zugänge – `verwaltung`, `eltern`, `lehrkraft`, `kind` – mit einem gemeinsamen
-   Passwort; beides steht offen auf der Anmeldeseite (`/verwaltung/anmelden`, `TestZugang.tsx`), je mit einem Knopf und
-   zum Selbsteintragen. Die Sitzung ist ein Cookie mit dem Schlüssel des Zugangs (`igmg-vorfuehrung`), kein Eintrag in der
-   Datenbank (sonst gälte sie in der nächsten Instanz nicht). `holeSitzung()` (`src/lib/auth/sitzung.ts`) ist die eine
-   Stelle, an der die Sitzung gelesen wird; in der Vorführung liefert sie das Konto des Zugangs mit erfülltem zweitem
-   Faktor. Rollen und Rechte prüft danach unverändert `src/lib/rechte`. Der Testzugang schützt nichts und soll nichts
-   schützen: Die Vorführung enthält nur Beispieldaten.
+4. **Ein Login-Fenster, je Benutzername eigener Bereich und eigene Rechte.** `/verwaltung/anmelden` zeigt Benutzername,
+   Passwort und „Anmelden“ (`TestZugang.tsx`), daneben die Liste der Benutzernamen mit dem, was sie sehen und dürfen, und je
+   einem Knopf zum direkten Anmelden; das Passwort ist für alle gleich und steht dabei. Neun Benutzernamen
+   (`src/lib/vorfuehrung/konten.ts`): sechs Rollen der Verwaltung – `admin` (alles), `redaktion`, `bildung`, `vorstand`
+   (Leitung, liest), `imam` (religiöse Prüfung), `mitglieder` (Mitgliederverwaltung) – und drei Kontoarten in „Mein
+   Bereich“: `lehrkraft`, `eltern`, `kind`. Die Sitzung ist ein Cookie mit dem Schlüssel des Zugangs (`igmg-vorfuehrung`),
+   kein Eintrag in der Datenbank (sonst gälte sie in der nächsten Instanz nicht). `holeSitzung()`
+   (`src/lib/auth/sitzung.ts`) ist die eine Stelle, an der die Sitzung gelesen wird; in der Vorführung liefert sie das Konto
+   des Zugangs mit erfülltem zweitem Faktor. Rollen und Rechte prüft danach unverändert `src/lib/rechte` – deshalb sieht
+   jede Rolle nur ihre Module (Menü von 35 bis 7 Punkten) und wird auf fremden Seiten abgewiesen. Wer angemeldet ist, sieht
+   das auf der Anmeldeseite und kann dort den Benutzer wechseln oder sich abmelden. Der Testzugang schützt nichts und soll
+   nichts schützen: Die Vorführung enthält nur Beispieldaten.
+   _Erste Fassung am selben Tag:_ vier Karten (Verwaltung, Eltern, Lehrkraft, Kind) mit einem einzigen Verwaltungskonto.
+   Rückmeldung des Nutzers: „Ein Login-Fenster, mit je Benutzernamen bekommt man ein anderes Dashboard und Nutzungsrechte.“
+   Außerdem kam, wer als Verwaltung angemeldet war, nicht mehr zur Anmeldeseite zurück. Der frühere Benutzername
+   `verwaltung` gilt weiter als `admin`.
 5. **Konten des Testzugangs.** `scripts/beispielkonten.ts` (Eltern, Lehrkraft, Aufsicht, drei Kinder, Beispielgruppe mit
-   Terminen, Anwesenheit, Fortschritt und Chat) und `scripts/vorfuehrung-vorbereiten.ts` (Verwaltungskonto mit allen Rollen
-   ohne Organisationsbezug, damit jeder Bereich der Verwaltung zu sehen ist).
+   Terminen, Anwesenheit, Fortschritt und Chat) und `scripts/vorfuehrung-vorbereiten.ts` (sechs Verwaltungskonten mit genau
+   den Rollen ihres Zugangs; `admin` trägt zusätzlich die Schutzrollen, damit ein Zugang jeden Bereich zeigt).
 6. **Schalter.** In der Vorführung sind zusätzlich an: Konten, Lernplattform, Chat, Hatim, Newsletter und der Abgleich der
    Lern-App mit Gruppen und Bestenliste (`IN_VORFUEHRUNG_AN`) – derselbe Satz wie im E2E-Lauf. Echtzeit und Push bleiben
    aus (fremde Dienste, eigene Schlüssel).

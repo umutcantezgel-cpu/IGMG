@@ -1,4 +1,4 @@
-// Vorführung mit Testzugang (ADR 0052): legt in der Bau-Datenbank das Verwaltungskonto des Testzugangs an, prüft die
+// Vorführung mit Testzugang (ADR 0052): legt in der Bau-Datenbank die Verwaltungskonten der Testzugänge an, prüft die
 // Beispielkonten (scripts/beispielkonten.ts läuft davor) und packt die Datenbank als Schnappschuss nach `.vorfuehrung/`.
 // Nur im Bau ohne DATABASE_URL (scripts/vercel-bau.mjs setzt VORFUEHRUNG=1, BAU_PGLITE=1 und PGLITE_VERZEICHNIS).
 // Aufruf: pnpm exec tsx --conditions=react-server scripts/vorfuehrung-vorbereiten.ts
@@ -10,10 +10,6 @@ import { holeDb, schema } from '../src/lib/db';
 import { packeSchnappschuss } from '../src/lib/vorfuehrung/entpacken';
 import { VORFUEHRUNG_KONTEN } from '../src/lib/vorfuehrung/konten';
 import { VORFUEHRUNG_ORDNER, vorfuehrung } from '../src/lib/vorfuehrung/modus';
-
-type Rolle = (typeof schema.rolleEnum.enumValues)[number];
-/** Alle Rollen ohne Organisationsbezug: Der Testzugang soll jeden Bereich der Verwaltung zeigen. */
-const ROLLEN: Rolle[] = ['administration', 'leitung', 'religioese_pruefung', 'kinderschutz', 'sprachpruefung'];
 
 function fehler(text: string): never {
   console.error(`[vorfuehrung] ${text}`);
@@ -43,22 +39,24 @@ async function lauf() {
   const db = holeDb();
 
   for (const konto of VORFUEHRUNG_KONTEN) {
-    if (konto.schluessel === 'verwaltung') {
+    if (konto.bereich === 'verwaltung') {
+      // Konto der Verwaltung mit genau den Rollen seines Zugangs (je Benutzername eigene Rechte)
       let [u] = await db.select({ id: schema.user.id }).from(schema.user).where(eq(schema.user.email, konto.email)).limit(1);
       if (!u) {
         [u] = await db
           .insert(schema.user)
           .values({
             id: randomBytes(16).toString('hex'),
-            name: 'Vorführung Verwaltung',
+            name: konto.name,
             email: konto.email,
             emailVerified: true,
             twoFactorEnabled: true,
           })
           .returning({ id: schema.user.id });
       }
-      for (const rolle of ROLLEN) {
-        await db.insert(schema.rolleZuweisung).values({ benutzerId: u.id, rolle, organisation: null }).onConflictDoNothing();
+      await db.delete(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, u.id));
+      for (const rolle of konto.rollen) {
+        await db.insert(schema.rolleZuweisung).values({ benutzerId: u.id, rolle, organisation: null });
       }
       continue;
     }
@@ -69,6 +67,8 @@ async function lauf() {
       .limit(1);
     if (!u) fehler(`Beispielkonto „${konto.schluessel}“ fehlt – scripts/beispielkonten.ts muss vorher laufen.`);
   }
+  // Konto aus einem früheren Stand der Vorführung (ein einziger Zugang „verwaltung“) entfernen
+  await db.delete(schema.user).where(eq(schema.user.email, 'verwaltung@beispiel.invalid'));
 
   // Sauber schließen (Prüfpunkt, keine offenen Schreibvorgänge), erst dann die Dateien packen
   const client = (

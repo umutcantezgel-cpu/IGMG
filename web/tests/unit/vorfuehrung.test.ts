@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { IN_VORFUEHRUNG_AN, standardFuer } from '@/lib/funktionen-regeln';
+import { darf } from '@/lib/rechte/matrix';
 import { entpackeSchnappschuss, INHALT_DATEI, packeSchnappschuss } from '@/lib/vorfuehrung/entpacken';
 import { kontoZuSchluessel, pruefeTestzugang, VORFUEHRUNG_KONTEN, VORFUEHRUNG_PASSWORT } from '@/lib/vorfuehrung/konten';
 import { vorfuehrung, VORFUEHRUNG_SCHLUESSEL } from '@/lib/vorfuehrung/modus';
@@ -31,18 +32,56 @@ describe('Kennzeichen der Vorführung', () => {
 });
 
 describe('Testzugänge', () => {
-  it('vier Zugänge, jeder mit Ziel hinter der Anmeldung', () => {
-    expect(VORFUEHRUNG_KONTEN.map((k) => k.schluessel)).toEqual(['verwaltung', 'eltern', 'lehrkraft', 'kind']);
-    expect(VORFUEHRUNG_KONTEN.find((k) => k.schluessel === 'verwaltung')?.ziel).toBe('/verwaltung');
+  it('neun Benutzernamen: sechs Rollen der Verwaltung, drei Kontoarten in „Mein Bereich“', () => {
+    expect(VORFUEHRUNG_KONTEN.map((k) => k.benutzername)).toEqual([
+      'admin',
+      'redaktion',
+      'bildung',
+      'vorstand',
+      'imam',
+      'mitglieder',
+      'lehrkraft',
+      'eltern',
+      'kind',
+    ]);
+    expect(VORFUEHRUNG_KONTEN.filter((k) => k.bereich === 'verwaltung').every((k) => k.ziel === '/verwaltung')).toBe(true);
+    expect(VORFUEHRUNG_KONTEN.filter((k) => k.bereich === 'mein-bereich').every((k) => k.ziel === '/mein-bereich')).toBe(true);
+  });
+
+  it('je Benutzername eigene Rechte: Die Rollen unterscheiden sich, und nur „admin“ darf Benutzer verwalten', () => {
+    const verwaltung = VORFUEHRUNG_KONTEN.filter((k) => k.bereich === 'verwaltung');
+    const rechte = (k: (typeof verwaltung)[number]) => k.rollen.map((rolle) => ({ rolle }));
+    expect(new Set(verwaltung.map((k) => k.rollen.join('+'))).size).toBe(verwaltung.length);
+    for (const k of verwaltung) {
+      expect(darf(rechte(k), 'verwaltung.betreten'), k.benutzername).toBe(true);
+      expect(darf(rechte(k), 'benutzer.einladen'), k.benutzername).toBe(k.schluessel === 'admin');
+    }
+    const konto = (s: string) => rechte(verwaltung.find((k) => k.schluessel === s)!);
+    expect(darf(konto('redaktion'), 'nachricht.bearbeiten')).toBe(true);
+    expect(darf(konto('redaktion'), 'lernende.lesen')).toBe(false);
+    expect(darf(konto('bildung'), 'lernende.lesen')).toBe(true);
+    expect(darf(konto('bildung'), 'nachricht.bearbeiten')).toBe(false);
+    expect(darf(konto('vorstand'), 'leitung.lesen')).toBe(true);
+    expect(darf(konto('vorstand'), 'nachricht.bearbeiten')).toBe(false);
+    expect(darf(konto('imam'), 'religioes.freigeben')).toBe(true);
+    expect(darf(konto('imam'), 'nachricht.bearbeiten')).toBe(false);
+    expect(darf(konto('mitglieder'), 'eingang.mitgliedsantrag.lesen')).toBe(true);
+    expect(darf(konto('mitglieder'), 'kurs.lesen')).toBe(false);
   });
 
   it('Benutzername ohne Rücksicht auf Schreibweise und Leerraum, Passwort genau', () => {
-    expect(pruefeTestzugang('verwaltung', VORFUEHRUNG_PASSWORT)?.schluessel).toBe('verwaltung');
+    expect(pruefeTestzugang('admin', VORFUEHRUNG_PASSWORT)?.schluessel).toBe('admin');
     expect(pruefeTestzugang('  Eltern ', VORFUEHRUNG_PASSWORT)?.schluessel).toBe('eltern');
-    expect(pruefeTestzugang('verwaltung', 'falsch')).toBeNull();
-    expect(pruefeTestzugang('verwaltung', ` ${VORFUEHRUNG_PASSWORT}`)).toBeNull();
+    expect(pruefeTestzugang('IMAM', VORFUEHRUNG_PASSWORT)?.schluessel).toBe('imam');
+    expect(pruefeTestzugang('admin', 'falsch')).toBeNull();
+    expect(pruefeTestzugang('admin', ` ${VORFUEHRUNG_PASSWORT}`)).toBeNull();
     expect(pruefeTestzugang('unbekannt', VORFUEHRUNG_PASSWORT)).toBeNull();
     expect(pruefeTestzugang(null, null)).toBeNull();
+  });
+
+  it('der frühere Benutzername „verwaltung“ gilt weiter als „admin“', () => {
+    expect(pruefeTestzugang('verwaltung', VORFUEHRUNG_PASSWORT)?.schluessel).toBe('admin');
+    expect(kontoZuSchluessel('verwaltung')?.schluessel).toBe('admin');
   });
 
   it('Cookie-Wert: nur bekannte Schlüssel', () => {

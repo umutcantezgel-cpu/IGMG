@@ -21,8 +21,9 @@ Platzhalter“). Entscheidungen und Grenzen: `web/docs/adr/0050-ein-rahmen-fuer-
 ## Nachtrag 23.11.2026: Testzugang auf der Testadresse (Vorführung mit eingebauter Datenbank)
 Auftrag des Nutzers am Tag der Vorstellung („Gib ein einfaches Login … das muss nicht secure sein … es muss einfach nur
 zugänglich sein“). Die Testadresse läuft auf Vercel ohne `DATABASE_URL`; der Bau nimmt die Bau-Datenbank mit Beispielkonten
-als Schnappschuss mit, und `/verwaltung/anmelden` zeigt vier Testzugänge (Verwaltung, Eltern, Lehrkraft, Kind; Benutzername
-und Passwort stehen auf der Seite). Änderungen bleiben nicht. Entscheidung, Grenzen und der Weg in den echten Betrieb:
+als Schnappschuss mit, und `/verwaltung/anmelden` ist ein Login-Fenster: neun Benutzernamen (admin, redaktion, bildung,
+vorstand, imam, mitglieder, lehrkraft, eltern, kind – je eigener Bereich und eigene Rechte; Benutzernamen und Passwort
+stehen auf der Seite). Änderungen bleiben nicht. Entscheidung, Grenzen und der Weg in den echten Betrieb:
 `web/docs/adr/0052-vorfuehrung-mit-testzugang.md`. **Mit `DATABASE_URL` gibt es den Testzugang nie** (`vorfuehrung()`).
 - Der Rundgang mit Aufnahmen (ADR 0051) liegt auf `/verwaltung/rundgang`.
 - Lokal nachstellen: `.env` beiseite, `VERCEL=1 VERCEL_ENV=production node scripts/vercel-bau.mjs`, dann den
