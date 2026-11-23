@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { datumLang } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import { ohnePlatzhalterImDokument } from '@/lib/inhalt/tiptap';
 import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
@@ -53,7 +54,9 @@ export async function NewsCard({
   const titel = textMitSprache(n.titel, sprache);
   const ziel = { pathname: '/nachrichten/[slug]' as const, params: { slug: n.slug } };
   const datum = datumLang(new Date(n.veroeffentlichtAm), sprache);
-  const lesezeit = n.lesezeit ? t('lesezeit', { minuten: n.lesezeit }) : null;
+  // Lesezeit nur mit Rumpf – wie auf der Detailseite: Bleibt ohne die Sätze mit Platzhalter nichts, gibt es nichts zu lesen
+  const rumpf = n.inhalt ? ohnePlatzhalterImDokument((sprache !== 'de' && n.inhalt[sprache]) || n.inhalt.de) : null;
+  const lesezeit = n.lesezeit && rumpf?.content?.length ? t('lesezeit', { minuten: n.lesezeit }) : null;
   const kategorie = (
     <span
       className={cn(
