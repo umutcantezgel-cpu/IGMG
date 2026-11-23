@@ -1,4 +1,4 @@
-import { expect, test, type Locator } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '@playwright/test';
 import deMessages from '../../../messages/de.json';
 import enMessages from '../../../messages/en.json';
 import trMessages from '../../../messages/tr.json';
@@ -37,6 +37,17 @@ function escapeRegExp(text: string): string {
 }
 
 /** Kategorie-Schalter in der Gruppe. Der Name trägt die Anzahl („Gemeinde 2 Nachrichten“), daher nur am Anfang verankert. */
+/**
+ * Erste Nachrichtenkarte der Gemeinde: der erste Artikel mit einem Link „<Weiterlesen>: …“. Seit dem Marktstart (P3)
+ * steht auf /nachrichten davor der Block „Aus dem Dachverband“ – dessen Artikel führen nur nach außen, ohne diesen Link.
+ */
+function ersteNachrichtenkarte(page: Page, weiterlesen: string): Locator {
+  return page
+    .getByRole('article')
+    .filter({ has: page.getByRole('link', { name: new RegExp(`^${escapeRegExp(weiterlesen)}\\s*:`) }) })
+    .first();
+}
+
 function schalter(gruppe: Locator, bezeichnung: string): Locator {
   return gruppe.getByRole('button', { name: new RegExp(`^${escapeRegExp(bezeichnung)}(\\s|$)`) });
 }
@@ -90,7 +101,7 @@ for (const s of SPRACHEN) {
 
   test(`${s.kuerzel}: Kartenlink trägt den Namen „${s.weiterlesen}: <Titel>“`, async ({ page }) => {
     await page.goto(s.pfad);
-    const karte = page.getByRole('article').first();
+    const karte = ersteNachrichtenkarte(page, s.weiterlesen);
     await expect(karte).toBeVisible();
     const titel = normalisiere(await karte.getByRole('heading').first().textContent());
     await expect(karte.getByRole('link', { name: `${s.weiterlesen}: ${titel}`, exact: true })).toBeVisible();
@@ -98,7 +109,7 @@ for (const s of SPRACHEN) {
 
   test(`${s.kuerzel}: Kartenlink „${s.weiterlesen}: <Titel>“ öffnet die Detailseite mit dem Titel als h1`, async ({ page }) => {
     await page.goto(s.pfad);
-    const karte = page.getByRole('article').first();
+    const karte = ersteNachrichtenkarte(page, s.weiterlesen);
     await expect(karte).toBeVisible();
     const titel = normalisiere(await karte.getByRole('heading').first().textContent());
     expect(titel).not.toBe('');
