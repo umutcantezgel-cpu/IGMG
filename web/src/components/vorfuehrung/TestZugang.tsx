@@ -1,4 +1,4 @@
-import { ArrowRight, Images, KeyRound } from 'lucide-react';
+import { ArrowRight, Images, KeyRound, LogIn } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import NextLink from 'next/link';
@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Feld } from '@/components/verwaltung/Feld';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { VORFUEHRUNG_KONTEN, VORFUEHRUNG_PASSWORT, type VorfuehrungsKonto } from '@/lib/vorfuehrung/konten';
-import { testzugangAbmelden, testzugangAnmelden } from '@/server/actions/vorfuehrung';
-import { AnmeldeKnopf } from './AnmeldeKnopf';
+
+/** Anmelden und Abmelden als gewöhnliches Formular und gewöhnliche Links (`src/app/api/vorfuehrung/`). */
+const ANMELDEN = '/api/vorfuehrung/anmelden';
+const ABMELDEN = '/api/vorfuehrung/abmelden';
 
 const BEREICHE = [
   { bereich: 'verwaltung', titel: 'gruppeVerwaltung' },
@@ -19,8 +21,9 @@ const BEREICHE = [
  * Benutzername öffnet sich ein eigener Bereich mit eigenen Rechten (sechs Rollen der Verwaltung, drei Kontoarten in „Mein
  * Bereich“). Daneben die Liste der Benutzernamen mit dem, was sie sehen und dürfen, und je einem Knopf zum direkten
  * Anmelden; das Passwort ist für alle gleich und steht dabei. Der Testzugang schützt nichts, die Vorführung enthält nur
- * Beispieldaten. Wer schon angemeldet ist, sieht das hier und kann den Benutzer wechseln. Ohne Client-JavaScript
- * benutzbar: Formulare rufen die Server Action auf, falsche Eingaben kommen mit `?fehler=1` zurück.
+ * Beispieldaten. Wer schon angemeldet ist, sieht das hier und kann den Benutzer wechseln. Ganz ohne Client-JavaScript:
+ * ein gewöhnliches Formular und gewöhnliche Links auf `/api/vorfuehrung/anmelden`, die mit einer Weiterleitung antworten;
+ * falsche Eingaben kommen mit `?fehler=1` zurück.
  */
 export async function TestZugang({
   fehler,
@@ -63,17 +66,15 @@ export async function TestZugang({
                         <ArrowRight aria-hidden />
                       </NextLink>
                     </Button>
-                    <form action={testzugangAbmelden}>
-                      <Button type="submit" variant="link" size="sm">
-                        {t('abmelden')}
-                      </Button>
-                    </form>
+                    <Button asChild variant="link" size="sm">
+                      <a href={ABMELDEN}>{t('abmelden')}</a>
+                    </Button>
                   </div>
                   <p className="mt-2 text-16 text-tinte-2">{t('wechseln')}</p>
                 </div>
               ) : null}
             </div>
-            <form action={testzugangAnmelden} className="mt-5 flex flex-col gap-5">
+            <form method="post" action={ANMELDEN} className="mt-5 flex flex-col gap-5">
               <Feld
                 id="testzugang-benutzername"
                 name="benutzername"
@@ -93,7 +94,10 @@ export async function TestZugang({
                 required
                 label={t('passwort')}
               />
-              <AnmeldeKnopf text={t('anmelden')} laeuft={t('laeuft')} />
+              <Button type="submit" className="w-full">
+                <LogIn aria-hidden />
+                {t('anmelden')}
+              </Button>
             </form>
           </div>
           <p className="mt-4 flex items-start gap-2 text-16 text-tinte-2">{t('hinweis')}</p>
@@ -137,11 +141,12 @@ export async function TestZugang({
                         </p>
                         <p className="mt-1 text-pretty text-tinte-2">{t(`konten.${k.schluessel}.text`)}</p>
                       </div>
-                      <form action={testzugangAnmelden} className="shrink-0 md:w-40">
-                        <input type="hidden" name="benutzername" value={k.benutzername} />
-                        <input type="hidden" name="passwort" value={VORFUEHRUNG_PASSWORT} />
-                        <AnmeldeKnopf klein text={t('direkt')} laeuft={t('laeuft')} ariaLabel={t('anmeldenAls', { name })} />
-                      </form>
+                      <Button asChild variant="secondary" size="sm" className="w-full shrink-0 md:w-40">
+                        <a href={`${ANMELDEN}?als=${k.schluessel}`} aria-label={t('anmeldenAls', { name })}>
+                          <LogIn aria-hidden />
+                          {t('direkt')}
+                        </a>
+                      </Button>
                     </li>
                   );
                 })}

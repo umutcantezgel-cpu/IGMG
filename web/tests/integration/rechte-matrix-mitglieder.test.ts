@@ -398,9 +398,6 @@ const ZUORDNUNG: Record<string, string[]> = {
     'formulare/veranstaltungsanmeldung',
     'formulare/voranmeldung',
   ],
-  // Vorführung mit Testzugang (ADR 0052): Anmeldung ohne Konto und ohne Recht – wirkt nur mit dem Kennzeichen der
-  // Vorführung und nie mit DATABASE_URL (tests/unit/vorfuehrung.test.ts, tests/unit/vorfuehrung-anmelden.test.ts)
-  Vorführung: ['vorfuehrung'],
 };
 
 describe('Vollständigkeit', () => {

@@ -41,6 +41,14 @@ gehen können, sich da alles angucken können.“ Eine Datenbank in Vercel einri
    Rückmeldung des Nutzers: „Ein Login-Fenster, mit je Benutzernamen bekommt man ein anderes Dashboard und Nutzungsrechte.“
    Außerdem kam, wer als Verwaltung angemeldet war, nicht mehr zur Anmeldeseite zurück. Der frühere Benutzername
    `verwaltung` gilt weiter als `admin`.
+   _Zweite Rückmeldung:_ „Bei denen unter dem Anmeldeformular passiert nichts, wenn man auf Anmelden drückt.“ In
+   Chromium ließ sich das nicht nachstellen (alle Knöpfe wirkten, mit und ohne JavaScript). Die Knöpfe waren Formulare mit
+   Server Action; die Antwort einer Server Action bringt die Zielseite gleich mit – auf einer frischen Instanz lädt dabei
+   erst die Datenbank, und so lange zeigt der Browser nichts. Seitdem die einfachste Technik: ein gewöhnliches Formular
+   (POST) und gewöhnliche Links (GET `?als=<benutzername>`) auf `/api/vorfuehrung/anmelden`, Abmelden als Link auf
+   `/api/vorfuehrung/abmelden`. Die Routen brauchen keine Datenbank, antworten sofort mit 303 und relativem Ziel, und der
+   Browser zeigt den Seitenwechsel. Die Anmeldeseite kommt ganz ohne Client-JavaScript aus. Anmelden per Link ist hier
+   vertretbar, weil Benutzernamen und Passwort ohnehin offen auf der Seite stehen.
 5. **Konten des Testzugangs.** `scripts/beispielkonten.ts` (Eltern, Lehrkraft, Aufsicht, drei Kinder, Beispielgruppe mit
    Terminen, Anwesenheit, Fortschritt und Chat) und `scripts/vorfuehrung-vorbereiten.ts` (sechs Verwaltungskonten mit genau
    den Rollen ihres Zugangs; `admin` trägt zusätzlich die Schutzrollen, damit ein Zugang jeden Bereich zeigt).
