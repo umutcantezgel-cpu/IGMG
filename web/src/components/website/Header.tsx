@@ -6,6 +6,7 @@ import { Link } from '@/i18n/link';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { entscheide } from '@/lib/funktionen';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
 import { Bild, bildAttribute } from './Bild';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
@@ -60,8 +61,10 @@ export async function Header({
   lernbereich?: { sprache: string; sprachen: SprachEintrag[]; anmeldenHref?: string };
 }) {
   const sprache = (await getLocale()) as Locale;
-  const anmeldenHref =
-    lernbereich?.anmeldenHref ?? (entscheide('konten', process.env, null) ? pfadFuer('/anmelden', sprache) : '/verwaltung/anmelden');
+  // Vorführung mit Testzugang (ADR 0052): überall dieselbe Anmeldeseite mit den Testzugängen
+  const anmeldenHref = vorfuehrung()
+    ? '/verwaltung/anmelden'
+    : (lernbereich?.anmeldenHref ?? (entscheide('konten', process.env, null) ? pfadFuer('/anmelden', sprache) : '/verwaltung/anmelden'));
   const meinBereichHref = pfadFuer('/mein-bereich', sprache);
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');

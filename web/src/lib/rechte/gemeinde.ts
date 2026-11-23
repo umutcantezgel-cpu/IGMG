@@ -1,9 +1,8 @@
 import 'server-only';
 import { and, eq, isNull } from 'drizzle-orm';
-import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { cache } from 'react';
-import { auth } from '@/lib/auth/server';
+import { holeSitzung } from '@/lib/auth/sitzung';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { pfadFuer } from '@/i18n/navigation';
@@ -40,7 +39,7 @@ const ZWEI_FAKTOR_PFLICHT: ReadonlySet<GemeindeRolle> = new Set<GemeindeRolle>([
 export const ladeKonto = cache(async (): Promise<Konto | null> => {
   // Beispielmodus ohne Datenbank (ADR 0019): niemand ist angemeldet
   if (!datenbankVerfuegbar()) return null;
-  const sitzung = await auth.api.getSession({ headers: await headers() });
+  const sitzung = await holeSitzung();
   if (!sitzung || sitzung.user.gesperrtAm) return null;
   const benutzerId = sitzung.user.id;
   const [gemeinde, verwaltung, profil, leitung] = await Promise.all([

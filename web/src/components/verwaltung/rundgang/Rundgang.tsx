@@ -1,8 +1,10 @@
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, LogIn } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
 import { AUFNAHMEN, RUNDGANG_GRUPPEN, aufnahmeAdresse, type SchirmId } from './aufnahmen';
 
 /**
@@ -20,6 +22,8 @@ export async function Rundgang() {
   const t = await getTranslations('verwaltung.rundgang');
   const tv = await getTranslations('verwaltung');
   const anzahl = RUNDGANG_GRUPPEN.reduce((n, g) => n + g.schirme.length, 0);
+  // Vorführung mit Testzugang (ADR 0052): Der Rundgang ist dort die Zugabe zum Ansehen, ausprobiert wird mit dem Testzugang
+  const testzugang = vorfuehrung();
   return (
     <>
       <a
@@ -64,10 +68,22 @@ export async function Rundgang() {
           <div className="mx-auto max-w-(--container-inhalt) px-4 py-10 md:px-8 md:py-14">
             <p className="text-16 font-bold text-gruen-700">{t('dachzeile')}</p>
             <h1 className="mt-2 text-display-1">{t('titel')}</h1>
-            <p className="mt-4 max-w-einleitung text-18 text-pretty text-tinte-2">{t('einleitung')}</p>
+            <p className="mt-4 max-w-einleitung text-18 text-pretty text-tinte-2">
+              {t(testzugang ? 'einleitungTestzugang' : 'einleitung')}
+            </p>
             <div className="mt-6 max-w-einleitung">
-              <Meldung art="info">{t('hinweis')}</Meldung>
+              <Meldung art="info">{t(testzugang ? 'hinweisTestzugang' : 'hinweis')}</Meldung>
             </div>
+            {testzugang ? (
+              <p className="mt-6">
+                <Button asChild>
+                  <NextLink href="/verwaltung/anmelden" prefetch={false}>
+                    <LogIn aria-hidden />
+                    {t('zumTestzugang')}
+                  </NextLink>
+                </Button>
+              </p>
+            ) : null}
             <p className="mt-6 text-16 text-tinte-2">
               <strong className="text-tinte">{t('umfang', { schirme: anzahl, bereiche: RUNDGANG_GRUPPEN.length })}</strong>
               {' · '}

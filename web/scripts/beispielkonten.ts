@@ -1,4 +1,5 @@
-// Beispielkonten für die Vorführung von „Mein Bereich“ (ADR 0026) – nur außerhalb der Produktion.
+// Beispielkonten für die Vorführung von „Mein Bereich“ (ADR 0026) – nur außerhalb der Produktion und im Bau der
+// Vorführung mit Testzugang (ADR 0052).
 // Wird von scripts/bau-datenbank.mjs NICHT aufgerufen (Entscheidung des Orchestrators).
 //
 // Aufruf: pnpm exec tsx --conditions=react-server --env-file-if-exists=.env scripts/beispielkonten.ts [--praefix x] [--neu] [--json]
@@ -29,6 +30,7 @@ import { verschluessele } from '../src/lib/krypto';
 import { erzeugeTermine } from '../src/lib/lernen/dienst';
 import { tagPlus } from '../src/lib/lernen/termine';
 import { betriebsart } from '../src/lib/umgebung';
+import { vorfuehrung } from '../src/lib/vorfuehrung/modus';
 
 type Rolle = (typeof schema.gemeindeRolleEnum.enumValues)[number];
 type KindArt = 'lernplattform' | 'kinderkonto' | 'gruppenchat' | 'push_kind';
@@ -46,7 +48,10 @@ function fehler(text: string): never {
   process.exit(1);
 }
 
-if (betriebsart(process.env) === 'produktion') fehler('Beispielkonten gibt es nur außerhalb der Produktion (SITE_MODE/NODE_ENV).');
+// Ausnahme: die Vorführung mit Testzugang (ADR 0052) – der Bau ohne Datenbank legt sie in der Bau-Datenbank an
+if (betriebsart(process.env) === 'produktion' && !vorfuehrung()) {
+  fehler('Beispielkonten gibt es nur außerhalb der Produktion (SITE_MODE/NODE_ENV).');
+}
 const praefix = (values.praefix ?? '').toLowerCase();
 if (praefix && !/^[a-z0-9]{1,12}$/.test(praefix)) fehler('--praefix: 1–12 Zeichen a–z, 0–9.');
 

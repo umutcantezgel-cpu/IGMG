@@ -1,9 +1,8 @@
 import 'server-only';
 import { eq } from 'drizzle-orm';
-import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { cache } from 'react';
-import { auth } from '@/lib/auth/server';
+import { holeSitzung } from '@/lib/auth/sitzung';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { darf, organisationsFilter, type Aktion, type RollenZuweisung, type Ziel } from './matrix';
@@ -37,7 +36,7 @@ async function ladeRollen(benutzerId: string): Promise<RollenZuweisung[]> {
 export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
   // Beispielmodus ohne Datenbank (ADR 0019): niemand ist angemeldet
   if (!datenbankVerfuegbar()) return null;
-  const sitzung = await auth.api.getSession({ headers: await headers() });
+  const sitzung = await holeSitzung();
   // Gesperrt (C12): bestehende Sitzungen werden beim Sperren gelöscht; das hier ist die zweite Sicherung
   if (!sitzung || sitzung.user.gesperrtAm) return null;
   const benutzerId = sitzung.user.id;

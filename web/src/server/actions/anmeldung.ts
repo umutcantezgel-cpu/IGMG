@@ -18,6 +18,8 @@ import { basisUrl } from '@/lib/seo/metadaten';
 import { clientAdresse } from '@/lib/sicherheit/ip';
 import { pruefeRate, type Grenze } from '@/lib/validierung/ratenbegrenzung';
 import { ladeGueltigeEinladung } from '@/server/queries/einladung';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
+import { beendeTestzugang } from '@/lib/vorfuehrung/sitzung';
 
 /**
  * Anmeldung, Zwei-Faktor und Einladung (F09, ADR 0003). Öffentlich erreichbar, daher:
@@ -219,7 +221,9 @@ export async function zweiFaktorBestaetigen(vorher: FormularZustand, daten: Form
 
 export async function abmelden(): Promise<void> {
   const angemeldet = await ladeAngemeldet();
-  await auth.api.signOut({ headers: await headers() });
+  // Vorführung mit Testzugang (ADR 0052): keine Sitzung bei Better Auth, nur das Cookie des Testzugangs
+  if (vorfuehrung()) await beendeTestzugang();
+  else await auth.api.signOut({ headers: await headers() });
   if (angemeldet) await protokolliere({ benutzerId: angemeldet.benutzerId, aktion: 'abmeldung' });
   redirect('/verwaltung/anmelden?abgemeldet=1');
 }

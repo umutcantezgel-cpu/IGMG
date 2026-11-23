@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { connection } from 'next/server';
+import { TestBand } from '@/components/vorfuehrung/TestBand';
 import { verlangeKontenSeite } from '@/lib/konto/zugang';
 
 /**
@@ -19,6 +20,7 @@ export default async function KontoLayout({ children }: LayoutProps<'/[locale]'>
   const n = await getMessages();
   return (
     <NextIntlClientProvider timeZone="Europe/Berlin" messages={{ konto: n.konto, meinBereich: n.meinBereich }}>
+      <TestBand />
       {children}
     </NextIntlClientProvider>
   );

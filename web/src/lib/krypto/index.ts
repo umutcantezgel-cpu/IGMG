@@ -1,5 +1,6 @@
 import 'server-only';
 import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import { VORFUEHRUNG_SCHLUESSEL, vorfuehrung } from '@/lib/vorfuehrung/modus';
 
 /**
  * Verschlüsselung schutzwürdiger Daten (ADR 0005): AES-256-GCM, Schlüssel aus EINGANG_SCHLUESSEL,
@@ -9,7 +10,8 @@ const IV_LAENGE = 12;
 const TAG_LAENGE = 16;
 
 function schluessel(): { id: number; key: Buffer } {
-  const roh = process.env.EINGANG_SCHLUESSEL;
+  // Vorführung mit Testzugang (ADR 0052): ohne Schlüssel in der Umgebung der feste, öffentliche Schlüssel der Vorführung
+  const roh = process.env.EINGANG_SCHLUESSEL || (vorfuehrung() ? VORFUEHRUNG_SCHLUESSEL : undefined);
   if (!roh) throw new Error('EINGANG_SCHLUESSEL fehlt.');
   const key = Buffer.from(roh, 'base64');
   if (key.length !== 32) throw new Error('EINGANG_SCHLUESSEL muss 32 Byte (Base64) lang sein.');
@@ -52,7 +54,8 @@ export function sha256(text: string): string {
 
 /** HMAC-SHA-256 als Hex mit einem Geheimnis aus der Umgebung (Ratenbegrenzung: IP nie im Klartext). */
 export function hmac(text: string, geheimnisVariable: 'RATE_GEHEIMNIS' | 'ALTCHA_GEHEIMNIS'): string {
-  const geheimnis = process.env[geheimnisVariable];
+  // Vorführung mit Testzugang (ADR 0052): ohne Geheimnis in der Umgebung der feste, öffentliche Schlüssel der Vorführung
+  const geheimnis = process.env[geheimnisVariable] || (vorfuehrung() ? VORFUEHRUNG_SCHLUESSEL : undefined);
   if (!geheimnis || geheimnis.length < 32) throw new Error(`${geheimnisVariable} fehlt oder ist kürzer als 32 Zeichen.`);
   return createHmac('sha256', geheimnis).update(text, 'utf8').digest('hex');
 }

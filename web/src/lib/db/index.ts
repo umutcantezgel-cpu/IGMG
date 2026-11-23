@@ -4,6 +4,8 @@ import { drizzle as drizzlePg, type NodePgDatabase } from 'drizzle-orm/node-post
 import { Pool } from 'pg';
 import { installiereFehlerKuerzung } from './fehler';
 import * as schema from './schema';
+import { INHALT_DATEI, entpackeSchnappschuss } from '@/lib/vorfuehrung/entpacken';
+import { VORFUEHRUNG_ORDNER, vorfuehrung } from '@/lib/vorfuehrung/modus';
 import { datenbankVerfuegbar } from './verfuegbar';
 
 /**
@@ -34,8 +36,31 @@ function erzeuge(): Datenbank {
   const { PGlite } = require('@electric-sql/pglite') as typeof import('@electric-sql/pglite');
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { drizzle: drizzleLite } = require('drizzle-orm/pglite') as typeof import('drizzle-orm/pglite');
-  const client = new PGlite(pgliteVerzeichnis());
+  // Vorführung mit Testzugang (ADR 0052): zur Laufzeit der Schnappschuss der Bau-Datenbank, je Instanz eine eigene Kopie
+  const verzeichnis = vorfuehrung() && process.env.BAU_PGLITE !== '1' ? vorfuehrungsVerzeichnis() : pgliteVerzeichnis();
+  const client = new PGlite(verzeichnis);
   return drizzleLite(client, { schema, casing: 'snake_case' }) as unknown as Datenbank;
+}
+
+/**
+ * Vorführung (ADR 0052): Der Bau legt die Bau-Datenbank als Schnappschuss neben die Funktionen (`.vorfuehrung/`). Beim
+ * ersten Zugriff entpackt die Instanz ihn in ihren Zwischenspeicher (`/tmp`, je Prozess ein Ordner) und öffnet ihn dort –
+ * lesend und schreibend. Was dort geändert wird, bleibt in dieser Instanz und endet mit ihr; jede neue Instanz beginnt
+ * mit dem Stand des Baus. Fehlt der Schnappschuss, scheitert der Zugriff mit klarer Meldung (kein stiller leerer Stand).
+ */
+function vorfuehrungsVerzeichnis(): string {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { existsSync, rmSync } = require('node:fs') as typeof import('node:fs');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { join } = require('node:path') as typeof import('node:path');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { tmpdir } = require('node:os') as typeof import('node:os');
+  const quelle = join(/*turbopackIgnore: true*/ process.cwd(), VORFUEHRUNG_ORDNER);
+  if (!existsSync(/*turbopackIgnore: true*/ join(quelle, INHALT_DATEI))) throw new Error('Vorführung: Schnappschuss der Datenbank fehlt.');
+  const ziel = join(/*turbopackIgnore: true*/ tmpdir(), `igmg-vorfuehrung-${process.pid}`);
+  rmSync(/*turbopackIgnore: true*/ ziel, { recursive: true, force: true });
+  entpackeSchnappschuss(quelle, ziel);
+  return ziel;
 }
 
 /**

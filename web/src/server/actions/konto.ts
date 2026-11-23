@@ -28,6 +28,8 @@ import { pruefeRate, type Grenze } from '@/lib/validierung/ratenbegrenzung';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import konto from '../../../messages/bereiche/konto.json';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
+import { beendeTestzugang } from '@/lib/vorfuehrung/sitzung';
 
 /**
  * Konto-Einstieg der Website (ADR 0026): Anmeldung (E-Mail, Kinderzugang, zweiter Faktor, Passkey), Registrierung,
@@ -460,8 +462,11 @@ export async function kontoAbmelden(daten: FormData): Promise<void> {
   // Abmelden geht immer – auch wenn die Funktion `konten` inzwischen aus ist (N-7 der Sicherheitsprüfung S1)
   const sprache = sprachAus(daten);
   const k = await ladeKonto();
-  await auth.api.signOut({ headers: await headers() }).catch(() => undefined);
+  // Vorführung mit Testzugang (ADR 0052): keine Sitzung bei Better Auth, nur das Cookie des Testzugangs
+  if (vorfuehrung()) await beendeTestzugang();
+  else await auth.api.signOut({ headers: await headers() }).catch(() => undefined);
   if (k) await protokolliere({ benutzerId: k.benutzerId, aktion: 'abmeldung' });
+  if (vorfuehrung()) redirect('/verwaltung/anmelden?abgemeldet=1');
   const konten = await funktionAn('konten');
   // Aus der Lern-App: zurück in ihren Scope (Anmeldeseite mit Hinweis bzw. Start der Lern-App), ADR 0037 Nr. 4
   const lernApp = oberflaecheVon(weiterAus(daten) ?? '');

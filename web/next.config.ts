@@ -27,6 +27,12 @@ const CSP_AUSNAHMEN = [...['verwaltung', ...KONTO_SEGMENTE].map((s) => `(?:(?:de
 const JAHR = 60 * 60 * 24 * 365;
 const beispielmodus = process.env.VERCEL === '1' && process.env.BAU_PGLITE === '1';
 const DAUERHAFT = { stale: 300, revalidate: JAHR, expire: 2 * JAHR };
+/**
+ * Vorführung mit Testzugang (ADR 0052): Kennzeichen aus `scripts/vercel-bau.mjs` (Bau ohne DATABASE_URL). Es wird fest
+ * in den Bau geschrieben (`env`), damit Laufzeit, Proxy und Vorrendern dasselbe sehen – auf Vercel lässt sich zur Laufzeit
+ * nichts setzen, ohne dass ein Mensch es einträgt. Der Schnappschuss der Datenbank (`.vorfuehrung/`) geht in jede Funktion.
+ */
+const vorfuehrung = process.env.VORFUEHRUNG === '1';
 const PROFILE = ['default', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'max'] as const;
 
 /**
@@ -39,6 +45,7 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   reactCompiler: true,
   poweredByHeader: false,
+  env: { VORFUEHRUNG: vorfuehrung ? '1' : '' },
   ...(beispielmodus ? { cacheLife: Object.fromEntries(PROFILE.map((name) => [name, DAUERHAFT])) } : {}),
   // Beispielmodus: Für „HTML-begrenzte“ Bots (WhatsApp, Slackbot, facebookexternalhit, Twitterbot, Bingbot …) umgeht
   // Next die vorgerenderte Hülle und rendert jede Anfrage neu – ohne Datenbank „DATABASE_URL fehlt“ und 500 für Linkvorschauen.
@@ -64,6 +71,7 @@ const nextConfig: NextConfig = {
       ]),
     ),
     '/**/suche': ['.suchindex.json'],
+    ...(vorfuehrung ? { '/**': ['.vorfuehrung/**/*'] } : {}),
     // Lern-App ohne Blob-Speicher (Beispielmodus, E2E): synthetische Testbündel aus dem Dateisystem (ADR 0039 Nr. 11); die
     // Route liefert sie nur, wenn der Testkurs importiert ist (Fortschreibung Stufe C Nr. 4)
     '/lern-app/audio/**': ['drizzle/seeds/lernapp-testaudio/**/*.lpa'],

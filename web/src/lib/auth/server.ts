@@ -6,14 +6,16 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { nextCookies } from 'better-auth/next-js';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
 import { merkeAnmeldung } from '@/lib/konto/anmeldung-merken';
 import { authOptionen } from './optionen';
 import { planePasswortMail, protokolliereZuruecksetzen } from './passwort';
 
 const imBau = process.env.NEXT_PHASE === 'phase-production-build';
-// Im Beispielmodus ohne Datenbank (ADR 0019) gibt es keine Sitzungen: dann darf das Geheimnis fehlen – sonst stürzte
+// Im Beispielmodus ohne Datenbank (ADR 0019) gibt es keine Sitzungen, in der Vorführung (ADR 0052) nur den Testzugang
+// ohne Better Auth: dann darf das Geheimnis fehlen – sonst stürzte
 // jedes Modul ab, das `auth` importiert (Verwaltung, Konto-Seiten, Konto-APIs: weiße Seite bzw. 500 auf Vercel)
-if (!process.env.BETTER_AUTH_SECRET && process.env.NODE_ENV === 'production' && !imBau && datenbankVerfuegbar()) {
+if (!process.env.BETTER_AUTH_SECRET && process.env.NODE_ENV === 'production' && !imBau && datenbankVerfuegbar() && !vorfuehrung()) {
   throw new Error('BETTER_AUTH_SECRET fehlt.');
 }
 

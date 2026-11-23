@@ -13,6 +13,7 @@ import type { Locale } from '@/i18n/routing';
 import { sichererRuecksprung } from '@/lib/konto/regeln';
 import { hatZugang, verlangeKontenSeite } from '@/lib/konto/zugang';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
 export const instant = false;
@@ -40,6 +41,8 @@ export default async function AnmeldenSeite({ searchParams }: PageProps<'/[local
   const hinweis = HINWEISE.find((h) => h === s.hinweis) as Hinweis | undefined;
   const t = await getTranslations('konto');
   const k = await ladeKonto();
+  // Vorführung mit Testzugang (ADR 0052): eine Anmeldeseite für alle Zugänge
+  if (vorfuehrung() && !k) redirect('/verwaltung/anmelden');
 
   if (k && hatZugang(k) && k.verwaltungsRollen.length === 0) redirect(weiter ?? pfadFuer('/mein-bereich', sprache));
 

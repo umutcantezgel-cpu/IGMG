@@ -1,5 +1,6 @@
 import { LogOut } from 'lucide-react';
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 import { AnmeldeFormulare } from '@/components/lernapp/anmelden/AnmeldeFormulare';
 import { LernMeldung } from '@/components/lernapp/anmelden/Felder';
 import { ZweiFaktorFormular } from '@/components/lernapp/anmelden/ZweiFaktorFormular';
@@ -12,6 +13,7 @@ import { lernAdresse, oberflaecheVon } from '@/lib/lernapp/adressen';
 import { oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
 import { lernTexte, rohTexte } from '@/lib/lernapp/texte';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
 import { kontoAbmelden } from '@/server/actions/konto';
 
 export const instant = false;
@@ -31,6 +33,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function LernAppAnmelden({ searchParams }: PageProps<'/lern-app/[ui]/anmelden'>) {
   await verlangeLernApp();
   await verlangeKontenSeite();
+  // Vorführung mit Testzugang (ADR 0052): eine Anmeldeseite für alle Zugänge
+  if (vorfuehrung() && !(await ladeKonto())) redirect('/verwaltung/anmelden');
   const ui = await oberflaeche();
   const s = await searchParams;
   const geprueft = sichererRuecksprung(s.weiter);

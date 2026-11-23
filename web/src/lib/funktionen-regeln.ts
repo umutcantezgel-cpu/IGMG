@@ -1,4 +1,5 @@
 import { betriebsart, type UmgebungsWerte } from '@/lib/umgebung';
+import { vorfuehrung } from '@/lib/vorfuehrung/modus';
 import type { FunktionenEinstellung } from '@/lib/validierung/einstellungen';
 
 /**
@@ -64,9 +65,30 @@ export const IN_PRODUKTION_AN: readonly Funktion[] = [
   'lernapp_meldungen',
 ];
 
-/** Standard: in Entwicklung und Vorschau an (Vorführung), in der Produktion aus – außer `IN_PRODUKTION_AN`. */
+/**
+ * In der Vorführung mit Testzugang (ADR 0052) zusätzlich an: die Bereiche hinter der Anmeldung – „Mein Bereich“, Unterricht,
+ * Gruppenchat, Hatim, Newsletter und der Abgleich der Lern-App mit Gruppen und Bestenliste. Dort gibt es nur
+ * Beispielkonten und Beispieldaten; derselbe Satz wie im E2E-Lauf. Nicht dabei, weil sie fremde Dienste oder eigene
+ * Schlüssel brauchen: Echtzeit und Push.
+ */
+export const IN_VORFUEHRUNG_AN: readonly Funktion[] = [
+  'konten',
+  'lernplattform',
+  'chat',
+  'hatim',
+  'newsletter',
+  'lernapp_sync',
+  'lernapp_gruppen',
+  'lernapp_rangliste',
+];
+
+/**
+ * Standard: in Entwicklung und Vorschau an, in der Produktion aus – außer `IN_PRODUKTION_AN` und, in der Vorführung mit
+ * Testzugang, `IN_VORFUEHRUNG_AN`.
+ */
 export function standardFuer(env: UmgebungsWerte, f?: Funktion): boolean {
   if (f && IN_PRODUKTION_AN.includes(f)) return true;
+  if (f && vorfuehrung() && IN_VORFUEHRUNG_AN.includes(f)) return true;
   return betriebsart(env) !== 'produktion';
 }
 

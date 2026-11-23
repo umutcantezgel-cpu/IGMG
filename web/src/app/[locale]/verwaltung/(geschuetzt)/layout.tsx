@@ -3,6 +3,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { KontoMenue } from '@/components/verwaltung/shell/KontoMenue';
+import { TestBand } from '@/components/vorfuehrung/TestBand';
 import { MenueKnopf, MenueZustand } from '@/components/verwaltung/shell/MenueZustand';
 import { MODULE, rechtListe } from '@/components/verwaltung/shell/module';
 import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung/shell/Seitenleiste';
@@ -86,6 +87,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
   });
   return (
     <div className="verwaltung-huelle">
+      <TestBand />
       <MenueZustand>
         <a
           href="#inhalt"

@@ -42,6 +42,7 @@ import startseite from './startseite.json';
 import wissen from './wissen.json';
 import lernapp from './lernapp.json';
 import rundgang from './rundgang.json';
+import vorfuehrung from './vorfuehrung.json';
 
 type Teil = Record<string, unknown>;
 
@@ -83,4 +84,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   wissen,
   lernapp,
   rundgang,
+  vorfuehrung,
 };

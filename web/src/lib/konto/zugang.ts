@@ -1,9 +1,8 @@
 import 'server-only';
 import { eq } from 'drizzle-orm';
-import { headers } from 'next/headers';
 import { notFound, redirect } from 'next/navigation';
 import { cache } from 'react';
-import { auth } from '@/lib/auth/server';
+import { holeSitzung } from '@/lib/auth/sitzung';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
@@ -61,7 +60,7 @@ export async function verlangeKontoSeite(locale: Locale): Promise<Konto> {
 /** ID der aktuellen Sitzung (je Anfrage einmal); markiert „dieses Gerät“ und schützt sie vor „andere abmelden“. */
 export const aktuelleSitzungsId = cache(async (): Promise<string | null> => {
   if (!datenbankVerfuegbar()) return null;
-  const s = await auth.api.getSession({ headers: await headers() });
+  const s = await holeSitzung();
   return s?.session.id ?? null;
 });
 
