@@ -58,6 +58,15 @@ export function richtungZwischen(von: string, nach: string): 'tiefer' | 'hoeher'
 }
 
 /**
+ * Ziele ohne Seitenwechsel-Übergang: die Verwaltung (auch mit Sprachpräfix). Sie hat einen eigenen Rahmen ohne `seite`
+ * und `kopf` – der Übergang wartete dort bis zur Höchstzeit auf einen Seitenrahmen, und der Rundgang der Vorführung
+ * (ADR 0051) ist sehr lang: Die alte Seite blieb sekundenlang über der neuen stehen. Dort bleibt es beim normalen Klick.
+ */
+export function ohneUebergang(pfad: string): boolean {
+  return /^\/(?:(?:de|tr|en)\/)?verwaltung(?:\/|$)/.test(pfad);
+}
+
+/**
  * Gemeinsame Elemente (O-13): Liegt der Link in einer Karte mit `data-morph-karte`, bekommen deren markierte Elemente
  * (`data-morph="titel"`, `"bild"`) jetzt den Namen, den die Detailseite fest trägt (`morphStil`, morph.ts).
  */
@@ -77,8 +86,9 @@ function benenneKarte(link: Element): HTMLElement[] {
  * blendet über. React-`<ViewTransition>` löst hier nicht aus, weil Next mit Cache Components verlassene Seiten per
  * `<Activity>` versteckt statt sie auszuhängen. Deshalb startet dieser Baustein den Übergang selbst: Klick auf einen
  * internen Link → `document.startViewTransition` → darin `router.push` → Ende, sobald die neue Seite steht.
- * Ohne Unterstützung im Browser, bei reduzierter Bewegung, Zusatztasten, neuen Fenstern, Downloads, fremden Zielen
- * und Sprungmarken auf derselben Seite bleibt der normale Link-Klick unverändert.
+ * Ohne Unterstützung im Browser, bei reduzierter Bewegung, Zusatztasten, neuen Fenstern, Downloads, fremden Zielen,
+ * Sprungmarken auf derselben Seite und Zielen in der Verwaltung (`ohneUebergang`) bleibt der normale Link-Klick
+ * unverändert.
  * Gibt es gemeinsame Elemente (Karte → Detail), setzt der Baustein `data-uebergang='morph'` an `<html>`: Der Inhalt
  * blendet dann erst nach `dauer-wechsel` ein, Titel und Bild kommen zuerst an (K-007, B-05; gesamt 640 ms, C3, H-F08).
  * Nach dem Übergang steht das Kennzeichen nicht mehr an `<html>`.
@@ -99,6 +109,7 @@ export function SeitenUebergang() {
       if (url.origin !== location.origin) return;
       const ziel = url.pathname + url.search;
       if (ziel === location.pathname + location.search) return;
+      if (ohneUebergang(url.pathname)) return;
       e.preventDefault();
       const markiert = benenneKarte(link);
       // B-26: tiefer → neue Seite von rechts, höher → von links, seitlich → Überblendung; der Kopf steht

@@ -66,3 +66,31 @@ test('ohne Laufzeit-Datenbank: die Verwaltung zeigt den Rundgang mit Aufnahmen',
   await page.goto('/verwaltung');
   await expect(page.getByRole('heading', { level: 1, name: 'Rundgang durch Verwaltung und Mitgliederbereich' })).toBeVisible();
 });
+
+/**
+ * Weg der Besucher: Startseite, im Kopf „Anmelden“. Ohne Konten führt der Link in die Verwaltung; dorthin gibt es keinen
+ * Seitenwechsel-Übergang (`ohneUebergang` in SeitenUebergang.tsx) – sonst blieb die Startseite sekundenlang über dem
+ * Rundgang stehen. Nur am Computer (am Telefon liegt der Link im Menü) und nur, wenn der Bau die Konten aus hat.
+ */
+test('ohne Laufzeit-Datenbank: „Anmelden“ im Kopf führt ohne hängenden Übergang zum Rundgang', async ({ page, request }, info) => {
+  test.skip(info.project.name !== 'desktop', 'der Link im Kopf steht nur in der breiten Ansicht');
+  const gesundheit = await request.get('/api/health');
+  test.skip(gesundheit.ok(), 'Datenbank verbunden: Die Verwaltung zeigt die Anmeldung');
+
+  await page.addInitScript(() => window.localStorage.setItem('igmg-konzepthinweis-gesehen', '1'));
+  await page.goto('/');
+  const link = page.getByRole('banner').locator('a[href="/verwaltung/anmelden"]').filter({ visible: true });
+  test.skip((await link.count()) === 0, 'Bau mit Konten: „Anmelden“ führt zum Gemeinde-Konto');
+  await link.first().click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Rundgang durch Verwaltung und Mitgliederbereich' })).toBeVisible();
+  // kein laufender Übergang, die Startseite ist nicht mehr zu sehen
+  const uebergaenge = await page.evaluate(
+    () => document.getAnimations().filter((a) => (a.effect as KeyframeEffect | null)?.pseudoElement?.includes('view-transition')).length,
+  );
+  expect(uebergaenge).toBe(0);
+  await expect(page.locator('[data-seite]').filter({ visible: true })).toHaveCount(0);
+  // und zurück zur Website
+  await page.getByRole('link', { name: 'Zur Website' }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.locator('[data-seite]').filter({ visible: true })).toHaveCount(1);
+});
