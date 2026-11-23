@@ -58,6 +58,20 @@
    (Gebetszeiten, Koran, Lern-App, Elifbe, Veranstaltungen, Mitglied werden) fest unter dem Kopf – kein Abschnitt der
    sortierbaren Liste (F-40). Ohne Schalter `lernapp` rückt „Kontakt“ nach.
 
+## Prüfung (22./23.11.2026)
+
+- Typen, Lint, Unit (234 Dateien, 4196 Tests) und Sprachprüfung grün; Produktionsbau mit 2146 Seiten.
+- E2E am Produktionsbau, Projekte „telefon“ und „desktop“: neuer Spec `tests/e2e/ein-rahmen.spec.ts` (Navigation
+  Website ↔ Lernbereich, Sprachwahl, arabische Oberfläche, Fuß ohne Platzhalter) und alle Specs der Lern-App grün
+  (Rahmen, Lernpfad, Lektion, ohne Netz, Netzprotokoll, Tastatur, axe).
+- Platzhalter-Suche im Browser über 301 Adressen (de, tr, en, ohne Rechtstexte): keine eckigen Klammern im Inhalt, in
+  Titeln, Meta-Beschreibungen, `alt` und `aria-label`.
+- JS-Budgets (`scripts/lernapp-budget.mjs`): Hülle 156,2 KB gesamt, eigener Anteil 14,6 KB (≤ 20); Start 160,4 KB
+  (≤ 180); Lernpfad 171,5 KB (≤ 180); Spieler mit der Testlektion 202,6 KB (≤ 210), ungünstigste echte Lektion 206,9 KB
+  (≤ 210). Verfehlt bleibt allein „zusätzlich zur Hülle“ der ungünstigsten echten Lektion (Sprechen, 63,8 KB statt
+  ≤ 60) – eine Differenz zwischen zwei Seiten mit demselben Rahmen, vom Kopf der Website unabhängig.
+- Ohne Netz: Der Service Worker legt das Logo des Kopfs in die Hülle (`/_next/image?url=/bilder/logos/…`).
+
 ## Folgen
 
 - Von jeder Seite des Lernbereichs führt ein Klick auf Logo oder Menü zurück auf die Website und umgekehrt; es gibt einen
